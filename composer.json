@@ -1,0 +1,15 @@
+{
+  "name": "alipay/global-open-sdk-php",
+  "description": "Ant global gateway SDK",
+  "version": "1.0.0",
+  "require": {
+    "php": ">=5.4.7"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "XIE SONGLIN",
+      "email": "songlin.xiesl@alibaba-inc.com"
+    }
+  ]
+}
