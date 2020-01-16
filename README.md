@@ -39,7 +39,7 @@ $alipayCreateOrderRequest->setOrder($order);
 $alipayCreateOrderRequest->setPaymentNotifyUrl($paymentNotifyUrl);
 $alipayCreateOrderRequest->setPaymentRedirectUrl($paymentRedirectUrl);
 
-$merchantPrivateKey =  "your PrivateKey";
+$merchantPrivateKey =  "your privateKey";
 $alipayPublicKey    =  "your alipayPublicKey";
 
 $alipayClient   = new DefaultAlipayClient("https://open-sea.alipay.com", $merchantPrivateKey, $alipayPublicKey);
