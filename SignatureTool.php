@@ -5,7 +5,7 @@ class SignatureTool{
     static public function sign($httpMethod, $path, $clientId, $reqTime, $content, $merchantPrivateKey){
         $signContent = self::genSignContent($httpMethod, $path, $clientId, $reqTime, $content);
         $signValue   = self::signWithSHA256RSA($signContent, $merchantPrivateKey);
-        return urlencode($signValue);;
+        return urlencode($signValue);
     }
 
     static public function verify($httpMethod, $path, $clientId, $rspTime, $rspBody, $signature, $alipayPublicKey){
