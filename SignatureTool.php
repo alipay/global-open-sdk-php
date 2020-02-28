@@ -31,7 +31,14 @@ class SignatureTool{
         $pubKey = "-----BEGIN PUBLIC KEY-----\n" .
             wordwrap($alipayPublicKey, 64, "\n", true) .
             "\n-----END PUBLIC KEY-----";
-        $originalRspSignValue = base64_decode(urldecode($rspSignValue));
+        if($rspSignValue == base64_encode(base64_decode($rspSignValue))
+            || strstr($rspSignValue, "=")
+            || strstr($rspSignValue, "+")
+            || strstr($rspSignValue, "/")){
+            $originalRspSignValue = base64_decode($rspSignValue);
+        } else {
+            $originalRspSignValue = base64_decode(urldecode($rspSignValue));
+        }
         $verifyResult = openssl_verify($rspContent, $originalRspSignValue, $pubKey, OPENSSL_ALGO_SHA256);
         return $verifyResult;
     }
