@@ -5,6 +5,7 @@ require_once 'model/ResultStatusType.php';
 
 abstract class BaseAlipayClient{
 
+    private const DEFULT_KEY_VERSION = 1;
     private $gatewayUrl;
     private $merchantPrivateKey;
     private $alipayPublicKey;
@@ -125,7 +126,7 @@ abstract class BaseAlipayClient{
         $baseHeader[] = "client-id:" . $clientId;
 
         if (!isset($keyVersion)){
-            $keyVersion = 1;
+            $keyVersion = self::DEFULT_KEY_VERSION;
         }
         $signatureHeader = "algorithm=RSA256,keyVersion=". $keyVersion. ",signature=" . $signValue;
         $baseHeader[] = "Signature:" . $signatureHeader;
