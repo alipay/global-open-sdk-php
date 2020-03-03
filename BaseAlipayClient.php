@@ -47,7 +47,7 @@ abstract class BaseAlipayClient{
 
         $alipayRsp = json_decode($rspBody);
         $result    = $alipayRsp->result;
-        if(!isset($result) || $result == null){
+        if(!isset($result)){
             throw new Exception("Response data error,result field is null");
         }
         $rStatus = $result->resultStatus;
@@ -65,34 +65,39 @@ abstract class BaseAlipayClient{
 
     private function checkRequestParam($request){
 
-        if(!isset($request) || $request == null){
+        if(!isset($request)){
             throw new Exception("alipayRequest can't null");
         }
 
-        $clientId  = $request->getClientId();
-        $httpMehod = $request->getHttpMethod();
-        $path      = $request->getPath();
-
-        if (!isset($this->gatewayUrl) || $this->gatewayUrl === null || trim($this->gatewayUrl) === ""){
+        $clientId   = $request->getClientId();
+        $httpMehod  = $request->getHttpMethod();
+        $path       = $request->getPath();
+        $keyVersion = $request->getKeyVersion();
+        
+        if (!isset($this->gatewayUrl) || trim($this->gatewayUrl) === ""){
             throw new Exception("clientId can't null");
         }
 
-        if (!isset($clientId) || $clientId === null || trim($clientId) === ""){
+        if (!isset($clientId) || trim($clientId) === ""){
             throw new Exception("clientId can't null");
         }
 
-        if (!isset($httpMehod) || $httpMehod === null || trim($httpMehod) === ""){
+        if (!isset($httpMehod) || trim($httpMehod) === ""){
             throw new Exception("httpMehod can't null");
         }
 
-        if (!isset($path) || $path === null || trim($path) === ""){
+        if (!isset($path) || trim($path) === ""){
             throw new Exception("path can't null");
         }
 
         if(strpos($path,'/') != 0){
             throw new Exception("path must start with /");
         }
-
+                
+        if(isset($keyVersion) && !is_numeric($keyVersion)){
+            throw new Exception("keyVersion must be numeric");
+        }
+        
     }
 
     private function genSignValue($httpMethod, $path, $clientId, $reqTime, $reqBody){
@@ -119,7 +124,7 @@ abstract class BaseAlipayClient{
         $baseHeader[] = "Request-Time:" . $requestTime;
         $baseHeader[] = "client-id:" . $clientId;
 
-        if (!isset($keyVersion) || $keyVersion === null || trim($keyVersion) === ""){
+        if (!isset($keyVersion)){
             $keyVersion = 1;
         }
         $signatureHeader = "algorithm=RSA256,keyVersion=". $keyVersion. ",signature=" . $signValue;
