@@ -2,6 +2,7 @@
 class AlipayRequest{
     private $path;
     private $clientId;
+    private $keyVersion;
     private $httpMethod = "POST";
 
     /**
@@ -30,6 +31,22 @@ class AlipayRequest{
      */
     public function setClientId($clientId){
         $this->clientId = $clientId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKeyVersion()
+    {
+        return $this->keyVersion;
+    }
+
+    /**
+     * @param mixed $keyVersion
+     */
+    public function setKeyVersion($keyVersion)
+    {
+        $this->keyVersion = $keyVersion;
     }
 
     /**

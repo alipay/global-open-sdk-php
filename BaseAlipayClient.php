@@ -22,11 +22,12 @@ abstract class BaseAlipayClient{
         $clientId   = $request->getClientId();
         $httpMethod = $request->getHttpMethod();
         $path       = $request->getPath();
+        $keyVersion = $request->getKeyVersion();
         $reqTime    = date(DATE_ISO8601);
         $reqBody    = json_encode($request);
 
         $signValue     = $this->genSignValue($httpMethod, $path, $clientId, $reqTime, $reqBody);
-        $baseHeaders   = $this->buildBaseHeader($reqTime, $clientId, $signValue);
+        $baseHeaders   = $this->buildBaseHeader($reqTime, $clientId, $keyVersion, $signValue);
         $customHeaders = $this->buildCustomHeader();
         if(isset($customHeaders) && count($customHeaders) > 0){
             $headers = array_merge($baseHeaders, $customHeaders);
@@ -112,16 +113,17 @@ abstract class BaseAlipayClient{
         return $isVerify;
     }
 
-    private function buildBaseHeader($requestTime, $clientId, $signValue){
-
+    private function buildBaseHeader($requestTime, $clientId, $keyVersion, $signValue){
         $baseHeader = array();
         $baseHeader[] = "Content-Type:application/json; charset=UTF-8";
         $baseHeader[] = "Request-Time:" . $requestTime;
         $baseHeader[] = "client-id:" . $clientId;
 
-        $signatureHeader = "algorithm=RSA256,keyVersion=2,signature=" . $signValue;
+        if (!isset($keyVersion) || $keyVersion === null || trim($keyVersion) === ""){
+            $keyVersion = 1;
+        }
+        $signatureHeader = "algorithm=RSA256,keyVersion=". $keyVersion. ",signature=" . $signValue;
         $baseHeader[] = "Signature:" . $signatureHeader;
-
         return $baseHeader;
     }
 
