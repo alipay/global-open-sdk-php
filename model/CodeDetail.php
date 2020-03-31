@@ -1,9 +1,9 @@
 <?php
 class CodeDetail{
 
-    private $codeValueType;
-    private $codeValue;
-    private $displayType;
+    public $codeValueType;
+    public $codeValue;
+    public $displayType;
 
     /**
      * @return mixed

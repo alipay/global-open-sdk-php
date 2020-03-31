@@ -1,10 +1,10 @@
 <?php
 class Shipping{
 
-    private $shippingName;
-    private $shippingAddress;
-    private $shippingCarrier;
-    private $shippingPhoneNo;
+    public $shippingName;
+    public $shippingAddress;
+    public $shippingCarrier;
+    public $shippingPhoneNo;
 
     /**
      * @return String
