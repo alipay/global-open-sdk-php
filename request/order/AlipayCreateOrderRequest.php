@@ -14,84 +14,96 @@ class AlipayCreateOrderRequest extends AlipayRequest{
     /**
      * @return mixed
      */
-    public function getProductCode(){
+    public function getProductCode()
+    {
         return $this->productCode;
     }
 
     /**
      * @param mixed $productCode
      */
-    public function setProductCode($productCode){
+    public function setProductCode($productCode)
+    {
         $this->productCode = $productCode;
     }
 
     /**
      * @return mixed
      */
-    public function getPaymentRequestId(){
+    public function getPaymentRequestId()
+    {
         return $this->paymentRequestId;
     }
 
     /**
      * @param mixed $paymentRequestId
      */
-    public function setPaymentRequestId($paymentRequestId){
+    public function setPaymentRequestId($paymentRequestId)
+    {
         $this->paymentRequestId = $paymentRequestId;
     }
 
     /**
      * @return mixed
      */
-    public function getOrder(){
+    public function getOrder()
+    {
         return $this->order;
     }
 
     /**
      * @param mixed $order
      */
-    public function setOrder($order){
+    public function setOrder($order)
+    {
         $this->order = $order;
     }
 
     /**
      * @return mixed
      */
-    public function getPaymentAmount(){
+    public function getPaymentAmount()
+    {
         return $this->paymentAmount;
     }
 
     /**
      * @param mixed $paymentAmount
      */
-    public function setPaymentAmount($paymentAmount){
+    public function setPaymentAmount($paymentAmount)
+    {
         $this->paymentAmount = $paymentAmount;
     }
 
     /**
      * @return mixed
      */
-    public function getPaymentRedirectUrl(){
+    public function getPaymentRedirectUrl()
+    {
         return $this->paymentRedirectUrl;
     }
 
     /**
      * @param mixed $paymentRedirectUrl
      */
-    public function setPaymentRedirectUrl($paymentRedirectUrl){
+    public function setPaymentRedirectUrl($paymentRedirectUrl)
+    {
         $this->paymentRedirectUrl = $paymentRedirectUrl;
     }
 
     /**
      * @return mixed
      */
-    public function getPaymentNotifyUrl(){
+    public function getPaymentNotifyUrl()
+    {
         return $this->paymentNotifyUrl;
     }
 
     /**
      * @param mixed $paymentNotifyUrl
      */
-    public function setPaymentNotifyUrl($paymentNotifyUrl){
+    public function setPaymentNotifyUrl($paymentNotifyUrl)
+    {
         $this->paymentNotifyUrl = $paymentNotifyUrl;
     }
 

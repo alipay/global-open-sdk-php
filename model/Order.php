@@ -10,6 +10,7 @@ class Order{
     public $shipping;
     public $buyer;
     public $env;
+    public $extendInfo;
 
     /**
      * @return String
@@ -121,6 +122,22 @@ class Order{
      */
     public function setEnv($env){
         $this->env = $env;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExtendInfo()
+    {
+        return $this->extendInfo;
+    }
+
+    /**
+     * @param mixed $extendInfo
+     */
+    public function setExtendInfo($extendInfo)
+    {
+        $this->extendInfo = $extendInfo;
     }
 
 }
