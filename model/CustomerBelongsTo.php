@@ -7,6 +7,6 @@ class CustomerBelongsTo{
     const GCASH     = "GCASH";
     const DANA      = "DANA";
     const KAKAOPAY  = "KAKAOPAY";
-    const EASYPASIA = "EASYPASIA";
+    const EASYPAISA = "EASYPAISA";
     const BKASH     = "BKASH";
 }
