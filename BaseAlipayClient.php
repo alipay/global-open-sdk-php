@@ -47,16 +47,18 @@ abstract class BaseAlipayClient{
         $rspTime      = $rsp->getRspTime();
 
         $alipayRsp = json_decode($rspBody);
+
         $result    = $alipayRsp->result;
         if(!isset($result)){
-            throw new Exception("Response data error,result field is null");
+            throw new Exception("Response data error,result field is null,rspBody:" . $rspBody);
         }
-        $rStatus = $result->resultStatus;
-        if(strcmp(ResultStatusType::F, $rStatus ) == 0 ||strcmp(ResultStatusType::U, $rStatus ) == 0){
+
+        if (!isset($rspSignValue) || trim($rspSignValue) === "" || !isset($rspTime) || trim($rspTime) === ""){
             return $alipayRsp;
         }
 
         $isVerifyPass = $this->checkRspSign($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue);
+
         if(!$isVerifyPass){
             throw new Exception("Response signature verify fail.");
         }
