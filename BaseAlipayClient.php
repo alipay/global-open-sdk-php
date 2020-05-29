@@ -5,7 +5,7 @@ require_once 'model/ResultStatusType.php';
 
 abstract class BaseAlipayClient{
 
-    private const DEFULT_KEY_VERSION = 1;
+    const DEFULT_KEY_VERSION = 1;
     private $gatewayUrl;
     private $merchantPrivateKey;
     private $alipayPublicKey;
