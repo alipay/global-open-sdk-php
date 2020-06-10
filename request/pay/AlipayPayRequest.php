@@ -19,6 +19,7 @@ class AlipayPayRequest extends AlipayRequest{
     public $merchant;
     public $env;
     public $extendInfo;
+    public $creditPayPlan;
 
     /**
      * @return mixed
@@ -258,6 +259,22 @@ class AlipayPayRequest extends AlipayRequest{
     public function setExtendInfo($extendInfo)
     {
         $this->extendInfo = $extendInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreditPayPlan()
+    {
+        return $this->creditPayPlan;
+    }
+
+    /**
+     * @param mixed $creditPayPlan
+     */
+    public function setCreditPayPlan($creditPayPlan)
+    {
+        $this->creditPayPlan = $creditPayPlan;
     }
 
 }
