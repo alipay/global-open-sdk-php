@@ -7,6 +7,7 @@ require_once 'model/Order.php';
 require_once 'model/Merchant.php';
 require_once 'model/Store.php';
 require_once 'model/Amount.php';
+require_once 'model/Env.php';
 require_once 'DefaultAlipayClient.php';
 
 
@@ -34,6 +35,12 @@ $store->setStoreName('Some_Store');
 $merchant->setStore($store);
 
 $order->setMerchant($merchant);
+
+$env = new Env();
+$env->setStoreTerminalRequestTime(date(DATE_ISO8601));
+$env->setStoreTerminalId('Some_Term_Id');
+
+$order->setEnv($env);
 
 $paymentAmount = new Amount();
 $paymentAmount->setCurrency("USD");

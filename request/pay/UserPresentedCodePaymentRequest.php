@@ -54,6 +54,9 @@ class UserPresentedCodePaymentRequest extends AlipayPayRequest{
         $this->assertTrue(isset($this->order->merchant->store->referenceStoreId), "order.merchant.store.referenceStoreId required.");
         $this->assertTrue(isset($this->order->merchant->store->storeName), "order.merchant.store.storeName required.");
         $this->assertTrue(isset($this->order->merchant->store->storeMCC), "order.merchant.store.storeMcc required.");
+        $this->assertTrue(isset($this->order->env), "order.env required.");
+        $this->assertTrue(isset($this->order->env->storeTerminalId), "order.env.storeTerminalId required.");
+        $this->assertTrue(isset($this->order->env->storeTerminalRequestTime), "order.env.storeTerminalRequestTime required.");
     }
 
     function assertTrue($exp, $msg) {

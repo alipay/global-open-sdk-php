@@ -8,6 +8,8 @@ class Env{
     public $deviceTokenId;
     public $clientIp;
     public $cookieId;
+    public $storeTerminalId;
+    public $storeTerminalRequestTime;
     public $extendInfo;
 
     /**
@@ -92,6 +94,34 @@ class Env{
      */
     public function setCookieId($cookieId){
         $this->cookieId = $cookieId;
+    }
+
+    /**
+     * @return String
+     */
+    public function getStoreTerminalId(){
+        return $this->storeTerminalId;
+    }
+
+    /**
+     * @param String $storeTerminalId
+     */
+    public function setStoreTerminalId($storeTerminalId){
+        $this->storeTerminalId = $storeTerminalId;
+    }
+
+    /**
+     * @return String
+     */
+    public function getStoreTerminalRequestTime(){
+        return $this->storeTerminalRequestTime;
+    }
+
+    /**
+     * @param String $storeTerminalRequestTime
+     */
+    public function setStoreTerminalRequestTime($storeTerminalRequestTime){
+        $this->storeTerminalRequestTime = $storeTerminalRequestTime;
     }
 
     /**
