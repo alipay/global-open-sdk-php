@@ -8,6 +8,8 @@ class Env{
     public $deviceTokenId;
     public $clientIp;
     public $cookieId;
+    public $storeTerminalId;
+    public $storeTerminalRequestTime;
     public $extendInfo;
 
     /**
@@ -108,5 +110,36 @@ class Env{
         $this->extendInfo = $extendInfo;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getStoreTerminalId()
+    {
+        return $this->storeTerminalId;
+    }
 
+    /**
+     * @param mixed $storeTerminalId
+     */
+    public function setStoreTerminalId($storeTerminalId)
+    {
+        $this->storeTerminalId = $storeTerminalId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStoreTerminalRequestTime()
+    {
+        return $this->storeTerminalRequestTime;
+    }
+
+    /**
+     * @param mixed $storeTerminalRequestTime
+     */
+    public function setStoreTerminalRequestTime($storeTerminalRequestTime)
+    {
+        $this->storeTerminalRequestTime = $storeTerminalRequestTime;
+    }
+    
 }
