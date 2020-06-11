@@ -99,6 +99,34 @@ class Env{
     /**
      * @return String
      */
+    public function getStoreTerminalId(){
+        return $this->storeTerminalId;
+    }
+
+    /**
+     * @param String $storeTerminalId
+     */
+    public function setStoreTerminalId($storeTerminalId){
+        $this->storeTerminalId = $storeTerminalId;
+    }
+
+    /**
+     * @return String
+     */
+    public function getStoreTerminalRequestTime(){
+        return $this->storeTerminalRequestTime;
+    }
+
+    /**
+     * @param String $storeTerminalRequestTime
+     */
+    public function setStoreTerminalRequestTime($storeTerminalRequestTime){
+        $this->storeTerminalRequestTime = $storeTerminalRequestTime;
+    }
+
+    /**
+     * @return String
+     */
     public function getExtendInfo(){
         return $this->extendInfo;
     }
