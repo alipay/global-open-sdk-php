@@ -124,6 +124,7 @@ abstract class BaseAlipayClient{
     private function buildBaseHeader($requestTime, $clientId, $keyVersion, $signValue){
         $baseHeader = array();
         $baseHeader[] = "Content-Type:application/json; charset=UTF-8";
+        $baseHeader[] = "User-Agent:global-alipay-sdk-php";
         $baseHeader[] = "Request-Time:" . $requestTime;
         $baseHeader[] = "client-id:" . $clientId;
 
