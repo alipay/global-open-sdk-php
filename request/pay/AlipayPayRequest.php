@@ -17,7 +17,6 @@ class AlipayPayRequest extends AlipayRequest{
     public $paymentVerificationData;
     public $paymentFactor;
     public $merchant;
-    public $env;
     public $extendInfo;
     public $creditPayPlan;
 
@@ -227,22 +226,6 @@ class AlipayPayRequest extends AlipayRequest{
     public function setMerchant($merchant)
     {
         $this->merchant = $merchant;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEnv()
-    {
-        return $this->env;
-    }
-
-    /**
-     * @param mixed $env
-     */
-    public function setEnv($env)
-    {
-        $this->env = $env;
     }
 
     /**
