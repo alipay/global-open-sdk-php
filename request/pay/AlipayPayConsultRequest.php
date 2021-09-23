@@ -13,6 +13,11 @@ class AlipayPayConsultRequest extends AlipayRequest{
     public $referenceUserId;
     public $env;
     public $extendInfo;
+    public $userRegion;
+    public $paymentFactor;
+    public $settlementStrategy;
+    public $merchant;
+    public $allowedPspRegions;
 
     /**
      * @return mixed
@@ -157,5 +162,86 @@ class AlipayPayConsultRequest extends AlipayRequest{
     {
         $this->extendInfo = $extendInfo;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUserRegion()
+    {
+        return $this->userRegion;
+    }
+
+    /**
+     * @param mixed $userRegion
+     */
+    public function setUserRegion($userRegion)
+    {
+        $this->userRegion = $userRegion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentFactor()
+    {
+        return $this->paymentFactor;
+    }
+
+    /**
+     * @param mixed $paymentFactor
+     */
+    public function setPaymentFactor($paymentFactor)
+    {
+        $this->paymentFactor = $paymentFactor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSettlementStrategy()
+    {
+        return $this->settlementStrategy;
+    }
+
+    /**
+     * @param mixed $settlementStrategy
+     */
+    public function setSettlementStrategy($settlementStrategy)
+    {
+        $this->settlementStrategy = $settlementStrategy;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchant()
+    {
+        return $this->merchant;
+    }
+
+    /**
+     * @param mixed $merchant
+     */
+    public function setMerchant($merchant)
+    {
+        $this->merchant = $merchant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAllowedPspRegions()
+    {
+        return $this->allowedPspRegions;
+    }
+
+    /**
+     * @param mixed $allowedPspRegions
+     */
+    public function setAllowedPspRegions($allowedPspRegions)
+    {
+        $this->allowedPspRegions = $allowedPspRegions;
+    }
+
 
 }

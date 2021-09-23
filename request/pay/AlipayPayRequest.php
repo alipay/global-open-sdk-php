@@ -19,6 +19,9 @@ class AlipayPayRequest extends AlipayRequest{
     public $merchant;
     public $extendInfo;
     public $creditPayPlan;
+    public $settlementStrategy;
+
+
 
     /**
      * @return mixed
@@ -259,5 +262,22 @@ class AlipayPayRequest extends AlipayRequest{
     {
         $this->creditPayPlan = $creditPayPlan;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSettlementStrategy()
+    {
+        return $this->settlementStrategy;
+    }
+
+    /**
+     * @param mixed $settlementStrategy
+     */
+    public function setSettlementStrategy($settlementStrategy)
+    {
+        $this->settlementStrategy = $settlementStrategy;
+    }
+
 
 }
