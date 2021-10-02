@@ -7,7 +7,7 @@ class Address{
     public $address1;
     public $address2;
     public $zipCode;
-
+    public $label;
     /**
      * @return String
      */
@@ -91,5 +91,22 @@ class Address{
     public function setZipCode($zipCode){
         $this->zipCode = $zipCode;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * @param mixed $label
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
+    }
+
 
 }

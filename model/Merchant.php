@@ -9,6 +9,7 @@ class Merchant{
     public $merchantAddress;
     public $merchantRegisterDate;
     public $store;
+    public $merchantType;
 
     /**
      * @return String
@@ -107,6 +108,23 @@ class Merchant{
     public function setStore($store){
         $this->store = $store;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantType()
+    {
+        return $this->merchantType;
+    }
+
+    /**
+     * @param mixed $merchantType
+     */
+    public function setMerchantType($merchantType)
+    {
+        $this->merchantType = $merchantType;
+    }
+
 
 
 }

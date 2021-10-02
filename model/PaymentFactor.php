@@ -3,6 +3,7 @@ class PaymentFactor{
 
     public $isPaymentEvaluation;
     public $inStorePaymentScenario;
+    public $presentmentMode;
 
     /**
      * @return mixed
@@ -35,5 +36,23 @@ class PaymentFactor{
     {
         $this->inStorePaymentScenario = $inStorePaymentScenario;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPresentmentMode()
+    {
+        return $this->presentmentMode;
+    }
+
+    /**
+     * @param mixed $presentmentMode
+     */
+    public function setPresentmentMode($presentmentMode)
+    {
+        $this->presentmentMode = $presentmentMode;
+    }
+
+
 
 }
