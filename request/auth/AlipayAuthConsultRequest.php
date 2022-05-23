@@ -13,6 +13,25 @@ class AlipayAuthConsultRequest extends  AlipayRequest{
     public $osType;
     public $osVersion;
     public $extendInfo;
+    public $merchantRegion;
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantRegion()
+    {
+        return $this->merchantRegion;
+    }
+
+    /**
+     * @param mixed $merchantRegion
+     */
+    public function setMerchantRegion($merchantRegion)
+    {
+        $this->merchantRegion = $merchantRegion;
+    }
+
+
 
     /**
      * @return mixed

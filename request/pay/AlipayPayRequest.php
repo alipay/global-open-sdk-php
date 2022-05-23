@@ -20,8 +20,41 @@ class AlipayPayRequest extends AlipayRequest{
     public $extendInfo;
     public $creditPayPlan;
     public $settlementStrategy;
+    public $appId;
+    public $merchantRegion;
+
+    /**
+     * @return mixed
+     */
+    public function getAppId()
+    {
+        return $this->appId;
+    }
+
+    /**
+     * @param mixed $appId
+     */
+    public function setAppId($appId)
+    {
+        $this->appId = $appId;
+    }
 
 
+    /**
+     * @return mixed
+     */
+    public function getMerchantRegion()
+    {
+        return $this->merchantRegion;
+    }
+
+    /**
+     * @param mixed $merchantRegion
+     */
+    public function setMerchantRegion($merchantRegion)
+    {
+        $this->merchantRegion = $merchantRegion;
+    }
 
     /**
      * @return mixed

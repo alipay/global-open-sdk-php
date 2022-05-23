@@ -9,6 +9,25 @@ class AlipayAuthApplyTokenRequest extends AlipayRequest{
     public  $authCode;
     public  $refreshToken;
     public  $extendInfo;
+    public  $merchantRegion;
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantRegion()
+    {
+        return $this->merchantRegion;
+    }
+
+    /**
+     * @param mixed $merchantRegion
+     */
+    public function setMerchantRegion($merchantRegion)
+    {
+        $this->merchantRegion = $merchantRegion;
+    }
+
+
 
     /**
      * @return mixed
