@@ -6,6 +6,7 @@ require_once 'model/ProductCodeType.php';
 require_once 'model/PaymentMethod.php';
 require_once 'model/PaymentFactor.php';
 require_once 'model/InStorePaymentScenario.php';
+require_once 'model/AntomPathConstants.php';
 
 class UserPresentedCodePaymentRequest extends AlipayPayRequest{
 

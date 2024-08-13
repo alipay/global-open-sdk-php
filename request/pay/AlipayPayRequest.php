@@ -1,6 +1,7 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayPayRequest extends AlipayRequest{
 
@@ -22,6 +23,14 @@ class AlipayPayRequest extends AlipayRequest{
     public $settlementStrategy;
     public $appId;
     public $merchantRegion;
+
+    public $env;
+
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::PAYMENT_PATH);
+    }
+
 
     /**
      * @return mixed
@@ -310,6 +319,22 @@ class AlipayPayRequest extends AlipayRequest{
     public function setSettlementStrategy($settlementStrategy)
     {
         $this->settlementStrategy = $settlementStrategy;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnv()
+    {
+        return $this->env;
+    }
+
+    /**
+     * @param mixed $env
+     */
+    public function setEnv($env)
+    {
+        $this->env = $env;
     }
 
 

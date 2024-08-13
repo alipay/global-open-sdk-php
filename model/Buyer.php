@@ -7,6 +7,12 @@ class Buyer{
     public $buyerPhoneNo;
     public $buyerEmail;
 
+    public $buyerRegistrationTime;
+
+    public $isAccountVerified;
+
+    public $successfulOrderCount;
+
     /**
      * @return String
      */
@@ -61,6 +67,54 @@ class Buyer{
      */
     public function setBuyerEmail($buyerEmail){
         $this->buyerEmail = $buyerEmail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuyerRegistrationTime()
+    {
+        return $this->buyerRegistrationTime;
+    }
+
+    /**
+     * @param mixed $buyerRegistrationTime
+     */
+    public function setBuyerRegistrationTime($buyerRegistrationTime)
+    {
+        $this->buyerRegistrationTime = $buyerRegistrationTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsAccountVerified()
+    {
+        return $this->isAccountVerified;
+    }
+
+    /**
+     * @param mixed $isAccountVerified
+     */
+    public function setIsAccountVerified($isAccountVerified)
+    {
+        $this->isAccountVerified = $isAccountVerified;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSuccessfulOrderCount()
+    {
+        return $this->successfulOrderCount;
+    }
+
+    /**
+     * @param mixed $successfulOrderCount
+     */
+    public function setSuccessfulOrderCount($successfulOrderCount)
+    {
+        $this->successfulOrderCount = $successfulOrderCount;
     }
 
 

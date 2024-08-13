@@ -7,6 +7,8 @@ class PaymentMethod{
     public $customerId;
     public $extendInfo;
 
+    public $requireIssuerAuthentication;
+
     /**
      * @return mixed
      */
@@ -86,5 +88,22 @@ class PaymentMethod{
     {
         $this->extendInfo = $extendInfo;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRequireIssuerAuthentication()
+    {
+        return $this->requireIssuerAuthentication;
+    }
+
+    /**
+     * @param mixed $requireIssuerAuthentication
+     */
+    public function setRequireIssuerAuthentication($requireIssuerAuthentication): void
+    {
+        $this->requireIssuerAuthentication = $requireIssuerAuthentication;
+    }
+
 
 }

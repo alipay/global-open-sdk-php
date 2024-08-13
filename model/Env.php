@@ -10,7 +10,17 @@ class Env{
     public $cookieId;
     public $storeTerminalId;
     public $storeTerminalRequestTime;
+
     public $extendInfo;
+    public  $browserInfo;
+    public  $colorDepth;
+    public  $screenHeight;
+    public  $screenWidth;
+    public  $timeZoneOffset;
+    public  $deviceBrand;
+    public  $deviceModel;
+    public  $deviceLanguage;
+    public  $deviceId;
 
     /**
      * @return String
@@ -136,6 +146,150 @@ class Env{
      */
     public function setExtendInfo($extendInfo){
         $this->extendInfo = $extendInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBrowserInfo()
+    {
+        return $this->browserInfo;
+    }
+
+    /**
+     * @param mixed $browserInfo
+     */
+    public function setBrowserInfo($browserInfo)
+    {
+        $this->browserInfo = $browserInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColorDepth()
+    {
+        return $this->colorDepth;
+    }
+
+    /**
+     * @param mixed $colorDepth
+     */
+    public function setColorDepth($colorDepth)
+    {
+        $this->colorDepth = $colorDepth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScreenHeight()
+    {
+        return $this->screenHeight;
+    }
+
+    /**
+     * @param mixed $screenHeight
+     */
+    public function setScreenHeight($screenHeight)
+    {
+        $this->screenHeight = $screenHeight;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScreenWidth()
+    {
+        return $this->screenWidth;
+    }
+
+    /**
+     * @param mixed $screenWidth
+     */
+    public function setScreenWidth($screenWidth)
+    {
+        $this->screenWidth = $screenWidth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTimeZoneOffset()
+    {
+        return $this->timeZoneOffset;
+    }
+
+    /**
+     * @param mixed $timeZoneOffset
+     */
+    public function setTimeZoneOffset($timeZoneOffset)
+    {
+        $this->timeZoneOffset = $timeZoneOffset;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeviceBrand()
+    {
+        return $this->deviceBrand;
+    }
+
+    /**
+     * @param mixed $deviceBrand
+     */
+    public function setDeviceBrand($deviceBrand)
+    {
+        $this->deviceBrand = $deviceBrand;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeviceModel()
+    {
+        return $this->deviceModel;
+    }
+
+    /**
+     * @param mixed $deviceModel
+     */
+    public function setDeviceModel($deviceModel)
+    {
+        $this->deviceModel = $deviceModel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeviceLanguage()
+    {
+        return $this->deviceLanguage;
+    }
+
+    /**
+     * @param mixed $deviceLanguage
+     */
+    public function setDeviceLanguage($deviceLanguage)
+    {
+        $this->deviceLanguage = $deviceLanguage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeviceId()
+    {
+        return $this->deviceId;
+    }
+
+    /**
+     * @param mixed $deviceId
+     */
+    public function setDeviceId($deviceId)
+    {
+        $this->deviceId = $deviceId;
     }
     
 }

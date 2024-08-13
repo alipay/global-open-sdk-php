@@ -10,13 +10,34 @@ abstract class BaseAlipayClient{
     private $merchantPrivateKey;
     private $alipayPublicKey;
 
-    function __construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey) {
+    private $clientId;
+
+    function __construct(){
+        $a=func_get_args();
+        $i=func_num_args();
+        if(method_exists($this,$f='__construct'.$i)){
+            call_user_func_array(array($this,$f),$a);
+        }
+    }
+
+    function __construct3($gatewayUrl, $merchantPrivateKey, $alipayPublicKey) {
         $this->gatewayUrl = $gatewayUrl;
         $this->merchantPrivateKey = $merchantPrivateKey;
         $this->alipayPublicKey = $alipayPublicKey;
     }
 
+    function __construct4($gatewayUrl, $merchantPrivateKey, $alipayPublicKey,$clientId) {
+        $this->gatewayUrl = $gatewayUrl;
+        $this->merchantPrivateKey = $merchantPrivateKey;
+        $this->alipayPublicKey = $alipayPublicKey;
+        $this->clientId = $clientId;
+    }
+
     public function execute($request){
+
+        if (!$request->getClientId() === null || trim($request->getClientId()) === ""){
+            $request->setClientId($this->clientId);
+        }
 
         $this->checkRequestParam($request);
 

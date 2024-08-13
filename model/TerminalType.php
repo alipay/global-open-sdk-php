@@ -5,4 +5,6 @@ class TerminalType{
     const WAP = "WAP";
     const APP = "APP";
 
+    const MINI_APP = "MINI_APP";
+
 }

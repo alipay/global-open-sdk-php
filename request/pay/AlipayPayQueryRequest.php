@@ -1,11 +1,17 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayPayQueryRequest extends AlipayRequest{
 
     public $paymentRequestId;
     public $paymentId;
+
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::INQUIRY_PAYMENT_PATH);
+    }
 
     /**
      * @return mixed

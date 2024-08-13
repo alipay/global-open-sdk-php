@@ -1,6 +1,7 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayAuthConsultRequest extends  AlipayRequest{
 
@@ -14,6 +15,10 @@ class AlipayAuthConsultRequest extends  AlipayRequest{
     public $osVersion;
     public $extendInfo;
     public $merchantRegion;
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::AUTH_CONSULT_PATH);
+    }
 
     /**
      * @return mixed
