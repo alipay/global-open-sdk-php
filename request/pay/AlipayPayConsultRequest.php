@@ -8,6 +8,7 @@ class AlipayPayConsultRequest extends AlipayRequest{
     public $productCode;
     public $paymentAmount;
     public $allowedPaymentMethods;
+    public $allowedPaymentMethodRegions;
     public $blockedPaymentMethods;
     public $region;
     public $customerId;
@@ -21,6 +22,11 @@ class AlipayPayConsultRequest extends AlipayRequest{
     public $allowedPspRegions;
 
     public $merchantAccountId;
+
+    public $merchantRegion;
+
+    public $buyer;
+
 
     function __construct(){
         $this->setPath(AntomPathConstants::CONSULT_PAYMENT_PATH);
@@ -59,9 +65,7 @@ class AlipayPayConsultRequest extends AlipayRequest{
         $this->allowedPaymentMethodRegions = $allowedPaymentMethodRegions;
     }
 
-    public $merchantRegion;
 
-    public $allowedPaymentMethodRegions;
 
     /**
      * @return mixed
@@ -301,6 +305,22 @@ class AlipayPayConsultRequest extends AlipayRequest{
     public function setMerchantAccountId($merchantAccountId)
     {
         $this->merchantAccountId = $merchantAccountId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuyer()
+    {
+        return $this->buyer;
+    }
+
+    /**
+     * @param mixed $buyer
+     */
+    public function setBuyer($buyer): void
+    {
+        $this->buyer = $buyer;
     }
 
 

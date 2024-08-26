@@ -8,6 +8,8 @@ class AlipayPayQueryRequest extends AlipayRequest{
     public $paymentRequestId;
     public $paymentId;
 
+    public $merchantAccountId;
+
 
     function __construct(){
         $this->setPath(AntomPathConstants::INQUIRY_PAYMENT_PATH);
@@ -43,6 +45,22 @@ class AlipayPayQueryRequest extends AlipayRequest{
     public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->merchantAccountId;
+    }
+
+    /**
+     * @param mixed $merchantAccountId
+     */
+    public function setMerchantAccountId($merchantAccountId): void
+    {
+        $this->merchantAccountId = $merchantAccountId;
     }
 
 }

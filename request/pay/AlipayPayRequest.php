@@ -25,6 +25,9 @@ class AlipayPayRequest extends AlipayRequest{
     public $merchantRegion;
 
     public $env;
+    public $merchantAccountId;
+
+    public $userRegion;
 
 
     function __construct(){
@@ -335,6 +338,38 @@ class AlipayPayRequest extends AlipayRequest{
     public function setEnv($env)
     {
         $this->env = $env;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->merchantAccountId;
+    }
+
+    /**
+     * @param mixed $merchantAccountId
+     */
+    public function setMerchantAccountId($merchantAccountId): void
+    {
+        $this->merchantAccountId = $merchantAccountId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserRegion()
+    {
+        return $this->userRegion;
+    }
+
+    /**
+     * @param mixed $userRegion
+     */
+    public function setUserRegion($userRegion): void
+    {
+        $this->userRegion = $userRegion;
     }
 
 
