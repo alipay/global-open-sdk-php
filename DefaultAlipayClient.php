@@ -3,17 +3,34 @@
 require_once 'BaseAlipayClient.php';
 require_once 'model/HttpRpcResult.php';
 
-class DefaultAlipayClient extends BaseAlipayClient{
+class DefaultAlipayClient extends BaseAlipayClient
+{
 
-    function __construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey) {
+    function __construct(){
+        $a=func_get_args();
+        $i=func_num_args() - 2;
+        if(method_exists($this,$f='__construct'.$i)){
+            call_user_func_array(array($this,$f),$a);
+        }
+    }
+
+    function __construct1($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
+    {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey);
     }
 
-    protected function buildCustomHeader(){
+    function __construct2($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
+    {
+        parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId);
+    }
+
+    protected function buildCustomHeader()
+    {
         return null;
     }
 
-    protected function sendRequest($requestUrl, $httpMethod, $headers, $reqBody){
+    protected function sendRequest($requestUrl, $httpMethod, $headers, $reqBody)
+    {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $requestUrl);
         curl_setopt($curl, CURLOPT_FAILONERROR, false);
@@ -30,22 +47,22 @@ class DefaultAlipayClient extends BaseAlipayClient{
             return null;
         }
 
-        $headerSize    = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+        $headerSize = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
         $headerContent = substr($rspContent, 0, $headerSize);
-        $rspBody       = substr($rspContent, $headerSize);
+        $rspBody = substr($rspContent, $headerSize);
 
         $httpRpcResult = new HttpRpcResult();
         $httpRpcResult->setRspBody($rspBody);
 
         $headArr = explode("\r\n", $headerContent);
         foreach ($headArr as $headerItem) {
-            if(strstr($headerItem, "response-time") || strstr($headerItem, "signature")){
+            if (strstr($headerItem, "response-time") || strstr($headerItem, "signature")) {
                 $responseTime = $this->getResponseTime($headerItem);
-                if(isset($responseTime) && $responseTime != null){
+                if (isset($responseTime) && $responseTime != null) {
                     $httpRpcResult->setRspTime(trim($responseTime));
                 } else {
                     $signatureValue = $this->getResponseSignature($headerItem);
-                    if(isset($signatureValue) && $signatureValue != null){
+                    if (isset($signatureValue) && $signatureValue != null) {
                         $httpRpcResult->setRspSign($signatureValue);
                     }
                 }
@@ -58,8 +75,9 @@ class DefaultAlipayClient extends BaseAlipayClient{
     }
 
 
-    private function getResponseTime($headerItem){
-        if(strstr($headerItem, "response-time")){
+    private function getResponseTime($headerItem)
+    {
+        if (strstr($headerItem, "response-time")) {
             $startIndex = strpos($headerItem, ":") + 1;
             $responseTime = substr($headerItem, $startIndex);
             return $responseTime;
@@ -67,8 +85,9 @@ class DefaultAlipayClient extends BaseAlipayClient{
         return null;
     }
 
-    private function getResponseSignature($headerItem){
-        if(strstr($headerItem, "signature")){
+    private function getResponseSignature($headerItem)
+    {
+        if (strstr($headerItem, "signature")) {
             $startIndex = strrpos($headerItem, "=") + 1;
             $signatureValue = substr($headerItem, $startIndex);
             return $signatureValue;

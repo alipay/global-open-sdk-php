@@ -1,12 +1,14 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayPayConsultRequest extends AlipayRequest{
 
     public $productCode;
     public $paymentAmount;
     public $allowedPaymentMethods;
+    public $allowedPaymentMethodRegions;
     public $blockedPaymentMethods;
     public $region;
     public $customerId;
@@ -18,6 +20,52 @@ class AlipayPayConsultRequest extends AlipayRequest{
     public $settlementStrategy;
     public $merchant;
     public $allowedPspRegions;
+
+    public $merchantAccountId;
+
+    public $merchantRegion;
+
+    public $buyer;
+
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::CONSULT_PAYMENT_PATH);
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantRegion()
+    {
+        return $this->merchantRegion;
+    }
+
+    /**
+     * @param mixed $merchantRegion
+     */
+    public function setMerchantRegion($merchantRegion)
+    {
+        $this->merchantRegion = $merchantRegion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAllowedPaymentMethodRegions()
+    {
+        return $this->allowedPaymentMethodRegions;
+    }
+
+    /**
+     * @param mixed $allowedPaymentMethodRegions
+     */
+    public function setAllowedPaymentMethodRegions($allowedPaymentMethodRegions)
+    {
+        $this->allowedPaymentMethodRegions = $allowedPaymentMethodRegions;
+    }
+
+
 
     /**
      * @return mixed
@@ -241,6 +289,38 @@ class AlipayPayConsultRequest extends AlipayRequest{
     public function setAllowedPspRegions($allowedPspRegions)
     {
         $this->allowedPspRegions = $allowedPspRegions;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->merchantAccountId;
+    }
+
+    /**
+     * @param mixed $merchantAccountId
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->merchantAccountId = $merchantAccountId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBuyer()
+    {
+        return $this->buyer;
+    }
+
+    /**
+     * @param mixed $buyer
+     */
+    public function setBuyer($buyer): void
+    {
+        $this->buyer = $buyer;
     }
 
 

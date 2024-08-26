@@ -1,11 +1,23 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayPayCancelRequest extends AlipayRequest{
 
     public $paymentId;
     public $paymentRequestId;
+
+    public $merchantAccountId;
+
+
+
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::CANCEL_PATH);
+    }
+
+
 
     /**
      * @return mixed
@@ -37,6 +49,22 @@ class AlipayPayCancelRequest extends AlipayRequest{
     public function setPaymentRequestId($paymentRequestId)
     {
         $this->paymentRequestId = $paymentRequestId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->merchantAccountId;
+    }
+
+    /**
+     * @param mixed $merchantAccountId
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->merchantAccountId = $merchantAccountId;
     }
 
 }

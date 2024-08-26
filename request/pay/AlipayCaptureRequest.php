@@ -1,6 +1,7 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayCaptureRequest extends AlipayRequest{
 
@@ -8,6 +9,12 @@ class AlipayCaptureRequest extends AlipayRequest{
     public $paymentId;
     public $captureAmount;
     public $isLastCapture;
+
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::CAPTURE_PATH);
+    }
+
 
     /**
      * @return mixed
@@ -72,5 +79,6 @@ class AlipayCaptureRequest extends AlipayRequest{
     {
         $this->isLastCapture = $isLastCapture;
     }
+
 
 }

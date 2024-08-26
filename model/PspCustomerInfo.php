@@ -1,10 +1,15 @@
 <?php
 
-class PspCustomerInfo{
+class PspCustomerInfo
+{
 
     public $pspName;
     public $pspCustomerId;
     public $displayCustomerId;
+    public $displayCustomerName;
+    public $customer2088Id;
+
+    public $extendInfo;
 
     /**
      * @return mixed
@@ -53,5 +58,55 @@ class PspCustomerInfo{
     {
         $this->displayCustomerId = $displayCustomerId;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDisplayCustomerName()
+    {
+        return $this->displayCustomerName;
+    }
+
+    /**
+     * @param mixed $displayCustomerName
+     */
+    public function setDisplayCustomerName($displayCustomerName): void
+    {
+        $this->displayCustomerName = $displayCustomerName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCustomer2088Id()
+    {
+        return $this->customer2088Id;
+    }
+
+    /**
+     * @param mixed $customer2088Id
+     */
+    public function setCustomer2088Id($customer2088Id): void
+    {
+        $this->customer2088Id = $customer2088Id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExtendInfo()
+    {
+        return $this->extendInfo;
+    }
+
+    /**
+     * @param mixed $extendInfo
+     */
+    public function setExtendInfo($extendInfo): void
+    {
+        $this->extendInfo = $extendInfo;
+    }
+
+
 
 }

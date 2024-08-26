@@ -1,0 +1,42 @@
+# Composer 依赖目录
+/vendor/
+/composer.lock
+
+# Node.js 依赖目录
+/node_modules/
+/package-lock.json
+
+# Laravel 或 Symfony 等框架的缓存和日志目录
+/storage/logs/
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/
+/bootstrap/cache/
+
+# 环境配置文件
+.env
+.env.*.local
+.phpunit.result.cache
+
+# IDE 和编辑器配置文件
+/.idea/
+/.vscode/
+/nbproject/
+/*.iml
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 缓存文件
+/.sass-cache/
+/.htaccess
+
+# 日志文件
+*.log
+*.log.*
+*.txt
+
+# PHPStorm 目录
+.idea/

@@ -5,6 +5,8 @@ class Amount{
     public $currency;
     public $value;
 
+
+
     /**
      * @return String
      */

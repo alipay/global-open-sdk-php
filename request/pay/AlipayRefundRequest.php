@@ -1,6 +1,7 @@
 <?php
 
 require_once 'request/AlipayRequest.php';
+require_once 'model/AntomPathConstants.php';
 
 class AlipayRefundRequest extends AlipayRequest{
 
@@ -9,8 +10,19 @@ class AlipayRefundRequest extends AlipayRequest{
     public $referenceRefundId;
     public $refundAmount;
     public $refundReason;
+    public $refundNotifyUrl;
     public $isAsyncRefund;
     public $extendInfo;
+
+    public $refundDetails;
+
+    public $refundSourceAccountNo;
+
+
+    function __construct(){
+        $this->setPath(AntomPathConstants::REFUND_PATH);
+    }
+
 
     /**
      * @return mixed
@@ -123,5 +135,55 @@ class AlipayRefundRequest extends AlipayRequest{
     {
         $this->extendInfo = $extendInfo;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRefundNotifyUrl()
+    {
+        return $this->refundNotifyUrl;
+    }
+
+    /**
+     * @param mixed $refundNotifyUrl
+     */
+    public function setRefundNotifyUrl($refundNotifyUrl)
+    {
+        $this->refundNotifyUrl = $refundNotifyUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRefundDetails()
+    {
+        return $this->refundDetails;
+    }
+
+    /**
+     * @param mixed $refundDetails
+     */
+    public function setRefundDetails($refundDetails)
+    {
+        $this->refundDetails = $refundDetails;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRefundSourceAccountNo()
+    {
+        return $this->refundSourceAccountNo;
+    }
+
+    /**
+     * @param mixed $refundSourceAccountNo
+     */
+    public function setRefundSourceAccountNo($refundSourceAccountNo)
+    {
+        $this->refundSourceAccountNo = $refundSourceAccountNo;
+    }
+
+
 
 }

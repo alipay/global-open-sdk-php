@@ -5,6 +5,10 @@ class PaymentFactor{
     public $inStorePaymentScenario;
     public $presentmentMode;
 
+    public $captureMode;
+
+    public $isAuthorization;
+
     /**
      * @return mixed
      */
@@ -51,6 +55,38 @@ class PaymentFactor{
     public function setPresentmentMode($presentmentMode)
     {
         $this->presentmentMode = $presentmentMode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsAuthorization()
+    {
+        return $this->isAuthorization;
+    }
+
+    /**
+     * @param mixed $isAuthorization
+     */
+    public function setIsAuthorization($isAuthorization)
+    {
+        $this->isAuthorization = $isAuthorization;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCaptureMode()
+    {
+        return $this->captureMode;
+    }
+
+    /**
+     * @param mixed $captureMode
+     */
+    public function setCaptureMode($captureMode)
+    {
+        $this->captureMode = $captureMode;
     }
 
 
