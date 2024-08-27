@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class CreditPayPlan{
 
     public $installmentNum;

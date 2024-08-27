@@ -1,5 +1,10 @@
 <?php
 
+namespace Request\risk;
+
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
 class AlipayRiskScoreInquiryRequest extends AlipayRequest{
 
     public $customerBelongsTo;

@@ -1,4 +1,7 @@
 <?php
+
+namespace Model;
+
 class PaymentFactor{
 
     public $isPaymentEvaluation;

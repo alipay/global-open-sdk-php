@@ -1,6 +1,8 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\order;
+
+use Request\AlipayRequest;
 
 class AlipayCreateOrderRequest extends AlipayRequest{
 

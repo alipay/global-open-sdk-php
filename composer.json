@@ -5,8 +5,8 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "request\\": "request/",
-      "model\\": "model/"
+      "Request\\": "request/",
+      "Model\\": "model/"
     }
   },
   "homepage": "https://dashboard.alipay.com/global-payments/",

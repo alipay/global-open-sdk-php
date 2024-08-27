@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class Env{
 
     public $terminalType;

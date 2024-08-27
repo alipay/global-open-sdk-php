@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class Buyer{
 
     public $referenceBuyerId;

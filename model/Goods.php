@@ -1,5 +1,6 @@
 <?php
 
+namespace Model;
 class Goods{
 
     public $referenceGoodsId;

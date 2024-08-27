@@ -1,12 +1,14 @@
 <?php
 
-require_once 'request/pay/AlipayPayRequest.php';
-require_once 'model/Amount.php';
-require_once 'model/ProductCodeType.php';
-require_once 'model/PaymentMethod.php';
-require_once 'model/PaymentFactor.php';
-require_once 'model/InStorePaymentScenario.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\pay;
+
+use Model\Amount;
+use Exception;
+use Model\InStorePaymentScenario;
+use Model\PaymentFactor;
+use Model\PaymentMethod;
+use Model\ProductCodeType;
+use Request\AlipayRequest;
 
 class EntryCodePaymentRequest extends AlipayPayRequest{
 

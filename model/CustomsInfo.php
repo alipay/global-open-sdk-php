@@ -1,5 +1,5 @@
 <?php
-
+namespace Model;
 class CustomsInfo
 {
     public  $customsCode;

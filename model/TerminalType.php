@@ -1,4 +1,6 @@
 <?php
+
+namespace Model;
 class TerminalType{
 
     const WEB = "WEB";

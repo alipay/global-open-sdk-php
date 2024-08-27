@@ -1,8 +1,10 @@
 <?php
 
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\pay;
+
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
 class AlipayPaymentSessionRequest extends AlipayRequest{
     /**
      * Represents the payment product that is being used. The fixed value is CASHIER_PAYMENT

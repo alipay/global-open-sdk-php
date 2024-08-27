@@ -1,4 +1,6 @@
 <?php
+
+namespace Model;
 class InStorePaymentScenario{
 
     const PaymentCode = "PaymentCode";

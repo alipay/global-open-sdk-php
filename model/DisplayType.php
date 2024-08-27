@@ -1,4 +1,6 @@
 <?php
+
+namespace Model;
 class DisplayType{
     const TEXT        = "TEXT";
     const MIDDLEIMAGE = "MIDDLEIMAGE";

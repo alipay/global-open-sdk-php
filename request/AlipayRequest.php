@@ -1,4 +1,7 @@
 <?php
+
+namespace Request;
+
 class AlipayRequest{
     private $path;
     private $clientId;

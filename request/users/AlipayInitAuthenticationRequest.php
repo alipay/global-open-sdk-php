@@ -1,6 +1,8 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\users;
+
+use Request\AlipayRequest;
 
 class AlipayInitAuthenticationRequest extends AlipayRequest{
 

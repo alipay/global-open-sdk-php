@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PaymentOption{
 
     public $paymentMethodType;

@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PaymentMethodInfo {
 
     public $paymentMethodType;

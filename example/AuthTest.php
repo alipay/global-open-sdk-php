@@ -1,17 +1,17 @@
 <?php
 
-set_include_path(__DIR__ . '/..');
 
-require_once 'request/auth/AlipayAuthConsultRequest.php';
-require_once 'model/CustomerBelongsTo.php';
-require_once 'model/OsType.php';
-require_once 'model/ScopeType.php';
-require_once 'model/TerminalType.php';
-require_once 'DefaultAlipayClient.php';
-require_once 'request/auth/AlipayAuthApplyTokenRequest.php';
-require_once 'model/GrantType.php';
-require_once 'request/auth/AlipayAuthQueryTokenRequest.php';
-require_once 'request/auth/AlipayAuthRevokeTokenRequest.php';
+use Model\CustomerBelongsTo;
+use Model\GrantType;
+use Model\OsType;
+use Model\ScopeType;
+use Model\TerminalType;
+use Request\auth\AlipayAuthApplyTokenRequest;
+use Request\auth\AlipayAuthConsultRequest;
+use Request\auth\AlipayAuthQueryTokenRequest;
+use Request\auth\AlipayAuthRevokeTokenRequest;
+
+
 
 
 const clientId = "";
@@ -75,6 +75,6 @@ function revoke_token($accessToken)
 }
 
 
-//authConsult();
+authConsult();
 //applyToken("281001133029700579331362");
-revoke_token("28288803001247281723530452000N6krsDm8J8171000589");
+//revoke_token("28288803001247281723530452000N6krsDm8J8171000589");

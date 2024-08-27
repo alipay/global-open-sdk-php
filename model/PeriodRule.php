@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PeriodRule
 {
     public $periodType;

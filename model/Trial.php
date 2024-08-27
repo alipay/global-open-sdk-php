@@ -1,5 +1,8 @@
 <?php
 
+namespace Model;
+
+
 class Trial
 {
 

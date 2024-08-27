@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class Amount{
 
     public $currency;

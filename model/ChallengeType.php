@@ -1,4 +1,6 @@
 <?php
+
+namespace Model;
 class ChallengeType{
     const SMS_OTP = "SMS_OTP";
     const PLAINTEXT_CARD_NO = "PLAINTEXT_CARD_NO";

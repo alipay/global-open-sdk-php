@@ -1,6 +1,8 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\merchant;
+
+use Request\AlipayRequest;
 
 class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest {
 

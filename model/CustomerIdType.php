@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class CustomerIdType{
     const EMAIL     = "EMAIL";
     const USER_ID   = "USER_ID";

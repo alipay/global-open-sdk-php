@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class RiskScoreResult{
 
     public $riskScoreType;

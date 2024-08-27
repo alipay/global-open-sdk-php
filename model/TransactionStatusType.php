@@ -1,5 +1,7 @@
 <?php
 
+
+namespace Model;
 class TransactionStatusType{
     const SUCCESS    = "SUCCESS";
     const FAIL       = "FAIL";

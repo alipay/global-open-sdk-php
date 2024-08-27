@@ -1,4 +1,7 @@
 <?php
+
+namespace Model;
+
 class UserName{
 
     public $firstName;

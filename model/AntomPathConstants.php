@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class AntomPathConstants
 {
     const AUTH_CONSULT_PATH = '/ams/api/v1/authorizations/consult';

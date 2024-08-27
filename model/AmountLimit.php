@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class AmountLimit{
 
     public $maxAmount;

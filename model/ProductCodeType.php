@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class ProductCodeType {
 
     const AGREEMENT_PAYMENT = "AGREEMENT_PAYMENT";

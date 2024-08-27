@@ -1,7 +1,9 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\auth;
+
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
 
 class AlipayAuthConsultRequest extends  AlipayRequest{
 

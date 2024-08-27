@@ -1,8 +1,10 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
 
+namespace Request\customs;
+
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
 class AlipayCustomsQueryRequest  extends AlipayRequest
 {
 

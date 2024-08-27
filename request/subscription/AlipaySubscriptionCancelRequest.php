@@ -1,7 +1,11 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\subscription;
+
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
+
 class AlipaySubscriptionCancelRequest  extends AlipayRequest
 {
 

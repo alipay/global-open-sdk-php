@@ -1,4 +1,6 @@
 <?php
+
+namespace Model;
 class ScopeType{
 
     const BASE_USER_INFO = "BASE_USER_INFO";

@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class Attachment {
 
     public $attachmentType;

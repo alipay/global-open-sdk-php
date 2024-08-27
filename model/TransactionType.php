@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class TransactionType{
     const PAYMENT = "PAYMENT";
     const REFUND  = "REFUND";

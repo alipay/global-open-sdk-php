@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PaymentMethodCategoryType{
 
     const WALLET = "WALLET";

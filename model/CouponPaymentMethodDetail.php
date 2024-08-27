@@ -1,4 +1,6 @@
 <?php
+
+namespace Model;
 class CouponPaymentMethodDetail{
 
     public $couponId;
