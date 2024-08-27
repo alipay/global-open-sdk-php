@@ -1,19 +1,19 @@
 {
-  "name": "alipay/global-open-sdk-php",
+  "name": "antom/global-open-sdk-php",
   "description": "global-open-sdk-php",
   "type": "library",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "request": "request/",
-      "model:": "model/"
+      "request\\": "request/",
+      "model\\": "model/"
     }
   },
   "homepage": "https://dashboard.alipay.com/global-payments/",
   "authors": [
     {
       "name": "Alipay",
-      "email": "https://dashboard.alipay.com/global-payments/"
+      "email": "wangzunjiao.wzj@digital-engine.com"
     }
   ],
   "require": {}
