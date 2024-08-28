@@ -4,47 +4,93 @@ PHP version：5.4.7+
 Copyright：Ant financial services group
 ```
 
+### Composer
+
+You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
+
+```bash
+composer require antom/global-open-sdk-php
+```
+
+To use the bindings, use Composer's [autoload](https://getcomposer.org/doc/01-basic-usage.md#autoloading):
+
+```php
+require_once 'vendor/autoload.php';
+```
+
+### Manual Installation
+
+If you do not wish to use Composer, you can download the [latest release](https://github.com/alipay/global-open-sdk-php/releases). Then, to use the bindings, include the `init.php` file.
+
+```php
+require_once '/path/to/global-open-sdk-php/init.php';
+```
+
+
 #### 1 Important note
 The SDK mainly shows how to access the alipay gateway, which cannot guarantee the performance and stability.
 
 #### 2 The demo code for create order
 ```
-$alipayCreateOrderRequest = new AlipayCreateOrderRequest();
+    $request = new AlipayPayRequest();
+    $paymentRequestId = 'PR_' . round(microtime(true) * 1000);
+    $order = new Order();
+    $order->setOrderDescription("test order desc");
+    $order->setReferenceOrderId("102775745075668");
+    $orderAmount = new Amount();
+    $orderAmount->setCurrency("HKD");
+    $orderAmount->setValue("100");
+    $order->setOrderAmount($orderAmount);
 
-$clientId = "your clientId";
-$path = "/ams/sandbox/api/v1/payments/create";
+    $merchant = new Merchant();
+    $merchant->setReferenceMerchantId('seller2322174590001');
+    $merchant->setMerchantMCC('7011');
+    $merchant->setMerchantName('Some_Mer');
 
-$productCode = ProductCodeType::CASHIER_PAYMENT;
-$paymentRequestId = "demo-test-id";
-$order = new Order();
-$order->setOrderDescription("test order desc");
-$order->setReferenceOrderId("102775745075669");
-$orderAmount = new Amount();
-$orderAmount->setCurrency("USD");
-$orderAmount->setValue("100");
-$order->setOrderAmount($orderAmount);
+    $store = new Store();
+    $store->setStoreMCC('7011');
+    $store->setReferenceStoreId('store232217459000021');
+    $store->setStoreName('Some_Store');
 
-$paymentAmount = new Amount();
-$paymentAmount->setCurrency("USD");
-$paymentAmount->setValue("100");
-$paymentNotifyUrl = "https://www.alipay.com/notify";
-$paymentRedirectUrl = "https://www.alipay.com";
+    $merchant->setStore($store);
 
-$alipayCreateOrderRequest->setClientId($clientId);
-$alipayCreateOrderRequest->setPath($path);
-$alipayCreateOrderRequest->setProductCode($productCode);
-$alipayCreateOrderRequest->setPaymentRequestId($paymentRequestId);
-$alipayCreateOrderRequest->setPaymentAmount($paymentAmount);
-$alipayCreateOrderRequest->setOrder($order);
-$alipayCreateOrderRequest->setPaymentNotifyUrl($paymentNotifyUrl);
-$alipayCreateOrderRequest->setPaymentRedirectUrl($paymentRedirectUrl);
+    $order->setMerchant($merchant);
 
-$merchantPrivateKey =  "your privateKey";
-$alipayPublicKey    =  "your alipayPublicKey";
+    $env = new Env();
+    $env->setUserAgent('"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15G77 NebulaSDK/1.8.100112 Nebula PSDType(1) AlipayDefined(nt:4G,ws:320|504|2.0) AliApp(AP/10.1.32.600) AlipayClient/10.1.32.600 Alipay Language/zh-Hans AlipayConnect"');
+    $env->setOsType(OsType::ANDROID);
+    $env->setTerminalType(TerminalType::WEB);
+    $order->setEnv($env);
 
-$alipayClient   = new DefaultAlipayClient("https://open-sea.alipay.com", $merchantPrivateKey, $alipayPublicKey);
-$alipayResponse = $alipayClient->execute($alipayCreateOrderRequest);
+    $request->setOrder($order);
 
+    $paymentAmount = new Amount();
+    $paymentAmount->setCurrency("HKD");
+    $paymentAmount->setValue("100");
+    $request->setPaymentAmount($paymentAmount);
+
+    $paymentNotifyUrl = "https://www.alipay.com/notify";
+    $paymentRedirectUrl = "https://www.alipay.com";
+
+    $request->setPaymentNotifyUrl($paymentNotifyUrl);
+    $request->setPaymentRedirectUrl($paymentRedirectUrl);
+
+    $paymentMethod = new PaymentMethod();
+    $paymentMethod->setPaymentMethodType(WalletPaymentMethodType::ALIPAY_HK);
+    $request->setPaymentMethod($paymentMethod);
+
+    $request->setProductCode(ProductCodeType::CASHIER_PAYMENT);
+
+    $request->setClientId(clientId);
+
+    $request->setPaymentRequestId($paymentRequestId);
+
+    $settlementStrategy = new SettlementStrategy();
+    $settlementStrategy->setSettlementCurrency("USD");
+    $request->setSettlementStrategy($settlementStrategy);
+
+    $alipayClient = new DefaultAlipayClient("https://open-sea-global.alipay.com", merchantPrivateKey, alipayPublicKey);
+    $alipayResponse = $alipayClient->execute($request);
 ```
 
 The execute method contains the HTTP request to the gateway.
