@@ -30,8 +30,25 @@ require_once '/path/to/global-open-sdk-php/init.php';
 #### 1 Important note
 The SDK mainly shows how to access the alipay gateway, which cannot guarantee the performance and stability.
 
-#### 2 The demo code for create order
+#### 2 The demo code for create payment
 ```
+    use Request\pay\AlipayPayRequest;
+    use Client\DefaultAlipayClient;
+    use Model\Amount;
+    use Model\Buyer;    
+    use Model\Env;
+    use Model\Merchant;
+    use Model\Order;
+    use Model\OsType;
+    use Model\PaymentFactor;
+    use Model\PaymentMethod;
+    use Model\PresentmentMode;
+    use Model\ProductCodeType;
+    use Model\SettlementStrategy;
+    use Model\Store;
+    use Model\TerminalType;
+    use Model\WalletPaymentMethodType;
+    
     $request = new AlipayPayRequest();
     $paymentRequestId = 'PR_' . round(microtime(true) * 1000);
     $order = new Order();
@@ -98,10 +115,25 @@ The execute method contains the HTTP request to the gateway.
 If you're concerned about HTTP invocation performance, you can implement HTTP invocation yourself.
 
 ```
-class YourAlipayClient extends BaseAlipayClient{
+class YourAlipayClient extends  \Client\BaseAlipayClient{
 
-    function __construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey) {
+     function __construct()
+    {
+        $a = func_get_args();
+        $i = func_num_args() - 2;
+        if (method_exists($this, $f = '__construct' . $i)) {
+            call_user_func_array(array($this, $f), $a);
+        }
+    }
+
+    function __construct1($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
+    {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey);
+    }
+
+    function __construct2($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
+    {
+        parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId);
     }
 
     protected function buildCustomHeader(){
