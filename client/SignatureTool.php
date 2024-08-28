@@ -1,5 +1,7 @@
 <?php
 
+namespace Client;
+
 class SignatureTool{
 
     static public function sign($httpMethod, $path, $clientId, $reqTime, $content, $merchantPrivateKey){

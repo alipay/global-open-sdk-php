@@ -6,7 +6,8 @@
   "autoload": {
     "psr-4": {
       "Request\\": "request/",
-      "Model\\": "model/"
+      "Model\\": "model/",
+      "Client\\": "client/"
     }
   },
   "homepage": "https://dashboard.alipay.com/global-payments/",

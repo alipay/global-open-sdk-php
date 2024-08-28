@@ -1,17 +1,18 @@
 <?php
-set_include_path(__DIR__ . '/..');
+require '../init.php';
 
-require_once 'request/pay/EntryCodePaymentRequest.php';
-require_once 'model/ProductCodeType.php';
-require_once 'model/Order.php';
-require_once 'model/Merchant.php';
-require_once 'model/Store.php';
-require_once 'model/Amount.php';
-require_once 'model/Env.php';
-require_once 'DefaultAlipayClient.php';
-require_once 'model/TerminalType.php';
-require_once 'model/OsType.php';
-require_once 'model/WalletPaymentMethodType.php';
+use \Model\PaymentMethod;
+use \Request\pay\EntryCodePaymentRequest;
+use \Model\ProductCodeType;
+use \Model\Order;
+use \Model\Merchant;
+use \Model\Store;
+use \Model\Amount;
+use \Model\Env;
+use \Client\DefaultAlipayClient;
+use \model\TerminalType;
+use \Model\OsType;
+use \Model\WalletPaymentMethodType;
 
 
 $clientId = "SANDBOX_5YBZ1G2ZHUPS06086";

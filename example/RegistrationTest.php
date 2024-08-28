@@ -1,18 +1,18 @@
 <?php
-set_include_path(__DIR__ . '/..');
+require '../init.php';
 
-require_once "request/merchant/AlipayMerchantRegistrationRequest.php";
-require_once "model/MerchantRegistrationInfo.php";
-require_once "model/Logo.php";
-require_once "model/Address.php";
-require_once "model/RegistrationDetail.php";
-require_once "model/Attachment.php";
-require_once "model/ContactInfo.php";
-require_once "model/WebSite.php";
-require_once "model/ProductCodeType.php";
-require_once "DefaultAlipayClient.php";
-require_once "request/merchant/AlipayMerchantRegistrationStatusQueryRequest.php";
-require_once "request/merchant/AlipayMerchantRegistrationInfoQueryRequest.php";
+use  \Request\merchant\AlipayMerchantRegistrationRequest;
+use  \Model\MerchantRegistrationInfo;
+use  \Model\Logo;
+use  \Model\Address;
+use  \Model\RegistrationDetail;
+use  \Model\Attachment;
+use  \Model\ContactInfo;
+use  \Model\WebSite;
+use  \Model\ProductCodeType;
+use  \Client\DefaultAlipayClient;
+use  \Request\merchant\AlipayMerchantRegistrationStatusQueryRequest;
+use  \Request\merchant\AlipayMerchantRegistrationInfoQueryRequest;
 
 
 $merchantPrivateKey =  file_get_contents(__DIR__ . "/../private-pkcs1.pem");

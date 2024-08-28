@@ -1,9 +1,8 @@
 <?php
 
-require_once 'BaseAlipayClient.php';
-require_once 'model/HttpRpcResult.php';
+namespace Client;
 
-class DefaultAlipayClient extends BaseAlipayClient
+class DefaultAlipayClient extends \Client\BaseAlipayClient
 {
 
     function __construct(){
@@ -51,7 +50,7 @@ class DefaultAlipayClient extends BaseAlipayClient
         $headerContent = substr($rspContent, 0, $headerSize);
         $rspBody = substr($rspContent, $headerSize);
 
-        $httpRpcResult = new HttpRpcResult();
+        $httpRpcResult = new \Model\HttpRpcResult();
         $httpRpcResult->setRspBody($rspBody);
 
         $headArr = explode("\r\n", $headerContent);
