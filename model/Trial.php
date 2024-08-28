@@ -6,11 +6,11 @@ namespace Model;
 class Trial
 {
 
-    public  $trialStartPeriod;
+    public $trialStartPeriod;
 
-    public  $trialAmount;
+    public $trialAmount;
 
-    public  $trialEndPeriod;
+    public $trialEndPeriod;
 
     /**
      * @return mixed
@@ -59,7 +59,6 @@ class Trial
     {
         $this->trialEndPeriod = $trialEndPeriod;
     }
-
 
 
 }

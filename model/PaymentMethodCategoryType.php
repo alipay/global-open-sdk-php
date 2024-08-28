@@ -2,9 +2,10 @@
 
 namespace Model;
 
-class PaymentMethodCategoryType{
+class PaymentMethodCategoryType
+{
 
     const WALLET = "WALLET";
-    const CARD   = "CARD";
+    const CARD = "CARD";
 
 }

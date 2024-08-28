@@ -2,9 +2,10 @@
 
 
 namespace Model;
-class TransactionStatusType{
-    const SUCCESS    = "SUCCESS";
-    const FAIL       = "FAIL";
+class TransactionStatusType
+{
+    const SUCCESS = "SUCCESS";
+    const FAIL = "FAIL";
     const PROCESSING = "FAIL";
-    const CANCELLED  = "CANCELLED";
+    const CANCELLED = "CANCELLED";
 }

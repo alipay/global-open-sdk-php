@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class OrderCodeForm{
+class OrderCodeForm
+{
 
     public $paymentMethodType;
     public $expireTime;

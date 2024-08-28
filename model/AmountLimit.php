@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class AmountLimit{
+class AmountLimit
+{
 
     public $maxAmount;
     public $minAmount;

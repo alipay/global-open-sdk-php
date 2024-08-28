@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class CouponPaymentMethodDetail{
+class CouponPaymentMethodDetail
+{
 
     public $couponId;
     public $availableAmount;

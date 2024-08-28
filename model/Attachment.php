@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class Attachment {
+class Attachment
+{
 
     public $attachmentType;
     public $file;

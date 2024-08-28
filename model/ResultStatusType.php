@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class ResultStatusType{
+class ResultStatusType
+{
     const S = "S";
     const F = "F";
     const U = "U";

@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class Store{
+class Store
+{
 
     public $referenceStoreId;
     public $storeName;
@@ -15,112 +16,128 @@ class Store{
     /**
      * @return String
      */
-    public function getReferenceStoreId(){
+    public function getReferenceStoreId()
+    {
         return $this->referenceStoreId;
     }
 
     /**
      * @param String $referenceStoreId
      */
-    public function setReferenceStoreId($referenceStoreId){
+    public function setReferenceStoreId($referenceStoreId)
+    {
         $this->referenceStoreId = $referenceStoreId;
     }
 
     /**
      * @return String
      */
-    public function getStoreName(){
+    public function getStoreName()
+    {
         return $this->storeName;
     }
 
     /**
      * @param String $storeName
      */
-    public function setStoreName($storeName){
+    public function setStoreName($storeName)
+    {
         $this->storeName = $storeName;
     }
 
     /**
      * @return String
      */
-    public function getStoreMCC(){
+    public function getStoreMCC()
+    {
         return $this->storeMCC;
     }
 
     /**
      * @param String $storeMCC
      */
-    public function setStoreMCC($storeMCC){
+    public function setStoreMCC($storeMCC)
+    {
         $this->storeMCC = $storeMCC;
     }
 
     /**
      * @return String
      */
-    public function getStoreDisplayName(){
+    public function getStoreDisplayName()
+    {
         return $this->storeDisplayName;
     }
 
     /**
      * @param String $storeDisplayName
      */
-    public function setStoreDisplayName($storeDisplayName){
+    public function setStoreDisplayName($storeDisplayName)
+    {
         $this->storeDisplayName = $storeDisplayName;
     }
 
     /**
      * @return String
      */
-    public function getStoreTerminalId(){
+    public function getStoreTerminalId()
+    {
         return $this->storeTerminalId;
     }
 
     /**
      * @param String $storeTerminalId
      */
-    public function setStoreTerminalId($storeTerminalId){
+    public function setStoreTerminalId($storeTerminalId)
+    {
         $this->storeTerminalId = $storeTerminalId;
     }
 
     /**
      * @return String
      */
-    public function getStoreOperatorId(){
+    public function getStoreOperatorId()
+    {
         return $this->storeOperatorId;
     }
 
     /**
      * @param String $storeOperatorId
      */
-    public function setStoreOperatorId($storeOperatorId){
+    public function setStoreOperatorId($storeOperatorId)
+    {
         $this->storeOperatorId = $storeOperatorId;
     }
 
     /**
      * @return Address
      */
-    public function getStoreAddress(){
+    public function getStoreAddress()
+    {
         return $this->storeAddress;
     }
 
     /**
      * @param Address $storeAddress
      */
-    public function setStoreAddress($storeAddress){
+    public function setStoreAddress($storeAddress)
+    {
         $this->storeAddress = $storeAddress;
     }
 
     /**
      * @return String
      */
-    public function getStorePhoneNo(){
+    public function getStorePhoneNo()
+    {
         return $this->storePhoneNo;
     }
 
     /**
      * @param String $storePhoneNo
      */
-    public function setStorePhoneNo($storePhoneNo){
+    public function setStorePhoneNo($storePhoneNo)
+    {
         $this->storePhoneNo = $storePhoneNo;
     }
 

@@ -4,9 +4,9 @@ namespace Model;
 
 class MerchantCustomsInfo
 {
-    public  $merchantCustomsCode;
+    public $merchantCustomsCode;
 
-    public  $merchantCustomsName;
+    public $merchantCustomsName;
 
     /**
      * @return mixed

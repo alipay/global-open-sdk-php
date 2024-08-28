@@ -1,20 +1,19 @@
 <?php
 require '../init.php';
 
-use \Request\customs\AlipayCustomsDeclareRequest;
-use \Client\DefaultAlipayClient;
-use \Model\Amount;
-use \Model\MerchantCustomsInfo;
-use \Model\CustomsInfo;
-use \Model\Certificate;
-use \model\UserName;
-use \model\CertificateType;
-
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Certificate;
+use model\CertificateType;
+use Model\CustomsInfo;
+use Model\MerchantCustomsInfo;
+use model\UserName;
+use Request\customs\AlipayCustomsDeclareRequest;
 
 
 const clientId = "";
-const  merchantPrivateKey = "";
-const  alipayPublicKey = "";
+const merchantPrivateKey = "";
+const alipayPublicKey = "";
 const gatewayUrl = "";
 
 
@@ -51,7 +50,7 @@ function declares($paymentId)
     $alipayResponse = $alipayClient->execute($request);
 
     print(json_encode($alipayResponse));
-    print("\n".$requestId);
+    print("\n" . $requestId);
 
 }
 

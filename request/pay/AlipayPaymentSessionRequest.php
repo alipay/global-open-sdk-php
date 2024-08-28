@@ -5,16 +5,18 @@ namespace Request\pay;
 
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
-class AlipayPaymentSessionRequest extends AlipayRequest{
+
+class AlipayPaymentSessionRequest extends AlipayRequest
+{
     /**
      * Represents the payment product that is being used. The fixed value is CASHIER_PAYMENT
      */
-    public  $productCode;
+    public $productCode;
 
     /**
      * The unique ID assigned by a merchant to identify a payment request
      */
-    public  $paymentRequestId;
+    public $paymentRequestId;
 
     /**
      * The order information
@@ -24,82 +26,82 @@ class AlipayPaymentSessionRequest extends AlipayRequest{
     /**
      * The payment amount that the merchant requests to receive in the order currency
      */
-    public  $paymentAmount;
+    public $paymentAmount;
 
     /**
      * The payment method that is used to collect the payment by the merchant or acquirer
      */
-    public  $paymentMethod;
+    public $paymentMethod;
 
     /**
      * The expiry time of paymentSession
      */
-    public  $paymentSessionExpiryTime;
+    public $paymentSessionExpiryTime;
 
     /**
      * The merchant page URL that the user is redirected to after the payment is completed
      */
-    public  $paymentRedirectUrl;
+    public $paymentRedirectUrl;
 
     /**
      * The URL that is used to receive the payment result notification
      */
-    public  $paymentNotifyUrl;
+    public $paymentNotifyUrl;
 
     /**
      * Factors that impact the payment. This field is used to indicate the payment scenario
      */
-    public  $paymentFactor;
+    public $paymentFactor;
 
     /**
      * The settlement strategy for the payment request
      */
-    public  $settlementStrategy;
+    public $settlementStrategy;
 
     /**
      * Indicates whether Antom collects the installment information for the payment.
      */
-    public  $enableInstallmentCollection;
+    public $enableInstallmentCollection;
 
     /**
      * The credit payment plan information for this payment
      */
-    public  $creditPayPlan;
+    public $creditPayPlan;
 
     /**
      * The country or region where the merchant operates the business
      */
-    public  $merchantRegion;
+    public $merchantRegion;
 
     /**
      * Information about the environment where the order is placed
      */
-    public  $env;
+    public $env;
 
     /**
      * Authorization information about Easy Pay payments
      */
-    public  $agreementInfo;
+    public $agreementInfo;
 
     /**
      * The data used by Ant Group for risk control purposes.
      */
-    public  $riskData;
+    public $riskData;
 
     /**
      * This param is used for Easy pay payments,set its value to EASY_PAY
      */
-    public  $productScene;
+    public $productScene;
 
     public $savedPaymentMethods;
 
-    public  $locale;
+    public $locale;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::CREATE_SESSION_PATH);
     }
-
 
 
     /**

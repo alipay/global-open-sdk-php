@@ -131,25 +131,3 @@ require __DIR__ . '/model/WebSite.php';
 require __DIR__ . '/client/BaseAlipayClient.php';
 require __DIR__ . '/client/DefaultAlipayClient.php';
 require __DIR__ . '/client/SignatureTool.php';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

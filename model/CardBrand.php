@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class CardBrand{
+class CardBrand
+{
 
     const VISA = "VISA";
 

@@ -4,7 +4,8 @@ namespace Request\order;
 
 use Request\AlipayRequest;
 
-class AlipayCreateOrderRequest extends AlipayRequest{
+class AlipayCreateOrderRequest extends AlipayRequest
+{
 
     public $productCode;
     public $paymentRequestId;

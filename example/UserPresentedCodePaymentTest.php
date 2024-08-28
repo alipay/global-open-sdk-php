@@ -1,14 +1,13 @@
 <?php
 require '../init.php';
 
-use   \Request\pay\UserPresentedCodePaymentRequest;
-use   \Model\ProductCodeType;
-use   \Model\Order;
-use   \Model\Merchant;
-use   \Model\Store;
-use   \Model\Amount;
-use   \Model\Env;
-use   \Client\DefaultAlipayClient;
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Env;
+use Model\Merchant;
+use Model\Order;
+use Model\Store;
+use Request\pay\UserPresentedCodePaymentRequest;
 
 
 $clientId = "T_385XSM502Y108602A";
@@ -54,11 +53,11 @@ $request->validate();
 
 $request->setClientId($clientId);
 
-$merchantPrivateKey =  file_get_contents(__DIR__ . "/../private-pkcs1.pem");
+$merchantPrivateKey = file_get_contents(__DIR__ . "/../private-pkcs1.pem");
 
-$alipayPublicKey    =  file_get_contents(__DIR__ . "/../public.pem");
+$alipayPublicKey = file_get_contents(__DIR__ . "/../public.pem");
 
-$alipayClient   = new DefaultAlipayClient("https://open-na.alipay.com", $merchantPrivateKey, $alipayPublicKey);
+$alipayClient = new DefaultAlipayClient("https://open-na.alipay.com", $merchantPrivateKey, $alipayPublicKey);
 $alipayResponse = $alipayClient->execute($request);
 
 print(json_encode($request));

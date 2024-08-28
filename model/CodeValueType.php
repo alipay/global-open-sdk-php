@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class CodeValueType{
+class CodeValueType
+{
     const BARCODE = "BARCODE";
     const QRCODE = "QRCODE";
 

@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class ChallengeActionForm{
+class ChallengeActionForm
+{
 
     public $challengeType;
     public $challengeRenderValue;

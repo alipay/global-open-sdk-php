@@ -4,7 +4,8 @@ namespace Request\users;
 
 use Request\AlipayRequest;
 
-class AlipayVerifyAuthenticationRequest extends AlipayRequest{
+class AlipayVerifyAuthenticationRequest extends AlipayRequest
+{
 
     public $authenticationType;
     public $authenticationRequestId;

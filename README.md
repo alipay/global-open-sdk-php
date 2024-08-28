@@ -20,17 +20,20 @@ require_once 'vendor/autoload.php';
 
 ### Manual Installation
 
-If you do not wish to use Composer, you can download the [latest release](https://github.com/alipay/global-open-sdk-php/releases). Then, to use the bindings, include the `init.php` file.
+If you do not wish to use Composer, you can download
+the [latest release](https://github.com/alipay/global-open-sdk-php/releases). Then, to use the bindings, include the
+`init.php` file.
 
 ```php
 require_once '/path/to/global-open-sdk-php/init.php';
 ```
 
-
 #### 1 Important note
+
 The SDK mainly shows how to access the alipay gateway, which cannot guarantee the performance and stability.
 
 #### 2 The demo code for create order
+
 ```
     $request = new AlipayPayRequest();
     $paymentRequestId = 'PR_' . round(microtime(true) * 1000);
@@ -127,6 +130,7 @@ $alipayPayResponse = $yourAlipayClient->execute($aliPayRequest);
 ```
 
 #### 3 If you don't care about HTTP calls,the sample for sign and verify
+
 ```
 $signReqValue  = SignatureTool::sign($httpMethod, $path, $clientId, $reqTime, $reqBody, $merchantPrivateKey);
 $isVerifyPass  = SignatureTool::verify($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue, $alipayPublicKey);

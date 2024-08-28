@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class PaymentMethodInfo {
+class PaymentMethodInfo
+{
 
     public $paymentMethodType;
     public $paymentMethodDetail;

@@ -5,7 +5,8 @@ namespace Request\pay;
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
 
-class AlipayCaptureRequest extends AlipayRequest{
+class AlipayCaptureRequest extends AlipayRequest
+{
 
     public $captureRequestId;
     public $paymentId;
@@ -13,7 +14,8 @@ class AlipayCaptureRequest extends AlipayRequest{
     public $isLastCapture;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::CAPTURE_PATH);
     }
 

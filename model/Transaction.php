@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class Transaction{
+class Transaction
+{
 
     public $transactionResult;
     public $transactionId;

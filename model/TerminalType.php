@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class TerminalType{
+class TerminalType
+{
 
     const WEB = "WEB";
     const WAP = "WAP";

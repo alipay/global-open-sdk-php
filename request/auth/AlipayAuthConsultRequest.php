@@ -3,8 +3,8 @@
 namespace Request\auth;
 
 
-
-class AlipayAuthConsultRequest extends  \Request\AlipayRequest{
+class AlipayAuthConsultRequest extends \Request\AlipayRequest
+{
 
     public $customerBelongsTo;
     public $authClientId;
@@ -17,7 +17,8 @@ class AlipayAuthConsultRequest extends  \Request\AlipayRequest{
     public $extendInfo;
     public $merchantRegion;
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(\Model\AntomPathConstants::AUTH_CONSULT_PATH);
     }
 
@@ -36,7 +37,6 @@ class AlipayAuthConsultRequest extends  \Request\AlipayRequest{
     {
         $this->merchantRegion = $merchantRegion;
     }
-
 
 
     /**

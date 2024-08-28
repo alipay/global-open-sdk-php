@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class RedirectActionForm{
+class RedirectActionForm
+{
 
     public $method;
     public $parameters;

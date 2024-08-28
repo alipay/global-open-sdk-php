@@ -6,18 +6,18 @@ use Model\AntomPathConstants;
 use Request\AlipayRequest;
 
 
-class AlipaySubscriptionCancelRequest  extends AlipayRequest
+class AlipaySubscriptionCancelRequest extends AlipayRequest
 {
 
     /**
      * The unique ID assigned by Alipay to identify a subscription.
      */
-    public  $subscriptionId;
+    public $subscriptionId;
 
     /**
      * The unique ID assigned by a merchant to identify a subscription request.
      */
-    public  $subscriptionRequestId;
+    public $subscriptionRequestId;
 
     /**
      * The cancellation type for the subscription. Valid values are:
@@ -25,9 +25,10 @@ class AlipaySubscriptionCancelRequest  extends AlipayRequest
      * CANCEL: indicates canceling the subscription. The subscription service is not provided to the user after the current subscription period ends.
      * TERMINATE: indicates terminating the subscription. The subscription service is ceased immediately.
      */
-    public  $cancellationType;
+    public $cancellationType;
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::SUBSCRIPTION_CANCEL_PATH);
     }
 

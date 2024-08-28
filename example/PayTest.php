@@ -1,34 +1,33 @@
 <?php
 require '../init.php';
 
-use \Model\ProductCodeType;
-use \Model\Order;
-use \Model\Merchant;
-use \Model\Store;
-use \Model\Amount;
-use \Model\Env;
-use \Client\DefaultAlipayClient;
-use \Model\TerminalType;
-use \Model\OsType;
-use \Model\WalletPaymentMethodType;
-use \Model\SettlementStrategy;
-use \Request\pay\AlipayPayQueryRequest;
-use \Request\pay\AlipayPayRequest;
-use \Model\PaymentMethod;
-use \Request\pay\AlipayRefundRequest;
-use \Request\pay\AlipayInquiryRefundRequest;
-use \Request\pay\AlipayPayCancelRequest;
-use \Request\pay\AlipayPaymentSessionRequest;
-use \Model\Buyer;
-use \Request\pay\AlipayPayConsultRequest;
-use \Model\PaymentFactor;
-use \Model\PresentmentMode;
-
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Buyer;
+use Model\Env;
+use Model\Merchant;
+use Model\Order;
+use Model\OsType;
+use Model\PaymentFactor;
+use Model\PaymentMethod;
+use Model\PresentmentMode;
+use Model\ProductCodeType;
+use Model\SettlementStrategy;
+use Model\Store;
+use Model\TerminalType;
+use Model\WalletPaymentMethodType;
+use Request\pay\AlipayInquiryRefundRequest;
+use Request\pay\AlipayPayCancelRequest;
+use Request\pay\AlipayPayConsultRequest;
+use Request\pay\AlipayPaymentSessionRequest;
+use Request\pay\AlipayPayQueryRequest;
+use Request\pay\AlipayPayRequest;
+use Request\pay\AlipayRefundRequest;
 
 
 const clientId = "";
-const  merchantPrivateKey = "";
-const  alipayPublicKey = "";
+const merchantPrivateKey = "";
+const alipayPublicKey = "";
 const gatewayUrl = "";
 
 

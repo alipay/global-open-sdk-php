@@ -4,7 +4,8 @@ namespace Request\merchant;
 
 use Request\AlipayRequest;
 
-class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest {
+class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest
+{
 
     public $referenceMerchantId;
 
@@ -23,7 +24,6 @@ class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest {
     {
         $this->referenceMerchantId = $referenceMerchantId;
     }
-
 
 
 }

@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class CreditPayFeeType{
+class CreditPayFeeType
+{
 
     const PERCENTAGE = "PERCENTAGE";
 

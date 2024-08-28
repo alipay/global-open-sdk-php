@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
-class UserIdentityType{
+class UserIdentityType
+{
     const WALLET_TOKEN = "WALLET_TOKEN";
 }

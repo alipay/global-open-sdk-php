@@ -5,7 +5,8 @@ namespace Request\pay;
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
 
-class AlipayPayQueryRequest extends AlipayRequest{
+class AlipayPayQueryRequest extends AlipayRequest
+{
 
     public $paymentRequestId;
     public $paymentId;
@@ -13,7 +14,8 @@ class AlipayPayQueryRequest extends AlipayRequest{
     public $merchantAccountId;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::INQUIRY_PAYMENT_PATH);
     }
 

@@ -2,7 +2,8 @@
 
 
 namespace Model;
-class AuthenticationChannelType{
-    const EMAIL  = "EMAIL";
-    const SMS    = "SMS";
+class AuthenticationChannelType
+{
+    const EMAIL = "EMAIL";
+    const SMS = "SMS";
 }

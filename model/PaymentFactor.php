@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class PaymentFactor{
+class PaymentFactor
+{
 
     public $isPaymentEvaluation;
     public $inStorePaymentScenario;
@@ -91,7 +92,6 @@ class PaymentFactor{
     {
         $this->captureMode = $captureMode;
     }
-
 
 
 }
