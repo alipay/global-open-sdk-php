@@ -1,6 +1,9 @@
 <?php
 
-class AmountLimit{
+namespace Model;
+
+class AmountLimit
+{
 
     public $maxAmount;
     public $minAmount;

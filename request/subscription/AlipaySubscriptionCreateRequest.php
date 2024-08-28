@@ -1,87 +1,90 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\subscription;
 
-class AlipaySubscriptionCreateRequest  extends AlipayRequest
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
+class AlipaySubscriptionCreateRequest extends AlipayRequest
 {
 
     /**
      * The unique ID assigned by a merchant to identify a subscription request. Alipay uses this field for idempotency control.
      */
-    public  $subscriptionRequestId;
+    public $subscriptionRequestId;
 
     /**
      * The description of the subscription, used for displaying user consumption records and other actions.
      */
-    public  $subscriptionDescription;
+    public $subscriptionDescription;
 
     /**
      * The merchant page URL that the user is redirected to after authorizing the subscription.
      */
-    public  $subscriptionRedirectUrl;
+    public $subscriptionRedirectUrl;
 
     /**
      * The date and time when the subscription becomes active.
      */
-    public  $subscriptionStartTime;
+    public $subscriptionStartTime;
 
     /**
      * The date and time when the subscription ends.
      */
-    public  $subscriptionEndTime;
+    public $subscriptionEndTime;
 
     /**
      * The subscription period rule, used to define a subscription's billing period.
      */
-    public  $periodRule;
+    public $periodRule;
 
     /**
      * A specific date and time after which the created subscription expires.
      */
-    public  $subscriptionExpiryTime;
+    public $subscriptionExpiryTime;
 
     /**
      * The payment method that is used to collect the payment by the merchant or acquirer.
      */
-    public  $paymentMethod;
+    public $paymentMethod;
 
     /**
      * The URL that is used to receive the subscription result notification.
      */
-    public  $subscriptionNotificationUrl;
+    public $subscriptionNotificationUrl;
 
     /**
      * The URL that is used to receive the subscription result notification.
      */
-    public  $paymentNotificationUrl;
+    public $paymentNotificationUrl;
 
     /**
      * The order information for the subscription.
      */
-    public  $orderInfo;
+    public $orderInfo;
 
     /**
      * The payment amount charged to the user per subscription period.
      */
-    public  $paymentAmount;
+    public $paymentAmount;
 
     /**
      * The settlement strategy for the payment request.
      */
-    public  $settlementStrategy;
+    public $settlementStrategy;
 
     /**
      * Information about the environment where the order is placed, such as the device information.
      */
-    public  $env;
+    public $env;
 
     /**
      * The list of trial information of a subscription.
      */
-    public  $trials;
+    public $trials;
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::SUBSCRIPTION_CREATE_PATH);
     }
 
@@ -325,7 +328,6 @@ class AlipaySubscriptionCreateRequest  extends AlipayRequest
     {
         $this->trials = $trials;
     }
-
 
 
 }

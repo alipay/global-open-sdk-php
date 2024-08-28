@@ -1,5 +1,6 @@
 <?php
 
+namespace Model;
 class Certificate
 {
 
@@ -88,8 +89,6 @@ class Certificate
     {
         $this->certificateAuthority = $certificateAuthority;
     }
-
-
 
 
 }

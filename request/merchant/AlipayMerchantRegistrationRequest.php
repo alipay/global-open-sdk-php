@@ -1,8 +1,11 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\merchant;
 
-class AlipayMerchantRegistrationRequest extends AlipayRequest {
+use Request\AlipayRequest;
+
+class AlipayMerchantRegistrationRequest extends AlipayRequest
+{
 
     public $productCodes;
     public $registrationRequestId;
@@ -89,7 +92,6 @@ class AlipayMerchantRegistrationRequest extends AlipayRequest {
     {
         $this->passThroughInfo = $passThroughInfo;
     }
-
 
 
 }

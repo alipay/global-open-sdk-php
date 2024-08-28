@@ -1,5 +1,8 @@
 <?php
 
-class AuthenticationType{
-    const OTP  = "OTP";
+namespace Model;
+
+class AuthenticationType
+{
+    const OTP = "OTP";
 }

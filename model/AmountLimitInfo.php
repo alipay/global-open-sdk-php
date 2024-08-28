@@ -1,6 +1,9 @@
 <?php
 
-class AmountLimitInfo{
+namespace Model;
+
+class AmountLimitInfo
+{
 
     public $singleLimit;
     public $dayLimit;

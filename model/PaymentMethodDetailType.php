@@ -1,6 +1,9 @@
 <?php
 
-class PaymentMethodDetailType{
+namespace Model;
+
+class PaymentMethodDetailType
+{
     const CARD = "CARD";
     const EXTERNALACCOUNT = "EXTERNALACCOUNT";
     const COUPON = "COUPON";

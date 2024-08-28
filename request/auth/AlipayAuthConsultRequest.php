@@ -1,9 +1,10 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\auth;
 
-class AlipayAuthConsultRequest extends  AlipayRequest{
+
+class AlipayAuthConsultRequest extends \Request\AlipayRequest
+{
 
     public $customerBelongsTo;
     public $authClientId;
@@ -16,8 +17,9 @@ class AlipayAuthConsultRequest extends  AlipayRequest{
     public $extendInfo;
     public $merchantRegion;
 
-    function __construct(){
-        $this->setPath(AntomPathConstants::AUTH_CONSULT_PATH);
+    function __construct()
+    {
+        $this->setPath(\Model\AntomPathConstants::AUTH_CONSULT_PATH);
     }
 
     /**
@@ -35,7 +37,6 @@ class AlipayAuthConsultRequest extends  AlipayRequest{
     {
         $this->merchantRegion = $merchantRegion;
     }
-
 
 
     /**

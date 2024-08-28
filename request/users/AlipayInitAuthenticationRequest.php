@@ -1,8 +1,11 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\users;
 
-class AlipayInitAuthenticationRequest extends AlipayRequest{
+use Request\AlipayRequest;
+
+class AlipayInitAuthenticationRequest extends AlipayRequest
+{
 
     public $authenticationType;
     public $authenticationRequestId;
@@ -89,5 +92,5 @@ class AlipayInitAuthenticationRequest extends AlipayRequest{
     {
         $this->userIdentityValue = $userIdentityValue;
     }
-    
+
 }

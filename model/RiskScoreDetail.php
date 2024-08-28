@@ -1,6 +1,8 @@
 <?php
 
-class RiskScoreDetail{
+namespace Model;
+class RiskScoreDetail
+{
 
     public $riskInfoCode;
     public $riskInfoCodeResult;

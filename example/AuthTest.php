@@ -1,23 +1,20 @@
 <?php
 
-set_include_path(__DIR__ . '/..');
 
-require_once 'request/auth/AlipayAuthConsultRequest.php';
-require_once 'model/CustomerBelongsTo.php';
-require_once 'model/OsType.php';
-require_once 'model/ScopeType.php';
-require_once 'model/TerminalType.php';
-require_once 'DefaultAlipayClient.php';
-require_once 'request/auth/AlipayAuthApplyTokenRequest.php';
-require_once 'model/GrantType.php';
-require_once 'request/auth/AlipayAuthQueryTokenRequest.php';
-require_once 'request/auth/AlipayAuthRevokeTokenRequest.php';
+require '../init.php';
+
+use Client\DefaultAlipayClient;
+use MOdel\CustomerBelongsTo;
+use Model\GrantType;
+use Request\auth\AlipayAuthApplyTokenRequest;
+use Request\auth\AlipayAuthConsultRequest;
 
 
 const clientId = "";
-const  merchantPrivateKey = "";
-const  alipayPublicKey = "";
+const merchantPrivateKey = "";
+const alipayPublicKey = "";
 const gatewayUrl = "";
+
 
 function applyToken($authCode)
 {
@@ -33,18 +30,19 @@ function applyToken($authCode)
 
 }
 
+
 function authConsult()
 {
     $request = new AlipayAuthConsultRequest();
     $request->setAuthRedirectUrl("https://www.taobao.com/?param1=567&param2=123");
     $request->setAuthState("dd1F6F6811f989DC7");
-    $request->setCustomerBelongsTo(CustomerBelongsTo::ALIPAY_CN);
-    $request->setOsType(OsType::ANDROID);
+    $request->setCustomerBelongsTo(\Model\CustomerBelongsTo::ALIPAY_CN);
+    $request->setOsType(\Model\OsType::ANDROID);
     $request->setOsVersion("6.6.6.6");
-    $request->setScopes([ScopeType::AGREEMENT_PAY]);
-    $request->setTerminalType(TerminalType::APP);
+    $request->setScopes([\Model\ScopeType::AGREEMENT_PAY]);
+    $request->setTerminalType(\Model\TerminalType::APP);
 
-    $alipayClient = new DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);
+    $alipayClient = new \Client\DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);
     $alipayResponse = $alipayClient->execute($request);
 
     print(json_encode($alipayResponse));
@@ -52,7 +50,7 @@ function authConsult()
 
 function queryToken($accessToken)
 {
-    $request = new AlipayAuthQueryTokenRequest();
+    $request = new \Request\auth\AlipayAuthQueryTokenRequest();
     $request->setAccessToken($accessToken);
 
     $alipayClient = new DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);
@@ -65,7 +63,7 @@ function queryToken($accessToken)
 
 function revoke_token($accessToken)
 {
-    $request = new AlipayAuthRevokeTokenRequest();
+    $request = new \Request\auth\AlipayAuthRevokeTokenRequest();
     $request->setAccessToken($accessToken);
 
     $alipayClient = new DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);

@@ -1,6 +1,9 @@
 <?php
 
-class RegistrationDetail {
+namespace Model;
+
+class RegistrationDetail
+{
 
     public $legalName;
     public $attachments;

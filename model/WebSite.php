@@ -1,6 +1,9 @@
 <?php
 
-class WebSite {
+namespace Model;
+
+class WebSite
+{
     public $name;
     public $url;
     public $desc;

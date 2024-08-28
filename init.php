@@ -127,38 +127,7 @@ require __DIR__ . '/model/UserName.php';
 require __DIR__ . '/model/WalletPaymentMethodType.php';
 require __DIR__ . '/model/WebSite.php';
 
-
-//example
-require __DIR__ . '/example/AuthTest.php';
-require __DIR__ . '/example/CustomsTest.php';
-require __DIR__ . '/example/EntryCodePaymentTest.php';
-require __DIR__ . '/example/OrderCodePaymentTest.php';
-require __DIR__ . '/example/PayTest.php';
-require __DIR__ . '/example/RegistrationTest.php';
-require __DIR__ . '/example/UserPresentedCodePaymentTest.php';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//client
+require __DIR__ . '/client/BaseAlipayClient.php';
+require __DIR__ . '/client/DefaultAlipayClient.php';
+require __DIR__ . '/client/SignatureTool.php';

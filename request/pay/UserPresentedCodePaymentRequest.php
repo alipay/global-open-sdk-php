@@ -1,24 +1,26 @@
 <?php
 
-require_once 'request/pay/AlipayPayRequest.php';
-require_once 'model/Amount.php';
-require_once 'model/ProductCodeType.php';
-require_once 'model/PaymentMethod.php';
-require_once 'model/PaymentFactor.php';
-require_once 'model/InStorePaymentScenario.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\pay;
 
-class UserPresentedCodePaymentRequest extends AlipayPayRequest{
+use Exception;
+use Model\Amount;
+use Model\InStorePaymentScenario;
+use Model\PaymentFactor;
+use Model\PaymentMethod;
+use Model\ProductCodeType;
+
+class UserPresentedCodePaymentRequest extends AlipayPayRequest
+{
 
 
+    function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentCode, $paymentNotifyUrl, $paymentExpiryTime)
+    {
+        $this->setPath('/ams/api/v1/payments/pay');
+        $this->setProductCode(ProductCodeType::IN_STORE_PAYMENT);
 
-    function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentCode, $paymentNotifyUrl, $paymentExpiryTime) {
-		$this->setPath('/ams/api/v1/payments/pay');
-		$this->setProductCode(ProductCodeType::IN_STORE_PAYMENT);
-
-		$paymentAmount = new Amount();
-		$paymentAmount->setCurrency($currency);
-		$paymentAmount->setValue($amountInCents);
+        $paymentAmount = new Amount();
+        $paymentAmount->setCurrency($currency);
+        $paymentAmount->setValue($amountInCents);
         $this->setPaymentAmount($paymentAmount);
 
         $paymentMethod = new PaymentMethod();
@@ -33,17 +35,18 @@ class UserPresentedCodePaymentRequest extends AlipayPayRequest{
         $this->setPaymentRequestId($paymentRequestId);
         $this->setOrder($order);
 
-		if (isset($paymentNotifyUrl)){
+        if (isset($paymentNotifyUrl)) {
             $this->setPaymentNotifyUrl($paymentNotifyUrl);
         }
-         
+
         if (isset($paymentExpiryTime)) {
             $this->setPaymentExpireTime($paymentExpiryTime);
-        }       
-        
+        }
+
     }
 
-    function validate() {
+    function validate()
+    {
         $this->assertTrue(isset($this->order), "order required.");
         $this->assertTrue(isset($this->order->merchant), "order.merchant required.");
         $this->assertTrue(isset($this->order->orderAmount), "order.orderAmount required.");
@@ -60,9 +63,10 @@ class UserPresentedCodePaymentRequest extends AlipayPayRequest{
         $this->assertTrue(isset($this->order->env->storeTerminalRequestTime), "order.env.storeTerminalRequestTime required.");
     }
 
-    function assertTrue($exp, $msg) {
+    function assertTrue($exp, $msg)
+    {
         if (!$exp) {
-    		throw new Exception($msg);
+            throw new Exception($msg);
         }
     }
 

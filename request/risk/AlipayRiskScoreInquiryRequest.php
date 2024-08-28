@@ -1,6 +1,11 @@
 <?php
 
-class AlipayRiskScoreInquiryRequest extends AlipayRequest{
+namespace Request\risk;
+
+use Request\AlipayRequest;
+
+class AlipayRiskScoreInquiryRequest extends AlipayRequest
+{
 
     public $customerBelongsTo;
     public $customerIdType;

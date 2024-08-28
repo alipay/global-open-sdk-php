@@ -1,6 +1,9 @@
 <?php
 
-class PaymentOption{
+namespace Model;
+
+class PaymentOption
+{
 
     public $paymentMethodType;
     public $paymentMethodCategory;

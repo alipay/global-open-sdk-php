@@ -1,5 +1,6 @@
 <?php
 
+namespace Model;
 class SettlementStrategy
 {
 
@@ -20,7 +21,6 @@ class SettlementStrategy
     {
         $this->settlementCurrency = $settlementCurrency;
     }
-
 
 
 }

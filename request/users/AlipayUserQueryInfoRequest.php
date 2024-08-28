@@ -1,8 +1,11 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\users;
 
-class AlipayUserQueryInfoRequest extends AlipayRequest{
+use Request\AlipayRequest;
+
+class AlipayUserQueryInfoRequest extends AlipayRequest
+{
 
     public $accessToken;
 

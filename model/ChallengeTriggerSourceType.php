@@ -1,5 +1,8 @@
 <?php
-class ChallengeTriggerSourceType{
-    const AMS     = "AMS";
+
+namespace Model;
+class ChallengeTriggerSourceType
+{
+    const AMS = "AMS";
     const CHANNEL = "CHANNEL";
 }

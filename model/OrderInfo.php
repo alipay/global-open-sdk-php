@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class OrderInfo
 {
     public $orderAmount;
@@ -19,7 +21,6 @@ class OrderInfo
     {
         $this->orderAmount = $orderAmount;
     }
-
 
 
 }

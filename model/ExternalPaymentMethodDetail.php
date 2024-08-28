@@ -1,5 +1,8 @@
 <?php
-class ExternalPaymentMethodDetail{
+
+namespace Model;
+class ExternalPaymentMethodDetail
+{
 
     public $assetToken;
     public $accountDisplayName;

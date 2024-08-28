@@ -1,14 +1,18 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\auth;
 
-class AlipayAuthRevokeTokenRequest extends AlipayRequest{
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
+class AlipayAuthRevokeTokenRequest extends AlipayRequest
+{
 
     public $accessToken;
-    public  $extendInfo;
+    public $extendInfo;
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::AUTH_REVOKE_PATH);
     }
 

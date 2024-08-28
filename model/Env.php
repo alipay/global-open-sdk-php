@@ -1,6 +1,9 @@
 <?php
 
-class Env{
+namespace Model;
+
+class Env
+{
 
     public $terminalType;
     public $osType;
@@ -12,139 +15,157 @@ class Env{
     public $storeTerminalRequestTime;
 
     public $extendInfo;
-    public  $browserInfo;
-    public  $colorDepth;
-    public  $screenHeight;
-    public  $screenWidth;
-    public  $timeZoneOffset;
-    public  $deviceBrand;
-    public  $deviceModel;
-    public  $deviceLanguage;
-    public  $deviceId;
+    public $browserInfo;
+    public $colorDepth;
+    public $screenHeight;
+    public $screenWidth;
+    public $timeZoneOffset;
+    public $deviceBrand;
+    public $deviceModel;
+    public $deviceLanguage;
+    public $deviceId;
 
     /**
      * @return String
      */
-    public function getTerminalType(){
+    public function getTerminalType()
+    {
         return $this->terminalType;
     }
 
     /**
      * @param String $terminalType
      */
-    public function setTerminalType($terminalType){
+    public function setTerminalType($terminalType)
+    {
         $this->terminalType = $terminalType;
     }
 
     /**
      * @return OsType
      */
-    public function getOsType(){
+    public function getOsType()
+    {
         return $this->osType;
     }
 
     /**
      * @param OsType $osType
      */
-    public function setOsType($osType){
+    public function setOsType($osType)
+    {
         $this->osType = $osType;
     }
 
     /**
      * @return String
      */
-    public function getUserAgent(){
+    public function getUserAgent()
+    {
         return $this->userAgent;
     }
 
     /**
      * @param String $userAgent
      */
-    public function setUserAgent($userAgent){
+    public function setUserAgent($userAgent)
+    {
         $this->userAgent = $userAgent;
     }
 
     /**
      * @return String
      */
-    public function getDeviceTokenId(){
+    public function getDeviceTokenId()
+    {
         return $this->deviceTokenId;
     }
 
     /**
      * @param String $deviceTokenId
      */
-    public function setDeviceTokenId($deviceTokenId){
+    public function setDeviceTokenId($deviceTokenId)
+    {
         $this->deviceTokenId = $deviceTokenId;
     }
 
     /**
      * @return String
      */
-    public function getClientIp(){
+    public function getClientIp()
+    {
         return $this->clientIp;
     }
 
     /**
      * @param String $clientIp
      */
-    public function setClientIp($clientIp){
+    public function setClientIp($clientIp)
+    {
         $this->clientIp = $clientIp;
     }
 
     /**
      * @return String
      */
-    public function getCookieId(){
+    public function getCookieId()
+    {
         return $this->cookieId;
     }
 
     /**
      * @param String $cookieId
      */
-    public function setCookieId($cookieId){
+    public function setCookieId($cookieId)
+    {
         $this->cookieId = $cookieId;
     }
 
     /**
      * @return String
      */
-    public function getStoreTerminalId(){
+    public function getStoreTerminalId()
+    {
         return $this->storeTerminalId;
     }
 
     /**
      * @param String $storeTerminalId
      */
-    public function setStoreTerminalId($storeTerminalId){
+    public function setStoreTerminalId($storeTerminalId)
+    {
         $this->storeTerminalId = $storeTerminalId;
     }
 
     /**
      * @return String
      */
-    public function getStoreTerminalRequestTime(){
+    public function getStoreTerminalRequestTime()
+    {
         return $this->storeTerminalRequestTime;
     }
 
     /**
      * @param String $storeTerminalRequestTime
      */
-    public function setStoreTerminalRequestTime($storeTerminalRequestTime){
+    public function setStoreTerminalRequestTime($storeTerminalRequestTime)
+    {
         $this->storeTerminalRequestTime = $storeTerminalRequestTime;
     }
 
     /**
      * @return String
      */
-    public function getExtendInfo(){
+    public function getExtendInfo()
+    {
         return $this->extendInfo;
     }
 
     /**
      * @param String $extendInfo
      */
-    public function setExtendInfo($extendInfo){
+    public function setExtendInfo($extendInfo)
+    {
         $this->extendInfo = $extendInfo;
     }
 
@@ -291,5 +312,5 @@ class Env{
     {
         $this->deviceId = $deviceId;
     }
-    
+
 }

@@ -1,5 +1,8 @@
 <?php
-class DiscountPaymentMethodDetail{
+
+namespace Model;
+class DiscountPaymentMethodDetail
+{
     public $discountId;
     public $availableAmount;
     public $discountName;

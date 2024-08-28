@@ -1,5 +1,9 @@
 <?php
-class PaymentFactor{
+
+namespace Model;
+
+class PaymentFactor
+{
 
     public $isPaymentEvaluation;
     public $inStorePaymentScenario;
@@ -88,7 +92,6 @@ class PaymentFactor{
     {
         $this->captureMode = $captureMode;
     }
-
 
 
 }

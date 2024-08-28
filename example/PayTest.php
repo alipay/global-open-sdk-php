@@ -1,34 +1,34 @@
 <?php
-set_include_path(__DIR__ . '/..');
+require '../init.php';
 
-require_once 'model/ProductCodeType.php';
-require_once 'model/Order.php';
-require_once 'model/Merchant.php';
-require_once 'model/Store.php';
-require_once 'model/Amount.php';
-require_once 'model/Env.php';
-require_once 'DefaultAlipayClient.php';
-require_once 'model/TerminalType.php';
-require_once 'model/OsType.php';
-require_once 'model/WalletPaymentMethodType.php';
-require_once 'model/SettlementStrategy.php';
-require_once 'request/pay/AlipayPayQueryRequest.php';
-require_once 'request/pay/AlipayPayRequest.php';
-require_once 'model/PaymentMethod.php';
-require_once 'request/pay/AlipayRefundRequest.php';
-require_once 'request/pay/AlipayInquiryRefundRequest.php';
-require_once 'request/pay/AlipayPayCancelRequest.php';
-require_once 'request/pay/AlipayPaymentSessionRequest.php';
-require_once 'model/Buyer.php';
-require_once 'request/pay/AlipayPayConsultRequest.php';
-require_once 'model/PaymentFactor.php';
-require_once 'model/PresentmentMode.php';
-
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Buyer;
+use Model\Env;
+use Model\Merchant;
+use Model\Order;
+use Model\OsType;
+use Model\PaymentFactor;
+use Model\PaymentMethod;
+use Model\PresentmentMode;
+use Model\ProductCodeType;
+use Model\SettlementStrategy;
+use Model\Store;
+use Model\TerminalType;
+use Model\WalletPaymentMethodType;
+use Request\pay\AlipayInquiryRefundRequest;
+use Request\pay\AlipayPayCancelRequest;
+use Request\pay\AlipayPayConsultRequest;
+use Request\pay\AlipayPaymentSessionRequest;
+use Request\pay\AlipayPayQueryRequest;
+use Request\pay\AlipayPayRequest;
+use Request\pay\AlipayRefundRequest;
 
 
 const clientId = "";
-const  merchantPrivateKey = "";
-const  alipayPublicKey = "";
+const merchantPrivateKey = "";
+const alipayPublicKey = "";
+const gatewayUrl = "";
 
 
 function pay()
@@ -213,9 +213,9 @@ function consult()
 }
 
 //pay();
-//cancel("PR_172352027421");
+//cancel("PR_1724811957224");
 //queryPay("PR_172352027421");
 //refund("202408131940108001001881A0212894597");
 //queryRefund("refund_1723527767056");
-//consult();
+consult();
 //createSession();

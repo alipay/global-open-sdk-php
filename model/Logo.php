@@ -1,6 +1,9 @@
 <?php
 
-class Logo {
+
+namespace Model;
+class Logo
+{
 
     public $logoName;
     public $logoUrl;

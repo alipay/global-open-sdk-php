@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PresentmentMode
 {
     const BUNDLE = "BUNDLE";

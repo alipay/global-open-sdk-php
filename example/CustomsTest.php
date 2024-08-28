@@ -1,19 +1,21 @@
 <?php
-set_include_path(__DIR__ . '/..');
+require '../init.php';
 
-require_once 'request/customs/AlipayCustomsDeclareRequest.php';
-require_once 'DefaultAlipayClient.php';
-require_once 'model/Amount.php';
-require_once 'model/MerchantCustomsInfo.php';
-require_once 'model/CustomsInfo.php';
-require_once 'model/Certificate.php';
-require_once 'model/UserName.php';
-require_once 'model/CertificateType.php';
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Certificate;
+use model\CertificateType;
+use Model\CustomsInfo;
+use Model\MerchantCustomsInfo;
+use model\UserName;
+use Request\customs\AlipayCustomsDeclareRequest;
+
 
 const clientId = "";
-const  merchantPrivateKey = "";
-const  alipayPublicKey = "";
+const merchantPrivateKey = "";
+const alipayPublicKey = "";
 const gatewayUrl = "";
+
 
 function declares($paymentId)
 {
@@ -48,14 +50,14 @@ function declares($paymentId)
     $alipayResponse = $alipayClient->execute($request);
 
     print(json_encode($alipayResponse));
-    print("\n".$requestId);
+    print("\n" . $requestId);
 
 }
 
 function inquiryDeclaration($declareRequestId)
 {
 
-    $request = new AlipayCustomsQueryRequest();
+    $request = new \Request\customs\AlipayCustomsQueryRequest();
     $request->setDeclarationRequestIds([$declareRequestId]);
 
     $alipayClient = new DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);

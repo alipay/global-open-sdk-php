@@ -1,5 +1,8 @@
 <?php
-class Shipping{
+
+namespace Model;
+class Shipping
+{
 
     public $shippingName;
     public $shippingAddress;
@@ -9,56 +12,64 @@ class Shipping{
     /**
      * @return String
      */
-    public function getShippingName(){
+    public function getShippingName()
+    {
         return $this->shippingName;
     }
 
     /**
      * @param String $shippingName
      */
-    public function setShippingName($shippingName){
+    public function setShippingName($shippingName)
+    {
         $this->shippingName = $shippingName;
     }
 
     /**
      * @return Address
      */
-    public function getShippingAddress(){
+    public function getShippingAddress()
+    {
         return $this->shippingAddress;
     }
 
     /**
      * @param Address $shippingAddress
      */
-    public function setShippingAddress($shippingAddress){
+    public function setShippingAddress($shippingAddress)
+    {
         $this->shippingAddress = $shippingAddress;
     }
 
     /**
      * @return String
      */
-    public function getShippingCarrier(){
+    public function getShippingCarrier()
+    {
         return $this->shippingCarrier;
     }
 
     /**
      * @param String $shippingCarrier
      */
-    public function setShippingCarrier($shippingCarrier){
+    public function setShippingCarrier($shippingCarrier)
+    {
         $this->shippingCarrier = $shippingCarrier;
     }
 
     /**
      * @return String
      */
-    public function getShippingPhoneNo(){
+    public function getShippingPhoneNo()
+    {
         return $this->shippingPhoneNo;
     }
 
     /**
      * @param String $shippingPhoneNo
      */
-    public function setShippingPhoneNo($shippingPhoneNo){
+    public function setShippingPhoneNo($shippingPhoneNo)
+    {
         $this->shippingPhoneNo = $shippingPhoneNo;
     }
 

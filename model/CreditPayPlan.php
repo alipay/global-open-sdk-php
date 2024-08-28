@@ -1,6 +1,9 @@
 <?php
 
-class CreditPayPlan{
+namespace Model;
+
+class CreditPayPlan
+{
 
     public $installmentNum;
     public $creditPayFeeType;

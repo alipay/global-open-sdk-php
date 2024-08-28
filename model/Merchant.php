@@ -1,6 +1,9 @@
 <?php
 
-class Merchant{
+
+namespace Model;
+class Merchant
+{
 
     public $referenceMerchantId;
     public $merchantMCC;
@@ -14,98 +17,112 @@ class Merchant{
     /**
      * @return String
      */
-    public function getReferenceMerchantId(){
+    public function getReferenceMerchantId()
+    {
         return $this->referenceMerchantId;
     }
 
     /**
      * @param String $referenceMerchantId
      */
-    public function setReferenceMerchantId($referenceMerchantId){
+    public function setReferenceMerchantId($referenceMerchantId)
+    {
         $this->referenceMerchantId = $referenceMerchantId;
     }
 
     /**
      * @return String
      */
-    public function getMerchantMCC(){
+    public function getMerchantMCC()
+    {
         return $this->merchantMCC;
     }
 
     /**
      * @param String $merchantMCC
      */
-    public function setMerchantMCC($merchantMCC){
+    public function setMerchantMCC($merchantMCC)
+    {
         $this->merchantMCC = $merchantMCC;
     }
 
     /**
      * @return String
      */
-    public function getMerchantName(){
+    public function getMerchantName()
+    {
         return $this->merchantName;
     }
 
     /**
      * @param String $merchantName
      */
-    public function setMerchantName($merchantName){
+    public function setMerchantName($merchantName)
+    {
         $this->merchantName = $merchantName;
     }
 
     /**
      * @return String
      */
-    public function getMerchantDisplayName(){
+    public function getMerchantDisplayName()
+    {
         return $this->merchantDisplayName;
     }
 
     /**
      * @param String $merchantDisplayName
      */
-    public function setMerchantDisplayName($merchantDisplayName){
+    public function setMerchantDisplayName($merchantDisplayName)
+    {
         $this->merchantDisplayName = $merchantDisplayName;
     }
 
     /**
      * @return Address
      */
-    public function getMerchantAddress(){
+    public function getMerchantAddress()
+    {
         return $this->merchantAddress;
     }
 
     /**
      * @param Address $merchantAddress
      */
-    public function setMerchantAddress($merchantAddress){
+    public function setMerchantAddress($merchantAddress)
+    {
         $this->merchantAddress = $merchantAddress;
     }
 
     /**
      * @return String
      */
-    public function getMerchantRegisterDate(){
+    public function getMerchantRegisterDate()
+    {
         return $this->merchantRegisterDate;
     }
 
     /**
      * @param String $merchantRegisterDate
      */
-    public function setMerchantRegisterDate($merchantRegisterDate){
+    public function setMerchantRegisterDate($merchantRegisterDate)
+    {
         $this->merchantRegisterDate = $merchantRegisterDate;
     }
 
     /**
      * @return Store
      */
-    public function getStore(){
+    public function getStore()
+    {
         return $this->store;
     }
 
     /**
      * @param Store $store
      */
-    public function setStore($store){
+    public function setStore($store)
+    {
         $this->store = $store;
     }
 
@@ -124,7 +141,6 @@ class Merchant{
     {
         $this->merchantType = $merchantType;
     }
-
 
 
 }

@@ -1,12 +1,16 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\auth;
 
-class AlipayAuthQueryTokenRequest extends AlipayRequest{
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
+class AlipayAuthQueryTokenRequest extends AlipayRequest
+{
     public $accessToken;
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::AUTH_QUERY_PATH);
     }
 
@@ -14,14 +18,16 @@ class AlipayAuthQueryTokenRequest extends AlipayRequest{
     /**
      * @return mixed
      */
-    public function getAccessToken(){
+    public function getAccessToken()
+    {
         return $this->accessToken;
     }
 
     /**
      * @param mixed $accessToken
      */
-    public function setAccessToken($accessToken){
+    public function setAccessToken($accessToken)
+    {
         $this->accessToken = $accessToken;
     }
 

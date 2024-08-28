@@ -1,5 +1,9 @@
 <?php
-class UserName{
+
+namespace Model;
+
+class UserName
+{
 
     public $firstName;
     public $middleName;
@@ -9,56 +13,64 @@ class UserName{
     /**
      * @return String
      */
-    public function getFirstName(){
+    public function getFirstName()
+    {
         return $this->firstName;
     }
 
     /**
      * @param String $firstName
      */
-    public function setFirstName($firstName){
+    public function setFirstName($firstName)
+    {
         $this->firstName = $firstName;
     }
 
     /**
      * @return String
      */
-    public function getMiddleName(){
+    public function getMiddleName()
+    {
         return $this->middleName;
     }
 
     /**
      * @param String $middleName
      */
-    public function setMiddleName($middleName){
+    public function setMiddleName($middleName)
+    {
         $this->middleName = $middleName;
     }
 
     /**
      * @return String
      */
-    public function getLastName(){
+    public function getLastName()
+    {
         return $this->lastName;
     }
 
     /**
      * @param String $lastName
      */
-    public function setLastName($lastName){
+    public function setLastName($lastName)
+    {
         $this->lastName = $lastName;
     }
 
     /**
      * @return String
      */
-    public function getFullName(){
+    public function getFullName()
+    {
         return $this->fullName;
     }
 
     /**
      * @param String $fullName
      */
-    public function setFullName($fullName){
+    public function setFullName($fullName)
+    {
         $this->fullName = $fullName;
     }
 

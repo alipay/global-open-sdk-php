@@ -1,9 +1,13 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
 
-class AlipayRefundRequest extends AlipayRequest{
+namespace Request\pay;
+
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
+class AlipayRefundRequest extends AlipayRequest
+{
 
     public $refundRequestId;
     public $paymentId;
@@ -19,7 +23,8 @@ class AlipayRefundRequest extends AlipayRequest{
     public $refundSourceAccountNo;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::REFUND_PATH);
     }
 
@@ -183,7 +188,6 @@ class AlipayRefundRequest extends AlipayRequest{
     {
         $this->refundSourceAccountNo = $refundSourceAccountNo;
     }
-
 
 
 }

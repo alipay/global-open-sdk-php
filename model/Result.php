@@ -1,6 +1,9 @@
 <?php
 
-class Result{
+namespace Model;
+
+class Result
+{
 
     public $resultCode;
     public $resultStatus;

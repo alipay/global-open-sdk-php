@@ -1,6 +1,9 @@
 <?php
 
-class HttpRpcResult{
+namespace Model;
+
+class HttpRpcResult
+{
 
     public $rspBody;
     public $rspSign;
@@ -9,42 +12,48 @@ class HttpRpcResult{
     /**
      * @return mixed
      */
-    public function getRspBody(){
+    public function getRspBody()
+    {
         return $this->rspBody;
     }
 
     /**
      * @param mixed $rspBody
      */
-    public function setRspBody($rspBody){
+    public function setRspBody($rspBody)
+    {
         $this->rspBody = $rspBody;
     }
 
     /**
      * @return mixed
      */
-    public function getRspSign(){
+    public function getRspSign()
+    {
         return $this->rspSign;
     }
 
     /**
      * @param mixed $rspSign
      */
-    public function setRspSign($rspSign){
+    public function setRspSign($rspSign)
+    {
         $this->rspSign = $rspSign;
     }
 
     /**
      * @return mixed
      */
-    public function getRspTime(){
+    public function getRspTime()
+    {
         return $this->rspTime;
     }
 
     /**
      * @param mixed $repTime
      */
-    public function setRspTime($rspTime){
+    public function setRspTime($rspTime)
+    {
         $this->rspTime = $rspTime;
     }
 

@@ -1,5 +1,8 @@
 <?php
-class CardPaymentMethodDetail{
+
+namespace Model;
+class CardPaymentMethodDetail
+{
 
     public $cardToken;
     public $cardNo;

@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PeriodRule
 {
     public $periodType;
@@ -37,7 +39,6 @@ class PeriodRule
     {
         $this->periodCount = $periodCount;
     }
-
 
 
 }

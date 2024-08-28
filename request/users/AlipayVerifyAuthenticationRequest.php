@@ -1,8 +1,11 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\users;
 
-class AlipayVerifyAuthenticationRequest extends AlipayRequest{
+use Request\AlipayRequest;
+
+class AlipayVerifyAuthenticationRequest extends AlipayRequest
+{
 
     public $authenticationType;
     public $authenticationRequestId;

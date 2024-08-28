@@ -1,9 +1,10 @@
 <?php
 
+namespace Model;
 class CustomsInfo
 {
-    public  $customsCode;
-    public  $region;
+    public $customsCode;
+    public $region;
 
     /**
      * @return mixed

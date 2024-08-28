@@ -1,8 +1,11 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
+namespace Request\merchant;
 
-class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest {
+use Request\AlipayRequest;
+
+class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest
+{
 
     public $referenceMerchantId;
 
@@ -21,7 +24,6 @@ class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest {
     {
         $this->referenceMerchantId = $referenceMerchantId;
     }
-
 
 
 }

@@ -1,9 +1,12 @@
 <?php
 
-require_once 'request/AlipayRequest.php';
-require_once 'model/AntomPathConstants.php';
+namespace Request\pay;
 
-class AlipayPayCancelRequest extends AlipayRequest{
+use Model\AntomPathConstants;
+use Request\AlipayRequest;
+
+class AlipayPayCancelRequest extends AlipayRequest
+{
 
     public $paymentId;
     public $paymentRequestId;
@@ -11,12 +14,10 @@ class AlipayPayCancelRequest extends AlipayRequest{
     public $merchantAccountId;
 
 
-
-
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::CANCEL_PATH);
     }
-
 
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class PspCustomerInfo
 {
 
@@ -106,7 +108,6 @@ class PspCustomerInfo
     {
         $this->extendInfo = $extendInfo;
     }
-
 
 
 }

@@ -1,6 +1,9 @@
 <?php
 
-class RedirectActionForm{
+namespace Model;
+
+class RedirectActionForm
+{
 
     public $method;
     public $parameters;
