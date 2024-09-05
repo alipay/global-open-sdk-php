@@ -1,12 +1,12 @@
 <?php
 require '../init.php';
 
-use   \Request\pay\OrderCodePaymentRequest;
-use   \Model\Order;
-use   \Model\Merchant;
-use   \Model\Store;
-use   \Model\Amount;
-use   \Client\DefaultAlipayClient;
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Merchant;
+use Model\Order;
+use Model\Store;
+use Request\pay\OrderCodePaymentRequest;
 
 
 $clientId = "T_385XSM502Y108602A";

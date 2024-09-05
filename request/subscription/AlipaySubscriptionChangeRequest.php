@@ -5,17 +5,17 @@ namespace Request\subscription;
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
 
-class AlipaySubscriptionChangeRequest  extends AlipayRequest
+class AlipaySubscriptionChangeRequest extends AlipayRequest
 {
     /**
      * The unique ID assigned by a merchant to identify a subscription change request. Alipay uses this field for idempotency control.
      */
-    public  $subscriptionChangeRequestId;
+    public $subscriptionChangeRequestId;
 
     /**
      * The unique ID assigned by Alipay to identify a subscription.
      */
-    public  $subscriptionId;
+    public $subscriptionId;
 
     /**
      * The description of the subscription, used for displaying user consumption records and other actions.
@@ -25,40 +25,41 @@ class AlipaySubscriptionChangeRequest  extends AlipayRequest
     /**
      * The date and time when the subscription becomes active.
      */
-    public  $subscriptionStartTime;
+    public $subscriptionStartTime;
 
     /**
      * The date and time when the subscription ends.
      */
-    public  $subscriptionEndTime;
+    public $subscriptionEndTime;
 
     /**
      * The subscription period rule, used to define a subscription's billing period.
      */
-    public  $periodRule;
+    public $periodRule;
 
     /**
      * A specific date and time after which the created subscription expires.
      */
-    public  $subscriptionExpiryTime;
+    public $subscriptionExpiryTime;
 
     /**
      * The order information of the subscription.
      */
-    public  $orderInfo;
+    public $orderInfo;
 
     /**
      * The payment amount charged to the user per subscription period.
      */
-    public  $paymentAmount;
+    public $paymentAmount;
 
     /**
      * The payment amount for the initial subscription period after changing the payment amount for subsequent subscription periods.
      */
-    public  $paymentAmountDifference;
+    public $paymentAmountDifference;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::SUBSCRIPTION_CHANGE_PATH);
     }
 
@@ -222,8 +223,6 @@ class AlipaySubscriptionChangeRequest  extends AlipayRequest
     {
         $this->paymentAmountDifference = $paymentAmountDifference;
     }
-
-
 
 
 }

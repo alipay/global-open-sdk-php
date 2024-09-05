@@ -160,6 +160,7 @@ $alipayPayResponse = $yourAlipayClient->execute($aliPayRequest);
 ```
 
 #### 3 If you don't care about HTTP calls,the sample for sign and verify
+
 ```
 $signReqValue  = SignatureTool::sign($httpMethod, $path, $clientId, $reqTime, $reqBody, $merchantPrivateKey);
 $isVerifyPass  = SignatureTool::verify($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue, $alipayPublicKey);

@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class Result{
+class Result
+{
 
     public $resultCode;
     public $resultStatus;

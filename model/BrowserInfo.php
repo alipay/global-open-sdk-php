@@ -17,17 +17,17 @@ class BrowserInfo
     /**
      * Indicates whether the user's browser is able to run Java
      */
-    public  $javaScriptEnabled;
+    public $javaScriptEnabled;
 
     /**
      * The language of the user's browser
      */
-    public  $language;
+    public $language;
 
     /**
      * The user agent of the user's browser
      */
-    public  $userAgent;
+    public $userAgent;
 
     /**
      * @return mixed
@@ -108,7 +108,6 @@ class BrowserInfo
     {
         $this->userAgent = $userAgent;
     }
-
 
 
 }

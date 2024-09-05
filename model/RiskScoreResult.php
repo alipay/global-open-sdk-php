@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class RiskScoreResult{
+class RiskScoreResult
+{
 
     public $riskScoreType;
     public $riskScore;

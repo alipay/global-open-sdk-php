@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class PaymentMethod{
+class PaymentMethod
+{
 
     public $paymentMethodType;
     public $paymentMethodId;

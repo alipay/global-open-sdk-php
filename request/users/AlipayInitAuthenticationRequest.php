@@ -4,7 +4,8 @@ namespace Request\users;
 
 use Request\AlipayRequest;
 
-class AlipayInitAuthenticationRequest extends AlipayRequest{
+class AlipayInitAuthenticationRequest extends AlipayRequest
+{
 
     public $authenticationType;
     public $authenticationRequestId;
@@ -91,5 +92,5 @@ class AlipayInitAuthenticationRequest extends AlipayRequest{
     {
         $this->userIdentityValue = $userIdentityValue;
     }
-    
+
 }

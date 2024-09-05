@@ -2,8 +2,9 @@
 
 namespace Model;
 
-class OsType{
-    const IOS     = "IOS";
+class OsType
+{
+    const IOS = "IOS";
     const ANDROID = "ANDROID";
 
 }

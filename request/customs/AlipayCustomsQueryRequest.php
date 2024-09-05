@@ -5,13 +5,15 @@ namespace Request\customs;
 
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
-class AlipayCustomsQueryRequest  extends AlipayRequest
+
+class AlipayCustomsQueryRequest extends AlipayRequest
 {
 
     public $declarationRequestIds;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::INQUIRY_DECLARE_PATH);
     }
 
@@ -31,7 +33,6 @@ class AlipayCustomsQueryRequest  extends AlipayRequest
     {
         $this->declarationRequestIds = $declarationRequestIds;
     }
-
 
 
 }

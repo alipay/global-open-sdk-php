@@ -4,7 +4,8 @@ namespace Request\users;
 
 use Request\AlipayRequest;
 
-class AlipayUserQueryInfoRequest extends AlipayRequest{
+class AlipayUserQueryInfoRequest extends AlipayRequest
+{
 
     public $accessToken;
 

@@ -2,26 +2,25 @@
 
 namespace Request\pay;
 
-use Model\Amount;
-use Model\AntomPathConstants;
 use Exception;
+use Model\Amount;
 use Model\InStorePaymentScenario;
 use Model\PaymentFactor;
 use Model\PaymentMethod;
 use Model\ProductCodeType;
-use Request\AlipayRequest;
 
-class OrderCodePaymentRequest extends AlipayPayRequest{
+class OrderCodePaymentRequest extends AlipayPayRequest
+{
 
 
+    function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentNotifyUrl, $paymentExpiryTime)
+    {
+        $this->setPath('/ams/api/v1/payments/pay');
+        $this->setProductCode(ProductCodeType::IN_STORE_PAYMENT);
 
-    function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentNotifyUrl, $paymentExpiryTime) {
-		$this->setPath('/ams/api/v1/payments/pay');
-		$this->setProductCode(ProductCodeType::IN_STORE_PAYMENT);
-
-		$paymentAmount = new Amount();
-		$paymentAmount->setCurrency($currency);
-		$paymentAmount->setValue($amountInCents);
+        $paymentAmount = new Amount();
+        $paymentAmount->setCurrency($currency);
+        $paymentAmount->setValue($amountInCents);
         $this->setPaymentAmount($paymentAmount);
 
         $paymentMethod = new PaymentMethod();
@@ -35,17 +34,18 @@ class OrderCodePaymentRequest extends AlipayPayRequest{
         $this->setPaymentRequestId($paymentRequestId);
         $this->setOrder($order);
 
-		if (isset($paymentNotifyUrl)){
+        if (isset($paymentNotifyUrl)) {
             $this->setPaymentNotifyUrl($paymentNotifyUrl);
         }
-         
+
         if (isset($paymentExpiryTime)) {
             $this->setPaymentExpireTime($paymentExpiryTime);
-        }       
-        
+        }
+
     }
 
-    function validate() {
+    function validate()
+    {
         $this->assertTrue(isset($this->order), "order required.");
         $this->assertTrue(isset($this->order->merchant), "order.merchant required.");
         $this->assertTrue(isset($this->order->orderAmount), "order.orderAmount required.");
@@ -59,9 +59,10 @@ class OrderCodePaymentRequest extends AlipayPayRequest{
         $this->assertTrue(isset($this->order->merchant->store->storeMCC), "order.merchant.store.storeMcc required.");
     }
 
-    function assertTrue($exp, $msg) {
+    function assertTrue($exp, $msg)
+    {
         if (!$exp) {
-    		throw new Exception($msg);
+            throw new Exception($msg);
         }
     }
 

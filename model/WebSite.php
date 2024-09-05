@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class WebSite {
+class WebSite
+{
     public $name;
     public $url;
     public $desc;

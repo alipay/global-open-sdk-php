@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class PaymentMethodDetailType{
+class PaymentMethodDetailType
+{
     const CARD = "CARD";
     const EXTERNALACCOUNT = "EXTERNALACCOUNT";
     const COUPON = "COUPON";

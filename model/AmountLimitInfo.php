@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class AmountLimitInfo{
+class AmountLimitInfo
+{
 
     public $singleLimit;
     public $dayLimit;

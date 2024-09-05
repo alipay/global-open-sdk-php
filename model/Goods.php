@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class Goods{
+class Goods
+{
 
     public $referenceGoodsId;
     public $goodsName;
@@ -14,98 +15,112 @@ class Goods{
     /**
      * @return String
      */
-    public function getReferenceGoodsId(){
+    public function getReferenceGoodsId()
+    {
         return $this->referenceGoodsId;
     }
 
     /**
      * @param String $referenceGoodsId
      */
-    public function setReferenceGoodsId($referenceGoodsId){
+    public function setReferenceGoodsId($referenceGoodsId)
+    {
         $this->referenceGoodsId = $referenceGoodsId;
     }
 
     /**
      * @return String
      */
-    public function getGoodsName(){
+    public function getGoodsName()
+    {
         return $this->goodsName;
     }
 
     /**
      * @param String $goodsName
      */
-    public function setGoodsName($goodsName){
+    public function setGoodsName($goodsName)
+    {
         $this->goodsName = $goodsName;
     }
 
     /**
      * @return String
      */
-    public function getGoodsCategory(){
+    public function getGoodsCategory()
+    {
         return $this->goodsCategory;
     }
 
     /**
      * @param String $goodsCategory
      */
-    public function setGoodsCategory($goodsCategory){
+    public function setGoodsCategory($goodsCategory)
+    {
         $this->goodsCategory = $goodsCategory;
     }
 
     /**
      * @return String
      */
-    public function getGoodsBrand(){
+    public function getGoodsBrand()
+    {
         return $this->goodsBrand;
     }
 
     /**
      * @param String $goodsBrand
      */
-    public function setGoodsBrand($goodsBrand){
+    public function setGoodsBrand($goodsBrand)
+    {
         $this->goodsBrand = $goodsBrand;
     }
 
     /**
      * @return Amount
      */
-    public function getGoodsUnitAmount(){
+    public function getGoodsUnitAmount()
+    {
         return $this->goodsUnitAmount;
     }
 
     /**
      * @param Amount $goodsUnitAmount
      */
-    public function setGoodsUnitAmount($goodsUnitAmount){
+    public function setGoodsUnitAmount($goodsUnitAmount)
+    {
         $this->goodsUnitAmount = $goodsUnitAmount;
     }
 
     /**
      * @return String
      */
-    public function getGoodsQuantity(){
+    public function getGoodsQuantity()
+    {
         return $this->goodsQuantity;
     }
 
     /**
      * @param String $goodsQuantity
      */
-    public function setGoodsQuantity($goodsQuantity){
+    public function setGoodsQuantity($goodsQuantity)
+    {
         $this->goodsQuantity = $goodsQuantity;
     }
 
     /**
      * @return String
      */
-    public function getGoodsSkuName(){
+    public function getGoodsSkuName()
+    {
         return $this->goodsSkuName;
     }
 
     /**
      * @param String $goodsSkuName
      */
-    public function setGoodsSkuName($goodsSkuName){
+    public function setGoodsSkuName($goodsSkuName)
+    {
         $this->goodsSkuName = $goodsSkuName;
     }
 

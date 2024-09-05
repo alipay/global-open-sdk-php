@@ -4,25 +4,28 @@ namespace Request\pay;
 
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
-class AlipayInquiryRefundRequest extends AlipayRequest{
+
+class AlipayInquiryRefundRequest extends AlipayRequest
+{
 
     /**
      * The unique ID assigned by a merchant to identify a refund request
      */
-    public  $refundRequestId;
+    public $refundRequestId;
 
     /**
      * The unique ID assigned by Alipay to identify a refund
      */
-    public  $refundId;
+    public $refundId;
 
     /**
      * The unique ID to identify a merchant account.
      */
-    public  $merchantAccountId;
+    public $merchantAccountId;
 
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::INQUIRY_REFUND_PATH);
     }
 

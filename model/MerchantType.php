@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class MerchantType {
+class MerchantType
+{
     const INDIVIDUAL = "INDIVIDUAL";
     const ENTERPRISE = "ENTERPRISE";
 }

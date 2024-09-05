@@ -2,7 +2,8 @@
 
 namespace Request;
 
-class AlipayRequest{
+class AlipayRequest
+{
     private $path;
     private $clientId;
     private $keyVersion;
@@ -11,28 +12,32 @@ class AlipayRequest{
     /**
      * @return mixed
      */
-    public function getPath(){
+    public function getPath()
+    {
         return $this->path;
     }
 
     /**
      * @param mixed $path
      */
-    public function setPath($path){
+    public function setPath($path)
+    {
         $this->path = $path;
     }
 
     /**
      * @return mixed
      */
-    public function getClientId(){
+    public function getClientId()
+    {
         return $this->clientId;
     }
 
     /**
      * @param mixed $clientId
      */
-    public function setClientId($clientId){
+    public function setClientId($clientId)
+    {
         $this->clientId = $clientId;
     }
 
@@ -55,7 +60,8 @@ class AlipayRequest{
     /**
      * @return string
      */
-    public function getHttpMethod(){
+    public function getHttpMethod()
+    {
         return $this->httpMethod;
     }
 

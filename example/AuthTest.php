@@ -2,16 +2,17 @@
 
 
 require '../init.php';
-use \Request\auth\AlipayAuthConsultRequest;
-use \Request\auth\AlipayAuthApplyTokenRequest;
-use \Model\GrantType;
-use \MOdel\CustomerBelongsTo;
-use \Client\DefaultAlipayClient;
+
+use Client\DefaultAlipayClient;
+use MOdel\CustomerBelongsTo;
+use Model\GrantType;
+use Request\auth\AlipayAuthApplyTokenRequest;
+use Request\auth\AlipayAuthConsultRequest;
 
 
 const clientId = "";
-const  merchantPrivateKey = "";
-const  alipayPublicKey = "";
+const merchantPrivateKey = "";
+const alipayPublicKey = "";
 const gatewayUrl = "";
 
 
@@ -28,7 +29,6 @@ function applyToken($authCode)
     print(json_encode($alipayResponse));
 
 }
-
 
 
 function authConsult()

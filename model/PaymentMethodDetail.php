@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class PaymentMethodDetail{
+class PaymentMethodDetail
+{
 
     public $paymentMethodDetailType;
     public $card;

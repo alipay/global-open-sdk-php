@@ -2,6 +2,7 @@
 
 namespace Model;
 
-class AuthenticationType{
-    const OTP  = "OTP";
+class AuthenticationType
+{
+    const OTP = "OTP";
 }

@@ -1,12 +1,13 @@
 <?php
 
 namespace Model;
-class Quote{
+class Quote
+{
 
     public $quoteId;
     public $quoteCurrencyPair;
     public $quotePrice;
-    public $quoteStartTime	;
+    public $quoteStartTime;
     public $quoteExpiryTime;
     public $guaranteed;
 

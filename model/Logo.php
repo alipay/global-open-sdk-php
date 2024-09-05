@@ -2,7 +2,8 @@
 
 
 namespace Model;
-class Logo {
+class Logo
+{
 
     public $logoName;
     public $logoUrl;

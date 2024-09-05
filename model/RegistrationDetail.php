@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class RegistrationDetail {
+class RegistrationDetail
+{
 
     public $legalName;
     public $attachments;

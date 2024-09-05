@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class ContactInfo {
+class ContactInfo
+{
 
     public $contactNo;
     public $contactType;

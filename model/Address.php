@@ -3,7 +3,8 @@
 
 namespace Model;
 
-class Address{
+class Address
+{
 
     public $region;
     public $state;
@@ -12,87 +13,100 @@ class Address{
     public $address2;
     public $zipCode;
     public $label;
+
     /**
      * @return String
      */
-    public function getRegion(){
+    public function getRegion()
+    {
         return $this->region;
     }
 
     /**
      * @param String $region
      */
-    public function setRegion($region){
+    public function setRegion($region)
+    {
         $this->region = $region;
     }
 
     /**
      * @return String
      */
-    public function getState(){
+    public function getState()
+    {
         return $this->state;
     }
 
     /**
      * @param String $state
      */
-    public function setState($state){
+    public function setState($state)
+    {
         $this->state = $state;
     }
 
     /**
      * @return String
      */
-    public function getCity(){
+    public function getCity()
+    {
         return $this->city;
     }
 
     /**
      * @param mixed $city
      */
-    public function setCity($city){
+    public function setCity($city)
+    {
         $this->city = $city;
     }
 
     /**
      * @return Address
      */
-    public function getAddress1(){
+    public function getAddress1()
+    {
         return $this->address1;
     }
 
     /**
      * @param Address $address1
      */
-    public function setAddress1($address1){
+    public function setAddress1($address1)
+    {
         $this->address1 = $address1;
     }
 
     /**
      * @return Address
      */
-    public function getAddress2(){
+    public function getAddress2()
+    {
         return $this->address2;
     }
 
     /**
      * @param Address $address2
      */
-    public function setAddress2($address2){
+    public function setAddress2($address2)
+    {
         $this->address2 = $address2;
     }
 
     /**
      * @return String
      */
-    public function getZipCode(){
+    public function getZipCode()
+    {
         return $this->zipCode;
     }
 
     /**
      * @param String $zipCode
      */
-    public function setZipCode($zipCode){
+    public function setZipCode($zipCode)
+    {
         $this->zipCode = $zipCode;
     }
 

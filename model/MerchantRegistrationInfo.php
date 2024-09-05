@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class MerchantRegistrationInfo {
+class MerchantRegistrationInfo
+{
 
     public $referenceMerchantId;
     public $merchantDisplayName;
@@ -122,7 +123,6 @@ class MerchantRegistrationInfo {
     {
         $this->registrationDetail = $registrationDetail;
     }
-
 
 
 }

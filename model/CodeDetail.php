@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class CodeDetail{
+class CodeDetail
+{
 
     public $codeValueType;
     public $codeValue;

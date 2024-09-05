@@ -1,7 +1,8 @@
 <?php
 
 namespace Model;
-class PaymentVerificationData{
+class PaymentVerificationData
+{
 
     public $verifyRequestId;
     public $authenticationCode;

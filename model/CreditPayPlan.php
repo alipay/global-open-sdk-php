@@ -2,7 +2,8 @@
 
 namespace Model;
 
-class CreditPayPlan{
+class CreditPayPlan
+{
 
     public $installmentNum;
     public $creditPayFeeType;

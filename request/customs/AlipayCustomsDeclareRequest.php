@@ -5,18 +5,19 @@ namespace Request\customs;
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
 
-class AlipayCustomsDeclareRequest  extends AlipayRequest
+class AlipayCustomsDeclareRequest extends AlipayRequest
 {
-    public  $declarationRequestId;
-    public  $paymentId;
-    public  $declarationAmount;
-    public  $customs;
-    public  $merchantCustomsInfo;
-    public  $splitOrder;
-    public  $subOrderId;
-    public  $buyerCertificate;
+    public $declarationRequestId;
+    public $paymentId;
+    public $declarationAmount;
+    public $customs;
+    public $merchantCustomsInfo;
+    public $splitOrder;
+    public $subOrderId;
+    public $buyerCertificate;
 
-    function __construct(){
+    function __construct()
+    {
         $this->setPath(AntomPathConstants::DECLARE_PATH);
     }
 
