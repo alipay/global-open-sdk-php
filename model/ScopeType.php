@@ -9,5 +9,5 @@ class ScopeType{
     const USER_LOGIN_ID  = "USER_LOGIN_ID";
     const HASH_LOGIN_ID  = "HASH_LOGIN_ID";
     const SEND_OTP       = "SEND_OTP";
-
+    const TAOBAO_REBIND  = "TAOBAO_REBIND";
 }
