@@ -17,6 +17,8 @@ class AntomPathConstants
     const CAPTURE_PATH = '/ams/api/v1/payments/capture';
     const INQUIRY_PAYMENT_PATH = '/ams/api/v1/payments/inquiryPayment';
     const CANCEL_PATH = '/ams/api/v1/payments/cancel';
+    const SYNC_ARREAR_PATH = "/ams/api/v1/payments/syncArrear";
+    const CREATE_DEVICE_CERTIFICATE_PATH = "/ams/api/v1/payments/createDeviceCertificate";
     const SUBSCRIPTION_CREATE_PATH = '/ams/api/v1/subscriptions/create';
     const SUBSCRIPTION_CHANGE_PATH = '/ams/api/v1/subscriptions/change';
     const SUBSCRIPTION_CANCEL_PATH = '/ams/api/v1/subscriptions/cancel';

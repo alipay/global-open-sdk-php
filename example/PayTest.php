@@ -182,7 +182,7 @@ function createSession()
     $alipayClient = new DefaultAlipayClient("https://open-sea-global.alipay.com", merchantPrivateKey, alipayPublicKey);
     $alipayResponse = $alipayClient->execute($request);
 
-    print(json_encode($alipayResponse));
+    print($alipayResponse -> result);
     print("\n" . $paymentRequestId);
 
 }
