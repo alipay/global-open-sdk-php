@@ -14,6 +14,9 @@ class Order
     public $buyer;
     public $env;
     public $extendInfo;
+    public $transit;
+    public $lodging;
+    public $gaming;
 
     /**
      * @return String
@@ -158,5 +161,55 @@ class Order
     {
         $this->extendInfo = $extendInfo;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getGaming()
+    {
+        return $this->gaming;
+    }
+
+    /**
+     * @param mixed $gaming
+     */
+    public function setGaming($gaming): void
+    {
+        $this->gaming = $gaming;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLodging()
+    {
+        return $this->lodging;
+    }
+
+    /**
+     * @param mixed $lodging
+     */
+    public function setLodging($lodging): void
+    {
+        $this->lodging = $lodging;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTransit()
+    {
+        return $this->transit;
+    }
+
+    /**
+     * @param mixed $transit
+     */
+    public function setTransit($transit): void
+    {
+        $this->transit = $transit;
+    }
+
+
 
 }

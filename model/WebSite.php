@@ -8,6 +8,8 @@ class WebSite
     public $url;
     public $desc;
 
+    public $type;
+
     /**
      * @return mixed
      */
@@ -55,6 +57,24 @@ class WebSite
     {
         $this->desc = $desc;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
+    }
+
+
 
 
 }
