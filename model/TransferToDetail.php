@@ -4,12 +4,31 @@ namespace Model;
 
 class TransferToDetail
 {
+    public $transferToMethod;
     public $transferToCurrency;
     public $feeAmount;
     public $actualTransferToAmount;
     public $purposeCode;
     public $transferNotifyUrl;
     public $transferRemark;
+
+    /**
+     * @return mixed
+     */
+    public function getTransferToMethod()
+    {
+        return $this->transferToMethod;
+    }
+
+    /**
+     * @param mixed $transferToMethod
+     */
+    public function setTransferToMethod($transferToMethod): void
+    {
+        $this->transferToMethod = $transferToMethod;
+    }
+
+
 
     /**
      * @return mixed

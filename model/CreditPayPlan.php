@@ -6,8 +6,27 @@ class CreditPayPlan
 {
 
     public $installmentNum;
+    public $interval;
     public $creditPayFeeType;
     public $feePercentage;
+
+    /**
+     * @return mixed
+     */
+    public function getInterval()
+    {
+        return $this->interval;
+    }
+
+    /**
+     * @param mixed $interval
+     */
+    public function setInterval($interval): void
+    {
+        $this->interval = $interval;
+    }
+
+
 
     /**
      * @return mixed

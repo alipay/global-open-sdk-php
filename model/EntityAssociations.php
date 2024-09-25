@@ -11,21 +11,6 @@ class EntityAssociations
     public $individual;
     public $shareholdingRatio;
 
-    /**
-     * @return mixed
-     */
-    public function getAssociationTyzpe()
-    {
-        return $this->associationTyzpe;
-    }
-
-    /**
-     * @param mixed $associationTyzpe
-     */
-    public function setAssociationTyzpe($associationTyzpe): void
-    {
-        $this->associationTyzpe = $associationTyzpe;
-    }
 
     /**
      * @return mixed
