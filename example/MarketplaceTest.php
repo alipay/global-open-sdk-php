@@ -19,18 +19,20 @@ function register()
     $settlementBankAccount = new \Model\SettlementBankAccount();
     $settlementBankAccount->setBranchCode("1231");
     $settlementBankAccount->setRoutingNumber("12");
+    $settlementBankAccount->setBankRegion("BR");
     $settlementBankAccount->setAccountType(\Model\AccountType::CHECKING);
-    $settlementBankAccount->setAccountHolderTIN("1213214");
+    $settlementBankAccount->setAccountHolderTIN("12345678901");
     $settlementBankAccount->setAccountHolderName("Timi");
     $settlementBankAccount->setBankAccountNo("121232141");
     $settlementBankAccount->setAccountHolderType(\Model\AccountHolderType::ENTERPRISE);
     $settlementInfo->setSettlementBankAccount($settlementBankAccount);
-    $alipayRegisterRequest->setSettlementInfos($settlementInfo);
+    $alipayRegisterRequest->setSettlementInfos([$settlementInfo]);
 
 
     $merchantInfo = new \Model\MerchantInfo();
-    $merchantInfo->setLoginId("wangzunjiao.wzj@digital-engine.com");
+    $merchantInfo->setLoginId( round(microtime(true) * 1000)."wangzunj3ao.wzj@digital-engine.com");
     $merchantInfo->setLegalEntityType(\Model\LegalEntityType::COMPANY);
+
 
     $company = new \Model\Company();
     $company->setLegalName("legalName");
@@ -44,20 +46,26 @@ function register()
     $company->setOperatingAddress($address1);
 
     $attachment = new \Model\Attachment();
-    $attachment->setAttachmentName("attachmentName");
-    $attachment->setAttachmentType(\Model\AttachmentType::ASSOCIATION_ARTICLE);
+    $attachment->setAttachmentName("1.jpg");
+    $attachment->setFileKey("test");
+    $attachment->setAttachmentType(\Model\AttachmentType::ARTICLES_OF_ASSOCIATION);
+    $attachment1 = new \Model\Attachment();
+    $attachment1->setFileKey("23423tewgusdhghdsiughsud");
+    $attachment1->setAttachmentType(\Model\AttachmentType::ASSOCIATION_ARTICLE);
+    $attachment1->setAttachmentName("2.jpg");
     $company->setAttachments([$attachment]);
     $company->setOperatingAddress($address);
+
     $certificate = new \Model\Certificate();
     $certificate->setCertificateNo("11321421");
     $certificate->setCertificateType(\Model\CertificateType::ENTERPRISE_REGISTRATION);
-    $company->setCertificates([$certificate]);
+    $company->setCertificates($certificate);
 
     $merchantInfo->setCompany($company);
     $merchantInfo->setReferenceMerchantId(round(microtime(true) * 1000));
 
     $businessInfo = new \Model\BusinessInfo();
-    $businessInfo->setDoingBusinessAs("DoingBusinessAs");
+    $businessInfo->setDoingBusinessAs("businessName_DBA");
     $webSite = new \Model\WebSite();
     $webSite->setUrl("www.alipay.com");
     $businessInfo->setWebsites([$webSite]);
@@ -66,24 +74,43 @@ function register()
     $entityAssociations = new \Model\EntityAssociations();
     $individual = new \Model\Individual();
     $certificate1 = new \Model\Certificate();
-    $certificate1->setCertificateNo("11321421");
+    $certificate1->setCertificateNo("11124321421");
     $certificate1->setCertificateType(\Model\CertificateType::CPF);
     $individual->setCertificates([$certificate1]);
     $userName = new \Model\UserName();
     $userName->setFirstName("firstName");
+    $userName->setMiddleName("middleName");
     $userName->setLastName("lastName");
+    $userName->setFullName("fullName");
     $individual->setName($userName);
     $individual->setDateOfBirth("1990-01-01");
     $entityAssociations->setIndividual($individual);
     $entityAssociations->setLegalEntityType(\Model\LegalEntityType::INDIVIDUAL);
+    $entityAssociations->setAssociationType(\Model\AssociationType::LEGAL_REPRESENTATIVE);
 
-    $merchantInfo->setEntityAssociations([$entityAssociations]);
+
+    $entityAssociations1 = new \Model\EntityAssociations();
+    $individual1 = new \Model\Individual();
+    $certificate2 = new \Model\Certificate();
+    $certificate2->setFileKeys(["wetrewqratewtewgewgewg"]);
+    $certificate2->setCertificateNo("11321421");
+    $certificate2->setCertificateType(\Model\CertificateType::CPF);
+    $individual1->setCertificates([$certificate2]);
+    $individual1->setName($userName);
+    $individual1->setDateOfBirth("1990-01-01");
+    $entityAssociations1->setIndividual($individual1);
+    $entityAssociations1->setLegalEntityType(\Model\LegalEntityType::INDIVIDUAL);
+    $entityAssociations1->setAssociationType(\Model\AssociationType::UBO);
+
+
+    $merchantInfo->setEntityAssociations([$entityAssociations,$entityAssociations1]);
 
     $alipayRegisterRequest->setMerchantInfo($merchantInfo);
 
     $alipayClient = new DefaultAlipayClient("https://open-sea-global.alipay.com", merchantPrivateKey, alipayPublicKey, clientId);
     $alipayResponse = $alipayClient->execute($alipayRegisterRequest);
 
+    printf($alipayRegisterRequest->getMerchantInfo()->getReferenceMerchantId());
     echo json_encode($alipayResponse);
 
 }
@@ -104,7 +131,7 @@ function update($referenceMerchantId)
     $settlementBankAccount->setAccountHolderType(\Model\AccountHolderType::ENTERPRISE);
     $alipaySettlementInfoUpdateRequest->setSettlementBankAccount($settlementBankAccount);
 
-    $alipayClient = new DefaultAlipayClient("https://open-sea-global.alipay.com", merchantPrivateKey, alipayPublicKey, clientId);
+    $alipayClient = new DefaultAlipayClient("https://open-na.alipay.com", merchantPrivateKey, alipayPublicKey, clientId);
     $alipayResponse = $alipayClient->execute($alipaySettlementInfoUpdateRequest);
 
     echo json_encode($alipayResponse);
@@ -211,6 +238,6 @@ function createTransfer()
     echo json_encode($alipayResponse);
 }
 
-register();
-
+//register();
+update("outmid_wangzunjiao_wzj_20240929_100432_437");
 

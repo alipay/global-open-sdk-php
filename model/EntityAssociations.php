@@ -11,6 +11,24 @@ class EntityAssociations
     public $individual;
     public $shareholdingRatio;
 
+    /**
+     * @return mixed
+     */
+    public function getAssociationType()
+    {
+        return $this->associationType;
+    }
+
+    /**
+     * @param mixed $associationType
+     */
+    public function setAssociationType($associationType): void
+    {
+        $this->associationType = $associationType;
+    }
+
+
+
 
     /**
      * @return mixed
