@@ -87,7 +87,7 @@ function pay()
 
     $request->setPaymentRequestId($paymentRequestId);
 
-//$request->setPath("/ams/api/v1/payments/pay");
+    //$request->setPath("/ams/sandbox/api/v1/payments/pay");
 
     $settlementStrategy = new SettlementStrategy();
     $settlementStrategy->setSettlementCurrency("USD");
@@ -96,8 +96,10 @@ function pay()
     $alipayClient = new DefaultAlipayClient("https://open-sea-global.alipay.com", merchantPrivateKey, alipayPublicKey);
     $alipayResponse = $alipayClient->execute($request);
 
-    print(json_encode($alipayResponse));
-    print("\n" . $paymentRequestId);
+    echo json_encode($alipayResponse);
+
+//    print(json_encode($alipayResponse));
+//    print("\n" . $paymentRequestId);
 }
 
 function queryPay($paymentRequestId)

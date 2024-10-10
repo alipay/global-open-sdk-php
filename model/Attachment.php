@@ -9,6 +9,8 @@ class Attachment
     public $file;
     public $attachmentName;
 
+    public $fileKey;
+
     /**
      * @return mixed
      */
@@ -56,6 +58,24 @@ class Attachment
     {
         $this->attachmentName = $attachmentName;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFileKey()
+    {
+        return $this->fileKey;
+    }
+
+    /**
+     * @param mixed $fileKey
+     */
+    public function setFileKey($fileKey): void
+    {
+        $this->fileKey = $fileKey;
+    }
+
+
 
 
 }

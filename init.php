@@ -34,9 +34,6 @@ require __DIR__ . '/request/pay/EntryCodePaymentRequest.php';
 require __DIR__ . '/request/pay/OrderCodePaymentRequest.php';
 require __DIR__ . '/request/pay/UserPresentedCodePaymentRequest.php';
 
-//risk
-require __DIR__ . '/request/risk/AlipayRiskScoreInquiryRequest.php';
-
 
 //subscription
 require __DIR__ . '/request/subscription/AlipaySubscriptionCancelRequest.php';
@@ -47,6 +44,41 @@ require __DIR__ . '/request/subscription/AlipaySubscriptionCreateRequest.php';
 require __DIR__ . '/request/users/AlipayInitAuthenticationRequest.php';
 require __DIR__ . '/request/users/AlipayUserQueryInfoRequest.php';
 require __DIR__ . '/request/users/AlipayVerifyAuthenticationRequest.php';
+
+//marketplace
+require __DIR__ . '/request/marketplace/AlipayCreatePayoutRequest.php';
+require __DIR__ . '/request/marketplace/AlipayCreateTransferRequest.php';
+require __DIR__ . '/request/marketplace/AlipayInquireBalanceRequest.php';
+require __DIR__ . '/request/marketplace/AlipayRegisterRequest.php';
+require __DIR__ . '/request/marketplace/AlipaySettlementInfoUpdateRequest.php';
+require __DIR__ . '/request/marketplace/AlipaySettleRequest.php';
+require __DIR__ . '/request/marketplace/AlipaySubmitAttachmentRequest.php';
+
+//dispute
+require __DIR__ . '/request/dispute/AlipayAcceptDisputeRequest.php';
+require __DIR__ . '/request/dispute/AlipayDownloadDisputeEvidenceRequest.php';
+require __DIR__ . '/request/dispute/AlipaySupplyDefenseDocumentRequest.php';
+
+
+//risk
+require __DIR__ . '/request/risk/RiskDecideRequest.php';
+require __DIR__ . '/request/risk/RiskReportRequest.php';
+require __DIR__ . '/request/risk/SendPaymentResultRequest.php';
+require __DIR__ . '/request/risk/SendRefundResultRequest.php';
+require __DIR__ . '/request/risk/AlipayRiskScoreInquiryRequest.php';
+
+
+//vaulting
+require __DIR__ . '/request/vaulting/AlipayVaultingPaymentMethodRequest.php';
+require __DIR__ . '/request/vaulting/AlipayVaultingQueryRequest.php';
+require __DIR__ . '/request/vaulting/AlipayVaultingSessionRequest.php';
+
+//notify
+require __DIR__ . '/request/notify/AlipayCaptureResultNotify.php';
+require __DIR__ . '/request/notify/AlipayNotify.php';
+require __DIR__ . '/request/notify/AlipayPayResultNotify.php';
+require __DIR__ . '/request/notify/AlipayRefundNotify.php';
+
 
 
 //model
@@ -126,6 +158,43 @@ require __DIR__ . '/model/UserIdentityType.php';
 require __DIR__ . '/model/UserName.php';
 require __DIR__ . '/model/WalletPaymentMethodType.php';
 require __DIR__ . '/model/WebSite.php';
+require __DIR__ . '/model/SettlementInfo.php';
+require __DIR__ . '/model/AssociationType.php';
+require __DIR__ . '/model/AttachmentType.php';
+require __DIR__ . '/model/AuthorizationPhase.php';
+require __DIR__ . '/model/BusinessInfo.php';
+require __DIR__ . '/model/ClassType.php';
+require __DIR__ . '/model/Company.php';
+require __DIR__ . '/model/CompanyType.php';
+require __DIR__ . '/model/CompanyUnitType.php';
+require __DIR__ . '/model/Contact.php';
+require __DIR__ . '/model/ContactType.php';
+require __DIR__ . '/model/DisputeEvidenceType.php';
+require __DIR__ . '/model/EntityAssociations.php';
+require __DIR__ . '/model/Gaming.php';
+require __DIR__ . '/model/Individual.php';
+require __DIR__ . '/model/Leg.php';
+require __DIR__ . '/model/LegalEntityType.php';
+require __DIR__ . '/model/Lodging.php';
+require __DIR__ . '/model/MerchantInfo.php';
+require __DIR__ . '/model/Passenger.php';
+require __DIR__ . '/model/PaymentDetail.php';
+require __DIR__ . '/model/SettleToType.php';
+require __DIR__ . '/model/SettlementBankAccount.php';
+require __DIR__ . '/model/SettlementDetail.php';
+require __DIR__ . '/model/StockInfo.php';
+require __DIR__ . '/model/TransferFromDetail.php';
+require __DIR__ . '/model/TransferToDetail.php';
+require __DIR__ . '/model/TransitType.php';
+require __DIR__ . '/model/Transit.php';
+require __DIR__ . '/model/AccountType.php';
+require __DIR__ . '/model/AccountHolderType.php';
+require __DIR__ . '/model/ThreeDSResult.php';
+require __DIR__ . '/model/PaymentResultInfo.php';
+require __DIR__ . '/model/AcquirerInfo.php';
+require __DIR__ . '/model/PeriodType.php';
+require __DIR__ . '/model/CancellationType.php';
+
 
 //client
 require __DIR__ . '/client/BaseAlipayClient.php';

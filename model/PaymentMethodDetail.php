@@ -11,6 +11,8 @@ class PaymentMethodDetail
     public $coupon;
     public $extendInfo;
 
+    public $paymentMethodType;
+
     /**
      * @return mixed
      */
@@ -106,5 +108,22 @@ class PaymentMethodDetail
     {
         $this->extendInfo = $extendInfo;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethodType()
+    {
+        return $this->paymentMethodType;
+    }
+
+    /**
+     * @param mixed $paymentMethodType
+     */
+    public function setPaymentMethodType($paymentMethodType): void
+    {
+        $this->paymentMethodType = $paymentMethodType;
+    }
+
 
 }

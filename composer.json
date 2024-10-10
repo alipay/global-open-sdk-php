@@ -17,5 +17,9 @@
       "email": "wangzunjiao.wzj@alibaba-inc.com"
     }
   ],
-  "require": {}
+  "require": {
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-curl": "*"
+  }
 }

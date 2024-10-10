@@ -7,6 +7,7 @@ class CardPaymentMethodDetail
     public $cardToken;
     public $cardNo;
     public $brand;
+    public $selectedCardBrand;
     public $cardIssuer;
     public $countryIssue;
     public $instUserName;
@@ -16,6 +17,313 @@ class CardPaymentMethodDetail
     public $mask;
     public $last4;
     public $paymentMethodDetailMetadata;
+
+    public $maskedCardNo;
+
+    public $fingerprint;
+
+    public $authenticationFlow;
+
+    public $funding;
+
+    public $avsResultRaw;
+
+    public $bin;
+
+    public $issuerName;
+
+    public $issuingCountry;
+
+    public $lastFour;
+
+    public $cardholderName;
+
+    public $cvv;
+
+    public $dateOfBirth;
+
+    public $businessNo;
+
+    public $cardPasswordDigest;
+
+    public $cpf;
+
+    public $payerEmail;
+
+    /**
+     * @return mixed
+     */
+    public function getSelectedCardBrand()
+    {
+        return $this->selectedCardBrand;
+    }
+
+    /**
+     * @param mixed $selectedCardBrand
+     */
+    public function setSelectedCardBrand($selectedCardBrand): void
+    {
+        $this->selectedCardBrand = $selectedCardBrand;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMaskedCardNo()
+    {
+        return $this->maskedCardNo;
+    }
+
+    /**
+     * @param mixed $maskedCardNo
+     */
+    public function setMaskedCardNo($maskedCardNo): void
+    {
+        $this->maskedCardNo = $maskedCardNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFingerprint()
+    {
+        return $this->fingerprint;
+    }
+
+    /**
+     * @param mixed $fingerprint
+     */
+    public function setFingerprint($fingerprint): void
+    {
+        $this->fingerprint = $fingerprint;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthenticationFlow()
+    {
+        return $this->authenticationFlow;
+    }
+
+    /**
+     * @param mixed $authenticationFlow
+     */
+    public function setAuthenticationFlow($authenticationFlow): void
+    {
+        $this->authenticationFlow = $authenticationFlow;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFunding()
+    {
+        return $this->funding;
+    }
+
+    /**
+     * @param mixed $funding
+     */
+    public function setFunding($funding): void
+    {
+        $this->funding = $funding;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAvsResultRaw()
+    {
+        return $this->avsResultRaw;
+    }
+
+    /**
+     * @param mixed $avsResultRaw
+     */
+    public function setAvsResultRaw($avsResultRaw): void
+    {
+        $this->avsResultRaw = $avsResultRaw;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBin()
+    {
+        return $this->bin;
+    }
+
+    /**
+     * @param mixed $bin
+     */
+    public function setBin($bin): void
+    {
+        $this->bin = $bin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIssuerName()
+    {
+        return $this->issuerName;
+    }
+
+    /**
+     * @param mixed $issuerName
+     */
+    public function setIssuerName($issuerName): void
+    {
+        $this->issuerName = $issuerName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIssuingCountry()
+    {
+        return $this->issuingCountry;
+    }
+
+    /**
+     * @param mixed $issuingCountry
+     */
+    public function setIssuingCountry($issuingCountry): void
+    {
+        $this->issuingCountry = $issuingCountry;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastFour()
+    {
+        return $this->lastFour;
+    }
+
+    /**
+     * @param mixed $lastFour
+     */
+    public function setLastFour($lastFour): void
+    {
+        $this->lastFour = $lastFour;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCardholderName()
+    {
+        return $this->cardholderName;
+    }
+
+    /**
+     * @param mixed $cardholderName
+     */
+    public function setCardholderName($cardholderName): void
+    {
+        $this->cardholderName = $cardholderName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCvv()
+    {
+        return $this->cvv;
+    }
+
+    /**
+     * @param mixed $cvv
+     */
+    public function setCvv($cvv): void
+    {
+        $this->cvv = $cvv;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateOfBirth()
+    {
+        return $this->dateOfBirth;
+    }
+
+    /**
+     * @param mixed $dateOfBirth
+     */
+    public function setDateOfBirth($dateOfBirth): void
+    {
+        $this->dateOfBirth = $dateOfBirth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBusinessNo()
+    {
+        return $this->businessNo;
+    }
+
+    /**
+     * @param mixed $businessNo
+     */
+    public function setBusinessNo($businessNo): void
+    {
+        $this->businessNo = $businessNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCardPasswordDigest()
+    {
+        return $this->cardPasswordDigest;
+    }
+
+    /**
+     * @param mixed $cardPasswordDigest
+     */
+    public function setCardPasswordDigest($cardPasswordDigest): void
+    {
+        $this->cardPasswordDigest = $cardPasswordDigest;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCpf()
+    {
+        return $this->cpf;
+    }
+
+    /**
+     * @param mixed $cpf
+     */
+    public function setCpf($cpf): void
+    {
+        $this->cpf = $cpf;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPayerEmail()
+    {
+        return $this->payerEmail;
+    }
+
+    /**
+     * @param mixed $payerEmail
+     */
+    public function setPayerEmail($payerEmail): void
+    {
+        $this->payerEmail = $payerEmail;
+    }
+
+
+
 
     /**
      * @return mixed
