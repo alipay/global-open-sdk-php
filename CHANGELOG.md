@@ -1,6 +1,12 @@
 # Changelog
 
 
+## 1.3.3 - 2024-09-14
+* [#14](https://github.com/alipay/global-open-sdk-php/pull/14)  update pay
+  * update：alipayPayRequest 
+  * add：payments/syncArrear 
+  * add：payments/createDeviceCertificate
+
 ## 1.3.2 - 2024-09-04
 * [#13](https://github.com/alipay/global-open-sdk-php/pull/13)  update readme
    * Add TAOBAO_REBIND
