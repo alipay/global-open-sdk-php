@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.3.4 - 2024-10-21
-* [#15](https://github.com/alipay/global-open-sdk-php/pull/15) feature-201022
+* [#15](https://github.com/alipay/global-open-sdk-php/pull/15) feature-241022
   - add AlipayVaultingSessionRequest.is3DSAuthentication哈啰集成绑卡SDK
   - add AlipayAuthConsultRequest.authMetaData AE企业支付宝代扣集成方案
   - add Boolean  request.order.needDeclaration
