@@ -16,11 +16,31 @@ class AlipayVaultingSessionRequest extends AlipayRequest
 
     public $merchantRegion;
 
+    public $is3DSAuthentication;
+
 
     function __construct()
     {
         $this->setPath(AntomPathConstants::CREATE_VAULTING_SESSION_PATH);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIs3DSAuthentication()
+    {
+        return $this->is3DSAuthentication;
+    }
+
+    /**
+     * @param mixed $is3DSAuthentication
+     */
+    public function setIs3DSAuthentication($is3DSAuthentication): void
+    {
+        $this->is3DSAuthentication = $is3DSAuthentication;
+    }
+
+
 
     /**
      * @return mixed

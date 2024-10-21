@@ -17,10 +17,30 @@ class AlipayAuthConsultRequest extends \Request\AlipayRequest
     public $extendInfo;
     public $merchantRegion;
 
+    public $authMetaData;
+
     function __construct()
     {
         $this->setPath(\Model\AntomPathConstants::AUTH_CONSULT_PATH);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthMetaData()
+    {
+        return $this->authMetaData;
+    }
+
+    /**
+     * @param mixed $authMetaData
+     */
+    public function setAuthMetaData($authMetaData): void
+    {
+        $this->authMetaData = $authMetaData;
+    }
+
+
 
     /**
      * @return mixed
