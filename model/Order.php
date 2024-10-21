@@ -18,6 +18,46 @@ class Order
     public $lodging;
     public $gaming;
 
+    public $orderCreatedTime;
+
+    public $needDeclaration;
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getOrderCreatedTime()
+    {
+        return $this->orderCreatedTime;
+    }
+
+    /**
+     * @param mixed $orderCreatedTime
+     */
+    public function setOrderCreatedTime($orderCreatedTime): void
+    {
+        $this->orderCreatedTime = $orderCreatedTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNeedDeclaration()
+    {
+        return $this->needDeclaration;
+    }
+
+    /**
+     * @param mixed $needDeclaration
+     */
+    public function setNeedDeclaration($needDeclaration): void
+    {
+        $this->needDeclaration = $needDeclaration;
+    }
+
+
+
     /**
      * @return String
      */

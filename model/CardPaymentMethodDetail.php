@@ -50,6 +50,27 @@ class CardPaymentMethodDetail
 
     public $payerEmail;
 
+    public $networkTransactionId;
+
+    /**
+     * @return mixed
+     */
+    public function getNetworkTransactionId()
+    {
+        return $this->networkTransactionId;
+    }
+
+    /**
+     * @param mixed $networkTransactionId
+     */
+    public function setNetworkTransactionId($networkTransactionId): void
+    {
+        $this->networkTransactionId = $networkTransactionId;
+    }
+
+
+
+
     /**
      * @return mixed
      */
