@@ -28,6 +28,26 @@ class AlipayPayResultNotify extends AlipayNotify
 
     public $acquirerInfo;
 
+    public $promotionResult;
+
+    /**
+     * @return mixed
+     */
+    public function getPromotionResult()
+    {
+        return $this->promotionResult;
+    }
+
+    /**
+     * @param mixed $promotionResult
+     */
+    public function setPromotionResult($promotionResult): void
+    {
+        $this->promotionResult = $promotionResult;
+    }
+
+
+
     /**
      * @return mixed
      */
