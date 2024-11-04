@@ -2,7 +2,7 @@
 
 namespace Request\notify;
 
-class AlipayCaptureResultNotify
+class AlipayCaptureResultNotify extends AlipayNotify
 {
 
     public $captureRequestId;

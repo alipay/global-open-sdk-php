@@ -1,0 +1,87 @@
+<?php
+
+namespace Request\notify;
+
+class AlipayVaultingNotify extends AlipayNotify
+{
+    /**
+     * The unique ID that is assigned by a merchant to identify a card vaulting request.
+     */
+    private  $vaultingRequestId;
+
+    /**
+     * The details about the card payment method.
+     */
+    private  $paymentMethodDetail;
+
+    private  $vaultingCreateTime;
+
+    private  $acquirerInfo;
+
+    /**
+     * @return mixed
+     */
+    public function getVaultingRequestId()
+    {
+        return $this->vaultingRequestId;
+    }
+
+    /**
+     * @param mixed $vaultingRequestId
+     */
+    public function setVaultingRequestId($vaultingRequestId): void
+    {
+        $this->vaultingRequestId = $vaultingRequestId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethodDetail()
+    {
+        return $this->paymentMethodDetail;
+    }
+
+    /**
+     * @param mixed $paymentMethodDetail
+     */
+    public function setPaymentMethodDetail($paymentMethodDetail): void
+    {
+        $this->paymentMethodDetail = $paymentMethodDetail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVaultingCreateTime()
+    {
+        return $this->vaultingCreateTime;
+    }
+
+    /**
+     * @param mixed $vaultingCreateTime
+     */
+    public function setVaultingCreateTime($vaultingCreateTime): void
+    {
+        $this->vaultingCreateTime = $vaultingCreateTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->acquirerInfo;
+    }
+
+    /**
+     * @param mixed $acquirerInfo
+     */
+    public function setAcquirerInfo($acquirerInfo): void
+    {
+        $this->acquirerInfo = $acquirerInfo;
+    }
+
+
+
+}
