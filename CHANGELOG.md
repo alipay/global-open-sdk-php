@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.3.5 - 2024-11-04
-* [#16](https://github.com/alipay/global-open-sdk-php/pull/16) feature-notify
+* [#17](https://github.com/alipay/global-open-sdk-php/pull/17) feature-notify
   - add notify
 
 ## 1.3.4 - 2024-10-21
