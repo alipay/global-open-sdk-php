@@ -8,6 +8,7 @@ use MOdel\CustomerBelongsTo;
 use Model\GrantType;
 use Request\auth\AlipayAuthApplyTokenRequest;
 use Request\auth\AlipayAuthConsultRequest;
+use Request\auth\AlipayAuthRevokeTokenRequest;
 
 
 const clientId = "";
@@ -63,7 +64,7 @@ function queryToken($accessToken)
 
 function revoke_token($accessToken)
 {
-    $request = new \Request\auth\AlipayAuthRevokeTokenRequest();
+    $request = new AlipayAuthRevokeTokenRequest();
     $request->setAccessToken($accessToken);
 
     $alipayClient = new DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);
@@ -73,6 +74,6 @@ function revoke_token($accessToken)
 }
 
 
-//authConsult();
+authConsult();
 //applyToken("281001133029700579331362");
-revoke_token("28288803001247281723530452000N6krsDm8J8171000589");
+//revoke_token("28288803001247281723530452000N6krsDm8J8171000589");

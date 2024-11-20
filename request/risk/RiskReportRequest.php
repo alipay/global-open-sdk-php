@@ -29,7 +29,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId): void
+    public function setReferenceTransactionId($referenceTransactionId) 
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -45,7 +45,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $reportReason
      */
-    public function setReportReason($reportReason): void
+    public function setReportReason($reportReason) 
     {
         $this->reportReason = $reportReason;
     }
@@ -61,7 +61,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $riskType
      */
-    public function setRiskType($riskType): void
+    public function setRiskType($riskType) 
     {
         $this->riskType = $riskType;
     }
@@ -77,7 +77,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $riskOccurrenceTime
      */
-    public function setRiskOccurrenceTime($riskOccurrenceTime): void
+    public function setRiskOccurrenceTime($riskOccurrenceTime) 
     {
         $this->riskOccurrenceTime = $riskOccurrenceTime;
     }

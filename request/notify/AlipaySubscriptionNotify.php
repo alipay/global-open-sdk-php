@@ -2,7 +2,7 @@
 
 namespace Request\notify;
 
-class AlipaySubscriptionNotify extends AlipayNotify
+class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
 {
     public  $subscriptionRequestId;
     public  $subscriptionId;
@@ -23,7 +23,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $subscriptionRequestId
      */
-    public function setSubscriptionRequestId($subscriptionRequestId): void
+    public function setSubscriptionRequestId($subscriptionRequestId) 
     {
         $this->subscriptionRequestId = $subscriptionRequestId;
     }
@@ -39,7 +39,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $subscriptionId
      */
-    public function setSubscriptionId($subscriptionId): void
+    public function setSubscriptionId($subscriptionId) 
     {
         $this->subscriptionId = $subscriptionId;
     }
@@ -55,7 +55,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $subscriptionStatus
      */
-    public function setSubscriptionStatus($subscriptionStatus): void
+    public function setSubscriptionStatus($subscriptionStatus) 
     {
         $this->subscriptionStatus = $subscriptionStatus;
     }
@@ -71,7 +71,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $subscriptionNotificationType
      */
-    public function setSubscriptionNotificationType($subscriptionNotificationType): void
+    public function setSubscriptionNotificationType($subscriptionNotificationType) 
     {
         $this->subscriptionNotificationType = $subscriptionNotificationType;
     }
@@ -87,7 +87,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $subscriptionStartTime
      */
-    public function setSubscriptionStartTime($subscriptionStartTime): void
+    public function setSubscriptionStartTime($subscriptionStartTime) 
     {
         $this->subscriptionStartTime = $subscriptionStartTime;
     }
@@ -103,7 +103,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $subscriptionEndTime
      */
-    public function setSubscriptionEndTime($subscriptionEndTime): void
+    public function setSubscriptionEndTime($subscriptionEndTime) 
     {
         $this->subscriptionEndTime = $subscriptionEndTime;
     }
@@ -119,7 +119,7 @@ class AlipaySubscriptionNotify extends AlipayNotify
     /**
      * @param mixed $periodRule
      */
-    public function setPeriodRule($periodRule): void
+    public function setPeriodRule($periodRule) 
     {
         $this->periodRule = $periodRule;
     }

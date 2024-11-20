@@ -19,7 +19,7 @@ class PeriodRule
     /**
      * @param mixed $periodType
      */
-    public function setPeriodType($periodType): void
+    public function setPeriodType($periodType)
     {
         $this->periodType = $periodType;
     }
@@ -35,7 +35,7 @@ class PeriodRule
     /**
      * @param mixed $periodCount
      */
-    public function setPeriodCount($periodCount): void
+    public function setPeriodCount($periodCount)
     {
         $this->periodCount = $periodCount;
     }

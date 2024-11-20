@@ -214,10 +214,10 @@ function consult()
     print(json_encode($alipayResponse));
 }
 
-//pay();
+pay();
 //cancel("PR_1724811957224");
 //queryPay("PR_172352027421");
 //refund("202408131940108001001881A0212894597");
 //queryRefund("refund_1723527767056");
-consult();
+//consult();
 //createSession();

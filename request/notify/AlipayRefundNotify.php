@@ -2,7 +2,8 @@
 
 namespace Request\notify;
 
-class AlipayRefundNotify extends AlipayNotify
+
+class AlipayRefundNotify extends \Request\notify\AlipayNotify
 {
 
     public $refundStatus;
@@ -30,7 +31,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $refundStatus
      */
-    public function setRefundStatus($refundStatus): void
+    public function setRefundStatus($refundStatus) 
     {
         $this->refundStatus = $refundStatus;
     }
@@ -46,7 +47,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $refundRequestId
      */
-    public function setRefundRequestId($refundRequestId): void
+    public function setRefundRequestId($refundRequestId) 
     {
         $this->refundRequestId = $refundRequestId;
     }
@@ -62,7 +63,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $refundId
      */
-    public function setRefundId($refundId): void
+    public function setRefundId($refundId) 
     {
         $this->refundId = $refundId;
     }
@@ -78,7 +79,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $refundAmount
      */
-    public function setRefundAmount($refundAmount): void
+    public function setRefundAmount($refundAmount) 
     {
         $this->refundAmount = $refundAmount;
     }
@@ -94,7 +95,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $refundTime
      */
-    public function setRefundTime($refundTime): void
+    public function setRefundTime($refundTime) 
     {
         $this->refundTime = $refundTime;
     }
@@ -110,7 +111,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $grossSettlementAmount
      */
-    public function setGrossSettlementAmount($grossSettlementAmount): void
+    public function setGrossSettlementAmount($grossSettlementAmount) 
     {
         $this->grossSettlementAmount = $grossSettlementAmount;
     }
@@ -126,7 +127,7 @@ class AlipayRefundNotify extends AlipayNotify
     /**
      * @param mixed $settlementQuote
      */
-    public function setSettlementQuote($settlementQuote): void
+    public function setSettlementQuote($settlementQuote) 
     {
         $this->settlementQuote = $settlementQuote;
     }

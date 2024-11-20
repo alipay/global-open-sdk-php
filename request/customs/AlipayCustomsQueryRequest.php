@@ -29,7 +29,7 @@ class AlipayCustomsQueryRequest extends AlipayRequest
     /**
      * @param mixed $declarationRequestIds
      */
-    public function setDeclarationRequestIds($declarationRequestIds): void
+    public function setDeclarationRequestIds($declarationRequestIds) 
     {
         $this->declarationRequestIds = $declarationRequestIds;
     }

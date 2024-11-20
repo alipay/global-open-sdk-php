@@ -27,7 +27,7 @@ class Company
     /**
      * @param mixed $legalName
      */
-    public function setLegalName($legalName): void
+    public function setLegalName($legalName) 
     {
         $this->legalName = $legalName;
     }
@@ -43,7 +43,7 @@ class Company
     /**
      * @param mixed $companyType
      */
-    public function setCompanyType($companyType): void
+    public function setCompanyType($companyType) 
     {
         $this->companyType = $companyType;
     }
@@ -59,7 +59,7 @@ class Company
     /**
      * @param mixed $registeredAddress
      */
-    public function setRegisteredAddress($registeredAddress): void
+    public function setRegisteredAddress($registeredAddress) 
     {
         $this->registeredAddress = $registeredAddress;
     }
@@ -75,7 +75,7 @@ class Company
     /**
      * @param mixed $operatingAddress
      */
-    public function setOperatingAddress($operatingAddress): void
+    public function setOperatingAddress($operatingAddress) 
     {
         $this->operatingAddress = $operatingAddress;
     }
@@ -91,7 +91,7 @@ class Company
     /**
      * @param mixed $incorporationDate
      */
-    public function setIncorporationDate($incorporationDate): void
+    public function setIncorporationDate($incorporationDate) 
     {
         $this->incorporationDate = $incorporationDate;
     }
@@ -107,7 +107,7 @@ class Company
     /**
      * @param mixed $stockInfo
      */
-    public function setStockInfo($stockInfo): void
+    public function setStockInfo($stockInfo) 
     {
         $this->stockInfo = $stockInfo;
     }
@@ -123,7 +123,7 @@ class Company
     /**
      * @param mixed $certificates
      */
-    public function setCertificates($certificates): void
+    public function setCertificates($certificates) 
     {
         $this->certificates = $certificates;
     }
@@ -139,7 +139,7 @@ class Company
     /**
      * @param mixed $attachments
      */
-    public function setAttachments($attachments): void
+    public function setAttachments($attachments) 
     {
         $this->attachments = $attachments;
     }
@@ -155,7 +155,7 @@ class Company
     /**
      * @param mixed $companyUnit
      */
-    public function setCompanyUnit($companyUnit): void
+    public function setCompanyUnit($companyUnit) 
     {
         $this->companyUnit = $companyUnit;
     }
@@ -171,7 +171,7 @@ class Company
     /**
      * @param mixed $contacts
      */
-    public function setContacts($contacts): void
+    public function setContacts($contacts) 
     {
         $this->contacts = $contacts;
     }
@@ -187,7 +187,7 @@ class Company
     /**
      * @param mixed $vatNo
      */
-    public function setVatNo($vatNo): void
+    public function setVatNo($vatNo) 
     {
         $this->vatNo = $vatNo;
     }

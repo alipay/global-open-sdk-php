@@ -2,7 +2,8 @@
 
 namespace Request\notify;
 
-class AlipayAuthNotify extends AlipayNotify
+
+class AlipayAuthNotify extends \Request\notify\AlipayNotify
 {
 
     /**
@@ -56,7 +57,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $authorizationNotifyType
      */
-    public function setAuthorizationNotifyType($authorizationNotifyType): void
+    public function setAuthorizationNotifyType($authorizationNotifyType)
     {
         $this->authorizationNotifyType = $authorizationNotifyType;
     }
@@ -72,7 +73,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $authClientId
      */
-    public function setAuthClientId($authClientId): void
+    public function setAuthClientId($authClientId)
     {
         $this->authClientId = $authClientId;
     }
@@ -88,7 +89,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $accessToken
      */
-    public function setAccessToken($accessToken): void
+    public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
     }
@@ -104,7 +105,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $authState
      */
-    public function setAuthState($authState): void
+    public function setAuthState($authState)
     {
         $this->authState = $authState;
     }
@@ -120,7 +121,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $authCode
      */
-    public function setAuthCode($authCode): void
+    public function setAuthCode($authCode)
     {
         $this->authCode = $authCode;
     }
@@ -136,7 +137,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $reason
      */
-    public function setReason($reason): void
+    public function setReason($reason)
     {
         $this->reason = $reason;
     }
@@ -152,7 +153,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $userLoginId
      */
-    public function setUserLoginId($userLoginId): void
+    public function setUserLoginId($userLoginId)
     {
         $this->userLoginId = $userLoginId;
     }
@@ -168,7 +169,7 @@ class AlipayAuthNotify extends AlipayNotify
     /**
      * @param mixed $userId
      */
-    public function setUserId($userId): void
+    public function setUserId($userId)
     {
         $this->userId = $userId;
     }

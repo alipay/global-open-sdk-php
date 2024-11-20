@@ -40,7 +40,7 @@ class AlipayInquiryRefundRequest extends AlipayRequest
     /**
      * @param mixed $refundRequestId
      */
-    public function setRefundRequestId($refundRequestId): void
+    public function setRefundRequestId($refundRequestId) 
     {
         $this->refundRequestId = $refundRequestId;
     }
@@ -56,7 +56,7 @@ class AlipayInquiryRefundRequest extends AlipayRequest
     /**
      * @param mixed $refundId
      */
-    public function setRefundId($refundId): void
+    public function setRefundId($refundId) 
     {
         $this->refundId = $refundId;
     }
@@ -72,7 +72,7 @@ class AlipayInquiryRefundRequest extends AlipayRequest
     /**
      * @param mixed $merchantAccountId
      */
-    public function setMerchantAccountId($merchantAccountId): void
+    public function setMerchantAccountId($merchantAccountId) 
     {
         $this->merchantAccountId = $merchantAccountId;
     }

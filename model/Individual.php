@@ -28,7 +28,7 @@ class Individual
     /**
      * @param mixed $name
      */
-    public function setName($name): void
+    public function setName($name) 
     {
         $this->name = $name;
     }
@@ -44,7 +44,7 @@ class Individual
     /**
      * @param mixed $englishName
      */
-    public function setEnglishName($englishName): void
+    public function setEnglishName($englishName) 
     {
         $this->englishName = $englishName;
     }
@@ -60,7 +60,7 @@ class Individual
     /**
      * @param mixed $dateOfBirth
      */
-    public function setDateOfBirth($dateOfBirth): void
+    public function setDateOfBirth($dateOfBirth) 
     {
         $this->dateOfBirth = $dateOfBirth;
     }
@@ -76,7 +76,7 @@ class Individual
     /**
      * @param mixed $placeOfBirth
      */
-    public function setPlaceOfBirth($placeOfBirth): void
+    public function setPlaceOfBirth($placeOfBirth) 
     {
         $this->placeOfBirth = $placeOfBirth;
     }
@@ -92,7 +92,7 @@ class Individual
     /**
      * @param mixed $certificates
      */
-    public function setCertificates($certificates): void
+    public function setCertificates($certificates) 
     {
         $this->certificates = $certificates;
     }
@@ -108,7 +108,7 @@ class Individual
     /**
      * @param mixed $nationality
      */
-    public function setNationality($nationality): void
+    public function setNationality($nationality) 
     {
         $this->nationality = $nationality;
     }
@@ -124,7 +124,7 @@ class Individual
     /**
      * @param mixed $contacts
      */
-    public function setContacts($contacts): void
+    public function setContacts($contacts) 
     {
         $this->contacts = $contacts;
     }

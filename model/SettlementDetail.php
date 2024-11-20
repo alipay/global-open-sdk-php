@@ -18,7 +18,7 @@ class SettlementDetail
     /**
      * @param mixed $settleTo
      */
-    public function setSettleTo($settleTo): void
+    public function setSettleTo($settleTo) 
     {
         $this->settleTo = $settleTo;
     }
@@ -34,7 +34,7 @@ class SettlementDetail
     /**
      * @param mixed $settlementAmount
      */
-    public function setSettlementAmount($settlementAmount): void
+    public function setSettlementAmount($settlementAmount) 
     {
         $this->settlementAmount = $settlementAmount;
     }

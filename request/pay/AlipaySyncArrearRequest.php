@@ -26,7 +26,7 @@ class AlipaySyncArrearRequest extends  AlipayRequest
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId): void
+    public function setPaymentId($paymentId) 
     {
         $this->paymentId = $paymentId;
     }
@@ -42,7 +42,7 @@ class AlipaySyncArrearRequest extends  AlipayRequest
     /**
      * @param mixed $paymentRequestId
      */
-    public function setPaymentRequestId($paymentRequestId): void
+    public function setPaymentRequestId($paymentRequestId) 
     {
         $this->paymentRequestId = $paymentRequestId;
     }

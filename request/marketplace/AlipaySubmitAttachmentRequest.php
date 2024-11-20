@@ -27,7 +27,7 @@ class AlipaySubmitAttachmentRequest extends AlipayRequest
     /**
      * @param mixed $submitAttachmentRequestId
      */
-    public function setSubmitAttachmentRequestId($submitAttachmentRequestId): void
+    public function setSubmitAttachmentRequestId($submitAttachmentRequestId) 
     {
         $this->submitAttachmentRequestId = $submitAttachmentRequestId;
     }
@@ -43,7 +43,7 @@ class AlipaySubmitAttachmentRequest extends AlipayRequest
     /**
      * @param mixed $attachmentType
      */
-    public function setAttachmentType($attachmentType): void
+    public function setAttachmentType($attachmentType) 
     {
         $this->attachmentType = $attachmentType;
     }
@@ -59,7 +59,7 @@ class AlipaySubmitAttachmentRequest extends AlipayRequest
     /**
      * @param mixed $fileSha256
      */
-    public function setFileSha256($fileSha256): void
+    public function setFileSha256($fileSha256) 
     {
         $this->fileSha256 = $fileSha256;
     }

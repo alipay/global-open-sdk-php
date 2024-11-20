@@ -22,7 +22,7 @@ class MerchantInfo
     /**
      * @param mixed $referenceMerchantId
      */
-    public function setReferenceMerchantId($referenceMerchantId): void
+    public function setReferenceMerchantId($referenceMerchantId) 
     {
         $this->referenceMerchantId = $referenceMerchantId;
     }
@@ -38,7 +38,7 @@ class MerchantInfo
     /**
      * @param mixed $loginId
      */
-    public function setLoginId($loginId): void
+    public function setLoginId($loginId) 
     {
         $this->loginId = $loginId;
     }
@@ -54,7 +54,7 @@ class MerchantInfo
     /**
      * @param mixed $legalEntityType
      */
-    public function setLegalEntityType($legalEntityType): void
+    public function setLegalEntityType($legalEntityType) 
     {
         $this->legalEntityType = $legalEntityType;
     }
@@ -70,7 +70,7 @@ class MerchantInfo
     /**
      * @param mixed $company
      */
-    public function setCompany($company): void
+    public function setCompany($company) 
     {
         $this->company = $company;
     }
@@ -86,7 +86,7 @@ class MerchantInfo
     /**
      * @param mixed $businessInfo
      */
-    public function setBusinessInfo($businessInfo): void
+    public function setBusinessInfo($businessInfo) 
     {
         $this->businessInfo = $businessInfo;
     }
@@ -102,7 +102,7 @@ class MerchantInfo
     /**
      * @param mixed $entityAssociations
      */
-    public function setEntityAssociations($entityAssociations): void
+    public function setEntityAssociations($entityAssociations) 
     {
         $this->entityAssociations = $entityAssociations;
     }

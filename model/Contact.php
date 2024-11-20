@@ -18,7 +18,7 @@ class Contact
     /**
      * @param mixed $type
      */
-    public function setType($type): void
+    public function setType($type) 
     {
         $this->type = $type;
     }
@@ -34,7 +34,7 @@ class Contact
     /**
      * @param mixed $info
      */
-    public function setInfo($info): void
+    public function setInfo($info) 
     {
         $this->info = $info;
     }

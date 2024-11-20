@@ -2,7 +2,8 @@
 
 namespace Request\notify;
 
-class AlipayPayResultNotify extends AlipayNotify
+
+class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 {
     public $paymentRequestId;
 
@@ -41,7 +42,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $promotionResult
      */
-    public function setPromotionResult($promotionResult): void
+    public function setPromotionResult($promotionResult) 
     {
         $this->promotionResult = $promotionResult;
     }
@@ -59,7 +60,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentRequestId
      */
-    public function setPaymentRequestId($paymentRequestId): void
+    public function setPaymentRequestId($paymentRequestId) 
     {
         $this->paymentRequestId = $paymentRequestId;
     }
@@ -75,7 +76,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId): void
+    public function setPaymentId($paymentId) 
     {
         $this->paymentId = $paymentId;
     }
@@ -91,7 +92,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentAmount
      */
-    public function setPaymentAmount($paymentAmount): void
+    public function setPaymentAmount($paymentAmount) 
     {
         $this->paymentAmount = $paymentAmount;
     }
@@ -107,7 +108,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentCreateTime
      */
-    public function setPaymentCreateTime($paymentCreateTime): void
+    public function setPaymentCreateTime($paymentCreateTime) 
     {
         $this->paymentCreateTime = $paymentCreateTime;
     }
@@ -123,7 +124,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentTime
      */
-    public function setPaymentTime($paymentTime): void
+    public function setPaymentTime($paymentTime) 
     {
         $this->paymentTime = $paymentTime;
     }
@@ -139,7 +140,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $customsDeclarationAmount
      */
-    public function setCustomsDeclarationAmount($customsDeclarationAmount): void
+    public function setCustomsDeclarationAmount($customsDeclarationAmount) 
     {
         $this->customsDeclarationAmount = $customsDeclarationAmount;
     }
@@ -155,7 +156,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $grossSettlementAmount
      */
-    public function setGrossSettlementAmount($grossSettlementAmount): void
+    public function setGrossSettlementAmount($grossSettlementAmount) 
     {
         $this->grossSettlementAmount = $grossSettlementAmount;
     }
@@ -171,7 +172,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $settlementQuote
      */
-    public function setSettlementQuote($settlementQuote): void
+    public function setSettlementQuote($settlementQuote) 
     {
         $this->settlementQuote = $settlementQuote;
     }
@@ -187,7 +188,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $pspCustomerInfo
      */
-    public function setPspCustomerInfo($pspCustomerInfo): void
+    public function setPspCustomerInfo($pspCustomerInfo) 
     {
         $this->pspCustomerInfo = $pspCustomerInfo;
     }
@@ -203,7 +204,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $acquirerReferenceNo
      */
-    public function setAcquirerReferenceNo($acquirerReferenceNo): void
+    public function setAcquirerReferenceNo($acquirerReferenceNo) 
     {
         $this->acquirerReferenceNo = $acquirerReferenceNo;
     }
@@ -219,7 +220,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentResultInfo
      */
-    public function setPaymentResultInfo($paymentResultInfo): void
+    public function setPaymentResultInfo($paymentResultInfo) 
     {
         $this->paymentResultInfo = $paymentResultInfo;
     }
@@ -235,7 +236,7 @@ class AlipayPayResultNotify extends AlipayNotify
     /**
      * @param mixed $acquirerInfo
      */
-    public function setAcquirerInfo($acquirerInfo): void
+    public function setAcquirerInfo($acquirerInfo) 
     {
         $this->acquirerInfo = $acquirerInfo;
     }

@@ -18,7 +18,7 @@ class SettlementInfo
     /**
      * @param mixed $settlementCurrency
      */
-    public function setSettlementCurrency($settlementCurrency): void
+    public function setSettlementCurrency($settlementCurrency) 
     {
         $this->settlementCurrency = $settlementCurrency;
     }
@@ -34,7 +34,7 @@ class SettlementInfo
     /**
      * @param mixed $settlementBankAccount
      */
-    public function setSettlementBankAccount($settlementBankAccount): void
+    public function setSettlementBankAccount($settlementBankAccount) 
     {
         $this->settlementBankAccount = $settlementBankAccount;
     }

@@ -23,7 +23,7 @@ class Lodging
     /**
      * @param mixed $hotelName
      */
-    public function setHotelName($hotelName): void
+    public function setHotelName($hotelName) 
     {
         $this->hotelName = $hotelName;
     }
@@ -39,7 +39,7 @@ class Lodging
     /**
      * @param mixed $hotelAddress
      */
-    public function setHotelAddress($hotelAddress): void
+    public function setHotelAddress($hotelAddress) 
     {
         $this->hotelAddress = $hotelAddress;
     }
@@ -55,7 +55,7 @@ class Lodging
     /**
      * @param mixed $checkInDate
      */
-    public function setCheckInDate($checkInDate): void
+    public function setCheckInDate($checkInDate) 
     {
         $this->checkInDate = $checkInDate;
     }
@@ -71,7 +71,7 @@ class Lodging
     /**
      * @param mixed $checkOutDate
      */
-    public function setCheckOutDate($checkOutDate): void
+    public function setCheckOutDate($checkOutDate) 
     {
         $this->checkOutDate = $checkOutDate;
     }
@@ -87,7 +87,7 @@ class Lodging
     /**
      * @param mixed $numberOfNights
      */
-    public function setNumberOfNights($numberOfNights): void
+    public function setNumberOfNights($numberOfNights) 
     {
         $this->numberOfNights = $numberOfNights;
     }
@@ -103,7 +103,7 @@ class Lodging
     /**
      * @param mixed $numberOfRooms
      */
-    public function setNumberOfRooms($numberOfRooms): void
+    public function setNumberOfRooms($numberOfRooms) 
     {
         $this->numberOfRooms = $numberOfRooms;
     }
@@ -119,7 +119,7 @@ class Lodging
     /**
      * @param mixed $guestNames
      */
-    public function setGuestNames($guestNames): void
+    public function setGuestNames($guestNames) 
     {
         $this->guestNames = $guestNames;
     }

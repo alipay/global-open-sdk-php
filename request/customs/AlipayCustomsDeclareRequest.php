@@ -33,7 +33,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $declarationRequestId
      */
-    public function setDeclarationRequestId($declarationRequestId): void
+    public function setDeclarationRequestId($declarationRequestId) 
     {
         $this->declarationRequestId = $declarationRequestId;
     }
@@ -49,7 +49,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId): void
+    public function setPaymentId($paymentId) 
     {
         $this->paymentId = $paymentId;
     }
@@ -65,7 +65,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $declarationAmount
      */
-    public function setDeclarationAmount($declarationAmount): void
+    public function setDeclarationAmount($declarationAmount) 
     {
         $this->declarationAmount = $declarationAmount;
     }
@@ -81,7 +81,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $customs
      */
-    public function setCustoms($customs): void
+    public function setCustoms($customs) 
     {
         $this->customs = $customs;
     }
@@ -97,7 +97,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $merchantCustomsInfo
      */
-    public function setMerchantCustomsInfo($merchantCustomsInfo): void
+    public function setMerchantCustomsInfo($merchantCustomsInfo) 
     {
         $this->merchantCustomsInfo = $merchantCustomsInfo;
     }
@@ -113,7 +113,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $splitOrder
      */
-    public function setSplitOrder($splitOrder): void
+    public function setSplitOrder($splitOrder) 
     {
         $this->splitOrder = $splitOrder;
     }
@@ -129,7 +129,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $subOrderId
      */
-    public function setSubOrderId($subOrderId): void
+    public function setSubOrderId($subOrderId) 
     {
         $this->subOrderId = $subOrderId;
     }
@@ -145,7 +145,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $buyerCertificate
      */
-    public function setBuyerCertificate($buyerCertificate): void
+    public function setBuyerCertificate($buyerCertificate) 
     {
         $this->buyerCertificate = $buyerCertificate;
     }

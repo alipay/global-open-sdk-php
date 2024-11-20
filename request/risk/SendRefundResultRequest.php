@@ -29,7 +29,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId): void
+    public function setReferenceTransactionId($referenceTransactionId) 
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -45,7 +45,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $referenceRefundId
      */
-    public function setReferenceRefundId($referenceRefundId): void
+    public function setReferenceRefundId($referenceRefundId) 
     {
         $this->referenceRefundId = $referenceRefundId;
     }
@@ -61,7 +61,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $actualRefundAmount
      */
-    public function setActualRefundAmount($actualRefundAmount): void
+    public function setActualRefundAmount($actualRefundAmount) 
     {
         $this->actualRefundAmount = $actualRefundAmount;
     }
@@ -77,7 +77,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $refundRecords
      */
-    public function setRefundRecords($refundRecords): void
+    public function setRefundRecords($refundRecords) 
     {
         $this->refundRecords = $refundRecords;
     }

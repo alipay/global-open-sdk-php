@@ -29,7 +29,7 @@ class AlipayDeviceCertificateRequest extends AlipayRequest
     /**
      * @param mixed $devicePublicKey
      */
-    public function setDevicePublicKey($devicePublicKey): void
+    public function setDevicePublicKey($devicePublicKey) 
     {
         $this->devicePublicKey = $devicePublicKey;
     }
@@ -45,7 +45,7 @@ class AlipayDeviceCertificateRequest extends AlipayRequest
     /**
      * @param mixed $deviceRequestId
      */
-    public function setDeviceRequestId($deviceRequestId): void
+    public function setDeviceRequestId($deviceRequestId) 
     {
         $this->deviceRequestId = $deviceRequestId;
     }

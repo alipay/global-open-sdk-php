@@ -21,7 +21,7 @@ class Certificate
     /**
      * @param mixed $certificateType
      */
-    public function setCertificateType($certificateType): void
+    public function setCertificateType($certificateType)
     {
         $this->certificateType = $certificateType;
     }
@@ -37,7 +37,7 @@ class Certificate
     /**
      * @param mixed $certificateNo
      */
-    public function setCertificateNo($certificateNo): void
+    public function setCertificateNo($certificateNo) 
     {
         $this->certificateNo = $certificateNo;
     }
@@ -53,7 +53,7 @@ class Certificate
     /**
      * @param mixed $holderName
      */
-    public function setHolderName($holderName): void
+    public function setHolderName($holderName) 
     {
         $this->holderName = $holderName;
     }
@@ -69,7 +69,7 @@ class Certificate
     /**
      * @param mixed $fileKeys
      */
-    public function setFileKeys($fileKeys): void
+    public function setFileKeys($fileKeys) 
     {
         $this->fileKeys = $fileKeys;
     }
@@ -85,7 +85,7 @@ class Certificate
     /**
      * @param mixed $certificateAuthority
      */
-    public function setCertificateAuthority($certificateAuthority): void
+    public function setCertificateAuthority($certificateAuthority) 
     {
         $this->certificateAuthority = $certificateAuthority;
     }

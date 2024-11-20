@@ -28,7 +28,7 @@ class AlipaySupplyDefenseDocumentRequest extends AlipayRequest
     /**
      * @param mixed $disputeEvidence
      */
-    public function setDisputeEvidence($disputeEvidence): void
+    public function setDisputeEvidence($disputeEvidence) 
     {
         $this->disputeEvidence = $disputeEvidence;
     }
@@ -44,7 +44,7 @@ class AlipaySupplyDefenseDocumentRequest extends AlipayRequest
     /**
      * @param mixed $disputeId
      */
-    public function setDisputeId($disputeId): void
+    public function setDisputeId($disputeId) 
     {
         $this->disputeId = $disputeId;
     }

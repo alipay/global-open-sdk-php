@@ -20,7 +20,7 @@ class Gaming
     /**
      * @param mixed $gameName
      */
-    public function setGameName($gameName): void
+    public function setGameName($gameName) 
     {
         $this->gameName = $gameName;
     }
@@ -36,7 +36,7 @@ class Gaming
     /**
      * @param mixed $toppedUpUser
      */
-    public function setToppedUpUser($toppedUpUser): void
+    public function setToppedUpUser($toppedUpUser) 
     {
         $this->toppedUpUser = $toppedUpUser;
     }
@@ -52,7 +52,7 @@ class Gaming
     /**
      * @param mixed $toppedUpEmail
      */
-    public function setToppedUpEmail($toppedUpEmail): void
+    public function setToppedUpEmail($toppedUpEmail) 
     {
         $this->toppedUpEmail = $toppedUpEmail;
     }
@@ -68,7 +68,7 @@ class Gaming
     /**
      * @param mixed $toppedUpPhoneNo
      */
-    public function setToppedUpPhoneNo($toppedUpPhoneNo): void
+    public function setToppedUpPhoneNo($toppedUpPhoneNo) 
     {
         $this->toppedUpPhoneNo = $toppedUpPhoneNo;
     }

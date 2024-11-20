@@ -23,7 +23,7 @@ class BusinessInfo
     /**
      * @param mixed $mcc
      */
-    public function setMcc($mcc): void
+    public function setMcc($mcc) 
     {
         $this->mcc = $mcc;
     }
@@ -39,7 +39,7 @@ class BusinessInfo
     /**
      * @param mixed $websites
      */
-    public function setWebsites($websites): void
+    public function setWebsites($websites) 
     {
         $this->websites = $websites;
     }
@@ -55,7 +55,7 @@ class BusinessInfo
     /**
      * @param mixed $englishName
      */
-    public function setEnglishName($englishName): void
+    public function setEnglishName($englishName) 
     {
         $this->englishName = $englishName;
     }
@@ -71,7 +71,7 @@ class BusinessInfo
     /**
      * @param mixed $doingBusinessAs
      */
-    public function setDoingBusinessAs($doingBusinessAs): void
+    public function setDoingBusinessAs($doingBusinessAs) 
     {
         $this->doingBusinessAs = $doingBusinessAs;
     }
@@ -87,7 +87,7 @@ class BusinessInfo
     /**
      * @param mixed $mainSalesCountry
      */
-    public function setMainSalesCountry($mainSalesCountry): void
+    public function setMainSalesCountry($mainSalesCountry) 
     {
         $this->mainSalesCountry = $mainSalesCountry;
     }
@@ -103,7 +103,7 @@ class BusinessInfo
     /**
      * @param mixed $appName
      */
-    public function setAppName($appName): void
+    public function setAppName($appName) 
     {
         $this->appName = $appName;
     }
@@ -119,7 +119,7 @@ class BusinessInfo
     /**
      * @param mixed $serviceDescription
      */
-    public function setServiceDescription($serviceDescription): void
+    public function setServiceDescription($serviceDescription) 
     {
         $this->serviceDescription = $serviceDescription;
     }

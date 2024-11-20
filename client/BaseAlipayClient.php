@@ -10,8 +10,8 @@ abstract class BaseAlipayClient
     private $gatewayUrl;
     private $merchantPrivateKey;
     private $alipayPublicKey;
-
     private $clientId;
+    private $isSandboxMode;
 
     function __construct()
     {
@@ -35,6 +35,11 @@ abstract class BaseAlipayClient
         $this->merchantPrivateKey = $merchantPrivateKey;
         $this->alipayPublicKey = $alipayPublicKey;
         $this->clientId = $clientId;
+
+        if (strpos($clientId, "SANDBOX_") === 0) {
+            $this->isSandboxMode = true;
+        }
+
     }
 
     public function execute($request)
@@ -47,10 +52,14 @@ abstract class BaseAlipayClient
         $this->checkRequestParam($request);
 
         $clientId = $request->getClientId();
+        if (strpos($clientId, "SANDBOX_") === 0) {
+            $this->isSandboxMode = true;
+        }
+        $this->adjustSandboxUrl($request);
         $httpMethod = $request->getHttpMethod();
         $path = $request->getPath();
         $keyVersion = $request->getKeyVersion();
-        $reqTime = date(DATE_ISO8601);
+        $reqTime =date(DATE_ISO8601);
         $reqBody = json_encode($request);
 
         $signValue = $this->genSignValue($httpMethod, $path, $clientId, $reqTime, $reqBody);
@@ -182,9 +191,17 @@ abstract class BaseAlipayClient
 
     }
 
+    private function adjustSandboxUrl($alipayRequest) {
+        if ($this->isSandboxMode) {
+            $originPath = $alipayRequest->getPath();
+            $newPath = preg_replace('/\/ams\/api/', '/ams/sandbox/api', $originPath, 1);
+            $alipayRequest->setPath($newPath);
+        }
+    }
 
     abstract protected function buildCustomHeader();
 
     abstract protected function sendRequest($requestUrl, $httpMethod, $headers, $reqBody);
+
 
 }

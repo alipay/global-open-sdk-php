@@ -26,7 +26,7 @@ class ThreeDSResult
     /**
      * @param mixed $threeDSVersion
      */
-    public function setThreeDSVersion($threeDSVersion): void
+    public function setThreeDSVersion($threeDSVersion) 
     {
         $this->threeDSVersion = $threeDSVersion;
     }
@@ -42,7 +42,7 @@ class ThreeDSResult
     /**
      * @param mixed $eci
      */
-    public function setEci($eci): void
+    public function setEci($eci) 
     {
         $this->eci = $eci;
     }
@@ -58,7 +58,7 @@ class ThreeDSResult
     /**
      * @param mixed $cavv
      */
-    public function setCavv($cavv): void
+    public function setCavv($cavv) 
     {
         $this->cavv = $cavv;
     }
@@ -74,7 +74,7 @@ class ThreeDSResult
     /**
      * @param mixed $dsTransactionId
      */
-    public function setDsTransactionId($dsTransactionId): void
+    public function setDsTransactionId($dsTransactionId) 
     {
         $this->dsTransactionId = $dsTransactionId;
     }
@@ -90,7 +90,7 @@ class ThreeDSResult
     /**
      * @param mixed $xid
      */
-    public function setXid($xid): void
+    public function setXid($xid) 
     {
         $this->xid = $xid;
     }

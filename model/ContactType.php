@@ -19,7 +19,7 @@ class ContactType
     /**
      * @param mixed $EMAIL
      */
-    public function setEMAIL($EMAIL): void
+    public function setEMAIL($EMAIL) 
     {
         $this->EMAIL = $EMAIL;
     }
@@ -35,7 +35,7 @@ class ContactType
     /**
      * @param mixed $PHONE_NO
      */
-    public function setPHONENO($PHONE_NO): void
+    public function setPHONENO($PHONE_NO) 
     {
         $this->PHONE_NO = $PHONE_NO;
     }
@@ -51,7 +51,7 @@ class ContactType
     /**
      * @param mixed $COMMERCIAL_PHONE_NO
      */
-    public function setCOMMERCIALPHONENO($COMMERCIAL_PHONE_NO): void
+    public function setCOMMERCIALPHONENO($COMMERCIAL_PHONE_NO) 
     {
         $this->COMMERCIAL_PHONE_NO = $COMMERCIAL_PHONE_NO;
     }

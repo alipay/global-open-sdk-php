@@ -63,7 +63,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $networkTransactionId
      */
-    public function setNetworkTransactionId($networkTransactionId): void
+    public function setNetworkTransactionId($networkTransactionId)
     {
         $this->networkTransactionId = $networkTransactionId;
     }
@@ -82,7 +82,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $selectedCardBrand
      */
-    public function setSelectedCardBrand($selectedCardBrand): void
+    public function setSelectedCardBrand($selectedCardBrand)
     {
         $this->selectedCardBrand = $selectedCardBrand;
     }
@@ -98,7 +98,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $maskedCardNo
      */
-    public function setMaskedCardNo($maskedCardNo): void
+    public function setMaskedCardNo($maskedCardNo)
     {
         $this->maskedCardNo = $maskedCardNo;
     }
@@ -114,7 +114,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $fingerprint
      */
-    public function setFingerprint($fingerprint): void
+    public function setFingerprint($fingerprint) 
     {
         $this->fingerprint = $fingerprint;
     }
@@ -130,7 +130,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $authenticationFlow
      */
-    public function setAuthenticationFlow($authenticationFlow): void
+    public function setAuthenticationFlow($authenticationFlow) 
     {
         $this->authenticationFlow = $authenticationFlow;
     }
@@ -146,7 +146,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $funding
      */
-    public function setFunding($funding): void
+    public function setFunding($funding) 
     {
         $this->funding = $funding;
     }
@@ -162,7 +162,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $avsResultRaw
      */
-    public function setAvsResultRaw($avsResultRaw): void
+    public function setAvsResultRaw($avsResultRaw) 
     {
         $this->avsResultRaw = $avsResultRaw;
     }
@@ -178,7 +178,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $bin
      */
-    public function setBin($bin): void
+    public function setBin($bin) 
     {
         $this->bin = $bin;
     }
@@ -194,7 +194,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $issuerName
      */
-    public function setIssuerName($issuerName): void
+    public function setIssuerName($issuerName) 
     {
         $this->issuerName = $issuerName;
     }
@@ -210,7 +210,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $issuingCountry
      */
-    public function setIssuingCountry($issuingCountry): void
+    public function setIssuingCountry($issuingCountry) 
     {
         $this->issuingCountry = $issuingCountry;
     }
@@ -226,7 +226,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $lastFour
      */
-    public function setLastFour($lastFour): void
+    public function setLastFour($lastFour) 
     {
         $this->lastFour = $lastFour;
     }
@@ -242,7 +242,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $cardholderName
      */
-    public function setCardholderName($cardholderName): void
+    public function setCardholderName($cardholderName) 
     {
         $this->cardholderName = $cardholderName;
     }
@@ -258,7 +258,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $cvv
      */
-    public function setCvv($cvv): void
+    public function setCvv($cvv) 
     {
         $this->cvv = $cvv;
     }
@@ -274,7 +274,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $dateOfBirth
      */
-    public function setDateOfBirth($dateOfBirth): void
+    public function setDateOfBirth($dateOfBirth) 
     {
         $this->dateOfBirth = $dateOfBirth;
     }
@@ -290,7 +290,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $businessNo
      */
-    public function setBusinessNo($businessNo): void
+    public function setBusinessNo($businessNo) 
     {
         $this->businessNo = $businessNo;
     }
@@ -306,7 +306,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $cardPasswordDigest
      */
-    public function setCardPasswordDigest($cardPasswordDigest): void
+    public function setCardPasswordDigest($cardPasswordDigest) 
     {
         $this->cardPasswordDigest = $cardPasswordDigest;
     }
@@ -322,7 +322,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $cpf
      */
-    public function setCpf($cpf): void
+    public function setCpf($cpf) 
     {
         $this->cpf = $cpf;
     }
@@ -338,7 +338,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $payerEmail
      */
-    public function setPayerEmail($payerEmail): void
+    public function setPayerEmail($payerEmail) 
     {
         $this->payerEmail = $payerEmail;
     }

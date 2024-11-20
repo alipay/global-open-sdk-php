@@ -18,7 +18,7 @@ class StockInfo
     /**
      * @param mixed $listedRegion
      */
-    public function setListedRegion($listedRegion): void
+    public function setListedRegion($listedRegion) 
     {
         $this->listedRegion = $listedRegion;
     }
@@ -34,7 +34,7 @@ class StockInfo
     /**
      * @param mixed $tickerSymbol
      */
-    public function setTickerSymbol($tickerSymbol): void
+    public function setTickerSymbol($tickerSymbol) 
     {
         $this->tickerSymbol = $tickerSymbol;
     }

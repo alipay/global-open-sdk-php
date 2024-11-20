@@ -28,7 +28,7 @@ class AcquirerInfo
     /**
      * @param mixed $acquirerName
      */
-    public function setAcquirerName($acquirerName): void
+    public function setAcquirerName($acquirerName) 
     {
         $this->acquirerName = $acquirerName;
     }
@@ -44,7 +44,7 @@ class AcquirerInfo
     /**
      * @param mixed $referenceRequestId
      */
-    public function setReferenceRequestId($referenceRequestId): void
+    public function setReferenceRequestId($referenceRequestId) 
     {
         $this->referenceRequestId = $referenceRequestId;
     }
@@ -60,7 +60,7 @@ class AcquirerInfo
     /**
      * @param mixed $acquirerTransactionId
      */
-    public function setAcquirerTransactionId($acquirerTransactionId): void
+    public function setAcquirerTransactionId($acquirerTransactionId) 
     {
         $this->acquirerTransactionId = $acquirerTransactionId;
     }
@@ -76,7 +76,7 @@ class AcquirerInfo
     /**
      * @param mixed $acquirerMerchantId
      */
-    public function setAcquirerMerchantId($acquirerMerchantId): void
+    public function setAcquirerMerchantId($acquirerMerchantId) 
     {
         $this->acquirerMerchantId = $acquirerMerchantId;
     }
@@ -92,7 +92,7 @@ class AcquirerInfo
     /**
      * @param mixed $acquirerResultCode
      */
-    public function setAcquirerResultCode($acquirerResultCode): void
+    public function setAcquirerResultCode($acquirerResultCode) 
     {
         $this->acquirerResultCode = $acquirerResultCode;
     }
@@ -108,7 +108,7 @@ class AcquirerInfo
     /**
      * @param mixed $acquirerResultMessage
      */
-    public function setAcquirerResultMessage($acquirerResultMessage): void
+    public function setAcquirerResultMessage($acquirerResultMessage) 
     {
         $this->acquirerResultMessage = $acquirerResultMessage;
     }

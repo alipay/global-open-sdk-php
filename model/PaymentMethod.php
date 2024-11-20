@@ -104,7 +104,7 @@ class PaymentMethod
     /**
      * @param mixed $requireIssuerAuthentication
      */
-    public function setRequireIssuerAuthentication($requireIssuerAuthentication): void
+    public function setRequireIssuerAuthentication($requireIssuerAuthentication)
     {
         $this->requireIssuerAuthentication = $requireIssuerAuthentication;
     }

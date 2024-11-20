@@ -23,7 +23,7 @@ class TransferToDetail
     /**
      * @param mixed $transferToMethod
      */
-    public function setTransferToMethod($transferToMethod): void
+    public function setTransferToMethod($transferToMethod) 
     {
         $this->transferToMethod = $transferToMethod;
     }
@@ -41,7 +41,7 @@ class TransferToDetail
     /**
      * @param mixed $transferToCurrency
      */
-    public function setTransferToCurrency($transferToCurrency): void
+    public function setTransferToCurrency($transferToCurrency) 
     {
         $this->transferToCurrency = $transferToCurrency;
     }
@@ -57,7 +57,7 @@ class TransferToDetail
     /**
      * @param mixed $feeAmount
      */
-    public function setFeeAmount($feeAmount): void
+    public function setFeeAmount($feeAmount) 
     {
         $this->feeAmount = $feeAmount;
     }
@@ -73,7 +73,7 @@ class TransferToDetail
     /**
      * @param mixed $actualTransferToAmount
      */
-    public function setActualTransferToAmount($actualTransferToAmount): void
+    public function setActualTransferToAmount($actualTransferToAmount) 
     {
         $this->actualTransferToAmount = $actualTransferToAmount;
     }
@@ -89,7 +89,7 @@ class TransferToDetail
     /**
      * @param mixed $purposeCode
      */
-    public function setPurposeCode($purposeCode): void
+    public function setPurposeCode($purposeCode) 
     {
         $this->purposeCode = $purposeCode;
     }
@@ -105,7 +105,7 @@ class TransferToDetail
     /**
      * @param mixed $transferNotifyUrl
      */
-    public function setTransferNotifyUrl($transferNotifyUrl): void
+    public function setTransferNotifyUrl($transferNotifyUrl) 
     {
         $this->transferNotifyUrl = $transferNotifyUrl;
     }
@@ -121,7 +121,7 @@ class TransferToDetail
     /**
      * @param mixed $transferRemark
      */
-    public function setTransferRemark($transferRemark): void
+    public function setTransferRemark($transferRemark) 
     {
         $this->transferRemark = $transferRemark;
     }

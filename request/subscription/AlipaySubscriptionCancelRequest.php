@@ -44,7 +44,7 @@ class AlipaySubscriptionCancelRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionId
      */
-    public function setSubscriptionId($subscriptionId): void
+    public function setSubscriptionId($subscriptionId) 
     {
         $this->subscriptionId = $subscriptionId;
     }
@@ -60,7 +60,7 @@ class AlipaySubscriptionCancelRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionRequestId
      */
-    public function setSubscriptionRequestId($subscriptionRequestId): void
+    public function setSubscriptionRequestId($subscriptionRequestId) 
     {
         $this->subscriptionRequestId = $subscriptionRequestId;
     }
@@ -76,7 +76,7 @@ class AlipaySubscriptionCancelRequest extends AlipayRequest
     /**
      * @param mixed $cancellationType
      */
-    public function setCancellationType($cancellationType): void
+    public function setCancellationType($cancellationType) 
     {
         $this->cancellationType = $cancellationType;
     }
