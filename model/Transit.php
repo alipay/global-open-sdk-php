@@ -20,7 +20,7 @@ class Transit
     /**
      * @param mixed $transitType
      */
-    public function setTransitType($transitType): void
+    public function setTransitType($transitType) 
     {
         $this->transitType = $transitType;
     }
@@ -36,7 +36,7 @@ class Transit
     /**
      * @param mixed $legs
      */
-    public function setLegs($legs): void
+    public function setLegs($legs) 
     {
         $this->legs = $legs;
     }
@@ -52,7 +52,7 @@ class Transit
     /**
      * @param mixed $passengers
      */
-    public function setPassengers($passengers): void
+    public function setPassengers($passengers) 
     {
         $this->passengers = $passengers;
     }

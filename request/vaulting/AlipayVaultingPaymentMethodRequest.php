@@ -32,7 +32,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $vaultingRequestId
      */
-    public function setVaultingRequestId($vaultingRequestId): void
+    public function setVaultingRequestId($vaultingRequestId) 
     {
         $this->vaultingRequestId = $vaultingRequestId;
     }
@@ -48,7 +48,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $vaultingNotificationUrl
      */
-    public function setVaultingNotificationUrl($vaultingNotificationUrl): void
+    public function setVaultingNotificationUrl($vaultingNotificationUrl) 
     {
         $this->vaultingNotificationUrl = $vaultingNotificationUrl;
     }
@@ -64,7 +64,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $redirectUrl
      */
-    public function setRedirectUrl($redirectUrl): void
+    public function setRedirectUrl($redirectUrl) 
     {
         $this->redirectUrl = $redirectUrl;
     }
@@ -80,7 +80,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $merchantRegion
      */
-    public function setMerchantRegion($merchantRegion): void
+    public function setMerchantRegion($merchantRegion) 
     {
         $this->merchantRegion = $merchantRegion;
     }
@@ -96,7 +96,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethodDetail
      */
-    public function setPaymentMethodDetail($paymentMethodDetail): void
+    public function setPaymentMethodDetail($paymentMethodDetail) 
     {
         $this->paymentMethodDetail = $paymentMethodDetail;
     }
@@ -112,7 +112,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $env
      */
-    public function setEnv($env): void
+    public function setEnv($env) 
     {
         $this->env = $env;
     }

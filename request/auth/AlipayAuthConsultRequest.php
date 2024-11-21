@@ -35,7 +35,7 @@ class AlipayAuthConsultRequest extends \Request\AlipayRequest
     /**
      * @param mixed $authMetaData
      */
-    public function setAuthMetaData($authMetaData): void
+    public function setAuthMetaData($authMetaData)
     {
         $this->authMetaData = $authMetaData;
     }

@@ -23,7 +23,7 @@ class Trial
     /**
      * @param mixed $trialStartPeriod
      */
-    public function setTrialStartPeriod($trialStartPeriod): void
+    public function setTrialStartPeriod($trialStartPeriod)
     {
         $this->trialStartPeriod = $trialStartPeriod;
     }
@@ -39,7 +39,7 @@ class Trial
     /**
      * @param mixed $trialAmount
      */
-    public function setTrialAmount($trialAmount): void
+    public function setTrialAmount($trialAmount) 
     {
         $this->trialAmount = $trialAmount;
     }
@@ -55,7 +55,7 @@ class Trial
     /**
      * @param mixed $trialEndPeriod
      */
-    public function setTrialEndPeriod($trialEndPeriod): void
+    public function setTrialEndPeriod($trialEndPeriod) 
     {
         $this->trialEndPeriod = $trialEndPeriod;
     }

@@ -25,7 +25,7 @@ class AlipayInquireBalanceRequest extends AlipayRequest
     /**
      * @param mixed $referenceMerchantId
      */
-    public function setReferenceMerchantId($referenceMerchantId): void
+    public function setReferenceMerchantId($referenceMerchantId) 
     {
         $this->referenceMerchantId = $referenceMerchantId;
     }

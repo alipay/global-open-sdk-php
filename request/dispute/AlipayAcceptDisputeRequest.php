@@ -26,7 +26,7 @@ class AlipayAcceptDisputeRequest extends  AlipayRequest
     /**
      * @param mixed $disputeId
      */
-    public function setDisputeId($disputeId): void
+    public function setDisputeId($disputeId) 
     {
         $this->disputeId = $disputeId;
     }

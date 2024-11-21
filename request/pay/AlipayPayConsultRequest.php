@@ -321,7 +321,7 @@ class AlipayPayConsultRequest extends AlipayRequest
     /**
      * @param mixed $buyer
      */
-    public function setBuyer($buyer): void
+    public function setBuyer($buyer)
     {
         $this->buyer = $buyer;
     }

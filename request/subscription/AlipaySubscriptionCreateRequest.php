@@ -100,7 +100,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionRequestId
      */
-    public function setSubscriptionRequestId($subscriptionRequestId): void
+    public function setSubscriptionRequestId($subscriptionRequestId) 
     {
         $this->subscriptionRequestId = $subscriptionRequestId;
     }
@@ -116,7 +116,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionDescription
      */
-    public function setSubscriptionDescription($subscriptionDescription): void
+    public function setSubscriptionDescription($subscriptionDescription) 
     {
         $this->subscriptionDescription = $subscriptionDescription;
     }
@@ -132,7 +132,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionRedirectUrl
      */
-    public function setSubscriptionRedirectUrl($subscriptionRedirectUrl): void
+    public function setSubscriptionRedirectUrl($subscriptionRedirectUrl) 
     {
         $this->subscriptionRedirectUrl = $subscriptionRedirectUrl;
     }
@@ -148,7 +148,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionStartTime
      */
-    public function setSubscriptionStartTime($subscriptionStartTime): void
+    public function setSubscriptionStartTime($subscriptionStartTime) 
     {
         $this->subscriptionStartTime = $subscriptionStartTime;
     }
@@ -164,7 +164,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionEndTime
      */
-    public function setSubscriptionEndTime($subscriptionEndTime): void
+    public function setSubscriptionEndTime($subscriptionEndTime) 
     {
         $this->subscriptionEndTime = $subscriptionEndTime;
     }
@@ -180,7 +180,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $periodRule
      */
-    public function setPeriodRule($periodRule): void
+    public function setPeriodRule($periodRule) 
     {
         $this->periodRule = $periodRule;
     }
@@ -196,7 +196,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionExpiryTime
      */
-    public function setSubscriptionExpiryTime($subscriptionExpiryTime): void
+    public function setSubscriptionExpiryTime($subscriptionExpiryTime) 
     {
         $this->subscriptionExpiryTime = $subscriptionExpiryTime;
     }
@@ -212,7 +212,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethod
      */
-    public function setPaymentMethod($paymentMethod): void
+    public function setPaymentMethod($paymentMethod) 
     {
         $this->paymentMethod = $paymentMethod;
     }
@@ -228,7 +228,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionNotificationUrl
      */
-    public function setSubscriptionNotificationUrl($subscriptionNotificationUrl): void
+    public function setSubscriptionNotificationUrl($subscriptionNotificationUrl) 
     {
         $this->subscriptionNotificationUrl = $subscriptionNotificationUrl;
     }
@@ -244,7 +244,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $paymentNotificationUrl
      */
-    public function setPaymentNotificationUrl($paymentNotificationUrl): void
+    public function setPaymentNotificationUrl($paymentNotificationUrl) 
     {
         $this->paymentNotificationUrl = $paymentNotificationUrl;
     }
@@ -260,7 +260,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $orderInfo
      */
-    public function setOrderInfo($orderInfo): void
+    public function setOrderInfo($orderInfo) 
     {
         $this->orderInfo = $orderInfo;
     }
@@ -276,7 +276,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $paymentAmount
      */
-    public function setPaymentAmount($paymentAmount): void
+    public function setPaymentAmount($paymentAmount) 
     {
         $this->paymentAmount = $paymentAmount;
     }
@@ -292,7 +292,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $settlementStrategy
      */
-    public function setSettlementStrategy($settlementStrategy): void
+    public function setSettlementStrategy($settlementStrategy) 
     {
         $this->settlementStrategy = $settlementStrategy;
     }
@@ -308,7 +308,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $env
      */
-    public function setEnv($env): void
+    public function setEnv($env) 
     {
         $this->env = $env;
     }
@@ -324,7 +324,7 @@ class AlipaySubscriptionCreateRequest extends AlipayRequest
     /**
      * @param mixed $trials
      */
-    public function setTrials($trials): void
+    public function setTrials($trials) 
     {
         $this->trials = $trials;
     }

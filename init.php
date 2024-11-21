@@ -74,10 +74,16 @@ require __DIR__ . '/request/vaulting/AlipayVaultingQueryRequest.php';
 require __DIR__ . '/request/vaulting/AlipayVaultingSessionRequest.php';
 
 //notify
-require __DIR__ . '/request/notify/AlipayCaptureResultNotify.php';
 require __DIR__ . '/request/notify/AlipayNotify.php';
+require __DIR__ . '/request/notify/AlipayAuthNotify.php';
+require __DIR__ . '/request/notify/AlipayCaptureResultNotify.php';
+require __DIR__ . '/request/notify/AlipayDisputeNotify.php';
 require __DIR__ . '/request/notify/AlipayPayResultNotify.php';
 require __DIR__ . '/request/notify/AlipayRefundNotify.php';
+require __DIR__ . '/request/notify/AlipaySubscriptionNotify.php';
+require __DIR__ . '/request/notify/AlipaySubscriptionPayNotify.php';
+require __DIR__ . '/request/notify/AlipayVaultingNotify.php';
+
 
 
 

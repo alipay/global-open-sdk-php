@@ -22,7 +22,7 @@ class EntityAssociations
     /**
      * @param mixed $associationType
      */
-    public function setAssociationType($associationType): void
+    public function setAssociationType($associationType) 
     {
         $this->associationType = $associationType;
     }
@@ -41,7 +41,7 @@ class EntityAssociations
     /**
      * @param mixed $legalEntityType
      */
-    public function setLegalEntityType($legalEntityType): void
+    public function setLegalEntityType($legalEntityType) 
     {
         $this->legalEntityType = $legalEntityType;
     }
@@ -57,7 +57,7 @@ class EntityAssociations
     /**
      * @param mixed $company
      */
-    public function setCompany($company): void
+    public function setCompany($company) 
     {
         $this->company = $company;
     }
@@ -73,7 +73,7 @@ class EntityAssociations
     /**
      * @param mixed $individual
      */
-    public function setIndividual($individual): void
+    public function setIndividual($individual) 
     {
         $this->individual = $individual;
     }
@@ -89,7 +89,7 @@ class EntityAssociations
     /**
      * @param mixed $shareholdingRatio
      */
-    public function setShareholdingRatio($shareholdingRatio): void
+    public function setShareholdingRatio($shareholdingRatio) 
     {
         $this->shareholdingRatio = $shareholdingRatio;
     }

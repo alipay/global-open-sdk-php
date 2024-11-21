@@ -2,7 +2,8 @@
 
 namespace Request\notify;
 
-class AlipayDisputeNotify extends AlipayNotify
+
+class AlipayDisputeNotify extends \Request\notify\AlipayNotify
 {
     public  $paymentRequestId;
     public  $disputeId;
@@ -32,7 +33,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $paymentRequestId
      */
-    public function setPaymentRequestId($paymentRequestId): void
+    public function setPaymentRequestId($paymentRequestId)
     {
         $this->paymentRequestId = $paymentRequestId;
     }
@@ -48,7 +49,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeId
      */
-    public function setDisputeId($disputeId): void
+    public function setDisputeId($disputeId)
     {
         $this->disputeId = $disputeId;
     }
@@ -64,7 +65,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId): void
+    public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
     }
@@ -80,7 +81,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeTime
      */
-    public function setDisputeTime($disputeTime): void
+    public function setDisputeTime($disputeTime)
     {
         $this->disputeTime = $disputeTime;
     }
@@ -96,7 +97,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeAmount
      */
-    public function setDisputeAmount($disputeAmount): void
+    public function setDisputeAmount($disputeAmount)
     {
         $this->disputeAmount = $disputeAmount;
     }
@@ -112,7 +113,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeNotificationType
      */
-    public function setDisputeNotificationType($disputeNotificationType): void
+    public function setDisputeNotificationType($disputeNotificationType)
     {
         $this->disputeNotificationType = $disputeNotificationType;
     }
@@ -128,7 +129,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeReasonMsg
      */
-    public function setDisputeReasonMsg($disputeReasonMsg): void
+    public function setDisputeReasonMsg($disputeReasonMsg)
     {
         $this->disputeReasonMsg = $disputeReasonMsg;
     }
@@ -144,7 +145,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeJudgedTime
      */
-    public function setDisputeJudgedTime($disputeJudgedTime): void
+    public function setDisputeJudgedTime($disputeJudgedTime)
     {
         $this->disputeJudgedTime = $disputeJudgedTime;
     }
@@ -160,7 +161,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeJudgedAmount
      */
-    public function setDisputeJudgedAmount($disputeJudgedAmount): void
+    public function setDisputeJudgedAmount($disputeJudgedAmount)
     {
         $this->disputeJudgedAmount = $disputeJudgedAmount;
     }
@@ -176,7 +177,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeJudgedResult
      */
-    public function setDisputeJudgedResult($disputeJudgedResult): void
+    public function setDisputeJudgedResult($disputeJudgedResult)
     {
         $this->disputeJudgedResult = $disputeJudgedResult;
     }
@@ -192,7 +193,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $defenseDueTime
      */
-    public function setDefenseDueTime($defenseDueTime): void
+    public function setDefenseDueTime($defenseDueTime)
     {
         $this->defenseDueTime = $defenseDueTime;
     }
@@ -208,7 +209,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeReasonCode
      */
-    public function setDisputeReasonCode($disputeReasonCode): void
+    public function setDisputeReasonCode($disputeReasonCode)
     {
         $this->disputeReasonCode = $disputeReasonCode;
     }
@@ -224,7 +225,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeSource
      */
-    public function setDisputeSource($disputeSource): void
+    public function setDisputeSource($disputeSource)
     {
         $this->disputeSource = $disputeSource;
     }
@@ -240,7 +241,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $arn
      */
-    public function setArn($arn): void
+    public function setArn($arn)
     {
         $this->arn = $arn;
     }
@@ -256,7 +257,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeAcceptReason
      */
-    public function setDisputeAcceptReason($disputeAcceptReason): void
+    public function setDisputeAcceptReason($disputeAcceptReason)
     {
         $this->disputeAcceptReason = $disputeAcceptReason;
     }
@@ -272,7 +273,7 @@ class AlipayDisputeNotify extends AlipayNotify
     /**
      * @param mixed $disputeAcceptTime
      */
-    public function setDisputeAcceptTime($disputeAcceptTime): void
+    public function setDisputeAcceptTime($disputeAcceptTime)
     {
         $this->disputeAcceptTime = $disputeAcceptTime;
     }

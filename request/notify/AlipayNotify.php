@@ -19,7 +19,7 @@ class AlipayNotify
     /**
      * @param mixed $notifyType
      */
-    public function setNotifyType($notifyType): void
+    public function setNotifyType($notifyType) 
     {
         $this->notifyType = $notifyType;
     }
@@ -35,7 +35,7 @@ class AlipayNotify
     /**
      * @param mixed $result
      */
-    public function setResult($result): void
+    public function setResult($result) 
     {
         $this->result = $result;
     }

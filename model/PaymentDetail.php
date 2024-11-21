@@ -18,7 +18,7 @@ class PaymentDetail
     /**
      * @param mixed $amount
      */
-    public function setAmount($amount): void
+    public function setAmount($amount) 
     {
         $this->amount = $amount;
     }
@@ -34,7 +34,7 @@ class PaymentDetail
     /**
      * @param mixed $paymentMethod
      */
-    public function setPaymentMethod($paymentMethod): void
+    public function setPaymentMethod($paymentMethod) 
     {
         $this->paymentMethod = $paymentMethod;
     }

@@ -28,7 +28,7 @@ class SettlementBankAccount
     /**
      * @param mixed $bankAccountNo
      */
-    public function setBankAccountNo($bankAccountNo): void
+    public function setBankAccountNo($bankAccountNo) 
     {
         $this->bankAccountNo = $bankAccountNo;
     }
@@ -44,7 +44,7 @@ class SettlementBankAccount
     /**
      * @param mixed $accountHolderName
      */
-    public function setAccountHolderName($accountHolderName): void
+    public function setAccountHolderName($accountHolderName) 
     {
         $this->accountHolderName = $accountHolderName;
     }
@@ -60,7 +60,7 @@ class SettlementBankAccount
     /**
      * @param mixed $swiftCode
      */
-    public function setSwiftCode($swiftCode): void
+    public function setSwiftCode($swiftCode) 
     {
         $this->swiftCode = $swiftCode;
     }
@@ -76,7 +76,7 @@ class SettlementBankAccount
     /**
      * @param mixed $bankRegion
      */
-    public function setBankRegion($bankRegion): void
+    public function setBankRegion($bankRegion) 
     {
         $this->bankRegion = $bankRegion;
     }
@@ -92,7 +92,7 @@ class SettlementBankAccount
     /**
      * @param mixed $accountHolderType
      */
-    public function setAccountHolderType($accountHolderType): void
+    public function setAccountHolderType($accountHolderType) 
     {
         $this->accountHolderType = $accountHolderType;
     }
@@ -108,7 +108,7 @@ class SettlementBankAccount
     /**
      * @param mixed $routingNumber
      */
-    public function setRoutingNumber($routingNumber): void
+    public function setRoutingNumber($routingNumber) 
     {
         $this->routingNumber = $routingNumber;
     }
@@ -124,7 +124,7 @@ class SettlementBankAccount
     /**
      * @param mixed $branchCode
      */
-    public function setBranchCode($branchCode): void
+    public function setBranchCode($branchCode) 
     {
         $this->branchCode = $branchCode;
     }
@@ -140,7 +140,7 @@ class SettlementBankAccount
     /**
      * @param mixed $accountHolderTIN
      */
-    public function setAccountHolderTIN($accountHolderTIN): void
+    public function setAccountHolderTIN($accountHolderTIN) 
     {
         $this->accountHolderTIN = $accountHolderTIN;
     }
@@ -156,7 +156,7 @@ class SettlementBankAccount
     /**
      * @param mixed $accountType
      */
-    public function setAccountType($accountType): void
+    public function setAccountType($accountType) 
     {
         $this->accountType = $accountType;
     }
@@ -172,7 +172,7 @@ class SettlementBankAccount
     /**
      * @param mixed $bankName
      */
-    public function setBankName($bankName): void
+    public function setBankName($bankName) 
     {
         $this->bankName = $bankName;
     }
@@ -188,7 +188,7 @@ class SettlementBankAccount
     /**
      * @param mixed $accountHolderAddress
      */
-    public function setAccountHolderAddress($accountHolderAddress): void
+    public function setAccountHolderAddress($accountHolderAddress) 
     {
         $this->accountHolderAddress = $accountHolderAddress;
     }
@@ -204,7 +204,7 @@ class SettlementBankAccount
     /**
      * @param mixed $iban
      */
-    public function setIban($iban): void
+    public function setIban($iban) 
     {
         $this->iban = $iban;
     }

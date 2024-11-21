@@ -62,7 +62,7 @@ class AlipayPayQueryRequest extends AlipayRequest
     /**
      * @param mixed $merchantAccountId
      */
-    public function setMerchantAccountId($merchantAccountId): void
+    public function setMerchantAccountId($merchantAccountId)
     {
         $this->merchantAccountId = $merchantAccountId;
     }

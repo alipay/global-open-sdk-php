@@ -47,8 +47,7 @@ class SignatureTool
         } else {
             $originalRspSignValue = base64_decode(urldecode($rspSignValue));
         }
-        $verifyResult = openssl_verify($rspContent, $originalRspSignValue, $pubKey, OPENSSL_ALGO_SHA256);
-        return $verifyResult;
+        return openssl_verify($rspContent, $originalRspSignValue, $pubKey, OPENSSL_ALGO_SHA256);
     }
 
 }

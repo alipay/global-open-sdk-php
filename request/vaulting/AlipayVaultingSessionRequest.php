@@ -35,7 +35,7 @@ class AlipayVaultingSessionRequest extends AlipayRequest
     /**
      * @param mixed $is3DSAuthentication
      */
-    public function setIs3DSAuthentication($is3DSAuthentication): void
+    public function setIs3DSAuthentication($is3DSAuthentication) 
     {
         $this->is3DSAuthentication = $is3DSAuthentication;
     }
@@ -53,7 +53,7 @@ class AlipayVaultingSessionRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethodType
      */
-    public function setPaymentMethodType($paymentMethodType): void
+    public function setPaymentMethodType($paymentMethodType) 
     {
         $this->paymentMethodType = $paymentMethodType;
     }
@@ -69,7 +69,7 @@ class AlipayVaultingSessionRequest extends AlipayRequest
     /**
      * @param mixed $vaultingRequestId
      */
-    public function setVaultingRequestId($vaultingRequestId): void
+    public function setVaultingRequestId($vaultingRequestId) 
     {
         $this->vaultingRequestId = $vaultingRequestId;
     }
@@ -85,7 +85,7 @@ class AlipayVaultingSessionRequest extends AlipayRequest
     /**
      * @param mixed $vaultingNotificationUrl
      */
-    public function setVaultingNotificationUrl($vaultingNotificationUrl): void
+    public function setVaultingNotificationUrl($vaultingNotificationUrl) 
     {
         $this->vaultingNotificationUrl = $vaultingNotificationUrl;
     }
@@ -101,7 +101,7 @@ class AlipayVaultingSessionRequest extends AlipayRequest
     /**
      * @param mixed $redirectUrl
      */
-    public function setRedirectUrl($redirectUrl): void
+    public function setRedirectUrl($redirectUrl) 
     {
         $this->redirectUrl = $redirectUrl;
     }
@@ -117,7 +117,7 @@ class AlipayVaultingSessionRequest extends AlipayRequest
     /**
      * @param mixed $merchantRegion
      */
-    public function setMerchantRegion($merchantRegion): void
+    public function setMerchantRegion($merchantRegion) 
     {
         $this->merchantRegion = $merchantRegion;
     }

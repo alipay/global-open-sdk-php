@@ -34,7 +34,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId): void
+    public function setReferenceTransactionId($referenceTransactionId) 
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -50,7 +50,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $paymentStatus
      */
-    public function setPaymentStatus($paymentStatus): void
+    public function setPaymentStatus($paymentStatus) 
     {
         $this->paymentStatus = $paymentStatus;
     }
@@ -66,7 +66,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $authorizationError
      */
-    public function setAuthorizationError($authorizationError): void
+    public function setAuthorizationError($authorizationError) 
     {
         $this->authorizationError = $authorizationError;
     }
@@ -82,7 +82,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $cardVerificationResult
      */
-    public function setCardVerificationResult($cardVerificationResult): void
+    public function setCardVerificationResult($cardVerificationResult) 
     {
         $this->cardVerificationResult = $cardVerificationResult;
     }
@@ -98,7 +98,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethodProvider
      */
-    public function setPaymentMethodProvider($paymentMethodProvider): void
+    public function setPaymentMethodProvider($paymentMethodProvider) 
     {
         $this->paymentMethodProvider = $paymentMethodProvider;
     }

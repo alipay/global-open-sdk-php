@@ -17,7 +17,7 @@ class CustomsInfo
     /**
      * @param mixed $customsCode
      */
-    public function setCustomsCode($customsCode): void
+    public function setCustomsCode($customsCode) 
     {
         $this->customsCode = $customsCode;
     }
@@ -33,7 +33,7 @@ class CustomsInfo
     /**
      * @param mixed $region
      */
-    public function setRegion($region): void
+    public function setRegion($region) 
     {
         $this->region = $region;
     }

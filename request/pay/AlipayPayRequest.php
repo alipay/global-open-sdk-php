@@ -355,7 +355,7 @@ class AlipayPayRequest extends AlipayRequest
     /**
      * @param mixed $merchantAccountId
      */
-    public function setMerchantAccountId($merchantAccountId): void
+    public function setMerchantAccountId($merchantAccountId)
     {
         $this->merchantAccountId = $merchantAccountId;
     }
@@ -371,7 +371,7 @@ class AlipayPayRequest extends AlipayRequest
     /**
      * @param mixed $userRegion
      */
-    public function setUserRegion($userRegion): void
+    public function setUserRegion($userRegion)
     {
         $this->userRegion = $userRegion;
     }

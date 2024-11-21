@@ -18,7 +18,7 @@ class TransferFromDetail
     /**
      * @param mixed $transferFromMethod
      */
-    public function setTransferFromMethod($transferFromMethod): void
+    public function setTransferFromMethod($transferFromMethod) 
     {
         $this->transferFromMethod = $transferFromMethod;
     }
@@ -34,7 +34,7 @@ class TransferFromDetail
     /**
      * @param mixed $transferFromAmount
      */
-    public function setTransferFromAmount($transferFromAmount): void
+    public function setTransferFromAmount($transferFromAmount) 
     {
         $this->transferFromAmount = $transferFromAmount;
     }

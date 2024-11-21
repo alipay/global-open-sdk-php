@@ -17,7 +17,7 @@ class OrderInfo
     /**
      * @param mixed $orderAmount
      */
-    public function setOrderAmount($orderAmount): void
+    public function setOrderAmount($orderAmount)
     {
         $this->orderAmount = $orderAmount;
     }

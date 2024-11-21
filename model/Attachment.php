@@ -70,7 +70,7 @@ class Attachment
     /**
      * @param mixed $fileKey
      */
-    public function setFileKey($fileKey): void
+    public function setFileKey($fileKey)
     {
         $this->fileKey = $fileKey;
     }

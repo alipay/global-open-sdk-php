@@ -26,7 +26,7 @@ class AlipayVaultingQueryRequest extends AlipayRequest
     /**
      * @param mixed $vaultingRequestId
      */
-    public function setVaultingRequestId($vaultingRequestId): void
+    public function setVaultingRequestId($vaultingRequestId) 
     {
         $this->vaultingRequestId = $vaultingRequestId;
     }

@@ -35,7 +35,7 @@ class Order
     /**
      * @param mixed $orderCreatedTime
      */
-    public function setOrderCreatedTime($orderCreatedTime): void
+    public function setOrderCreatedTime($orderCreatedTime)
     {
         $this->orderCreatedTime = $orderCreatedTime;
     }
@@ -51,7 +51,7 @@ class Order
     /**
      * @param mixed $needDeclaration
      */
-    public function setNeedDeclaration($needDeclaration): void
+    public function setNeedDeclaration($needDeclaration)
     {
         $this->needDeclaration = $needDeclaration;
     }
@@ -213,7 +213,7 @@ class Order
     /**
      * @param mixed $gaming
      */
-    public function setGaming($gaming): void
+    public function setGaming($gaming)
     {
         $this->gaming = $gaming;
     }
@@ -229,7 +229,7 @@ class Order
     /**
      * @param mixed $lodging
      */
-    public function setLodging($lodging): void
+    public function setLodging($lodging)
     {
         $this->lodging = $lodging;
     }
@@ -245,7 +245,7 @@ class Order
     /**
      * @param mixed $transit
      */
-    public function setTransit($transit): void
+    public function setTransit($transit)
     {
         $this->transit = $transit;
     }

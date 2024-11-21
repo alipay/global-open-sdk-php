@@ -28,7 +28,7 @@ class AlipaySettlementInfoUpdateRequest extends AlipayRequest
     /**
      * @param mixed $updateRequestId
      */
-    public function setUpdateRequestId($updateRequestId): void
+    public function setUpdateRequestId($updateRequestId) 
     {
         $this->updateRequestId = $updateRequestId;
     }
@@ -44,7 +44,7 @@ class AlipaySettlementInfoUpdateRequest extends AlipayRequest
     /**
      * @param mixed $referenceMerchantId
      */
-    public function setReferenceMerchantId($referenceMerchantId): void
+    public function setReferenceMerchantId($referenceMerchantId) 
     {
         $this->referenceMerchantId = $referenceMerchantId;
     }
@@ -60,7 +60,7 @@ class AlipaySettlementInfoUpdateRequest extends AlipayRequest
     /**
      * @param mixed $settlementCurrency
      */
-    public function setSettlementCurrency($settlementCurrency): void
+    public function setSettlementCurrency($settlementCurrency) 
     {
         $this->settlementCurrency = $settlementCurrency;
     }
@@ -76,7 +76,7 @@ class AlipaySettlementInfoUpdateRequest extends AlipayRequest
     /**
      * @param mixed $settlementBankAccount
      */
-    public function setSettlementBankAccount($settlementBankAccount): void
+    public function setSettlementBankAccount($settlementBankAccount) 
     {
         $this->settlementBankAccount = $settlementBankAccount;
     }

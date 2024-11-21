@@ -29,7 +29,7 @@ class AlipayRegisterRequest extends AlipayRequest
     /**
      * @param mixed $registrationRequestId
      */
-    public function setRegistrationRequestId($registrationRequestId): void
+    public function setRegistrationRequestId($registrationRequestId) 
     {
         $this->registrationRequestId = $registrationRequestId;
     }
@@ -45,7 +45,7 @@ class AlipayRegisterRequest extends AlipayRequest
     /**
      * @param mixed $settlementInfos
      */
-    public function setSettlementInfos($settlementInfos): void
+    public function setSettlementInfos($settlementInfos) 
     {
         $this->settlementInfos = $settlementInfos;
     }
@@ -61,7 +61,7 @@ class AlipayRegisterRequest extends AlipayRequest
     /**
      * @param mixed $merchantInfo
      */
-    public function setMerchantInfo($merchantInfo): void
+    public function setMerchantInfo($merchantInfo) 
     {
         $this->merchantInfo = $merchantInfo;
     }
@@ -77,7 +77,7 @@ class AlipayRegisterRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethods
      */
-    public function setPaymentMethods($paymentMethods): void
+    public function setPaymentMethods($paymentMethods) 
     {
         $this->paymentMethods = $paymentMethods;
     }

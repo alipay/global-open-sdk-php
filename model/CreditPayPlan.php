@@ -21,7 +21,7 @@ class CreditPayPlan
     /**
      * @param mixed $interval
      */
-    public function setInterval($interval): void
+    public function setInterval($interval)
     {
         $this->interval = $interval;
     }

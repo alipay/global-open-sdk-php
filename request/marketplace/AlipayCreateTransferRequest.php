@@ -30,7 +30,7 @@ class AlipayCreateTransferRequest extends AlipayRequest
     /**
      * @param mixed $transferRequestId
      */
-    public function setTransferRequestId($transferRequestId): void
+    public function setTransferRequestId($transferRequestId) 
     {
         $this->transferRequestId = $transferRequestId;
     }
@@ -46,7 +46,7 @@ class AlipayCreateTransferRequest extends AlipayRequest
     /**
      * @param mixed $transferFromDetail
      */
-    public function setTransferFromDetail($transferFromDetail): void
+    public function setTransferFromDetail($transferFromDetail) 
     {
         $this->transferFromDetail = $transferFromDetail;
     }
@@ -62,7 +62,7 @@ class AlipayCreateTransferRequest extends AlipayRequest
     /**
      * @param mixed $transferToDetail
      */
-    public function setTransferToDetail($transferToDetail): void
+    public function setTransferToDetail($transferToDetail) 
     {
         $this->transferToDetail = $transferToDetail;
     }

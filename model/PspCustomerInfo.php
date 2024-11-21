@@ -72,7 +72,7 @@ class PspCustomerInfo
     /**
      * @param mixed $displayCustomerName
      */
-    public function setDisplayCustomerName($displayCustomerName): void
+    public function setDisplayCustomerName($displayCustomerName)
     {
         $this->displayCustomerName = $displayCustomerName;
     }
@@ -88,7 +88,7 @@ class PspCustomerInfo
     /**
      * @param mixed $customer2088Id
      */
-    public function setCustomer2088Id($customer2088Id): void
+    public function setCustomer2088Id($customer2088Id)
     {
         $this->customer2088Id = $customer2088Id;
     }
@@ -104,7 +104,7 @@ class PspCustomerInfo
     /**
      * @param mixed $extendInfo
      */
-    public function setExtendInfo($extendInfo): void
+    public function setExtendInfo($extendInfo)
     {
         $this->extendInfo = $extendInfo;
     }

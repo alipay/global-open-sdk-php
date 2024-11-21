@@ -120,7 +120,7 @@ class PaymentMethodDetail
     /**
      * @param mixed $paymentMethodType
      */
-    public function setPaymentMethodType($paymentMethodType): void
+    public function setPaymentMethodType($paymentMethodType)
     {
         $this->paymentMethodType = $paymentMethodType;
     }

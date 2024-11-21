@@ -30,7 +30,7 @@ class AlipaySettleRequest extends AlipayRequest
     /**
      * @param mixed $settlementRequestId
      */
-    public function setSettlementRequestId($settlementRequestId): void
+    public function setSettlementRequestId($settlementRequestId) 
     {
         $this->settlementRequestId = $settlementRequestId;
     }
@@ -46,7 +46,7 @@ class AlipaySettleRequest extends AlipayRequest
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId): void
+    public function setPaymentId($paymentId) 
     {
         $this->paymentId = $paymentId;
     }
@@ -62,7 +62,7 @@ class AlipaySettleRequest extends AlipayRequest
     /**
      * @param mixed $settlementDetails
      */
-    public function setSettlementDetails($settlementDetails): void
+    public function setSettlementDetails($settlementDetails) 
     {
         $this->settlementDetails = $settlementDetails;
     }

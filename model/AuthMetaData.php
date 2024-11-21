@@ -18,7 +18,7 @@ class AuthMetaData
     /**
      * @param mixed $accountHolderName
      */
-    public function setAccountHolderName($accountHolderName): void
+    public function setAccountHolderName($accountHolderName) 
     {
         $this->accountHolderName = $accountHolderName;
     }
@@ -34,7 +34,7 @@ class AuthMetaData
     /**
      * @param mixed $accountHolderCertNo
      */
-    public function setAccountHolderCertNo($accountHolderCertNo): void
+    public function setAccountHolderCertNo($accountHolderCertNo) 
     {
         $this->accountHolderCertNo = $accountHolderCertNo;
     }

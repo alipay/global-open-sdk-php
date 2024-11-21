@@ -2,7 +2,7 @@
 
 namespace Request\notify;
 
-class AlipayCaptureResultNotify extends AlipayNotify
+class AlipayCaptureResultNotify extends \Request\notify\AlipayNotify
 {
 
     public $captureRequestId;
@@ -30,7 +30,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $captureRequestId
      */
-    public function setCaptureRequestId($captureRequestId): void
+    public function setCaptureRequestId($captureRequestId)
     {
         $this->captureRequestId = $captureRequestId;
     }
@@ -46,7 +46,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId): void
+    public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
     }
@@ -62,7 +62,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $captureId
      */
-    public function setCaptureId($captureId): void
+    public function setCaptureId($captureId)
     {
         $this->captureId = $captureId;
     }
@@ -78,7 +78,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $captureAmount
      */
-    public function setCaptureAmount($captureAmount): void
+    public function setCaptureAmount($captureAmount)
     {
         $this->captureAmount = $captureAmount;
     }
@@ -94,7 +94,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $captureTime
      */
-    public function setCaptureTime($captureTime): void
+    public function setCaptureTime($captureTime)
     {
         $this->captureTime = $captureTime;
     }
@@ -110,7 +110,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $acquirerReferenceNo
      */
-    public function setAcquirerReferenceNo($acquirerReferenceNo): void
+    public function setAcquirerReferenceNo($acquirerReferenceNo)
     {
         $this->acquirerReferenceNo = $acquirerReferenceNo;
     }
@@ -126,7 +126,7 @@ class AlipayCaptureResultNotify extends AlipayNotify
     /**
      * @param mixed $acquirerInfo
      */
-    public function setAcquirerInfo($acquirerInfo): void
+    public function setAcquirerInfo($acquirerInfo)
     {
         $this->acquirerInfo = $acquirerInfo;
     }
