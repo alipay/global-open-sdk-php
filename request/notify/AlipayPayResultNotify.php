@@ -31,6 +31,26 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 
     public $promotionResult;
 
+    public $paymentMethodType;
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethodType()
+    {
+        return $this->paymentMethodType;
+    }
+
+    /**
+     * @param mixed $paymentMethodType
+     */
+    public function setPaymentMethodType($paymentMethodType)
+    {
+        $this->paymentMethodType = $paymentMethodType;
+    }
+
+
+
     /**
      * @return mixed
      */
