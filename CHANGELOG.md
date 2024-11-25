@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.7 - 2024-11-25
+* [#19](https://github.com/alipay/global-open-sdk-php/pull/19) feature-241125
+  - update Leg
+
 ## 1.3.6 - 2024-11-20
 * [#18](https://github.com/alipay/global-open-sdk-php/pull/18) feature-update-version
   - Compatible with lower versions

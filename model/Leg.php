@@ -10,6 +10,8 @@ class Leg
     public $arrivalAddress;
     public $carrierName;
     public $carrierNo;
-
     public $classType;
+
+    public $departureAirportCode;
+    public $arrivalAirportCode;
 }
