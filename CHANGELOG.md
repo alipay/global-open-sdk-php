@@ -1,6 +1,11 @@
 # Changelog
 
 ## 1.3.7 - 2024-11-25
+* [#20](https://github.com/alipay/global-open-sdk-php/pull/20) feature-241125
+  - update AlipayPayResultNotify
+  - update AlipayPayQueryRequest
+
+## 1.3.7 - 2024-11-25
 * [#19](https://github.com/alipay/global-open-sdk-php/pull/19) feature-241125
   - update Leg
 
