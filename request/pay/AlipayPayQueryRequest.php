@@ -12,31 +12,13 @@ class AlipayPayQueryRequest extends AlipayRequest
     public $paymentId;
 
     public $merchantAccountId;
-    public $paymentMethodType;
+
 
 
     function __construct()
     {
         $this->setPath(AntomPathConstants::INQUIRY_PAYMENT_PATH);
     }
-
-    /**
-     * @return mixed
-     */
-    public function getPaymentMethodType()
-    {
-        return $this->paymentMethodType;
-    }
-
-    /**
-     * @param mixed $paymentMethodType
-     */
-    public function setPaymentMethodType($paymentMethodType)
-    {
-        $this->paymentMethodType = $paymentMethodType;
-    }
-
-
 
     /**
      * @return mixed

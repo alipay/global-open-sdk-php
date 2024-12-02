@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.8 - 2024-12-02
+* [#21](https://github.com/alipay/global-open-sdk-php/pull/21) feature-2411202
+  - update AlipayDisputeNotify
+  - update AlipayPayQueryResponse
+
+
 ## 1.3.7 - 2024-11-25
 * [#20](https://github.com/alipay/global-open-sdk-php/pull/20) feature-241125
   - update AlipayPayResultNotify
