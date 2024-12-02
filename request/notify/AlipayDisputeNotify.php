@@ -22,6 +22,26 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     public  $disputeAcceptReason;
     public  $disputeAcceptTime;
 
+    public $disputeType;
+
+    /**
+     * @return mixed
+     */
+    public function getDisputeType()
+    {
+        return $this->disputeType;
+    }
+
+    /**
+     * @param mixed $disputeType
+     */
+    public function setDisputeType($disputeType)
+    {
+        $this->disputeType = $disputeType;
+    }
+
+
+
     /**
      * @return mixed
      */
