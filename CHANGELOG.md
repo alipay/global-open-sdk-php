@@ -1,5 +1,11 @@
 # Changelog
 
+
+## 1.3.9 - 2024-12-17
+* [#22](https://github.com/alipay/global-open-sdk-php/pull/22) feature-241216
+  - RDR拒付通知优化通用能力变更
+  - Antom新增ApplePay支付方式
+
 ## 1.3.8 - 2024-12-02
 * [#21](https://github.com/alipay/global-open-sdk-php/pull/21) feature-2411202
   - update AlipayDisputeNotify

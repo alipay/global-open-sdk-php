@@ -24,6 +24,26 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
 
     public $disputeType;
 
+    public $defendable;
+
+    /**
+     * @return mixed
+     */
+    public function getDefendable()
+    {
+        return $this->defendable;
+    }
+
+    /**
+     * @param mixed $defendable
+     */
+    public function setDefendable($defendable): void
+    {
+        $this->defendable = $defendable;
+    }
+
+
+
     /**
      * @return mixed
      */
