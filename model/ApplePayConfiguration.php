@@ -8,6 +8,27 @@ class ApplePayConfiguration
     public $requiredShippingContactFields;
     public $buttonsBundled;
 
+    public $applePayToken;
+
+
+    /**
+     * @return mixed
+     */
+    public function getApplePayToken()
+    {
+        return $this->applePayToken;
+    }
+
+    /**
+     * @param mixed $applePayToken
+     */
+    public function setApplePayToken($applePayToken): void
+    {
+        $this->applePayToken = $applePayToken;
+    }
+
+
+
     /**
      * @return mixed
      */
