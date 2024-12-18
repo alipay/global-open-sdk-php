@@ -1,0 +1,14 @@
+<?php
+
+namespace Model;
+
+class DisputeNotificationType
+{
+    const DISPUTE_CREATED = "DISPUTE_CREATED";
+    const DISPUTE_JUDGED = "DISPUTE_JUDGED";
+    const DISPUTE_CANCELLED = "DISPUTE_CANCELLED";
+    const DEFENSE_SUPPLIED = "DEFENSE_SUPPLIED";
+    const DEFENSE_DUE_ALERT = "DEFENSE_DUE_ALERT";
+    const DISPUTE_ACCEPTED = "DISPUTE_ACCEPTED";
+    const RDR_RESOLVED = "RDR_RESOLVED";
+}

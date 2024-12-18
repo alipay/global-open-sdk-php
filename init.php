@@ -200,6 +200,9 @@ require __DIR__ . '/model/PaymentResultInfo.php';
 require __DIR__ . '/model/AcquirerInfo.php';
 require __DIR__ . '/model/PeriodType.php';
 require __DIR__ . '/model/CancellationType.php';
+require __DIR__ . '/model/ApplePayConfiguration.php';
+require __DIR__ . '/model/DisputeAcceptReasonType.php';
+require __DIR__ . '/model/DisputeNotificationType.php';
 
 
 //client

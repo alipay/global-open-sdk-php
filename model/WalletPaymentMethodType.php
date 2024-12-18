@@ -40,4 +40,6 @@ class WalletPaymentMethodType
     const SETTLEMENT_CARD = 'SETTLEMENT_CARD';
     const BALANCE_ACCOUNT = 'BALANCE_ACCOUNT';
 
+    const APPLEPAY = "APPLEPAY";
+
 }
