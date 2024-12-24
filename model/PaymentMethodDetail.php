@@ -13,6 +13,29 @@ class PaymentMethodDetail
 
     public $paymentMethodType;
 
+    private $is3DSAuthentication;
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getIs3DSAuthentication()
+    {
+        return $this->is3DSAuthentication;
+    }
+
+    /**
+     * @param mixed $is3DSAuthentication
+     */
+    public function setIs3DSAuthentication($is3DSAuthentication): void
+    {
+        $this->is3DSAuthentication = $is3DSAuthentication;
+    }
+
+
+
+
     /**
      * @return mixed
      */

@@ -97,11 +97,30 @@ class AlipayPaymentSessionRequest extends AlipayRequest
 
     public $locale;
 
+    private $availablePaymentMethod;
+
 
     function __construct()
     {
         $this->setPath(AntomPathConstants::CREATE_SESSION_PATH);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAvailablePaymentMethod()
+    {
+        return $this->availablePaymentMethod;
+    }
+
+    /**
+     * @param mixed $availablePaymentMethod
+     */
+    public function setAvailablePaymentMethod($availablePaymentMethod): void
+    {
+        $this->availablePaymentMethod = $availablePaymentMethod;
+    }
+
 
 
     /**
