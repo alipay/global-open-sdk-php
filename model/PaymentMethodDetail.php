@@ -13,6 +13,8 @@ class PaymentMethodDetail
 
     public $paymentMethodType;
 
+
+
     /**
      * @return mixed
      */

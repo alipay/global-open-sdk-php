@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 1.4.0 - 2024-12-24
+* [#23](https://github.com/alipay/global-open-sdk-php/pull/23) feature-241224
+  - CKP二期支持商户传入可选支付方式列表
+  - AMS独立绑卡支持MIT交易
+
 ## 1.3.9 - 2024-12-17
 * [#22](https://github.com/alipay/global-open-sdk-php/pull/22) feature-241216
   - RDR拒付通知优化通用能力变更

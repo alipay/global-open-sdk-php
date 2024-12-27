@@ -203,6 +203,8 @@ require __DIR__ . '/model/CancellationType.php';
 require __DIR__ . '/model/ApplePayConfiguration.php';
 require __DIR__ . '/model/DisputeAcceptReasonType.php';
 require __DIR__ . '/model/DisputeNotificationType.php';
+require __DIR__ . '/model/AvailablePaymentMethod.php';
+require __DIR__ . '/model/PaymentMethodTypeItem.php';
 
 
 //client
