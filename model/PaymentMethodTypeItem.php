@@ -19,7 +19,7 @@ class PaymentMethodTypeItem
     /**
      * @param mixed $paymentMethodType
      */
-    public function setPaymentMethodType($paymentMethodType): void
+    public function setPaymentMethodType($paymentMethodType)
     {
         $this->paymentMethodType = $paymentMethodType;
     }
@@ -35,7 +35,7 @@ class PaymentMethodTypeItem
     /**
      * @param mixed $paymentMethodOrder
      */
-    public function setPaymentMethodOrder($paymentMethodOrder): void
+    public function setPaymentMethodOrder($paymentMethodOrder)
     {
         $this->paymentMethodOrder = $paymentMethodOrder;
     }
@@ -51,7 +51,7 @@ class PaymentMethodTypeItem
     /**
      * @param mixed $expressCheckout
      */
-    public function setExpressCheckout($expressCheckout): void
+    public function setExpressCheckout($expressCheckout)
     {
         $this->expressCheckout = $expressCheckout;
     }

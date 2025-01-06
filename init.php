@@ -8,6 +8,7 @@ require __DIR__ . '/request/auth/AlipayAuthApplyTokenRequest.php';
 require __DIR__ . '/request/auth/AlipayAuthConsultRequest.php';
 require __DIR__ . '/request/auth/AlipayAuthQueryTokenRequest.php';
 require __DIR__ . '/request/auth/AlipayAuthRevokeTokenRequest.php';
+require __DIR__ . '/request/auth/AlipayAuthCreateSessionRequest.php';
 
 //customs
 require __DIR__ . '/request/customs/AlipayCustomsDeclareRequest.php';
@@ -36,9 +37,10 @@ require __DIR__ . '/request/pay/UserPresentedCodePaymentRequest.php';
 
 
 //subscription
-require __DIR__ . '/request/subscription/AlipaySubscriptionCancelRequest.php';
+require __DIR__ . '/request/subscription/AlipaySubscriptionUpdateRequest.php';
 require __DIR__ . '/request/subscription/AlipaySubscriptionChangeRequest.php';
 require __DIR__ . '/request/subscription/AlipaySubscriptionCreateRequest.php';
+require __DIR__ . '/request/subscription/AlipaySubscriptionUpdateRequest.php';
 
 //user
 require __DIR__ . '/request/users/AlipayInitAuthenticationRequest.php';
@@ -205,6 +207,8 @@ require __DIR__ . '/model/DisputeAcceptReasonType.php';
 require __DIR__ . '/model/DisputeNotificationType.php';
 require __DIR__ . '/model/AvailablePaymentMethod.php';
 require __DIR__ . '/model/PaymentMethodTypeItem.php';
+require __DIR__ . '/model/AgreementInfo.php';
+
 
 
 //client

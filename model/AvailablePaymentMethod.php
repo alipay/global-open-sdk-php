@@ -14,10 +14,10 @@ class AvailablePaymentMethod
         return $this->paymentMethodTypeList;
     }
 
-    /**
+    /**。/
      * @param mixed $paymentMethodTypeList
      */
-    public function setPaymentMethodTypeList($paymentMethodTypeList): void
+    public function setPaymentMethodTypeList($paymentMethodTypeList)
     {
         $this->paymentMethodTypeList = $paymentMethodTypeList;
     }

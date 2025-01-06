@@ -68,7 +68,7 @@ class CardPaymentMethodDetail
     /**
      * @param mixed $is3DSAuthentication
      */
-    public function setIs3DSAuthentication($is3DSAuthentication): void
+    public function setIs3DSAuthentication($is3DSAuthentication)
     {
         $this->is3DSAuthentication = $is3DSAuthentication;
     }
