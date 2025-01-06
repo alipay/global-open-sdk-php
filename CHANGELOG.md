@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.1 - 2024-12-24
+## 1.4.1 - 2025-01-06
 * [#24](https://github.com/alipay/global-open-sdk-php/pull/24) feature-250106
   - 订阅支付新增“更新接口”
 
