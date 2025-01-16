@@ -208,6 +208,7 @@ require __DIR__ . '/model/DisputeNotificationType.php';
 require __DIR__ . '/model/AvailablePaymentMethod.php';
 require __DIR__ . '/model/PaymentMethodTypeItem.php';
 require __DIR__ . '/model/AgreementInfo.php';
+require __DIR__ . '/model/Discount.php';
 
 
 
