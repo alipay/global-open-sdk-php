@@ -22,7 +22,7 @@ class ApplePayConfiguration
     /**
      * @param mixed $applePayToken
      */
-    public function setApplePayToken($applePayToken): void
+    public function setApplePayToken($applePayToken)
     {
         $this->applePayToken = $applePayToken;
     }
@@ -40,7 +40,7 @@ class ApplePayConfiguration
     /**
      * @param mixed $requiredBillingContactFields
      */
-    public function setRequiredBillingContactFields($requiredBillingContactFields): void
+    public function setRequiredBillingContactFields($requiredBillingContactFields)
     {
         $this->requiredBillingContactFields = $requiredBillingContactFields;
     }
@@ -56,7 +56,7 @@ class ApplePayConfiguration
     /**
      * @param mixed $requiredShippingContactFields
      */
-    public function setRequiredShippingContactFields($requiredShippingContactFields): void
+    public function setRequiredShippingContactFields($requiredShippingContactFields)
     {
         $this->requiredShippingContactFields = $requiredShippingContactFields;
     }
@@ -72,7 +72,7 @@ class ApplePayConfiguration
     /**
      * @param mixed $buttonsBundled
      */
-    public function setButtonsBundled($buttonsBundled): void
+    public function setButtonsBundled($buttonsBundled)
     {
         $this->buttonsBundled = $buttonsBundled;
     }

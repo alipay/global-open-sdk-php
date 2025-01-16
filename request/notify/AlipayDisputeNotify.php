@@ -37,7 +37,7 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $defendable
      */
-    public function setDefendable($defendable): void
+    public function setDefendable($defendable)
     {
         $this->defendable = $defendable;
     }

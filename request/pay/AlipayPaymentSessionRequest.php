@@ -116,7 +116,7 @@ class AlipayPaymentSessionRequest extends AlipayRequest
     /**
      * @param mixed $availablePaymentMethod
      */
-    public function setAvailablePaymentMethod($availablePaymentMethod): void
+    public function setAvailablePaymentMethod($availablePaymentMethod)
     {
         $this->availablePaymentMethod = $availablePaymentMethod;
     }

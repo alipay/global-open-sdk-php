@@ -22,6 +22,7 @@ class AntomPathConstants
     const SUBSCRIPTION_CREATE_PATH = '/ams/api/v1/subscriptions/create';
     const SUBSCRIPTION_CHANGE_PATH = '/ams/api/v1/subscriptions/change';
     const SUBSCRIPTION_CANCEL_PATH = '/ams/api/v1/subscriptions/cancel';
+    const SUBSCRIPTION_UPDATE_PATH = "/ams/api/v1/subscriptions/update";
     const ACCEPT_DISPUTE_PATH = '/ams/api/v1/payments/acceptDispute';
     const SUPPLY_DEFENCE_DOC_PATH = '/ams/api/v1/payments/supplyDefenseDocument';
     const DOWNLOAD_DISPUTE_EVIDENCE_PATH = '/ams/api/v1/payments/downloadDisputeEvidence';
