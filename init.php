@@ -40,7 +40,7 @@ require __DIR__ . '/request/pay/UserPresentedCodePaymentRequest.php';
 require __DIR__ . '/request/subscription/AlipaySubscriptionUpdateRequest.php';
 require __DIR__ . '/request/subscription/AlipaySubscriptionChangeRequest.php';
 require __DIR__ . '/request/subscription/AlipaySubscriptionCreateRequest.php';
-require __DIR__ . '/request/subscription/AlipaySubscriptionUpdateRequest.php';
+require __DIR__ . '/request/subscription/AlipaySubscriptionCancelRequest.php';
 
 //user
 require __DIR__ . '/request/users/AlipayInitAuthenticationRequest.php';
