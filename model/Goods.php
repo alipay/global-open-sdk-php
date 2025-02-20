@@ -12,6 +12,79 @@ class Goods
     public $goodsQuantity;
     public $goodsSkuName;
 
+    public $goodsUrl;
+    public $deliveryMethodType;
+
+    public $goodsImageUrl;
+    public $priceId;
+
+    /**
+     * @return mixed
+     */
+    public function getGoodsUrl()
+    {
+        return $this->goodsUrl;
+    }
+
+    /**
+     * @param mixed $goodsUrl
+     */
+    public function setGoodsUrl($goodsUrl): void
+    {
+        $this->goodsUrl = $goodsUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeliveryMethodType()
+    {
+        return $this->deliveryMethodType;
+    }
+
+    /**
+     * @param mixed $deliveryMethodType
+     */
+    public function setDeliveryMethodType($deliveryMethodType): void
+    {
+        $this->deliveryMethodType = $deliveryMethodType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGoodsImageUrl()
+    {
+        return $this->goodsImageUrl;
+    }
+
+    /**
+     * @param mixed $goodsImageUrl
+     */
+    public function setGoodsImageUrl($goodsImageUrl): void
+    {
+        $this->goodsImageUrl = $goodsImageUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPriceId()
+    {
+        return $this->priceId;
+    }
+
+    /**
+     * @param mixed $priceId
+     */
+    public function setPriceId($priceId): void
+    {
+        $this->priceId = $priceId;
+    }
+
+
+
+
     /**
      * @return String
      */

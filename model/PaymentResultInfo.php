@@ -27,6 +27,100 @@ class PaymentResultInfo
 
     public $creditPayPlan;
 
+    public $cardholderName;
+
+    public $cardBin;
+
+    public $lastFour;
+
+    public $expiryMonth;
+
+    public $expiryYear;
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getCardholderName()
+    {
+        return $this->cardholderName;
+    }
+
+    /**
+     * @param mixed $cardholderName
+     */
+    public function setCardholderName($cardholderName): void
+    {
+        $this->cardholderName = $cardholderName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCardBin()
+    {
+        return $this->cardBin;
+    }
+
+    /**
+     * @param mixed $cardBin
+     */
+    public function setCardBin($cardBin): void
+    {
+        $this->cardBin = $cardBin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastFour()
+    {
+        return $this->lastFour;
+    }
+
+    /**
+     * @param mixed $lastFour
+     */
+    public function setLastFour($lastFour): void
+    {
+        $this->lastFour = $lastFour;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExpiryMonth()
+    {
+        return $this->expiryMonth;
+    }
+
+    /**
+     * @param mixed $expiryMonth
+     */
+    public function setExpiryMonth($expiryMonth): void
+    {
+        $this->expiryMonth = $expiryMonth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExpiryYear()
+    {
+        return $this->expiryYear;
+    }
+
+    /**
+     * @param mixed $expiryYear
+     */
+    public function setExpiryYear($expiryYear): void
+    {
+        $this->expiryYear = $expiryYear;
+    }
+
+
+
     /**
      * @return mixed
      */

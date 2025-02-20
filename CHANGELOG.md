@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.2 - 2025-02-05
+* [#25](https://github.com/alipay/global-open-sdk-php/pull/25) feature-250205
+  - 支付、查询、支付结果通知新增卡相关信息字段
+
 ## 1.4.1 - 2025-01-06
 * [#24](https://github.com/alipay/global-open-sdk-php/pull/24) feature-250106
   - 订阅支付新增“更新接口”
