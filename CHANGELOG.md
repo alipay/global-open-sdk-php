@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 1.4.3 - 2025-03-13
+* [#26](https://github.com/alipay/global-open-sdk-php/pull/25) feature-250313
+  - 修复部分字段为私有导致json格式化丢失
+
 ## 1.4.2 - 2025-02-05
 * [#25](https://github.com/alipay/global-open-sdk-php/pull/25) feature-250205
   - 支付、查询、支付结果通知新增卡相关信息字段

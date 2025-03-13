@@ -97,7 +97,7 @@ class AlipayPaymentSessionRequest extends AlipayRequest
 
     public $locale;
 
-    private $availablePaymentMethod;
+    public $availablePaymentMethod;
 
 
     function __construct()
@@ -120,8 +120,6 @@ class AlipayPaymentSessionRequest extends AlipayRequest
     {
         $this->availablePaymentMethod = $availablePaymentMethod;
     }
-
-
 
     /**
      * @return mixed

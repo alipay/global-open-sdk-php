@@ -52,7 +52,7 @@ class CardPaymentMethodDetail
 
     public $networkTransactionId;
 
-    private $is3DSAuthentication;
+    public $is3DSAuthentication;
 
 
 

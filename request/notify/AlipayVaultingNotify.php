@@ -8,16 +8,16 @@ class AlipayVaultingNotify extends \Request\notify\AlipayNotify
     /**
      * The unique ID that is assigned by a merchant to identify a card vaulting request.
      */
-    private  $vaultingRequestId;
+    public  $vaultingRequestId;
 
     /**
      * The details about the card payment method.
      */
-    private  $paymentMethodDetail;
+    public  $paymentMethodDetail;
 
-    private  $vaultingCreateTime;
+    public  $vaultingCreateTime;
 
-    private  $acquirerInfo;
+    public  $acquirerInfo;
 
     /**
      * @return mixed

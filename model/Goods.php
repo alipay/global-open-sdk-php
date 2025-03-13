@@ -29,7 +29,7 @@ class Goods
     /**
      * @param mixed $goodsUrl
      */
-    public function setGoodsUrl($goodsUrl): void
+    public function setGoodsUrl($goodsUrl)
     {
         $this->goodsUrl = $goodsUrl;
     }
@@ -45,7 +45,7 @@ class Goods
     /**
      * @param mixed $deliveryMethodType
      */
-    public function setDeliveryMethodType($deliveryMethodType): void
+    public function setDeliveryMethodType($deliveryMethodType)
     {
         $this->deliveryMethodType = $deliveryMethodType;
     }
@@ -61,7 +61,7 @@ class Goods
     /**
      * @param mixed $goodsImageUrl
      */
-    public function setGoodsImageUrl($goodsImageUrl): void
+    public function setGoodsImageUrl($goodsImageUrl)
     {
         $this->goodsImageUrl = $goodsImageUrl;
     }
@@ -77,7 +77,7 @@ class Goods
     /**
      * @param mixed $priceId
      */
-    public function setPriceId($priceId): void
+    public function setPriceId($priceId)
     {
         $this->priceId = $priceId;
     }
