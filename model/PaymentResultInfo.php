@@ -50,7 +50,7 @@ class PaymentResultInfo
     /**
      * @param mixed $cardholderName
      */
-    public function setCardholderName($cardholderName): void
+    public function setCardholderName($cardholderName)
     {
         $this->cardholderName = $cardholderName;
     }
@@ -66,7 +66,7 @@ class PaymentResultInfo
     /**
      * @param mixed $cardBin
      */
-    public function setCardBin($cardBin): void
+    public function setCardBin($cardBin)
     {
         $this->cardBin = $cardBin;
     }
@@ -82,7 +82,7 @@ class PaymentResultInfo
     /**
      * @param mixed $lastFour
      */
-    public function setLastFour($lastFour): void
+    public function setLastFour($lastFour)
     {
         $this->lastFour = $lastFour;
     }
@@ -98,7 +98,7 @@ class PaymentResultInfo
     /**
      * @param mixed $expiryMonth
      */
-    public function setExpiryMonth($expiryMonth): void
+    public function setExpiryMonth($expiryMonth)
     {
         $this->expiryMonth = $expiryMonth;
     }
@@ -114,7 +114,7 @@ class PaymentResultInfo
     /**
      * @param mixed $expiryYear
      */
-    public function setExpiryYear($expiryYear): void
+    public function setExpiryYear($expiryYear)
     {
         $this->expiryYear = $expiryYear;
     }
