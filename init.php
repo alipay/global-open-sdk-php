@@ -34,6 +34,7 @@ require __DIR__ . '/request/pay/AlipayRefundRequest.php';
 require __DIR__ . '/request/pay/EntryCodePaymentRequest.php';
 require __DIR__ . '/request/pay/OrderCodePaymentRequest.php';
 require __DIR__ . '/request/pay/UserPresentedCodePaymentRequest.php';
+require __DIR__ . '/request/pay/AlipayUploadInvoiceShippingFileRequest.php';
 
 
 //subscription
@@ -208,7 +209,11 @@ require __DIR__ . '/model/DisputeNotificationType.php';
 require __DIR__ . '/model/AvailablePaymentMethod.php';
 require __DIR__ . '/model/PaymentMethodTypeItem.php';
 require __DIR__ . '/model/AgreementInfo.php';
+require __DIR__ . '/model/DisputeEvidenceFormatType.php';
 require __DIR__ . '/model/Discount.php';
+require __DIR__ . '/model/DisputeJudgedResult.php';
+require __DIR__ . '/model/DisputeType.php';
+require __DIR__ . '/model/PaymentMethodType.php';
 
 
 

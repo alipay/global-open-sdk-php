@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.4 - 2025-04-10
+* [#27](https://github.com/alipay/global-open-sdk-php/pull/25) feature-250410 
+  - Antom 印度渠道接入AMS拒付相关接口的标准变更 
+  - Antom印度渠道接入（UPI/CARD/NETBAKING）相关接口标准变更 
+  - CKP二期支持商户传入支付方式地区和支付方式要素
 
 ## 1.4.3 - 2025-03-13
 * [#26](https://github.com/alipay/global-open-sdk-php/pull/25) feature-250313

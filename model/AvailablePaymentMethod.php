@@ -5,6 +5,25 @@ namespace Model;
 class AvailablePaymentMethod
 {
     public $paymentMethodTypeList;
+    public $paymentMethodMetaData;
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentMethodMetaData()
+    {
+        return $this->paymentMethodMetaData;
+    }
+
+    /**
+     * @param mixed $paymentMethodMetaData
+     */
+    public function setPaymentMethodMetaData($paymentMethodMetaData)
+    {
+        $this->paymentMethodMetaData = $paymentMethodMetaData;
+    }
+
+
 
     /**
      * @return mixed
