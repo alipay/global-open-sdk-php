@@ -1,0 +1,33 @@
+<?php
+{{#models}}
+{{#model}}
+
+{{>partial_header}}
+
+namespace {{modelPackage}};
+{{^isEnum}}
+{{^parentSchema}}
+
+use \ArrayAccess;
+use Request\AlipayRequest;
+use Model\ModelInterface;
+use Model\ObjectSerializer;
+{{/parentSchema}}
+{{/isEnum}}
+
+/**
+ * {{classname}} Class Doc Comment
+ *
+ * @category Class
+{{#description}}
+ * @description {{.}}
+{{/description}}
+ * @package  {{packageName}}
+ * @author   OpenAPI Generator team
+ * @link     https://openapi-generator.tech
+{{^isEnum}}
+ * @implements \ArrayAccess<string, mixed>
+{{/isEnum}}
+ */
+{{#isEnum}}{{>model_enum}}{{/isEnum}}{{^isEnum}}{{>model_generic}}{{/isEnum}}
+{{/model}}{{/models}}

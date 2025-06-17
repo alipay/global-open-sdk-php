@@ -1,0 +1,10 @@
+
+class {{classname}}
+{
+    {{#allowableValues.enumVars}}
+    public const {{name}} = {{{value}}};
+    {{/allowableValues.enumVars}}
+    {{^allowableValues.enumVars}}
+    // No enum values defined
+    {{/allowableValues.enumVars}}
+}
