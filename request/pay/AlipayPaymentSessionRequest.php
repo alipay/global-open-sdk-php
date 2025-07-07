@@ -99,6 +99,23 @@ class AlipayPaymentSessionRequest extends AlipayRequest
 
     public $availablePaymentMethod;
     private $allowedPaymentMethodRegions;
+    public $subscriptionInfo;
+
+    /**
+     * @return mixed
+     */
+    public function getSubscriptionInfo()
+    {
+        return $this->subscriptionInfo;
+    }
+
+    /**
+     * @param mixed $subscriptionInfo
+     */
+    public function setSubscriptionInfo($subscriptionInfo): void
+    {
+        $this->subscriptionInfo = $subscriptionInfo;
+    }
 
 
     function __construct()

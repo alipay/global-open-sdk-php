@@ -32,6 +32,8 @@ class AlipayPayRequest extends AlipayRequest
 
     public $userRegion;
 
+    public $subscriptionInfo;
+
 
     function __construct()
     {
@@ -375,6 +377,24 @@ class AlipayPayRequest extends AlipayRequest
     {
         $this->userRegion = $userRegion;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSubscriptionInfo()
+    {
+        return $this->subscriptionInfo;
+    }
+
+    /**
+     * @param mixed $subscriptionInfo
+     */
+    public function setSubscriptionInfo($subscriptionInfo): void
+    {
+        $this->subscriptionInfo = $subscriptionInfo;
+    }
+
+
 
 
 }
