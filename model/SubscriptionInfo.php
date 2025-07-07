@@ -24,7 +24,7 @@ class SubscriptionInfo
     /**
      * @param mixed $subscriptionDescription
      */
-    public function setSubscriptionDescription($subscriptionDescription): void
+    public function setSubscriptionDescription($subscriptionDescription)
     {
         $this->subscriptionDescription = $subscriptionDescription;
     }
@@ -40,7 +40,7 @@ class SubscriptionInfo
     /**
      * @param mixed $subscriptionStartTime
      */
-    public function setSubscriptionStartTime($subscriptionStartTime): void
+    public function setSubscriptionStartTime($subscriptionStartTime)
     {
         $this->subscriptionStartTime = $subscriptionStartTime;
     }
@@ -56,7 +56,7 @@ class SubscriptionInfo
     /**
      * @param mixed $subscriptionEndTime
      */
-    public function setSubscriptionEndTime($subscriptionEndTime): void
+    public function setSubscriptionEndTime($subscriptionEndTime)
     {
         $this->subscriptionEndTime = $subscriptionEndTime;
     }
@@ -72,7 +72,7 @@ class SubscriptionInfo
     /**
      * @param mixed $periodRule
      */
-    public function setPeriodRule($periodRule): void
+    public function setPeriodRule($periodRule)
     {
         $this->periodRule = $periodRule;
     }
@@ -88,7 +88,7 @@ class SubscriptionInfo
     /**
      * @param mixed $trials
      */
-    public function setTrials($trials): void
+    public function setTrials($trials)
     {
         $this->trials = $trials;
     }
@@ -104,7 +104,7 @@ class SubscriptionInfo
     /**
      * @param mixed $subscriptionNotifyUrl
      */
-    public function setSubscriptionNotifyUrl($subscriptionNotifyUrl): void
+    public function setSubscriptionNotifyUrl($subscriptionNotifyUrl)
     {
         $this->subscriptionNotifyUrl = $subscriptionNotifyUrl;
     }
@@ -120,7 +120,7 @@ class SubscriptionInfo
     /**
      * @param mixed $subscriptionExpiryTime
      */
-    public function setSubscriptionExpiryTime($subscriptionExpiryTime): void
+    public function setSubscriptionExpiryTime($subscriptionExpiryTime)
     {
         $this->subscriptionExpiryTime = $subscriptionExpiryTime;
     }

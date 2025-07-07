@@ -389,7 +389,7 @@ class AlipayPayRequest extends AlipayRequest
     /**
      * @param mixed $subscriptionInfo
      */
-    public function setSubscriptionInfo($subscriptionInfo): void
+    public function setSubscriptionInfo($subscriptionInfo)
     {
         $this->subscriptionInfo = $subscriptionInfo;
     }
