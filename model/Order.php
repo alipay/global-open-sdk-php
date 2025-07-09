@@ -22,7 +22,41 @@ class Order
 
     public $needDeclaration;
 
+    public $orderDiscountAmount;
 
+    public $subTotalOrderAmount;
+
+    /**
+     * @return mixed
+     */
+    public function getOrderDiscountAmount()
+    {
+        return $this->orderDiscountAmount;
+    }
+
+    /**
+     * @param mixed $orderDiscountAmount
+     */
+    public function setOrderDiscountAmount($orderDiscountAmount)
+    {
+        $this->orderDiscountAmount = $orderDiscountAmount;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubTotalOrderAmount()
+    {
+        return $this->subTotalOrderAmount;
+    }
+
+    /**
+     * @param mixed $subTotalOrderAmount
+     */
+    public function setSubTotalOrderAmount($subTotalOrderAmount)
+    {
+        $this->subTotalOrderAmount = $subTotalOrderAmount;
+    }
 
     /**
      * @return mixed
@@ -55,7 +89,6 @@ class Order
     {
         $this->needDeclaration = $needDeclaration;
     }
-
 
 
     /**
@@ -249,7 +282,6 @@ class Order
     {
         $this->transit = $transit;
     }
-
 
 
 }

@@ -9,6 +9,24 @@ class Discount
     public $savingsAmount;
     public $estimateSavingsAmount;
 
+    public $promotionCode;
+
+    /**
+     * @return mixed
+     */
+    public function getPromotionCode()
+    {
+        return $this->promotionCode;
+    }
+
+    /**
+     * @param mixed $promotionCode
+     */
+    public function setPromotionCode($promotionCode)
+    {
+        $this->promotionCode = $promotionCode;
+    }
+
     /**
      * @return mixed
      */

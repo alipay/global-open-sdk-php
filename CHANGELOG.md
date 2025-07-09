@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.7 - 2025-07-09
+- update0709
+
 ## 1.4.5 - 2025-07-07
   - AMS pay/createPaymentSession支付接口支持订阅支付能力
 

@@ -42,4 +42,6 @@ class WalletPaymentMethodType
 
     const APPLEPAY = "APPLEPAY";
 
+    const DIDI_PAY_LATER = "DIDI_PAY_LATER";
+
 }

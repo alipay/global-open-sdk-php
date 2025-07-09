@@ -27,6 +27,8 @@ class AntomPathConstants
     const SUPPLY_DEFENCE_DOC_PATH = '/ams/api/v1/payments/supplyDefenseDocument';
     const DOWNLOAD_DISPUTE_EVIDENCE_PATH = '/ams/api/v1/payments/downloadDisputeEvidence';
     const REFUND_PATH = '/ams/api/v1/payments/refund';
+
+    const RETRIEVE_PATH = "/ams/api//v1/payments/retrievePaymentSession";
     const INQUIRY_REFUND_PATH = '/ams/api/v1/payments/inquiryRefund';
     const DECLARE_PATH = '/ams/api/v1/customs/declare';
     const INQUIRY_DECLARE_PATH = '/ams/api/v1/customs/inquiryDeclarationRequests';

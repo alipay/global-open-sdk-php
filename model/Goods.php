@@ -17,6 +17,43 @@ class Goods
 
     public $goodsImageUrl;
     public $priceId;
+    public $goodsDiscountAmount;
+
+    public $crossSell;
+
+    /**
+     * @return mixed
+     */
+    public function getGoodsDiscountAmount()
+    {
+        return $this->goodsDiscountAmount;
+    }
+
+    /**
+     * @param mixed $goodsDiscountAmount
+     */
+    public function setGoodsDiscountAmount($goodsDiscountAmount)
+    {
+        $this->goodsDiscountAmount = $goodsDiscountAmount;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCrossSell()
+    {
+        return $this->crossSell;
+    }
+
+    /**
+     * @param mixed $crossSell
+     */
+    public function setCrossSell($crossSell)
+    {
+        $this->crossSell = $crossSell;
+    }
+
+
 
     /**
      * @return mixed
@@ -81,8 +118,6 @@ class Goods
     {
         $this->priceId = $priceId;
     }
-
-
 
 
     /**
