@@ -216,6 +216,7 @@ require __DIR__ . '/model/DisputeJudgedResult.php';
 require __DIR__ . '/model/DisputeType.php';
 require __DIR__ . '/model/PaymentMethodType.php';
 require __DIR__ . '/model/SubscriptionInfo.php';
+require __DIR__ . '/model/Declaration.php';
 
 
 

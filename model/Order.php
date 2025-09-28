@@ -26,6 +26,24 @@ class Order
 
     public $subTotalOrderAmount;
 
+    public $declaration;
+
+    /**
+     * @return mixed
+     */
+    public function getDeclaration()
+    {
+        return $this->declaration;
+    }
+
+    /**
+     * @param mixed $declaration
+     */
+    public function setDeclaration($declaration)
+    {
+        $this->declaration = $declaration;
+    }
+
     /**
      * @return mixed
      */
