@@ -20,6 +20,63 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
 
     public $settlementQuote;
 
+    public $customizedInfo;
+
+    public $arn;
+
+    public $actualRefundAmount;
+
+    /**
+     * @return mixed
+     */
+    public function getCustomizedInfo()
+    {
+        return $this->customizedInfo;
+    }
+
+    /**
+     * @param mixed $customizedInfo
+     */
+    public function setCustomizedInfo($customizedInfo)
+    {
+        $this->customizedInfo = $customizedInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArn()
+    {
+        return $this->arn;
+    }
+
+    /**
+     * @param mixed $arn
+     */
+    public function setArn($arn)
+    {
+        $this->arn = $arn;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActualRefundAmount()
+    {
+        return $this->actualRefundAmount;
+    }
+
+    /**
+     * @param mixed $actualRefundAmount
+     */
+    public function setActualRefundAmount($actualRefundAmount)
+    {
+        $this->actualRefundAmount = $actualRefundAmount;
+    }
+
+
+
+
     /**
      * @return mixed
      */

@@ -36,6 +36,7 @@ require __DIR__ . '/request/pay/OrderCodePaymentRequest.php';
 require __DIR__ . '/request/pay/UserPresentedCodePaymentRequest.php';
 require __DIR__ . '/request/pay/AlipayUploadInvoiceShippingFileRequest.php';
 require __DIR__ . '/request/pay/AlipayRetrievePaymentSessionRequest.php';
+require __DIR__ . '/request/pay/AlipayInquireExchangeRateRequest.php';
 
 
 //subscription
@@ -217,6 +218,8 @@ require __DIR__ . '/model/DisputeType.php';
 require __DIR__ . '/model/PaymentMethodType.php';
 require __DIR__ . '/model/SubscriptionInfo.php';
 require __DIR__ . '/model/Declaration.php';
+require __DIR__ . '/model/CurrencyPair.php';
+require __DIR__ . '/model/CustomizedInfo.php';
 
 
 

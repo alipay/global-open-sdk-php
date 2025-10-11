@@ -10,6 +10,26 @@ class Quote
     public $quoteStartTime;
     public $quoteExpiryTime;
     public $guaranteed;
+    public $exchangeAmount;
+
+    /**
+     * @return mixed
+     */
+    public function getExchangeAmount()
+    {
+        return $this->exchangeAmount;
+    }
+
+    /**
+     * @param mixed $exchangeAmount
+     */
+    public function setExchangeAmount($exchangeAmount)
+    {
+        $this->exchangeAmount = $exchangeAmount;
+    }
+
+
+
 
     /**
      * @return mixed
