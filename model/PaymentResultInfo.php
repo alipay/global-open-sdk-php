@@ -37,6 +37,117 @@ class PaymentResultInfo
 
     public $expiryYear;
 
+    public $accountNo;
+
+    public $refusalCodeRaw;
+
+    public $refusalReasonRaw;
+
+    public $merchantAdviceCode;
+
+    public $acquirerInfo;
+
+    public $exemptionRequested;
+
+    /**
+     * @return mixed
+     */
+    public function getAccountNo()
+    {
+        return $this->accountNo;
+    }
+
+    /**
+     * @param mixed $accountNo
+     */
+    public function setAccountNo($accountNo)
+    {
+        $this->accountNo = $accountNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRefusalCodeRaw()
+    {
+        return $this->refusalCodeRaw;
+    }
+
+    /**
+     * @param mixed $refusalCodeRaw
+     */
+    public function setRefusalCodeRaw($refusalCodeRaw)
+    {
+        $this->refusalCodeRaw = $refusalCodeRaw;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRefusalReasonRaw()
+    {
+        return $this->refusalReasonRaw;
+    }
+
+    /**
+     * @param mixed $refusalReasonRaw
+     */
+    public function setRefusalReasonRaw($refusalReasonRaw)
+    {
+        $this->refusalReasonRaw = $refusalReasonRaw;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMerchantAdviceCode()
+    {
+        return $this->merchantAdviceCode;
+    }
+
+    /**
+     * @param mixed $merchantAdviceCode
+     */
+    public function setMerchantAdviceCode($merchantAdviceCode)
+    {
+        $this->merchantAdviceCode = $merchantAdviceCode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->acquirerInfo;
+    }
+
+    /**
+     * @param mixed $acquirerInfo
+     */
+    public function setAcquirerInfo($acquirerInfo)
+    {
+        $this->acquirerInfo = $acquirerInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExemptionRequested()
+    {
+        return $this->exemptionRequested;
+    }
+
+    /**
+     * @param mixed $exemptionRequested
+     */
+    public function setExemptionRequested($exemptionRequested)
+    {
+        $this->exemptionRequested = $exemptionRequested;
+    }
+
+
+
+
 
 
     /**

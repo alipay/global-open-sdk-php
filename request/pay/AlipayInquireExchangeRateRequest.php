@@ -14,6 +14,26 @@ class AlipayInquireExchangeRateRequest extends AlipayRequest
     private $sellCurrency;
     private $buyCurrency;
 
+    private $productCode;
+
+    /**
+     * @return mixed
+     */
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    /**
+     * @param mixed $productCode
+     */
+    public function setProductCode($productCode)
+    {
+        $this->productCode = $productCode;
+    }
+
+
+
 
     function __construct()
     {

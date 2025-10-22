@@ -15,6 +15,80 @@ class ThreeDSResult
 
     public $xid;
 
+    public $threeDStransactionStatusReason;
+
+    public $challengeCancel;
+
+    public $challenged;
+
+    public $exemptionType;
+
+    /**
+     * @return mixed
+     */
+    public function getThreeDStransactionStatusReason()
+    {
+        return $this->threeDStransactionStatusReason;
+    }
+
+    /**
+     * @param mixed $threeDStransactionStatusReason
+     */
+    public function setThreeDStransactionStatusReason($threeDStransactionStatusReason)
+    {
+        $this->threeDStransactionStatusReason = $threeDStransactionStatusReason;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChallengeCancel()
+    {
+        return $this->challengeCancel;
+    }
+
+    /**
+     * @param mixed $challengeCancel
+     */
+    public function setChallengeCancel($challengeCancel)
+    {
+        $this->challengeCancel = $challengeCancel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChallenged()
+    {
+        return $this->challenged;
+    }
+
+    /**
+     * @param mixed $challenged
+     */
+    public function setChallenged($challenged)
+    {
+        $this->challenged = $challenged;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExemptionType()
+    {
+        return $this->exemptionType;
+    }
+
+    /**
+     * @param mixed $exemptionType
+     */
+    public function setExemptionType($exemptionType)
+    {
+        $this->exemptionType = $exemptionType;
+    }
+
+
+
     /**
      * @return mixed
      */
