@@ -17,6 +17,26 @@ class AcquirerInfo
 
     public $acquirerResultMessage;
 
+    public $acquirerReasonDescription;
+
+    /**
+     * @return mixed
+     */
+    public function getAcquirerReasonDescription()
+    {
+        return $this->acquirerReasonDescription;
+    }
+
+    /**
+     * @param mixed $acquirerReasonDescription
+     */
+    public function setAcquirerReasonDescription($acquirerReasonDescription)
+    {
+        $this->acquirerReasonDescription = $acquirerReasonDescription;
+    }
+
+
+
     /**
      * @return mixed
      */

@@ -23,6 +23,25 @@ class ThreeDSResult
 
     public $exemptionType;
 
+    public $threeDSOffered;
+
+    /**
+     * @return mixed
+     */
+    public function getThreeDSOffered()
+    {
+        return $this->threeDSOffered;
+    }
+
+    /**
+     * @param mixed $threeDSOffered
+     */
+    public function setThreeDSOffered($threeDSOffered)
+    {
+        $this->threeDSOffered = $threeDSOffered;
+    }
+
+
     /**
      * @return mixed
      */
@@ -88,7 +107,6 @@ class ThreeDSResult
     }
 
 
-
     /**
      * @return mixed
      */
@@ -100,7 +118,7 @@ class ThreeDSResult
     /**
      * @param mixed $threeDSVersion
      */
-    public function setThreeDSVersion($threeDSVersion) 
+    public function setThreeDSVersion($threeDSVersion)
     {
         $this->threeDSVersion = $threeDSVersion;
     }
@@ -116,7 +134,7 @@ class ThreeDSResult
     /**
      * @param mixed $eci
      */
-    public function setEci($eci) 
+    public function setEci($eci)
     {
         $this->eci = $eci;
     }
@@ -132,7 +150,7 @@ class ThreeDSResult
     /**
      * @param mixed $cavv
      */
-    public function setCavv($cavv) 
+    public function setCavv($cavv)
     {
         $this->cavv = $cavv;
     }
@@ -148,7 +166,7 @@ class ThreeDSResult
     /**
      * @param mixed $dsTransactionId
      */
-    public function setDsTransactionId($dsTransactionId) 
+    public function setDsTransactionId($dsTransactionId)
     {
         $this->dsTransactionId = $dsTransactionId;
     }
@@ -164,11 +182,10 @@ class ThreeDSResult
     /**
      * @param mixed $xid
      */
-    public function setXid($xid) 
+    public function setXid($xid)
     {
         $this->xid = $xid;
     }
-
 
 
 }

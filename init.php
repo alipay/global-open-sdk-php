@@ -220,6 +220,7 @@ require __DIR__ . '/model/SubscriptionInfo.php';
 require __DIR__ . '/model/Declaration.php';
 require __DIR__ . '/model/CurrencyPair.php';
 require __DIR__ . '/model/CustomizedInfo.php';
+require __DIR__ . '/model/PassengerIdType.php';
 
 
 

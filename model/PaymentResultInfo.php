@@ -49,6 +49,43 @@ class PaymentResultInfo
 
     public $exemptionRequested;
 
+    public $cardCategory;
+
+    public $credentialTypeUsed;
+
+    /**
+     * @return mixed
+     */
+    public function getCardCategory()
+    {
+        return $this->cardCategory;
+    }
+
+    /**
+     * @param mixed $cardCategory
+     */
+    public function setCardCategory($cardCategory)
+    {
+        $this->cardCategory = $cardCategory;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCredentialTypeUsed()
+    {
+        return $this->credentialTypeUsed;
+    }
+
+    /**
+     * @param mixed $credentialTypeUsed
+     */
+    public function setCredentialTypeUsed($credentialTypeUsed)
+    {
+        $this->credentialTypeUsed = $credentialTypeUsed;
+    }
+
+
     /**
      * @return mixed
      */
@@ -146,10 +183,6 @@ class PaymentResultInfo
     }
 
 
-
-
-
-
     /**
      * @return mixed
      */
@@ -231,7 +264,6 @@ class PaymentResultInfo
     }
 
 
-
     /**
      * @return mixed
      */
@@ -243,7 +275,7 @@ class PaymentResultInfo
     /**
      * @param mixed $cardNo
      */
-    public function setCardNo($cardNo) 
+    public function setCardNo($cardNo)
     {
         $this->cardNo = $cardNo;
     }
@@ -259,7 +291,7 @@ class PaymentResultInfo
     /**
      * @param mixed $cardBrand
      */
-    public function setCardBrand($cardBrand) 
+    public function setCardBrand($cardBrand)
     {
         $this->cardBrand = $cardBrand;
     }
@@ -275,7 +307,7 @@ class PaymentResultInfo
     /**
      * @param mixed $cardToken
      */
-    public function setCardToken($cardToken) 
+    public function setCardToken($cardToken)
     {
         $this->cardToken = $cardToken;
     }
@@ -291,7 +323,7 @@ class PaymentResultInfo
     /**
      * @param mixed $issuingCountry
      */
-    public function setIssuingCountry($issuingCountry) 
+    public function setIssuingCountry($issuingCountry)
     {
         $this->issuingCountry = $issuingCountry;
     }
@@ -307,7 +339,7 @@ class PaymentResultInfo
     /**
      * @param mixed $funding
      */
-    public function setFunding($funding) 
+    public function setFunding($funding)
     {
         $this->funding = $funding;
     }
@@ -323,7 +355,7 @@ class PaymentResultInfo
     /**
      * @param mixed $paymentMethodRegion
      */
-    public function setPaymentMethodRegion($paymentMethodRegion) 
+    public function setPaymentMethodRegion($paymentMethodRegion)
     {
         $this->paymentMethodRegion = $paymentMethodRegion;
     }
@@ -339,7 +371,7 @@ class PaymentResultInfo
     /**
      * @param mixed $threeDSResult
      */
-    public function setThreeDSResult($threeDSResult) 
+    public function setThreeDSResult($threeDSResult)
     {
         $this->threeDSResult = $threeDSResult;
     }
@@ -355,7 +387,7 @@ class PaymentResultInfo
     /**
      * @param mixed $avsResultRaw
      */
-    public function setAvsResultRaw($avsResultRaw) 
+    public function setAvsResultRaw($avsResultRaw)
     {
         $this->avsResultRaw = $avsResultRaw;
     }
@@ -371,7 +403,7 @@ class PaymentResultInfo
     /**
      * @param mixed $cvvResultRaw
      */
-    public function setCvvResultRaw($cvvResultRaw) 
+    public function setCvvResultRaw($cvvResultRaw)
     {
         $this->cvvResultRaw = $cvvResultRaw;
     }
@@ -387,7 +419,7 @@ class PaymentResultInfo
     /**
      * @param mixed $networkTransactionId
      */
-    public function setNetworkTransactionId($networkTransactionId) 
+    public function setNetworkTransactionId($networkTransactionId)
     {
         $this->networkTransactionId = $networkTransactionId;
     }
@@ -403,12 +435,10 @@ class PaymentResultInfo
     /**
      * @param mixed $creditPayPlan
      */
-    public function setCreditPayPlan($creditPayPlan) 
+    public function setCreditPayPlan($creditPayPlan)
     {
         $this->creditPayPlan = $creditPayPlan;
     }
-
-
 
 
 }

@@ -101,6 +101,25 @@ class AlipayPaymentSessionRequest extends AlipayRequest
     private $allowedPaymentMethodRegions;
     public $subscriptionInfo;
 
+    public $scopes;
+
+    /**
+     * @return mixed
+     */
+    public function getScopes()
+    {
+        return $this->scopes;
+    }
+
+    /**
+     * @param mixed $scopes
+     */
+    public function setScopes($scopes)
+    {
+        $this->scopes = $scopes;
+    }
+
+
     /**
      * @return mixed
      */
@@ -138,7 +157,6 @@ class AlipayPaymentSessionRequest extends AlipayRequest
     {
         $this->allowedPaymentMethodRegions = $allowedPaymentMethodRegions;
     }
-
 
 
     /**
