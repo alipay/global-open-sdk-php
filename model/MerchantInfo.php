@@ -339,7 +339,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceMerchantId
      *
-     * @param }string $referenceMerchantId The unique ID that is assigned by the marketplace to identify the sub-merchant. referenceMerchantId that fails to register the sub-merchant can be used again.    More information:  Maximum length: 64 characters
+     * @param string $referenceMerchantId The unique ID that is assigned by the marketplace to identify the sub-merchant. referenceMerchantId that fails to register the sub-merchant can be used again.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets loginId
      *
-     * @param }string $loginId The sub-merchant's login ID to the marketplace platform. The value of this parameter is an email. The email that is successfully used to register with Alipay cannot be used again.    More information:  Maximum length: 64 characters
+     * @param string $loginId The sub-merchant's login ID to the marketplace platform. The value of this parameter is an email. The email that is successfully used to register with Alipay cannot be used again.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -387,7 +387,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legalEntityType
      *
-     * @param }string $legalEntityType legalEntityType
+     * @param string $legalEntityType legalEntityType
      *
      * @return self
      */
@@ -411,7 +411,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets company
      *
-     * @param }\model\Company|null $company company
+     * @param \model\Company|null $company company
      *
      * @return self
      */
@@ -435,7 +435,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets businessInfo
      *
-     * @param }\model\BusinessInfo $businessInfo businessInfo
+     * @param \model\BusinessInfo $businessInfo businessInfo
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets entityAssociations
      *
-     * @param }\model\EntityAssociations[]|null $entityAssociations The list of legal entities that are associated with the sub-merchant. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, US, or belongs to the European Union.    More information:  Maximum size: 100 elements
+     * @param \model\EntityAssociations[]|null $entityAssociations The list of legal entities that are associated with the sub-merchant. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, US, or belongs to the European Union.    More information:  Maximum size: 100 elements
      *
      * @return self
      */

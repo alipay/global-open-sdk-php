@@ -457,7 +457,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets productCode
      *
-     * @param }string $productCode productCode
+     * @param string $productCode productCode
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentRequestId
      *
-     * @param }string $paymentRequestId The unique ID assigned by a merchant to identify a payment request.   More information:  Maximum length: 64 characters
+     * @param string $paymentRequestId The unique ID assigned by a merchant to identify a payment request.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets order
      *
-     * @param }\model\Order $order order
+     * @param \model\Order $order order
      *
      * @return self
      */
@@ -529,7 +529,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentAmount
      *
-     * @param }\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -553,7 +553,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentMethod
      *
-     * @param }\model\PaymentMethod $paymentMethod paymentMethod
+     * @param \model\PaymentMethod $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -577,7 +577,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentSessionExpiryTime
      *
-     * @param }string|null $paymentSessionExpiryTime The specific date and time after which the payment session will expire. The default expiration time is 1 hour after the session creation. For example, if the session is created at 2023-7-27T12:00:01+08:30, the session expiration time is 2023-7-27T13:00:01+08:30.  Specify this parameter if you want to use a payment session expiration time that differs from the default time. The specified expiration time must be 0 to 1 hour after session creation.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $paymentSessionExpiryTime The specific date and time after which the payment session will expire. The default expiration time is 1 hour after the session creation. For example, if the session is created at 2023-7-27T12:00:01+08:30, the session expiration time is 2023-7-27T13:00:01+08:30.  Specify this parameter if you want to use a payment session expiration time that differs from the default time. The specified expiration time must be 0 to 1 hour after session creation.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentRedirectUrl
      *
-     * @param }string $paymentRedirectUrl The merchant page URL that the user is redirected to after the payment is completed.  More information:  Maximum length: 2048 characters
+     * @param string $paymentRedirectUrl The merchant page URL that the user is redirected to after the payment is completed.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -625,7 +625,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentNotifyUrl
      *
-     * @param }string|null $paymentNotifyUrl The URL that is used to receive the payment result notification.  Specify this parameter if you want to receive an asynchronous notification of the payment result. You can also set the URL to receive the result notification in Antom Dashboard. If the URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.  More information:  Maximum length: 2048 characters
+     * @param string|null $paymentNotifyUrl The URL that is used to receive the payment result notification.  Specify this parameter if you want to receive an asynchronous notification of the payment result. You can also set the URL to receive the result notification in Antom Dashboard. If the URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -649,7 +649,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentFactor
      *
-     * @param }\model\PaymentFactor|null $paymentFactor paymentFactor
+     * @param \model\PaymentFactor|null $paymentFactor paymentFactor
      *
      * @return self
      */
@@ -673,7 +673,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets settlementStrategy
      *
-     * @param }\model\SettlementStrategy $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -697,7 +697,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets enableInstallmentCollection
      *
-     * @param }bool|null $enableInstallmentCollection Indicates whether Antom collects the installment information for the payment. Specify this parameter if you need Antom to collect the installment information. Valid values are:  true: indicates Antom collects installment information when the user's card supports installments. Installments are not available when the user's card does not support installments. false: indicates you do not need Antom to collect the installment information. The same applies when the value is empty or you do not specify this parameter.
+     * @param bool|null $enableInstallmentCollection Indicates whether Antom collects the installment information for the payment. Specify this parameter if you need Antom to collect the installment information. Valid values are:  true: indicates Antom collects installment information when the user's card supports installments. Installments are not available when the user's card does not support installments. false: indicates you do not need Antom to collect the installment information. The same applies when the value is empty or you do not specify this parameter.
      *
      * @return self
      */
@@ -721,7 +721,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets creditPayPlan
      *
-     * @param }\model\CreditPayPlan|null $creditPayPlan creditPayPlan
+     * @param \model\CreditPayPlan|null $creditPayPlan creditPayPlan
      *
      * @return self
      */
@@ -745,7 +745,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets merchantRegion
      *
-     * @param }string|null $merchantRegion The country or region where the merchant operates the business. The parameter is a 2-letter country or region code that follows ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.    Note: This parameter is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
+     * @param string|null $merchantRegion The country or region where the merchant operates the business. The parameter is a 2-letter country or region code that follows ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.    Note: This parameter is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -769,7 +769,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets env
      *
-     * @param }\model\Env|null $env env
+     * @param \model\Env|null $env env
      *
      * @return self
      */
@@ -793,7 +793,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets agreementInfo
      *
-     * @param }\model\AgreementInfo|null $agreementInfo agreementInfo
+     * @param \model\AgreementInfo|null $agreementInfo agreementInfo
      *
      * @return self
      */
@@ -817,7 +817,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets riskData
      *
-     * @param }\model\RiskData|null $riskData riskData
+     * @param \model\RiskData|null $riskData riskData
      *
      * @return self
      */
@@ -841,7 +841,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets productScene
      *
-     * @param }string|null $productScene Specified product scenarios include valid values:  ​CHECKOUT_PAYMENT​: Indicates that the merchant integrates using the Checkout Page. ​ELEMENT_PAYMENT​: Indicates that the merchant integrates using the Element. More information:  Maximum length: 32 characters
+     * @param string|null $productScene Specified product scenarios include valid values:  ​CHECKOUT_PAYMENT​: Indicates that the merchant integrates using the Checkout Page. ​ELEMENT_PAYMENT​: Indicates that the merchant integrates using the Element. More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -865,7 +865,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets savedPaymentMethods
      *
-     * @param }\model\PaymentMethod[]|null $savedPaymentMethods Payment information stored by the user in the merchant system.
+     * @param \model\PaymentMethod[]|null $savedPaymentMethods Payment information stored by the user in the merchant system.
      *
      * @return self
      */
@@ -889,7 +889,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets locale
      *
-     * @param }string|null $locale Language tag specified for the Checkout Page. If this field is empty or set to automatic, the default language setting of the browser will be used, which is usually English.  More information:  Maximum length: 8 characters
+     * @param string|null $locale Language tag specified for the Checkout Page. If this field is empty or set to automatic, the default language setting of the browser will be used, which is usually English.  More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -913,7 +913,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets availablePaymentMethod
      *
-     * @param }\model\AvailablePaymentMethod|null $availablePaymentMethod availablePaymentMethod
+     * @param \model\AvailablePaymentMethod|null $availablePaymentMethod availablePaymentMethod
      *
      * @return self
      */
@@ -937,7 +937,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets testFile
      *
-     * @param }string $testFile testFile
+     * @param string $testFile testFile
      *
      * @return self
      */

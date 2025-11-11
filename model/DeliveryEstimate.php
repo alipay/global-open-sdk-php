@@ -299,7 +299,7 @@ class DeliveryEstimate  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets minimum
      *
-     * @param }\model\DeliveryEstimateInfo|null $minimum minimum
+     * @param \model\DeliveryEstimateInfo|null $minimum minimum
      *
      * @return self
      */
@@ -323,7 +323,7 @@ class DeliveryEstimate  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets maximum
      *
-     * @param }\model\DeliveryEstimateInfo|null $maximum maximum
+     * @param \model\DeliveryEstimateInfo|null $maximum maximum
      *
      * @return self
      */

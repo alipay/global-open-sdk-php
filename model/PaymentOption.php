@@ -389,7 +389,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodType
      *
-     * @param }string $paymentMethodType The payment method type. See Payment methods to check the valid values.    More information:  Maximum length: 64 characters
+     * @param string $paymentMethodType The payment method type. See Payment methods to check the valid values.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodCategory
      *
-     * @param }string|null $paymentMethodCategory paymentMethodCategory
+     * @param string|null $paymentMethodCategory paymentMethodCategory
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodRegion
      *
-     * @param }string[]|null $paymentMethodRegion A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.    More information:  Maximum length: 6 characters
+     * @param string[]|null $paymentMethodRegion A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.    More information:  Maximum length: 6 characters
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets enabled
      *
-     * @param }bool $enabled Indicates whether the payment method is available.
+     * @param bool $enabled Indicates whether the payment method is available.
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets preferred
      *
-     * @param }bool|null $preferred preferred
+     * @param bool|null $preferred preferred
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets disableReason
      *
-     * @param }string|null $disableReason The reason why the payment method is not available. Valid values are:  PAYMENT_ACCOUNT_NOT_AVAILABLE EXCEED_CHANNEL_LIMIT_RULE SERVICE_DEGRADE CHANNEL_NOT_SUPPORT_CURRENCY CHANNEL_DISABLE CHANNEL_NOT_IN_SERVICE_TIME QUERY_IPP_INFO_FAILED LIMIT_CENTER_ACCESS_FAIL  CURRENT_CHANNEL_NOT_EXIST
+     * @param string|null $disableReason The reason why the payment method is not available. Valid values are:  PAYMENT_ACCOUNT_NOT_AVAILABLE EXCEED_CHANNEL_LIMIT_RULE SERVICE_DEGRADE CHANNEL_NOT_SUPPORT_CURRENCY CHANNEL_DISABLE CHANNEL_NOT_IN_SERVICE_TIME QUERY_IPP_INFO_FAILED LIMIT_CENTER_ACCESS_FAIL  CURRENT_CHANNEL_NOT_EXIST
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amountLimitInfoMap
      *
-     * @param }\model\AmountLimit>|null $amountLimitInfoMap amountLimitInfoMap
+     * @param \model\AmountLimit>|null $amountLimitInfoMap amountLimitInfoMap
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets supportedCurrencies
      *
-     * @param }string[]|null $supportedCurrencies supportedCurrencies
+     * @param string[]|null $supportedCurrencies supportedCurrencies
      *
      * @return self
      */
@@ -581,7 +581,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentOptionDetail
      *
-     * @param }\model\PaymentOptionDetail|null $paymentOptionDetail paymentOptionDetail
+     * @param \model\PaymentOptionDetail|null $paymentOptionDetail paymentOptionDetail
      *
      * @return self
      */
@@ -605,7 +605,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo extendInfo
+     * @param string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -629,7 +629,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets logo
      *
-     * @param }\model\Logo|null $logo logo
+     * @param \model\Logo|null $logo logo
      *
      * @return self
      */
@@ -653,7 +653,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promoNames
      *
-     * @param }string[]|null $promoNames The list of the promotion names. In JSON format. The keys are returned as a language and a country code, connected by an underscore, such as zh_CN, while the value is the promotion name, such as RM1 Voucher.    More information:  Maximum length: 512 characters
+     * @param string[]|null $promoNames The list of the promotion names. In JSON format. The keys are returned as a language and a country code, connected by an underscore, such as zh_CN, while the value is the promotion name, such as RM1 Voucher.    More information:  Maximum length: 512 characters
      *
      * @return self
      */
@@ -677,7 +677,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets installment
      *
-     * @param }\model\Installment|null $installment installment
+     * @param \model\Installment|null $installment installment
      *
      * @return self
      */
@@ -701,7 +701,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotionInfos
      *
-     * @param }\model\PromotionInfo[]|null $promotionInfos Promotion information.  This parameter is returned when the payment method offers a promotion to the buyer.
+     * @param \model\PromotionInfo[]|null $promotionInfos Promotion information.  This parameter is returned when the payment method offers a promotion to the buyer.
      *
      * @return self
      */

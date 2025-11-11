@@ -320,7 +320,7 @@ class BrowserInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acceptHeader
      *
-     * @param }string|null $acceptHeader The accept header of the user's browser
+     * @param string|null $acceptHeader The accept header of the user's browser
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class BrowserInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets javaEnabled
      *
-     * @param }bool|null $javaEnabled Indicates whether the user's browser is able to run Java
+     * @param bool|null $javaEnabled Indicates whether the user's browser is able to run Java
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class BrowserInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets javaScriptEnabled
      *
-     * @param }bool|null $javaScriptEnabled Indicates whether the user's browser is able to run Java
+     * @param bool|null $javaScriptEnabled Indicates whether the user's browser is able to run Java
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class BrowserInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets language
      *
-     * @param }string|null $language The language of the user's browser
+     * @param string|null $language The language of the user's browser
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class BrowserInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets userAgent
      *
-     * @param }string|null $userAgent The user agent of the user's browser
+     * @param string|null $userAgent The user agent of the user's browser
      *
      * @return self
      */

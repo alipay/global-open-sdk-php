@@ -327,7 +327,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerName
      *
-     * @param }string|null $acquirerName The name of the acquirer.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
+     * @param string|null $acquirerName The name of the acquirer.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceRequestId
      *
-     * @param }string|null $referenceRequestId The unique ID that is assigned by APO to identify a payment request sent to the acquirer.  Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
+     * @param string|null $referenceRequestId The unique ID that is assigned by APO to identify a payment request sent to the acquirer.  Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerTransactionId
      *
-     * @param }string|null $acquirerTransactionId The unique ID that is assigned by the acquirer to identify a transaction.   Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
+     * @param string|null $acquirerTransactionId The unique ID that is assigned by the acquirer to identify a transaction.   Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerMerchantId
      *
-     * @param }string|null $acquirerMerchantId The unique ID that is assigned by the acquirer to identify a merchant.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
+     * @param string|null $acquirerMerchantId The unique ID that is assigned by the acquirer to identify a merchant.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerResultCode
      *
-     * @param }string|null $acquirerResultCode The acquirer's result code that indicates the transaction process result.    Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
+     * @param string|null $acquirerResultCode The acquirer's result code that indicates the transaction process result.    Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerResultMessage
      *
-     * @param }string|null $acquirerResultMessage The result message that describes acquirerResultCode in detail.    Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
+     * @param string|null $acquirerResultMessage The result message that describes acquirerResultCode in detail.    Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

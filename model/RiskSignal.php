@@ -305,7 +305,7 @@ class RiskSignal  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets riskCode
      *
-     * @param }string $riskCode The tag assigned by a merchant to a risky transaction.
+     * @param string $riskCode The tag assigned by a merchant to a risky transaction.
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class RiskSignal  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets riskReason
      *
-     * @param }string $riskReason The reason why a transaction is identified as risky provided by a merchant.
+     * @param string $riskReason The reason why a transaction is identified as risky provided by a merchant.
      *
      * @return self
      */

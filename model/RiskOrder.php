@@ -305,7 +305,7 @@ class RiskOrder  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderType
      *
-     * @param }string $orderType The order type
+     * @param string $orderType The order type
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class RiskOrder  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referringSite
      *
-     * @param }string $referringSite The webpage where the buyer accessed the merchant.
+     * @param string $referringSite The webpage where the buyer accessed the merchant.
      *
      * @return self
      */

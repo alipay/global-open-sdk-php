@@ -348,7 +348,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingName
      *
-     * @param }\model\UserName|null $shippingName shippingName
+     * @param \model\UserName|null $shippingName shippingName
      *
      * @return self
      */
@@ -372,7 +372,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingAddress
      *
-     * @param }\model\Address|null $shippingAddress shippingAddress
+     * @param \model\Address|null $shippingAddress shippingAddress
      *
      * @return self
      */
@@ -396,7 +396,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingCarrier
      *
-     * @param }string|null $shippingCarrier The delivery service provider for shipping a physical product, such as FedEx, UPS, or USPS.   Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum length: 128 characters
+     * @param string|null $shippingCarrier The delivery service provider for shipping a physical product, such as FedEx, UPS, or USPS.   Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -420,7 +420,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingPhoneNo
      *
-     * @param }string|null $shippingPhoneNo The phone number of a recipient (including extension).  Specify this parameter when you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum length: 16 characters
+     * @param string|null $shippingPhoneNo The phone number of a recipient (including extension).  Specify this parameter when you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum length: 16 characters
      *
      * @return self
      */
@@ -444,7 +444,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipToEmail
      *
-     * @param }string|null $shipToEmail The email address where virtual goods are sent.  Specify this parameter when one of the following conditions is met:  if you require risk control. if you are a digital and entertainment merchant. Providing this information helps to increase fraud and identity theft detection.    More information:  Maximum length: 64 characters
+     * @param string|null $shipToEmail The email address where virtual goods are sent.  Specify this parameter when one of the following conditions is met:  if you require risk control. if you are a digital and entertainment merchant. Providing this information helps to increase fraud and identity theft detection.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingFeeId
      *
-     * @param }string|null $shippingFeeId The ID of the shipping fee used for identifying the shipping option.  More information:  Maximum length: 64 characters
+     * @param string|null $shippingFeeId The ID of the shipping fee used for identifying the shipping option.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -492,7 +492,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingFee
      *
-     * @param }\model\Amount|null $shippingFee shippingFee
+     * @param \model\Amount|null $shippingFee shippingFee
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingDescription
      *
-     * @param }string|null $shippingDescription Extended information about logistics-related services, including shipping time, logistics companies, etc.  More information:  Maximum length: 64 characters
+     * @param string|null $shippingDescription Extended information about logistics-related services, including shipping time, logistics companies, etc.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -540,7 +540,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deliveryEstimate
      *
-     * @param }\model\DeliveryEstimate|null $deliveryEstimate deliveryEstimate
+     * @param \model\DeliveryEstimate|null $deliveryEstimate deliveryEstimate
      *
      * @return self
      */

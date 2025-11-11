@@ -312,7 +312,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets result
      *
-     * @param }\model\Result|null $result result
+     * @param \model\Result|null $result result
      *
      * @return self
      */
@@ -336,7 +336,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets settlementRequestId
      *
-     * @param }string $settlementRequestId The unique ID that is assigned by the marketplace to identify a settlement request.    More information:  Maximum length: 64 characters
+     * @param string $settlementRequestId The unique ID that is assigned by the marketplace to identify a settlement request.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -360,7 +360,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets settlementId
      *
-     * @param }string $settlementId The unique ID that is assigned by Antom to identify a settlement.    More information:  Maximum length: 64 characters
+     * @param string $settlementId The unique ID that is assigned by Antom to identify a settlement.    More information:  Maximum length: 64 characters
      *
      * @return self
      */

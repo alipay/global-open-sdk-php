@@ -313,7 +313,7 @@ class ChallengeActionForm  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets challengeType
      *
-     * @param }string|null $challengeType challengeType
+     * @param string|null $challengeType challengeType
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class ChallengeActionForm  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets challengeRenderValue
      *
-     * @param }string|null $challengeRenderValue challengeRenderValue
+     * @param string|null $challengeRenderValue challengeRenderValue
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class ChallengeActionForm  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets triggerSource
      *
-     * @param }string|null $triggerSource triggerSource
+     * @param string|null $triggerSource triggerSource
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class ChallengeActionForm  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo extendInfo
+     * @param string|null $extendInfo extendInfo
      *
      * @return self
      */

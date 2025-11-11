@@ -315,7 +315,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resultCode
      *
-     * @param }string $resultCode The result code.
+     * @param string $resultCode The result code.
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resultStatus
      *
-     * @param }string $resultStatus resultStatus
+     * @param string $resultStatus resultStatus
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resultMessage
      *
-     * @param }string $resultMessage The result message.
+     * @param string $resultMessage The result message.
      *
      * @return self
      */

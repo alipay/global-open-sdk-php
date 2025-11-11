@@ -365,7 +365,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceMerchantId
      *
-     * @param }string $referenceMerchantId referenceMerchantId
+     * @param string $referenceMerchantId referenceMerchantId
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantMCC
      *
-     * @param }string $merchantMCC merchantMCC
+     * @param string $merchantMCC merchantMCC
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantName
      *
-     * @param }string $merchantName merchantName
+     * @param string $merchantName merchantName
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantDisplayName
      *
-     * @param }string $merchantDisplayName merchantDisplayName
+     * @param string $merchantDisplayName merchantDisplayName
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantAddress
      *
-     * @param }\model\Address $merchantAddress merchantAddress
+     * @param \model\Address $merchantAddress merchantAddress
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantRegisterDate
      *
-     * @param }string $merchantRegisterDate merchantRegisterDate
+     * @param string $merchantRegisterDate merchantRegisterDate
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets store
      *
-     * @param }\model\Store $store store
+     * @param \model\Store $store store
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantType
      *
-     * @param }string $merchantType merchantType
+     * @param string $merchantType merchantType
      *
      * @return self
      */

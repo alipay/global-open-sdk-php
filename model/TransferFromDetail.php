@@ -305,7 +305,7 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets transferFromMethod
      *
-     * @param }\model\PaymentMethod $transferFromMethod transferFromMethod
+     * @param \model\PaymentMethod $transferFromMethod transferFromMethod
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets transferFromAmount
      *
-     * @param }\model\Amount $transferFromAmount transferFromAmount
+     * @param \model\Amount $transferFromAmount transferFromAmount
      *
      * @return self
      */

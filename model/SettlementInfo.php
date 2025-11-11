@@ -302,7 +302,7 @@ class SettlementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settlementCurrency
      *
-     * @param }string $settlementCurrency The sub-merchant's settlement currency that is specified in the settlement contract. The value of this parameter is a 3-letter currency code that follows the ISO 4217 standard.   More information:  Maximum length: 3 characters
+     * @param string $settlementCurrency The sub-merchant's settlement currency that is specified in the settlement contract. The value of this parameter is a 3-letter currency code that follows the ISO 4217 standard.   More information:  Maximum length: 3 characters
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class SettlementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settlementBankAccount
      *
-     * @param }\model\SettlementBankAccount|null $settlementBankAccount settlementBankAccount
+     * @param \model\SettlementBankAccount|null $settlementBankAccount settlementBankAccount
      *
      * @return self
      */

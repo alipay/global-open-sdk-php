@@ -312,7 +312,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets supportCardBrands
      *
-     * @param }\model\SupportCardBrand[] $supportCardBrands The list of supported card brands.    Note: This parameter is returned when the value of paymentMethodType is ​CARD​.
+     * @param \model\SupportCardBrand[] $supportCardBrands The list of supported card brands.    Note: This parameter is returned when the value of paymentMethodType is ​CARD​.
      *
      * @return self
      */
@@ -336,7 +336,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets funding
      *
-     * @param }string[]|null $funding The funding type of the card. Valid values are:   CREDIT: indicates a credit card.  DEBIT: indicates a debit card.  PREPAID: indicates a prepaid card CHARGE: indicates a charge card DEFERRED_DEBIT: indicates a deferred debit card This parameter is returned when all the following conditions are met:  The value of paymentMethodType is CARD. The value of cardNo is valid. The information is available in the Antom card database.
+     * @param string[]|null $funding The funding type of the card. Valid values are:   CREDIT: indicates a credit card.  DEBIT: indicates a debit card.  PREPAID: indicates a prepaid card CHARGE: indicates a charge card DEFERRED_DEBIT: indicates a deferred debit card This parameter is returned when all the following conditions are met:  The value of paymentMethodType is CARD. The value of cardNo is valid. The information is available in the Antom card database.
      *
      * @return self
      */
@@ -360,7 +360,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets supportBanks
      *
-     * @param }\model\SupportBank[] $supportBanks The list of supported banks.   This parameter is returned when the value of paymentMethodType is ​P24​ or ONLINEBANKING_FPX.
+     * @param \model\SupportBank[] $supportBanks The list of supported banks.   This parameter is returned when the value of paymentMethodType is ​P24​ or ONLINEBANKING_FPX.
      *
      * @return self
      */

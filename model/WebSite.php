@@ -316,7 +316,7 @@ class WebSite  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param }string|null $name name
+     * @param string|null $name name
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class WebSite  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets url
      *
-     * @param }string $url The URL of the merchant website.    More information:  Maximum length: 2048 characters
+     * @param string $url The URL of the merchant website.    More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class WebSite  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets desc
      *
-     * @param }string|null $desc desc
+     * @param string|null $desc desc
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class WebSite  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param }string|null $type Website type. Valid values are:  COMPANY_INTRODUCE: the website that introduces company information. Specify websites.type as COMPANY_INTRODUCE when the value of paymentMethodType is TRUEMONEY. TRADING: the trading website. The same applies when the value is empty or you do not specify this parameter. More information:  Maximum length: 32 characters
+     * @param string|null $type Website type. Valid values are:  COMPANY_INTRODUCE: the website that introduces company information. Specify websites.type as COMPANY_INTRODUCE when the value of paymentMethodType is TRUEMONEY. TRADING: the trading website. The same applies when the value is empty or you do not specify this parameter. More information:  Maximum length: 32 characters
      *
      * @return self
      */

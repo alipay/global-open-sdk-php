@@ -368,7 +368,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceGoodsId
      *
-     * @param }string $referenceGoodsId The unique ID to identify the goods.  More information:  Maximum length: 64 characters
+     * @param string $referenceGoodsId The unique ID to identify the goods.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsName
      *
-     * @param }string $goodsName Goods name.  More information:  Maximum length: 256 characters
+     * @param string $goodsName Goods name.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsCategory
      *
-     * @param }string|null $goodsCategory The category of the goods. If the goods have multiple layers for categorization, use slashes between different categories and write the parent category before the subcategory, such as Digital Goods/Digital Vouchers/Food and Beverages.    Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum length: 64 characters
+     * @param string|null $goodsCategory The category of the goods. If the goods have multiple layers for categorization, use slashes between different categories and write the parent category before the subcategory, such as Digital Goods/Digital Vouchers/Food and Beverages.    Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -440,7 +440,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsBrand
      *
-     * @param }string|null $goodsBrand goodsBrand
+     * @param string|null $goodsBrand goodsBrand
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsUnitAmount
      *
-     * @param }\model\Amount|null $goodsUnitAmount goodsUnitAmount
+     * @param \model\Amount|null $goodsUnitAmount goodsUnitAmount
      *
      * @return self
      */
@@ -488,7 +488,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsQuantity
      *
-     * @param }string|null $goodsQuantity Quantity of goods.   Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Value range: 1 - unlimited
+     * @param string|null $goodsQuantity Quantity of goods.   Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -512,7 +512,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsSkuName
      *
-     * @param }string|null $goodsSkuName goodsSkuName
+     * @param string|null $goodsSkuName goodsSkuName
      *
      * @return self
      */
@@ -536,7 +536,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsUrl
      *
-     * @param }string|null $goodsUrl The URL of the website where the user places an order.  Specify this parameter if you require risk control. Providing this information helps to identify black-market behavior.   More information:  Maximum length: 2048 characters
+     * @param string|null $goodsUrl The URL of the website where the user places an order.  Specify this parameter if you require risk control. Providing this information helps to identify black-market behavior.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -560,7 +560,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deliveryMethodType
      *
-     * @param }string|null $deliveryMethodType The delivery method of the goods. Valid values are:  PHYSICAL: indicates that the delivery method is physical delivery. DIGITAL: indicates that the delivery method is digital delivery. Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 32 characters
+     * @param string|null $deliveryMethodType The delivery method of the goods. Valid values are:  PHYSICAL: indicates that the delivery method is physical delivery. DIGITAL: indicates that the delivery method is digital delivery. Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -584,7 +584,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsImageUrl
      *
-     * @param }string|null $goodsImageUrl goodsImageUrl
+     * @param string|null $goodsImageUrl goodsImageUrl
      *
      * @return self
      */
@@ -608,7 +608,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priceId
      *
-     * @param }string|null $priceId The ID of the Price object. One of ​priceId​ or ​referenceGoodsId​ is required.  More information:  Maximum length: 64 characters
+     * @param string|null $priceId The ID of the Price object. One of ​priceId​ or ​referenceGoodsId​ is required.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

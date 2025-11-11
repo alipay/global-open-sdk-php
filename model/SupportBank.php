@@ -306,7 +306,7 @@ class SupportBank  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bankIdentifierCode
      *
-     * @param }string|null $bankIdentifierCode The unique code of the bank. See the Bank list to check the valid values.
+     * @param string|null $bankIdentifierCode The unique code of the bank. See the Bank list to check the valid values.
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class SupportBank  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bankShortName
      *
-     * @param }string|null $bankShortName The short name of the bank. The unique code of the bank. See the Bank list to check the valid values.
+     * @param string|null $bankShortName The short name of the bank. The unique code of the bank. See the Bank list to check the valid values.
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class SupportBank  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bankLogo
      *
-     * @param }\model\Logo|null $bankLogo bankLogo
+     * @param \model\Logo|null $bankLogo bankLogo
      *
      * @return self
      */

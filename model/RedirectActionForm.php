@@ -319,7 +319,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets method
      *
-     * @param }string|null $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
+     * @param string|null $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets parameters
      *
-     * @param }string|null $parameters Parameters required for the HTTP method in the key-value pair.  Note: This field is returned only when the method is POST.  More information:  Maximum length: 2048 characters
+     * @param string|null $parameters Parameters required for the HTTP method in the key-value pair.  Note: This field is returned only when the method is POST.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets redirectUrl
      *
-     * @param }string $redirectUrl The URL where the user is redirected to.   More information:  Maximum length: 2048 characters
+     * @param string $redirectUrl The URL where the user is redirected to.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets actionFormType
      *
-     * @param }string $actionFormType The value is fixed as RedirectActionForm.  More information:  Maximum length: 32 characters
+     * @param string $actionFormType The value is fixed as RedirectActionForm.  More information:  Maximum length: 32 characters
      *
      * @return self
      */

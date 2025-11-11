@@ -320,7 +320,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customizedField1
      *
-     * @param }string|null $customizedField1 customizedField1
+     * @param string|null $customizedField1 customizedField1
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customizedField2
      *
-     * @param }string|null $customizedField2 customizedField2
+     * @param string|null $customizedField2 customizedField2
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customizedField3
      *
-     * @param }string|null $customizedField3 customizedField3
+     * @param string|null $customizedField3 customizedField3
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customizedField4
      *
-     * @param }string|null $customizedField4 customizedField4
+     * @param string|null $customizedField4 customizedField4
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customizedField5
      *
-     * @param }string|null $customizedField5 customizedField5
+     * @param string|null $customizedField5 customizedField5
      *
      * @return self
      */

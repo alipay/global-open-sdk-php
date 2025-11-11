@@ -302,7 +302,7 @@ class StockInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets listedRegion
      *
-     * @param }string $listedRegion The region or country where the company is listed.    More information:  Maximum length: 2 characters
+     * @param string $listedRegion The region or country where the company is listed.    More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class StockInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tickerSymbol
      *
-     * @param }string|null $tickerSymbol The ticker symbol of the stock.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is US.    More information:  Maximum length: 32 characters
+     * @param string|null $tickerSymbol The ticker symbol of the stock.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is US.    More information:  Maximum length: 32 characters
      *
      * @return self
      */

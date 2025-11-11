@@ -421,7 +421,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets terminalType
      *
-     * @param }string $terminalType terminalType
+     * @param string $terminalType terminalType
      *
      * @return self
      */
@@ -445,7 +445,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets osType
      *
-     * @param }string|null $osType osType
+     * @param string|null $osType osType
      *
      * @return self
      */
@@ -469,7 +469,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets userAgent
      *
-     * @param }string|null $userAgent userAgent
+     * @param string|null $userAgent userAgent
      *
      * @return self
      */
@@ -493,7 +493,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceTokenId
      *
-     * @param }string|null $deviceTokenId The token identifier of the device.  Note: Specify this parameter if you integrate with the Antom Device Fingerprint client, which is an SDK or JavaScript library that is used to collect device-related information, such as osType, deviceLanguage, deviceId, websiteLanguage, and userAgent. The device-related information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates. For more information about the Antom Device Fingerprint client, contact Antom Technical Support.    More information:  Maximum length: 64 characters
+     * @param string|null $deviceTokenId The token identifier of the device.  Note: Specify this parameter if you integrate with the Antom Device Fingerprint client, which is an SDK or JavaScript library that is used to collect device-related information, such as osType, deviceLanguage, deviceId, websiteLanguage, and userAgent. The device-related information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates. For more information about the Antom Device Fingerprint client, contact Antom Technical Support.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -517,7 +517,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets clientIp
      *
-     * @param }string|null $clientIp Client IP address of the device.
+     * @param string|null $clientIp Client IP address of the device.
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cookieId
      *
-     * @param }string|null $cookieId cookieId
+     * @param string|null $cookieId cookieId
      *
      * @return self
      */
@@ -565,7 +565,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo Extended information.  Specify this field if you need to use the extended information.    More information:  Maximum length: 2048 characters
+     * @param string|null $extendInfo Extended information.  Specify this field if you need to use the extended information.    More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -589,7 +589,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeTerminalId
      *
-     * @param }string|null $storeTerminalId storeTerminalId
+     * @param string|null $storeTerminalId storeTerminalId
      *
      * @return self
      */
@@ -613,7 +613,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeTerminalRequestTime
      *
-     * @param }string|null $storeTerminalRequestTime storeTerminalRequestTime
+     * @param string|null $storeTerminalRequestTime storeTerminalRequestTime
      *
      * @return self
      */
@@ -637,7 +637,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets browserInfo
      *
-     * @param }\model\BrowserInfo|null $browserInfo browserInfo
+     * @param \model\BrowserInfo|null $browserInfo browserInfo
      *
      * @return self
      */
@@ -661,7 +661,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets colorDepth
      *
-     * @param }string|null $colorDepth The color depth of the user's browser in bits per pixel. The value is obtained by using the browser's screen.colorDepth property. Valid values are 1, 4, 8, 15, 16, 24, 30, 32, or 48. For example, 8 means 8-bit color depth.    More information:  Value range: 0 - unlimited
+     * @param string|null $colorDepth The color depth of the user's browser in bits per pixel. The value is obtained by using the browser's screen.colorDepth property. Valid values are 1, 4, 8, 15, 16, 24, 30, 32, or 48. For example, 8 means 8-bit color depth.    More information:  Value range: 0 - unlimited
      *
      * @return self
      */
@@ -685,7 +685,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets screenHeight
      *
-     * @param }string|null $screenHeight The screen height of the user's device in pixels.    Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Value range: 1 - unlimited
+     * @param string|null $screenHeight The screen height of the user's device in pixels.    Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -709,7 +709,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets screenWidth
      *
-     * @param }string|null $screenWidth The screen width of the user's device in pixels.    Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Value range: 1 - unlimited
+     * @param string|null $screenWidth The screen width of the user's device in pixels.    Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -733,7 +733,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets timeZoneOffset
      *
-     * @param }int|null $timeZoneOffset The time difference between UTC time and the local time of the user's browser, in minutes. The value is obtained by using the getTimezoneOffset() property. For example, if the local time of the user's browser is UTC+2, the value of this parameter is -120.  Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Value range: -720 - 720
+     * @param int|null $timeZoneOffset The time difference between UTC time and the local time of the user's browser, in minutes. The value is obtained by using the getTimezoneOffset() property. For example, if the local time of the user's browser is UTC+2, the value of this parameter is -120.  Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Value range: -720 - 720
      *
      * @return self
      */
@@ -757,7 +757,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceBrand
      *
-     * @param }string|null $deviceBrand The brand of the user's device.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 64 characters
+     * @param string|null $deviceBrand The brand of the user's device.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -781,7 +781,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceModel
      *
-     * @param }string|null $deviceModel The model of the user's device.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 128 characters
+     * @param string|null $deviceModel The model of the user's device.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -805,7 +805,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceLanguage
      *
-     * @param }string|null $deviceLanguage Device language of the user.
+     * @param string|null $deviceLanguage Device language of the user.
      *
      * @return self
      */
@@ -829,7 +829,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceId
      *
-     * @param }string|null $deviceId Device ID of the user.
+     * @param string|null $deviceId Device ID of the user.
      *
      * @return self
      */
@@ -853,7 +853,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets envType
      *
-     * @param }string|null $envType 
+     * @param string|null $envType 
      *
      * @return self
      */

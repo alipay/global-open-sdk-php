@@ -325,7 +325,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets noteToMerchant
      *
-     * @param }string $noteToMerchant The buyer's note to a merchant.
+     * @param string $noteToMerchant The buyer's note to a merchant.
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets noteToShipping
      *
-     * @param }string $noteToShipping The buyer's note to a deliveryman or a take-out rider.
+     * @param string $noteToShipping The buyer's note to a deliveryman or a take-out rider.
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderCountIn1H
      *
-     * @param }int $orderCountIn1H The successful orders the buyer made within the last one hour.
+     * @param int $orderCountIn1H The successful orders the buyer made within the last one hour.
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderCountIn24H
      *
-     * @param }int $orderCountIn24H The successful orders the buyer made within the last 24 hour.
+     * @param int $orderCountIn24H The successful orders the buyer made within the last 24 hour.
      *
      * @return self
      */

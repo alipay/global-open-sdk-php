@@ -313,7 +313,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets installmentNum
      *
-     * @param }int|null $installmentNum installmentNum
+     * @param int|null $installmentNum installmentNum
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interval
      *
-     * @param }string|null $interval interval
+     * @param string|null $interval interval
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets creditPayFeeType
      *
-     * @param }string|null $creditPayFeeType creditPayFeeType
+     * @param string|null $creditPayFeeType creditPayFeeType
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets feePercentage
      *
-     * @param }int|null $feePercentage feePercentage
+     * @param int|null $feePercentage feePercentage
      *
      * @return self
      */

@@ -305,7 +305,7 @@ class SupportCardBrand  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets cardBrand
      *
-     * @param }string $cardBrand The name of the card brand. Valid values are:  VISA: indicates Visa.  MASTERCARD: indicates Mastercard.   AMEX: indicates American Express (Amex). HIPERCARD: indicates Hipercard. ELO: indicates Elo.
+     * @param string $cardBrand The name of the card brand. Valid values are:  VISA: indicates Visa.  MASTERCARD: indicates Mastercard.   AMEX: indicates American Express (Amex). HIPERCARD: indicates Hipercard. ELO: indicates Elo.
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class SupportCardBrand  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets logo
      *
-     * @param }\model\Logo $logo logo
+     * @param \model\Logo $logo logo
      *
      * @return self
      */

@@ -306,7 +306,7 @@ class AlipayDownloadDisputeEvidenceRequest   extends AlipayRequest  implements M
     /**
      * Sets disputeId
      *
-     * @param }string $disputeId The unique ID that is assigned by Antom to identify a dispute.  More information:  Maximum length: 64 characters
+     * @param string $disputeId The unique ID that is assigned by Antom to identify a dispute.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class AlipayDownloadDisputeEvidenceRequest   extends AlipayRequest  implements M
     /**
      * Sets disputeEvidenceType
      *
-     * @param }string $disputeEvidenceType disputeEvidenceType
+     * @param string $disputeEvidenceType disputeEvidenceType
      *
      * @return self
      */

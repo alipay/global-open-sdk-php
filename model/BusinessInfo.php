@@ -337,7 +337,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mcc
      *
-     * @param }string|null $mcc mcc String  The merchant category code (MCC). See MCC list to check valid values.    More information:  Maximum length: 32 characters
+     * @param string|null $mcc mcc String  The merchant category code (MCC). See MCC list to check valid values.    More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets websites
      *
-     * @param }\model\WebSite[]|null $websites The list of merchant websites. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR.   More information:  Maximum size: 10 elements
+     * @param \model\WebSite[]|null $websites The list of merchant websites. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR.   More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets englishName
      *
-     * @param }string|null $englishName The English name of the company.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP.    More information:  Maximum length: 256 characters
+     * @param string|null $englishName The English name of the company.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP.    More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets doingBusinessAs
      *
-     * @param }string $doingBusinessAs The customer-facing business name. Consider user interface limitations when choosing this name.    More information:  Maximum length: 256 characters
+     * @param string $doingBusinessAs The customer-facing business name. Consider user interface limitations when choosing this name.    More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mainSalesCountry
      *
-     * @param }string|null $mainSalesCountry The country where your primary sales activities take place. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is US.    More information:  Maximum length: 2 characters
+     * @param string|null $mainSalesCountry The country where your primary sales activities take place. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is US.    More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appName
      *
-     * @param }string|null $appName The App name. Specify this parameter when the value of paymentMethodType is TRUEMONEY.  More information:  Maximum length: 256 characters
+     * @param string|null $appName The App name. Specify this parameter when the value of paymentMethodType is TRUEMONEY.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets serviceDescription
      *
-     * @param }string|null $serviceDescription A clear and detailed description of the product or service. Specify this parameter when the value of paymentMethodType is TRUEMONEY.  More information:  Maximum length: 256 characters
+     * @param string|null $serviceDescription A clear and detailed description of the product or service. Specify this parameter when the value of paymentMethodType is TRUEMONEY.  More information:  Maximum length: 256 characters
      *
      * @return self
      */

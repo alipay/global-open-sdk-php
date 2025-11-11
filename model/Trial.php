@@ -312,7 +312,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trialStartPeriod
      *
-     * @param }int $trialStartPeriod The start subscription period of the trial. For example, if the trial starts from the first subscription period, specify this parameter as 1.    More information:  Value range: 1 - unlimited
+     * @param int $trialStartPeriod The start subscription period of the trial. For example, if the trial starts from the first subscription period, specify this parameter as 1.    More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -336,7 +336,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trialAmount
      *
-     * @param }\model\Amount $trialAmount trialAmount
+     * @param \model\Amount $trialAmount trialAmount
      *
      * @return self
      */
@@ -360,7 +360,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trialEndPeriod
      *
-     * @param }int|null $trialEndPeriod The end subscription period of the trial. For example, if the trial ends at the third subscription period, specify this parameter as 3.  Note: Specify this parameter if the end subscription period is different from the start subscription period. If you leave this parameter empty, the default value of this parameter is the same as the value of trialStartPeriod.  More information:  Value range: 1 - unlimited
+     * @param int|null $trialEndPeriod The end subscription period of the trial. For example, if the trial ends at the third subscription period, specify this parameter as 3.  Note: Specify this parameter if the end subscription period is different from the start subscription period. If you leave this parameter empty, the default value of this parameter is the same as the value of trialStartPeriod.  More information:  Value range: 1 - unlimited
      *
      * @return self
      */

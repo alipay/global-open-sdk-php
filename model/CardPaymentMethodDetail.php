@@ -546,7 +546,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardToken
      *
-     * @param }string $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (Checkout Payment) API when initiating payments.   More information:  Maximum length: 2048 characters
+     * @param string $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (Checkout Payment) API when initiating payments.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -570,7 +570,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardNo
      *
-     * @param }string|null $cardNo cardNo
+     * @param string|null $cardNo cardNo
      *
      * @return self
      */
@@ -594,7 +594,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets brand
      *
-     * @param }\model\CardBrand $brand brand
+     * @param \model\CardBrand $brand brand
      *
      * @return self
      */
@@ -618,7 +618,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets selectedCardBrand
      *
-     * @param }\model\CardBrand|null $selectedCardBrand selectedCardBrand
+     * @param \model\CardBrand|null $selectedCardBrand selectedCardBrand
      *
      * @return self
      */
@@ -642,7 +642,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardIssuer
      *
-     * @param }string|null $cardIssuer cardIssuer
+     * @param string|null $cardIssuer cardIssuer
      *
      * @return self
      */
@@ -666,7 +666,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets countryIssue
      *
-     * @param }string|null $countryIssue countryIssue
+     * @param string|null $countryIssue countryIssue
      *
      * @return self
      */
@@ -690,7 +690,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instUserName
      *
-     * @param }\model\UserName|null $instUserName instUserName
+     * @param \model\UserName|null $instUserName instUserName
      *
      * @return self
      */
@@ -714,7 +714,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets expiryYear
      *
-     * @param }string|null $expiryYear expiryYear
+     * @param string|null $expiryYear expiryYear
      *
      * @return self
      */
@@ -738,7 +738,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets expiryMonth
      *
-     * @param }string|null $expiryMonth expiryMonth
+     * @param string|null $expiryMonth expiryMonth
      *
      * @return self
      */
@@ -762,7 +762,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets billingAddress
      *
-     * @param }\model\Address|null $billingAddress billingAddress
+     * @param \model\Address|null $billingAddress billingAddress
      *
      * @return self
      */
@@ -786,7 +786,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mask
      *
-     * @param }string|null $mask mask
+     * @param string|null $mask mask
      *
      * @return self
      */
@@ -810,7 +810,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets last4
      *
-     * @param }string|null $last4 last4
+     * @param string|null $last4 last4
      *
      * @return self
      */
@@ -834,7 +834,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets paymentMethodDetailMetadata
      *
-     * @param }string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
+     * @param string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
      *
      * @return self
      */
@@ -858,7 +858,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets maskedCardNo
      *
-     * @param }string $maskedCardNo The masked card number, showing only a few digits and hiding the rest.   More information:  Maximum length: 64 characters
+     * @param string $maskedCardNo The masked card number, showing only a few digits and hiding the rest.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -882,7 +882,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets fingerprint
      *
-     * @param }string|null $fingerprint fingerprint
+     * @param string|null $fingerprint fingerprint
      *
      * @return self
      */
@@ -906,7 +906,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets authenticationFlow
      *
-     * @param }string|null $authenticationFlow authenticationFlow
+     * @param string|null $authenticationFlow authenticationFlow
      *
      * @return self
      */
@@ -930,7 +930,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets funding
      *
-     * @param }string|null $funding funding
+     * @param string|null $funding funding
      *
      * @return self
      */
@@ -954,7 +954,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets avsResultRaw
      *
-     * @param }string|null $avsResultRaw avsResultRaw
+     * @param string|null $avsResultRaw avsResultRaw
      *
      * @return self
      */
@@ -978,7 +978,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cvvResultRaw
      *
-     * @param }string|null $cvvResultRaw cvvResultRaw
+     * @param string|null $cvvResultRaw cvvResultRaw
      *
      * @return self
      */
@@ -1002,7 +1002,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets bin
      *
-     * @param }string|null $bin bin
+     * @param string|null $bin bin
      *
      * @return self
      */
@@ -1026,7 +1026,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets issuerName
      *
-     * @param }string|null $issuerName issuerName
+     * @param string|null $issuerName issuerName
      *
      * @return self
      */
@@ -1050,7 +1050,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets issuingCountry
      *
-     * @param }string|null $issuingCountry issuingCountry
+     * @param string|null $issuingCountry issuingCountry
      *
      * @return self
      */
@@ -1074,7 +1074,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets lastFour
      *
-     * @param }string|null $lastFour lastFour
+     * @param string|null $lastFour lastFour
      *
      * @return self
      */
@@ -1098,7 +1098,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardholderName
      *
-     * @param }\model\UserName|null $cardholderName cardholderName
+     * @param \model\UserName|null $cardholderName cardholderName
      *
      * @return self
      */
@@ -1122,7 +1122,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cvv
      *
-     * @param }string|null $cvv cvv
+     * @param string|null $cvv cvv
      *
      * @return self
      */
@@ -1146,7 +1146,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets dateOfBirth
      *
-     * @param }string|null $dateOfBirth dateOfBirth
+     * @param string|null $dateOfBirth dateOfBirth
      *
      * @return self
      */
@@ -1170,7 +1170,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets businessNo
      *
-     * @param }string|null $businessNo businessNo
+     * @param string|null $businessNo businessNo
      *
      * @return self
      */
@@ -1194,7 +1194,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardPasswordDigest
      *
-     * @param }string|null $cardPasswordDigest cardPasswordDigest
+     * @param string|null $cardPasswordDigest cardPasswordDigest
      *
      * @return self
      */
@@ -1218,7 +1218,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cpf
      *
-     * @param }string|null $cpf cpf
+     * @param string|null $cpf cpf
      *
      * @return self
      */
@@ -1242,7 +1242,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets payerEmail
      *
-     * @param }string|null $payerEmail payerEmail
+     * @param string|null $payerEmail payerEmail
      *
      * @return self
      */
@@ -1266,7 +1266,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets networkTransactionId
      *
-     * @param }string|null $networkTransactionId The unique ID assigned by the card scheme to identify a transaction.  More information:  Maximum length: 256 characters
+     * @param string|null $networkTransactionId The unique ID assigned by the card scheme to identify a transaction.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -1290,7 +1290,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets is3DSAuthentication
      *
-     * @param }bool|null $is3DSAuthentication is3DSAuthentication
+     * @param bool|null $is3DSAuthentication is3DSAuthentication
      *
      * @return self
      */
@@ -1314,7 +1314,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets request3DS
      *
-     * @param }string|null $request3DS request3DS
+     * @param string|null $request3DS request3DS
      *
      * @return self
      */
@@ -1338,7 +1338,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets scaExemptionIndicator
      *
-     * @param }string|null $scaExemptionIndicator scaExemptionIndicator
+     * @param string|null $scaExemptionIndicator scaExemptionIndicator
      *
      * @return self
      */
@@ -1362,7 +1362,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets enableAuthenticationUpgrade
      *
-     * @param }string|null $enableAuthenticationUpgrade enableAuthenticationUpgrade
+     * @param string|null $enableAuthenticationUpgrade enableAuthenticationUpgrade
      *
      * @return self
      */
@@ -1386,7 +1386,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mpiData
      *
-     * @param }\model\MpiData|null $mpiData mpiData
+     * @param \model\MpiData|null $mpiData mpiData
      *
      * @return self
      */

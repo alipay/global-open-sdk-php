@@ -425,7 +425,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets refusalCodeRaw
      *
-     * @param }string|null $refusalCodeRaw 卡支付失败且渠道返回时的原始错误码
+     * @param string|null $refusalCodeRaw 卡支付失败且渠道返回时的原始错误码
      *
      * @return self
      */
@@ -449,7 +449,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets refusalReasonRaw
      *
-     * @param }string|null $refusalReasonRaw 卡支付失败且渠道返回时的原始拒付原因
+     * @param string|null $refusalReasonRaw 卡支付失败且渠道返回时的原始拒付原因
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets merchantAdviceCode
      *
-     * @param }string|null $merchantAdviceCode 支付结果的商户建议码
+     * @param string|null $merchantAdviceCode 支付结果的商户建议码
      *
      * @return self
      */
@@ -497,7 +497,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets acquirerInfo
      *
-     * @param }\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -521,7 +521,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardNo
      *
-     * @param }string|null $cardNo The masked card number, which just shows part of the card number and can be used to display to the user
+     * @param string|null $cardNo The masked card number, which just shows part of the card number and can be used to display to the user
      *
      * @return self
      */
@@ -545,7 +545,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardBrand
      *
-     * @param }string|null $cardBrand The card brand, which can be used to display to the user
+     * @param string|null $cardBrand The card brand, which can be used to display to the user
      *
      * @return self
      */
@@ -569,7 +569,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardToken
      *
-     * @param }string|null $cardToken The token of the card, the value of this parameter is used by paymentMethodId in the pay
+     * @param string|null $cardToken The token of the card, the value of this parameter is used by paymentMethodId in the pay
      *
      * @return self
      */
@@ -593,7 +593,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets issuingCountry
      *
-     * @param }string|null $issuingCountry The issuing country of the card
+     * @param string|null $issuingCountry The issuing country of the card
      *
      * @return self
      */
@@ -617,7 +617,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets funding
      *
-     * @param }string|null $funding The funding type of the card.
+     * @param string|null $funding The funding type of the card.
      *
      * @return self
      */
@@ -641,7 +641,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentMethodRegion
      *
-     * @param }string|null $paymentMethodRegion The region code that represents the country or region of the payment method
+     * @param string|null $paymentMethodRegion The region code that represents the country or region of the payment method
      *
      * @return self
      */
@@ -665,7 +665,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets threeDSResult
      *
-     * @param }\model\ThreeDSResult|null $threeDSResult threeDSResult
+     * @param \model\ThreeDSResult|null $threeDSResult threeDSResult
      *
      * @return self
      */
@@ -689,7 +689,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets avsResultRaw
      *
-     * @param }string|null $avsResultRaw The raw AVS result. See AVS result codes to check the valid values
+     * @param string|null $avsResultRaw The raw AVS result. See AVS result codes to check the valid values
      *
      * @return self
      */
@@ -713,7 +713,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cvvResultRaw
      *
-     * @param }string|null $cvvResultRaw The raw Card Verification Value (CVV), Card Security Code (CSC), or Card Verification Code (CVC) result
+     * @param string|null $cvvResultRaw The raw Card Verification Value (CVV), Card Security Code (CSC), or Card Verification Code (CVC) result
      *
      * @return self
      */
@@ -737,7 +737,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets networkTransactionId
      *
-     * @param }string|null $networkTransactionId The unique ID assigned by the card scheme to identify a transaction. The value of this parameter is used by the same parameter of pay (Cashier Payment) request in subsequent payments
+     * @param string|null $networkTransactionId The unique ID assigned by the card scheme to identify a transaction. The value of this parameter is used by the same parameter of pay (Cashier Payment) request in subsequent payments
      *
      * @return self
      */
@@ -761,7 +761,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets creditPayPlan
      *
-     * @param }\model\CreditPayPlan|null $creditPayPlan creditPayPlan
+     * @param \model\CreditPayPlan|null $creditPayPlan creditPayPlan
      *
      * @return self
      */
@@ -785,7 +785,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardholderName
      *
-     * @param }string|null $cardholderName The cardholder's name.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 64 characters
+     * @param string|null $cardholderName The cardholder's name.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -809,7 +809,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardBin
      *
-     * @param }string|null $cardBin The first six digits of the bank card number, used to identify the issuing bank and card type of the bank card.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 8 characters
+     * @param string|null $cardBin The first six digits of the bank card number, used to identify the issuing bank and card type of the bank card.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -833,7 +833,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets lastFour
      *
-     * @param }string|null $lastFour Last 4 digits of the card number.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 4 characters
+     * @param string|null $lastFour Last 4 digits of the card number.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 4 characters
      *
      * @return self
      */
@@ -857,7 +857,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryMonth
      *
-     * @param }string|null $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiry month is February, the value of this parameter is 02.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
+     * @param string|null $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiry month is February, the value of this parameter is 02.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -881,7 +881,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryYear
      *
-     * @param }string|null $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiry year is 2025, the value of this parameter is 25.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
+     * @param string|null $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiry year is 2025, the value of this parameter is 25.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
      *
      * @return self
      */

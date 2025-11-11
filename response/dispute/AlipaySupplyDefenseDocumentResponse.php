@@ -309,7 +309,7 @@ class AlipaySupplyDefenseDocumentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets result
      *
-     * @param }\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class AlipaySupplyDefenseDocumentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets disputeId
      *
-     * @param }string|null $disputeId The unique ID assigned by Antom to identify a dispute.  Note: This prameter is returned when the value of resultCode is SUCCESS.  More information:  Maximum length: 64 characters
+     * @param string|null $disputeId The unique ID assigned by Antom to identify a dispute.  Note: This prameter is returned when the value of resultCode is SUCCESS.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class AlipaySupplyDefenseDocumentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets disputeResolutionTime
      *
-     * @param }string|null $disputeResolutionTime The time when you upload the dispute defense document.  Note: This prameter is returned when the value of resultCode is SUCCESS.  More information:  Maximum length: 64 characters
+     * @param string|null $disputeResolutionTime The time when you upload the dispute defense document.  Note: This prameter is returned when the value of resultCode is SUCCESS.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

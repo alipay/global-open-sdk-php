@@ -292,7 +292,7 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentMethodTypeList
      *
-     * @param }\model\PaymentMethodTypeItem[]|null $paymentMethodTypeList paymentMethodTypeList
+     * @param \model\PaymentMethodTypeItem[]|null $paymentMethodTypeList paymentMethodTypeList
      *
      * @return self
      */

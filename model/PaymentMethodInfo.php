@@ -320,7 +320,7 @@ class PaymentMethodInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentMethodType
      *
-     * @param }string|null $paymentMethodType paymentMethodType
+     * @param string|null $paymentMethodType paymentMethodType
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class PaymentMethodInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentMethodDetail
      *
-     * @param }string|null $paymentMethodDetail paymentMethodDetail
+     * @param string|null $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class PaymentMethodInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets enabled
      *
-     * @param }bool|null $enabled enabled
+     * @param bool|null $enabled enabled
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class PaymentMethodInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets preferred
      *
-     * @param }bool|null $preferred preferred
+     * @param bool|null $preferred preferred
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class PaymentMethodInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo extendInfo
+     * @param string|null $extendInfo extendInfo
      *
      * @return self
      */

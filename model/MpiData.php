@@ -313,7 +313,7 @@ class MpiData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets threeDSVersion
      *
-     * @param }string|null $threeDSVersion threeDSVersion
+     * @param string|null $threeDSVersion threeDSVersion
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class MpiData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets eci
      *
-     * @param }string|null $eci eci
+     * @param string|null $eci eci
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class MpiData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cavv
      *
-     * @param }string|null $cavv cavv
+     * @param string|null $cavv cavv
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class MpiData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dsTransactionId
      *
-     * @param }string|null $dsTransactionId dsTransactionId
+     * @param string|null $dsTransactionId dsTransactionId
      *
      * @return self
      */

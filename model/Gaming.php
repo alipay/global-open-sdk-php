@@ -313,7 +313,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gameName
      *
-     * @param }string|null $gameName Game name.  More information:  Maximum length: 128 characters
+     * @param string|null $gameName Game name.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets toppedUpUser
      *
-     * @param }string|null $toppedUpUser Name or ID of the user whose gaming account is topped up.  More information:  Maximum length: 128 characters
+     * @param string|null $toppedUpUser Name or ID of the user whose gaming account is topped up.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets toppedUpEmail
      *
-     * @param }string|null $toppedUpEmail More information:  Maximum length: 64 characters
+     * @param string|null $toppedUpEmail More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets toppedUpPhoneNo
      *
-     * @param }string|null $toppedUpPhoneNo More information:  Maximum length: 32 characters
+     * @param string|null $toppedUpPhoneNo More information:  Maximum length: 32 characters
      *
      * @return self
      */

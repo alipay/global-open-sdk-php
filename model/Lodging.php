@@ -334,7 +334,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hotelName
      *
-     * @param }string|null $hotelName Hotel name.  More information:  Maximum length: 128 characters
+     * @param string|null $hotelName Hotel name.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hotelAddress
      *
-     * @param }\model\Address|null $hotelAddress hotelAddress
+     * @param \model\Address|null $hotelAddress hotelAddress
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets checkInDate
      *
-     * @param }string|null $checkInDate Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $checkInDate Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets checkOutDate
      *
-     * @param }string|null $checkOutDate Date on which the guest checked out.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $checkOutDate Date on which the guest checked out.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets numberOfNights
      *
-     * @param }int|null $numberOfNights Number of rooms booked by the payer.  More information:  Value range: 1 - unlimited
+     * @param int|null $numberOfNights Number of rooms booked by the payer.  More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets numberOfRooms
      *
-     * @param }int|null $numberOfRooms Number of nights booked by the payer.  More information:  Value range: 1 - unlimited
+     * @param int|null $numberOfRooms Number of nights booked by the payer.  More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets guestNames
      *
-     * @param }\model\UserName[]|null $guestNames Name of the guest under which the room is reserved.  More information:  Maximum size: 100 elements
+     * @param \model\UserName[]|null $guestNames Name of the guest under which the room is reserved.  More information:  Maximum size: 100 elements
      *
      * @return self
      */

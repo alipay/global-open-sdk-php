@@ -334,7 +334,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardNo
      *
-     * @param }string|null $cardNo The masked card number, which just shows part of the card number and can be used to display to the user
+     * @param string|null $cardNo The masked card number, which just shows part of the card number and can be used to display to the user
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardBrand
      *
-     * @param }string|null $cardBrand The card brand
+     * @param string|null $cardBrand The card brand
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardToken
      *
-     * @param }string|null $cardToken The token of the card
+     * @param string|null $cardToken The token of the card
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets issuingCountry
      *
-     * @param }string|null $issuingCountry The issuing country of the card
+     * @param string|null $issuingCountry The issuing country of the card
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets funding
      *
-     * @param }string|null $funding The funding type of the card
+     * @param string|null $funding The funding type of the card
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodRegion
      *
-     * @param }string|null $paymentMethodRegion The region code that represents the country or region of the payment method
+     * @param string|null $paymentMethodRegion The region code that represents the country or region of the payment method
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets threeDSResult
      *
-     * @param }\model\ThreeDSResult|null $threeDSResult threeDSResult
+     * @param \model\ThreeDSResult|null $threeDSResult threeDSResult
      *
      * @return self
      */

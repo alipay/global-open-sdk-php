@@ -325,7 +325,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets threeDSVersion
      *
-     * @param }string $threeDSVersion The version of 3D Secure protocol
+     * @param string $threeDSVersion The version of 3D Secure protocol
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets threeDSInteractionMode
      *
-     * @param }string $threeDSInteractionMode Indicates the type of user interactions during 3DS 2.0 authentication
+     * @param string $threeDSInteractionMode Indicates the type of user interactions during 3DS 2.0 authentication
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets eci
      *
-     * @param }string $eci Electronic Commerce Indicator (ECI) that is returned by the card scheme
+     * @param string $eci Electronic Commerce Indicator (ECI) that is returned by the card scheme
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cavv
      *
-     * @param }string $cavv The cardholder authentication value
+     * @param string $cavv The cardholder authentication value
      *
      * @return self
      */

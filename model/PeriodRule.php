@@ -305,7 +305,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodType
      *
-     * @param }string $periodType The subscription period type. Valid values are:  YEAR: indicates that the subscription period is measured in years.  MONTH: indicates that the subscription period is measured in months.  WEEK: indicates that the subscription period is measured in weeks.  DAY: indicates that the subscription period is measured in days.   More information:  Maximum length: 20 characters
+     * @param string $periodType The subscription period type. Valid values are:  YEAR: indicates that the subscription period is measured in years.  MONTH: indicates that the subscription period is measured in months.  WEEK: indicates that the subscription period is measured in weeks.  DAY: indicates that the subscription period is measured in days.   More information:  Maximum length: 20 characters
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodCount
      *
-     * @param }int $periodCount The number of period types within one subscription period. For example, if the value of periodType is MONTH and the value of periodCount is 2, it means that the subscription period is two months.    More information:  Value range: [1, +∞)
+     * @param int $periodCount The number of period types within one subscription period. For example, if the value of periodType is MONTH and the value of periodCount is 2, it means that the subscription period is two months.    More information:  Value range: [1, +∞)
      *
      * @return self
      */

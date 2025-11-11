@@ -323,7 +323,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     /**
      * Sets captureRequestId
      *
-     * @param }string $captureRequestId The unique ID that is assigned by the merchant to identify a capture request. Antom uses this field for idempotence control.    More information:  This field is an API idempotency field.For capture requests that are initiated with the same value of captureRequestId and reach a final status (S or F), the same result is to be returned for the request. Maximum length: 64 characters
+     * @param string $captureRequestId The unique ID that is assigned by the merchant to identify a capture request. Antom uses this field for idempotence control.    More information:  This field is an API idempotency field.For capture requests that are initiated with the same value of captureRequestId and reach a final status (S or F), the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     /**
      * Sets paymentId
      *
-     * @param }string $paymentId The unique ID that is assigned by Antom to identify a payment.    More information:  Maximum length: 64 characters
+     * @param string $paymentId The unique ID that is assigned by Antom to identify a payment.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     /**
      * Sets captureAmount
      *
-     * @param }\model\Amount $captureAmount captureAmount
+     * @param \model\Amount $captureAmount captureAmount
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     /**
      * Sets isLastCapture
      *
-     * @param }bool|null $isLastCapture isLastCapture
+     * @param bool|null $isLastCapture isLastCapture
      *
      * @return self
      */

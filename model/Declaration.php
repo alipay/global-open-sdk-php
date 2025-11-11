@@ -322,7 +322,7 @@ class Declaration  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets declarationBizScene
      *
-     * @param }string|null $declarationBizScene 申报时对应的行业分类。非OTA结汇场景不传，OTA场景必传，且与declarationBeneficiaryId需同时存在。
+     * @param string|null $declarationBizScene 申报时对应的行业分类。非OTA结汇场景不传，OTA场景必传，且与declarationBeneficiaryId需同时存在。
      *
      * @return self
      */
@@ -356,7 +356,7 @@ class Declaration  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets declarationBeneficiaryId
      *
-     * @param }string|null $declarationBeneficiaryId 用于唯一标识用于申报额度累计的三方收款人Id。非OTA结汇场景不传，OTA场景必传，且与declarationBizScene需同时存在。
+     * @param string|null $declarationBeneficiaryId 用于唯一标识用于申报额度累计的三方收款人Id。非OTA结汇场景不传，OTA场景必传，且与declarationBizScene需同时存在。
      *
      * @return self
      */

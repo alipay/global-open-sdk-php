@@ -293,7 +293,7 @@ class AlipayInquireBalanceRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets referenceMerchantId
      *
-     * @param }string|null $referenceMerchantId The unique ID that is assigned by the marketplace to identify the sub-merchant.  Specify this parameter if you inquire about the account balance of the sub-merchant. If you leave this parameter empty or do not specify this parameter, the default action is to inquire about the account balance of the marketplace.    More information:  Maximum length: 32 characters
+     * @param string|null $referenceMerchantId The unique ID that is assigned by the marketplace to identify the sub-merchant.  Specify this parameter if you inquire about the account balance of the sub-merchant. If you leave this parameter empty or do not specify this parameter, the default action is to inquire about the account balance of the marketplace.    More information:  Maximum length: 32 characters
      *
      * @return self
      */

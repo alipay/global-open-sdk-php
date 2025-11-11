@@ -335,7 +335,7 @@ class RiskAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingPhoneType
      *
-     * @param }string $shippingPhoneType The type of the receiver's phone number
+     * @param string $shippingPhoneType The type of the receiver's phone number
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class RiskAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isBillShipStateSame
      *
-     * @param }bool $isBillShipStateSame Indicates whether the billing state is the same as the shipping state
+     * @param bool $isBillShipStateSame Indicates whether the billing state is the same as the shipping state
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class RiskAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isPreviousStateSame
      *
-     * @param }bool $isPreviousStateSame Indicates whether a previous billing state is the same as the shipping state
+     * @param bool $isPreviousStateSame Indicates whether a previous billing state is the same as the shipping state
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class RiskAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets locToShipDistance
      *
-     * @param }int $locToShipDistance The distance in meters between the buyer's location and their shipping address.
+     * @param int $locToShipDistance The distance in meters between the buyer's location and their shipping address.
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class RiskAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets minPreviousShipToBillDistance
      *
-     * @param }int $minPreviousShipToBillDistance The minimum distance in meters between the buyer's previous shipping address and their billing address.
+     * @param int $minPreviousShipToBillDistance The minimum distance in meters between the buyer's previous shipping address and their billing address.
      *
      * @return self
      */

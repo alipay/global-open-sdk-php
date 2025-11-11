@@ -310,7 +310,7 @@ class AlipaySubscriptionCancelRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionId
      *
-     * @param }string|null $subscriptionId The unique ID assigned by Antom to identify a subscription. The value of this parameter is the value of the same parameter that is returned by notifyPayment and notifySubscription for the original subscription.  Note: Specify at least one of subscriptionId and subscriptionRequestId. A one-to-one correspondence between paymentId and paymentRequestId exists.  More information:  Maximum length: 64 characters
+     * @param string|null $subscriptionId The unique ID assigned by Antom to identify a subscription. The value of this parameter is the value of the same parameter that is returned by notifyPayment and notifySubscription for the original subscription.  Note: Specify at least one of subscriptionId and subscriptionRequestId. A one-to-one correspondence between paymentId and paymentRequestId exists.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class AlipaySubscriptionCancelRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionRequestId
      *
-     * @param }string|null $subscriptionRequestId The unique ID assigned by a merchant to identify a subscription request.  Note: Specify at least one of subscriptionId and subscriptionRequestId. A one-to-one correspondence between paymentId and paymentRequestId exists.  More information:  Maximum length: 64 characters
+     * @param string|null $subscriptionRequestId The unique ID assigned by a merchant to identify a subscription request.  Note: Specify at least one of subscriptionId and subscriptionRequestId. A one-to-one correspondence between paymentId and paymentRequestId exists.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class AlipaySubscriptionCancelRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets cancellationType
      *
-     * @param }string $cancellationType The cancellation type for the subscription. Valid values are:  CANCEL: indicates canceling the subscription. The subscription service is not provided to the user after the current subscription period ends. TERMINATE: indicates terminating the subscription. The subscription service is ceased immediately.   More information:  Maximum length: 32 characters
+     * @param string $cancellationType The cancellation type for the subscription. Valid values are:  CANCEL: indicates canceling the subscription. The subscription service is not provided to the user after the current subscription period ends. TERMINATE: indicates terminating the subscription. The subscription service is ceased immediately.   More information:  Maximum length: 32 characters
      *
      * @return self
      */

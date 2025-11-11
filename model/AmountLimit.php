@@ -315,7 +315,7 @@ class AmountLimit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets maxAmount
      *
-     * @param }string $maxAmount maxAmount
+     * @param string $maxAmount maxAmount
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class AmountLimit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets minAmount
      *
-     * @param }string $minAmount minAmount
+     * @param string $minAmount minAmount
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class AmountLimit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets remainAmount
      *
-     * @param }string $remainAmount remainAmount
+     * @param string $remainAmount remainAmount
      *
      * @return self
      */

@@ -327,7 +327,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets couponId
      *
-     * @param }string|null $couponId couponId
+     * @param string|null $couponId couponId
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets availableAmount
      *
-     * @param }\model\Amount|null $availableAmount availableAmount
+     * @param \model\Amount|null $availableAmount availableAmount
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets couponName
      *
-     * @param }string|null $couponName couponName
+     * @param string|null $couponName couponName
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets couponDescription
      *
-     * @param }string|null $couponDescription couponDescription
+     * @param string|null $couponDescription couponDescription
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets couponExpireTime
      *
-     * @param }string|null $couponExpireTime couponExpireTime
+     * @param string|null $couponExpireTime couponExpireTime
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets paymentMethodDetailMetadata
      *
-     * @param }string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
+     * @param string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
      *
      * @return self
      */

@@ -316,7 +316,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets submitAttachmentRequestId
      *
-     * @param }string $submitAttachmentRequestId The unique ID assigned by the marketplace to identify an attachment submission request.  More information:  This field is an API idempotency field. For attachment submission requests that are initiated with the same value of attachmentSubmissionRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 32 characters
+     * @param string $submitAttachmentRequestId The unique ID assigned by the marketplace to identify an attachment submission request.  More information:  This field is an API idempotency field. For attachment submission requests that are initiated with the same value of attachmentSubmissionRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 32 characters
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets attachmentType
      *
-     * @param }string $attachmentType attachmentType
+     * @param string $attachmentType attachmentType
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets fileSha256
      *
-     * @param }string $fileSha256 The SHA-256 hash value of the file, used to uniquely identify and verify its integrity and authenticity.  For more information, see How to calculate the SHA256 digest of a file.  More information:  Maximum length: 64 characters
+     * @param string $fileSha256 The SHA-256 hash value of the file, used to uniquely identify and verify its integrity and authenticity.  For more information, see How to calculate the SHA256 digest of a file.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

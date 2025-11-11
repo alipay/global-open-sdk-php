@@ -359,7 +359,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionResult
      *
-     * @param }\model\Result $transactionResult transactionResult
+     * @param \model\Result $transactionResult transactionResult
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionId
      *
-     * @param }string $transactionId The unique ID that is assigned by Antom to identify a transaction.  When the transaction type is REFUND, the value of this parameter is identical to refundId. When the transaction type is CAPTURE, the value of this parameter is identical to captureId.   More information:  Maximum length: 64 characters
+     * @param string $transactionId The unique ID that is assigned by Antom to identify a transaction.  When the transaction type is REFUND, the value of this parameter is identical to refundId. When the transaction type is CAPTURE, the value of this parameter is identical to captureId.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionType
      *
-     * @param }string $transactionType transactionType
+     * @param string $transactionType transactionType
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionStatus
      *
-     * @param }string $transactionStatus transactionStatus
+     * @param string $transactionStatus transactionStatus
      *
      * @return self
      */
@@ -455,7 +455,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionAmount
      *
-     * @param }\model\Amount $transactionAmount transactionAmount
+     * @param \model\Amount $transactionAmount transactionAmount
      *
      * @return self
      */
@@ -479,7 +479,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionRequestId
      *
-     * @param }string $transactionRequestId The unique ID that is assigned by the merchant to identify the transaction request.  When the transaction type is REFUND, the value of this parameter is identical to refundRequestId. When the transaction type is CAPTURE, the value of this parameter is identical to captureRequestId.  More information:  Maximum length: 64 characters
+     * @param string $transactionRequestId The unique ID that is assigned by the merchant to identify the transaction request.  When the transaction type is REFUND, the value of this parameter is identical to refundRequestId. When the transaction type is CAPTURE, the value of this parameter is identical to captureRequestId.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -503,7 +503,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionTime
      *
-     * @param }string|null $transactionTime transactionTime
+     * @param string|null $transactionTime transactionTime
      *
      * @return self
      */
@@ -527,7 +527,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerInfo
      *
-     * @param }\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */

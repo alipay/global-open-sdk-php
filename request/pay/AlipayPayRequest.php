@@ -464,7 +464,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets productCode
      *
-     * @param }string $productCode productCode
+     * @param string $productCode productCode
      *
      * @return self
      */
@@ -488,7 +488,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentRequestId
      *
-     * @param }string $paymentRequestId The unique ID assigned by a merchant to identify a payment request. Antom uses this field for idempotence control.  More information:  This field is an API idempotency field.For payment requests that are initiated with the same value of paymentRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 64 characters
+     * @param string $paymentRequestId The unique ID assigned by a merchant to identify a payment request. Antom uses this field for idempotence control.  More information:  This field is an API idempotency field.For payment requests that are initiated with the same value of paymentRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -512,7 +512,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets order
      *
-     * @param }\model\Order $order order
+     * @param \model\Order $order order
      *
      * @return self
      */
@@ -536,7 +536,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentAmount
      *
-     * @param }\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -560,7 +560,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentMethod
      *
-     * @param }\model\PaymentMethod $paymentMethod paymentMethod
+     * @param \model\PaymentMethod $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -584,7 +584,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentExpiryTime
      *
-     * @param }string|null $paymentExpiryTime The payment expiration time is a specific time after which the payment will expire and the acquirer or merchant must terminate the order processing.   Notes:  For bank transfer payments, the default payment expiration time is 48 hours after the payment request is sent. For other payment categories, the default payment expiration time is usually 14 minutes after the payment request is sent. For example, if the request is sent on 2019-11-27T12:00:01+08:30, the payment expiration time is 2019-11-27T12:14:01+08:30. Specify this field if you want to use a payment expiration time that differs from the default time. For bank transfer payments, the specified payment expiration time must be less than 48 hours after the payment request is sent. For other payment categories, the specified payment expiration time must be less than 10 minutes after the payment request is sent. More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $paymentExpiryTime The payment expiration time is a specific time after which the payment will expire and the acquirer or merchant must terminate the order processing.   Notes:  For bank transfer payments, the default payment expiration time is 48 hours after the payment request is sent. For other payment categories, the default payment expiration time is usually 14 minutes after the payment request is sent. For example, if the request is sent on 2019-11-27T12:00:01+08:30, the payment expiration time is 2019-11-27T12:14:01+08:30. Specify this field if you want to use a payment expiration time that differs from the default time. For bank transfer payments, the specified payment expiration time must be less than 48 hours after the payment request is sent. For other payment categories, the specified payment expiration time must be less than 10 minutes after the payment request is sent. More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -608,7 +608,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentRedirectUrl
      *
-     * @param }string $paymentRedirectUrl The merchant page URL that the user is redirected to after the payment is completed.  More information:  Maximum length: 2048 characters
+     * @param string $paymentRedirectUrl The merchant page URL that the user is redirected to after the payment is completed.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -632,7 +632,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentNotifyUrl
      *
-     * @param }string|null $paymentNotifyUrl The URL that is used to receive the payment result notification.  Note: Specify this parameter if you want to receive an asynchronous notification of the payment result. You can also set the URL to receive the result notification in Antom Dashboard. If the URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.  More information:  Maximum length: 2048 characters
+     * @param string|null $paymentNotifyUrl The URL that is used to receive the payment result notification.  Note: Specify this parameter if you want to receive an asynchronous notification of the payment result. You can also set the URL to receive the result notification in Antom Dashboard. If the URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -656,7 +656,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentFactor
      *
-     * @param }\model\PaymentFactor|null $paymentFactor paymentFactor
+     * @param \model\PaymentFactor|null $paymentFactor paymentFactor
      *
      * @return self
      */
@@ -680,7 +680,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets settlementStrategy
      *
-     * @param }\model\SettlementStrategy $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -704,7 +704,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets creditPayPlan
      *
-     * @param }\model\CreditPayPlan|null $creditPayPlan creditPayPlan
+     * @param \model\CreditPayPlan|null $creditPayPlan creditPayPlan
      *
      * @return self
      */
@@ -728,7 +728,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets appId
      *
-     * @param }string|null $appId The unique ID that is assigned by Antom to identify the mini program.  Note: This field is required when terminalType is MINI_APP.  More information:  Maximum length: 32 characters
+     * @param string|null $appId The unique ID that is assigned by Antom to identify the mini program.  Note: This field is required when terminalType is MINI_APP.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -752,7 +752,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets merchantRegion
      *
-     * @param }string|null $merchantRegion The country or region where the merchant operates the business. The parameter is a 2-letter country or region code that follows ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.    Note: This parameter is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
+     * @param string|null $merchantRegion The country or region where the merchant operates the business. The parameter is a 2-letter country or region code that follows ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.    Note: This parameter is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -776,7 +776,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets userRegion
      *
-     * @param }string|null $userRegion A 2-letter country or region code based on the standard of ISO 3166 Country Codes. This parameter is used to sort Alipay+ payment methods according to the user's region. For example, if ALIPAY_CN and KAKAOPAYare both on your payment method list and the user is from South Korea, KAKAOPAY will be listed first on the Alipay+ cashier page.  Note: This parameter is only for the merchant that has integrated the Alipay+ cashier page.    More information:  Maximum length: 2 characters
+     * @param string|null $userRegion A 2-letter country or region code based on the standard of ISO 3166 Country Codes. This parameter is used to sort Alipay+ payment methods according to the user's region. For example, if ALIPAY_CN and KAKAOPAYare both on your payment method list and the user is from South Korea, KAKAOPAY will be listed first on the Alipay+ cashier page.  Note: This parameter is only for the merchant that has integrated the Alipay+ cashier page.    More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -800,7 +800,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets env
      *
-     * @param }\model\Env $env env
+     * @param \model\Env $env env
      *
      * @return self
      */
@@ -824,7 +824,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets payToMethod
      *
-     * @param }\model\PaymentMethod|null $payToMethod payToMethod
+     * @param \model\PaymentMethod|null $payToMethod payToMethod
      *
      * @return self
      */
@@ -848,7 +848,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets isAuthorization
      *
-     * @param }bool|null $isAuthorization isAuthorization
+     * @param bool|null $isAuthorization isAuthorization
      *
      * @return self
      */
@@ -872,7 +872,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets merchant
      *
-     * @param }\model\Merchant|null $merchant merchant
+     * @param \model\Merchant|null $merchant merchant
      *
      * @return self
      */
@@ -896,7 +896,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentVerificationData
      *
-     * @param }\model\PaymentVerificationData|null $paymentVerificationData paymentVerificationData
+     * @param \model\PaymentVerificationData|null $paymentVerificationData paymentVerificationData
      *
      * @return self
      */
@@ -920,7 +920,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo extendInfo
+     * @param string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -944,7 +944,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets merchantAccountId
      *
-     * @param }string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.  More information:  Maximum length: 32 characters
+     * @param string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -968,7 +968,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets dualOfflinePayment
      *
-     * @param }bool|null $dualOfflinePayment dualOfflinePayment
+     * @param bool|null $dualOfflinePayment dualOfflinePayment
      *
      * @return self
      */

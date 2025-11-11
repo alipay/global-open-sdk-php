@@ -334,7 +334,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets region
      *
-     * @param }string|null $region region
+     * @param string|null $region region
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets state
      *
-     * @param }string|null $state state
+     * @param string|null $state state
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param }string|null $city city
+     * @param string|null $city city
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address1
      *
-     * @param }string|null $address1 address1
+     * @param string|null $address1 address1
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address2
      *
-     * @param }string|null $address2 address2
+     * @param string|null $address2 address2
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets zipCode
      *
-     * @param }string|null $zipCode zipCode
+     * @param string|null $zipCode zipCode
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets label
      *
-     * @param }string|null $label label
+     * @param string|null $label label
      *
      * @return self
      */

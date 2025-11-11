@@ -316,7 +316,7 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets transferRequestId
      *
-     * @param }string $transferRequestId The unique ID assigned by the marketplace to identify a transfer request.   More information:  This field is an API idempotency field.For requests that are initiated with the same value of transferRequestId and reach a final status (S or F), the same result is to be returned for the request. Maximum length: 64 characters
+     * @param string $transferRequestId The unique ID assigned by the marketplace to identify a transfer request.   More information:  This field is an API idempotency field.For requests that are initiated with the same value of transferRequestId and reach a final status (S or F), the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets transferFromDetail
      *
-     * @param }\model\TransferFromDetail $transferFromDetail transferFromDetail
+     * @param \model\TransferFromDetail $transferFromDetail transferFromDetail
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets transferToDetail
      *
-     * @param }\model\TransferToDetail $transferToDetail transferToDetail
+     * @param \model\TransferToDetail $transferToDetail transferToDetail
      *
      * @return self
      */

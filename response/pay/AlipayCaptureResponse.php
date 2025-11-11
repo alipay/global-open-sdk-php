@@ -337,7 +337,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets result
      *
-     * @param }\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets captureRequestId
      *
-     * @param }string|null $captureRequestId The unique ID that is assigned by a merchant to identify a capture request.  Note: This parameter is returned when the capture status is successful.  More information:  Maximum length: 64 characters
+     * @param string|null $captureRequestId The unique ID that is assigned by a merchant to identify a capture request.  Note: This parameter is returned when the capture status is successful.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets captureId
      *
-     * @param }string|null $captureId The unique ID that is assigned by Antom to identify a capture.  Note: This parameter is returned when the capture status is successful.  More information:  Maximum length: 64 characters
+     * @param string|null $captureId The unique ID that is assigned by Antom to identify a capture.  Note: This parameter is returned when the capture status is successful.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets paymentId
      *
-     * @param }string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This parameter is returned when the capture status is successful.  More information:  Maximum length: 64 characters
+     * @param string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This parameter is returned when the capture status is successful.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets captureAmount
      *
-     * @param }\model\Amount|null $captureAmount captureAmount
+     * @param \model\Amount|null $captureAmount captureAmount
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets captureTime
      *
-     * @param }string|null $captureTime The time when Antom captures the payment.   Note: This parameter is returned when the capture status is successful.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $captureTime The time when Antom captures the payment.   Note: This parameter is returned when the capture status is successful.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets acquirerReferenceNo
      *
-     * @param }string|null $acquirerReferenceNo The unique ID assigned by the non-Antom acquirer for the transaction.    More information:  Maximum length: 64 characters
+     * @param string|null $acquirerReferenceNo The unique ID assigned by the non-Antom acquirer for the transaction.    More information:  Maximum length: 64 characters
      *
      * @return self
      */

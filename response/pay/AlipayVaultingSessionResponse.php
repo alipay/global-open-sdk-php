@@ -322,7 +322,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets result
      *
-     * @param }\model\Result|null $result result
+     * @param \model\Result|null $result result
      *
      * @return self
      */
@@ -346,7 +346,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets vaultingSessionData
      *
-     * @param }string $vaultingSessionData The encrypted vaulting session data. Pass the data to your front end to initiate the client-side SDK.     More information:  Maximum length: 4096 characters
+     * @param string $vaultingSessionData The encrypted vaulting session data. Pass the data to your front end to initiate the client-side SDK.     More information:  Maximum length: 4096 characters
      *
      * @return self
      */
@@ -370,7 +370,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets vaultingSessionId
      *
-     * @param }string $vaultingSessionId The encrypted ID is assigned by Antom to identify a vaulting session.     More information:  Maximum length: 64 characters
+     * @param string $vaultingSessionId The encrypted ID is assigned by Antom to identify a vaulting session.     More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets vaultingSessionExpiryTime
      *
-     * @param }string $vaultingSessionExpiryTime The specific date and time after which the vaulting session will expire.   More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string $vaultingSessionExpiryTime The specific date and time after which the vaulting session will expire.   More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */

@@ -345,7 +345,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets authenticationType
      *
-     * @param }string $authenticationType Authentication type
+     * @param string $authenticationType Authentication type
      *
      * @return self
      */
@@ -369,7 +369,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets authenticationMethod
      *
-     * @param }string $authenticationMethod The authentication method that a merchant uses for a card payment
+     * @param string $authenticationMethod The authentication method that a merchant uses for a card payment
      *
      * @return self
      */
@@ -393,7 +393,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cvvResult
      *
-     * @param }string $cvvResult The verification result of the card verification value (CVV)
+     * @param string $cvvResult The verification result of the card verification value (CVV)
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets avsResult
      *
-     * @param }string $avsResult The address verification result.
+     * @param string $avsResult The address verification result.
      *
      * @return self
      */
@@ -441,7 +441,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets authorizationCode
      *
-     * @param }string $authorizationCode The authorization code granted by the payment method provider for a successful 3D authentication.
+     * @param string $authorizationCode The authorization code granted by the payment method provider for a successful 3D authentication.
      *
      * @return self
      */
@@ -465,7 +465,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets threeDSResult
      *
-     * @param }\model\RiskThreeDSResult $threeDSResult threeDSResult
+     * @param \model\RiskThreeDSResult $threeDSResult threeDSResult
      *
      * @return self
      */

@@ -320,7 +320,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isPaymentEvaluation
      *
-     * @param }bool|null $isPaymentEvaluation isPaymentEvaluation
+     * @param bool|null $isPaymentEvaluation isPaymentEvaluation
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets inStorePaymentScenario
      *
-     * @param }\model\InStorePaymentScenario|null $inStorePaymentScenario inStorePaymentScenario
+     * @param \model\InStorePaymentScenario|null $inStorePaymentScenario inStorePaymentScenario
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets presentmentMode
      *
-     * @param }\model\PresentmentMode|null $presentmentMode presentmentMode
+     * @param \model\PresentmentMode|null $presentmentMode presentmentMode
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets captureMode
      *
-     * @param }string|null $captureMode Indicates the method for capturing funds after the user authorizes the payment. Valid values are:  AUTOMATIC: indicates that Antom automatically captures the funds after the authorization. The same applies when the value is empty or you do not pass in this parameter. MANUAL: indicates that you manually capture the funds by calling the capture (Checkout Payment) API. Specify this parameter if you want to designate the capture mode of the payment.    More information:  Maximum length: 64 characters
+     * @param string|null $captureMode Indicates the method for capturing funds after the user authorizes the payment. Valid values are:  AUTOMATIC: indicates that Antom automatically captures the funds after the authorization. The same applies when the value is empty or you do not pass in this parameter. MANUAL: indicates that you manually capture the funds by calling the capture (Checkout Payment) API. Specify this parameter if you want to designate the capture mode of the payment.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isAuthorization
      *
-     * @param }bool|null $isAuthorization Indicates whether the payment scenario is authorization. Specify this parameter when the value of paymentMethodType is CARD and you integrate the client-side SDK. Valid values of this parameter are:  true: indicates that the payment scenario is authorization. false: indicates that the payment scenario is a regular payment without authorization.   Under the authorization scenario, the payment funds are guaranteed and held on the payment method side. You can use the capture (Checkout Payment) API to deduct the payment funds.
+     * @param bool|null $isAuthorization Indicates whether the payment scenario is authorization. Specify this parameter when the value of paymentMethodType is CARD and you integrate the client-side SDK. Valid values of this parameter are:  true: indicates that the payment scenario is authorization. false: indicates that the payment scenario is a regular payment without authorization.   Under the authorization scenario, the payment funds are guaranteed and held on the payment method side. You can use the capture (Checkout Payment) API to deduct the payment funds.
      *
      * @return self
      */

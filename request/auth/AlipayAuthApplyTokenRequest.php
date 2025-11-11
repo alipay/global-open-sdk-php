@@ -334,7 +334,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets grantType
      *
-     * @param }string $grantType grantType
+     * @param string $grantType grantType
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets customerBelongsTo
      *
-     * @param }\model\CustomerBelongsTo $customerBelongsTo customerBelongsTo
+     * @param \model\CustomerBelongsTo $customerBelongsTo customerBelongsTo
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets authCode
      *
-     * @param }string|null $authCode The authorization code, used for getting an access token. The value of this field is obtained from the reconstructed redirection URL returned by the wallet.  Note: Specify this field when the value of grantType is AUTHORIZATION_CODE.  More information:  Maximum length: 128 characters
+     * @param string|null $authCode The authorization code, used for getting an access token. The value of this field is obtained from the reconstructed redirection URL returned by the wallet.  Note: Specify this field when the value of grantType is AUTHORIZATION_CODE.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets refreshToken
      *
-     * @param }string|null $refreshToken The refresh token, used for getting a new access token when the access token is about to expire. The refresh token is obtained from the response of the successfully called applyToken API.  Note: Specify this field when the value of grantType is REFRESH_TOKEN.  More information:  Maximum length: 128 characters
+     * @param string|null $refreshToken The refresh token, used for getting a new access token when the access token is about to expire. The refresh token is obtained from the response of the successfully called applyToken API.  Note: Specify this field when the value of grantType is REFRESH_TOKEN.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo extendInfo
+     * @param string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets merchantRegion
      *
-     * @param }string|null $merchantRegion The country or region where the merchant or secondary merchant operates the business. The parameter is a 2-letter country/region code that follows ISO 3166 Country Codes standard. Only US, JP, PK, SG are supported now.  Note: This field is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
+     * @param string|null $merchantRegion The country or region where the merchant or secondary merchant operates the business. The parameter is a 2-letter country/region code that follows ISO 3166 Country Codes standard. Only US, JP, PK, SG are supported now.  Note: This field is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
      *
      * @return self
      */

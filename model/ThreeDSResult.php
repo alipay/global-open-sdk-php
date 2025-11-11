@@ -320,7 +320,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets threeDSVersion
      *
-     * @param }string|null $threeDSVersion The version of 3D Secure protocol
+     * @param string|null $threeDSVersion The version of 3D Secure protocol
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets eci
      *
-     * @param }string|null $eci Electronic Commerce Indicator (ECI) that is returned by the card scheme
+     * @param string|null $eci Electronic Commerce Indicator (ECI) that is returned by the card scheme
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cavv
      *
-     * @param }string|null $cavv The cardholder authentication value
+     * @param string|null $cavv The cardholder authentication value
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dsTransactionId
      *
-     * @param }string|null $dsTransactionId dsTransactionId
+     * @param string|null $dsTransactionId dsTransactionId
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets xid
      *
-     * @param }string|null $xid The unique transaction identifier assigned by the Directory Server (DS) for 3D Secure authentication
+     * @param string|null $xid The unique transaction identifier assigned by the Directory Server (DS) for 3D Secure authentication
      *
      * @return self
      */

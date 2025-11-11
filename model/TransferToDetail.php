@@ -343,7 +343,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferToMethod
      *
-     * @param }\model\PaymentMethod $transferToMethod transferToMethod
+     * @param \model\PaymentMethod $transferToMethod transferToMethod
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferToCurrency
      *
-     * @param }string $transferToCurrency A 3-character ISO-4217 currency code representing the currency that the beneficiary collects.    More information:  Maximum length: 3 characters
+     * @param string $transferToCurrency A 3-character ISO-4217 currency code representing the currency that the beneficiary collects.    More information:  Maximum length: 3 characters
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets feeAmount
      *
-     * @param }\model\Amount|null $feeAmount feeAmount
+     * @param \model\Amount|null $feeAmount feeAmount
      *
      * @return self
      */
@@ -415,7 +415,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets actualTransferToAmount
      *
-     * @param }\model\Amount|null $actualTransferToAmount actualTransferToAmount
+     * @param \model\Amount|null $actualTransferToAmount actualTransferToAmount
      *
      * @return self
      */
@@ -439,7 +439,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets purposeCode
      *
-     * @param }string $purposeCode Defines the purpose of the transfer. The value of this parameter is fixed to GSD, which means goods bought or sold.    More information:  Maximum length: 3 characters
+     * @param string $purposeCode Defines the purpose of the transfer. The value of this parameter is fixed to GSD, which means goods bought or sold.    More information:  Maximum length: 3 characters
      *
      * @return self
      */
@@ -463,7 +463,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferNotifyUrl
      *
-     * @param }string|null $transferNotifyUrl If you specify this parameter, Antom will send the transfer result notification to this URL. The URL must be either specified in the request or set in Antom Dashboard.  Specify this parameter if you want to receive an asynchronous notification of the transfer result. If this URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.    More information:  Maximum length: 2048 characters
+     * @param string|null $transferNotifyUrl If you specify this parameter, Antom will send the transfer result notification to this URL. The URL must be either specified in the request or set in Antom Dashboard.  Specify this parameter if you want to receive an asynchronous notification of the transfer result. If this URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.    More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferRemark
      *
-     * @param }string|null $transferRemark Remark information for the transfer.  Specify this parameter if you want to provide additional remarks or relevant information regarding the payout.  More information:  Maximum length: 1024 characters
+     * @param string|null $transferRemark Remark information for the transfer.  Specify this parameter if you want to provide additional remarks or relevant information regarding the payout.  More information:  Maximum length: 1024 characters
      *
      * @return self
      */

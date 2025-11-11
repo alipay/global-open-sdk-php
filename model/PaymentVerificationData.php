@@ -299,7 +299,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets verifyRequestId
      *
-     * @param }string|null $verifyRequestId verifyRequestId
+     * @param string|null $verifyRequestId verifyRequestId
      *
      * @return self
      */
@@ -323,7 +323,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets authenticationCode
      *
-     * @param }string|null $authenticationCode authenticationCode
+     * @param string|null $authenticationCode authenticationCode
      *
      * @return self
      */

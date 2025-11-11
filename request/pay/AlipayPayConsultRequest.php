@@ -421,7 +421,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets productCode
      *
-     * @param }string $productCode productCode
+     * @param string $productCode productCode
      *
      * @return self
      */
@@ -445,7 +445,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets paymentAmount
      *
-     * @param }\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -469,7 +469,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets merchantRegion
      *
-     * @param }string|null $merchantRegion The country or region where the merchant operates the business. The parameter is a 2-letter country or region code that follows ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.    Note: This parameter is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
+     * @param string|null $merchantRegion The country or region where the merchant operates the business. The parameter is a 2-letter country or region code that follows ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.    Note: This parameter is required when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -493,7 +493,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets allowedPaymentMethodRegions
      *
-     * @param }string[]|null $allowedPaymentMethodRegions A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.   Note: Specify this parameter if you want available payment methods from specific regions to be returned. For example, if you pass in GLOBAL, global cards Visa and Mastercard are returned.    More information:  Maximum length: 6 characters
+     * @param string[]|null $allowedPaymentMethodRegions A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.   Note: Specify this parameter if you want available payment methods from specific regions to be returned. For example, if you pass in GLOBAL, global cards Visa and Mastercard are returned.    More information:  Maximum length: 6 characters
      *
      * @return self
      */
@@ -517,7 +517,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets allowedPaymentMethods
      *
-     * @param }string[]|null $allowedPaymentMethods allowedPaymentMethods
+     * @param string[]|null $allowedPaymentMethods allowedPaymentMethods
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets blockedPaymentMethods
      *
-     * @param }string[]|null $blockedPaymentMethods blockedPaymentMethods
+     * @param string[]|null $blockedPaymentMethods blockedPaymentMethods
      *
      * @return self
      */
@@ -565,7 +565,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets region
      *
-     * @param }string|null $region region
+     * @param string|null $region region
      *
      * @return self
      */
@@ -589,7 +589,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets customerId
      *
-     * @param }string|null $customerId customerId
+     * @param string|null $customerId customerId
      *
      * @return self
      */
@@ -613,7 +613,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets referenceUserId
      *
-     * @param }string|null $referenceUserId referenceUserId
+     * @param string|null $referenceUserId referenceUserId
      *
      * @return self
      */
@@ -637,7 +637,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets env
      *
-     * @param }\model\Env $env env
+     * @param \model\Env $env env
      *
      * @return self
      */
@@ -661,7 +661,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets extendInfo
      *
-     * @param }string|null $extendInfo extendInfo
+     * @param string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -685,7 +685,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets userRegion
      *
-     * @param }string|null $userRegion The 2-letter country or region code. For more information, see ISO 3166 Country Codes standard. The payment methods will be sorted based on payment method relevance for the given user's region.   More information:  Maximum length: 2 characters
+     * @param string|null $userRegion The 2-letter country or region code. For more information, see ISO 3166 Country Codes standard. The payment methods will be sorted based on payment method relevance for the given user's region.   More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -709,7 +709,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets paymentFactor
      *
-     * @param }\model\PaymentFactor|null $paymentFactor paymentFactor
+     * @param \model\PaymentFactor|null $paymentFactor paymentFactor
      *
      * @return self
      */
@@ -733,7 +733,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets settlementStrategy
      *
-     * @param }\model\SettlementStrategy|null $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy|null $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -757,7 +757,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets merchant
      *
-     * @param }\model\Merchant|null $merchant merchant
+     * @param \model\Merchant|null $merchant merchant
      *
      * @return self
      */
@@ -781,7 +781,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets allowedPspRegions
      *
-     * @param }string[]|null $allowedPspRegions allowedPspRegions
+     * @param string[]|null $allowedPspRegions allowedPspRegions
      *
      * @return self
      */
@@ -805,7 +805,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets buyer
      *
-     * @param }\model\Buyer|null $buyer buyer
+     * @param \model\Buyer|null $buyer buyer
      *
      * @return self
      */
@@ -829,7 +829,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets merchantAccountId
      *
-     * @param }string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.  More information:  Maximum length: 32 characters
+     * @param string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.  More information:  Maximum length: 32 characters
      *
      * @return self
      */

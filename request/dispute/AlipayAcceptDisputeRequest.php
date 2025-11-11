@@ -296,7 +296,7 @@ class AlipayAcceptDisputeRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets disputeId
      *
-     * @param }string $disputeId The unique ID assigned by Antom to identify a dispute.  More information:  Maximum length: 64 characters
+     * @param string $disputeId The unique ID assigned by Antom to identify a dispute.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

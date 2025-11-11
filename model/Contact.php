@@ -323,7 +323,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param }string $type type
+     * @param string $type type
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets info
      *
-     * @param }string|null $info The contact details of a specific contact type.    More information:  Maximum length: 256 characters
+     * @param string|null $info The contact details of a specific contact type.    More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets home
      *
-     * @param }string|null $home home
+     * @param string|null $home home
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets work
      *
-     * @param }string|null $work work
+     * @param string|null $work work
      *
      * @return self
      */
@@ -419,7 +419,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mobile
      *
-     * @param }string|null $mobile mobile
+     * @param string|null $mobile mobile
      *
      * @return self
      */
