@@ -11,6 +11,9 @@ abstract class BaseAlipayClient
     private $merchantPrivateKey;
     private $alipayPublicKey;
     private $clientId;
+
+    private $agentToken;
+
     private $isSandboxMode;
 
     function __construct()
@@ -41,6 +44,21 @@ abstract class BaseAlipayClient
         }
 
     }
+
+    function __construct5($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
+    {
+        $this->gatewayUrl = $gatewayUrl;
+        $this->merchantPrivateKey = $merchantPrivateKey;
+        $this->alipayPublicKey = $alipayPublicKey;
+        $this->clientId = $clientId;
+        $this->agentToken = $agentToken;
+
+        if (strpos($clientId, "SANDBOX_") === 0) {
+            $this->isSandboxMode = true;
+        }
+
+    }
+
 
     public function execute($request)
     {
@@ -166,6 +184,10 @@ abstract class BaseAlipayClient
         $baseHeader[] = "User-Agent:global-alipay-sdk-php";
         $baseHeader[] = "Request-Time:" . $requestTime;
         $baseHeader[] = "client-id:" . $clientId;
+
+        if (isset($this->agentToken)){
+            $baseHeader[] = "agent-token:" . $this->agentToken;
+        }
 
         if (!isset($keyVersion)) {
             $keyVersion = self::DEFAULT_KEY_VERSION;

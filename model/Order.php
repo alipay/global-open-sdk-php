@@ -59,6 +59,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'lodging' => '\request\model\Lodging',
         'gaming' => '\request\model\Gaming',
         'needDeclaration' => 'bool',
+        'orderTest' => 'string',
+        'declaration' => '\request\model\Declaration',
         'orderType' => 'string'
     ];
 
@@ -83,6 +85,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'lodging' => null,
         'gaming' => null,
         'needDeclaration' => null,
+        'orderTest' => null,
+        'declaration' => null,
         'orderType' => null
     ];
 
@@ -105,6 +109,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'lodging' => false,
         'gaming' => false,
         'needDeclaration' => false,
+        'orderTest' => false,
+        'declaration' => false,
         'orderType' => false
     ];
 
@@ -207,6 +213,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'lodging' => 'lodging',
         'gaming' => 'gaming',
         'needDeclaration' => 'needDeclaration',
+        'orderTest' => 'orderTest',
+        'declaration' => 'declaration',
         'orderType' => 'orderType'
     ];
 
@@ -229,6 +237,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'lodging' => 'setLodging',
         'gaming' => 'setGaming',
         'needDeclaration' => 'setNeedDeclaration',
+        'orderTest' => 'setOrderTest',
+        'declaration' => 'setDeclaration',
         'orderType' => 'setOrderType'
     ];
 
@@ -251,6 +261,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'lodging' => 'getLodging',
         'gaming' => 'getGaming',
         'needDeclaration' => 'getNeedDeclaration',
+        'orderTest' => 'getOrderTest',
+        'declaration' => 'getDeclaration',
         'orderType' => 'getOrderType'
     ];
 
@@ -324,6 +336,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('lodging', $data ?? [], null);
         $this->setIfExists('gaming', $data ?? [], null);
         $this->setIfExists('needDeclaration', $data ?? [], null);
+        $this->setIfExists('orderTest', $data ?? [], null);
+        $this->setIfExists('declaration', $data ?? [], null);
         $this->setIfExists('orderType', $data ?? [], null);
 
             }
@@ -584,7 +598,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param string|null $extendInfo Extended information data, including information for special use cases.  Note: Specify this field when you need to use the extended information.
      *
      * @return self
      */
@@ -687,6 +701,54 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNeedDeclaration($needDeclaration)
     {
         $this->container['needDeclaration'] = $needDeclaration;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderTest
+     *
+     * @return string|null
+     */
+    public function getOrderTest()
+    {
+        return $this->container['orderTest'];
+    }
+
+    /**
+     * Sets orderTest
+     *
+     * @param string|null $orderTest orderTest
+     *
+     * @return self
+     */
+    public function setOrderTest($orderTest)
+    {
+        $this->container['orderTest'] = $orderTest;
+
+        return $this;
+    }
+
+    /**
+     * Gets declaration
+     *
+     * @return \request\model\Declaration|null
+     */
+    public function getDeclaration()
+    {
+        return $this->container['declaration'];
+    }
+
+    /**
+     * Sets declaration
+     *
+     * @param \request\model\Declaration|null $declaration declaration
+     *
+     * @return self
+     */
+    public function setDeclaration($declaration)
+    {
+        $this->container['declaration'] = $declaration;
 
         return $this;
     }

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.8 - 2025-09-22
+- 支持agent-token
+
+## 1.4.7 - 2025-07-09
+- update0709
+
+## 1.4.5 - 2025-07-07
+  - AMS pay/createPaymentSession支付接口支持订阅支付能力
+
 ## 1.4.4 - 2025-04-10
 * [#27](https://github.com/alipay/global-open-sdk-php/pull/25) feature-250410 
   - Antom 印度渠道接入AMS拒付相关接口的标准变更 

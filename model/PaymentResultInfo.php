@@ -46,6 +46,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
+        'refusalCodeRaw' => 'string',
+        'refusalReasonRaw' => 'string',
+        'merchantAdviceCode' => 'string',
+        'acquirerInfo' => '\request\model\AcquirerInfo',
         'cardNo' => 'string',
         'cardBrand' => 'string',
         'cardToken' => 'string',
@@ -72,6 +76,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'refusalCodeRaw' => null,
+        'refusalReasonRaw' => null,
+        'merchantAdviceCode' => null,
+        'acquirerInfo' => null,
         'cardNo' => null,
         'cardBrand' => null,
         'cardToken' => null,
@@ -96,6 +104,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'refusalCodeRaw' => false,
+        'refusalReasonRaw' => false,
+        'merchantAdviceCode' => false,
+        'acquirerInfo' => false,
         'cardNo' => false,
         'cardBrand' => false,
         'cardToken' => false,
@@ -200,6 +212,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
+        'refusalCodeRaw' => 'refusalCodeRaw',
+        'refusalReasonRaw' => 'refusalReasonRaw',
+        'merchantAdviceCode' => 'merchantAdviceCode',
+        'acquirerInfo' => 'acquirerInfo',
         'cardNo' => 'cardNo',
         'cardBrand' => 'cardBrand',
         'cardToken' => 'cardToken',
@@ -224,6 +240,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
+        'refusalCodeRaw' => 'setRefusalCodeRaw',
+        'refusalReasonRaw' => 'setRefusalReasonRaw',
+        'merchantAdviceCode' => 'setMerchantAdviceCode',
+        'acquirerInfo' => 'setAcquirerInfo',
         'cardNo' => 'setCardNo',
         'cardBrand' => 'setCardBrand',
         'cardToken' => 'setCardToken',
@@ -248,6 +268,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
+        'refusalCodeRaw' => 'getRefusalCodeRaw',
+        'refusalReasonRaw' => 'getRefusalReasonRaw',
+        'merchantAdviceCode' => 'getMerchantAdviceCode',
+        'acquirerInfo' => 'getAcquirerInfo',
         'cardNo' => 'getCardNo',
         'cardBrand' => 'getCardBrand',
         'cardToken' => 'getCardToken',
@@ -323,6 +347,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('refusalCodeRaw', $data ?? [], null);
+        $this->setIfExists('refusalReasonRaw', $data ?? [], null);
+        $this->setIfExists('merchantAdviceCode', $data ?? [], null);
+        $this->setIfExists('acquirerInfo', $data ?? [], null);
         $this->setIfExists('cardNo', $data ?? [], null);
         $this->setIfExists('cardBrand', $data ?? [], null);
         $this->setIfExists('cardToken', $data ?? [], null);
@@ -383,6 +411,102 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets refusalCodeRaw
+     *
+     * @return string|null
+     */
+    public function getRefusalCodeRaw()
+    {
+        return $this->container['refusalCodeRaw'];
+    }
+
+    /**
+     * Sets refusalCodeRaw
+     *
+     * @param string|null $refusalCodeRaw 卡支付失败且渠道返回时的原始错误码
+     *
+     * @return self
+     */
+    public function setRefusalCodeRaw($refusalCodeRaw)
+    {
+        $this->container['refusalCodeRaw'] = $refusalCodeRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets refusalReasonRaw
+     *
+     * @return string|null
+     */
+    public function getRefusalReasonRaw()
+    {
+        return $this->container['refusalReasonRaw'];
+    }
+
+    /**
+     * Sets refusalReasonRaw
+     *
+     * @param string|null $refusalReasonRaw 卡支付失败且渠道返回时的原始拒付原因
+     *
+     * @return self
+     */
+    public function setRefusalReasonRaw($refusalReasonRaw)
+    {
+        $this->container['refusalReasonRaw'] = $refusalReasonRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantAdviceCode
+     *
+     * @return string|null
+     */
+    public function getMerchantAdviceCode()
+    {
+        return $this->container['merchantAdviceCode'];
+    }
+
+    /**
+     * Sets merchantAdviceCode
+     *
+     * @param string|null $merchantAdviceCode 支付结果的商户建议码
+     *
+     * @return self
+     */
+    public function setMerchantAdviceCode($merchantAdviceCode)
+    {
+        $this->container['merchantAdviceCode'] = $merchantAdviceCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerInfo
+     *
+     * @return \request\model\AcquirerInfo|null
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->container['acquirerInfo'];
+    }
+
+    /**
+     * Sets acquirerInfo
+     *
+     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     *
+     * @return self
+     */
+    public function setAcquirerInfo($acquirerInfo)
+    {
+        $this->container['acquirerInfo'] = $acquirerInfo;
+
+        return $this;
+    }
 
     /**
      * Gets cardNo
@@ -661,7 +785,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardholderName
      *
-     * @param string|null $cardholderName cardholderName
+     * @param string|null $cardholderName The cardholder's name.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -685,7 +809,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardBin
      *
-     * @param string|null $cardBin cardBin
+     * @param string|null $cardBin The first six digits of the bank card number, used to identify the issuing bank and card type of the bank card.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -709,7 +833,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets lastFour
      *
-     * @param string|null $lastFour lastFour
+     * @param string|null $lastFour Last 4 digits of the card number.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 4 characters
      *
      * @return self
      */
@@ -733,7 +857,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryMonth
      *
-     * @param string|null $expiryMonth expiryMonth
+     * @param string|null $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiry month is February, the value of this parameter is 02.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -757,7 +881,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryYear
      *
-     * @param string|null $expiryYear expiryYear
+     * @param string|null $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiry year is 2025, the value of this parameter is 25.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
      *
      * @return self
      */

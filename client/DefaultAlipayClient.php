@@ -8,20 +8,25 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
     function __construct()
     {
         $a = func_get_args();
-        $i = func_num_args() - 2;
+        $i = func_num_args() + 3;
         if (method_exists($this, $f = '__construct' . $i)) {
             call_user_func_array(array($this, $f), $a);
         }
     }
 
-    function __construct1($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
+    function __construct6($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey);
     }
 
-    function __construct2($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
+    function __construct7($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId);
+    }
+
+    function __construct8($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
+    {
+        parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken);
     }
 
     protected function buildCustomHeader()
