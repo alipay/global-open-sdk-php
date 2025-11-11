@@ -1,6 +1,5 @@
 <?php
-require '../init.php';
-
+require '../vendor/autoload.php';
 use Request\marketplace\AlipayRegisterRequest;
 use Client\DefaultAlipayClient;
 
@@ -8,7 +7,6 @@ const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";
 const gatewayUrl = "";
-
 function register()
 {
     $alipayRegisterRequest = new AlipayRegisterRequest();

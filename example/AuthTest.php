@@ -1,7 +1,7 @@
 <?php
 
 
-require '../init.php';
+require '../vendor/autoload.php';
 
 use Client\DefaultAlipayClient;
 use MOdel\CustomerBelongsTo;
@@ -23,6 +23,7 @@ function applyToken($authCode)
     $request->setGrantType(GrantType::AUTHORIZATION_CODE);
     $request->setCustomerBelongsTo(CustomerBelongsTo::ALIPAY_CN);
     $request->setAuthCode($authCode);
+
 
     $alipayClient = new DefaultAlipayClient(gatewayUrl, merchantPrivateKey, alipayPublicKey, clientId);
     $alipayResponse = $alipayClient->execute($request);

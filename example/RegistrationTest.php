@@ -1,6 +1,5 @@
 <?php
-require '../init.php';
-
+require '../vendor/autoload.php';
 use Client\DefaultAlipayClient;
 use Model\Address;
 use Model\Attachment;

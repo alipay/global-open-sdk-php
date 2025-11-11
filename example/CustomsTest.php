@@ -1,6 +1,5 @@
 <?php
-require '../init.php';
-
+require '../vendor/autoload.php';
 use Client\DefaultAlipayClient;
 use Model\Amount;
 use Model\Certificate;
@@ -15,7 +14,6 @@ const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";
 const gatewayUrl = "";
-
 
 function declares($paymentId)
 {

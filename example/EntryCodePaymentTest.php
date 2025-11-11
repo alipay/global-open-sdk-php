@@ -1,6 +1,5 @@
 <?php
-require '../init.php';
-
+require '../vendor/autoload.php';
 use Client\DefaultAlipayClient;
 use Model\Amount;
 use Model\Env;
@@ -43,7 +42,7 @@ $order->setMerchant($merchant);
 $env = new Env();
 $env->setUserAgent('"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15G77 NebulaSDK/1.8.100112 Nebula PSDType(1) AlipayDefined(nt:4G,ws:320|504|2.0) AliApp(AP/10.1.32.600) AlipayClient/10.1.32.600 Alipay Language/zh-Hans AlipayConnect"');
 $env->setOsType(OsType::ANDROID);
-$env->setTerminalType(TerminalType::WAP);
+$env->setTerminalType(TerminalType::of(TerminalType::WAP));
 $order->setEnv($env);
 
 $paymentAmount = new Amount();

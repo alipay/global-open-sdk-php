@@ -1,13 +1,11 @@
 <?php
 
-require '../init.php';
-use Client\DefaultAlipayClient;
+require '../vendor/autoload.php';use Client\DefaultAlipayClient;
 
 const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";
 const gatewayUrl = "";
-
 function createVaultingSession()
 {
     $alipayVaultingSessionRequest = new \Request\vaulting\AlipayVaultingSessionRequest();
@@ -82,9 +80,9 @@ function inquireVaulting($vaultingRequestId)
 
 }
 
-//createVaultingSession();
+createVaultingSession();
 
 //vaultPaymentMethod();
 
-inquireVaulting("vaultPaymentMethod1727232429222");
+//inquireVaulting("vaultPaymentMethod1727232429222");
 

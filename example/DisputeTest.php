@@ -1,7 +1,6 @@
 <?php
 
-require '../init.php';
-
+require '../vendor/autoload.php';
 use Client\DefaultAlipayClient;
 
 
@@ -9,7 +8,6 @@ const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";
 const gatewayUrl = "";
-
 
 function acceptDispute($disputeId)
 {
@@ -47,3 +45,4 @@ function downloadDisputeEvidence($disputeId)
 
     echo json_encode($alipayResponse);
 }
+acceptDispute("102775745075668");

@@ -1,13 +1,11 @@
 <?php
 
-require '../init.php';
-use Client\DefaultAlipayClient;
+require '../vendor/autoload.php';use Client\DefaultAlipayClient;
 
 const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";
 const gatewayUrl = "";
-
 function SubscriptionsCreate()
 {
     $alipaySubscriptionCreateRequest = new \Request\subscription\AlipaySubscriptionCreateRequest();
@@ -110,8 +108,8 @@ function subscriptionCancel($subscriptionId)
     echo json_encode($alipayResponse);
 }
 
-//SubscriptionsCreate();
+SubscriptionsCreate();
 
 //SubscriptionsChange("202409251900000000000001J0000009949");
 
-subscriptionCancel("202409251900000000000001J0000009949");
+//subscriptionCancel("202409251900000000000001J0000009949");

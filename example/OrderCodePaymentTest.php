@@ -1,6 +1,5 @@
 <?php
-require '../init.php';
-
+require '../vendor/autoload.php';
 use Client\DefaultAlipayClient;
 use Model\Amount;
 use Model\Merchant;
