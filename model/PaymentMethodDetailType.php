@@ -31,7 +31,7 @@ class PaymentMethodDetailType
     public const COUPON = 'COUPON';
     public const DISCOUNT = 'DISCOUNT';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

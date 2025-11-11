@@ -33,7 +33,7 @@ class TransactionType
     public const AUTHORIZATION = 'AUTHORIZATION';
     public const VOID = 'VOID';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

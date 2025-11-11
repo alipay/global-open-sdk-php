@@ -30,7 +30,7 @@ class ResultStatusType
     public const F = 'F';
     public const U = 'U';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

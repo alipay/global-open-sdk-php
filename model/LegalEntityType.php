@@ -29,7 +29,7 @@ class LegalEntityType
     public const COMPANY = 'COMPANY';
     public const INDIVIDUAL = 'INDIVIDUAL';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

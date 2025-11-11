@@ -29,7 +29,7 @@ class DisputeEvidenceType
     public const TEMPLATE = 'DISPUTE_EVIDENCE_TEMPLATE';
     public const FILE = 'DISPUTE_EVIDENCE_FILE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

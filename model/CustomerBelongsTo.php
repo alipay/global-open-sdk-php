@@ -53,7 +53,7 @@ class CustomerBelongsTo
     public const MOMO = 'MOMO';
     public const ANTOM_BIZ_ACCOUNT = 'ANTOM_BIZ_ACCOUNT';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

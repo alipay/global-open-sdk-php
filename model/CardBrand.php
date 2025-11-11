@@ -39,7 +39,7 @@ class CardBrand
     public const HIPERCARD = 'HIPERCARD';
     public const TROY = 'TROY';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

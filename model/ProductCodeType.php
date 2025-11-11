@@ -30,7 +30,7 @@ class ProductCodeType
     public const AGREEMENT_PAYMENT = 'AGREEMENT_PAYMENT';
     public const IN_STORE_PAYMENT = 'IN_STORE_PAYMENT';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

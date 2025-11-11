@@ -29,7 +29,7 @@ class OsType
     public const IOS = 'IOS';
     public const ANDROID = 'ANDROID';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

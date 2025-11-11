@@ -30,7 +30,7 @@ class ContactType
     public const PHONE_NO = 'PHONE_NO';
     public const COMMERCIAL_PHONE_NO = 'COMMERCIAL_PHONE_NO';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

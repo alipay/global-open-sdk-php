@@ -30,7 +30,7 @@ class PresentmentMode
     public const TILE = 'TILE';
     public const UNIFIED = 'UNIFIED';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

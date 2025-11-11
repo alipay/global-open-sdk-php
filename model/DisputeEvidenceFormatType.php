@@ -29,7 +29,7 @@ class DisputeEvidenceFormatType
     public const PDF = 'PDF';
     public const WORD = 'WORD';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

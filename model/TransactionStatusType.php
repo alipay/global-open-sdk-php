@@ -32,7 +32,7 @@ class TransactionStatusType
     public const CANCELLED = 'CANCELLED';
     public const PENDING = 'PENDING';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

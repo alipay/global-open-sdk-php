@@ -29,7 +29,7 @@ class AccountHolderType
     public const INDIVIDUAL = 'INDIVIDUAL';
     public const ENTERPRISE = 'ENTERPRISE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

@@ -29,7 +29,7 @@ class CompanyUnitType
     public const HEADQUARTER = 'HEADQUARTER';
     public const BRANCH = 'BRANCH';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

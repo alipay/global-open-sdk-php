@@ -31,7 +31,7 @@ class TerminalType
     public const APP = 'APP';
     public const MINI_APP = 'MINI_APP';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

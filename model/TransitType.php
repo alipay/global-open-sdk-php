@@ -31,7 +31,7 @@ class TransitType
     public const CRUISE = 'CRUISE';
     public const COACH = 'COACH';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

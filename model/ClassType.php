@@ -30,7 +30,7 @@ class ClassType
     public const SECONDLEVEL = 'SECONDLEVEL';
     public const THIRDLEVEL = 'THIRDLEVEL';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

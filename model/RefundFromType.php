@@ -30,7 +30,7 @@ class RefundFromType
     public const MARKETPLACE = 'MARKETPLACE';
     public const UNSETTLED_FUNDS = 'UNSETTLED_FUNDS';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

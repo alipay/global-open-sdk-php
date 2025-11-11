@@ -29,7 +29,7 @@ class GrantType
     public const AUTHORIZATION_CODE = 'AUTHORIZATION_CODE';
     public const REFRESH_TOKEN = 'REFRESH_TOKEN';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

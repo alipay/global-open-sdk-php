@@ -34,7 +34,7 @@ class ScopeType
     public const SEND_OTP = 'SEND_OTP';
     public const TAOBAO_REBIND = 'TAOBAO_REBIND';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

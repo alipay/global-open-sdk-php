@@ -28,7 +28,7 @@ class CreditPayFeeType
 {
     public const PERCENTAGE = 'PERCENTAGE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

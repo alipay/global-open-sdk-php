@@ -29,7 +29,7 @@ class AccountType
     public const CHECKING = 'CHECKING';
     public const FIXED_DEPOSIT = 'FIXED_DEPOSIT';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

@@ -32,7 +32,7 @@ class DisplayType
     public const BIGIMAGE = 'BIGIMAGE';
     public const IMAGE = 'IMAGE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

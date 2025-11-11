@@ -29,7 +29,7 @@ class PromotionType
     public const DISCOUNT = 'DISCOUNT';
     public const INTEREST_FREE = 'INTEREST_FREE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

@@ -29,7 +29,7 @@ class CodeValueType
     public const BARCODE = 'BARCODE';
     public const QRCODE = 'QRCODE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

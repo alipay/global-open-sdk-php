@@ -33,7 +33,7 @@ class AssociationType
     public const AUTHORIZER = 'AUTHORIZER';
     public const BOARD_MEMBER = 'BOARD_MEMBER';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

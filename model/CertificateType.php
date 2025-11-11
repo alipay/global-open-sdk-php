@@ -34,7 +34,7 @@ class CertificateType
     public const CPF = 'CPF';
     public const CNPJ = 'CNPJ';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

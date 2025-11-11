@@ -29,7 +29,7 @@ class SettleToType
     public const SELLER = 'SELLER';
     public const MARKETPLACE = 'MARKETPLACE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

@@ -30,7 +30,7 @@ class InStorePaymentScenario
     public const ORDER_CODE = 'OrderCode';
     public const ENTRY_CODE = 'EntryCode';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

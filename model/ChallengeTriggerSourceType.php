@@ -29,7 +29,7 @@ class ChallengeTriggerSourceType
     public const AMS = 'AMS';
     public const CHANNEL = 'CHANNEL';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

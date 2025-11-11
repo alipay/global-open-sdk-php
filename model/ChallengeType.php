@@ -30,7 +30,7 @@ class ChallengeType
     public const PLAINTEXT_CARD_NO = 'PLAINTEXT_CARD_NO';
     public const CARD_EXPIRE_DATE = 'CARD_EXPIRE_DATE';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

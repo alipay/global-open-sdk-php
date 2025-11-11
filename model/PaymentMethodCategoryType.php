@@ -34,7 +34,7 @@ class PaymentMethodCategoryType
     public const CARD = 'CARD';
     public const OTC = 'OTC';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {

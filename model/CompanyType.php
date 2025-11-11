@@ -39,7 +39,7 @@ class CompanyType
     public const MEI = 'MEI';
     public const EI = 'EI';
 
-    private $value;
+    public $value;
 
     private function __construct(string $value)
     {
