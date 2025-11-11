@@ -337,7 +337,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets paymentMethodType
      *
-     * @param string $paymentMethodType The payment method type is included in payment method options. See Payment methods to check the valid values for card payments.    More information:  Maximum length: 64 characters
+     * @param }string $paymentMethodType The payment method type is included in payment method options. See Payment methods to check the valid values for card payments.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets vaultingRequestId
      *
-     * @param string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.   More information:  Maximum length: 64 characters
+     * @param }string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets vaultingNotificationUrl
      *
-     * @param string $vaultingNotificationUrl The URL that is used to receive the vaulting result notification.   More information:  Maximum length: 2048 characters
+     * @param }string $vaultingNotificationUrl The URL that is used to receive the vaulting result notification.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets redirectUrl
      *
-     * @param string|null $redirectUrl The merchant page URL that the buyer is redirected to after the vaulting is completed.   Note: Specify this parameter if you want to redirect the buyer to your page directly after the vaulting is completed.  More information:  Maximum length: 2048 characters
+     * @param }string|null $redirectUrl The merchant page URL that the buyer is redirected to after the vaulting is completed.   Note: Specify this parameter if you want to redirect the buyer to your page directly after the vaulting is completed.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets merchantRegion
      *
-     * @param string|null $merchantRegion The country or region where the merchant operates the business. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.  Note: Specify this parameter when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
+     * @param }string|null $merchantRegion The country or region where the merchant operates the business. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.  Note: Specify this parameter when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets is3DSAuthentication
      *
-     * @param bool|null $is3DSAuthentication Indicates whether the transaction authentication type is 3D secure. Specify this parameter when the value of paymentMethodType is CARD.
+     * @param }bool|null $is3DSAuthentication Indicates whether the transaction authentication type is 3D secure. Specify this parameter when the value of paymentMethodType is CARD.
      *
      * @return self
      */

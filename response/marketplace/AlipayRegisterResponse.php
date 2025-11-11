@@ -299,7 +299,7 @@ class AlipayRegisterResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets result
      *
-     * @param \model\Result|null $result result
+     * @param }\model\Result|null $result result
      *
      * @return self
      */
@@ -323,7 +323,7 @@ class AlipayRegisterResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets registrationStatus
      *
-     * @param string|null $registrationStatus The registration status of the merchant. The value of this parameter is fixed to PROCESSING.   Get the sub-merchant's registration result from the notifyRegistration interface.   This parameter is returned when the value of result.resultStatus is S.    More information:  Maximum length: 64 characters
+     * @param }string|null $registrationStatus The registration status of the merchant. The value of this parameter is fixed to PROCESSING.   Get the sub-merchant's registration result from the notifyRegistration interface.   This parameter is returned when the value of result.resultStatus is S.    More information:  Maximum length: 64 characters
      *
      * @return self
      */

@@ -306,7 +306,7 @@ class PaymentMethodTypeItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets paymentMethodType
      *
-     * @param string|null $paymentMethodType The payment method type that is included in payment method options. See Payment methods to check the valid values.   More information:  Value range: 64
+     * @param }string|null $paymentMethodType The payment method type that is included in payment method options. See Payment methods to check the valid values.   More information:  Value range: 64
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class PaymentMethodTypeItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets paymentMethodOrder
      *
-     * @param string|null $paymentMethodOrder The priority order of the payment methods configured by the user is indicated by numerical values, with smaller numbers representing higher priority. If the user does not specify a setting, Antom will apply a default sorting method.  More information:  Value range: [1, +∞)
+     * @param }string|null $paymentMethodOrder The priority order of the payment methods configured by the user is indicated by numerical values, with smaller numbers representing higher priority. If the user does not specify a setting, Antom will apply a default sorting method.  More information:  Value range: [1, +∞)
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class PaymentMethodTypeItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets expressCheckout
      *
-     * @param string|null $expressCheckout Indicates whether the payment method selected by the user is displayed as a quick payment method. The currently supported quick payment methods include ALIPAY_CN, APPLEPAY, and GOOGLAPAY. The valid values include:  true: The payment method selected by the user is displayed as a quick payment method. false: The payment method selected by the user is not displayed as a quick payment method.
+     * @param }string|null $expressCheckout Indicates whether the payment method selected by the user is displayed as a quick payment method. The currently supported quick payment methods include ALIPAY_CN, APPLEPAY, and GOOGLAPAY. The valid values include:  true: The payment method selected by the user is displayed as a quick payment method. false: The payment method selected by the user is not displayed as a quick payment method.
      *
      * @return self
      */

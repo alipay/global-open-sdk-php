@@ -364,7 +364,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets vaultingRequestId
      *
-     * @param string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.   More information:  This field is an API idempotency field.For vaulting requests that are initiated with the same value of vaultingRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 64 characters
+     * @param }string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.   More information:  This field is an API idempotency field.For vaulting requests that are initiated with the same value of vaultingRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets vaultingNotificationUrl
      *
-     * @param string $vaultingNotificationUrl The URL that is used to receive the vaulting result notification.   More information:  Maximum length: 2048 characters
+     * @param }string $vaultingNotificationUrl The URL that is used to receive the vaulting result notification.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets redirectUrl
      *
-     * @param string $redirectUrl The merchant page URL that the buyer is redirected to after the vaulting process is completed.  More information:  Maximum length: 2048 characters
+     * @param }string $redirectUrl The merchant page URL that the buyer is redirected to after the vaulting process is completed.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets merchantRegion
      *
-     * @param string|null $merchantRegion The country or region where the merchant operates the business. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.   Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.  Note: Specify this parameter when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
+     * @param }string|null $merchantRegion The country or region where the merchant operates the business. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.   Some possible values are US, SG, HK, PK, JP, CN, BR, AU, and MY.  Note: Specify this parameter when you use the Global Acquirer Gateway (GAGW) product.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets paymentMethodDetail
      *
-     * @param \model\PaymentMethodDetail $paymentMethodDetail paymentMethodDetail
+     * @param }\model\PaymentMethodDetail $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */
@@ -484,7 +484,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets env
      *
-     * @param \model\Env $env env
+     * @param }\model\Env $env env
      *
      * @return self
      */
@@ -508,7 +508,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId merchantAccountId
+     * @param }string|null $merchantAccountId merchantAccountId
      *
      * @return self
      */
@@ -532,7 +532,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets vaultingCurrency
      *
-     * @param string|null $vaultingCurrency vaultingCurrency
+     * @param }string|null $vaultingCurrency vaultingCurrency
      *
      * @return self
      */
@@ -556,7 +556,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets customizedInfo
      *
-     * @param \model\CustomizedInfo|null $customizedInfo customizedInfo
+     * @param }\model\CustomizedInfo|null $customizedInfo customizedInfo
      *
      * @return self
      */

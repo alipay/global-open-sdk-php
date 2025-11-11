@@ -332,7 +332,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -356,7 +356,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets paymentSessionData
      *
-     * @param string $paymentSessionData The encrypted payment session data. Pass the data to your front end to initiate the client-side SDK.    More information:  Maximum length: 4096 characters
+     * @param }string $paymentSessionData The encrypted payment session data. Pass the data to your front end to initiate the client-side SDK.    More information:  Maximum length: 4096 characters
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets paymentSessionExpiryTime
      *
-     * @param string $paymentSessionExpiryTime The specific date and time after which the payment session will expire.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string $paymentSessionExpiryTime The specific date and time after which the payment session will expire.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -404,7 +404,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets paymentSessionId
      *
-     * @param string $paymentSessionId The encrypted ID that is assigned by Antom to identify a payment session.    More information:  Maximum length: 64 characters
+     * @param }string $paymentSessionId The encrypted ID that is assigned by Antom to identify a payment session.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets normalUrl
      *
-     * @param string|null $normalUrl The URL used to redirect to the Checkout Page.  More information:  Maximum length: 2048 characters
+     * @param }string|null $normalUrl The URL used to redirect to the Checkout Page.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */

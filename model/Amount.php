@@ -305,7 +305,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string $currency currency
+     * @param }string $currency currency
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param }string $value value
      *
      * @return self
      */

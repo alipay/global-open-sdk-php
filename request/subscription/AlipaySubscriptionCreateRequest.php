@@ -427,7 +427,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionRequestId
      *
-     * @param string $subscriptionRequestId The unique ID assigned by a merchant to identify a subscription request. Antom uses this field for idempotency control.    More information:  This field is an API idempotency field.For subscription requests that are initiated with the same value of subscriptionRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 64 characters
+     * @param }string $subscriptionRequestId The unique ID assigned by a merchant to identify a subscription request. Antom uses this field for idempotency control.    More information:  This field is an API idempotency field.For subscription requests that are initiated with the same value of subscriptionRequestId and reach a final status of S or F, the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionDescription
      *
-     * @param string $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.   More information:  Maximum length: 256 characters
+     * @param }string $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.   More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionRedirectUrl
      *
-     * @param string $subscriptionRedirectUrl The merchant page URL that the user is redirected to after authorizing the subscription.   More information:  Maximum length: 2048 characters
+     * @param }string $subscriptionRedirectUrl The merchant page URL that the user is redirected to after authorizing the subscription.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionStartTime
      *
-     * @param string $subscriptionStartTime The date and time when the subscription becomes active.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string $subscriptionStartTime The date and time when the subscription becomes active.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionEndTime
      *
-     * @param string|null $subscriptionEndTime The date and time when the subscription ends.  Note: Specify this parameter when you want to designate the subscription end time.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $subscriptionEndTime The date and time when the subscription ends.  Note: Specify this parameter when you want to designate the subscription end time.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets periodRule
      *
-     * @param \model\PeriodRule $periodRule periodRule
+     * @param }\model\PeriodRule $periodRule periodRule
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionExpiryTime
      *
-     * @param string|null $subscriptionExpiryTime A specific date and time after which the created subscription expires. When the subscription expires, the order must be terminated. The default value of this parameter is 30 minutes after the subscription creation request is sent.  Note: Specify this parameter if you want to designate the subscription creation expiration time. The specified payment expiration time must be less than 48 hours after the subscription request is sent.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $subscriptionExpiryTime A specific date and time after which the created subscription expires. When the subscription expires, the order must be terminated. The default value of this parameter is 30 minutes after the subscription creation request is sent.  Note: Specify this parameter if you want to designate the subscription creation expiration time. The specified payment expiration time must be less than 48 hours after the subscription request is sent.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -595,7 +595,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentMethod
      *
-     * @param \model\PaymentMethod $paymentMethod paymentMethod
+     * @param }\model\PaymentMethod $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionNotificationUrl
      *
-     * @param string $subscriptionNotificationUrl The URL that is used to receive the subscription result notification.   You can also configure the subscription notification URL in Antom Dashboard. If you specify this URL in both this API and Antom Dashboard, the URL configured in the API takes precedence.    Only one subscription notification URL can be configured in Antom Dashboard.  More information:  Maximum length: 2048 characters
+     * @param }string $subscriptionNotificationUrl The URL that is used to receive the subscription result notification.   You can also configure the subscription notification URL in Antom Dashboard. If you specify this URL in both this API and Antom Dashboard, the URL configured in the API takes precedence.    Only one subscription notification URL can be configured in Antom Dashboard.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -643,7 +643,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentNotificationUrl
      *
-     * @param string $paymentNotificationUrl The URL that is used to receive the payment result notification for each subscription period.  You can also configure the subscription notification URL in Antom Dashboard. If you specify this URL in both this API and Antom Dashboard, the URL configured in the API takes precedence.    You can only configure one subscription notification URL in Antom Dashboard.  More information:  Maximum length: 2048 characters
+     * @param }string $paymentNotificationUrl The URL that is used to receive the payment result notification for each subscription period.  You can also configure the subscription notification URL in Antom Dashboard. If you specify this URL in both this API and Antom Dashboard, the URL configured in the API takes precedence.    You can only configure one subscription notification URL in Antom Dashboard.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -667,7 +667,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets orderInfo
      *
-     * @param \model\OrderInfo $orderInfo orderInfo
+     * @param }\model\OrderInfo $orderInfo orderInfo
      *
      * @return self
      */
@@ -691,7 +691,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmount
      *
-     * @param \model\Amount $paymentAmount paymentAmount
+     * @param }\model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -715,7 +715,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets settlementStrategy
      *
-     * @param \model\SettlementStrategy $settlementStrategy settlementStrategy
+     * @param }\model\SettlementStrategy $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -739,7 +739,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets env
      *
-     * @param \model\Env $env env
+     * @param }\model\Env $env env
      *
      * @return self
      */
@@ -763,7 +763,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets trials
      *
-     * @param \model\Trial[]|null $trials The list of trial information of a subscription.    Note: Specify this parameter if the subscription includes any trial periods.
+     * @param }\model\Trial[]|null $trials The list of trial information of a subscription.    Note: Specify this parameter if the subscription includes any trial periods.
      *
      * @return self
      */

@@ -365,7 +365,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundRequestId
      *
-     * @param string|null $refundRequestId The unique ID that is assigned by the merchant to identify a refund request.  Note: This field is returned when the refund succeeds (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
+     * @param }string|null $refundRequestId The unique ID that is assigned by the merchant to identify a refund request.  Note: This field is returned when the refund succeeds (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundId
      *
-     * @param string|null $refundId The unique ID that is assigned by Antom to identify a refund. A one-to-one correspondence between refundId and refundRequestId exists.   Note: This field is returned when the refund succeeds (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
+     * @param }string|null $refundId The unique ID that is assigned by Antom to identify a refund. A one-to-one correspondence between refundId and refundRequestId exists.   Note: This field is returned when the refund succeeds (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID assigned by Antom for the original payment to be refunded.  Note: This field is returned when the refund succeeds (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentId The unique ID assigned by Antom for the original payment to be refunded.  Note: This field is returned when the refund succeeds (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundAmount
      *
-     * @param \model\Amount|null $refundAmount refundAmount
+     * @param }\model\Amount|null $refundAmount refundAmount
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundTime
      *
-     * @param string|null $refundTime The date and time when the refund reaches the state of success, failure, or unknown.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $refundTime The date and time when the refund reaches the state of success, failure, or unknown.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundNonGuaranteeCouponAmount
      *
-     * @param \model\Amount|null $refundNonGuaranteeCouponAmount refundNonGuaranteeCouponAmount
+     * @param }\model\Amount|null $refundNonGuaranteeCouponAmount refundNonGuaranteeCouponAmount
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets grossSettlementAmount
      *
-     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param }\model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets settlementQuote
      *
-     * @param \model\Quote|null $settlementQuote settlementQuote
+     * @param }\model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -581,7 +581,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets acquirerInfo
      *
-     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param }\model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -605,7 +605,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets acquirerReferenceNo
      *
-     * @param string|null $acquirerReferenceNo The unique ID assigned by the non-Antom acquirer for the transaction.  More information:  Maximum length: 64 characters
+     * @param }string|null $acquirerReferenceNo The unique ID assigned by the non-Antom acquirer for the transaction.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

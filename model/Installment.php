@@ -305,7 +305,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets supportCardBrands
      *
-     * @param \model\SupportCardBrand[] $supportCardBrands The list of card brands that support the installment plans.    This parameter is returned when the value of paymentMethodType is CARD.
+     * @param }\model\SupportCardBrand[] $supportCardBrands The list of card brands that support the installment plans.    This parameter is returned when the value of paymentMethodType is CARD.
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets plans
      *
-     * @param \model\Plan[] $plans The list of installment plans for payment methods that support installments.
+     * @param }\model\Plan[] $plans The list of installment plans for payment methods that support installments.
      *
      * @return self
      */

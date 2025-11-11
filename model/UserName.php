@@ -313,7 +313,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets firstName
      *
-     * @param string|null $firstName firstName
+     * @param }string|null $firstName firstName
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets middleName
      *
-     * @param string|null $middleName middleName
+     * @param }string|null $middleName middleName
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lastName
      *
-     * @param string|null $lastName lastName
+     * @param }string|null $lastName lastName
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fullName
      *
-     * @param string|null $fullName fullName
+     * @param }string|null $fullName fullName
      *
      * @return self
      */

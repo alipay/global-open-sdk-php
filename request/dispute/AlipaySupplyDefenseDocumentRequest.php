@@ -306,7 +306,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets disputeId
      *
-     * @param string $disputeId The unique ID assigned by Antom to identify a dispute.  More information:  Maximum length: 64 characters
+     * @param }string $disputeId The unique ID assigned by Antom to identify a dispute.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets disputeEvidence
      *
-     * @param string $disputeEvidence The dispute defense document that you prepare for defending the dispute, which is encoded in the Base64 format.  More information:  Maximum length: 1000000 characters
+     * @param }string $disputeEvidence The dispute defense document that you prepare for defending the dispute, which is encoded in the Base64 format.  More information:  Maximum length: 1000000 characters
      *
      * @return self
      */

@@ -470,7 +470,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -494,7 +494,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request.  Note: This field is returned when resultCode is PAYMENT_IN_PROCESS.  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request.  Note: This field is returned when resultCode is PAYMENT_IN_PROCESS.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This field is returned when resultCode is PAYMENT_IN_PROCESS.  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This field is returned when resultCode is PAYMENT_IN_PROCESS.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -542,7 +542,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentAmount
      *
-     * @param \model\Amount|null $paymentAmount paymentAmount
+     * @param }\model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentData
      *
-     * @param string|null $paymentData Used by the Antom client SDK to render the checkout page. This parameter is returned if the merchant app has integrated Antom client SDK. After receiving the parameter, you can call the showPaymentSheet API of the Antom client SDK.  More information:  Maximum length: 20000 characters
+     * @param }string|null $paymentData Used by the Antom client SDK to render the checkout page. This parameter is returned if the merchant app has integrated Antom client SDK. After receiving the parameter, you can call the showPaymentSheet API of the Antom client SDK.  More information:  Maximum length: 20000 characters
      *
      * @return self
      */
@@ -590,7 +590,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets actualPaymentAmount
      *
-     * @param \model\Amount|null $actualPaymentAmount actualPaymentAmount
+     * @param }\model\Amount|null $actualPaymentAmount actualPaymentAmount
      *
      * @return self
      */
@@ -614,7 +614,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentQuote
      *
-     * @param \model\Quote|null $paymentQuote paymentQuote
+     * @param }\model\Quote|null $paymentQuote paymentQuote
      *
      * @return self
      */
@@ -638,7 +638,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentTime
      *
-     * @param string|null $paymentTime paymentTime
+     * @param }string|null $paymentTime paymentTime
      *
      * @return self
      */
@@ -662,7 +662,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentCreateTime
      *
-     * @param string|null $paymentCreateTime The date and time when the payment is created.  Note: This field is returned when resultCode is PAYMENT_IN_PROCESS.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $paymentCreateTime The date and time when the payment is created.  Note: This field is returned when resultCode is PAYMENT_IN_PROCESS.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -686,7 +686,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets authExpiryTime
      *
-     * @param string|null $authExpiryTime authExpiryTime
+     * @param }string|null $authExpiryTime authExpiryTime
      *
      * @return self
      */
@@ -710,7 +710,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets nonGuaranteeCouponValue
      *
-     * @param \model\Amount|null $nonGuaranteeCouponValue nonGuaranteeCouponValue
+     * @param }\model\Amount|null $nonGuaranteeCouponValue nonGuaranteeCouponValue
      *
      * @return self
      */
@@ -734,7 +734,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentActionForm
      *
-     * @param string|null $paymentActionForm paymentActionForm
+     * @param }string|null $paymentActionForm paymentActionForm
      *
      * @return self
      */
@@ -758,7 +758,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets pspCustomerInfo
      *
-     * @param \model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
+     * @param }\model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
      *
      * @return self
      */
@@ -782,7 +782,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets challengeActionForm
      *
-     * @param \model\ChallengeActionForm|null $challengeActionForm challengeActionForm
+     * @param }\model\ChallengeActionForm|null $challengeActionForm challengeActionForm
      *
      * @return self
      */
@@ -806,7 +806,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets redirectActionForm
      *
-     * @param \model\RedirectActionForm|null $redirectActionForm redirectActionForm
+     * @param }\model\RedirectActionForm|null $redirectActionForm redirectActionForm
      *
      * @return self
      */
@@ -830,7 +830,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets orderCodeForm
      *
-     * @param \model\OrderCodeForm|null $orderCodeForm orderCodeForm
+     * @param }\model\OrderCodeForm|null $orderCodeForm orderCodeForm
      *
      * @return self
      */
@@ -854,7 +854,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets grossSettlementAmount
      *
-     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param }\model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -878,7 +878,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets settlementQuote
      *
-     * @param \model\Quote|null $settlementQuote settlementQuote
+     * @param }\model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -902,7 +902,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -926,7 +926,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets normalUrl
      *
-     * @param string|null $normalUrl The URL that redirects users to a WAP or WEB page in the default browser or the embedded WebView.  Note: When the value of resultCode is ​PAYMENT_IN_PROCESS​, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
+     * @param }string|null $normalUrl The URL that redirects users to a WAP or WEB page in the default browser or the embedded WebView.  Note: When the value of resultCode is ​PAYMENT_IN_PROCESS​, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -950,7 +950,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets schemeUrl
      *
-     * @param string|null $schemeUrl The URL scheme that redirects users to open an app in an Android or iOS system when the target app is installed.  Note: When the value of resultCode is ​PAYMENT_IN_PROCESS​, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
+     * @param }string|null $schemeUrl The URL scheme that redirects users to open an app in an Android or iOS system when the target app is installed.  Note: When the value of resultCode is ​PAYMENT_IN_PROCESS​, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -974,7 +974,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets applinkUrl
      *
-     * @param string|null $applinkUrl The URL that redirects users to open an app when the target app is installed, or to open a WAP page when the target app is not installed. For Android, the URL is a Native App Link. For iOS, the URL is a Universal Link.  Note: When the value of resultCode is ​PAYMENT_IN_PROCESS​, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
+     * @param }string|null $applinkUrl The URL that redirects users to open an app when the target app is installed, or to open a WAP page when the target app is not installed. For Android, the URL is a Native App Link. For iOS, the URL is a Universal Link.  Note: When the value of resultCode is ​PAYMENT_IN_PROCESS​, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -998,7 +998,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets appIdentifier
      *
-     * @param string|null $appIdentifier Android package name, which is used by Android apps to open a cashier page.  Note: This field is returned when resultCode is ​PAYMENT_IN_PROCESS​ and terminalType is APP or WAP.
+     * @param }string|null $appIdentifier Android package name, which is used by Android apps to open a cashier page.  Note: This field is returned when resultCode is ​PAYMENT_IN_PROCESS​ and terminalType is APP or WAP.
      *
      * @return self
      */
@@ -1022,7 +1022,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentResultInfo
      *
-     * @param \model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
+     * @param }\model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
      *
      * @return self
      */
@@ -1046,7 +1046,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets acquirerInfo
      *
-     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param }\model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -1070,7 +1070,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets promotionResult
      *
-     * @param \model\PromotionResult[]|null $promotionResult Promotion result.
+     * @param }\model\PromotionResult[]|null $promotionResult Promotion result.
      *
      * @return self
      */

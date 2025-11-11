@@ -340,7 +340,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets vaultingRequestId
      *
-     * @param string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.    More information:  Maximum length: 64 characters
+     * @param }string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets normalUrl
      *
-     * @param string|null $normalUrl The URL that redirects users to a WAP or WEB page in the default browser or the embedded WebView.  Note:  When the value of result.resultStatus is S and the value of vaultingStatus is PROCESSING, one or more of the following URLs may be returned: schemeUrl, applinkUrl, and normalUrl.   When the value of paymentMethodType is CARD, the user is required to complete the 3DS authentication on the page accessed through this URL.   More information:  Maximum length: 2048 characters
+     * @param }string|null $normalUrl The URL that redirects users to a WAP or WEB page in the default browser or the embedded WebView.  Note:  When the value of result.resultStatus is S and the value of vaultingStatus is PROCESSING, one or more of the following URLs may be returned: schemeUrl, applinkUrl, and normalUrl.   When the value of paymentMethodType is CARD, the user is required to complete the 3DS authentication on the page accessed through this URL.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets schemeUrl
      *
-     * @param string|null $schemeUrl The URL scheme that redirects users to open an App in an Android or iOS system when the target App is installed.  Note: When the value of result.resultStatus is S and the value of vaultingStatus is PROCESSING, one or more of the following URLs may be returned: schemeUrl, applinkUrl, and normalUrl.    More information:  Maximum length: 2048 characters
+     * @param }string|null $schemeUrl The URL scheme that redirects users to open an App in an Android or iOS system when the target App is installed.  Note: When the value of result.resultStatus is S and the value of vaultingStatus is PROCESSING, one or more of the following URLs may be returned: schemeUrl, applinkUrl, and normalUrl.    More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets applinkUrl
      *
-     * @param string|null $applinkUrl The URL that redirects users to open an app when the target app is installed, or to open a WAP page when the target app is not installed. For Android, the URL is a Native App Link. For iOS, the URL is a Universal Link.  Note: When the value of result.resultStatus is S and the value of vaultingStatus is PROCESSING, one or more of the following URLs may be returned: schemeUrl, applinkUrl, and normalUrl.  More information:  Maximum length: 2048 characters
+     * @param }string|null $applinkUrl The URL that redirects users to open an app when the target app is installed, or to open a WAP page when the target app is not installed. For Android, the URL is a Native App Link. For iOS, the URL is a Universal Link.  Note: When the value of result.resultStatus is S and the value of vaultingStatus is PROCESSING, one or more of the following URLs may be returned: schemeUrl, applinkUrl, and normalUrl.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets vaultingStatus
      *
-     * @param string|null $vaultingStatus Indicates the payment method's vaulting status. Valid values are:  SUCCESS: indicates that the vaulting is successful.  FAIL: indicates that the vaulting failed. PROCESSING: indicates that the vaulting is under process.  This parameter is returned when the value of result.resultStatus is S.    More information:  Maximum length: 10 characters
+     * @param }string|null $vaultingStatus Indicates the payment method's vaulting status. Valid values are:  SUCCESS: indicates that the vaulting is successful.  FAIL: indicates that the vaulting failed. PROCESSING: indicates that the vaulting is under process.  This parameter is returned when the value of result.resultStatus is S.    More information:  Maximum length: 10 characters
      *
      * @return self
      */
@@ -484,7 +484,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets paymentMethodDetail
      *
-     * @param \model\PaymentMethodDetail|null $paymentMethodDetail paymentMethodDetail
+     * @param }\model\PaymentMethodDetail|null $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */

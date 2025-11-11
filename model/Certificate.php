@@ -316,7 +316,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets certificateType
      *
-     * @return \model\CertificateType
+     * @return string
      */
     public function getCertificateType()
     {
@@ -326,7 +326,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificateType
      *
-     * @param \model\CertificateType $certificateType certificateType
+     * @param }string $certificateType certificateType
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificateNo
      *
-     * @param string $certificateNo The unique identification number of the certificate.    More information:  Maximum length: 64 characters
+     * @param }string $certificateNo The unique identification number of the certificate.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets holderName
      *
-     * @param \model\UserName|null $holderName holderName
+     * @param }\model\UserName|null $holderName holderName
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fileKeys
      *
-     * @param string[]|null $fileKeys A list of the unique key values of attachment files. Maximum file size: 32MB.  The value of this parameter is obtained from the attachmentKey parameter in the submitAttachment API. Prior attachment submission using the submitAttachment API is required.  Specify this parameter when the value of merchantInfo.company.certificates.certificateType is ENTERPRISE_REGISTRATION and the value of merchantInfo.company.registeredAddress.region is AU, SG, HK, GB, MY, US or the company's registered region belongs to the European Union.   More information:  Maximum size: 10 elements
+     * @param }string[]|null $fileKeys A list of the unique key values of attachment files. Maximum file size: 32MB.  The value of this parameter is obtained from the attachmentKey parameter in the submitAttachment API. Prior attachment submission using the submitAttachment API is required.  Specify this parameter when the value of merchantInfo.company.certificates.certificateType is ENTERPRISE_REGISTRATION and the value of merchantInfo.company.registeredAddress.region is AU, SG, HK, GB, MY, US or the company's registered region belongs to the European Union.   More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificateAuthority
      *
-     * @param string|null $certificateAuthority The country that authorizes the certificate. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is US.    More information:  Maximum length: 64 characters
+     * @param }string|null $certificateAuthority The country that authorizes the certificate. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is US.    More information:  Maximum length: 64 characters
      *
      * @return self
      */

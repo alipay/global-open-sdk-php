@@ -320,7 +320,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets discountId
      *
-     * @param string|null $discountId discountId
+     * @param }string|null $discountId discountId
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets availableAmount
      *
-     * @param \model\Amount|null $availableAmount availableAmount
+     * @param }\model\Amount|null $availableAmount availableAmount
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets discountName
      *
-     * @param string|null $discountName discountName
+     * @param }string|null $discountName discountName
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets discountDescription
      *
-     * @param string|null $discountDescription discountDescription
+     * @param }string|null $discountDescription discountDescription
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets paymentMethodDetailMetadata
      *
-     * @param string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
+     * @param }string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
      *
      * @return self
      */

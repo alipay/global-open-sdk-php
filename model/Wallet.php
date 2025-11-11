@@ -320,7 +320,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountNo
      *
-     * @param string|null $accountNo accountNo
+     * @param }string|null $accountNo accountNo
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountHolderName
      *
-     * @param \model\UserName|null $accountHolderName accountHolderName
+     * @param }\model\UserName|null $accountHolderName accountHolderName
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets phoneNo
      *
-     * @param string|null $phoneNo phoneNo
+     * @param }string|null $phoneNo phoneNo
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets email
      *
-     * @param string|null $email email
+     * @param }string|null $email email
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets billingAddress
      *
-     * @param \model\Address|null $billingAddress billingAddress
+     * @param }\model\Address|null $billingAddress billingAddress
      *
      * @return self
      */

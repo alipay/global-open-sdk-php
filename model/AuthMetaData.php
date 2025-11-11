@@ -299,7 +299,7 @@ class AuthMetaData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountHolderName
      *
-     * @param string|null $accountHolderName accountHolderName
+     * @param }string|null $accountHolderName accountHolderName
      *
      * @return self
      */
@@ -323,7 +323,7 @@ class AuthMetaData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountHolderCertNo
      *
-     * @param string|null $accountHolderCertNo accountHolderCertNo
+     * @param }string|null $accountHolderCertNo accountHolderCertNo
      *
      * @return self
      */

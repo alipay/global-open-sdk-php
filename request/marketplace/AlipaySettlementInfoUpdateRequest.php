@@ -326,7 +326,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
     /**
      * Sets updateRequestId
      *
-     * @param string $updateRequestId The unique ID that is assigned by the marketplace to identify an update request for settlement information. Alipay uses this field for idempotence control.   More information:  This field is an API idempotency field.For registration requests that are initiated with the same value of registrationRequestId and reach a final status (resultStatus = S or F), the same result is to be returned for the request. Maximum length: 64 characters
+     * @param }string $updateRequestId The unique ID that is assigned by the marketplace to identify an update request for settlement information. Alipay uses this field for idempotence control.   More information:  This field is an API idempotency field.For registration requests that are initiated with the same value of registrationRequestId and reach a final status (resultStatus = S or F), the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
     /**
      * Sets referenceMerchantId
      *
-     * @param string $referenceMerchantId The unique ID that is assigned by the marketplace to identify the seller.    More information:  Maximum length: 64 characters
+     * @param }string $referenceMerchantId The unique ID that is assigned by the marketplace to identify the seller.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
     /**
      * Sets settlementCurrency
      *
-     * @param string $settlementCurrency The seller's settlement currency that is specified in the settlement contract. The value of this parameter is a 3-letter currency code that follows the ISO 4217 standard.    More information:  Maximum length: 3 characters
+     * @param }string $settlementCurrency The seller's settlement currency that is specified in the settlement contract. The value of this parameter is a 3-letter currency code that follows the ISO 4217 standard.    More information:  Maximum length: 3 characters
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
     /**
      * Sets settlementBankAccount
      *
-     * @param \model\SettlementBankAccount $settlementBankAccount settlementBankAccount
+     * @param }\model\SettlementBankAccount $settlementBankAccount settlementBankAccount
      *
      * @return self
      */

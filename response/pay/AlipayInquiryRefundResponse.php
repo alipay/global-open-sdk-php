@@ -351,7 +351,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundId
      *
-     * @param string|null $refundId The unique ID assigned by Antom to identify a refund. A one-to-one correspondence between refundId and refundRequestId exists.  Note: This field is null when the refund record cannot be found, or result.resultStatus is F or U.
+     * @param }string|null $refundId The unique ID assigned by Antom to identify a refund. A one-to-one correspondence between refundId and refundRequestId exists.  Note: This field is null when the refund record cannot be found, or result.resultStatus is F or U.
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundRequestId
      *
-     * @param string|null $refundRequestId The unique ID assigned by the merchant to identify a refund request.  Note: This field is null when the refund record cannot be found, or result.resultStatus is F or U.   More information:  Maximum length: 64 characters
+     * @param }string|null $refundRequestId The unique ID assigned by the merchant to identify a refund request.  Note: This field is null when the refund record cannot be found, or result.resultStatus is F or U.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundAmount
      *
-     * @param \model\Amount|null $refundAmount refundAmount
+     * @param }\model\Amount|null $refundAmount refundAmount
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets refundStatus
      *
-     * @return \model\TransactionStatusType|null
+     * @return string|null
      */
     public function getRefundStatus()
     {
@@ -447,7 +447,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundStatus
      *
-     * @param \model\TransactionStatusType|null $refundStatus refundStatus
+     * @param }string|null $refundStatus refundStatus
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundTime
      *
-     * @param string|null $refundTime The date and time when the refund reaches a final state of success on the Antom side, not the Alipay+ Mobile Payment Provider (Alipay+ payment methods) side.   Note: This field is returned when the value of refundStatus is SUCCESS.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $refundTime The date and time when the refund reaches a final state of success on the Antom side, not the Alipay+ Mobile Payment Provider (Alipay+ payment methods) side.   Note: This field is returned when the value of refundStatus is SUCCESS.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets grossSettlementAmount
      *
-     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param }\model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets settlementQuote
      *
-     * @param \model\Quote|null $settlementQuote settlementQuote
+     * @param }\model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -543,7 +543,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets acquirerInfo
      *
-     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param }\model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */

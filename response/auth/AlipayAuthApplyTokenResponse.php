@@ -344,7 +344,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets accessToken
      *
-     * @param string|null $accessToken The access token that is used to access the corresponding scope of the user resource.   Note: This field is returned when the API is called successfully.  More information:  Maximum length: 128 characters
+     * @param }string|null $accessToken The access token that is used to access the corresponding scope of the user resource.   Note: This field is returned when the API is called successfully.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets accessTokenExpiryTime
      *
-     * @param string|null $accessTokenExpiryTime The time after which the access token expires. After the access token expires, the access token cannot be used to deduct money from the user's account.   Note: This field is returned when accessToken is returned.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $accessTokenExpiryTime The time after which the access token expires. After the access token expires, the access token cannot be used to deduct money from the user's account.   Note: This field is returned when accessToken is returned.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets refreshToken
      *
-     * @param string|null $refreshToken The refresh token that is used to exchange for a new access token when the access token is about to expire.   Note: This field is returned when the wallet supports refreshing the token. If this field is not returned, it indicates that the access token has a quite long valid period.  More information:  Maximum length: 128 characters
+     * @param }string|null $refreshToken The refresh token that is used to exchange for a new access token when the access token is about to expire.   Note: This field is returned when the wallet supports refreshing the token. If this field is not returned, it indicates that the access token has a quite long valid period.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -440,7 +440,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets refreshTokenExpiryTime
      *
-     * @param string|null $refreshTokenExpiryTime The time after which the refresh token expires. After the refresh token expires, the refresh token cannot be used to retrieve a new access token.   Note: This field is returned when refreshToken is returned.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $refreshTokenExpiryTime The time after which the refresh token expires. After the refresh token expires, the refresh token cannot be used to retrieve a new access token.   Note: This field is returned when refreshToken is returned.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo Extended information.  Note: This field is returned when extended information exists.  More information:  Maximum length: 2048 characters
+     * @param }string|null $extendInfo Extended information.  Note: This field is returned when extended information exists.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -488,7 +488,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets userLoginId
      *
-     * @param string|null $userLoginId The login ID that the user used to register in the wallet. The login ID can be the user's email address or phone number, which is masked when returned to Alipay+ payment methods . This field can inform the merchant of the users who are registered.  Note: This field is returned when result.resultCode is SUCCESS and the value of the scopes field in the consult API is AGREEMENT_PAY.  More information:  Maximum length: 64 characters
+     * @param }string|null $userLoginId The login ID that the user used to register in the wallet. The login ID can be the user's email address or phone number, which is masked when returned to Alipay+ payment methods . This field can inform the merchant of the users who are registered.  Note: This field is returned when result.resultCode is SUCCESS and the value of the scopes field in the consult API is AGREEMENT_PAY.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -512,7 +512,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pspCustomerInfo
      *
-     * @param \model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
+     * @param }\model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
      *
      * @return self
      */

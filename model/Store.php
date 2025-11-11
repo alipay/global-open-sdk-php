@@ -365,7 +365,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceStoreId
      *
-     * @param string $referenceStoreId referenceStoreId
+     * @param }string $referenceStoreId referenceStoreId
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeName
      *
-     * @param string $storeName storeName
+     * @param }string $storeName storeName
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeMCC
      *
-     * @param string $storeMCC storeMCC
+     * @param }string $storeMCC storeMCC
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeDisplayName
      *
-     * @param string $storeDisplayName storeDisplayName
+     * @param }string $storeDisplayName storeDisplayName
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeTerminalId
      *
-     * @param string $storeTerminalId storeTerminalId
+     * @param }string $storeTerminalId storeTerminalId
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeOperatorId
      *
-     * @param string $storeOperatorId storeOperatorId
+     * @param }string $storeOperatorId storeOperatorId
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeAddress
      *
-     * @param \model\Address $storeAddress storeAddress
+     * @param }\model\Address $storeAddress storeAddress
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storePhoneNo
      *
-     * @param string $storePhoneNo storePhoneNo
+     * @param }string $storePhoneNo storePhoneNo
      *
      * @return self
      */

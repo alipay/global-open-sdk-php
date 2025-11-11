@@ -344,7 +344,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionUpdateRequestId
      *
-     * @param string $subscriptionUpdateRequestId The unique ID assigned by a merchant to identify a subscription update request.  More information:  Maximum length: 64 characters
+     * @param }string $subscriptionUpdateRequestId The unique ID assigned by a merchant to identify a subscription update request.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The unique ID assigned by Antom to identify a subscription.   More information:  Maximum length: 64 characters
+     * @param }string $subscriptionId The unique ID assigned by Antom to identify a subscription.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionDescription
      *
-     * @param string|null $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.  More information:  Maximum length: 256 characters
+     * @param }string|null $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets periodRule
      *
-     * @param \model\PeriodRule|null $periodRule periodRule
+     * @param }\model\PeriodRule|null $periodRule periodRule
      *
      * @return self
      */
@@ -440,7 +440,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmount
      *
-     * @param \model\Amount|null $paymentAmount paymentAmount
+     * @param }\model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionEndTime
      *
-     * @param string|null $subscriptionEndTime The date and time when the subscription ends.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $subscriptionEndTime The date and time when the subscription ends.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -488,7 +488,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets orderInfo
      *
-     * @param \model\OrderInfo $orderInfo orderInfo
+     * @param }\model\OrderInfo $orderInfo orderInfo
      *
      * @return self
      */

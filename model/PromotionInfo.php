@@ -299,7 +299,7 @@ class PromotionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promotionType
      *
-     * @return \model\PromotionType
+     * @return string
      */
     public function getPromotionType()
     {
@@ -309,7 +309,7 @@ class PromotionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotionType
      *
-     * @param \model\PromotionType $promotionType promotionType
+     * @param }string $promotionType promotionType
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class PromotionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discount
      *
-     * @param \model\Discount|null $discount discount
+     * @param }\model\Discount|null $discount discount
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class PromotionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interestFree
      *
-     * @param \model\InterestFree|null $interestFree interestFree
+     * @param }\model\InterestFree|null $interestFree interestFree
      *
      * @return self
      */

@@ -316,7 +316,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets settlementRequestId
      *
-     * @param string $settlementRequestId The unique ID that is assigned by the marketplace to identify a settlement request. Antom uses this field for idempotence control.   More information:  This field is an API idempotency field.For registration requests that are initiated with the same value of settlementRequestId and reach a final status (resultStatus = S or F), the same result is to be returned for the request. Maximum length: 64 characters
+     * @param }string $settlementRequestId The unique ID that is assigned by the marketplace to identify a settlement request. Antom uses this field for idempotence control.   More information:  This field is an API idempotency field.For registration requests that are initiated with the same value of settlementRequestId and reach a final status (resultStatus = S or F), the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets paymentId
      *
-     * @param string $paymentId The unique ID that is assigned by Antom to identify a payment. The value of this parameter is returned through the same parameter in the pay (Cashier Payment) API.    More information:  Maximum length: 64 characters
+     * @param }string $paymentId The unique ID that is assigned by Antom to identify a payment. The value of this parameter is returned through the same parameter in the pay (Cashier Payment) API.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets settlementDetails
      *
-     * @param \model\SettlementDetail[] $settlementDetails The settlement details for a payment.    More information:  Maximum length: 20 characters
+     * @param }\model\SettlementDetail[] $settlementDetails The settlement details for a payment.    More information:  Maximum length: 20 characters
      *
      * @return self
      */

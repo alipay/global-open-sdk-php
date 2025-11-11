@@ -302,7 +302,7 @@ class Logo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets logoName
      *
-     * @param string $logoName The logo name of the card brand. See the Card brands to check the valid values.   More information:  Maximum length: 12 characters
+     * @param }string $logoName The logo name of the card brand. See the Card brands to check the valid values.   More information:  Maximum length: 12 characters
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class Logo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets logoUrl
      *
-     * @param string|null $logoUrl The logo URL of the card brand.    More information:  Maximum length: 2048 characters
+     * @param }string|null $logoUrl The logo URL of the card brand.    More information:  Maximum length: 2048 characters
      *
      * @return self
      */

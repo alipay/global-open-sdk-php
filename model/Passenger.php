@@ -306,7 +306,7 @@ class Passenger  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets passengerName
      *
-     * @param \model\UserName|null $passengerName passengerName
+     * @param }\model\UserName|null $passengerName passengerName
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class Passenger  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets passengerEmail
      *
-     * @param string|null $passengerEmail passengerEmail
+     * @param }string|null $passengerEmail passengerEmail
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class Passenger  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets passengerPhoneNo
      *
-     * @param string|null $passengerPhoneNo passengerPhoneNo
+     * @param }string|null $passengerPhoneNo passengerPhoneNo
      *
      * @return self
      */

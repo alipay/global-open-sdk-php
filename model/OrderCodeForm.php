@@ -319,7 +319,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodType
      *
-     * @param string|null $paymentMethodType paymentMethodType
+     * @param }string|null $paymentMethodType paymentMethodType
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expireTime
      *
-     * @param string $expireTime Expiry time of the order code information.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string $expireTime Expiry time of the order code information.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeDetails
      *
-     * @param \model\CodeDetail[] $codeDetails Details about the code.  More information:  Maximum size: 4 elements
+     * @param }\model\CodeDetail[] $codeDetails Details about the code.  More information:  Maximum size: 4 elements
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo Extended information.  Note: This field is returned when extended information exists.  More information:  Maximum length: 2048 characters
+     * @param }string|null $extendInfo Extended information.  Note: This field is returned when extended information exists.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */

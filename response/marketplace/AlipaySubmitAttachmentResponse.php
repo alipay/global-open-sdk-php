@@ -316,7 +316,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets submitAttachmentRequestId
      *
-     * @param string|null $submitAttachmentRequestId The unique ID assigned by the marketplace to identify an attachment submission request.  This parameter is returned when the value of result.resultStatus is S.  More information:  Maximum length: 32 characters
+     * @param }string|null $submitAttachmentRequestId The unique ID assigned by the marketplace to identify an attachment submission request.  This parameter is returned when the value of result.resultStatus is S.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Gets attachmentType
      *
-     * @return \model\AttachmentType|null
+     * @return string|null
      */
     public function getAttachmentType()
     {
@@ -364,7 +364,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets attachmentType
      *
-     * @param \model\AttachmentType|null $attachmentType attachmentType
+     * @param }string|null $attachmentType attachmentType
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets attachmentKey
      *
-     * @param string|null $attachmentKey The unique key value of the attachment that you submit. The value of this parameter is used by the fileKeys or fileKey parameters in the register API.  This parameter is returned when the value of result.resultStatus is S.  More information:  Maximum length: 256 characters
+     * @param }string|null $attachmentKey The unique key value of the attachment that you submit. The value of this parameter is used by the fileKeys or fileKey parameters in the register API.  This parameter is returned when the value of result.resultStatus is S.  More information:  Maximum length: 256 characters
      *
      * @return self
      */

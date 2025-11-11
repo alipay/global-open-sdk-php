@@ -295,7 +295,7 @@ class RiskEnv  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ipAddressType
      *
-     * @param string $ipAddressType The type of an IP address
+     * @param }string $ipAddressType The type of an IP address
      *
      * @return self
      */

@@ -305,7 +305,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets codeValueType
      *
-     * @return \model\CodeValueType
+     * @return string
      */
     public function getCodeValueType()
     {
@@ -315,7 +315,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeValueType
      *
-     * @param \model\CodeValueType $codeValueType codeValueType
+     * @param }string $codeValueType codeValueType
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeValue
      *
-     * @param string $codeValue The value of the code.    If the value of displayType is set toSMALLIMAGE, MIDDLEIMAGE, or BIGIMAGE, this parameter indicates a plain or Base64-encoded image URL. If the value of displayType is set to TEXT, this parameter indicates a text string.   More information:  Maximum length: 2048 characters
+     * @param }string $codeValue The value of the code.    If the value of displayType is set toSMALLIMAGE, MIDDLEIMAGE, or BIGIMAGE, this parameter indicates a plain or Base64-encoded image URL. If the value of displayType is set to TEXT, this parameter indicates a text string.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets displayType
      *
-     * @return \model\DisplayType
+     * @return string
      */
     public function getDisplayType()
     {
@@ -363,7 +363,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets displayType
      *
-     * @param \model\DisplayType $displayType displayType
+     * @param }string $displayType displayType
      *
      * @return self
      */

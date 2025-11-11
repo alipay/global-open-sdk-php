@@ -305,7 +305,7 @@ class DeliveryEstimateInfo  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets unit
      *
-     * @param string $unit Units for the longest shipping time of logistics services. The valid values include:  YEAR: Indicates that the shortest shipping time unit for logistics services is in years. MONTH: Indicates that the shortest shipping time unit for logistics services is in months. DAY: Indicates that the shortest shipping time unit for logistics services is in days. HOUR: Indicates that the shortest shipping time unit for logistics services is in hours. MINUTE: Indicates that the shortest shipping time unit for logistics services is in minutes. SECOND: Indicates that the shortest shipping time unit for logistics services is in seconds. More information:  Maximum length: 16 characters
+     * @param }string $unit Units for the longest shipping time of logistics services. The valid values include:  YEAR: Indicates that the shortest shipping time unit for logistics services is in years. MONTH: Indicates that the shortest shipping time unit for logistics services is in months. DAY: Indicates that the shortest shipping time unit for logistics services is in days. HOUR: Indicates that the shortest shipping time unit for logistics services is in hours. MINUTE: Indicates that the shortest shipping time unit for logistics services is in minutes. SECOND: Indicates that the shortest shipping time unit for logistics services is in seconds. More information:  Maximum length: 16 characters
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class DeliveryEstimateInfo  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value
      *
-     * @param int $value Estimated value for the longest shipping time of logistics services.  More information:  Value range: [0, +∞)
+     * @param }int $value Estimated value for the longest shipping time of logistics services.  More information:  Value range: [0, +∞)
      *
      * @return self
      */

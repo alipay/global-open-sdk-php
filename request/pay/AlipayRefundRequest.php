@@ -365,7 +365,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundRequestId
      *
-     * @param string $refundRequestId The unique ID assigned by the merchant to identify a refund request.  More information:  This field is an API idempotency field.The merchant uses the refundRequestId field for idempotency control. For payment requests that are initiated with the same value of refundRequestId and reach a final status (S or F), the same result is to be returned for the request. Maximum length: 64 characters
+     * @param }string $refundRequestId The unique ID assigned by the merchant to identify a refund request.  More information:  This field is an API idempotency field.The merchant uses the refundRequestId field for idempotency control. For payment requests that are initiated with the same value of refundRequestId and reach a final status (S or F), the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets paymentId
      *
-     * @param string $paymentId The unique ID assigned by Antom for the original payment to be refunded.  More information:  Maximum length: 64 characters
+     * @param }string $paymentId The unique ID assigned by Antom for the original payment to be refunded.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets referenceRefundId
      *
-     * @param string|null $referenceRefundId The unique ID to identify a refund, which is assigned by the merchant that directly provides services or goods to the customer.  Note: Specify this field if this value is needed for internal use or reconciliation.  More information:  Maximum length: 64 characters
+     * @param }string|null $referenceRefundId The unique ID to identify a refund, which is assigned by the merchant that directly provides services or goods to the customer.  Note: Specify this field if this value is needed for internal use or reconciliation.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundAmount
      *
-     * @param \model\Amount $refundAmount refundAmount
+     * @param }\model\Amount $refundAmount refundAmount
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundReason
      *
-     * @param string|null $refundReason The refund reason.  Note: Specify this field if you want to provide the refund reason to the user and payment method.  More information:  Maximum length: 256 characters
+     * @param }string|null $refundReason The refund reason.  Note: Specify this field if you want to provide the refund reason to the user and payment method.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundNotifyUrl
      *
-     * @param string|null $refundNotifyUrl The URL that is used to receive the refund result notification. The URL must be either specified in the request or set in Antom Dashboard.  Note: Specify this field if you want to receive an asynchronous notification of the refund result. If the refund notification URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.  More information:  Maximum length: 1024 characters
+     * @param }string|null $refundNotifyUrl The URL that is used to receive the refund result notification. The URL must be either specified in the request or set in Antom Dashboard.  Note: Specify this field if you want to receive an asynchronous notification of the refund result. If the refund notification URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.  More information:  Maximum length: 1024 characters
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets isAsyncRefund
      *
-     * @param bool|null $isAsyncRefund isAsyncRefund
+     * @param }bool|null $isAsyncRefund isAsyncRefund
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundDetails
      *
-     * @param \model\RefundDetail[]|null $refundDetails refundDetails
+     * @param }\model\RefundDetail[]|null $refundDetails refundDetails
      *
      * @return self
      */
@@ -581,7 +581,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundSourceAccountNo
      *
-     * @param string|null $refundSourceAccountNo refundSourceAccountNo
+     * @param }string|null $refundSourceAccountNo refundSourceAccountNo
      *
      * @return self
      */

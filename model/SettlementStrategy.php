@@ -292,7 +292,7 @@ class SettlementStrategy  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets settlementCurrency
      *
-     * @param string|null $settlementCurrency The ISO currency code of the currency that the merchant wants to be settled against. The field is required if the merchant signed up for multiple currencies to settle.   More information:  Maximum length: 3 characters
+     * @param }string|null $settlementCurrency The ISO currency code of the currency that the merchant wants to be settled against. The field is required if the merchant signed up for multiple currencies to settle.   More information:  Maximum length: 3 characters
      *
      * @return self
      */

@@ -334,7 +334,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceBuyerId
      *
-     * @param string|null $referenceBuyerId The unique ID to identify the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
+     * @param }string|null $referenceBuyerId The unique ID to identify the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerName
      *
-     * @param \model\UserName|null $buyerName buyerName
+     * @param }\model\UserName|null $buyerName buyerName
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerPhoneNo
      *
-     * @param string|null $buyerPhoneNo The mobile phone number of the buyer.  Specify this parameter when one of the following conditions is met:  You require risk control. The value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 24 characters
+     * @param }string|null $buyerPhoneNo The mobile phone number of the buyer.  Specify this parameter when one of the following conditions is met:  You require risk control. The value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 24 characters
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerEmail
      *
-     * @param string|null $buyerEmail The email of the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
+     * @param }string|null $buyerEmail The email of the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerRegistrationTime
      *
-     * @param string|null $buyerRegistrationTime The time when the buyer registered your account. Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 64 characters The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $buyerRegistrationTime The time when the buyer registered your account. Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.    More information:  Maximum length: 64 characters The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isAccountVerified
      *
-     * @param bool|null $isAccountVerified isAccountVerified
+     * @param }bool|null $isAccountVerified isAccountVerified
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets successfulOrderCount
      *
-     * @param int|null $successfulOrderCount successfulOrderCount
+     * @param }int|null $successfulOrderCount successfulOrderCount
      *
      * @return self
      */

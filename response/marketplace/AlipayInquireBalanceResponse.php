@@ -305,7 +305,7 @@ class AlipayInquireBalanceResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class AlipayInquireBalanceResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets accountBalances
      *
-     * @param \model\AccountBalance[] $accountBalances The list of balance accounts assigned by Alipay.  More information:Maximum length: 64 characters
+     * @param }\model\AccountBalance[] $accountBalances The list of balance accounts assigned by Alipay.  More information:Maximum length: 64 characters
      *
      * @return self
      */

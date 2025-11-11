@@ -295,7 +295,7 @@ class AlipaySubscriptionCancelResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */

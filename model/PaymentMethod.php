@@ -330,7 +330,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodType
      *
-     * @param string $paymentMethodType The payment method that is used to accept the subscription payment. See Payment methods to check the valid values.    Note: Card payment method is not currently supported when you work with Antom as your acquirer.  More information:  Maximum length: 64 characters
+     * @param }string $paymentMethodType The payment method that is used to accept the subscription payment. See Payment methods to check the valid values.    Note: Card payment method is not currently supported when you work with Antom as your acquirer.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodId
      *
-     * @param string|null $paymentMethodId The unique ID that is used to identify a payment method.  Pass the corresponding token to this field when the user has a bound payment method.  More information:  Maximum length: 128 characters
+     * @param }string|null $paymentMethodId The unique ID that is used to identify a payment method.  Pass the corresponding token to this field when the user has a bound payment method.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -378,7 +378,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodMetaData
      *
-     * @param array<string,object>|null $paymentMethodMetaData paymentMethodMetaData
+     * @param }array<string,object>|null $paymentMethodMetaData paymentMethodMetaData
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerId
      *
-     * @param string|null $customerId customerId
+     * @param }string|null $customerId customerId
      *
      * @return self
      */
@@ -426,7 +426,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -450,7 +450,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets requireIssuerAuthentication
      *
-     * @param bool|null $requireIssuerAuthentication requireIssuerAuthentication
+     * @param }bool|null $requireIssuerAuthentication requireIssuerAuthentication
      *
      * @return self
      */

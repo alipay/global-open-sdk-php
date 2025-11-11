@@ -326,7 +326,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets registrationRequestId
      *
-     * @param string $registrationRequestId The unique ID that is assigned by the marketplace to identify a registration request. Alipay uses this field for idempotence control.  More information:  This field is an API idempotency field.For registration requests that are initiated with the same value of registrationRequestId and reach a final status (resultStatus = S or F), the same result is to be returned for the request. Maximum length: 64 characters
+     * @param }string $registrationRequestId The unique ID that is assigned by the marketplace to identify a registration request. Alipay uses this field for idempotence control.  More information:  This field is an API idempotency field.For registration requests that are initiated with the same value of registrationRequestId and reach a final status (resultStatus = S or F), the same result is to be returned for the request. Maximum length: 64 characters
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets settlementInfos
      *
-     * @param \model\SettlementInfo[] $settlementInfos The list of sub-merchants' settlement information. One settlement currency corresponds to one settlement bank account.  More information:  Maximum size: 10 elements
+     * @param }\model\SettlementInfo[] $settlementInfos The list of sub-merchants' settlement information. One settlement currency corresponds to one settlement bank account.  More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets merchantInfo
      *
-     * @param \model\MerchantInfo $merchantInfo merchantInfo
+     * @param }\model\MerchantInfo $merchantInfo merchantInfo
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets paymentMethods
      *
-     * @param \model\PaymentMethod[] $paymentMethods The payment method that is used to collect the payment by the merchant or acquirer. The payment method must be already supportd by the platform merchant before they can be assigned for sub-merchants.  More information:  Maximum length: 100 characters
+     * @param }\model\PaymentMethod[] $paymentMethods The payment method that is used to collect the payment by the merchant or acquirer. The payment method must be already supportd by the platform merchant before they can be assigned for sub-merchants.  More information:  Maximum length: 100 characters
      *
      * @return self
      */

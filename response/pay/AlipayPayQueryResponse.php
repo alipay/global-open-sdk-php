@@ -491,7 +491,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paymentStatus
      *
-     * @return \model\TransactionStatusType|null
+     * @return string|null
      */
     public function getPaymentStatus()
     {
@@ -515,7 +515,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentStatus
      *
-     * @param \model\TransactionStatusType|null $paymentStatus paymentStatus
+     * @param }string|null $paymentStatus paymentStatus
      *
      * @return self
      */
@@ -539,7 +539,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentResultCode
      *
-     * @param string|null $paymentResultCode The result code for different payment statuses. Possible payment result codes are listed in the Payment result codes table on this page.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentResultCode The result code for different payment statuses. Possible payment result codes are listed in the Payment result codes table on this page.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -563,7 +563,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentResultMessage
      *
-     * @param string|null $paymentResultMessage The result message that explains the payment result code.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 256 characters
+     * @param }string|null $paymentResultMessage The result message that explains the payment result code.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -587,7 +587,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -611,7 +611,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -635,7 +635,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets authPaymentId
      *
-     * @param string|null $authPaymentId authPaymentId
+     * @param }string|null $authPaymentId authPaymentId
      *
      * @return self
      */
@@ -659,7 +659,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentAmount
      *
-     * @param \model\Amount|null $paymentAmount paymentAmount
+     * @param }\model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -683,7 +683,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets actualPaymentAmount
      *
-     * @param \model\Amount|null $actualPaymentAmount actualPaymentAmount
+     * @param }\model\Amount|null $actualPaymentAmount actualPaymentAmount
      *
      * @return self
      */
@@ -707,7 +707,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentQuote
      *
-     * @param \model\Quote|null $paymentQuote paymentQuote
+     * @param }\model\Quote|null $paymentQuote paymentQuote
      *
      * @return self
      */
@@ -731,7 +731,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets authExpiryTime
      *
-     * @param string|null $authExpiryTime The expiration date and time of the authorization payment. You cannot capture the payment after this time.  This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD.  More information about this field:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $authExpiryTime The expiration date and time of the authorization payment. You cannot capture the payment after this time.  This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD.  More information about this field:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -755,7 +755,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentCreateTime
      *
-     * @param string|null $paymentCreateTime The date and time when the payment is created.   Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $paymentCreateTime The date and time when the payment is created.   Note: This field is returned when the API is called successfully (the value of result.resultStatus is S).  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -779,7 +779,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentTime
      *
-     * @param string|null $paymentTime The date and time when the payment reaches a final state of success.  Note: This field is returned only when the payment reaches a final state of success (the value of paymentStatus is SUCCESS).   More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $paymentTime The date and time when the payment reaches a final state of success.  Note: This field is returned only when the payment reaches a final state of success (the value of paymentStatus is SUCCESS).   More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -803,7 +803,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets nonGuaranteeCouponAmount
      *
-     * @param \model\Amount|null $nonGuaranteeCouponAmount nonGuaranteeCouponAmount
+     * @param }\model\Amount|null $nonGuaranteeCouponAmount nonGuaranteeCouponAmount
      *
      * @return self
      */
@@ -827,7 +827,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets pspCustomerInfo
      *
-     * @param \model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
+     * @param }\model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
      *
      * @return self
      */
@@ -851,7 +851,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets redirectActionForm
      *
-     * @param \model\RedirectActionForm|null $redirectActionForm redirectActionForm
+     * @param }\model\RedirectActionForm|null $redirectActionForm redirectActionForm
      *
      * @return self
      */
@@ -875,7 +875,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cardInfo
      *
-     * @param \model\CardInfo|null $cardInfo cardInfo
+     * @param }\model\CardInfo|null $cardInfo cardInfo
      *
      * @return self
      */
@@ -899,7 +899,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets acquirerReferenceNo
      *
-     * @param string|null $acquirerReferenceNo The unique ID assigned by the non-Antom acquirer for the transaction.    More information:  Maximum length: 64 characters
+     * @param }string|null $acquirerReferenceNo The unique ID assigned by the non-Antom acquirer for the transaction.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -923,7 +923,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -947,7 +947,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets transactions
      *
-     * @param \model\Transaction[]|null $transactions Information about the subsequent action against a transaction.  Note: This parameter is returned when a refund or a capture against the transaction exists.
+     * @param }\model\Transaction[]|null $transactions Information about the subsequent action against a transaction.  Note: This parameter is returned when a refund or a capture against the transaction exists.
      *
      * @return self
      */
@@ -971,7 +971,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets customsDeclarationAmount
      *
-     * @param \model\Amount|null $customsDeclarationAmount customsDeclarationAmount
+     * @param }\model\Amount|null $customsDeclarationAmount customsDeclarationAmount
      *
      * @return self
      */
@@ -995,7 +995,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets grossSettlementAmount
      *
-     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param }\model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -1019,7 +1019,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets settlementQuote
      *
-     * @param \model\Quote|null $settlementQuote settlementQuote
+     * @param }\model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -1043,7 +1043,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentResultInfo
      *
-     * @param \model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
+     * @param }\model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
      *
      * @return self
      */
@@ -1067,7 +1067,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets acquirerInfo
      *
-     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param }\model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -1091,7 +1091,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId merchantAccountId
+     * @param }string|null $merchantAccountId merchantAccountId
      *
      * @return self
      */
@@ -1115,7 +1115,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets promotionResults
      *
-     * @param \model\PromotionResult[]|null $promotionResults Promotion result.  Note: This parameter is returned when the buyer applied a promotion while placing an order.
+     * @param }\model\PromotionResult[]|null $promotionResults Promotion result.  Note: This parameter is returned when the buyer applied a promotion while placing an order.
      *
      * @return self
      */
@@ -1139,7 +1139,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets earliestSettlementTime
      *
-     * @param string|null $earliestSettlementTime earliestSettlementTime
+     * @param }string|null $earliestSettlementTime earliestSettlementTime
      *
      * @return self
      */
@@ -1163,7 +1163,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentMethodType
      *
-     * @param string|null $paymentMethodType The payment method type that is included in payment method options. See Payment methods to check the valid values.   Note: This field will be returned when selecting the Antom Chechkout Page integration.  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentMethodType The payment method type that is included in payment method options. See Payment methods to check the valid values.   Note: This field will be returned when selecting the Antom Chechkout Page integration.  More information:  Maximum length: 64 characters
      *
      * @return self
      */

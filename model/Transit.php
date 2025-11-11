@@ -296,7 +296,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transitType
      *
-     * @return \model\TransitType|null
+     * @return string|null
      */
     public function getTransitType()
     {
@@ -306,7 +306,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transitType
      *
-     * @param \model\TransitType|null $transitType transitType
+     * @param }string|null $transitType transitType
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legs
      *
-     * @param \model\Leg[]|null $legs Information about sections of the trip, including departure time, arrival time, departure address, arrival address, transportation company name, carrier code and service type.  More information:  Maximum size: 10 elements
+     * @param }\model\Leg[]|null $legs Information about sections of the trip, including departure time, arrival time, departure address, arrival address, transportation company name, carrier code and service type.  More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets passengers
      *
-     * @param \model\Passenger[]|null $passengers Information about the passenger of the trip, including the passenger names, passenger email and phone number.  More information:  Maximum size: 100 elements
+     * @param }\model\Passenger[]|null $passengers Information about the passenger of the trip, including the passenger names, passenger email and phone number.  More information:  Maximum size: 100 elements
      *
      * @return self
      */

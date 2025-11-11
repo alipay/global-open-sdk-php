@@ -316,7 +316,7 @@ class AlipayPayCancelResponse  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipayPayCancelResponse  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This field is returned when the cancellation succeeds (the value of result.resultStatus is S).   More information:  Maximum length: 64 characters
+     * @param }string|null $paymentId The unique ID that is assigned by Antom to identify a payment.  Note: This field is returned when the cancellation succeeds (the value of result.resultStatus is S).   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipayPayCancelResponse  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request.   Note: This field is returned when the cancellation succeeds (the value of result.resultStatus is S).   More information:  Maximum length: 64 characters
+     * @param }string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request.   Note: This field is returned when the cancellation succeeds (the value of result.resultStatus is S).   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayPayCancelResponse  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cancelTime
      *
-     * @param string|null $cancelTime The actual execution completion time of the payment cancellation process, which is the date and time when the payment cancellation succeeds.  Note: This field is returned when the cancellation succeeds (the value of result.resultStatus is S).  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $cancelTime The actual execution completion time of the payment cancellation process, which is the date and time when the payment cancellation succeeds.  Note: This field is returned when the cancellation succeeds (the value of result.resultStatus is S).  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */

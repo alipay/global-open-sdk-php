@@ -323,7 +323,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets schemeUrl
      *
-     * @param string|null $schemeUrl The URL scheme that redirects users to open an app in an Android or iOS system when the target app is installed.  Note: When the value of result.resultCode is S, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
+     * @param }string|null $schemeUrl The URL scheme that redirects users to open an app in an Android or iOS system when the target app is installed.  Note: When the value of result.resultCode is S, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets applinkUrl
      *
-     * @param string|null $applinkUrl The URL that redirects users to open an app when the target app is installed, or to open a WAP page when the target app is not installed. For Android, the URL is a Native App Link. For iOS, the URL is a Universal Link.  Note: When the value of result.resultCode is S, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
+     * @param }string|null $applinkUrl The URL that redirects users to open an app when the target app is installed, or to open a WAP page when the target app is not installed. For Android, the URL is a Native App Link. For iOS, the URL is a Universal Link.  Note: When the value of result.resultCode is S, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets normalUrl
      *
-     * @param string|null $normalUrl The URL that redirects users to a WAP or Web page in the default browser or the embedded WebView.  Note: When the value of result.resultCode is S, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
+     * @param }string|null $normalUrl The URL that redirects users to a WAP or Web page in the default browser or the embedded WebView.  Note: When the value of result.resultCode is S, at least one of schemeUrl, applinkUrl, and normalUrl is to be returned.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -419,7 +419,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets appIdentifier
      *
-     * @param string|null $appIdentifier An Android package name, which is used for Android app to open a cashier page.  Note: This field is returned when result.resultCode is S and terminalType is APP or WAP.  More information:  Maximum length: 128 characters
+     * @param }string|null $appIdentifier An Android package name, which is used for Android app to open a cashier page.  Note: This field is returned when result.resultCode is S and terminalType is APP or WAP.  More information:  Maximum length: 128 characters
      *
      * @return self
      */

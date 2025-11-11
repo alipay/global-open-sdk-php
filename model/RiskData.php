@@ -327,7 +327,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order
      *
-     * @param \model\RiskOrder|null $order order
+     * @param }\model\RiskOrder|null $order order
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer
      *
-     * @param \model\RiskBuyer|null $buyer buyer
+     * @param }\model\RiskBuyer|null $buyer buyer
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets env
      *
-     * @param \model\RiskEnv|null $env env
+     * @param }\model\RiskEnv|null $env env
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets riskSignal
      *
-     * @param \model\RiskSignal|null $riskSignal riskSignal
+     * @param }\model\RiskSignal|null $riskSignal riskSignal
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \model\RiskAddress|null $address address
+     * @param }\model\RiskAddress|null $address address
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardVerificationResult
      *
-     * @param \model\CardVerificationResult|null $cardVerificationResult cardVerificationResult
+     * @param }\model\CardVerificationResult|null $cardVerificationResult cardVerificationResult
      *
      * @return self
      */

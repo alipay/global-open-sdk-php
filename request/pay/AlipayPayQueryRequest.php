@@ -307,7 +307,7 @@ class AlipayPayQueryRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request. paymentRequestId and paymentId cannot both be null. If both paymentRequestId and paymentId are specified, paymentId takes precedence.  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentRequestId The unique ID that is assigned by a merchant to identify a payment request. paymentRequestId and paymentId cannot both be null. If both paymentRequestId and paymentId are specified, paymentId takes precedence.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class AlipayPayQueryRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID that is assigned by Antom to identify a payment. paymentRequestId and paymentId cannot both be null. A one-to-one correspondence between paymentId and paymentRequestId exists. If both paymentRequestId and paymentId are specified, paymentId takes precedence.  More information:  Maximum length: 64 characters
+     * @param }string|null $paymentId The unique ID that is assigned by Antom to identify a payment. paymentRequestId and paymentId cannot both be null. A one-to-one correspondence between paymentId and paymentRequestId exists. If both paymentRequestId and paymentId are specified, paymentId takes precedence.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AlipayPayQueryRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.  More information:  Maximum length: 32 characters
+     * @param }string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.  More information:  Maximum length: 32 characters
      *
      * @return self
      */

@@ -342,7 +342,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interestRate
      *
-     * @param string|null $interestRate The interest rate the customer is charged on the installments.    More information:  Maximum length: 8 characters
+     * @param }string|null $interestRate The interest rate the customer is charged on the installments.    More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets minInstallmentAmount
      *
-     * @param \model\Amount $minInstallmentAmount minInstallmentAmount
+     * @param }\model\Amount $minInstallmentAmount minInstallmentAmount
      *
      * @return self
      */
@@ -390,7 +390,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets maxInstallmentAmount
      *
-     * @param \model\Amount $maxInstallmentAmount maxInstallmentAmount
+     * @param }\model\Amount $maxInstallmentAmount maxInstallmentAmount
      *
      * @return self
      */
@@ -414,7 +414,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets installmentNum
      *
-     * @param string $installmentNum The number of installment payments. The valid value is from 2 to 12.    More information:  Maximum length: 8 characters
+     * @param }string $installmentNum The number of installment payments. The valid value is from 2 to 12.    More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -438,7 +438,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interval
      *
-     * @param string $interval The interval of each installment payment. The valid value is MONTH.   More information:  Maximum length: 16 characters
+     * @param }string $interval The interval of each installment payment. The valid value is MONTH.   More information:  Maximum length: 16 characters
      *
      * @return self
      */
@@ -462,7 +462,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets enabled
      *
-     * @param bool $enabled Indicates whether the installment payment is available.
+     * @param }bool $enabled Indicates whether the installment payment is available.
      *
      * @return self
      */

@@ -322,7 +322,7 @@ class Attachment  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachmentType
      *
-     * @param string $attachmentType The type of attachment. Valid values are:  SIGNATURE_AUTHORIZATION_LETTER: indicates a document that allows someone to sign on behalf of an individual or a company. ARTICLES_OF_ASSOCIATION: indicates the regulations and rules of a company.   LOGO: indicates the merchant's logo. Specify attachmentType as LOGO when the value of paymentMethodType is TRUEMONEY. More information:  Maximum length: 64 characters
+     * @param }string $attachmentType The type of attachment. Valid values are:  SIGNATURE_AUTHORIZATION_LETTER: indicates a document that allows someone to sign on behalf of an individual or a company. ARTICLES_OF_ASSOCIATION: indicates the regulations and rules of a company.   LOGO: indicates the merchant's logo. Specify attachmentType as LOGO when the value of paymentMethodType is TRUEMONEY. More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -346,7 +346,7 @@ class Attachment  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets file
      *
-     * @param string|null $file file
+     * @param }string|null $file file
      *
      * @return self
      */
@@ -370,7 +370,7 @@ class Attachment  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachmentName
      *
-     * @param string $attachmentName The name of the attachment file, including the file extension, such as XXX.jpg or XXX.png.    More information:  Maximum length: 256 characters
+     * @param }string $attachmentName The name of the attachment file, including the file extension, such as XXX.jpg or XXX.png.    More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class Attachment  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fileKey
      *
-     * @param string $fileKey The unique key value of the attachment file. Maximum file size: 32MB.  The value of this parameter is obtained from the attachmentKey parameter in the submitAttachment API. Prior attachment submission using the submitAttachment API is required.    More information:  Maximum length: 256 characters
+     * @param }string $fileKey The unique key value of the attachment file. Maximum file size: 32MB.  The value of this parameter is obtained from the attachmentKey parameter in the submitAttachment API. Prior attachment submission using the submitAttachment API is required.    More information:  Maximum length: 256 characters
      *
      * @return self
      */

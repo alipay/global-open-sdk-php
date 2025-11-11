@@ -406,7 +406,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceOrderId
      *
-     * @param string $referenceOrderId The unique ID to identify the order on the merchant side, which is assigned by the merchant that provides services or goods directly to the customer. This field is used for user consumption records display and other further actions such as disputes track or handling of customer complaints.  More information:  Maximum length: 64 characters
+     * @param }string $referenceOrderId The unique ID to identify the order on the merchant side, which is assigned by the merchant that provides services or goods directly to the customer. This field is used for user consumption records display and other further actions such as disputes track or handling of customer complaints.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderDescription
      *
-     * @param string|null $orderDescription Summary description of the order, which is used for user consumption records display or other further actions.  More information:  Maximum length: 256 characters
+     * @param }string|null $orderDescription Summary description of the order, which is used for user consumption records display or other further actions.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderAmount
      *
-     * @param \model\Amount $orderAmount orderAmount
+     * @param }\model\Amount $orderAmount orderAmount
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant
      *
-     * @param \model\Merchant|null $merchant merchant
+     * @param }\model\Merchant|null $merchant merchant
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goods
      *
-     * @param \model\Goods[]|null $goods Goods information, including the ID, name, price, and quantity of the goods in the order.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum size: 100 elements
+     * @param }\model\Goods[]|null $goods Goods information, including the ID, name, price, and quantity of the goods in the order.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum size: 100 elements
      *
      * @return self
      */
@@ -526,7 +526,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping
      *
-     * @param \model\Shipping|null $shipping shipping
+     * @param }\model\Shipping|null $shipping shipping
      *
      * @return self
      */
@@ -550,7 +550,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer
      *
-     * @param \model\Buyer|null $buyer buyer
+     * @param }\model\Buyer|null $buyer buyer
      *
      * @return self
      */
@@ -574,7 +574,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets env
      *
-     * @param \model\Env|null $env env
+     * @param }\model\Env|null $env env
      *
      * @return self
      */
@@ -598,7 +598,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo Extended information data, including information for special use cases.  Note: Specify this field when you need to use the extended information.
+     * @param }string|null $extendInfo Extended information data, including information for special use cases.  Note: Specify this field when you need to use the extended information.
      *
      * @return self
      */
@@ -622,7 +622,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transit
      *
-     * @param \model\Transit|null $transit transit
+     * @param }\model\Transit|null $transit transit
      *
      * @return self
      */
@@ -646,7 +646,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lodging
      *
-     * @param \model\Lodging|null $lodging lodging
+     * @param }\model\Lodging|null $lodging lodging
      *
      * @return self
      */
@@ -670,7 +670,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gaming
      *
-     * @param \model\Gaming|null $gaming gaming
+     * @param }\model\Gaming|null $gaming gaming
      *
      * @return self
      */
@@ -694,7 +694,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets needDeclaration
      *
-     * @param bool|null $needDeclaration needDeclaration
+     * @param }bool|null $needDeclaration needDeclaration
      *
      * @return self
      */
@@ -718,7 +718,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderTest
      *
-     * @param string|null $orderTest orderTest
+     * @param }string|null $orderTest orderTest
      *
      * @return self
      */
@@ -742,7 +742,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets declaration
      *
-     * @param \model\Declaration|null $declaration declaration
+     * @param }\model\Declaration|null $declaration declaration
      *
      * @return self
      */
@@ -766,7 +766,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderType
      *
-     * @param string $orderType test
+     * @param }string $orderType test
      *
      * @return self
      */

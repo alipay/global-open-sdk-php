@@ -303,7 +303,7 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets accessToken
      *
-     * @param string $accessToken The access token that is used to access the corresponding scope of the user resource.   More information:  Maximum length: 128 characters
+     * @param }string $accessToken The access token that is used to access the corresponding scope of the user resource.   More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */

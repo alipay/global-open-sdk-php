@@ -381,7 +381,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bankAccountNo
      *
-     * @param string $bankAccountNo The international bank account number.  The standardized formats in different areas are:  Brazil: ^[0-9]{0,20}$ such as 123456789 More information:  Maximum length: 64 characters
+     * @param }string $bankAccountNo The international bank account number.  The standardized formats in different areas are:  Brazil: ^[0-9]{0,20}$ such as 123456789 More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountHolderName
      *
-     * @param string $accountHolderName The full name of the account holder.  The standardized formats in different areas are:  Brazil: ^[A-Za-z0-9/() .,\\-?:'+]{0,50}$ More information:  Maximum length: 64 characters
+     * @param }string $accountHolderName The full name of the account holder.  The standardized formats in different areas are:  Brazil: ^[A-Za-z0-9/() .,\\-?:'+]{0,50}$ More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets swiftCode
      *
-     * @param string|null $swiftCode The eight-character or eleven-character BIC or SWIFT code of the bank.  Specify this parameter when the bank card issuing country is Brazil.    More information:  Maximum length: 11 characters
+     * @param }string|null $swiftCode The eight-character or eleven-character BIC or SWIFT code of the bank.  Specify this parameter when the bank card issuing country is Brazil.    More information:  Maximum length: 11 characters
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bankRegion
      *
-     * @param string $bankRegion The region where the bank is located.   The value of this parameter is a 2-letter region or country code that follows the ISO 3166 Country Codes standard.    More information:  Maximum length: 2 characters
+     * @param }string $bankRegion The region where the bank is located.   The value of this parameter is a 2-letter region or country code that follows the ISO 3166 Country Codes standard.    More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -467,7 +467,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets accountHolderType
      *
-     * @return \model\AccountHolderType
+     * @return string
      */
     public function getAccountHolderType()
     {
@@ -477,7 +477,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountHolderType
      *
-     * @param \model\AccountHolderType $accountHolderType accountHolderType
+     * @param }string $accountHolderType accountHolderType
      *
      * @return self
      */
@@ -501,7 +501,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets routingNumber
      *
-     * @param string|null $routingNumber The routing number. See Bank routing number for valid values.  Specify this parameter when the issuing bank is in Brazil.    More information:  Maximum length: 9 characters
+     * @param }string|null $routingNumber The routing number. See Bank routing number for valid values.  Specify this parameter when the issuing bank is in Brazil.    More information:  Maximum length: 9 characters
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets branchCode
      *
-     * @param string|null $branchCode The branch code of the bank. See Bank branch code for valid value s.  Specify this parameter when the issuing bank is in Brazil.    More information:  Maximum length: 32 characters
+     * @param }string|null $branchCode The branch code of the bank. See Bank branch code for valid value s.  Specify this parameter when the issuing bank is in Brazil.    More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -549,7 +549,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountHolderTIN
      *
-     * @param string|null $accountHolderTIN The tax identification number (TIN) of the account holder.  For the account holder in Brazil:  If the account holder is an individual, the value of this parameter is an eleven-character tax ID known as CPF.  If the account holder is a legal entity, the value of this parameter is a fourteen-character tax ID known as CNPJ.  Specify this parameter when the issuing bank is in Brazil.    More information:  Maximum length: 32 characters
+     * @param }string|null $accountHolderTIN The tax identification number (TIN) of the account holder.  For the account holder in Brazil:  If the account holder is an individual, the value of this parameter is an eleven-character tax ID known as CPF.  If the account holder is a legal entity, the value of this parameter is a fourteen-character tax ID known as CNPJ.  Specify this parameter when the issuing bank is in Brazil.    More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -563,7 +563,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets accountType
      *
-     * @return \model\AccountType|null
+     * @return string|null
      */
     public function getAccountType()
     {
@@ -573,7 +573,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountType
      *
-     * @param \model\AccountType|null $accountType accountType
+     * @param }string|null $accountType accountType
      *
      * @return self
      */
@@ -597,7 +597,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets bankName
      *
-     * @param string|null $bankName The name of the bank.  Specify this parameter when the card issuing country is the United States.    More information:  Maximum length: 256 characters
+     * @param }string|null $bankName The name of the bank.  Specify this parameter when the card issuing country is the United States.    More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -621,7 +621,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountHolderAddress
      *
-     * @param \model\Address|null $accountHolderAddress accountHolderAddress
+     * @param }\model\Address|null $accountHolderAddress accountHolderAddress
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets iban
      *
-     * @param string|null $iban The International Bank Account Number (IBAN) used to identify a bank account.  Specify this parameter when the card issuing country is the United Kingdom or belongs to the European Union.    More information:  Maximum length: 34 characters
+     * @param }string|null $iban The International Bank Account Number (IBAN) used to identify a bank account.  Specify this parameter when the card issuing country is the United Kingdom or belongs to the European Union.    More information:  Maximum length: 34 characters
      *
      * @return self
      */

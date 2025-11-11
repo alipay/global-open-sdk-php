@@ -341,7 +341,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets paymentMethodDetailType
      *
-     * @return \model\PaymentMethodDetailType|null
+     * @return string|null
      */
     public function getPaymentMethodDetailType()
     {
@@ -351,7 +351,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets paymentMethodDetailType
      *
-     * @param \model\PaymentMethodDetailType|null $paymentMethodDetailType paymentMethodDetailType
+     * @param }string|null $paymentMethodDetailType paymentMethodDetailType
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets card
      *
-     * @param \model\CardPaymentMethodDetail|null $card card
+     * @param }\model\CardPaymentMethodDetail|null $card card
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets externalAccount
      *
-     * @param \model\ExternalPaymentMethodDetail|null $externalAccount externalAccount
+     * @param }\model\ExternalPaymentMethodDetail|null $externalAccount externalAccount
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets discount
      *
-     * @param \model\DiscountPaymentMethodDetail|null $discount discount
+     * @param }\model\DiscountPaymentMethodDetail|null $discount discount
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets coupon
      *
-     * @param \model\CouponPaymentMethodDetail|null $coupon coupon
+     * @param }\model\CouponPaymentMethodDetail|null $coupon coupon
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets paymentMethodType
      *
-     * @param string $paymentMethodType The type of payment method to be vaulted. The value of this parameter is fixed to CARD.    More information:  Maximum length: 64 characters
+     * @param }string $paymentMethodType The type of payment method to be vaulted. The value of this parameter is fixed to CARD.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets wallet
      *
-     * @param \model\Wallet|null $wallet wallet
+     * @param }\model\Wallet|null $wallet wallet
      *
      * @return self
      */
@@ -543,7 +543,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets interactionType
      *
-     * @param string|null $interactionType interactionType
+     * @param }string|null $interactionType interactionType
      *
      * @return self
      */

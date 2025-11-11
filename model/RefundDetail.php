@@ -305,7 +305,7 @@ class RefundDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets refundAmount
      *
-     * @param \model\Amount $refundAmount refundAmount
+     * @param }\model\Amount $refundAmount refundAmount
      *
      * @return self
      */
@@ -319,7 +319,7 @@ class RefundDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets refundFrom
      *
-     * @return \model\RefundFromType
+     * @return string
      */
     public function getRefundFrom()
     {
@@ -329,7 +329,7 @@ class RefundDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets refundFrom
      *
-     * @param \model\RefundFromType $refundFrom refundFrom
+     * @param }string $refundFrom refundFrom
      *
      * @return self
      */

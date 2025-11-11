@@ -348,7 +348,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departureTime
      *
-     * @param string|null $departureTime Time of departure for this leg of the trip.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $departureTime Time of departure for this leg of the trip.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -372,7 +372,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets arrivalTime
      *
-     * @param string|null $arrivalTime Time of arrival for this leg of the trip.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $arrivalTime Time of arrival for this leg of the trip.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -396,7 +396,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departureAddress
      *
-     * @param \model\Address|null $departureAddress departureAddress
+     * @param }\model\Address|null $departureAddress departureAddress
      *
      * @return self
      */
@@ -420,7 +420,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets arrivalAddress
      *
-     * @param \model\Address|null $arrivalAddress arrivalAddress
+     * @param }\model\Address|null $arrivalAddress arrivalAddress
      *
      * @return self
      */
@@ -444,7 +444,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets carrierName
      *
-     * @param string|null $carrierName Company name of the transportation service provider for this leg of the trip.  More information:  Maximum length: 128 characters
+     * @param }string|null $carrierName Company name of the transportation service provider for this leg of the trip.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets carrierNo
      *
-     * @param string|null $carrierNo Code for the carrier for this leg of the trip.  More information:  Maximum length: 64 characters
+     * @param }string|null $carrierNo Code for the carrier for this leg of the trip.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets classType
      *
-     * @return \model\ClassType|null
+     * @return string|null
      */
     public function getClassType()
     {
@@ -492,7 +492,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets classType
      *
-     * @param \model\ClassType|null $classType classType
+     * @param }string|null $classType classType
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departureAirportCode
      *
-     * @param string|null $departureAirportCode IATA code for the originating airport for this leg of the trip.  More information:  Maximum length: 8 characters
+     * @param }string|null $departureAirportCode IATA code for the originating airport for this leg of the trip.  More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -540,7 +540,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets arrivalAirportCode
      *
-     * @param string|null $arrivalAirportCode IATA code for the destination airport for this leg of the trip.  More information:  Maximum length: 8 characters
+     * @param }string|null $arrivalAirportCode IATA code for the destination airport for this leg of the trip.  More information:  Maximum length: 8 characters
      *
      * @return self
      */

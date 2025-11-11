@@ -307,7 +307,7 @@ class AmsApiV1PaymentsInquiryRefundPostRequest   extends AlipayRequest  implemen
     /**
      * Sets refundRequestId
      *
-     * @param string|null $refundRequestId The unique ID assigned by a merchant to identify a refund request. refundRequestId and refundId cannot both be null. Special characters are not supported. If both refundRequestId and refundId are specified, refundId takes precedence.  More information:  Maximum length: 64 characters
+     * @param }string|null $refundRequestId The unique ID assigned by a merchant to identify a refund request. refundRequestId and refundId cannot both be null. Special characters are not supported. If both refundRequestId and refundId are specified, refundId takes precedence.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class AmsApiV1PaymentsInquiryRefundPostRequest   extends AlipayRequest  implemen
     /**
      * Sets refundId
      *
-     * @param string|null $refundId The unique ID assigned by Antom to identify a refund. refundRequestId and refundId cannot both be null. A one-to-one correspondence between refundId and refundRequestId exists. If both refundRequestId and refundId are specified, refundId takes precedence.  More information:  Maximum length: 64 characters
+     * @param }string|null $refundId The unique ID assigned by Antom to identify a refund. refundRequestId and refundId cannot both be null. A one-to-one correspondence between refundId and refundRequestId exists. If both refundRequestId and refundId are specified, refundId takes precedence.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AmsApiV1PaymentsInquiryRefundPostRequest   extends AlipayRequest  implemen
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId merchantAccountId
+     * @param }string|null $merchantAccountId merchantAccountId
      *
      * @return self
      */

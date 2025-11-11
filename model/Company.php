@@ -374,7 +374,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legalName
      *
-     * @param string $legalName The legal name of the company.    More information:  Maximum size: 256 elements
+     * @param }string $legalName The legal name of the company.    More information:  Maximum size: 256 elements
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets companyType
      *
-     * @return \model\CompanyType
+     * @return string
      */
     public function getCompanyType()
     {
@@ -398,7 +398,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets companyType
      *
-     * @param \model\CompanyType $companyType companyType
+     * @param }string $companyType companyType
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets registeredAddress
      *
-     * @param \model\Address $registeredAddress registeredAddress
+     * @param }\model\Address $registeredAddress registeredAddress
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets operatingAddress
      *
-     * @param \model\Address $operatingAddress operatingAddress
+     * @param }\model\Address $operatingAddress operatingAddress
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets incorporationDate
      *
-     * @param string|null $incorporationDate The date when the company was officially registered and incorporated with the government. The value of this parameter is in the format of YYYY-MM-DD, such as 2023-06-25.    Specify this parameter when the value of merchantInfo.company.registeredAddress.region is AU, SG, HK, US, GB, MY, or the company's registered region belongs to the European Union.   More information:  Maximum length: 32 characters
+     * @param }string|null $incorporationDate The date when the company was officially registered and incorporated with the government. The value of this parameter is in the format of YYYY-MM-DD, such as 2023-06-25.    Specify this parameter when the value of merchantInfo.company.registeredAddress.region is AU, SG, HK, US, GB, MY, or the company's registered region belongs to the European Union.   More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -494,7 +494,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stockInfo
      *
-     * @param \model\StockInfo|null $stockInfo stockInfo
+     * @param }\model\StockInfo|null $stockInfo stockInfo
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificates
      *
-     * @param \model\Certificate|null $certificates certificates
+     * @param }\model\Certificate|null $certificates certificates
      *
      * @return self
      */
@@ -542,7 +542,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachments
      *
-     * @param \model\Attachment[]|null $attachments The list of attachment information. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, or belongs to the European Union.    More information:  Maximum size: 10 elements
+     * @param }\model\Attachment[]|null $attachments The list of attachment information. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, or belongs to the European Union.    More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -556,7 +556,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets companyUnit
      *
-     * @return \model\CompanyUnitType|null
+     * @return string|null
      */
     public function getCompanyUnit()
     {
@@ -566,7 +566,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets companyUnit
      *
-     * @param \model\CompanyUnitType|null $companyUnit companyUnit
+     * @param }string|null $companyUnit companyUnit
      *
      * @return self
      */
@@ -590,7 +590,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contacts
      *
-     * @param \model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP.
+     * @param }\model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP.
      *
      * @return self
      */
@@ -614,7 +614,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vatNo
      *
-     * @param string|null $vatNo The Value Added Tax (VAT) number of the company.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is GB or the company's registered region belongs to the European Union.    More information:  Maximum length: 64 characters
+     * @param }string|null $vatNo The Value Added Tax (VAT) number of the company.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is GB or the company's registered region belongs to the European Union.    More information:  Maximum length: 64 characters
      *
      * @return self
      */

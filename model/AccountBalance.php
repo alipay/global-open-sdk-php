@@ -335,7 +335,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountNo
      *
-     * @param string $accountNo The balance account number.    More information:  Maximum length: 32 characters
+     * @param }string $accountNo The balance account number.    More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string $currency The currency associated with the balance account. The value of this parameter is a 3-letter currency code that follows the ISO 4217 standard.    More information:  Maximum length: 3 characters
+     * @param }string $currency The currency associated with the balance account. The value of this parameter is a 3-letter currency code that follows the ISO 4217 standard.    More information:  Maximum length: 3 characters
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets availableBalance
      *
-     * @param \model\Amount $availableBalance availableBalance
+     * @param }\model\Amount $availableBalance availableBalance
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets frozenBalance
      *
-     * @param \model\Amount $frozenBalance frozenBalance
+     * @param }\model\Amount $frozenBalance frozenBalance
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets totalBalance
      *
-     * @param \model\Amount $totalBalance totalBalance
+     * @param }\model\Amount $totalBalance totalBalance
      *
      * @return self
      */

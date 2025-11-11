@@ -309,7 +309,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Sets disputeEvidence
      *
-     * @param string|null $disputeEvidence The dispute evidence that is encoded in the Based64 format. Decode the Base64 document to get the Word or PDF file.  Note: This prameter is returned when the value of resultCode is SUCCESS.  More information:  Maximum length: 1000000 characters
+     * @param }string|null $disputeEvidence The dispute evidence that is encoded in the Based64 format. Decode the Base64 document to get the Word or PDF file.  Note: This prameter is returned when the value of resultCode is SUCCESS.  More information:  Maximum length: 1000000 characters
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Gets disputeEvidenceFormat
      *
-     * @return \model\DisputeEvidenceFormatType|null
+     * @return string|null
      */
     public function getDisputeEvidenceFormat()
     {
@@ -357,7 +357,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Sets disputeEvidenceFormat
      *
-     * @param \model\DisputeEvidenceFormatType|null $disputeEvidenceFormat disputeEvidenceFormat
+     * @param }string|null $disputeEvidenceFormat disputeEvidenceFormat
      *
      * @return self
      */

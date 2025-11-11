@@ -342,7 +342,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets provider
      *
-     * @param string $provider Issuing banks or financial institutions that offer interest-free installment plans.  More information:  Maximum length: 128 characters
+     * @param }string $provider Issuing banks or financial institutions that offer interest-free installment plans.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expireTime
      *
-     * @param string $expireTime The promotion expiration time.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string $expireTime The promotion expiration time.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -390,7 +390,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets installmentFreeNums
      *
-     * @param int[] $installmentFreeNums The number of interest-free installments.  More information:  Value range: 2-unlimited
+     * @param }int[] $installmentFreeNums The number of interest-free installments.  More information:  Value range: 2-unlimited
      *
      * @return self
      */
@@ -414,7 +414,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets minPaymentAmount
      *
-     * @param \model\Amount $minPaymentAmount minPaymentAmount
+     * @param }\model\Amount $minPaymentAmount minPaymentAmount
      *
      * @return self
      */
@@ -438,7 +438,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets maxPaymentAmount
      *
-     * @param \model\Amount|null $maxPaymentAmount maxPaymentAmount
+     * @param }\model\Amount|null $maxPaymentAmount maxPaymentAmount
      *
      * @return self
      */
@@ -462,7 +462,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets freePercentage
      *
-     * @param int $freePercentage The interest-free percentage. A value of 0 indicates no interest-free, 100% indicates the buyer is completely interest-free, while the value between 0-100% indicates partial interest-free.
+     * @param }int $freePercentage The interest-free percentage. A value of 0 indicates no interest-free, 100% indicates the buyer is completely interest-free, while the value between 0-100% indicates partial interest-free.
      *
      * @return self
      */

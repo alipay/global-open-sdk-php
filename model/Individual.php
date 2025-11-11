@@ -337,7 +337,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param \model\UserName $name name
+     * @param }\model\UserName $name name
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets englishName
      *
-     * @param \model\UserName|null $englishName englishName
+     * @param }\model\UserName|null $englishName englishName
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dateOfBirth
      *
-     * @param string|null $dateOfBirth The individual's date of birth. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR.    More information:  Maximum length: 32 characters
+     * @param }string|null $dateOfBirth The individual's date of birth. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR.    More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets placeOfBirth
      *
-     * @param \model\Address|null $placeOfBirth placeOfBirth
+     * @param }\model\Address|null $placeOfBirth placeOfBirth
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificates
      *
-     * @param \model\Certificate[]|null $certificates The list of certificate information of the individual. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR or US.
+     * @param }\model\Certificate[]|null $certificates The list of certificate information of the individual. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR or US.
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nationality
      *
-     * @param string|null $nationality The nationality of the individual. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is EU, GB, MY, US, or BR.    More information:  Maximum length: 2 characters
+     * @param }string|null $nationality The nationality of the individual. The value of this parameter is a 2-letter country or region code based on the ISO 3166 Country Codes standard.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is EU, GB, MY, US, or BR.    More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contacts
      *
-     * @param \model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP and the value of merchantInfo.entityAssociations.associationType is LEGAL_REPRESENTATIVE.    More information:  Maximum size: 10 elements
+     * @param }\model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP and the value of merchantInfo.entityAssociations.associationType is LEGAL_REPRESENTATIVE.    More information:  Maximum size: 10 elements
      *
      * @return self
      */

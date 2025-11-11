@@ -326,7 +326,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferId
      *
-     * @param string|null $transferId The unique ID assigned by Antom to identify a transfer.  This parameter is returned when the value of result.resultStatus is U.   More information:  Maximum length: 64 characters
+     * @param }string|null $transferId The unique ID assigned by Antom to identify a transfer.  This parameter is returned when the value of result.resultStatus is U.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferRequestId
      *
-     * @param string|null $transferRequestId The unique ID assigned by the marketplace to identify a transfer request.  This parameter is returned when the value of result.resultStatus is U.   More information:  Maximum length: 64 characters
+     * @param }string|null $transferRequestId The unique ID assigned by the marketplace to identify a transfer request.  This parameter is returned when the value of result.resultStatus is U.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferFromDetail
      *
-     * @param \model\TransferFromDetail|null $transferFromDetail transferFromDetail
+     * @param }\model\TransferFromDetail|null $transferFromDetail transferFromDetail
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferToDetail
      *
-     * @param \model\TransferToDetail $transferToDetail transferToDetail
+     * @param }\model\TransferToDetail $transferToDetail transferToDetail
      *
      * @return self
      */

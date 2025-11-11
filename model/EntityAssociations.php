@@ -316,7 +316,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets associationType
      *
-     * @return \model\AssociationType
+     * @return string
      */
     public function getAssociationType()
     {
@@ -326,7 +326,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets associationType
      *
-     * @param \model\AssociationType $associationType associationType
+     * @param }string $associationType associationType
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets legalEntityType
      *
-     * @return \model\LegalEntityType
+     * @return string
      */
     public function getLegalEntityType()
     {
@@ -350,7 +350,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets legalEntityType
      *
-     * @param \model\LegalEntityType $legalEntityType legalEntityType
+     * @param }string $legalEntityType legalEntityType
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets company
      *
-     * @param \model\Company|null $company company
+     * @param }\model\Company|null $company company
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets individual
      *
-     * @param \model\Individual|null $individual individual
+     * @param }\model\Individual|null $individual individual
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shareholdingRatio
      *
-     * @param string|null $shareholdingRatio The shareholding ratio of the associated legal entity. The value of this parameter is from 0 to 100. For example, 10.5 represents that the shareholding ratio is 10.5%. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, US, GB, MY, or the company's registered region belongs to the European Union.    More information:  Maximum length: 16 characters
+     * @param }string|null $shareholdingRatio The shareholding ratio of the associated legal entity. The value of this parameter is from 0 to 100. For example, 10.5 represents that the shareholding ratio is 10.5%. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, US, GB, MY, or the company's registered region belongs to the European Union.    More information:  Maximum length: 16 characters
      *
      * @return self
      */

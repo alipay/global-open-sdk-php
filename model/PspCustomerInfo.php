@@ -327,7 +327,7 @@ class PspCustomerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pspName
      *
-     * @param string|null $pspName The name of Alipay+ payment methods.  Note: This field is returned when the Alipay+ payment methods can provide the related information.  More information:  Maximum length: 64 characters
+     * @param }string|null $pspName The name of Alipay+ payment methods.  Note: This field is returned when the Alipay+ payment methods can provide the related information.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class PspCustomerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pspCustomerId
      *
-     * @param string|null $pspCustomerId The customer ID of Alipay+ payment methods.  Note: This field is returned when the Alipay+ payment methods can provide the related information.  More information:  Maximum length: 64 characters
+     * @param }string|null $pspCustomerId The customer ID of Alipay+ payment methods.  Note: This field is returned when the Alipay+ payment methods can provide the related information.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class PspCustomerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets displayCustomerId
      *
-     * @param string|null $displayCustomerId The customer ID used for display. For example, loginId.  Note: This field is returned when the Alipay+ payment methods can provide the related information.  More information:  Maximum length: 64 characters
+     * @param }string|null $displayCustomerId The customer ID used for display. For example, loginId.  Note: This field is returned when the Alipay+ payment methods can provide the related information.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class PspCustomerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets displayCustomerName
      *
-     * @param string|null $displayCustomerName displayCustomerName
+     * @param }string|null $displayCustomerName displayCustomerName
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class PspCustomerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customer2088Id
      *
-     * @param string|null $customer2088Id customer2088Id
+     * @param }string|null $customer2088Id customer2088Id
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class PspCustomerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */

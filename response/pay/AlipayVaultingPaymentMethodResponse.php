@@ -333,7 +333,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets vaultingRequestId
      *
-     * @param string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.    More information:  Maximum length: 64 characters
+     * @param }string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paymentMethodDetail
      *
-     * @param \model\PaymentMethodDetail|null $paymentMethodDetail paymentMethodDetail
+     * @param }\model\PaymentMethodDetail|null $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets normalUrl
      *
-     * @param string|null $normalUrl The URL that redirects the user to a WAP or WEB page in the default browser or the embedded WebView.  Note:  When the value of result.resultCode is VERIFICATION_IN_PROCESS, one or more of the following URLs may be returned: schemeUrl, appLinkUrl, and normalUrl. When the value of paymentMethodType is CARD, the user is required to complete the 3DS authentication on the page accessed through this URL.   More information:  Maximum length: 2048 characters
+     * @param }string|null $normalUrl The URL that redirects the user to a WAP or WEB page in the default browser or the embedded WebView.  Note:  When the value of result.resultCode is VERIFICATION_IN_PROCESS, one or more of the following URLs may be returned: schemeUrl, appLinkUrl, and normalUrl. When the value of paymentMethodType is CARD, the user is required to complete the 3DS authentication on the page accessed through this URL.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets schemeUrl
      *
-     * @param string|null $schemeUrl The URL scheme that redirects the user to open an app in an Android or iOS system when the target app is installed.  More information:  Maximum length: 2048 characters
+     * @param }string|null $schemeUrl The URL scheme that redirects the user to open an app in an Android or iOS system when the target app is installed.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets applinkUrl
      *
-     * @param string|null $applinkUrl The URL that redirects the user to open an app when the target app is installed, or to open a WAP page when the target app is not installed.  More information:  Maximum length: 2048 characters
+     * @param }string|null $applinkUrl The URL that redirects the user to open an app when the target app is installed, or to open a WAP page when the target app is not installed.  More information:  Maximum length: 2048 characters
      *
      * @return self
      */

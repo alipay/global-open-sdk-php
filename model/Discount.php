@@ -313,7 +313,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discountTag
      *
-     * @param string|null $discountTag discountTag
+     * @param }string|null $discountTag discountTag
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discountName
      *
-     * @param string|null $discountName The discount name displayed in the default language.  More information:  Maximum length: 128 characters
+     * @param }string|null $discountName The discount name displayed in the default language.  More information:  Maximum length: 128 characters
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets savingsAmount
      *
-     * @param \model\Amount|null $savingsAmount savingsAmount
+     * @param }\model\Amount|null $savingsAmount savingsAmount
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets estimateSavingsAmount
      *
-     * @param \model\Amount|null $estimateSavingsAmount estimateSavingsAmount
+     * @param }\model\Amount|null $estimateSavingsAmount estimateSavingsAmount
      *
      * @return self
      */

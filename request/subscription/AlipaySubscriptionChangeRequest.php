@@ -362,7 +362,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionChangeRequestId
      *
-     * @param string $subscriptionChangeRequestId The unique ID assigned by a merchant to identify a subscription change request. Antom uses this field for idempotency control.   Note: For subscription change requests that are initiated with the same value of subscriptionChangeRequestId and reach a final status of ​S​ or​F​, the same result is to be returned for the request.  More information:  This field is an API idempotency field. Maximum length: 64 characters
+     * @param }string $subscriptionChangeRequestId The unique ID assigned by a merchant to identify a subscription change request. Antom uses this field for idempotency control.   Note: For subscription change requests that are initiated with the same value of subscriptionChangeRequestId and reach a final status of ​S​ or​F​, the same result is to be returned for the request.  More information:  This field is an API idempotency field. Maximum length: 64 characters
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The unique ID assigned by Antom to identify a subscription. The value of this parameter is the value of the same parameter that is returned by notifyPayment and notifySubscription for the original subscription.    More information:  Maximum length: 64 characters
+     * @param }string $subscriptionId The unique ID assigned by Antom to identify a subscription. The value of this parameter is the value of the same parameter that is returned by notifyPayment and notifySubscription for the original subscription.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -410,7 +410,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionDescription
      *
-     * @param string|null $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.  Note: Specify this parameter if you want to change this information.  More information:  Maximum length: 256 characters
+     * @param }string|null $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.  Note: Specify this parameter if you want to change this information.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -434,7 +434,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionStartTime
      *
-     * @param string|null $subscriptionStartTime The date and time when the subscription becomes active.   Note: Specify this parameter when you want to designate the start time of the changed subscription. If you leave this parameter empty, the default value of this parameter is the time when Antom receives this request.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $subscriptionStartTime The date and time when the subscription becomes active.   Note: Specify this parameter when you want to designate the start time of the changed subscription. If you leave this parameter empty, the default value of this parameter is the time when Antom receives this request.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -458,7 +458,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionEndTime
      *
-     * @param string|null $subscriptionEndTime The date and time when the subscription ends. The default value of this parameter is 2099-12-31T23:59:59+08:00.   Note: Specify this parameter when you want to change this information.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $subscriptionEndTime The date and time when the subscription ends. The default value of this parameter is 2099-12-31T23:59:59+08:00.   Note: Specify this parameter when you want to change this information.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets periodRule
      *
-     * @param \model\PeriodRule|null $periodRule periodRule
+     * @param }\model\PeriodRule|null $periodRule periodRule
      *
      * @return self
      */
@@ -506,7 +506,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionExpiryTime
      *
-     * @param string|null $subscriptionExpiryTime A specific date and time after which the created subscription expires. When the subscription expires, the order must be terminated. The default value of this parameter is 30 minutes after the subscription creation request is sent.  Note: Specify this parameter if you want to change the subscription creation expiration time. The specified payment expiration time must be less than 48 hours after the subscription request is sent.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $subscriptionExpiryTime A specific date and time after which the created subscription expires. When the subscription expires, the order must be terminated. The default value of this parameter is 30 minutes after the subscription creation request is sent.  Note: Specify this parameter if you want to change the subscription creation expiration time. The specified payment expiration time must be less than 48 hours after the subscription request is sent.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -530,7 +530,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets orderInfo
      *
-     * @param \model\OrderInfo|null $orderInfo orderInfo
+     * @param }\model\OrderInfo|null $orderInfo orderInfo
      *
      * @return self
      */
@@ -554,7 +554,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmount
      *
-     * @param \model\Amount|null $paymentAmount paymentAmount
+     * @param }\model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -578,7 +578,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmountDifference
      *
-     * @param \model\Amount|null $paymentAmountDifference paymentAmountDifference
+     * @param }\model\Amount|null $paymentAmountDifference paymentAmountDifference
      *
      * @return self
      */

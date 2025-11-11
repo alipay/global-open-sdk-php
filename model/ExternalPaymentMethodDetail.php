@@ -313,7 +313,7 @@ class ExternalPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets assetToken
      *
-     * @param string|null $assetToken assetToken
+     * @param }string|null $assetToken assetToken
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class ExternalPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets accountDisplayName
      *
-     * @param string|null $accountDisplayName accountDisplayName
+     * @param }string|null $accountDisplayName accountDisplayName
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class ExternalPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets disableReason
      *
-     * @param string|null $disableReason disableReason
+     * @param }string|null $disableReason disableReason
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class ExternalPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets paymentMethodDetailMetadata
      *
-     * @param string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
+     * @param }string|null $paymentMethodDetailMetadata paymentMethodDetailMetadata
      *
      * @return self
      */

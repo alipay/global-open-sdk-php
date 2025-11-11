@@ -333,7 +333,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quoteId
      *
-     * @param string|null $quoteId The unique ID that is assigned by Alipay to identify an exchange rate.    More information:  Maximum length: 64 characters
+     * @param }string|null $quoteId The unique ID that is assigned by Alipay to identify an exchange rate.    More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quoteCurrencyPair
      *
-     * @param string $quoteCurrencyPair The exchange rate between settlement currency and transaction currency. Two currencies are separated with a slash and use the 3-letter ISO-4217 currency code.    More information:  Maximum length: 16 characters
+     * @param }string $quoteCurrencyPair The exchange rate between settlement currency and transaction currency. Two currencies are separated with a slash and use the 3-letter ISO-4217 currency code.    More information:  Maximum length: 16 characters
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quotePrice
      *
-     * @param float $quotePrice The exchange rate used when a currency conversion between settlement currency and transaction currency occurs.    More information:  Value range: 1 - unlimited
+     * @param }float $quotePrice The exchange rate used when a currency conversion between settlement currency and transaction currency occurs.    More information:  Value range: 1 - unlimited
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quoteStartTime
      *
-     * @param string|null $quoteStartTime Effective time of the exchange rate.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $quoteStartTime Effective time of the exchange rate.    More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quoteExpiryTime
      *
-     * @param string|null $quoteExpiryTime Expiration time of the exchange rate.   More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param }string|null $quoteExpiryTime Expiration time of the exchange rate.   More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets guaranteed
      *
-     * @param bool|null $guaranteed Guaranteed exchange rate available for payment.
+     * @param }bool|null $guaranteed Guaranteed exchange rate available for payment.
      *
      * @return self
      */

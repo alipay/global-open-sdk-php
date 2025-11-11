@@ -316,7 +316,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets result
      *
-     * @param \model\Result $result result
+     * @param }\model\Result $result result
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets paymentOptions
      *
-     * @param \model\PaymentOption[]|null $paymentOptions The payment option list.
+     * @param }\model\PaymentOption[]|null $paymentOptions The payment option list.
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets paymentMethodInfos
      *
-     * @param \model\PaymentMethodInfo[]|null $paymentMethodInfos paymentMethodInfos
+     * @param }\model\PaymentMethodInfo[]|null $paymentMethodInfos paymentMethodInfos
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets extendInfo
      *
-     * @param string|null $extendInfo extendInfo
+     * @param }string|null $extendInfo extendInfo
      *
      * @return self
      */
