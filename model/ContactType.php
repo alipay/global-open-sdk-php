@@ -29,4 +29,35 @@ class ContactType
     public const EMAIL = 'EMAIL';
     public const PHONE_NO = 'PHONE_NO';
     public const COMMERCIAL_PHONE_NO = 'COMMERCIAL_PHONE_NO';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function EMAIL(): self
+    {
+        return new self(self::EMAIL);
+    }
+    public static function PHONE_NO(): self
+    {
+        return new self(self::PHONE_NO);
+    }
+    public static function COMMERCIAL_PHONE_NO(): self
+    {
+        return new self(self::COMMERCIAL_PHONE_NO);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

@@ -468,7 +468,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets threeDSResult
      *
-     * @return \request\model\ThreeDSResult|null
+     * @return \model\ThreeDSResult|null
      */
     public function getThreeDSResult()
     {
@@ -478,7 +478,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets threeDSResult
      *
-     * @param \request\model\ThreeDSResult|null $threeDSResult threeDSResult
+     * @param \model\ThreeDSResult|null $threeDSResult threeDSResult
      *
      * @return self
      */

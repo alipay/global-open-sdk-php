@@ -373,7 +373,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets availableBalance
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getAvailableBalance()
     {
@@ -383,7 +383,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets availableBalance
      *
-     * @param \request\model\Amount $availableBalance availableBalance
+     * @param \model\Amount $availableBalance availableBalance
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets frozenBalance
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getFrozenBalance()
     {
@@ -407,7 +407,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets frozenBalance
      *
-     * @param \request\model\Amount $frozenBalance frozenBalance
+     * @param \model\Amount $frozenBalance frozenBalance
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets totalBalance
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getTotalBalance()
     {
@@ -431,7 +431,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets totalBalance
      *
-     * @param \request\model\Amount $totalBalance totalBalance
+     * @param \model\Amount $totalBalance totalBalance
      *
      * @return self
      */

@@ -38,4 +38,71 @@ class CompanyType
     public const BOFC = 'BOFC';
     public const MEI = 'MEI';
     public const EI = 'EI';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function ENTERPRISE(): self
+    {
+        return new self(self::ENTERPRISE);
+    }
+    public static function PARTNERSHIP(): self
+    {
+        return new self(self::PARTNERSHIP);
+    }
+    public static function SOLE_PROPRIETORSHIP(): self
+    {
+        return new self(self::SOLE_PROPRIETORSHIP);
+    }
+    public static function STATE_OWNED_BUSINESS(): self
+    {
+        return new self(self::STATE_OWNED_BUSINESS);
+    }
+    public static function PRIVATELY_OWNED_BUSINESS(): self
+    {
+        return new self(self::PRIVATELY_OWNED_BUSINESS);
+    }
+    public static function PUBLICLY_LISTED_BUSINESS(): self
+    {
+        return new self(self::PUBLICLY_LISTED_BUSINESS);
+    }
+    public static function LTDA(): self
+    {
+        return new self(self::LTDA);
+    }
+    public static function SA(): self
+    {
+        return new self(self::SA);
+    }
+    public static function EIRELI(): self
+    {
+        return new self(self::EIRELI);
+    }
+    public static function BOFC(): self
+    {
+        return new self(self::BOFC);
+    }
+    public static function MEI(): self
+    {
+        return new self(self::MEI);
+    }
+    public static function EI(): self
+    {
+        return new self(self::EI);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

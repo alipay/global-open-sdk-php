@@ -537,7 +537,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets periodRule
      *
-     * @return \request\model\PeriodRule
+     * @return \model\PeriodRule
      */
     public function getPeriodRule()
     {
@@ -547,7 +547,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets periodRule
      *
-     * @param \request\model\PeriodRule $periodRule periodRule
+     * @param \model\PeriodRule $periodRule periodRule
      *
      * @return self
      */
@@ -585,7 +585,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets paymentMethod
      *
-     * @return \request\model\PaymentMethod
+     * @return \model\PaymentMethod
      */
     public function getPaymentMethod()
     {
@@ -595,7 +595,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentMethod
      *
-     * @param \request\model\PaymentMethod $paymentMethod paymentMethod
+     * @param \model\PaymentMethod $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -657,7 +657,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets orderInfo
      *
-     * @return \request\model\OrderInfo
+     * @return \model\OrderInfo
      */
     public function getOrderInfo()
     {
@@ -667,7 +667,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets orderInfo
      *
-     * @param \request\model\OrderInfo $orderInfo orderInfo
+     * @param \model\OrderInfo $orderInfo orderInfo
      *
      * @return self
      */
@@ -681,7 +681,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getPaymentAmount()
     {
@@ -691,7 +691,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -705,7 +705,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets settlementStrategy
      *
-     * @return \request\model\SettlementStrategy
+     * @return \model\SettlementStrategy
      */
     public function getSettlementStrategy()
     {
@@ -715,7 +715,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets settlementStrategy
      *
-     * @param \request\model\SettlementStrategy $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -729,7 +729,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets env
      *
-     * @return \request\model\Env
+     * @return \model\Env
      */
     public function getEnv()
     {
@@ -739,7 +739,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets env
      *
-     * @param \request\model\Env $env env
+     * @param \model\Env $env env
      *
      * @return self
      */
@@ -753,7 +753,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets trials
      *
-     * @return \request\model\Trial[]|null
+     * @return \model\Trial[]|null
      */
     public function getTrials()
     {
@@ -763,7 +763,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets trials
      *
-     * @param \request\model\Trial[]|null $trials The list of trial information of a subscription.    Note: Specify this parameter if the subscription includes any trial periods.
+     * @param \model\Trial[]|null $trials The list of trial information of a subscription.    Note: Specify this parameter if the subscription includes any trial periods.
      *
      * @return self
      */

@@ -5,26 +5,45 @@ namespace Request\notify;
 
 class AlipayDisputeNotify extends \Request\notify\AlipayNotify
 {
-    public  $paymentRequestId;
-    public  $disputeId;
-    public  $paymentId;
-    public  $disputeTime;
-    public  $disputeAmount;
-    public  $disputeNotificationType;
-    public  $disputeReasonMsg;
-    public  $disputeJudgedTime;
-    public  $disputeJudgedAmount;
-    public  $disputeJudgedResult;
-    public  $defenseDueTime;
-    public  $disputeReasonCode;
-    public  $disputeSource;
-    public  $arn;
-    public  $disputeAcceptReason;
-    public  $disputeAcceptTime;
+    public $paymentRequestId;
+    public $disputeId;
+    public $paymentId;
+    public $disputeTime;
+    public $disputeAmount;
+    public $disputeNotificationType;
+    public $disputeReasonMsg;
+    public $disputeJudgedTime;
+    public $disputeJudgedAmount;
+    public $disputeJudgedResult;
+    public $defenseDueTime;
+    public $disputeReasonCode;
+    public $disputeSource;
+    public $arn;
+    public $disputeAcceptReason;
+    public $disputeAcceptTime;
 
     public $disputeType;
 
     public $defendable;
+
+    public $acquirerInfo;
+
+    /**
+     * @return mixed
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->acquirerInfo;
+    }
+
+    /**
+     * @param mixed $acquirerInfo
+     */
+    public function setAcquirerInfo($acquirerInfo)
+    {
+        $this->acquirerInfo = $acquirerInfo;
+    }
+
 
     /**
      * @return mixed
@@ -43,7 +62,6 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     }
 
 
-
     /**
      * @return mixed
      */
@@ -59,7 +77,6 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     {
         $this->disputeType = $disputeType;
     }
-
 
 
     /**
@@ -317,7 +334,6 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     {
         $this->disputeAcceptTime = $disputeAcceptTime;
     }
-
 
 
 }

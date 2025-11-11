@@ -28,4 +28,31 @@ class DisputeEvidenceFormatType
 {
     public const PDF = 'PDF';
     public const WORD = 'WORD';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function PDF(): self
+    {
+        return new self(self::PDF);
+    }
+    public static function WORD(): self
+    {
+        return new self(self::WORD);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

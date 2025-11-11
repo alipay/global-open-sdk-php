@@ -299,7 +299,7 @@ class AlipaySupplyDefenseDocumentResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -309,7 +309,7 @@ class AlipaySupplyDefenseDocumentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */

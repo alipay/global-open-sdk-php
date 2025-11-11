@@ -28,4 +28,31 @@ class DisputeEvidenceType
 {
     public const TEMPLATE = 'DISPUTE_EVIDENCE_TEMPLATE';
     public const FILE = 'DISPUTE_EVIDENCE_FILE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function TEMPLATE(): self
+    {
+        return new self(self::TEMPLATE);
+    }
+    public static function FILE(): self
+    {
+        return new self(self::FILE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

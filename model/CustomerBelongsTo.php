@@ -52,4 +52,127 @@ class CustomerBelongsTo
     public const TOSSPAY = 'TOSSPAY';
     public const MOMO = 'MOMO';
     public const ANTOM_BIZ_ACCOUNT = 'ANTOM_BIZ_ACCOUNT';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function RABBIT_LINE_PAY(): self
+    {
+        return new self(self::RABBIT_LINE_PAY);
+    }
+    public static function TRUEMONEY(): self
+    {
+        return new self(self::TRUEMONEY);
+    }
+    public static function ALIPAY_HK(): self
+    {
+        return new self(self::ALIPAY_HK);
+    }
+    public static function TNG(): self
+    {
+        return new self(self::TNG);
+    }
+    public static function ALIPAY_CN(): self
+    {
+        return new self(self::ALIPAY_CN);
+    }
+    public static function GCASH(): self
+    {
+        return new self(self::GCASH);
+    }
+    public static function DANA(): self
+    {
+        return new self(self::DANA);
+    }
+    public static function KAKAOPAY(): self
+    {
+        return new self(self::KAKAOPAY);
+    }
+    public static function BKASH(): self
+    {
+        return new self(self::BKASH);
+    }
+    public static function EASYPAISA(): self
+    {
+        return new self(self::EASYPAISA);
+    }
+    public static function PAYPAY(): self
+    {
+        return new self(self::PAYPAY);
+    }
+    public static function BOOST(): self
+    {
+        return new self(self::BOOST);
+    }
+    public static function GRABPAY_MY(): self
+    {
+        return new self(self::GRABPAY_MY);
+    }
+    public static function MAYA(): self
+    {
+        return new self(self::MAYA);
+    }
+    public static function GRABPAY_PH(): self
+    {
+        return new self(self::GRABPAY_PH);
+    }
+    public static function GRABPAY_SG(): self
+    {
+        return new self(self::GRABPAY_SG);
+    }
+    public static function NAVERPAY(): self
+    {
+        return new self(self::NAVERPAY);
+    }
+    public static function JKOPAY(): self
+    {
+        return new self(self::JKOPAY);
+    }
+    public static function KPLUS(): self
+    {
+        return new self(self::KPLUS);
+    }
+    public static function DIRECT_DEBIT_SIAMCOMMERCIALBANK(): self
+    {
+        return new self(self::DIRECT_DEBIT_SIAMCOMMERCIALBANK);
+    }
+    public static function DIRECT_DEBIT_KRUNGTHAIBANK(): self
+    {
+        return new self(self::DIRECT_DEBIT_KRUNGTHAIBANK);
+    }
+    public static function ZALOPAY(): self
+    {
+        return new self(self::ZALOPAY);
+    }
+    public static function DIRECTDEBIT_YAPILY(): self
+    {
+        return new self(self::DIRECTDEBIT_YAPILY);
+    }
+    public static function TOSSPAY(): self
+    {
+        return new self(self::TOSSPAY);
+    }
+    public static function MOMO(): self
+    {
+        return new self(self::MOMO);
+    }
+    public static function ANTOM_BIZ_ACCOUNT(): self
+    {
+        return new self(self::ANTOM_BIZ_ACCOUNT);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

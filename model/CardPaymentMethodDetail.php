@@ -584,7 +584,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets brand
      *
-     * @return \request\model\CardBrand
+     * @return \model\CardBrand
      */
     public function getBrand()
     {
@@ -594,7 +594,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets brand
      *
-     * @param \request\model\CardBrand $brand brand
+     * @param \model\CardBrand $brand brand
      *
      * @return self
      */
@@ -608,7 +608,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets selectedCardBrand
      *
-     * @return \request\model\CardBrand|null
+     * @return \model\CardBrand|null
      */
     public function getSelectedCardBrand()
     {
@@ -618,7 +618,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets selectedCardBrand
      *
-     * @param \request\model\CardBrand|null $selectedCardBrand selectedCardBrand
+     * @param \model\CardBrand|null $selectedCardBrand selectedCardBrand
      *
      * @return self
      */
@@ -680,7 +680,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets instUserName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getInstUserName()
     {
@@ -690,7 +690,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets instUserName
      *
-     * @param \request\model\UserName|null $instUserName instUserName
+     * @param \model\UserName|null $instUserName instUserName
      *
      * @return self
      */
@@ -752,7 +752,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets billingAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getBillingAddress()
     {
@@ -762,7 +762,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets billingAddress
      *
-     * @param \request\model\Address|null $billingAddress billingAddress
+     * @param \model\Address|null $billingAddress billingAddress
      *
      * @return self
      */
@@ -1088,7 +1088,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets cardholderName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getCardholderName()
     {
@@ -1098,7 +1098,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardholderName
      *
-     * @param \request\model\UserName|null $cardholderName cardholderName
+     * @param \model\UserName|null $cardholderName cardholderName
      *
      * @return self
      */
@@ -1376,7 +1376,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets mpiData
      *
-     * @return \request\model\MpiData|null
+     * @return \model\MpiData|null
      */
     public function getMpiData()
     {
@@ -1386,7 +1386,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mpiData
      *
-     * @param \request\model\MpiData|null $mpiData mpiData
+     * @param \model\MpiData|null $mpiData mpiData
      *
      * @return self
      */

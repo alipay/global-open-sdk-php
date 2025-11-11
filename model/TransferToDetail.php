@@ -333,7 +333,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets transferToMethod
      *
-     * @return \request\model\PaymentMethod
+     * @return \model\PaymentMethod
      */
     public function getTransferToMethod()
     {
@@ -343,7 +343,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferToMethod
      *
-     * @param \request\model\PaymentMethod $transferToMethod transferToMethod
+     * @param \model\PaymentMethod $transferToMethod transferToMethod
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets feeAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getFeeAmount()
     {
@@ -391,7 +391,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets feeAmount
      *
-     * @param \request\model\Amount|null $feeAmount feeAmount
+     * @param \model\Amount|null $feeAmount feeAmount
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets actualTransferToAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getActualTransferToAmount()
     {
@@ -415,7 +415,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets actualTransferToAmount
      *
-     * @param \request\model\Amount|null $actualTransferToAmount actualTransferToAmount
+     * @param \model\Amount|null $actualTransferToAmount actualTransferToAmount
      *
      * @return self
      */

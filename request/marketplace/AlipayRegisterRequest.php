@@ -340,7 +340,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Gets settlementInfos
      *
-     * @return \request\model\SettlementInfo[]
+     * @return \model\SettlementInfo[]
      */
     public function getSettlementInfos()
     {
@@ -350,7 +350,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets settlementInfos
      *
-     * @param \request\model\SettlementInfo[] $settlementInfos The list of sub-merchants' settlement information. One settlement currency corresponds to one settlement bank account.  More information:  Maximum size: 10 elements
+     * @param \model\SettlementInfo[] $settlementInfos The list of sub-merchants' settlement information. One settlement currency corresponds to one settlement bank account.  More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Gets merchantInfo
      *
-     * @return \request\model\MerchantInfo
+     * @return \model\MerchantInfo
      */
     public function getMerchantInfo()
     {
@@ -374,7 +374,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets merchantInfo
      *
-     * @param \request\model\MerchantInfo $merchantInfo merchantInfo
+     * @param \model\MerchantInfo $merchantInfo merchantInfo
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Gets paymentMethods
      *
-     * @return \request\model\PaymentMethod[]
+     * @return \model\PaymentMethod[]
      */
     public function getPaymentMethods()
     {
@@ -398,7 +398,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     /**
      * Sets paymentMethods
      *
-     * @param \request\model\PaymentMethod[] $paymentMethods The payment method that is used to collect the payment by the merchant or acquirer. The payment method must be already supportd by the platform merchant before they can be assigned for sub-merchants.  More information:  Maximum length: 100 characters
+     * @param \model\PaymentMethod[] $paymentMethods The payment method that is used to collect the payment by the merchant or acquirer. The payment method must be already supportd by the platform merchant before they can be assigned for sub-merchants.  More information:  Maximum length: 100 characters
      *
      * @return self
      */

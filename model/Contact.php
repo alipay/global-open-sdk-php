@@ -313,7 +313,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets type
      *
-     * @return \request\model\ContactType
+     * @return \model\ContactType
      */
     public function getType()
     {
@@ -323,7 +323,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param \request\model\ContactType $type type
+     * @param \model\ContactType $type type
      *
      * @return self
      */

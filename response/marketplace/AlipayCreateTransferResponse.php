@@ -316,7 +316,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -326,7 +326,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets transferFromDetail
      *
-     * @return \request\model\TransferFromDetail|null
+     * @return \model\TransferFromDetail|null
      */
     public function getTransferFromDetail()
     {
@@ -398,7 +398,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferFromDetail
      *
-     * @param \request\model\TransferFromDetail|null $transferFromDetail transferFromDetail
+     * @param \model\TransferFromDetail|null $transferFromDetail transferFromDetail
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets transferToDetail
      *
-     * @return \request\model\TransferToDetail
+     * @return \model\TransferToDetail
      */
     public function getTransferToDetail()
     {
@@ -422,7 +422,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferToDetail
      *
-     * @param \request\model\TransferToDetail $transferToDetail transferToDetail
+     * @param \model\TransferToDetail $transferToDetail transferToDetail
      *
      * @return self
      */

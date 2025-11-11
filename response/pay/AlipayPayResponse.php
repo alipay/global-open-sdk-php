@@ -460,7 +460,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -470,7 +470,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -532,7 +532,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getPaymentAmount()
     {
@@ -542,7 +542,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount|null $paymentAmount paymentAmount
+     * @param \model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -580,7 +580,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets actualPaymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getActualPaymentAmount()
     {
@@ -590,7 +590,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets actualPaymentAmount
      *
-     * @param \request\model\Amount|null $actualPaymentAmount actualPaymentAmount
+     * @param \model\Amount|null $actualPaymentAmount actualPaymentAmount
      *
      * @return self
      */
@@ -604,7 +604,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paymentQuote
      *
-     * @return \request\model\Quote|null
+     * @return \model\Quote|null
      */
     public function getPaymentQuote()
     {
@@ -614,7 +614,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentQuote
      *
-     * @param \request\model\Quote|null $paymentQuote paymentQuote
+     * @param \model\Quote|null $paymentQuote paymentQuote
      *
      * @return self
      */
@@ -700,7 +700,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets nonGuaranteeCouponValue
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getNonGuaranteeCouponValue()
     {
@@ -710,7 +710,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets nonGuaranteeCouponValue
      *
-     * @param \request\model\Amount|null $nonGuaranteeCouponValue nonGuaranteeCouponValue
+     * @param \model\Amount|null $nonGuaranteeCouponValue nonGuaranteeCouponValue
      *
      * @return self
      */
@@ -748,7 +748,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets pspCustomerInfo
      *
-     * @return \request\model\PspCustomerInfo|null
+     * @return \model\PspCustomerInfo|null
      */
     public function getPspCustomerInfo()
     {
@@ -758,7 +758,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets pspCustomerInfo
      *
-     * @param \request\model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
+     * @param \model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
      *
      * @return self
      */
@@ -772,7 +772,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets challengeActionForm
      *
-     * @return \request\model\ChallengeActionForm|null
+     * @return \model\ChallengeActionForm|null
      */
     public function getChallengeActionForm()
     {
@@ -782,7 +782,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets challengeActionForm
      *
-     * @param \request\model\ChallengeActionForm|null $challengeActionForm challengeActionForm
+     * @param \model\ChallengeActionForm|null $challengeActionForm challengeActionForm
      *
      * @return self
      */
@@ -796,7 +796,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets redirectActionForm
      *
-     * @return \request\model\RedirectActionForm|null
+     * @return \model\RedirectActionForm|null
      */
     public function getRedirectActionForm()
     {
@@ -806,7 +806,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets redirectActionForm
      *
-     * @param \request\model\RedirectActionForm|null $redirectActionForm redirectActionForm
+     * @param \model\RedirectActionForm|null $redirectActionForm redirectActionForm
      *
      * @return self
      */
@@ -820,7 +820,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets orderCodeForm
      *
-     * @return \request\model\OrderCodeForm|null
+     * @return \model\OrderCodeForm|null
      */
     public function getOrderCodeForm()
     {
@@ -830,7 +830,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets orderCodeForm
      *
-     * @param \request\model\OrderCodeForm|null $orderCodeForm orderCodeForm
+     * @param \model\OrderCodeForm|null $orderCodeForm orderCodeForm
      *
      * @return self
      */
@@ -844,7 +844,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets grossSettlementAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getGrossSettlementAmount()
     {
@@ -854,7 +854,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets grossSettlementAmount
      *
-     * @param \request\model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -868,7 +868,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets settlementQuote
      *
-     * @return \request\model\Quote|null
+     * @return \model\Quote|null
      */
     public function getSettlementQuote()
     {
@@ -878,7 +878,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets settlementQuote
      *
-     * @param \request\model\Quote|null $settlementQuote settlementQuote
+     * @param \model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -1012,7 +1012,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paymentResultInfo
      *
-     * @return \request\model\PaymentResultInfo|null
+     * @return \model\PaymentResultInfo|null
      */
     public function getPaymentResultInfo()
     {
@@ -1022,7 +1022,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paymentResultInfo
      *
-     * @param \request\model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
+     * @param \model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
      *
      * @return self
      */
@@ -1036,7 +1036,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets acquirerInfo
      *
-     * @return \request\model\AcquirerInfo|null
+     * @return \model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -1046,7 +1046,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets acquirerInfo
      *
-     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -1060,7 +1060,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets promotionResult
      *
-     * @return \request\model\PromotionResult[]|null
+     * @return \model\PromotionResult[]|null
      */
     public function getPromotionResult()
     {
@@ -1070,7 +1070,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets promotionResult
      *
-     * @param \request\model\PromotionResult[]|null $promotionResult Promotion result.
+     * @param \model\PromotionResult[]|null $promotionResult Promotion result.
      *
      * @return self
      */

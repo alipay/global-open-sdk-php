@@ -31,4 +31,43 @@ class TransactionStatusType
     public const PROCESSING = 'PROCESSING';
     public const CANCELLED = 'CANCELLED';
     public const PENDING = 'PENDING';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function SUCCESS(): self
+    {
+        return new self(self::SUCCESS);
+    }
+    public static function FAIL(): self
+    {
+        return new self(self::FAIL);
+    }
+    public static function PROCESSING(): self
+    {
+        return new self(self::PROCESSING);
+    }
+    public static function CANCELLED(): self
+    {
+        return new self(self::CANCELLED);
+    }
+    public static function PENDING(): self
+    {
+        return new self(self::PENDING);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

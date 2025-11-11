@@ -341,7 +341,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -351,7 +351,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets refundAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getRefundAmount()
     {
@@ -423,7 +423,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundAmount
      *
-     * @param \request\model\Amount|null $refundAmount refundAmount
+     * @param \model\Amount|null $refundAmount refundAmount
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets refundStatus
      *
-     * @return \request\model\TransactionStatusType|null
+     * @return \model\TransactionStatusType|null
      */
     public function getRefundStatus()
     {
@@ -447,7 +447,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets refundStatus
      *
-     * @param \request\model\TransactionStatusType|null $refundStatus refundStatus
+     * @param \model\TransactionStatusType|null $refundStatus refundStatus
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets grossSettlementAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getGrossSettlementAmount()
     {
@@ -495,7 +495,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets grossSettlementAmount
      *
-     * @param \request\model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets settlementQuote
      *
-     * @return \request\model\Quote|null
+     * @return \model\Quote|null
      */
     public function getSettlementQuote()
     {
@@ -519,7 +519,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets settlementQuote
      *
-     * @param \request\model\Quote|null $settlementQuote settlementQuote
+     * @param \model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets acquirerInfo
      *
-     * @return \request\model\AcquirerInfo|null
+     * @return \model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -543,7 +543,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets acquirerInfo
      *
-     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */

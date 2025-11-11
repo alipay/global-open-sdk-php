@@ -344,7 +344,7 @@ class SupportBank  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bankLogo
      *
-     * @return \request\model\Logo|null
+     * @return \model\Logo|null
      */
     public function getBankLogo()
     {
@@ -354,7 +354,7 @@ class SupportBank  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bankLogo
      *
-     * @param \request\model\Logo|null $bankLogo bankLogo
+     * @param \model\Logo|null $bankLogo bankLogo
      *
      * @return self
      */

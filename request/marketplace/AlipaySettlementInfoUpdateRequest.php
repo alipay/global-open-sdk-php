@@ -388,7 +388,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
     /**
      * Gets settlementBankAccount
      *
-     * @return \request\model\SettlementBankAccount
+     * @return \model\SettlementBankAccount
      */
     public function getSettlementBankAccount()
     {
@@ -398,7 +398,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
     /**
      * Sets settlementBankAccount
      *
-     * @param \request\model\SettlementBankAccount $settlementBankAccount settlementBankAccount
+     * @param \model\SettlementBankAccount $settlementBankAccount settlementBankAccount
      *
      * @return self
      */

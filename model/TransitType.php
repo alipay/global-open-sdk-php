@@ -30,4 +30,39 @@ class TransitType
     public const TRAIN = 'TRAIN';
     public const CRUISE = 'CRUISE';
     public const COACH = 'COACH';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function FLIGHT(): self
+    {
+        return new self(self::FLIGHT);
+    }
+    public static function TRAIN(): self
+    {
+        return new self(self::TRAIN);
+    }
+    public static function CRUISE(): self
+    {
+        return new self(self::CRUISE);
+    }
+    public static function COACH(): self
+    {
+        return new self(self::COACH);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

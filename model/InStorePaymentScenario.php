@@ -29,4 +29,35 @@ class InStorePaymentScenario
     public const PAYMENT_CODE = 'PaymentCode';
     public const ORDER_CODE = 'OrderCode';
     public const ENTRY_CODE = 'EntryCode';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function PAYMENT_CODE(): self
+    {
+        return new self(self::PAYMENT_CODE);
+    }
+    public static function ORDER_CODE(): self
+    {
+        return new self(self::ORDER_CODE);
+    }
+    public static function ENTRY_CODE(): self
+    {
+        return new self(self::ENTRY_CODE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

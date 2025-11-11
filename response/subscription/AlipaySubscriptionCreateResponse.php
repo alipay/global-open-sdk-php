@@ -313,7 +313,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -323,7 +323,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */

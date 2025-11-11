@@ -348,7 +348,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets hotelAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getHotelAddress()
     {
@@ -358,7 +358,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hotelAddress
      *
-     * @param \request\model\Address|null $hotelAddress hotelAddress
+     * @param \model\Address|null $hotelAddress hotelAddress
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets guestNames
      *
-     * @return \request\model\UserName[]|null
+     * @return \model\UserName[]|null
      */
     public function getGuestNames()
     {
@@ -478,7 +478,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets guestNames
      *
-     * @param \request\model\UserName[]|null $guestNames Name of the guest under which the room is reserved.  More information:  Maximum size: 100 elements
+     * @param \model\UserName[]|null $guestNames Name of the guest under which the room is reserved.  More information:  Maximum size: 100 elements
      *
      * @return self
      */

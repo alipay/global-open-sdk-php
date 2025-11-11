@@ -454,7 +454,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets productCode
      *
-     * @return \request\model\ProductCodeType
+     * @return \model\ProductCodeType
      */
     public function getProductCode()
     {
@@ -464,7 +464,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets productCode
      *
-     * @param \request\model\ProductCodeType $productCode productCode
+     * @param \model\ProductCodeType $productCode productCode
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets order
      *
-     * @return \request\model\Order
+     * @return \model\Order
      */
     public function getOrder()
     {
@@ -512,7 +512,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets order
      *
-     * @param \request\model\Order $order order
+     * @param \model\Order $order order
      *
      * @return self
      */
@@ -526,7 +526,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getPaymentAmount()
     {
@@ -536,7 +536,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -550,7 +550,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets paymentMethod
      *
-     * @return \request\model\PaymentMethod
+     * @return \model\PaymentMethod
      */
     public function getPaymentMethod()
     {
@@ -560,7 +560,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentMethod
      *
-     * @param \request\model\PaymentMethod $paymentMethod paymentMethod
+     * @param \model\PaymentMethod $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -646,7 +646,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets paymentFactor
      *
-     * @return \request\model\PaymentFactor|null
+     * @return \model\PaymentFactor|null
      */
     public function getPaymentFactor()
     {
@@ -656,7 +656,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentFactor
      *
-     * @param \request\model\PaymentFactor|null $paymentFactor paymentFactor
+     * @param \model\PaymentFactor|null $paymentFactor paymentFactor
      *
      * @return self
      */
@@ -670,7 +670,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets settlementStrategy
      *
-     * @return \request\model\SettlementStrategy
+     * @return \model\SettlementStrategy
      */
     public function getSettlementStrategy()
     {
@@ -680,7 +680,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets settlementStrategy
      *
-     * @param \request\model\SettlementStrategy $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -694,7 +694,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets creditPayPlan
      *
-     * @return \request\model\CreditPayPlan|null
+     * @return \model\CreditPayPlan|null
      */
     public function getCreditPayPlan()
     {
@@ -704,7 +704,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets creditPayPlan
      *
-     * @param \request\model\CreditPayPlan|null $creditPayPlan creditPayPlan
+     * @param \model\CreditPayPlan|null $creditPayPlan creditPayPlan
      *
      * @return self
      */
@@ -790,7 +790,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets env
      *
-     * @return \request\model\Env
+     * @return \model\Env
      */
     public function getEnv()
     {
@@ -800,7 +800,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets env
      *
-     * @param \request\model\Env $env env
+     * @param \model\Env $env env
      *
      * @return self
      */
@@ -814,7 +814,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets payToMethod
      *
-     * @return \request\model\PaymentMethod|null
+     * @return \model\PaymentMethod|null
      */
     public function getPayToMethod()
     {
@@ -824,7 +824,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets payToMethod
      *
-     * @param \request\model\PaymentMethod|null $payToMethod payToMethod
+     * @param \model\PaymentMethod|null $payToMethod payToMethod
      *
      * @return self
      */
@@ -862,7 +862,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets merchant
      *
-     * @return \request\model\Merchant|null
+     * @return \model\Merchant|null
      */
     public function getMerchant()
     {
@@ -872,7 +872,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets merchant
      *
-     * @param \request\model\Merchant|null $merchant merchant
+     * @param \model\Merchant|null $merchant merchant
      *
      * @return self
      */
@@ -886,7 +886,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Gets paymentVerificationData
      *
-     * @return \request\model\PaymentVerificationData|null
+     * @return \model\PaymentVerificationData|null
      */
     public function getPaymentVerificationData()
     {
@@ -896,7 +896,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets paymentVerificationData
      *
-     * @param \request\model\PaymentVerificationData|null $paymentVerificationData paymentVerificationData
+     * @param \model\PaymentVerificationData|null $paymentVerificationData paymentVerificationData
      *
      * @return self
      */

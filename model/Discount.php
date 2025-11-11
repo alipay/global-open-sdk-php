@@ -351,7 +351,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets savingsAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getSavingsAmount()
     {
@@ -361,7 +361,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets savingsAmount
      *
-     * @param \request\model\Amount|null $savingsAmount savingsAmount
+     * @param \model\Amount|null $savingsAmount savingsAmount
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets estimateSavingsAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getEstimateSavingsAmount()
     {
@@ -385,7 +385,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets estimateSavingsAmount
      *
-     * @param \request\model\Amount|null $estimateSavingsAmount estimateSavingsAmount
+     * @param \model\Amount|null $estimateSavingsAmount estimateSavingsAmount
      *
      * @return self
      */

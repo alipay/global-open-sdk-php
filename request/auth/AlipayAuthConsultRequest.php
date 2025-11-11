@@ -375,7 +375,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets customerBelongsTo
      *
-     * @return \request\model\CustomerBelongsTo
+     * @return \model\CustomerBelongsTo
      */
     public function getCustomerBelongsTo()
     {
@@ -385,7 +385,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets customerBelongsTo
      *
-     * @param \request\model\CustomerBelongsTo $customerBelongsTo customerBelongsTo
+     * @param \model\CustomerBelongsTo $customerBelongsTo customerBelongsTo
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets scopes
      *
-     * @return \request\model\ScopeType[]
+     * @return \model\ScopeType[]
      */
     public function getScopes()
     {
@@ -457,7 +457,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets scopes
      *
-     * @param \request\model\ScopeType[] $scopes The authorization scope. Valid values are:    BASE_USER_INFO: Indicates that the unique user ID can be obtained. USER_INFO: Indicates that the complete user information can be obtained, for example, user name, avatar, and other user information. AGREEMENT_PAY: Indicates that the user agrees to authorize for auto debit so that the merchant can use the access token to automatically deduct money from the user's account. More information:  Maximum size: 4 elements
+     * @param \model\ScopeType[] $scopes The authorization scope. Valid values are:    BASE_USER_INFO: Indicates that the unique user ID can be obtained. USER_INFO: Indicates that the complete user information can be obtained, for example, user name, avatar, and other user information. AGREEMENT_PAY: Indicates that the user agrees to authorize for auto debit so that the merchant can use the access token to automatically deduct money from the user's account. More information:  Maximum size: 4 elements
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets terminalType
      *
-     * @return \request\model\TerminalType
+     * @return \model\TerminalType
      */
     public function getTerminalType()
     {
@@ -505,7 +505,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets terminalType
      *
-     * @param \request\model\TerminalType $terminalType terminalType
+     * @param \model\TerminalType $terminalType terminalType
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets osType
      *
-     * @return \request\model\OsType|null
+     * @return \model\OsType|null
      */
     public function getOsType()
     {
@@ -529,7 +529,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets osType
      *
-     * @param \request\model\OsType|null $osType osType
+     * @param \model\OsType|null $osType osType
      *
      * @return self
      */
@@ -639,7 +639,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets authMetaData
      *
-     * @return \request\model\AuthMetaData|null
+     * @return \model\AuthMetaData|null
      */
     public function getAuthMetaData()
     {
@@ -649,7 +649,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets authMetaData
      *
-     * @param \request\model\AuthMetaData|null $authMetaData authMetaData
+     * @param \model\AuthMetaData|null $authMetaData authMetaData
      *
      * @return self
      */

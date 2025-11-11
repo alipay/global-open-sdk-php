@@ -285,7 +285,7 @@ class AuthCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets codeDetails
      *
-     * @return \request\model\CodeDetail[]
+     * @return \model\CodeDetail[]
      */
     public function getCodeDetails()
     {
@@ -295,7 +295,7 @@ class AuthCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeDetails
      *
-     * @param \request\model\CodeDetail[] $codeDetails A list of QR code information.
+     * @param \model\CodeDetail[] $codeDetails A list of QR code information.
      *
      * @return self
      */

@@ -302,7 +302,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets result
      *
-     * @return \request\model\Result|null
+     * @return \model\Result|null
      */
     public function getResult()
     {
@@ -312,7 +312,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets result
      *
-     * @param \request\model\Result|null $result result
+     * @param \model\Result|null $result result
      *
      * @return self
      */

@@ -28,4 +28,31 @@ class OsType
 {
     public const IOS = 'IOS';
     public const ANDROID = 'ANDROID';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function IOS(): self
+    {
+        return new self(self::IOS);
+    }
+    public static function ANDROID(): self
+    {
+        return new self(self::ANDROID);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

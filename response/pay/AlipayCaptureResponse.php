@@ -327,7 +327,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -337,7 +337,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets captureAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getCaptureAmount()
     {
@@ -433,7 +433,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets captureAmount
      *
-     * @param \request\model\Amount|null $captureAmount captureAmount
+     * @param \model\Amount|null $captureAmount captureAmount
      *
      * @return self
      */

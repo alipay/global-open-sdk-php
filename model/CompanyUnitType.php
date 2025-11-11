@@ -28,4 +28,31 @@ class CompanyUnitType
 {
     public const HEADQUARTER = 'HEADQUARTER';
     public const BRANCH = 'BRANCH';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function HEADQUARTER(): self
+    {
+        return new self(self::HEADQUARTER);
+    }
+    public static function BRANCH(): self
+    {
+        return new self(self::BRANCH);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

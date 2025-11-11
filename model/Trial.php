@@ -326,7 +326,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets trialAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getTrialAmount()
     {
@@ -336,7 +336,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trialAmount
      *
-     * @param \request\model\Amount $trialAmount trialAmount
+     * @param \model\Amount $trialAmount trialAmount
      *
      * @return self
      */

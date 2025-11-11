@@ -330,7 +330,7 @@ class AlipayCreatePayoutRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Gets transferFromDetail
      *
-     * @return \request\model\TransferFromDetail
+     * @return \model\TransferFromDetail
      */
     public function getTransferFromDetail()
     {
@@ -340,7 +340,7 @@ class AlipayCreatePayoutRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets transferFromDetail
      *
-     * @param \request\model\TransferFromDetail $transferFromDetail transferFromDetail
+     * @param \model\TransferFromDetail $transferFromDetail transferFromDetail
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class AlipayCreatePayoutRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Gets transferToDetail
      *
-     * @return \request\model\TransferToDetail
+     * @return \model\TransferToDetail
      */
     public function getTransferToDetail()
     {
@@ -364,7 +364,7 @@ class AlipayCreatePayoutRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets transferToDetail
      *
-     * @param \request\model\TransferToDetail $transferToDetail transferToDetail
+     * @param \model\TransferToDetail $transferToDetail transferToDetail
      *
      * @return self
      */

@@ -349,7 +349,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transactionResult
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getTransactionResult()
     {
@@ -359,7 +359,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionResult
      *
-     * @param \request\model\Result $transactionResult transactionResult
+     * @param \model\Result $transactionResult transactionResult
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transactionType
      *
-     * @return \request\model\TransactionType
+     * @return \model\TransactionType
      */
     public function getTransactionType()
     {
@@ -407,7 +407,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionType
      *
-     * @param \request\model\TransactionType $transactionType transactionType
+     * @param \model\TransactionType $transactionType transactionType
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transactionStatus
      *
-     * @return \request\model\TransactionStatusType
+     * @return \model\TransactionStatusType
      */
     public function getTransactionStatus()
     {
@@ -431,7 +431,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionStatus
      *
-     * @param \request\model\TransactionStatusType $transactionStatus transactionStatus
+     * @param \model\TransactionStatusType $transactionStatus transactionStatus
      *
      * @return self
      */
@@ -445,7 +445,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transactionAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getTransactionAmount()
     {
@@ -455,7 +455,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionAmount
      *
-     * @param \request\model\Amount $transactionAmount transactionAmount
+     * @param \model\Amount $transactionAmount transactionAmount
      *
      * @return self
      */
@@ -517,7 +517,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets acquirerInfo
      *
-     * @return \request\model\AcquirerInfo|null
+     * @return \model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -527,7 +527,7 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerInfo
      *
-     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */

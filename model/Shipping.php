@@ -338,7 +338,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shippingName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getShippingName()
     {
@@ -348,7 +348,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingName
      *
-     * @param \request\model\UserName|null $shippingName shippingName
+     * @param \model\UserName|null $shippingName shippingName
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shippingAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getShippingAddress()
     {
@@ -372,7 +372,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingAddress
      *
-     * @param \request\model\Address|null $shippingAddress shippingAddress
+     * @param \model\Address|null $shippingAddress shippingAddress
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shippingFee
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getShippingFee()
     {
@@ -492,7 +492,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingFee
      *
-     * @param \request\model\Amount|null $shippingFee shippingFee
+     * @param \model\Amount|null $shippingFee shippingFee
      *
      * @return self
      */
@@ -530,7 +530,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets deliveryEstimate
      *
-     * @return \request\model\DeliveryEstimate|null
+     * @return \model\DeliveryEstimate|null
      */
     public function getDeliveryEstimate()
     {
@@ -540,7 +540,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deliveryEstimate
      *
-     * @param \request\model\DeliveryEstimate|null $deliveryEstimate deliveryEstimate
+     * @param \model\DeliveryEstimate|null $deliveryEstimate deliveryEstimate
      *
      * @return self
      */

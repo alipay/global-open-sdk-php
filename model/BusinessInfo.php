@@ -351,7 +351,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets websites
      *
-     * @return \request\model\WebSite[]|null
+     * @return \model\WebSite[]|null
      */
     public function getWebsites()
     {
@@ -361,7 +361,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets websites
      *
-     * @param \request\model\WebSite[]|null $websites The list of merchant websites. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR.   More information:  Maximum size: 10 elements
+     * @param \model\WebSite[]|null $websites The list of merchant websites. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR.   More information:  Maximum size: 10 elements
      *
      * @return self
      */

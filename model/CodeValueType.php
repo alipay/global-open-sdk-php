@@ -28,4 +28,31 @@ class CodeValueType
 {
     public const BARCODE = 'BARCODE';
     public const QRCODE = 'QRCODE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function BARCODE(): self
+    {
+        return new self(self::BARCODE);
+    }
+    public static function QRCODE(): self
+    {
+        return new self(self::QRCODE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

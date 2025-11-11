@@ -285,7 +285,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orderAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getOrderAmount()
     {
@@ -295,7 +295,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderAmount
      *
-     * @param \request\model\Amount $orderAmount orderAmount
+     * @param \model\Amount $orderAmount orderAmount
      *
      * @return self
      */

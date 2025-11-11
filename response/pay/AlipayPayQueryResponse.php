@@ -481,7 +481,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -491,7 +491,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paymentStatus
      *
-     * @return \request\model\TransactionStatusType|null
+     * @return \model\TransactionStatusType|null
      */
     public function getPaymentStatus()
     {
@@ -515,7 +515,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentStatus
      *
-     * @param \request\model\TransactionStatusType|null $paymentStatus paymentStatus
+     * @param \model\TransactionStatusType|null $paymentStatus paymentStatus
      *
      * @return self
      */
@@ -649,7 +649,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getPaymentAmount()
     {
@@ -659,7 +659,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount|null $paymentAmount paymentAmount
+     * @param \model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -673,7 +673,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets actualPaymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getActualPaymentAmount()
     {
@@ -683,7 +683,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets actualPaymentAmount
      *
-     * @param \request\model\Amount|null $actualPaymentAmount actualPaymentAmount
+     * @param \model\Amount|null $actualPaymentAmount actualPaymentAmount
      *
      * @return self
      */
@@ -697,7 +697,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paymentQuote
      *
-     * @return \request\model\Quote|null
+     * @return \model\Quote|null
      */
     public function getPaymentQuote()
     {
@@ -707,7 +707,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentQuote
      *
-     * @param \request\model\Quote|null $paymentQuote paymentQuote
+     * @param \model\Quote|null $paymentQuote paymentQuote
      *
      * @return self
      */
@@ -793,7 +793,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets nonGuaranteeCouponAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getNonGuaranteeCouponAmount()
     {
@@ -803,7 +803,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets nonGuaranteeCouponAmount
      *
-     * @param \request\model\Amount|null $nonGuaranteeCouponAmount nonGuaranteeCouponAmount
+     * @param \model\Amount|null $nonGuaranteeCouponAmount nonGuaranteeCouponAmount
      *
      * @return self
      */
@@ -817,7 +817,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets pspCustomerInfo
      *
-     * @return \request\model\PspCustomerInfo|null
+     * @return \model\PspCustomerInfo|null
      */
     public function getPspCustomerInfo()
     {
@@ -827,7 +827,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets pspCustomerInfo
      *
-     * @param \request\model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
+     * @param \model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
      *
      * @return self
      */
@@ -841,7 +841,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets redirectActionForm
      *
-     * @return \request\model\RedirectActionForm|null
+     * @return \model\RedirectActionForm|null
      */
     public function getRedirectActionForm()
     {
@@ -851,7 +851,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets redirectActionForm
      *
-     * @param \request\model\RedirectActionForm|null $redirectActionForm redirectActionForm
+     * @param \model\RedirectActionForm|null $redirectActionForm redirectActionForm
      *
      * @return self
      */
@@ -865,7 +865,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cardInfo
      *
-     * @return \request\model\CardInfo|null
+     * @return \model\CardInfo|null
      */
     public function getCardInfo()
     {
@@ -875,7 +875,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cardInfo
      *
-     * @param \request\model\CardInfo|null $cardInfo cardInfo
+     * @param \model\CardInfo|null $cardInfo cardInfo
      *
      * @return self
      */
@@ -937,7 +937,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets transactions
      *
-     * @return \request\model\Transaction[]|null
+     * @return \model\Transaction[]|null
      */
     public function getTransactions()
     {
@@ -947,7 +947,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets transactions
      *
-     * @param \request\model\Transaction[]|null $transactions Information about the subsequent action against a transaction.  Note: This parameter is returned when a refund or a capture against the transaction exists.
+     * @param \model\Transaction[]|null $transactions Information about the subsequent action against a transaction.  Note: This parameter is returned when a refund or a capture against the transaction exists.
      *
      * @return self
      */
@@ -961,7 +961,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets customsDeclarationAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getCustomsDeclarationAmount()
     {
@@ -971,7 +971,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets customsDeclarationAmount
      *
-     * @param \request\model\Amount|null $customsDeclarationAmount customsDeclarationAmount
+     * @param \model\Amount|null $customsDeclarationAmount customsDeclarationAmount
      *
      * @return self
      */
@@ -985,7 +985,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets grossSettlementAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getGrossSettlementAmount()
     {
@@ -995,7 +995,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets grossSettlementAmount
      *
-     * @param \request\model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -1009,7 +1009,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets settlementQuote
      *
-     * @return \request\model\Quote|null
+     * @return \model\Quote|null
      */
     public function getSettlementQuote()
     {
@@ -1019,7 +1019,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets settlementQuote
      *
-     * @param \request\model\Quote|null $settlementQuote settlementQuote
+     * @param \model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -1033,7 +1033,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paymentResultInfo
      *
-     * @return \request\model\PaymentResultInfo|null
+     * @return \model\PaymentResultInfo|null
      */
     public function getPaymentResultInfo()
     {
@@ -1043,7 +1043,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentResultInfo
      *
-     * @param \request\model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
+     * @param \model\PaymentResultInfo|null $paymentResultInfo paymentResultInfo
      *
      * @return self
      */
@@ -1057,7 +1057,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets acquirerInfo
      *
-     * @return \request\model\AcquirerInfo|null
+     * @return \model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -1067,7 +1067,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets acquirerInfo
      *
-     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -1105,7 +1105,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets promotionResults
      *
-     * @return \request\model\PromotionResult[]|null
+     * @return \model\PromotionResult[]|null
      */
     public function getPromotionResults()
     {
@@ -1115,7 +1115,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets promotionResults
      *
-     * @param \request\model\PromotionResult[]|null $promotionResults Promotion result.  Note: This parameter is returned when the buyer applied a promotion while placing an order.
+     * @param \model\PromotionResult[]|null $promotionResults Promotion result.  Note: This parameter is returned when the buyer applied a promotion while placing an order.
      *
      * @return self
      */

@@ -334,7 +334,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets availableAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getAvailableAmount()
     {
@@ -344,7 +344,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets availableAmount
      *
-     * @param \request\model\Amount|null $availableAmount availableAmount
+     * @param \model\Amount|null $availableAmount availableAmount
      *
      * @return self
      */

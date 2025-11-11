@@ -316,7 +316,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets associationType
      *
-     * @return \request\model\AssociationType
+     * @return \model\AssociationType
      */
     public function getAssociationType()
     {
@@ -326,7 +326,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets associationType
      *
-     * @param \request\model\AssociationType $associationType associationType
+     * @param \model\AssociationType $associationType associationType
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets legalEntityType
      *
-     * @return \request\model\LegalEntityType
+     * @return \model\LegalEntityType
      */
     public function getLegalEntityType()
     {
@@ -350,7 +350,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets legalEntityType
      *
-     * @param \request\model\LegalEntityType $legalEntityType legalEntityType
+     * @param \model\LegalEntityType $legalEntityType legalEntityType
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets company
      *
-     * @return \request\model\Company|null
+     * @return \model\Company|null
      */
     public function getCompany()
     {
@@ -374,7 +374,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets company
      *
-     * @param \request\model\Company|null $company company
+     * @param \model\Company|null $company company
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets individual
      *
-     * @return \request\model\Individual|null
+     * @return \model\Individual|null
      */
     public function getIndividual()
     {
@@ -398,7 +398,7 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets individual
      *
-     * @param \request\model\Individual|null $individual individual
+     * @param \model\Individual|null $individual individual
      *
      * @return self
      */

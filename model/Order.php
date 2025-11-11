@@ -444,7 +444,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orderAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getOrderAmount()
     {
@@ -454,7 +454,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderAmount
      *
-     * @param \request\model\Amount $orderAmount orderAmount
+     * @param \model\Amount $orderAmount orderAmount
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchant
      *
-     * @return \request\model\Merchant|null
+     * @return \model\Merchant|null
      */
     public function getMerchant()
     {
@@ -478,7 +478,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchant
      *
-     * @param \request\model\Merchant|null $merchant merchant
+     * @param \model\Merchant|null $merchant merchant
      *
      * @return self
      */
@@ -492,7 +492,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets goods
      *
-     * @return \request\model\Goods[]|null
+     * @return \model\Goods[]|null
      */
     public function getGoods()
     {
@@ -502,7 +502,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goods
      *
-     * @param \request\model\Goods[]|null $goods Goods information, including the ID, name, price, and quantity of the goods in the order.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum size: 100 elements
+     * @param \model\Goods[]|null $goods Goods information, including the ID, name, price, and quantity of the goods in the order.   Note: Specify this parameter if you require risk control. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.  More information:  Maximum size: 100 elements
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping
      *
-     * @return \request\model\Shipping|null
+     * @return \model\Shipping|null
      */
     public function getShipping()
     {
@@ -526,7 +526,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping
      *
-     * @param \request\model\Shipping|null $shipping shipping
+     * @param \model\Shipping|null $shipping shipping
      *
      * @return self
      */
@@ -540,7 +540,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyer
      *
-     * @return \request\model\Buyer|null
+     * @return \model\Buyer|null
      */
     public function getBuyer()
     {
@@ -550,7 +550,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer
      *
-     * @param \request\model\Buyer|null $buyer buyer
+     * @param \model\Buyer|null $buyer buyer
      *
      * @return self
      */
@@ -564,7 +564,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets env
      *
-     * @return \request\model\Env|null
+     * @return \model\Env|null
      */
     public function getEnv()
     {
@@ -574,7 +574,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets env
      *
-     * @param \request\model\Env|null $env env
+     * @param \model\Env|null $env env
      *
      * @return self
      */
@@ -612,7 +612,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transit
      *
-     * @return \request\model\Transit|null
+     * @return \model\Transit|null
      */
     public function getTransit()
     {
@@ -622,7 +622,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transit
      *
-     * @param \request\model\Transit|null $transit transit
+     * @param \model\Transit|null $transit transit
      *
      * @return self
      */
@@ -636,7 +636,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets lodging
      *
-     * @return \request\model\Lodging|null
+     * @return \model\Lodging|null
      */
     public function getLodging()
     {
@@ -646,7 +646,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lodging
      *
-     * @param \request\model\Lodging|null $lodging lodging
+     * @param \model\Lodging|null $lodging lodging
      *
      * @return self
      */
@@ -660,7 +660,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gaming
      *
-     * @return \request\model\Gaming|null
+     * @return \model\Gaming|null
      */
     public function getGaming()
     {
@@ -670,7 +670,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gaming
      *
-     * @param \request\model\Gaming|null $gaming gaming
+     * @param \model\Gaming|null $gaming gaming
      *
      * @return self
      */
@@ -732,7 +732,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets declaration
      *
-     * @return \request\model\Declaration|null
+     * @return \model\Declaration|null
      */
     public function getDeclaration()
     {
@@ -742,7 +742,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets declaration
      *
-     * @param \request\model\Declaration|null $declaration declaration
+     * @param \model\Declaration|null $declaration declaration
      *
      * @return self
      */

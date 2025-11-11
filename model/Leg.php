@@ -386,7 +386,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets departureAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getDepartureAddress()
     {
@@ -396,7 +396,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departureAddress
      *
-     * @param \request\model\Address|null $departureAddress departureAddress
+     * @param \model\Address|null $departureAddress departureAddress
      *
      * @return self
      */
@@ -410,7 +410,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets arrivalAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getArrivalAddress()
     {
@@ -420,7 +420,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets arrivalAddress
      *
-     * @param \request\model\Address|null $arrivalAddress arrivalAddress
+     * @param \model\Address|null $arrivalAddress arrivalAddress
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets classType
      *
-     * @return \request\model\ClassType|null
+     * @return \model\ClassType|null
      */
     public function getClassType()
     {
@@ -492,7 +492,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets classType
      *
-     * @param \request\model\ClassType|null $classType classType
+     * @param \model\ClassType|null $classType classType
      *
      * @return self
      */

@@ -299,7 +299,7 @@ class AlipayAcceptDisputeResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -309,7 +309,7 @@ class AlipayAcceptDisputeResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */

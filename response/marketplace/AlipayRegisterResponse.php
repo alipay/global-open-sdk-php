@@ -289,7 +289,7 @@ class AlipayRegisterResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets result
      *
-     * @return \request\model\Result|null
+     * @return \model\Result|null
      */
     public function getResult()
     {
@@ -299,7 +299,7 @@ class AlipayRegisterResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets result
      *
-     * @param \request\model\Result|null $result result
+     * @param \model\Result|null $result result
      *
      * @return self
      */

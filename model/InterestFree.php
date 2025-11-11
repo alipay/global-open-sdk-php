@@ -404,7 +404,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets minPaymentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getMinPaymentAmount()
     {
@@ -414,7 +414,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets minPaymentAmount
      *
-     * @param \request\model\Amount $minPaymentAmount minPaymentAmount
+     * @param \model\Amount $minPaymentAmount minPaymentAmount
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets maxPaymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getMaxPaymentAmount()
     {
@@ -438,7 +438,7 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets maxPaymentAmount
      *
-     * @param \request\model\Amount|null $maxPaymentAmount maxPaymentAmount
+     * @param \model\Amount|null $maxPaymentAmount maxPaymentAmount
      *
      * @return self
      */

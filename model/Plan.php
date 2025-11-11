@@ -356,7 +356,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets minInstallmentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getMinInstallmentAmount()
     {
@@ -366,7 +366,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets minInstallmentAmount
      *
-     * @param \request\model\Amount $minInstallmentAmount minInstallmentAmount
+     * @param \model\Amount $minInstallmentAmount minInstallmentAmount
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets maxInstallmentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getMaxInstallmentAmount()
     {
@@ -390,7 +390,7 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets maxInstallmentAmount
      *
-     * @param \request\model\Amount $maxInstallmentAmount maxInstallmentAmount
+     * @param \model\Amount $maxInstallmentAmount maxInstallmentAmount
      *
      * @return self
      */

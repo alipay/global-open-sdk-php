@@ -327,7 +327,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return \request\model\UserName
+     * @return \model\UserName
      */
     public function getName()
     {
@@ -337,7 +337,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param \request\model\UserName $name name
+     * @param \model\UserName $name name
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets englishName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getEnglishName()
     {
@@ -361,7 +361,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets englishName
      *
-     * @param \request\model\UserName|null $englishName englishName
+     * @param \model\UserName|null $englishName englishName
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets placeOfBirth
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getPlaceOfBirth()
     {
@@ -409,7 +409,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets placeOfBirth
      *
-     * @param \request\model\Address|null $placeOfBirth placeOfBirth
+     * @param \model\Address|null $placeOfBirth placeOfBirth
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets certificates
      *
-     * @return \request\model\Certificate[]|null
+     * @return \model\Certificate[]|null
      */
     public function getCertificates()
     {
@@ -433,7 +433,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificates
      *
-     * @param \request\model\Certificate[]|null $certificates The list of certificate information of the individual. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR or US.
+     * @param \model\Certificate[]|null $certificates The list of certificate information of the individual. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR or US.
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets contacts
      *
-     * @return \request\model\Contact[]|null
+     * @return \model\Contact[]|null
      */
     public function getContacts()
     {
@@ -481,7 +481,7 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contacts
      *
-     * @param \request\model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP and the value of merchantInfo.entityAssociations.associationType is LEGAL_REPRESENTATIVE.    More information:  Maximum size: 10 elements
+     * @param \model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP and the value of merchantInfo.entityAssociations.associationType is LEGAL_REPRESENTATIVE.    More information:  Maximum size: 10 elements
      *
      * @return self
      */

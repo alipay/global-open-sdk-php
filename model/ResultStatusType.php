@@ -29,4 +29,35 @@ class ResultStatusType
     public const S = 'S';
     public const F = 'F';
     public const U = 'U';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function S(): self
+    {
+        return new self(self::S);
+    }
+    public static function F(): self
+    {
+        return new self(self::F);
+    }
+    public static function U(): self
+    {
+        return new self(self::U);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

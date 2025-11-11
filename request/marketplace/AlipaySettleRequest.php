@@ -354,7 +354,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Gets settlementDetails
      *
-     * @return \request\model\SettlementDetail[]
+     * @return \model\SettlementDetail[]
      */
     public function getSettlementDetails()
     {
@@ -364,7 +364,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets settlementDetails
      *
-     * @param \request\model\SettlementDetail[] $settlementDetails The settlement details for a payment.    More information:  Maximum length: 20 characters
+     * @param \model\SettlementDetail[] $settlementDetails The settlement details for a payment.    More information:  Maximum length: 20 characters
      *
      * @return self
      */

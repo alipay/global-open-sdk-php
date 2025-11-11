@@ -355,7 +355,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -365,7 +365,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets refundAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getRefundAmount()
     {
@@ -461,7 +461,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundAmount
      *
-     * @param \request\model\Amount|null $refundAmount refundAmount
+     * @param \model\Amount|null $refundAmount refundAmount
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets refundNonGuaranteeCouponAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getRefundNonGuaranteeCouponAmount()
     {
@@ -509,7 +509,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets refundNonGuaranteeCouponAmount
      *
-     * @param \request\model\Amount|null $refundNonGuaranteeCouponAmount refundNonGuaranteeCouponAmount
+     * @param \model\Amount|null $refundNonGuaranteeCouponAmount refundNonGuaranteeCouponAmount
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets grossSettlementAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getGrossSettlementAmount()
     {
@@ -533,7 +533,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets grossSettlementAmount
      *
-     * @param \request\model\Amount|null $grossSettlementAmount grossSettlementAmount
+     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets settlementQuote
      *
-     * @return \request\model\Quote|null
+     * @return \model\Quote|null
      */
     public function getSettlementQuote()
     {
@@ -557,7 +557,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets settlementQuote
      *
-     * @param \request\model\Quote|null $settlementQuote settlementQuote
+     * @param \model\Quote|null $settlementQuote settlementQuote
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets acquirerInfo
      *
-     * @return \request\model\AcquirerInfo|null
+     * @return \model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -581,7 +581,7 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets acquirerInfo
      *
-     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */

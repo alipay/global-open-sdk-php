@@ -341,7 +341,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets paymentMethodDetailType
      *
-     * @return \request\model\PaymentMethodDetailType|null
+     * @return \model\PaymentMethodDetailType|null
      */
     public function getPaymentMethodDetailType()
     {
@@ -351,7 +351,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets paymentMethodDetailType
      *
-     * @param \request\model\PaymentMethodDetailType|null $paymentMethodDetailType paymentMethodDetailType
+     * @param \model\PaymentMethodDetailType|null $paymentMethodDetailType paymentMethodDetailType
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets card
      *
-     * @return \request\model\CardPaymentMethodDetail|null
+     * @return \model\CardPaymentMethodDetail|null
      */
     public function getCard()
     {
@@ -375,7 +375,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets card
      *
-     * @param \request\model\CardPaymentMethodDetail|null $card card
+     * @param \model\CardPaymentMethodDetail|null $card card
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets externalAccount
      *
-     * @return \request\model\ExternalPaymentMethodDetail|null
+     * @return \model\ExternalPaymentMethodDetail|null
      */
     public function getExternalAccount()
     {
@@ -399,7 +399,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets externalAccount
      *
-     * @param \request\model\ExternalPaymentMethodDetail|null $externalAccount externalAccount
+     * @param \model\ExternalPaymentMethodDetail|null $externalAccount externalAccount
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets discount
      *
-     * @return \request\model\DiscountPaymentMethodDetail|null
+     * @return \model\DiscountPaymentMethodDetail|null
      */
     public function getDiscount()
     {
@@ -423,7 +423,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets discount
      *
-     * @param \request\model\DiscountPaymentMethodDetail|null $discount discount
+     * @param \model\DiscountPaymentMethodDetail|null $discount discount
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets coupon
      *
-     * @return \request\model\CouponPaymentMethodDetail|null
+     * @return \model\CouponPaymentMethodDetail|null
      */
     public function getCoupon()
     {
@@ -447,7 +447,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets coupon
      *
-     * @param \request\model\CouponPaymentMethodDetail|null $coupon coupon
+     * @param \model\CouponPaymentMethodDetail|null $coupon coupon
      *
      * @return self
      */
@@ -509,7 +509,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets wallet
      *
-     * @return \request\model\Wallet|null
+     * @return \model\Wallet|null
      */
     public function getWallet()
     {
@@ -519,7 +519,7 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets wallet
      *
-     * @param \request\model\Wallet|null $wallet wallet
+     * @param \model\Wallet|null $wallet wallet
      *
      * @return self
      */

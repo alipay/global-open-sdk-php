@@ -29,4 +29,35 @@ class PresentmentMode
     public const BUNDLE = 'BUNDLE';
     public const TILE = 'TILE';
     public const UNIFIED = 'UNIFIED';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function BUNDLE(): self
+    {
+        return new self(self::BUNDLE);
+    }
+    public static function TILE(): self
+    {
+        return new self(self::TILE);
+    }
+    public static function UNIFIED(): self
+    {
+        return new self(self::UNIFIED);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

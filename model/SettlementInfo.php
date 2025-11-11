@@ -316,7 +316,7 @@ class SettlementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets settlementBankAccount
      *
-     * @return \request\model\SettlementBankAccount|null
+     * @return \model\SettlementBankAccount|null
      */
     public function getSettlementBankAccount()
     {
@@ -326,7 +326,7 @@ class SettlementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets settlementBankAccount
      *
-     * @param \request\model\SettlementBankAccount|null $settlementBankAccount settlementBankAccount
+     * @param \model\SettlementBankAccount|null $settlementBankAccount settlementBankAccount
      *
      * @return self
      */

@@ -33,4 +33,51 @@ class PaymentMethodCategoryType
     public const ONLINE_BANKING = 'ONLINE_BANKING';
     public const CARD = 'CARD';
     public const OTC = 'OTC';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function ALIPAY_PLUS(): self
+    {
+        return new self(self::ALIPAY_PLUS);
+    }
+    public static function WALLET(): self
+    {
+        return new self(self::WALLET);
+    }
+    public static function MOBILE_BANKING_APP(): self
+    {
+        return new self(self::MOBILE_BANKING_APP);
+    }
+    public static function BANK_TRANSFER(): self
+    {
+        return new self(self::BANK_TRANSFER);
+    }
+    public static function ONLINE_BANKING(): self
+    {
+        return new self(self::ONLINE_BANKING);
+    }
+    public static function CARD(): self
+    {
+        return new self(self::CARD);
+    }
+    public static function OTC(): self
+    {
+        return new self(self::OTC);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

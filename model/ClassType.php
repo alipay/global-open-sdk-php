@@ -29,4 +29,35 @@ class ClassType
     public const FIRSTLEVEL = 'FIRSTLEVEL';
     public const SECONDLEVEL = 'SECONDLEVEL';
     public const THIRDLEVEL = 'THIRDLEVEL';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function FIRSTLEVEL(): self
+    {
+        return new self(self::FIRSTLEVEL);
+    }
+    public static function SECONDLEVEL(): self
+    {
+        return new self(self::SECONDLEVEL);
+    }
+    public static function THIRDLEVEL(): self
+    {
+        return new self(self::THIRDLEVEL);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

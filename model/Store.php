@@ -499,7 +499,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeAddress
      *
-     * @return \request\model\Address
+     * @return \model\Address
      */
     public function getStoreAddress()
     {
@@ -509,7 +509,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeAddress
      *
-     * @param \request\model\Address $storeAddress storeAddress
+     * @param \model\Address $storeAddress storeAddress
      *
      * @return self
      */

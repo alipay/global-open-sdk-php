@@ -447,7 +447,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets productCode
      *
-     * @return \request\model\ProductCodeType
+     * @return \model\ProductCodeType
      */
     public function getProductCode()
     {
@@ -457,7 +457,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets productCode
      *
-     * @param \request\model\ProductCodeType $productCode productCode
+     * @param \model\ProductCodeType $productCode productCode
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets order
      *
-     * @return \request\model\Order
+     * @return \model\Order
      */
     public function getOrder()
     {
@@ -505,7 +505,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets order
      *
-     * @param \request\model\Order $order order
+     * @param \model\Order $order order
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getPaymentAmount()
     {
@@ -529,7 +529,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -543,7 +543,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets paymentMethod
      *
-     * @return \request\model\PaymentMethod
+     * @return \model\PaymentMethod
      */
     public function getPaymentMethod()
     {
@@ -553,7 +553,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentMethod
      *
-     * @param \request\model\PaymentMethod $paymentMethod paymentMethod
+     * @param \model\PaymentMethod $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -639,7 +639,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets paymentFactor
      *
-     * @return \request\model\PaymentFactor|null
+     * @return \model\PaymentFactor|null
      */
     public function getPaymentFactor()
     {
@@ -649,7 +649,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentFactor
      *
-     * @param \request\model\PaymentFactor|null $paymentFactor paymentFactor
+     * @param \model\PaymentFactor|null $paymentFactor paymentFactor
      *
      * @return self
      */
@@ -663,7 +663,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets settlementStrategy
      *
-     * @return \request\model\SettlementStrategy
+     * @return \model\SettlementStrategy
      */
     public function getSettlementStrategy()
     {
@@ -673,7 +673,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets settlementStrategy
      *
-     * @param \request\model\SettlementStrategy $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -711,7 +711,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets creditPayPlan
      *
-     * @return \request\model\CreditPayPlan|null
+     * @return \model\CreditPayPlan|null
      */
     public function getCreditPayPlan()
     {
@@ -721,7 +721,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets creditPayPlan
      *
-     * @param \request\model\CreditPayPlan|null $creditPayPlan creditPayPlan
+     * @param \model\CreditPayPlan|null $creditPayPlan creditPayPlan
      *
      * @return self
      */
@@ -759,7 +759,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets env
      *
-     * @return \request\model\Env|null
+     * @return \model\Env|null
      */
     public function getEnv()
     {
@@ -769,7 +769,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets env
      *
-     * @param \request\model\Env|null $env env
+     * @param \model\Env|null $env env
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets agreementInfo
      *
-     * @return \request\model\AgreementInfo|null
+     * @return \model\AgreementInfo|null
      */
     public function getAgreementInfo()
     {
@@ -793,7 +793,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets agreementInfo
      *
-     * @param \request\model\AgreementInfo|null $agreementInfo agreementInfo
+     * @param \model\AgreementInfo|null $agreementInfo agreementInfo
      *
      * @return self
      */
@@ -807,7 +807,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets riskData
      *
-     * @return \request\model\RiskData|null
+     * @return \model\RiskData|null
      */
     public function getRiskData()
     {
@@ -817,7 +817,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets riskData
      *
-     * @param \request\model\RiskData|null $riskData riskData
+     * @param \model\RiskData|null $riskData riskData
      *
      * @return self
      */
@@ -855,7 +855,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets savedPaymentMethods
      *
-     * @return \request\model\PaymentMethod[]|null
+     * @return \model\PaymentMethod[]|null
      */
     public function getSavedPaymentMethods()
     {
@@ -865,7 +865,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets savedPaymentMethods
      *
-     * @param \request\model\PaymentMethod[]|null $savedPaymentMethods Payment information stored by the user in the merchant system.
+     * @param \model\PaymentMethod[]|null $savedPaymentMethods Payment information stored by the user in the merchant system.
      *
      * @return self
      */
@@ -903,7 +903,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets availablePaymentMethod
      *
-     * @return \request\model\AvailablePaymentMethod|null
+     * @return \model\AvailablePaymentMethod|null
      */
     public function getAvailablePaymentMethod()
     {
@@ -913,7 +913,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets availablePaymentMethod
      *
-     * @param \request\model\AvailablePaymentMethod|null $availablePaymentMethod availablePaymentMethod
+     * @param \model\AvailablePaymentMethod|null $availablePaymentMethod availablePaymentMethod
      *
      * @return self
      */

@@ -472,7 +472,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets periodRule
      *
-     * @return \request\model\PeriodRule|null
+     * @return \model\PeriodRule|null
      */
     public function getPeriodRule()
     {
@@ -482,7 +482,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets periodRule
      *
-     * @param \request\model\PeriodRule|null $periodRule periodRule
+     * @param \model\PeriodRule|null $periodRule periodRule
      *
      * @return self
      */
@@ -520,7 +520,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets orderInfo
      *
-     * @return \request\model\OrderInfo|null
+     * @return \model\OrderInfo|null
      */
     public function getOrderInfo()
     {
@@ -530,7 +530,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets orderInfo
      *
-     * @param \request\model\OrderInfo|null $orderInfo orderInfo
+     * @param \model\OrderInfo|null $orderInfo orderInfo
      *
      * @return self
      */
@@ -544,7 +544,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getPaymentAmount()
     {
@@ -554,7 +554,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount|null $paymentAmount paymentAmount
+     * @param \model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -568,7 +568,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets paymentAmountDifference
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getPaymentAmountDifference()
     {
@@ -578,7 +578,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmountDifference
      *
-     * @param \request\model\Amount|null $paymentAmountDifference paymentAmountDifference
+     * @param \model\Amount|null $paymentAmountDifference paymentAmountDifference
      *
      * @return self
      */

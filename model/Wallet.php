@@ -334,7 +334,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets accountHolderName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getAccountHolderName()
     {
@@ -344,7 +344,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountHolderName
      *
-     * @param \request\model\UserName|null $accountHolderName accountHolderName
+     * @param \model\UserName|null $accountHolderName accountHolderName
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets billingAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getBillingAddress()
     {
@@ -416,7 +416,7 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets billingAddress
      *
-     * @param \request\model\Address|null $billingAddress billingAddress
+     * @param \model\Address|null $billingAddress billingAddress
      *
      * @return self
      */

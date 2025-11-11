@@ -305,7 +305,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets codeValueType
      *
-     * @return \request\model\CodeValueType
+     * @return \model\CodeValueType
      */
     public function getCodeValueType()
     {
@@ -315,7 +315,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeValueType
      *
-     * @param \request\model\CodeValueType $codeValueType codeValueType
+     * @param \model\CodeValueType $codeValueType codeValueType
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets displayType
      *
-     * @return \request\model\DisplayType
+     * @return \model\DisplayType
      */
     public function getDisplayType()
     {
@@ -363,7 +363,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets displayType
      *
-     * @param \request\model\DisplayType $displayType displayType
+     * @param \model\DisplayType $displayType displayType
      *
      * @return self
      */

@@ -33,4 +33,51 @@ class CertificateType
     public const DRIVING_LICENSE = 'DRIVING_LICENSE';
     public const CPF = 'CPF';
     public const CNPJ = 'CNPJ';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function ENTERPRISE_REGISTRATION(): self
+    {
+        return new self(self::ENTERPRISE_REGISTRATION);
+    }
+    public static function LICENSE_INFO(): self
+    {
+        return new self(self::LICENSE_INFO);
+    }
+    public static function ID_CARD(): self
+    {
+        return new self(self::ID_CARD);
+    }
+    public static function PASSPORT(): self
+    {
+        return new self(self::PASSPORT);
+    }
+    public static function DRIVING_LICENSE(): self
+    {
+        return new self(self::DRIVING_LICENSE);
+    }
+    public static function CPF(): self
+    {
+        return new self(self::CPF);
+    }
+    public static function CNPJ(): self
+    {
+        return new self(self::CNPJ);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

@@ -323,7 +323,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -333,7 +333,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets paymentMethodDetail
      *
-     * @return \request\model\PaymentMethodDetail|null
+     * @return \model\PaymentMethodDetail|null
      */
     public function getPaymentMethodDetail()
     {
@@ -381,7 +381,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paymentMethodDetail
      *
-     * @param \request\model\PaymentMethodDetail|null $paymentMethodDetail paymentMethodDetail
+     * @param \model\PaymentMethodDetail|null $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */

@@ -29,4 +29,35 @@ class ChallengeType
     public const SMS_OTP = 'SMS_OTP';
     public const PLAINTEXT_CARD_NO = 'PLAINTEXT_CARD_NO';
     public const CARD_EXPIRE_DATE = 'CARD_EXPIRE_DATE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function SMS_OTP(): self
+    {
+        return new self(self::SMS_OTP);
+    }
+    public static function PLAINTEXT_CARD_NO(): self
+    {
+        return new self(self::PLAINTEXT_CARD_NO);
+    }
+    public static function CARD_EXPIRE_DATE(): self
+    {
+        return new self(self::CARD_EXPIRE_DATE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

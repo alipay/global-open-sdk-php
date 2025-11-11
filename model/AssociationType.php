@@ -32,4 +32,47 @@ class AssociationType
     public const DIRECTOR = 'DIRECTOR';
     public const AUTHORIZER = 'AUTHORIZER';
     public const BOARD_MEMBER = 'BOARD_MEMBER';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function LEGAL_REPRESENTATIVE(): self
+    {
+        return new self(self::LEGAL_REPRESENTATIVE);
+    }
+    public static function UBO(): self
+    {
+        return new self(self::UBO);
+    }
+    public static function CONTACT(): self
+    {
+        return new self(self::CONTACT);
+    }
+    public static function DIRECTOR(): self
+    {
+        return new self(self::DIRECTOR);
+    }
+    public static function AUTHORIZER(): self
+    {
+        return new self(self::AUTHORIZER);
+    }
+    public static function BOARD_MEMBER(): self
+    {
+        return new self(self::BOARD_MEMBER);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

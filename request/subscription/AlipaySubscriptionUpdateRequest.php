@@ -406,7 +406,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets periodRule
      *
-     * @return \request\model\PeriodRule|null
+     * @return \model\PeriodRule|null
      */
     public function getPeriodRule()
     {
@@ -416,7 +416,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets periodRule
      *
-     * @param \request\model\PeriodRule|null $periodRule periodRule
+     * @param \model\PeriodRule|null $periodRule periodRule
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getPaymentAmount()
     {
@@ -440,7 +440,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount|null $paymentAmount paymentAmount
+     * @param \model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Gets orderInfo
      *
-     * @return \request\model\OrderInfo
+     * @return \model\OrderInfo
      */
     public function getOrderInfo()
     {
@@ -488,7 +488,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets orderInfo
      *
-     * @param \request\model\OrderInfo $orderInfo orderInfo
+     * @param \model\OrderInfo $orderInfo orderInfo
      *
      * @return self
      */

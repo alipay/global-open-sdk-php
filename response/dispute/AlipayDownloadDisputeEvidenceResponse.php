@@ -299,7 +299,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -309,7 +309,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Gets disputeEvidenceFormat
      *
-     * @return \request\model\DisputeEvidenceFormatType|null
+     * @return \model\DisputeEvidenceFormatType|null
      */
     public function getDisputeEvidenceFormat()
     {
@@ -357,7 +357,7 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
     /**
      * Sets disputeEvidenceFormat
      *
-     * @param \request\model\DisputeEvidenceFormatType|null $disputeEvidenceFormat disputeEvidenceFormat
+     * @param \model\DisputeEvidenceFormatType|null $disputeEvidenceFormat disputeEvidenceFormat
      *
      * @return self
      */

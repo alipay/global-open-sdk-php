@@ -388,7 +388,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets companyType
      *
-     * @return \request\model\CompanyType
+     * @return \model\CompanyType
      */
     public function getCompanyType()
     {
@@ -398,7 +398,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets companyType
      *
-     * @param \request\model\CompanyType $companyType companyType
+     * @param \model\CompanyType $companyType companyType
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets registeredAddress
      *
-     * @return \request\model\Address
+     * @return \model\Address
      */
     public function getRegisteredAddress()
     {
@@ -422,7 +422,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets registeredAddress
      *
-     * @param \request\model\Address $registeredAddress registeredAddress
+     * @param \model\Address $registeredAddress registeredAddress
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets operatingAddress
      *
-     * @return \request\model\Address
+     * @return \model\Address
      */
     public function getOperatingAddress()
     {
@@ -446,7 +446,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets operatingAddress
      *
-     * @param \request\model\Address $operatingAddress operatingAddress
+     * @param \model\Address $operatingAddress operatingAddress
      *
      * @return self
      */
@@ -484,7 +484,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets stockInfo
      *
-     * @return \request\model\StockInfo|null
+     * @return \model\StockInfo|null
      */
     public function getStockInfo()
     {
@@ -494,7 +494,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stockInfo
      *
-     * @param \request\model\StockInfo|null $stockInfo stockInfo
+     * @param \model\StockInfo|null $stockInfo stockInfo
      *
      * @return self
      */
@@ -508,7 +508,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets certificates
      *
-     * @return \request\model\Certificate|null
+     * @return \model\Certificate|null
      */
     public function getCertificates()
     {
@@ -518,7 +518,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificates
      *
-     * @param \request\model\Certificate|null $certificates certificates
+     * @param \model\Certificate|null $certificates certificates
      *
      * @return self
      */
@@ -532,7 +532,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attachments
      *
-     * @return \request\model\Attachment[]|null
+     * @return \model\Attachment[]|null
      */
     public function getAttachments()
     {
@@ -542,7 +542,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachments
      *
-     * @param \request\model\Attachment[]|null $attachments The list of attachment information. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, or belongs to the European Union.    More information:  Maximum size: 10 elements
+     * @param \model\Attachment[]|null $attachments The list of attachment information. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, or belongs to the European Union.    More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -556,7 +556,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets companyUnit
      *
-     * @return \request\model\CompanyUnitType|null
+     * @return \model\CompanyUnitType|null
      */
     public function getCompanyUnit()
     {
@@ -566,7 +566,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets companyUnit
      *
-     * @param \request\model\CompanyUnitType|null $companyUnit companyUnit
+     * @param \model\CompanyUnitType|null $companyUnit companyUnit
      *
      * @return self
      */
@@ -580,7 +580,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets contacts
      *
-     * @return \request\model\Contact[]|null
+     * @return \model\Contact[]|null
      */
     public function getContacts()
     {
@@ -590,7 +590,7 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contacts
      *
-     * @param \request\model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP.
+     * @param \model\Contact[]|null $contacts A list of contact information.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is JP.
      *
      * @return self
      */

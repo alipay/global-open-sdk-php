@@ -319,7 +319,7 @@ class SupportCardBrand  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets logo
      *
-     * @return \request\model\Logo
+     * @return \model\Logo
      */
     public function getLogo()
     {
@@ -329,7 +329,7 @@ class SupportCardBrand  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets logo
      *
-     * @param \request\model\Logo $logo logo
+     * @param \model\Logo $logo logo
      *
      * @return self
      */

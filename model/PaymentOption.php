@@ -403,7 +403,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets paymentMethodCategory
      *
-     * @return \request\model\PaymentMethodCategoryType|null
+     * @return \model\PaymentMethodCategoryType|null
      */
     public function getPaymentMethodCategory()
     {
@@ -413,7 +413,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodCategory
      *
-     * @param \request\model\PaymentMethodCategoryType|null $paymentMethodCategory paymentMethodCategory
+     * @param \model\PaymentMethodCategoryType|null $paymentMethodCategory paymentMethodCategory
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets amountLimitInfoMap
      *
-     * @return array<string,\request\model\AmountLimit>|null
+     * @return \model\AmountLimit>|null
      */
     public function getAmountLimitInfoMap()
     {
@@ -533,7 +533,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amountLimitInfoMap
      *
-     * @param array<string,\request\model\AmountLimit>|null $amountLimitInfoMap amountLimitInfoMap
+     * @param \model\AmountLimit>|null $amountLimitInfoMap amountLimitInfoMap
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets paymentOptionDetail
      *
-     * @return \request\model\PaymentOptionDetail|null
+     * @return \model\PaymentOptionDetail|null
      */
     public function getPaymentOptionDetail()
     {
@@ -581,7 +581,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentOptionDetail
      *
-     * @param \request\model\PaymentOptionDetail|null $paymentOptionDetail paymentOptionDetail
+     * @param \model\PaymentOptionDetail|null $paymentOptionDetail paymentOptionDetail
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets logo
      *
-     * @return \request\model\Logo|null
+     * @return \model\Logo|null
      */
     public function getLogo()
     {
@@ -629,7 +629,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets logo
      *
-     * @param \request\model\Logo|null $logo logo
+     * @param \model\Logo|null $logo logo
      *
      * @return self
      */
@@ -667,7 +667,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets installment
      *
-     * @return \request\model\Installment|null
+     * @return \model\Installment|null
      */
     public function getInstallment()
     {
@@ -677,7 +677,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets installment
      *
-     * @param \request\model\Installment|null $installment installment
+     * @param \model\Installment|null $installment installment
      *
      * @return self
      */
@@ -691,7 +691,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promotionInfos
      *
-     * @return \request\model\PromotionInfo[]|null
+     * @return \model\PromotionInfo[]|null
      */
     public function getPromotionInfos()
     {
@@ -701,7 +701,7 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotionInfos
      *
-     * @param \request\model\PromotionInfo[]|null $promotionInfos Promotion information.  This parameter is returned when the payment method offers a promotion to the buyer.
+     * @param \model\PromotionInfo[]|null $promotionInfos Promotion information.  This parameter is returned when the payment method offers a promotion to the buyer.
      *
      * @return self
      */

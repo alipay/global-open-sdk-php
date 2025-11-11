@@ -450,7 +450,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Gets paymentMethodDetail
      *
-     * @return \request\model\PaymentMethodDetail
+     * @return \model\PaymentMethodDetail
      */
     public function getPaymentMethodDetail()
     {
@@ -460,7 +460,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets paymentMethodDetail
      *
-     * @param \request\model\PaymentMethodDetail $paymentMethodDetail paymentMethodDetail
+     * @param \model\PaymentMethodDetail $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */
@@ -474,7 +474,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Gets env
      *
-     * @return \request\model\Env
+     * @return \model\Env
      */
     public function getEnv()
     {
@@ -484,7 +484,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets env
      *
-     * @param \request\model\Env $env env
+     * @param \model\Env $env env
      *
      * @return self
      */
@@ -546,7 +546,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Gets customizedInfo
      *
-     * @return \request\model\CustomizedInfo|null
+     * @return \model\CustomizedInfo|null
      */
     public function getCustomizedInfo()
     {
@@ -556,7 +556,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets customizedInfo
      *
-     * @param \request\model\CustomizedInfo|null $customizedInfo customizedInfo
+     * @param \model\CustomizedInfo|null $customizedInfo customizedInfo
      *
      * @return self
      */

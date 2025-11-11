@@ -334,7 +334,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets inStorePaymentScenario
      *
-     * @return \request\model\InStorePaymentScenario|null
+     * @return \model\InStorePaymentScenario|null
      */
     public function getInStorePaymentScenario()
     {
@@ -344,7 +344,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets inStorePaymentScenario
      *
-     * @param \request\model\InStorePaymentScenario|null $inStorePaymentScenario inStorePaymentScenario
+     * @param \model\InStorePaymentScenario|null $inStorePaymentScenario inStorePaymentScenario
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets presentmentMode
      *
-     * @return \request\model\PresentmentMode|null
+     * @return \model\PresentmentMode|null
      */
     public function getPresentmentMode()
     {
@@ -368,7 +368,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets presentmentMode
      *
-     * @param \request\model\PresentmentMode|null $presentmentMode presentmentMode
+     * @param \model\PresentmentMode|null $presentmentMode presentmentMode
      *
      * @return self
      */

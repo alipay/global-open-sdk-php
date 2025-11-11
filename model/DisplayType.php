@@ -31,4 +31,43 @@ class DisplayType
     public const SMALLIMAGE = 'SMALLIMAGE';
     public const BIGIMAGE = 'BIGIMAGE';
     public const IMAGE = 'IMAGE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function TEXT(): self
+    {
+        return new self(self::TEXT);
+    }
+    public static function MIDDLEIMAGE(): self
+    {
+        return new self(self::MIDDLEIMAGE);
+    }
+    public static function SMALLIMAGE(): self
+    {
+        return new self(self::SMALLIMAGE);
+    }
+    public static function BIGIMAGE(): self
+    {
+        return new self(self::BIGIMAGE);
+    }
+    public static function IMAGE(): self
+    {
+        return new self(self::IMAGE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

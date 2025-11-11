@@ -454,7 +454,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets goodsUnitAmount
      *
-     * @return \request\model\Amount|null
+     * @return \model\Amount|null
      */
     public function getGoodsUnitAmount()
     {
@@ -464,7 +464,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets goodsUnitAmount
      *
-     * @param \request\model\Amount|null $goodsUnitAmount goodsUnitAmount
+     * @param \model\Amount|null $goodsUnitAmount goodsUnitAmount
      *
      * @return self
      */

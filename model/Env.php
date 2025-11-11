@@ -411,7 +411,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets terminalType
      *
-     * @return \request\model\TerminalType
+     * @return \model\TerminalType
      */
     public function getTerminalType()
     {
@@ -421,7 +421,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets terminalType
      *
-     * @param \request\model\TerminalType $terminalType terminalType
+     * @param \model\TerminalType $terminalType terminalType
      *
      * @return self
      */
@@ -435,7 +435,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets osType
      *
-     * @return \request\model\OsType|null
+     * @return \model\OsType|null
      */
     public function getOsType()
     {
@@ -445,7 +445,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets osType
      *
-     * @param \request\model\OsType|null $osType osType
+     * @param \model\OsType|null $osType osType
      *
      * @return self
      */
@@ -627,7 +627,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets browserInfo
      *
-     * @return \request\model\BrowserInfo|null
+     * @return \model\BrowserInfo|null
      */
     public function getBrowserInfo()
     {
@@ -637,7 +637,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets browserInfo
      *
-     * @param \request\model\BrowserInfo|null $browserInfo browserInfo
+     * @param \model\BrowserInfo|null $browserInfo browserInfo
      *
      * @return self
      */

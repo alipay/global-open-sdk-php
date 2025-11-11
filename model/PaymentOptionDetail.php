@@ -302,7 +302,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets supportCardBrands
      *
-     * @return \request\model\SupportCardBrand[]
+     * @return \model\SupportCardBrand[]
      */
     public function getSupportCardBrands()
     {
@@ -312,7 +312,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets supportCardBrands
      *
-     * @param \request\model\SupportCardBrand[] $supportCardBrands The list of supported card brands.    Note: This parameter is returned when the value of paymentMethodType is ​CARD​.
+     * @param \model\SupportCardBrand[] $supportCardBrands The list of supported card brands.    Note: This parameter is returned when the value of paymentMethodType is ​CARD​.
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets supportBanks
      *
-     * @return \request\model\SupportBank[]
+     * @return \model\SupportBank[]
      */
     public function getSupportBanks()
     {
@@ -360,7 +360,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets supportBanks
      *
-     * @param \request\model\SupportBank[] $supportBanks The list of supported banks.   This parameter is returned when the value of paymentMethodType is ​P24​ or ONLINEBANKING_FPX.
+     * @param \model\SupportBank[] $supportBanks The list of supported banks.   This parameter is returned when the value of paymentMethodType is ​P24​ or ONLINEBANKING_FPX.
      *
      * @return self
      */

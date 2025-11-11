@@ -330,7 +330,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     /**
      * Gets attachmentType
      *
-     * @return \request\model\AttachmentType
+     * @return \model\AttachmentType
      */
     public function getAttachmentType()
     {
@@ -340,7 +340,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets attachmentType
      *
-     * @param \request\model\AttachmentType $attachmentType attachmentType
+     * @param \model\AttachmentType $attachmentType attachmentType
      *
      * @return self
      */

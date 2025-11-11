@@ -467,7 +467,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets accountHolderType
      *
-     * @return \request\model\AccountHolderType
+     * @return \model\AccountHolderType
      */
     public function getAccountHolderType()
     {
@@ -477,7 +477,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountHolderType
      *
-     * @param \request\model\AccountHolderType $accountHolderType accountHolderType
+     * @param \model\AccountHolderType $accountHolderType accountHolderType
      *
      * @return self
      */
@@ -563,7 +563,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets accountType
      *
-     * @return \request\model\AccountType|null
+     * @return \model\AccountType|null
      */
     public function getAccountType()
     {
@@ -573,7 +573,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountType
      *
-     * @param \request\model\AccountType|null $accountType accountType
+     * @param \model\AccountType|null $accountType accountType
      *
      * @return self
      */
@@ -611,7 +611,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets accountHolderAddress
      *
-     * @return \request\model\Address|null
+     * @return \model\Address|null
      */
     public function getAccountHolderAddress()
     {
@@ -621,7 +621,7 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets accountHolderAddress
      *
-     * @param \request\model\Address|null $accountHolderAddress accountHolderAddress
+     * @param \model\Address|null $accountHolderAddress accountHolderAddress
      *
      * @return self
      */

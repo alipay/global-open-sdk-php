@@ -296,7 +296,7 @@ class Passenger  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets passengerName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getPassengerName()
     {
@@ -306,7 +306,7 @@ class Passenger  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets passengerName
      *
-     * @param \request\model\UserName|null $passengerName passengerName
+     * @param \model\UserName|null $passengerName passengerName
      *
      * @return self
      */

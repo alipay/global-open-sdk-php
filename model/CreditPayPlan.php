@@ -351,7 +351,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets creditPayFeeType
      *
-     * @return \request\model\CreditPayFeeType|null
+     * @return \model\CreditPayFeeType|null
      */
     public function getCreditPayFeeType()
     {
@@ -361,7 +361,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets creditPayFeeType
      *
-     * @param \request\model\CreditPayFeeType|null $creditPayFeeType creditPayFeeType
+     * @param \model\CreditPayFeeType|null $creditPayFeeType creditPayFeeType
      *
      * @return self
      */

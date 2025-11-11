@@ -32,4 +32,47 @@ class TransactionType
     public const CANCEL = 'CANCEL';
     public const AUTHORIZATION = 'AUTHORIZATION';
     public const VOID = 'VOID';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function PAYMENT(): self
+    {
+        return new self(self::PAYMENT);
+    }
+    public static function REFUND(): self
+    {
+        return new self(self::REFUND);
+    }
+    public static function CAPTURE(): self
+    {
+        return new self(self::CAPTURE);
+    }
+    public static function CANCEL(): self
+    {
+        return new self(self::CANCEL);
+    }
+    public static function AUTHORIZATION(): self
+    {
+        return new self(self::AUTHORIZATION);
+    }
+    public static function VOID(): self
+    {
+        return new self(self::VOID);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

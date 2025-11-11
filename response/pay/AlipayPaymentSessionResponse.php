@@ -322,7 +322,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -332,7 +332,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */

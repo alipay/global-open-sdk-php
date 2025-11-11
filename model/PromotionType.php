@@ -28,4 +28,31 @@ class PromotionType
 {
     public const DISCOUNT = 'DISCOUNT';
     public const INTEREST_FREE = 'INTEREST_FREE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function DISCOUNT(): self
+    {
+        return new self(self::DISCOUNT);
+    }
+    public static function INTEREST_FREE(): self
+    {
+        return new self(self::INTEREST_FREE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

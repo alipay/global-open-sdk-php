@@ -296,7 +296,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transitType
      *
-     * @return \request\model\TransitType|null
+     * @return \model\TransitType|null
      */
     public function getTransitType()
     {
@@ -306,7 +306,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transitType
      *
-     * @param \request\model\TransitType|null $transitType transitType
+     * @param \model\TransitType|null $transitType transitType
      *
      * @return self
      */
@@ -320,7 +320,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets legs
      *
-     * @return \request\model\Leg[]|null
+     * @return \model\Leg[]|null
      */
     public function getLegs()
     {
@@ -330,7 +330,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legs
      *
-     * @param \request\model\Leg[]|null $legs Information about sections of the trip, including departure time, arrival time, departure address, arrival address, transportation company name, carrier code and service type.  More information:  Maximum size: 10 elements
+     * @param \model\Leg[]|null $legs Information about sections of the trip, including departure time, arrival time, departure address, arrival address, transportation company name, carrier code and service type.  More information:  Maximum size: 10 elements
      *
      * @return self
      */
@@ -344,7 +344,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets passengers
      *
-     * @return \request\model\Passenger[]|null
+     * @return \model\Passenger[]|null
      */
     public function getPassengers()
     {
@@ -354,7 +354,7 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets passengers
      *
-     * @param \request\model\Passenger[]|null $passengers Information about the passenger of the trip, including the passenger names, passenger email and phone number.  More information:  Maximum size: 100 elements
+     * @param \model\Passenger[]|null $passengers Information about the passenger of the trip, including the passenger names, passenger email and phone number.  More information:  Maximum size: 100 elements
      *
      * @return self
      */

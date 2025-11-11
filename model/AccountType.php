@@ -28,4 +28,31 @@ class AccountType
 {
     public const CHECKING = 'CHECKING';
     public const FIXED_DEPOSIT = 'FIXED_DEPOSIT';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function CHECKING(): self
+    {
+        return new self(self::CHECKING);
+    }
+    public static function FIXED_DEPOSIT(): self
+    {
+        return new self(self::FIXED_DEPOSIT);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

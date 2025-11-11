@@ -33,4 +33,51 @@ class ScopeType
     public const HASH_LOGIN_ID = 'HASH_LOGIN_ID';
     public const SEND_OTP = 'SEND_OTP';
     public const TAOBAO_REBIND = 'TAOBAO_REBIND';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function BASE_USER_INFO(): self
+    {
+        return new self(self::BASE_USER_INFO);
+    }
+    public static function AGREEMENT_PAY(): self
+    {
+        return new self(self::AGREEMENT_PAY);
+    }
+    public static function USER_INFO(): self
+    {
+        return new self(self::USER_INFO);
+    }
+    public static function USER_LOGIN_ID(): self
+    {
+        return new self(self::USER_LOGIN_ID);
+    }
+    public static function HASH_LOGIN_ID(): self
+    {
+        return new self(self::HASH_LOGIN_ID);
+    }
+    public static function SEND_OTP(): self
+    {
+        return new self(self::SEND_OTP);
+    }
+    public static function TAOBAO_REBIND(): self
+    {
+        return new self(self::TAOBAO_REBIND);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

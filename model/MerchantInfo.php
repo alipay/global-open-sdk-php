@@ -377,7 +377,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets legalEntityType
      *
-     * @return \request\model\LegalEntityType
+     * @return \model\LegalEntityType
      */
     public function getLegalEntityType()
     {
@@ -387,7 +387,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets legalEntityType
      *
-     * @param \request\model\LegalEntityType $legalEntityType legalEntityType
+     * @param \model\LegalEntityType $legalEntityType legalEntityType
      *
      * @return self
      */
@@ -401,7 +401,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets company
      *
-     * @return \request\model\Company|null
+     * @return \model\Company|null
      */
     public function getCompany()
     {
@@ -411,7 +411,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets company
      *
-     * @param \request\model\Company|null $company company
+     * @param \model\Company|null $company company
      *
      * @return self
      */
@@ -425,7 +425,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets businessInfo
      *
-     * @return \request\model\BusinessInfo
+     * @return \model\BusinessInfo
      */
     public function getBusinessInfo()
     {
@@ -435,7 +435,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets businessInfo
      *
-     * @param \request\model\BusinessInfo $businessInfo businessInfo
+     * @param \model\BusinessInfo $businessInfo businessInfo
      *
      * @return self
      */
@@ -449,7 +449,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets entityAssociations
      *
-     * @return \request\model\EntityAssociations[]|null
+     * @return \model\EntityAssociations[]|null
      */
     public function getEntityAssociations()
     {
@@ -459,7 +459,7 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets entityAssociations
      *
-     * @param \request\model\EntityAssociations[]|null $entityAssociations The list of legal entities that are associated with the sub-merchant. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, US, or belongs to the European Union.    More information:  Maximum size: 100 elements
+     * @param \model\EntityAssociations[]|null $entityAssociations The list of legal entities that are associated with the sub-merchant. The information is used to verify the company's legal status and ensure the company complies with regulatory requirements.  Specify this parameter when the value of merchantInfo.company.registeredAddress.region is BR, AU, SG, HK, GB, MY, US, or belongs to the European Union.    More information:  Maximum size: 100 elements
      *
      * @return self
      */

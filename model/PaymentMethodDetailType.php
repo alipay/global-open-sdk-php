@@ -30,4 +30,39 @@ class PaymentMethodDetailType
     public const EXTERNALACCOUNT = 'EXTERNALACCOUNT';
     public const COUPON = 'COUPON';
     public const DISCOUNT = 'DISCOUNT';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function CARD(): self
+    {
+        return new self(self::CARD);
+    }
+    public static function EXTERNALACCOUNT(): self
+    {
+        return new self(self::EXTERNALACCOUNT);
+    }
+    public static function COUPON(): self
+    {
+        return new self(self::COUPON);
+    }
+    public static function DISCOUNT(): self
+    {
+        return new self(self::DISCOUNT);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

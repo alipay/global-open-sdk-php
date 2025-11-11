@@ -28,4 +28,31 @@ class MerchantType
 {
     public const INDIVIDUAL = 'INDIVIDUAL';
     public const ENTERPRISE = 'ENTERPRISE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function INDIVIDUAL(): self
+    {
+        return new self(self::INDIVIDUAL);
+    }
+    public static function ENTERPRISE(): self
+    {
+        return new self(self::ENTERPRISE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

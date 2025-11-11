@@ -312,7 +312,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets result
      *
-     * @return \request\model\Result|null
+     * @return \model\Result|null
      */
     public function getResult()
     {
@@ -322,7 +322,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets result
      *
-     * @param \request\model\Result|null $result result
+     * @param \model\Result|null $result result
      *
      * @return self
      */

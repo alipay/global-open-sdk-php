@@ -29,4 +29,35 @@ class ProductCodeType
     public const CASHIER_PAYMENT = 'CASHIER_PAYMENT';
     public const AGREEMENT_PAYMENT = 'AGREEMENT_PAYMENT';
     public const IN_STORE_PAYMENT = 'IN_STORE_PAYMENT';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function CASHIER_PAYMENT(): self
+    {
+        return new self(self::CASHIER_PAYMENT);
+    }
+    public static function AGREEMENT_PAYMENT(): self
+    {
+        return new self(self::AGREEMENT_PAYMENT);
+    }
+    public static function IN_STORE_PAYMENT(): self
+    {
+        return new self(self::IN_STORE_PAYMENT);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

@@ -487,7 +487,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets acquirerInfo
      *
-     * @return \request\model\AcquirerInfo|null
+     * @return \model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -497,7 +497,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets acquirerInfo
      *
-     * @param \request\model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
      *
      * @return self
      */
@@ -655,7 +655,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets threeDSResult
      *
-     * @return \request\model\ThreeDSResult|null
+     * @return \model\ThreeDSResult|null
      */
     public function getThreeDSResult()
     {
@@ -665,7 +665,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets threeDSResult
      *
-     * @param \request\model\ThreeDSResult|null $threeDSResult threeDSResult
+     * @param \model\ThreeDSResult|null $threeDSResult threeDSResult
      *
      * @return self
      */
@@ -751,7 +751,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets creditPayPlan
      *
-     * @return \request\model\CreditPayPlan|null
+     * @return \model\CreditPayPlan|null
      */
     public function getCreditPayPlan()
     {
@@ -761,7 +761,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets creditPayPlan
      *
-     * @param \request\model\CreditPayPlan|null $creditPayPlan creditPayPlan
+     * @param \model\CreditPayPlan|null $creditPayPlan creditPayPlan
      *
      * @return self
      */

@@ -292,7 +292,7 @@ class AlipayAuthRevokeTokenResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -302,7 +302,7 @@ class AlipayAuthRevokeTokenResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */

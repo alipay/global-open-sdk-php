@@ -295,7 +295,7 @@ class SettlementDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets settleTo
      *
-     * @return \request\model\SettleToType
+     * @return \model\SettleToType
      */
     public function getSettleTo()
     {
@@ -305,7 +305,7 @@ class SettlementDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets settleTo
      *
-     * @param \request\model\SettleToType $settleTo settleTo
+     * @param \model\SettleToType $settleTo settleTo
      *
      * @return self
      */
@@ -319,7 +319,7 @@ class SettlementDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets settlementAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getSettlementAmount()
     {
@@ -329,7 +329,7 @@ class SettlementDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets settlementAmount
      *
-     * @param \request\model\Amount $settlementAmount settlementAmount
+     * @param \model\Amount $settlementAmount settlementAmount
      *
      * @return self
      */

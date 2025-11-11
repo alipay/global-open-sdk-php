@@ -28,4 +28,31 @@ class ChallengeTriggerSourceType
 {
     public const AMS = 'AMS';
     public const CHANNEL = 'CHANNEL';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function AMS(): self
+    {
+        return new self(self::AMS);
+    }
+    public static function CHANNEL(): self
+    {
+        return new self(self::CHANNEL);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

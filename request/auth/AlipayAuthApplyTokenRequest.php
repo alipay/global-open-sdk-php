@@ -324,7 +324,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets grantType
      *
-     * @return \request\model\GrantType
+     * @return \model\GrantType
      */
     public function getGrantType()
     {
@@ -334,7 +334,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets grantType
      *
-     * @param \request\model\GrantType $grantType grantType
+     * @param \model\GrantType $grantType grantType
      *
      * @return self
      */
@@ -348,7 +348,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets customerBelongsTo
      *
-     * @return \request\model\CustomerBelongsTo
+     * @return \model\CustomerBelongsTo
      */
     public function getCustomerBelongsTo()
     {
@@ -358,7 +358,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets customerBelongsTo
      *
-     * @param \request\model\CustomerBelongsTo $customerBelongsTo customerBelongsTo
+     * @param \model\CustomerBelongsTo $customerBelongsTo customerBelongsTo
      *
      * @return self
      */

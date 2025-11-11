@@ -306,7 +306,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -316,7 +316,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Gets attachmentType
      *
-     * @return \request\model\AttachmentType|null
+     * @return \model\AttachmentType|null
      */
     public function getAttachmentType()
     {
@@ -364,7 +364,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets attachmentType
      *
-     * @param \request\model\AttachmentType|null $attachmentType attachmentType
+     * @param \model\AttachmentType|null $attachmentType attachmentType
      *
      * @return self
      */

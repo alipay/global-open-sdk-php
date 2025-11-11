@@ -411,7 +411,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets productCode
      *
-     * @return \request\model\ProductCodeType
+     * @return \model\ProductCodeType
      */
     public function getProductCode()
     {
@@ -421,7 +421,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets productCode
      *
-     * @param \request\model\ProductCodeType $productCode productCode
+     * @param \model\ProductCodeType $productCode productCode
      *
      * @return self
      */
@@ -435,7 +435,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets paymentAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getPaymentAmount()
     {
@@ -445,7 +445,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets paymentAmount
      *
-     * @param \request\model\Amount $paymentAmount paymentAmount
+     * @param \model\Amount $paymentAmount paymentAmount
      *
      * @return self
      */
@@ -627,7 +627,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets env
      *
-     * @return \request\model\Env
+     * @return \model\Env
      */
     public function getEnv()
     {
@@ -637,7 +637,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets env
      *
-     * @param \request\model\Env $env env
+     * @param \model\Env $env env
      *
      * @return self
      */
@@ -699,7 +699,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets paymentFactor
      *
-     * @return \request\model\PaymentFactor|null
+     * @return \model\PaymentFactor|null
      */
     public function getPaymentFactor()
     {
@@ -709,7 +709,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets paymentFactor
      *
-     * @param \request\model\PaymentFactor|null $paymentFactor paymentFactor
+     * @param \model\PaymentFactor|null $paymentFactor paymentFactor
      *
      * @return self
      */
@@ -723,7 +723,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets settlementStrategy
      *
-     * @return \request\model\SettlementStrategy|null
+     * @return \model\SettlementStrategy|null
      */
     public function getSettlementStrategy()
     {
@@ -733,7 +733,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets settlementStrategy
      *
-     * @param \request\model\SettlementStrategy|null $settlementStrategy settlementStrategy
+     * @param \model\SettlementStrategy|null $settlementStrategy settlementStrategy
      *
      * @return self
      */
@@ -747,7 +747,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets merchant
      *
-     * @return \request\model\Merchant|null
+     * @return \model\Merchant|null
      */
     public function getMerchant()
     {
@@ -757,7 +757,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets merchant
      *
-     * @param \request\model\Merchant|null $merchant merchant
+     * @param \model\Merchant|null $merchant merchant
      *
      * @return self
      */
@@ -795,7 +795,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Gets buyer
      *
-     * @return \request\model\Buyer|null
+     * @return \model\Buyer|null
      */
     public function getBuyer()
     {
@@ -805,7 +805,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
     /**
      * Sets buyer
      *
-     * @param \request\model\Buyer|null $buyer buyer
+     * @param \model\Buyer|null $buyer buyer
      *
      * @return self
      */

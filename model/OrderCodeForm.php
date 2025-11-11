@@ -357,7 +357,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets codeDetails
      *
-     * @return \request\model\CodeDetail[]
+     * @return \model\CodeDetail[]
      */
     public function getCodeDetails()
     {
@@ -367,7 +367,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeDetails
      *
-     * @param \request\model\CodeDetail[] $codeDetails Details about the code.  More information:  Maximum size: 4 elements
+     * @param \model\CodeDetail[] $codeDetails Details about the code.  More information:  Maximum size: 4 elements
      *
      * @return self
      */

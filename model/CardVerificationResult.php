@@ -455,7 +455,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets threeDSResult
      *
-     * @return \request\model\RiskThreeDSResult
+     * @return \model\RiskThreeDSResult
      */
     public function getThreeDSResult()
     {
@@ -465,7 +465,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets threeDSResult
      *
-     * @param \request\model\RiskThreeDSResult $threeDSResult threeDSResult
+     * @param \model\RiskThreeDSResult $threeDSResult threeDSResult
      *
      * @return self
      */

@@ -334,7 +334,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -344,7 +344,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pspCustomerInfo
      *
-     * @return \request\model\PspCustomerInfo|null
+     * @return \model\PspCustomerInfo|null
      */
     public function getPspCustomerInfo()
     {
@@ -512,7 +512,7 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pspCustomerInfo
      *
-     * @param \request\model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
+     * @param \model\PspCustomerInfo|null $pspCustomerInfo pspCustomerInfo
      *
      * @return self
      */

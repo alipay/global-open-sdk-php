@@ -27,4 +27,27 @@ namespace Model;
 class CreditPayFeeType
 {
     public const PERCENTAGE = 'PERCENTAGE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function PERCENTAGE(): self
+    {
+        return new self(self::PERCENTAGE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

@@ -334,7 +334,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -344,7 +344,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets authCodeForm
      *
-     * @return \request\model\AuthCodeForm|null
+     * @return \model\AuthCodeForm|null
      */
     public function getAuthCodeForm()
     {
@@ -512,7 +512,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets authCodeForm
      *
-     * @param \request\model\AuthCodeForm|null $authCodeForm authCodeForm
+     * @param \model\AuthCodeForm|null $authCodeForm authCodeForm
      *
      * @return self
      */

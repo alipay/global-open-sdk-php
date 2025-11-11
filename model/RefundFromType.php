@@ -29,4 +29,35 @@ class RefundFromType
     public const SELLER = 'SELLER';
     public const MARKETPLACE = 'MARKETPLACE';
     public const UNSETTLED_FUNDS = 'UNSETTLED_FUNDS';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function SELLER(): self
+    {
+        return new self(self::SELLER);
+    }
+    public static function MARKETPLACE(): self
+    {
+        return new self(self::MARKETPLACE);
+    }
+    public static function UNSETTLED_FUNDS(): self
+    {
+        return new self(self::UNSETTLED_FUNDS);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

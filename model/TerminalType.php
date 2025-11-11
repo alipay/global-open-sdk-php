@@ -30,4 +30,39 @@ class TerminalType
     public const WAP = 'WAP';
     public const APP = 'APP';
     public const MINI_APP = 'MINI_APP';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function WEB(): self
+    {
+        return new self(self::WEB);
+    }
+    public static function WAP(): self
+    {
+        return new self(self::WAP);
+    }
+    public static function APP(): self
+    {
+        return new self(self::APP);
+    }
+    public static function MINI_APP(): self
+    {
+        return new self(self::MINI_APP);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

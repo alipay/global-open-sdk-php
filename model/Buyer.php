@@ -348,7 +348,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyerName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getBuyerName()
     {
@@ -358,7 +358,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerName
      *
-     * @param \request\model\UserName|null $buyerName buyerName
+     * @param \model\UserName|null $buyerName buyerName
      *
      * @return self
      */

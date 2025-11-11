@@ -28,4 +28,31 @@ class GrantType
 {
     public const AUTHORIZATION_CODE = 'AUTHORIZATION_CODE';
     public const REFRESH_TOKEN = 'REFRESH_TOKEN';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function AUTHORIZATION_CODE(): self
+    {
+        return new self(self::AUTHORIZATION_CODE);
+    }
+    public static function REFRESH_TOKEN(): self
+    {
+        return new self(self::REFRESH_TOKEN);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

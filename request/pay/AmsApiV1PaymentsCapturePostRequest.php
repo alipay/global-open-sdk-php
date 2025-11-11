@@ -361,7 +361,7 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
     /**
      * Gets captureAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getCaptureAmount()
     {
@@ -371,7 +371,7 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
     /**
      * Sets captureAmount
      *
-     * @param \request\model\Amount $captureAmount captureAmount
+     * @param \model\Amount $captureAmount captureAmount
      *
      * @return self
      */

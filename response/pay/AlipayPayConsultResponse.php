@@ -306,7 +306,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets result
      *
-     * @return \request\model\Result
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -316,7 +316,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets result
      *
-     * @param \request\model\Result $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -330,7 +330,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets paymentOptions
      *
-     * @return \request\model\PaymentOption[]|null
+     * @return \model\PaymentOption[]|null
      */
     public function getPaymentOptions()
     {
@@ -340,7 +340,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets paymentOptions
      *
-     * @param \request\model\PaymentOption[]|null $paymentOptions The payment option list.
+     * @param \model\PaymentOption[]|null $paymentOptions The payment option list.
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets paymentMethodInfos
      *
-     * @return \request\model\PaymentMethodInfo[]|null
+     * @return \model\PaymentMethodInfo[]|null
      */
     public function getPaymentMethodInfos()
     {
@@ -364,7 +364,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets paymentMethodInfos
      *
-     * @param \request\model\PaymentMethodInfo[]|null $paymentMethodInfos paymentMethodInfos
+     * @param \model\PaymentMethodInfo[]|null $paymentMethodInfos paymentMethodInfos
      *
      * @return self
      */

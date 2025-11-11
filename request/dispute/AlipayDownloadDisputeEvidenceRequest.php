@@ -320,7 +320,7 @@ class AlipayDownloadDisputeEvidenceRequest   extends AlipayRequest  implements M
     /**
      * Gets disputeEvidenceType
      *
-     * @return \request\model\DisputeEvidenceType
+     * @return \model\DisputeEvidenceType
      */
     public function getDisputeEvidenceType()
     {
@@ -330,7 +330,7 @@ class AlipayDownloadDisputeEvidenceRequest   extends AlipayRequest  implements M
     /**
      * Sets disputeEvidenceType
      *
-     * @param \request\model\DisputeEvidenceType $disputeEvidenceType disputeEvidenceType
+     * @param \model\DisputeEvidenceType $disputeEvidenceType disputeEvidenceType
      *
      * @return self
      */

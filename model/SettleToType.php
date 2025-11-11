@@ -28,4 +28,31 @@ class SettleToType
 {
     public const SELLER = 'SELLER';
     public const MARKETPLACE = 'MARKETPLACE';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function SELLER(): self
+    {
+        return new self(self::SELLER);
+    }
+    public static function MARKETPLACE(): self
+    {
+        return new self(self::MARKETPLACE);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

@@ -427,7 +427,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Gets refundAmount
      *
-     * @return \request\model\Amount
+     * @return \model\Amount
      */
     public function getRefundAmount()
     {
@@ -437,7 +437,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundAmount
      *
-     * @param \request\model\Amount $refundAmount refundAmount
+     * @param \model\Amount $refundAmount refundAmount
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Gets refundDetails
      *
-     * @return \request\model\RefundDetail[]|null
+     * @return \model\RefundDetail[]|null
      */
     public function getRefundDetails()
     {
@@ -557,7 +557,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets refundDetails
      *
-     * @param \request\model\RefundDetail[]|null $refundDetails refundDetails
+     * @param \model\RefundDetail[]|null $refundDetails refundDetails
      *
      * @return self
      */

@@ -451,7 +451,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantAddress
      *
-     * @return \request\model\Address
+     * @return \model\Address
      */
     public function getMerchantAddress()
     {
@@ -461,7 +461,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantAddress
      *
-     * @param \request\model\Address $merchantAddress merchantAddress
+     * @param \model\Address $merchantAddress merchantAddress
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets store
      *
-     * @return \request\model\Store
+     * @return \model\Store
      */
     public function getStore()
     {
@@ -509,7 +509,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets store
      *
-     * @param \request\model\Store $store store
+     * @param \model\Store $store store
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantType
      *
-     * @return \request\model\MerchantType
+     * @return \model\MerchantType
      */
     public function getMerchantType()
     {
@@ -533,7 +533,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantType
      *
-     * @param \request\model\MerchantType $merchantType merchantType
+     * @param \model\MerchantType $merchantType merchantType
      *
      * @return self
      */

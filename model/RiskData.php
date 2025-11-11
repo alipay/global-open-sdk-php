@@ -317,7 +317,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order
      *
-     * @return \request\model\RiskOrder|null
+     * @return \model\RiskOrder|null
      */
     public function getOrder()
     {
@@ -327,7 +327,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order
      *
-     * @param \request\model\RiskOrder|null $order order
+     * @param \model\RiskOrder|null $order order
      *
      * @return self
      */
@@ -341,7 +341,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyer
      *
-     * @return \request\model\RiskBuyer|null
+     * @return \model\RiskBuyer|null
      */
     public function getBuyer()
     {
@@ -351,7 +351,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer
      *
-     * @param \request\model\RiskBuyer|null $buyer buyer
+     * @param \model\RiskBuyer|null $buyer buyer
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets env
      *
-     * @return \request\model\RiskEnv|null
+     * @return \model\RiskEnv|null
      */
     public function getEnv()
     {
@@ -375,7 +375,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets env
      *
-     * @param \request\model\RiskEnv|null $env env
+     * @param \model\RiskEnv|null $env env
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets riskSignal
      *
-     * @return \request\model\RiskSignal|null
+     * @return \model\RiskSignal|null
      */
     public function getRiskSignal()
     {
@@ -399,7 +399,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets riskSignal
      *
-     * @param \request\model\RiskSignal|null $riskSignal riskSignal
+     * @param \model\RiskSignal|null $riskSignal riskSignal
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \request\model\RiskAddress|null
+     * @return \model\RiskAddress|null
      */
     public function getAddress()
     {
@@ -423,7 +423,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \request\model\RiskAddress|null $address address
+     * @param \model\RiskAddress|null $address address
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cardVerificationResult
      *
-     * @return \request\model\CardVerificationResult|null
+     * @return \model\CardVerificationResult|null
      */
     public function getCardVerificationResult()
     {
@@ -447,7 +447,7 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardVerificationResult
      *
-     * @param \request\model\CardVerificationResult|null $cardVerificationResult cardVerificationResult
+     * @param \model\CardVerificationResult|null $cardVerificationResult cardVerificationResult
      *
      * @return self
      */

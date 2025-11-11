@@ -38,4 +38,71 @@ class CardBrand
     public const ELO = 'ELO';
     public const HIPERCARD = 'HIPERCARD';
     public const TROY = 'TROY';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function VISA(): self
+    {
+        return new self(self::VISA);
+    }
+    public static function MASTERCARD(): self
+    {
+        return new self(self::MASTERCARD);
+    }
+    public static function MAESTRO(): self
+    {
+        return new self(self::MAESTRO);
+    }
+    public static function AMEX(): self
+    {
+        return new self(self::AMEX);
+    }
+    public static function JCB(): self
+    {
+        return new self(self::JCB);
+    }
+    public static function DINERS(): self
+    {
+        return new self(self::DINERS);
+    }
+    public static function DISCOVER(): self
+    {
+        return new self(self::DISCOVER);
+    }
+    public static function CUP(): self
+    {
+        return new self(self::CUP);
+    }
+    public static function MIR(): self
+    {
+        return new self(self::MIR);
+    }
+    public static function ELO(): self
+    {
+        return new self(self::ELO);
+    }
+    public static function HIPERCARD(): self
+    {
+        return new self(self::HIPERCARD);
+    }
+    public static function TROY(): self
+    {
+        return new self(self::TROY);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

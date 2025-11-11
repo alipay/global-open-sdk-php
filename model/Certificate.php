@@ -316,7 +316,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets certificateType
      *
-     * @return \request\model\CertificateType
+     * @return \model\CertificateType
      */
     public function getCertificateType()
     {
@@ -326,7 +326,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificateType
      *
-     * @param \request\model\CertificateType $certificateType certificateType
+     * @param \model\CertificateType $certificateType certificateType
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets holderName
      *
-     * @return \request\model\UserName|null
+     * @return \model\UserName|null
      */
     public function getHolderName()
     {
@@ -374,7 +374,7 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets holderName
      *
-     * @param \request\model\UserName|null $holderName holderName
+     * @param \model\UserName|null $holderName holderName
      *
      * @return self
      */

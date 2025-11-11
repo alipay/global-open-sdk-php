@@ -329,7 +329,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets resultStatus
      *
-     * @return \request\model\ResultStatusType
+     * @return \model\ResultStatusType
      */
     public function getResultStatus()
     {
@@ -339,7 +339,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resultStatus
      *
-     * @param \request\model\ResultStatusType $resultStatus resultStatus
+     * @param \model\ResultStatusType $resultStatus resultStatus
      *
      * @return self
      */

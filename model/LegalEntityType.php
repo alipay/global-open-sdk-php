@@ -28,4 +28,31 @@ class LegalEntityType
 {
     public const COMPANY = 'COMPANY';
     public const INDIVIDUAL = 'INDIVIDUAL';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function COMPANY(): self
+    {
+        return new self(self::COMPANY);
+    }
+    public static function INDIVIDUAL(): self
+    {
+        return new self(self::INDIVIDUAL);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }

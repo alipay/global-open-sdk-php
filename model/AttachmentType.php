@@ -42,4 +42,87 @@ class AttachmentType
     public const DRIVING_LICENSE = 'DRIVING_LICENSE';
     public const CPF = 'CPF';
     public const CNPJ = 'CNPJ';
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public static function SIGNATURE_AUTHORIZATION_LETTER(): self
+    {
+        return new self(self::SIGNATURE_AUTHORIZATION_LETTER);
+    }
+    public static function ARTICLES_OF_ASSOCIATION(): self
+    {
+        return new self(self::ARTICLES_OF_ASSOCIATION);
+    }
+    public static function LOGO(): self
+    {
+        return new self(self::LOGO);
+    }
+    public static function AUTHORIZER_SIGNATURE_CONFIRMATION_LETTER(): self
+    {
+        return new self(self::AUTHORIZER_SIGNATURE_CONFIRMATION_LETTER);
+    }
+    public static function ASSOCIATION_ARTICLE(): self
+    {
+        return new self(self::ASSOCIATION_ARTICLE);
+    }
+    public static function FINANCIAL_REPORT(): self
+    {
+        return new self(self::FINANCIAL_REPORT);
+    }
+    public static function OWNERSHIP_STRUCTURE_PIC(): self
+    {
+        return new self(self::OWNERSHIP_STRUCTURE_PIC);
+    }
+    public static function ADDRESS_PROOF(): self
+    {
+        return new self(self::ADDRESS_PROOF);
+    }
+    public static function UBO_PROVE(): self
+    {
+        return new self(self::UBO_PROVE);
+    }
+    public static function ENTERPRISE_REGISTRATION(): self
+    {
+        return new self(self::ENTERPRISE_REGISTRATION);
+    }
+    public static function LICENSE_INFO(): self
+    {
+        return new self(self::LICENSE_INFO);
+    }
+    public static function ID_CARD(): self
+    {
+        return new self(self::ID_CARD);
+    }
+    public static function PASSPORT(): self
+    {
+        return new self(self::PASSPORT);
+    }
+    public static function DRIVING_LICENSE(): self
+    {
+        return new self(self::DRIVING_LICENSE);
+    }
+    public static function CPF(): self
+    {
+        return new self(self::CPF);
+    }
+    public static function CNPJ(): self
+    {
+        return new self(self::CNPJ);
+    }
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }
