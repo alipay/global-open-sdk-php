@@ -4,7 +4,29 @@ class {{classname}}
     {{#allowableValues.enumVars}}
     public const {{name}} = {{{value}}};
     {{/allowableValues.enumVars}}
-    {{^allowableValues.enumVars}}
-    // No enum values defined
+
+    private $value;
+
+    private function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    {{#allowableValues.enumVars}}
+    public static function {{name}}(): self
+    {
+        return new self(self::{{name}});
+    }
     {{/allowableValues.enumVars}}
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
+
 }
