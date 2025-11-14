@@ -2,7 +2,6 @@
 
 namespace Request\notify;
 
-
 class AlipayDisputeNotify extends \Request\notify\AlipayNotify
 {
     public $paymentRequestId;

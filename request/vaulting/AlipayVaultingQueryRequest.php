@@ -7,10 +7,9 @@ use Request\AlipayRequest;
 
 class AlipayVaultingQueryRequest extends AlipayRequest
 {
-
     public $vaultingRequestId;
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::INQUIRE_VAULTING_PATH);
     }
@@ -26,7 +25,7 @@ class AlipayVaultingQueryRequest extends AlipayRequest
     /**
      * @param mixed $vaultingRequestId
      */
-    public function setVaultingRequestId($vaultingRequestId) 
+    public function setVaultingRequestId($vaultingRequestId)
     {
         $this->vaultingRequestId = $vaultingRequestId;
     }

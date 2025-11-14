@@ -7,13 +7,12 @@ use Request\AlipayRequest;
 
 class AlipayDeviceCertificateRequest extends AlipayRequest
 {
-
     public $devicePublicKey;
 
     public $deviceRequestId;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::CREATE_DEVICE_CERTIFICATE_PATH);
     }
@@ -29,7 +28,7 @@ class AlipayDeviceCertificateRequest extends AlipayRequest
     /**
      * @param mixed $devicePublicKey
      */
-    public function setDevicePublicKey($devicePublicKey) 
+    public function setDevicePublicKey($devicePublicKey)
     {
         $this->devicePublicKey = $devicePublicKey;
     }
@@ -45,7 +44,7 @@ class AlipayDeviceCertificateRequest extends AlipayRequest
     /**
      * @param mixed $deviceRequestId
      */
-    public function setDeviceRequestId($deviceRequestId) 
+    public function setDeviceRequestId($deviceRequestId)
     {
         $this->deviceRequestId = $deviceRequestId;
     }

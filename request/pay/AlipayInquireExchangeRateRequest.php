@@ -7,7 +7,6 @@ use Request\AlipayRequest;
 
 class AlipayInquireExchangeRateRequest extends AlipayRequest
 {
-
     private $merchantAccountId;
     private $paymentCurrency;
     private $currencyPairs;
@@ -35,7 +34,7 @@ class AlipayInquireExchangeRateRequest extends AlipayRequest
 
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::PAYMENT_INQUIRE_EXCHANGE_RATE_PATH);
     }

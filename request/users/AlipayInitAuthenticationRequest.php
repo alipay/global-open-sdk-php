@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayInitAuthenticationRequest extends AlipayRequest
 {
-
     public $authenticationType;
     public $authenticationRequestId;
     public $authenticationChannelType;

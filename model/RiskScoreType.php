@@ -1,8 +1,9 @@
 <?php
 
 namespace Model;
+
 class RiskScoreType
 {
-    const NSF_SCORE = "NSF_SCORE";
-    const FRAUD_SCORE = "FRAUD_SCORE";
+    public const NSF_SCORE = "NSF_SCORE";
+    public const FRAUD_SCORE = "FRAUD_SCORE";
 }

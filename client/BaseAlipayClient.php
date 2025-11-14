@@ -2,11 +2,9 @@
 
 namespace Client;
 
-
 abstract class BaseAlipayClient
 {
-
-    const DEFAULT_KEY_VERSION = 1;
+    public const DEFAULT_KEY_VERSION = 1;
     private $gatewayUrl;
     private $merchantPrivateKey;
     private $alipayPublicKey;
@@ -16,7 +14,7 @@ abstract class BaseAlipayClient
 
     private $isSandboxMode;
 
-    function __construct()
+    public function __construct()
     {
         $a = func_get_args();
         $i = func_num_args();
@@ -25,14 +23,14 @@ abstract class BaseAlipayClient
         }
     }
 
-    function __construct3($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
+    public function __construct3($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
     {
         $this->gatewayUrl = $gatewayUrl;
         $this->merchantPrivateKey = $merchantPrivateKey;
         $this->alipayPublicKey = $alipayPublicKey;
     }
 
-    function __construct4($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
+    public function __construct4($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
     {
         $this->gatewayUrl = $gatewayUrl;
         $this->merchantPrivateKey = $merchantPrivateKey;
@@ -45,7 +43,7 @@ abstract class BaseAlipayClient
 
     }
 
-    function __construct5($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
+    public function __construct5($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
     {
         $this->gatewayUrl = $gatewayUrl;
         $this->merchantPrivateKey = $merchantPrivateKey;
@@ -77,7 +75,7 @@ abstract class BaseAlipayClient
         $httpMethod = $request->getHttpMethod();
         $path = $request->getPath();
         $keyVersion = $request->getKeyVersion();
-        $reqTime =date(DATE_ISO8601);
+        $reqTime = date(DATE_ISO8601);
         $reqBody = json_encode($request);
 
         $signValue = $this->genSignValue($httpMethod, $path, $clientId, $reqTime, $reqBody);
@@ -185,7 +183,7 @@ abstract class BaseAlipayClient
         $baseHeader[] = "Request-Time:" . $requestTime;
         $baseHeader[] = "client-id:" . $clientId;
 
-        if (isset($this->agentToken)){
+        if (isset($this->agentToken)) {
             $baseHeader[] = "agent-token:" . $this->agentToken;
         }
 
@@ -213,7 +211,8 @@ abstract class BaseAlipayClient
 
     }
 
-    private function adjustSandboxUrl($alipayRequest) {
+    private function adjustSandboxUrl($alipayRequest)
+    {
         if ($this->isSandboxMode) {
             $originPath = $alipayRequest->getPath();
             $newPath = preg_replace('/\/ams\/api/', '/ams/sandbox/api', $originPath, 1);

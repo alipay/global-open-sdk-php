@@ -10,7 +10,6 @@ use Request\auth\AlipayAuthApplyTokenRequest;
 use Request\auth\AlipayAuthConsultRequest;
 use Request\auth\AlipayAuthRevokeTokenRequest;
 
-
 const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";
