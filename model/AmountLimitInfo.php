@@ -4,7 +4,6 @@ namespace Model;
 
 class AmountLimitInfo
 {
-
     public $singleLimit;
     public $dayLimit;
     public $monthLimit;

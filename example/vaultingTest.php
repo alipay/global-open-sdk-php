@@ -87,4 +87,3 @@ function inquireVaulting($vaultingRequestId)
 //vaultPaymentMethod();
 
 inquireVaulting("vaultPaymentMethod1727232429222");
-

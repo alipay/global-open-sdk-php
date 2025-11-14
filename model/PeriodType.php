@@ -4,10 +4,9 @@ namespace Model;
 
 class PeriodType
 {
-
-    const DAY = "DAY";
-    const WEEK = "WEEK";
-    const MONTH = "MONTH";
-    const YEAR = "YEAR";
+    public const DAY = "DAY";
+    public const WEEK = "WEEK";
+    public const MONTH = "MONTH";
+    public const YEAR = "YEAR";
 
 }

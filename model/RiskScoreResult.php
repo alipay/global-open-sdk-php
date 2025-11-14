@@ -4,7 +4,6 @@ namespace Model;
 
 class RiskScoreResult
 {
-
     public $riskScoreType;
     public $riskScore;
     public $riskScoreDetails;

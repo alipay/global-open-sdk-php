@@ -25,7 +25,7 @@ class AlipayRetrievePaymentSessionRequest extends AlipayRequest
         $this->paymentRequestId = $paymentRequestId;
     }
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::RETRIEVE_PATH);
     }

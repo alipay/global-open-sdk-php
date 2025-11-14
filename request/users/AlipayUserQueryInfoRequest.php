@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayUserQueryInfoRequest extends AlipayRequest
 {
-
     public $accessToken;
 
     /**

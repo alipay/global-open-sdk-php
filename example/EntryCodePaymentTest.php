@@ -1,4 +1,5 @@
 <?php
+
 require '../init.php';
 
 use Client\DefaultAlipayClient;
@@ -13,7 +14,6 @@ use Model\Store;
 use model\TerminalType;
 use Model\WalletPaymentMethodType;
 use Request\pay\EntryCodePaymentRequest;
-
 
 $clientId = "SANDBOX_5YBZ1G2ZHUPS06086";
 
@@ -75,4 +75,3 @@ $alipayResponse = $alipayClient->execute($request);
 //print(json_encode($request));
 //print('<br>-----------------------------------------------------------------------------<br>');
 print(json_encode($alipayResponse));
-
