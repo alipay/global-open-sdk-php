@@ -16,7 +16,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     public $subOrderId;
     public $buyerCertificate;
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::DECLARE_PATH);
     }
@@ -33,7 +33,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $declarationRequestId
      */
-    public function setDeclarationRequestId($declarationRequestId) 
+    public function setDeclarationRequestId($declarationRequestId)
     {
         $this->declarationRequestId = $declarationRequestId;
     }
@@ -49,7 +49,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId) 
+    public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
     }
@@ -65,7 +65,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $declarationAmount
      */
-    public function setDeclarationAmount($declarationAmount) 
+    public function setDeclarationAmount($declarationAmount)
     {
         $this->declarationAmount = $declarationAmount;
     }
@@ -81,7 +81,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $customs
      */
-    public function setCustoms($customs) 
+    public function setCustoms($customs)
     {
         $this->customs = $customs;
     }
@@ -97,7 +97,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $merchantCustomsInfo
      */
-    public function setMerchantCustomsInfo($merchantCustomsInfo) 
+    public function setMerchantCustomsInfo($merchantCustomsInfo)
     {
         $this->merchantCustomsInfo = $merchantCustomsInfo;
     }
@@ -113,7 +113,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $splitOrder
      */
-    public function setSplitOrder($splitOrder) 
+    public function setSplitOrder($splitOrder)
     {
         $this->splitOrder = $splitOrder;
     }
@@ -129,7 +129,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $subOrderId
      */
-    public function setSubOrderId($subOrderId) 
+    public function setSubOrderId($subOrderId)
     {
         $this->subOrderId = $subOrderId;
     }
@@ -145,7 +145,7 @@ class AlipayCustomsDeclareRequest extends AlipayRequest
     /**
      * @param mixed $buyerCertificate
      */
-    public function setBuyerCertificate($buyerCertificate) 
+    public function setBuyerCertificate($buyerCertificate)
     {
         $this->buyerCertificate = $buyerCertificate;
     }

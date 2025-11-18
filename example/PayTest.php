@@ -1,4 +1,5 @@
 <?php
+
 require '../init.php';
 
 use Client\DefaultAlipayClient;
@@ -23,7 +24,6 @@ use Request\pay\AlipayPaymentSessionRequest;
 use Request\pay\AlipayPayQueryRequest;
 use Request\pay\AlipayPayRequest;
 use Request\pay\AlipayRefundRequest;
-
 
 const clientId = "";
 const merchantPrivateKey = "";
@@ -98,8 +98,8 @@ function pay()
 
     echo json_encode($alipayResponse);
 
-//    print(json_encode($alipayResponse));
-//    print("\n" . $paymentRequestId);
+    //    print(json_encode($alipayResponse));
+    //    print("\n" . $paymentRequestId);
 }
 
 function queryPay($paymentRequestId)

@@ -4,7 +4,6 @@ namespace Model;
 
 class ContactInfo
 {
-
     public $contactNo;
     public $contactType;
 

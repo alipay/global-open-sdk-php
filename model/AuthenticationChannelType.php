@@ -1,9 +1,9 @@
 <?php
 
-
 namespace Model;
+
 class AuthenticationChannelType
 {
-    const EMAIL = "EMAIL";
-    const SMS = "SMS";
+    public const EMAIL = "EMAIL";
+    public const SMS = "SMS";
 }
