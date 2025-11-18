@@ -4,7 +4,6 @@ namespace Model;
 
 class SubscriptionInfo
 {
-
     public $subscriptionDescription;
     public $subscriptionStartTime;
     public $subscriptionEndTime;

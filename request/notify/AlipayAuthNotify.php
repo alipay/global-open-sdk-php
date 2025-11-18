@@ -2,10 +2,8 @@
 
 namespace Request\notify;
 
-
 class AlipayAuthNotify extends \Request\notify\AlipayNotify
 {
-
     /**
      * Authorization notification type
      */

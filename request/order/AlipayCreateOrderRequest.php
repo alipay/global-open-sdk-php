@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayCreateOrderRequest extends AlipayRequest
 {
-
     public $productCode;
     public $paymentRequestId;
     public $order;

@@ -4,6 +4,6 @@ namespace Model;
 
 class CancellationType
 {
-    const CANCEL = "CANCEL";
-    const TERMINATE = "TERMINATE";
+    public const CANCEL = "CANCEL";
+    public const TERMINATE = "TERMINATE";
 }

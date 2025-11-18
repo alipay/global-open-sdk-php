@@ -7,7 +7,6 @@ use Request\AlipayRequest;
 
 class RiskDecideRequest extends AlipayRequest
 {
-
     public $referenceTransactionId;
     public $authorizationPhase;
     public $orders;
@@ -18,7 +17,7 @@ class RiskDecideRequest extends AlipayRequest
     public $env;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::RISK_DECIDE_PATH);
     }
@@ -34,7 +33,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId) 
+    public function setReferenceTransactionId($referenceTransactionId)
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -50,7 +49,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $authorizationPhase
      */
-    public function setAuthorizationPhase($authorizationPhase) 
+    public function setAuthorizationPhase($authorizationPhase)
     {
         $this->authorizationPhase = $authorizationPhase;
     }
@@ -66,7 +65,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $orders
      */
-    public function setOrders($orders) 
+    public function setOrders($orders)
     {
         $this->orders = $orders;
     }
@@ -82,7 +81,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $buyer
      */
-    public function setBuyer($buyer) 
+    public function setBuyer($buyer)
     {
         $this->buyer = $buyer;
     }
@@ -98,7 +97,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $actualPaymentAmount
      */
-    public function setActualPaymentAmount($actualPaymentAmount) 
+    public function setActualPaymentAmount($actualPaymentAmount)
     {
         $this->actualPaymentAmount = $actualPaymentAmount;
     }
@@ -114,7 +113,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $paymentDetails
      */
-    public function setPaymentDetails($paymentDetails) 
+    public function setPaymentDetails($paymentDetails)
     {
         $this->paymentDetails = $paymentDetails;
     }
@@ -130,7 +129,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $discountAmount
      */
-    public function setDiscountAmount($discountAmount) 
+    public function setDiscountAmount($discountAmount)
     {
         $this->discountAmount = $discountAmount;
     }
@@ -146,7 +145,7 @@ class RiskDecideRequest extends AlipayRequest
     /**
      * @param mixed $env
      */
-    public function setEnv($env) 
+    public function setEnv($env)
     {
         $this->env = $env;
     }

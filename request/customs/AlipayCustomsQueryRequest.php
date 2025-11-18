@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Request\customs;
 
 use Model\AntomPathConstants;
@@ -8,11 +7,10 @@ use Request\AlipayRequest;
 
 class AlipayCustomsQueryRequest extends AlipayRequest
 {
-
     public $declarationRequestIds;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::INQUIRY_DECLARE_PATH);
     }
@@ -29,7 +27,7 @@ class AlipayCustomsQueryRequest extends AlipayRequest
     /**
      * @param mixed $declarationRequestIds
      */
-    public function setDeclarationRequestIds($declarationRequestIds) 
+    public function setDeclarationRequestIds($declarationRequestIds)
     {
         $this->declarationRequestIds = $declarationRequestIds;
     }
