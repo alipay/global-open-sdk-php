@@ -19,10 +19,31 @@ class AlipayAuthConsultRequest extends \Request\AlipayRequest
 
     public $authMetaData;
 
+    public $authNotifyUrl;
+
+
     function __construct()
     {
         $this->setPath(\Model\AntomPathConstants::AUTH_CONSULT_PATH);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthNotifyUrl()
+    {
+        return $this->authNotifyUrl;
+    }
+
+    /**
+     * @param mixed $authNotifyUrl
+     */
+    public function setAuthNotifyUrl($authNotifyUrl): void
+    {
+        $this->authNotifyUrl = $authNotifyUrl;
+    }
+
+
 
     /**
      * @return mixed

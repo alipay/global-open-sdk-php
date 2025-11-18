@@ -24,6 +24,24 @@ class Env
     public $deviceModel;
     public $deviceLanguage;
     public $deviceId;
+    public $osVersion;
+
+    /**
+     * @return mixed
+     */
+    public function getOsVersion()
+    {
+        return $this->osVersion;
+    }
+
+    /**
+     * @param mixed $osVersion
+     */
+    public function setOsVersion($osVersion): void
+    {
+        $this->osVersion = $osVersion;
+    }
+
 
     /**
      * @return String

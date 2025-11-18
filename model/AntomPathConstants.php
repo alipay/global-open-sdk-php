@@ -46,4 +46,7 @@ class AntomPathConstants
 
     const PAYMENT_INQUIRE_EXCHANGE_RATE_PATH = "/ams/api/v1/payments/inquireExchangeRate";
 
+    const  ABA_INQUERY_STATEMENT_LIST_PATH = "/ams/api/v1/aba/accounts/inquiryStatementList";
+
+
 }

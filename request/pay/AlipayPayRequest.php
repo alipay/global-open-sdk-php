@@ -34,11 +34,31 @@ class AlipayPayRequest extends AlipayRequest
 
     public $subscriptionInfo;
 
+    public $agreementInfo;
+
 
     function __construct()
     {
         $this->setPath(AntomPathConstants::PAYMENT_PATH);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAgreementInfo()
+    {
+        return $this->agreementInfo;
+    }
+
+    /**
+     * @param mixed $agreementInfo
+     */
+    public function setAgreementInfo($agreementInfo): void
+    {
+        $this->agreementInfo = $agreementInfo;
+    }
+
+
 
 
     /**

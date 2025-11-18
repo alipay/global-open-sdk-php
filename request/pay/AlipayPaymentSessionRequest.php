@@ -103,6 +103,26 @@ class AlipayPaymentSessionRequest extends AlipayRequest
 
     public $scopes;
 
+    public $paymentExpiryTime;
+
+    /**
+     * @return mixed
+     */
+    public function getPaymentExpiryTime()
+    {
+        return $this->paymentExpiryTime;
+    }
+
+    /**
+     * @param mixed $paymentExpiryTime
+     */
+    public function setPaymentExpiryTime($paymentExpiryTime): void
+    {
+        $this->paymentExpiryTime = $paymentExpiryTime;
+    }
+
+
+
     /**
      * @return mixed
      */
