@@ -4,8 +4,7 @@ namespace Client;
 
 class DefaultAlipayClient extends \Client\BaseAlipayClient
 {
-
-    function __construct()
+    public function __construct()
     {
         $a = func_get_args();
         $i = func_num_args() + 3;
@@ -14,17 +13,17 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
         }
     }
 
-    function __construct6($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
+    public function __construct6($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey);
     }
 
-    function __construct7($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
+    public function __construct7($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId);
     }
 
-    function __construct8($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
+    public function __construct8($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken);
     }

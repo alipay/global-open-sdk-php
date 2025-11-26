@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+
 class CustomsInfo
 {
     public $customsCode;
@@ -17,7 +18,7 @@ class CustomsInfo
     /**
      * @param mixed $customsCode
      */
-    public function setCustomsCode($customsCode) 
+    public function setCustomsCode($customsCode)
     {
         $this->customsCode = $customsCode;
     }
@@ -33,7 +34,7 @@ class CustomsInfo
     /**
      * @param mixed $region
      */
-    public function setRegion($region) 
+    public function setRegion($region)
     {
         $this->region = $region;
     }

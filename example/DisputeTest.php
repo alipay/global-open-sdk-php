@@ -4,7 +4,6 @@ require '../init.php';
 
 use Client\DefaultAlipayClient;
 
-
 const clientId = "";
 const merchantPrivateKey = "";
 const alipayPublicKey = "";

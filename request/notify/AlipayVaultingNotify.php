@@ -2,22 +2,21 @@
 
 namespace Request\notify;
 
-
 class AlipayVaultingNotify extends \Request\notify\AlipayNotify
 {
     /**
      * The unique ID that is assigned by a merchant to identify a card vaulting request.
      */
-    public  $vaultingRequestId;
+    public $vaultingRequestId;
 
     /**
      * The details about the card payment method.
      */
-    public  $paymentMethodDetail;
+    public $paymentMethodDetail;
 
-    public  $vaultingCreateTime;
+    public $vaultingCreateTime;
 
-    public  $acquirerInfo;
+    public $acquirerInfo;
 
     /**
      * @return mixed
@@ -30,7 +29,7 @@ class AlipayVaultingNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $vaultingRequestId
      */
-    public function setVaultingRequestId($vaultingRequestId) 
+    public function setVaultingRequestId($vaultingRequestId)
     {
         $this->vaultingRequestId = $vaultingRequestId;
     }
@@ -46,7 +45,7 @@ class AlipayVaultingNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $paymentMethodDetail
      */
-    public function setPaymentMethodDetail($paymentMethodDetail) 
+    public function setPaymentMethodDetail($paymentMethodDetail)
     {
         $this->paymentMethodDetail = $paymentMethodDetail;
     }
@@ -62,7 +61,7 @@ class AlipayVaultingNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $vaultingCreateTime
      */
-    public function setVaultingCreateTime($vaultingCreateTime) 
+    public function setVaultingCreateTime($vaultingCreateTime)
     {
         $this->vaultingCreateTime = $vaultingCreateTime;
     }
@@ -78,7 +77,7 @@ class AlipayVaultingNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $acquirerInfo
      */
-    public function setAcquirerInfo($acquirerInfo) 
+    public function setAcquirerInfo($acquirerInfo)
     {
         $this->acquirerInfo = $acquirerInfo;
     }

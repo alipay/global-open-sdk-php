@@ -13,7 +13,7 @@ class RiskReportRequest extends AlipayRequest
     public $riskOccurrenceTime;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::RISK_REPORT_PATH);
     }
@@ -29,7 +29,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId) 
+    public function setReferenceTransactionId($referenceTransactionId)
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -45,7 +45,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $reportReason
      */
-    public function setReportReason($reportReason) 
+    public function setReportReason($reportReason)
     {
         $this->reportReason = $reportReason;
     }
@@ -61,7 +61,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $riskType
      */
-    public function setRiskType($riskType) 
+    public function setRiskType($riskType)
     {
         $this->riskType = $riskType;
     }
@@ -77,7 +77,7 @@ class RiskReportRequest extends AlipayRequest
     /**
      * @param mixed $riskOccurrenceTime
      */
-    public function setRiskOccurrenceTime($riskOccurrenceTime) 
+    public function setRiskOccurrenceTime($riskOccurrenceTime)
     {
         $this->riskOccurrenceTime = $riskOccurrenceTime;
     }

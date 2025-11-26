@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayMerchantRegistrationInfoQueryRequest extends AlipayRequest
 {
-
     public $referenceMerchantId;
 
     /**
