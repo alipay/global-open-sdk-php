@@ -9,7 +9,7 @@ class AlipayAuthQueryTokenRequest extends AlipayRequest
 {
     public $accessToken;
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::AUTH_QUERY_PATH);
     }

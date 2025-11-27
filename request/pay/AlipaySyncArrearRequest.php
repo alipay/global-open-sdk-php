@@ -5,12 +5,12 @@ namespace Request\pay;
 use Model\AntomPathConstants;
 use Request\AlipayRequest;
 
-class AlipaySyncArrearRequest extends  AlipayRequest
+class AlipaySyncArrearRequest extends AlipayRequest
 {
     public $paymentId;
     public $paymentRequestId;
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::SYNC_ARREAR_PATH);
     }
@@ -26,7 +26,7 @@ class AlipaySyncArrearRequest extends  AlipayRequest
     /**
      * @param mixed $paymentId
      */
-    public function setPaymentId($paymentId) 
+    public function setPaymentId($paymentId)
     {
         $this->paymentId = $paymentId;
     }
@@ -42,7 +42,7 @@ class AlipaySyncArrearRequest extends  AlipayRequest
     /**
      * @param mixed $paymentRequestId
      */
-    public function setPaymentRequestId($paymentRequestId) 
+    public function setPaymentRequestId($paymentRequestId)
     {
         $this->paymentRequestId = $paymentRequestId;
     }

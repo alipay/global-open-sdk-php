@@ -51,7 +51,7 @@ function SubscriptionsCreate()
     $paymentMethod->setPaymentMethodType(\Model\WalletPaymentMethodType::ALIPAY_HK);
     $alipaySubscriptionCreateRequest->setPaymentMethod($paymentMethod);
 
-    
+
     $alipaySubscriptionCreateRequest->setSubscriptionRedirectUrl("http://www.alipay.com");
     $alipaySubscriptionCreateRequest->setSubscriptionNotificationUrl("http://www.alipay.com");
 
@@ -90,12 +90,12 @@ function SubscriptionsChange($subscriptionId)
     $amount1->setCurrency("BRL");
     $orderInfo->setOrderAmount($amount1);
     $alipaySubscriptionChangeRequest->setOrderInfo($orderInfo);
-    
+
     $alipayClient = new DefaultAlipayClient("https://open-sea-global.alipay.com", merchantPrivateKey, alipayPublicKey, clientId);
     $alipayResponse = $alipayClient->execute($alipaySubscriptionChangeRequest);
 
     echo json_encode($alipayResponse);
-    
+
 }
 
 function subscriptionCancel($subscriptionId)

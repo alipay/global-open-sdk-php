@@ -4,8 +4,8 @@ namespace Model;
 
 class CustomerIdType
 {
-    const EMAIL = "EMAIL";
-    const USER_ID = "USER_ID";
-    const MOBILE_NO = "MOBILE_NO";
-    const AUTH_CODE = "AUTH_CODE";
+    public const EMAIL = "EMAIL";
+    public const USER_ID = "USER_ID";
+    public const MOBILE_NO = "MOBILE_NO";
+    public const AUTH_CODE = "AUTH_CODE";
 }

@@ -11,9 +11,7 @@ use Model\ProductCodeType;
 
 class UserPresentedCodePaymentRequest extends AlipayPayRequest
 {
-
-
-    function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentCode, $paymentNotifyUrl, $paymentExpiryTime)
+    public function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentCode, $paymentNotifyUrl, $paymentExpiryTime)
     {
         $this->setPath('/ams/api/v1/payments/pay');
         $this->setProductCode(ProductCodeType::IN_STORE_PAYMENT);
@@ -45,7 +43,7 @@ class UserPresentedCodePaymentRequest extends AlipayPayRequest
 
     }
 
-    function validate()
+    public function validate()
     {
         $this->assertTrue(isset($this->order), "order required.");
         $this->assertTrue(isset($this->order->merchant), "order.merchant required.");
@@ -63,7 +61,7 @@ class UserPresentedCodePaymentRequest extends AlipayPayRequest
         $this->assertTrue(isset($this->order->env->storeTerminalRequestTime), "order.env.storeTerminalRequestTime required.");
     }
 
-    function assertTrue($exp, $msg)
+    public function assertTrue($exp, $msg)
     {
         if (!$exp) {
             throw new Exception($msg);

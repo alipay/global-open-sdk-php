@@ -35,7 +35,7 @@ class MerchantCustomsInfo
     /**
      * @param mixed $merchantCustomsName
      */
-    public function setMerchantCustomsName($merchantCustomsName) 
+    public function setMerchantCustomsName($merchantCustomsName)
     {
         $this->merchantCustomsName = $merchantCustomsName;
     }
