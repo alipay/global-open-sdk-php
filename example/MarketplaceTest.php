@@ -1,6 +1,6 @@
 <?php
 
-require '../init.php';
+require '../vendor/autoload.php';
 
 use Request\marketplace\AlipayRegisterRequest;
 use Client\DefaultAlipayClient;
