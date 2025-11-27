@@ -7,7 +7,6 @@ use Request\AlipayRequest;
 
 class SendPaymentResultRequest extends AlipayRequest
 {
-
     public $referenceTransactionId;
     public $paymentStatus;
 
@@ -18,7 +17,7 @@ class SendPaymentResultRequest extends AlipayRequest
     public $paymentMethodProvider;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::RISK_SEND_PAYMENT_RESULT_PATH);
     }
@@ -34,7 +33,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId) 
+    public function setReferenceTransactionId($referenceTransactionId)
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -50,7 +49,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $paymentStatus
      */
-    public function setPaymentStatus($paymentStatus) 
+    public function setPaymentStatus($paymentStatus)
     {
         $this->paymentStatus = $paymentStatus;
     }
@@ -66,7 +65,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $authorizationError
      */
-    public function setAuthorizationError($authorizationError) 
+    public function setAuthorizationError($authorizationError)
     {
         $this->authorizationError = $authorizationError;
     }
@@ -82,7 +81,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $cardVerificationResult
      */
-    public function setCardVerificationResult($cardVerificationResult) 
+    public function setCardVerificationResult($cardVerificationResult)
     {
         $this->cardVerificationResult = $cardVerificationResult;
     }
@@ -98,7 +97,7 @@ class SendPaymentResultRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethodProvider
      */
-    public function setPaymentMethodProvider($paymentMethodProvider) 
+    public function setPaymentMethodProvider($paymentMethodProvider)
     {
         $this->paymentMethodProvider = $paymentMethodProvider;
     }

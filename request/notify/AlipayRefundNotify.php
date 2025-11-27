@@ -2,10 +2,8 @@
 
 namespace Request\notify;
 
-
 class AlipayRefundNotify extends \Request\notify\AlipayNotify
 {
-
     public $refundStatus;
 
     public $refundRequestId;
@@ -88,7 +86,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $refundStatus
      */
-    public function setRefundStatus($refundStatus) 
+    public function setRefundStatus($refundStatus)
     {
         $this->refundStatus = $refundStatus;
     }
@@ -104,7 +102,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $refundRequestId
      */
-    public function setRefundRequestId($refundRequestId) 
+    public function setRefundRequestId($refundRequestId)
     {
         $this->refundRequestId = $refundRequestId;
     }
@@ -120,7 +118,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $refundId
      */
-    public function setRefundId($refundId) 
+    public function setRefundId($refundId)
     {
         $this->refundId = $refundId;
     }
@@ -136,7 +134,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $refundAmount
      */
-    public function setRefundAmount($refundAmount) 
+    public function setRefundAmount($refundAmount)
     {
         $this->refundAmount = $refundAmount;
     }
@@ -152,7 +150,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $refundTime
      */
-    public function setRefundTime($refundTime) 
+    public function setRefundTime($refundTime)
     {
         $this->refundTime = $refundTime;
     }
@@ -168,7 +166,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $grossSettlementAmount
      */
-    public function setGrossSettlementAmount($grossSettlementAmount) 
+    public function setGrossSettlementAmount($grossSettlementAmount)
     {
         $this->grossSettlementAmount = $grossSettlementAmount;
     }
@@ -184,7 +182,7 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $settlementQuote
      */
-    public function setSettlementQuote($settlementQuote) 
+    public function setSettlementQuote($settlementQuote)
     {
         $this->settlementQuote = $settlementQuote;
     }

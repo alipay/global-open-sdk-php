@@ -14,7 +14,7 @@ class AlipayUploadInvoiceShippingFileRequest extends AlipayRequest
     public $fileName;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath("/ams/api/v1/payments/uploadInvoiceShippingFile");
     }

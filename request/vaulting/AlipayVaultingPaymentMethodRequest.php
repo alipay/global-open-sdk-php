@@ -15,7 +15,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
 
     public $env;
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::VAULT_PAYMENT_METHOD_PATH);
     }
@@ -32,7 +32,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $vaultingRequestId
      */
-    public function setVaultingRequestId($vaultingRequestId) 
+    public function setVaultingRequestId($vaultingRequestId)
     {
         $this->vaultingRequestId = $vaultingRequestId;
     }
@@ -48,7 +48,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $vaultingNotificationUrl
      */
-    public function setVaultingNotificationUrl($vaultingNotificationUrl) 
+    public function setVaultingNotificationUrl($vaultingNotificationUrl)
     {
         $this->vaultingNotificationUrl = $vaultingNotificationUrl;
     }
@@ -64,7 +64,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $redirectUrl
      */
-    public function setRedirectUrl($redirectUrl) 
+    public function setRedirectUrl($redirectUrl)
     {
         $this->redirectUrl = $redirectUrl;
     }
@@ -80,7 +80,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $merchantRegion
      */
-    public function setMerchantRegion($merchantRegion) 
+    public function setMerchantRegion($merchantRegion)
     {
         $this->merchantRegion = $merchantRegion;
     }
@@ -96,7 +96,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $paymentMethodDetail
      */
-    public function setPaymentMethodDetail($paymentMethodDetail) 
+    public function setPaymentMethodDetail($paymentMethodDetail)
     {
         $this->paymentMethodDetail = $paymentMethodDetail;
     }
@@ -112,7 +112,7 @@ class AlipayVaultingPaymentMethodRequest extends AlipayRequest
     /**
      * @param mixed $env
      */
-    public function setEnv($env) 
+    public function setEnv($env)
     {
         $this->env = $env;
     }

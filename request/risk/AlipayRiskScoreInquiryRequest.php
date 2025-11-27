@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayRiskScoreInquiryRequest extends AlipayRequest
 {
-
     public $customerBelongsTo;
     public $customerIdType;
     public $customerId;

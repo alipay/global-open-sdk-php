@@ -4,13 +4,13 @@ namespace Request\notify;
 
 class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
 {
-    public  $subscriptionRequestId;
-    public  $subscriptionId;
-    public  $subscriptionStatus ;
-    public  $subscriptionNotificationType;
-    public  $subscriptionStartTime;
-    public  $subscriptionEndTime;
-    public  $periodRule;
+    public $subscriptionRequestId;
+    public $subscriptionId;
+    public $subscriptionStatus ;
+    public $subscriptionNotificationType;
+    public $subscriptionStartTime;
+    public $subscriptionEndTime;
+    public $periodRule;
 
     /**
      * @return mixed
@@ -23,7 +23,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $subscriptionRequestId
      */
-    public function setSubscriptionRequestId($subscriptionRequestId) 
+    public function setSubscriptionRequestId($subscriptionRequestId)
     {
         $this->subscriptionRequestId = $subscriptionRequestId;
     }
@@ -39,7 +39,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $subscriptionId
      */
-    public function setSubscriptionId($subscriptionId) 
+    public function setSubscriptionId($subscriptionId)
     {
         $this->subscriptionId = $subscriptionId;
     }
@@ -55,7 +55,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $subscriptionStatus
      */
-    public function setSubscriptionStatus($subscriptionStatus) 
+    public function setSubscriptionStatus($subscriptionStatus)
     {
         $this->subscriptionStatus = $subscriptionStatus;
     }
@@ -71,7 +71,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $subscriptionNotificationType
      */
-    public function setSubscriptionNotificationType($subscriptionNotificationType) 
+    public function setSubscriptionNotificationType($subscriptionNotificationType)
     {
         $this->subscriptionNotificationType = $subscriptionNotificationType;
     }
@@ -87,7 +87,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $subscriptionStartTime
      */
-    public function setSubscriptionStartTime($subscriptionStartTime) 
+    public function setSubscriptionStartTime($subscriptionStartTime)
     {
         $this->subscriptionStartTime = $subscriptionStartTime;
     }
@@ -103,7 +103,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $subscriptionEndTime
      */
-    public function setSubscriptionEndTime($subscriptionEndTime) 
+    public function setSubscriptionEndTime($subscriptionEndTime)
     {
         $this->subscriptionEndTime = $subscriptionEndTime;
     }
@@ -119,7 +119,7 @@ class AlipaySubscriptionNotify extends \Request\notify\AlipayNotify
     /**
      * @param mixed $periodRule
      */
-    public function setPeriodRule($periodRule) 
+    public function setPeriodRule($periodRule)
     {
         $this->periodRule = $periodRule;
     }
