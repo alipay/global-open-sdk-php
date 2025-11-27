@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayVerifyAuthenticationRequest extends AlipayRequest
 {
-
     public $authenticationType;
     public $authenticationRequestId;
     public $authenticationValue;

@@ -1,5 +1,6 @@
 <?php
-require '../init.php';
+
+require '../vendor/autoload.php';
 
 use Client\DefaultAlipayClient;
 use Model\Amount;
@@ -9,7 +10,6 @@ use Model\CustomsInfo;
 use Model\MerchantCustomsInfo;
 use model\UserName;
 use Request\customs\AlipayCustomsDeclareRequest;
-
 
 const clientId = "";
 const merchantPrivateKey = "";

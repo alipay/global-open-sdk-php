@@ -1,5 +1,6 @@
 <?php
-require '../init.php';
+
+require '../vendor/autoload.php';
 
 use Client\DefaultAlipayClient;
 use Model\Address;
@@ -13,7 +14,6 @@ use Model\WebSite;
 use Request\merchant\AlipayMerchantRegistrationInfoQueryRequest;
 use Request\merchant\AlipayMerchantRegistrationRequest;
 use Request\merchant\AlipayMerchantRegistrationStatusQueryRequest;
-
 
 $merchantPrivateKey = file_get_contents(__DIR__ . "/../private-pkcs1.pem");
 

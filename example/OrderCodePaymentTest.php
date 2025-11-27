@@ -1,5 +1,6 @@
 <?php
-require '../init.php';
+
+require '../vendor/autoload.php';
 
 use Client\DefaultAlipayClient;
 use Model\Amount;
@@ -7,7 +8,6 @@ use Model\Merchant;
 use Model\Order;
 use Model\Store;
 use Request\pay\OrderCodePaymentRequest;
-
 
 $clientId = "T_385XSM502Y108602A";
 
@@ -56,5 +56,3 @@ $alipayResponse = $alipayClient->execute($request);
 print(json_encode($request));
 print('<br>-----------------------------------------------------------------------------<br>');
 print(json_encode($alipayResponse));
-
-

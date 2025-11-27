@@ -2,11 +2,8 @@
 
 namespace Request\auth;
 
-
 class AlipayAuthCreateSessionRequest extends \Request\AlipayRequest
 {
-
-
     public $productCode;
     public $agreementInfo;
     public $scopes;
@@ -15,7 +12,7 @@ class AlipayAuthCreateSessionRequest extends \Request\AlipayRequest
     public $paymentRedirectUrl;
 
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(\Model\AntomPathConstants::CREATE_SESSION_PATH);
         $this->setProductCode(\Model\ProductCodeType::AGREEMENT_PAYMENT);

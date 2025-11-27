@@ -1,6 +1,6 @@
 <?php
 
-require '../init.php';
+require '../vendor/autoload.php';
 use Client\DefaultAlipayClient;
 
 const clientId = "";
@@ -87,4 +87,3 @@ function inquireVaulting($vaultingRequestId)
 //vaultPaymentMethod();
 
 inquireVaulting("vaultPaymentMethod1727232429222");
-

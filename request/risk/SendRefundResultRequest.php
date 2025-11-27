@@ -7,13 +7,12 @@ use Request\AlipayRequest;
 
 class SendRefundResultRequest extends AlipayRequest
 {
-
     public $referenceTransactionId;
     public $referenceRefundId;
     public $actualRefundAmount;
     public $refundRecords;
 
-    function __construct()
+    public function __construct()
     {
         $this->setPath(AntomPathConstants::RISK_SEND_REFUND_RESULT_PATH);
     }
@@ -29,7 +28,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $referenceTransactionId
      */
-    public function setReferenceTransactionId($referenceTransactionId) 
+    public function setReferenceTransactionId($referenceTransactionId)
     {
         $this->referenceTransactionId = $referenceTransactionId;
     }
@@ -45,7 +44,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $referenceRefundId
      */
-    public function setReferenceRefundId($referenceRefundId) 
+    public function setReferenceRefundId($referenceRefundId)
     {
         $this->referenceRefundId = $referenceRefundId;
     }
@@ -61,7 +60,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $actualRefundAmount
      */
-    public function setActualRefundAmount($actualRefundAmount) 
+    public function setActualRefundAmount($actualRefundAmount)
     {
         $this->actualRefundAmount = $actualRefundAmount;
     }
@@ -77,7 +76,7 @@ class SendRefundResultRequest extends AlipayRequest
     /**
      * @param mixed $refundRecords
      */
-    public function setRefundRecords($refundRecords) 
+    public function setRefundRecords($refundRecords)
     {
         $this->refundRecords = $refundRecords;
     }

@@ -2,13 +2,13 @@
 
 namespace Request\notify;
 
-class AlipaySubscriptionPayNotify  extends \Request\notify\AlipayPayResultNotify
+class AlipaySubscriptionPayNotify extends \Request\notify\AlipayPayResultNotify
 {
-    public  $subscriptionRequestId;
-    public  $subscriptionId;
-    public  $periodStartTime;
-    public  $periodEndTime;
-    public  $phaseNo;
+    public $subscriptionRequestId;
+    public $subscriptionId;
+    public $periodStartTime;
+    public $periodEndTime;
+    public $phaseNo;
 
     /**
      * @return mixed
@@ -21,7 +21,7 @@ class AlipaySubscriptionPayNotify  extends \Request\notify\AlipayPayResultNotify
     /**
      * @param mixed $subscriptionRequestId
      */
-    public function setSubscriptionRequestId($subscriptionRequestId) 
+    public function setSubscriptionRequestId($subscriptionRequestId)
     {
         $this->subscriptionRequestId = $subscriptionRequestId;
     }
@@ -37,7 +37,7 @@ class AlipaySubscriptionPayNotify  extends \Request\notify\AlipayPayResultNotify
     /**
      * @param mixed $subscriptionId
      */
-    public function setSubscriptionId($subscriptionId) 
+    public function setSubscriptionId($subscriptionId)
     {
         $this->subscriptionId = $subscriptionId;
     }
@@ -53,7 +53,7 @@ class AlipaySubscriptionPayNotify  extends \Request\notify\AlipayPayResultNotify
     /**
      * @param mixed $periodStartTime
      */
-    public function setPeriodStartTime($periodStartTime) 
+    public function setPeriodStartTime($periodStartTime)
     {
         $this->periodStartTime = $periodStartTime;
     }
@@ -69,7 +69,7 @@ class AlipaySubscriptionPayNotify  extends \Request\notify\AlipayPayResultNotify
     /**
      * @param mixed $periodEndTime
      */
-    public function setPeriodEndTime($periodEndTime) 
+    public function setPeriodEndTime($periodEndTime)
     {
         $this->periodEndTime = $periodEndTime;
     }
@@ -85,7 +85,7 @@ class AlipaySubscriptionPayNotify  extends \Request\notify\AlipayPayResultNotify
     /**
      * @param mixed $phaseNo
      */
-    public function setPhaseNo($phaseNo) 
+    public function setPhaseNo($phaseNo)
     {
         $this->phaseNo = $phaseNo;
     }

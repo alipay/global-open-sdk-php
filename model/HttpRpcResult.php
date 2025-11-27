@@ -4,7 +4,6 @@ namespace Model;
 
 class HttpRpcResult
 {
-
     public $rspBody;
     public $rspSign;
     public $rspTime;

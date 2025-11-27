@@ -1,9 +1,9 @@
 <?php
 
 namespace Model;
+
 class MerchantRegistrationInfo
 {
-
     public $referenceMerchantId;
     public $merchantDisplayName;
     public $merchantMCC;

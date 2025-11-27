@@ -1,9 +1,8 @@
 <?php
 
-require '../init.php';
+require '../vendor/autoload.php';
 
 use Client\DefaultAlipayClient;
-
 
 const clientId = "";
 const merchantPrivateKey = "";

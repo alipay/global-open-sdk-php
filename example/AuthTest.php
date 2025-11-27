@@ -1,7 +1,7 @@
 <?php
 
 
-require '../init.php';
+require '../vendor/autoload.php';
 
 use Client\DefaultAlipayClient;
 use MOdel\CustomerBelongsTo;
@@ -9,7 +9,6 @@ use Model\GrantType;
 use Request\auth\AlipayAuthApplyTokenRequest;
 use Request\auth\AlipayAuthConsultRequest;
 use Request\auth\AlipayAuthRevokeTokenRequest;
-
 
 const clientId = "";
 const merchantPrivateKey = "";

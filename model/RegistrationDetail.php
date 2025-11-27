@@ -4,7 +4,6 @@ namespace Model;
 
 class RegistrationDetail
 {
-
     public $legalName;
     public $attachments;
     public $contactInfo;

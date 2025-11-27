@@ -6,7 +6,6 @@ use Request\AlipayRequest;
 
 class AlipayMerchantRegistrationRequest extends AlipayRequest
 {
-
     public $productCodes;
     public $registrationRequestId;
     public $registrationNotifyURL;

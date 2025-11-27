@@ -1,5 +1,6 @@
 <?php
-require '../init.php';
+
+require '../vendor/autoload.php';
 
 use Request\marketplace\AlipayRegisterRequest;
 use Client\DefaultAlipayClient;
@@ -30,7 +31,7 @@ function register()
 
 
     $merchantInfo = new \Model\MerchantInfo();
-    $merchantInfo->setLoginId( round(microtime(true) * 1000)."wangzunj3ao.wzj@digital-engine.com");
+    $merchantInfo->setLoginId(round(microtime(true) * 1000)."wangzunj3ao.wzj@digital-engine.com");
     $merchantInfo->setLegalEntityType(\Model\LegalEntityType::COMPANY);
 
 
@@ -240,4 +241,3 @@ function createTransfer()
 
 //register();
 update("outmid_wangzunjiao_wzj_20240929_100432_437");
-

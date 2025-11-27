@@ -1,7 +1,7 @@
 ```
 Language：PHP
-PHP version：5.6.40+
-Releass ^1.4.13
+PHP version：7.1+
+Releass ^1.4.20
 Copyright：Ant financial services group
 ```
 
@@ -26,6 +26,13 @@ If you do not wish to use Composer, you can download the [latest release](https:
 ```php
 require_once '/path/to/global-open-sdk-php/init.php';
 ```
+
+
+### Requirements
+PHP 7.1 or higher
+
+#### Legacy version support
+If using PHP versions 7.1 or lower, download our library version 1.4.13.
 
 
 #### 1 Important note
