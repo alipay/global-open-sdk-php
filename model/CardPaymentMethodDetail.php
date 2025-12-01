@@ -12,9 +12,10 @@
  * Do not edit the class manually.
  */
 
+
 namespace Model;
 
-use ArrayAccess;
+use \ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -28,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSerializable
+class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -45,6 +46,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
+        'supportedBrands' => 'string',
         'cardToken' => 'string',
         'cardNo' => 'string',
         'brand' => '\request\model\CardBrand',
@@ -91,6 +93,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'supportedBrands' => null,
         'cardToken' => null,
         'cardNo' => null,
         'brand' => null,
@@ -135,6 +138,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'supportedBrands' => false,
         'cardToken' => false,
         'cardNo' => false,
         'brand' => false,
@@ -259,6 +263,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
+        'supportedBrands' => 'supportedBrands',
         'cardToken' => 'cardToken',
         'cardNo' => 'cardNo',
         'brand' => 'brand',
@@ -303,6 +308,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
+        'supportedBrands' => 'setSupportedBrands',
         'cardToken' => 'setCardToken',
         'cardNo' => 'setCardNo',
         'brand' => 'setBrand',
@@ -347,6 +353,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
+        'supportedBrands' => 'getSupportedBrands',
         'cardToken' => 'getCardToken',
         'cardNo' => 'getCardNo',
         'brand' => 'getBrand',
@@ -442,6 +449,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('supportedBrands', $data ?? [], null);
         $this->setIfExists('cardToken', $data ?? [], null);
         $this->setIfExists('cardNo', $data ?? [], null);
         $this->setIfExists('brand', $data ?? [], null);
@@ -479,7 +487,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('enableAuthenticationUpgrade', $data ?? [], null);
         $this->setIfExists('mpiData', $data ?? [], null);
 
-    }
+            }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -508,14 +516,11 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['cardToken'] === null) {
-            $invalidProperties[] = "'cardToken' can't be null";
+        if ($this->container['expiryYear'] === null) {
+            $invalidProperties[] = "'expiryYear' can't be null";
         }
-        if ($this->container['brand'] === null) {
-            $invalidProperties[] = "'brand' can't be null";
-        }
-        if ($this->container['maskedCardNo'] === null) {
-            $invalidProperties[] = "'maskedCardNo' can't be null";
+        if ($this->container['expiryMonth'] === null) {
+            $invalidProperties[] = "'expiryMonth' can't be null";
         }
         return $invalidProperties;
     }
@@ -533,9 +538,33 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
+     * Gets supportedBrands
+     *
+     * @return string|null
+     */
+    public function getSupportedBrands()
+    {
+        return $this->container['supportedBrands'];
+    }
+
+    /**
+     * Sets supportedBrands
+     *
+     * @param string|null $supportedBrands Supported card brands for this payment method
+     *
+     * @return self
+     */
+    public function setSupportedBrands($supportedBrands)
+    {
+        $this->container['supportedBrands'] = $supportedBrands;
+
+        return $this;
+    }
+
+    /**
      * Gets cardToken
      *
-     * @return string
+     * @return string|null
      */
     public function getCardToken()
     {
@@ -545,7 +574,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cardToken
      *
-     * @param string $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (Checkout Payment) API when initiating payments.   More information:  Maximum length: 2048 characters
+     * @param string|null $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (Checkout Payment) API when initiating payments.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -569,7 +598,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cardNo
      *
-     * @param string|null $cardNo cardNo
+     * @param string|null $cardNo The card number.   More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -583,7 +612,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets brand
      *
-     * @return \model\CardBrand
+     * @return \model\CardBrand|null
      */
     public function getBrand()
     {
@@ -593,7 +622,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets brand
      *
-     * @param \model\CardBrand $brand brand
+     * @param \model\CardBrand|null $brand brand
      *
      * @return self
      */
@@ -703,7 +732,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets expiryYear
      *
-     * @return string|null
+     * @return string
      */
     public function getExpiryYear()
     {
@@ -713,7 +742,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets expiryYear
      *
-     * @param string|null $expiryYear expiryYear
+     * @param string $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiration year is 2025, the value of this parameter is 25.   More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -727,7 +756,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets expiryMonth
      *
-     * @return string|null
+     * @return string
      */
     public function getExpiryMonth()
     {
@@ -737,7 +766,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets expiryMonth
      *
-     * @param string|null $expiryMonth expiryMonth
+     * @param string $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiration month is February, the value of this parameter is 02.   More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -847,7 +876,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets maskedCardNo
      *
-     * @return string
+     * @return string|null
      */
     public function getMaskedCardNo()
     {
@@ -857,7 +886,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets maskedCardNo
      *
-     * @param string $maskedCardNo The masked card number, showing only a few digits and hiding the rest.   More information:  Maximum length: 64 characters
+     * @param string|null $maskedCardNo The masked card number, showing only a few digits and hiding the rest.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -1121,7 +1150,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cvv
      *
-     * @param string|null $cvv cvv
+     * @param string|null $cvv The card verification value (CVV), which is also known as a card security code (CSC) or a card verification code (CVC).   Note: Specify this parameter when the card issuing bank is in Brazil, Chile, Mexico, or Peru, or the card is a global card.  More information:  Maximum length: 3 characters
      *
      * @return self
      */
@@ -1145,7 +1174,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dateOfBirth
      *
-     * @param string|null $dateOfBirth dateOfBirth
+     * @param string|null $dateOfBirth The date of birth of the cardholder. The value of this parameter is an 8-digit date of birth in the format of YYYY-MM-DD that follows the ISO 8601 standard. For example, 1971-06-07 means the cardholder's birthday is June 7, 1971.  Specify this parameter when all the following conditions are met:  The card issuing bank is in Korea. The card is a personal card. More information:  Maximum length: 10 characters
      *
      * @return self
      */
@@ -1169,7 +1198,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets businessNo
      *
-     * @param string|null $businessNo businessNo
+     * @param string|null $businessNo The business number of the company that holds the corporate card. The value of this parameter is a 10-digit business number, such as 97XXXXXX11.  Specify this parameter when all the following conditions are met:  The card issuing bank is in Korea. The card is a corporate card. More information:  Maximum length: 10 characters
      *
      * @return self
      */
@@ -1193,7 +1222,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cardPasswordDigest
      *
-     * @param string|null $cardPasswordDigest cardPasswordDigest
+     * @param string|null $cardPasswordDigest The first two digits of the card payment password.  Note: Specify this parameter when the card issuing bank is in Korea.  More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -1217,7 +1246,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cpf
      *
-     * @param string|null $cpf cpf
+     * @param string|null $cpf The Cadastro Pessoal de Pessoa Física (CPF) is the tax ID of the Brazilian individual taxpayer.  Note: Specify this parameter when the card issuing bank is in Brazil.  More information:  Maximum length: 11 characters
      *
      * @return self
      */
@@ -1241,7 +1270,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets payerEmail
      *
-     * @param string|null $payerEmail payerEmail
+     * @param string|null $payerEmail The email address of the payer.   Note: Specify this parameter when the card issuing bank is in Brazil, Chile, Mexico, or Peru.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -1289,7 +1318,7 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets is3DSAuthentication
      *
-     * @param bool|null $is3DSAuthentication is3DSAuthentication
+     * @param bool|null $is3DSAuthentication Indicates whether the transaction authentication type is 3D secure. Specify this parameter when the value of paymentMethodType is CARD.
      *
      * @return self
      */
@@ -1471,10 +1500,10 @@ class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSeria
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                    // Check if it's type datetime
+                // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                    // If it's an array type we should check whether it contains objects and if so call toArray method
+                // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;

@@ -12,9 +12,10 @@
  * Do not edit the class manually.
  */
 
+
 namespace Response\pay;
 
-use ArrayAccess;
+use \ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -28,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -56,7 +57,8 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         'refundTime' => 'string',
         'grossSettlementAmount' => '\request\model\Amount',
         'settlementQuote' => '\request\model\Quote',
-        'acquirerInfo' => '\request\model\AcquirerInfo'
+        'acquirerInfo' => '\request\model\AcquirerInfo',
+        'rrn' => 'string'
     ];
 
     /**
@@ -78,7 +80,8 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         'refundTime' => null,
         'grossSettlementAmount' => null,
         'settlementQuote' => null,
-        'acquirerInfo' => null
+        'acquirerInfo' => null,
+        'rrn' => null
     ];
 
     /**
@@ -98,7 +101,8 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         'refundTime' => false,
         'grossSettlementAmount' => false,
         'settlementQuote' => false,
-        'acquirerInfo' => false
+        'acquirerInfo' => false,
+        'rrn' => false
     ];
 
     /**
@@ -198,7 +202,8 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         'refundTime' => 'refundTime',
         'grossSettlementAmount' => 'grossSettlementAmount',
         'settlementQuote' => 'settlementQuote',
-        'acquirerInfo' => 'acquirerInfo'
+        'acquirerInfo' => 'acquirerInfo',
+        'rrn' => 'rrn'
     ];
 
     /**
@@ -218,7 +223,8 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         'refundTime' => 'setRefundTime',
         'grossSettlementAmount' => 'setGrossSettlementAmount',
         'settlementQuote' => 'setSettlementQuote',
-        'acquirerInfo' => 'setAcquirerInfo'
+        'acquirerInfo' => 'setAcquirerInfo',
+        'rrn' => 'setRrn'
     ];
 
     /**
@@ -238,7 +244,8 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         'refundTime' => 'getRefundTime',
         'grossSettlementAmount' => 'getGrossSettlementAmount',
         'settlementQuote' => 'getSettlementQuote',
-        'acquirerInfo' => 'getAcquirerInfo'
+        'acquirerInfo' => 'getAcquirerInfo',
+        'rrn' => 'getRrn'
     ];
 
     /**
@@ -310,8 +317,9 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('grossSettlementAmount', $data ?? [], null);
         $this->setIfExists('settlementQuote', $data ?? [], null);
         $this->setIfExists('acquirerInfo', $data ?? [], null);
+        $this->setIfExists('rrn', $data ?? [], null);
 
-    }
+            }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -645,6 +653,30 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
+
+    /**
+     * Gets rrn
+     *
+     * @return string|null
+     */
+    public function getRrn()
+    {
+        return $this->container['rrn'];
+    }
+
+    /**
+     * Sets rrn
+     *
+     * @param string|null $rrn 检索参考号，可提供给用户用于跟踪支付/退款/争议的详细信息
+     *
+     * @return self
+     */
+    public function setRrn($rrn)
+    {
+        $this->container['rrn'] = $rrn;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -721,10 +753,10 @@ class AlipayInquiryRefundResponse implements ModelInterface, ArrayAccess, \JsonS
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                    // Check if it's type datetime
+                // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                    // If it's an array type we should check whether it contains objects and if so call toArray method
+                // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;

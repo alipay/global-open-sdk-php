@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 
+
 namespace Model;
 
 interface ModelInterface
