@@ -12,9 +12,10 @@
  * Do not edit the class manually.
  */
 
+
 namespace Model;
 
-use ArrayAccess;
+use \ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -28,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -68,7 +69,8 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'cardCategory' => 'string',
         'accountNo' => 'string',
         'exemptionRequested' => 'string',
-        'credentialTypeUsed' => 'string'
+        'credentialTypeUsed' => 'string',
+        'rrn' => 'string'
     ];
 
     /**
@@ -102,7 +104,8 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'cardCategory' => null,
         'accountNo' => null,
         'exemptionRequested' => null,
-        'credentialTypeUsed' => null
+        'credentialTypeUsed' => null,
+        'rrn' => null
     ];
 
     /**
@@ -134,7 +137,8 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'cardCategory' => false,
         'accountNo' => false,
         'exemptionRequested' => false,
-        'credentialTypeUsed' => false
+        'credentialTypeUsed' => false,
+        'rrn' => false
     ];
 
     /**
@@ -246,7 +250,8 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'cardCategory' => 'cardCategory',
         'accountNo' => 'accountNo',
         'exemptionRequested' => 'exemptionRequested',
-        'credentialTypeUsed' => 'credentialTypeUsed'
+        'credentialTypeUsed' => 'credentialTypeUsed',
+        'rrn' => 'rrn'
     ];
 
     /**
@@ -278,7 +283,8 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'cardCategory' => 'setCardCategory',
         'accountNo' => 'setAccountNo',
         'exemptionRequested' => 'setExemptionRequested',
-        'credentialTypeUsed' => 'setCredentialTypeUsed'
+        'credentialTypeUsed' => 'setCredentialTypeUsed',
+        'rrn' => 'setRrn'
     ];
 
     /**
@@ -310,7 +316,8 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         'cardCategory' => 'getCardCategory',
         'accountNo' => 'getAccountNo',
         'exemptionRequested' => 'getExemptionRequested',
-        'credentialTypeUsed' => 'getCredentialTypeUsed'
+        'credentialTypeUsed' => 'getCredentialTypeUsed',
+        'rrn' => 'getRrn'
     ];
 
     /**
@@ -394,8 +401,9 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('accountNo', $data ?? [], null);
         $this->setIfExists('exemptionRequested', $data ?? [], null);
         $this->setIfExists('credentialTypeUsed', $data ?? [], null);
+        $this->setIfExists('rrn', $data ?? [], null);
 
-    }
+            }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -1014,6 +1022,30 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
+    /**
+     * Gets rrn
+     *
+     * @return string|null
+     */
+    public function getRrn()
+    {
+        return $this->container['rrn'];
+    }
+
+    /**
+     * Sets rrn
+     *
+     * @param string|null $rrn 检索参考号，可提供给用户用于跟踪支付/退款/争议的详细信息
+     *
+     * @return self
+     */
+    public function setRrn($rrn)
+    {
+        $this->container['rrn'] = $rrn;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1090,10 +1122,10 @@ class PaymentResultInfo implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                    // Check if it's type datetime
+                // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                    // If it's an array type we should check whether it contains objects and if so call toArray method
+                // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
