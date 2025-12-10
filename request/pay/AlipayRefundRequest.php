@@ -46,6 +46,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
+        'metadata' => 'string',
         'customizedInfo' => '\request\model\CustomizedInfo',
         'captureId' => 'string',
         'refundToBankInfo' => '\request\model\RefundToBankInfo',
@@ -69,6 +70,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'metadata' => null,
         'customizedInfo' => null,
         'captureId' => null,
         'refundToBankInfo' => null,
@@ -90,6 +92,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'metadata' => false,
         'customizedInfo' => false,
         'captureId' => false,
         'refundToBankInfo' => false,
@@ -191,6 +194,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
+        'metadata' => 'metadata',
         'customizedInfo' => 'customizedInfo',
         'captureId' => 'captureId',
         'refundToBankInfo' => 'refundToBankInfo',
@@ -212,6 +216,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
+        'metadata' => 'setMetadata',
         'customizedInfo' => 'setCustomizedInfo',
         'captureId' => 'setCaptureId',
         'refundToBankInfo' => 'setRefundToBankInfo',
@@ -233,6 +238,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
+        'metadata' => 'getMetadata',
         'customizedInfo' => 'getCustomizedInfo',
         'captureId' => 'getCaptureId',
         'refundToBankInfo' => 'getRefundToBankInfo',
@@ -305,6 +311,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
         $this->setIfExists('captureId', $data ?? [], null);
         $this->setIfExists('refundToBankInfo', $data ?? [], null);
@@ -372,6 +379,30 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata Additional metadata about the refund request
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
 
     /**
      * Gets customizedInfo
