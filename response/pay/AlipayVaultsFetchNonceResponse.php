@@ -13,7 +13,7 @@
  */
 
 
-namespace Model;
+namespace Response\pay;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * UserName Class Doc Comment
+ * AlipayVaultsFetchNonceResponse Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UserName';
+    protected static $openAPIModelName = 'AlipayVaultsFetchNonceResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'firstName' => 'string',
-        'middleName' => 'string',
-        'lastName' => 'string',
-        'fullName' => 'string'
+        'cardToken' => 'string',
+        'result' => '\request\model\Result'
     ];
 
     /**
@@ -60,10 +58,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'firstName' => null,
-        'middleName' => null,
-        'lastName' => null,
-        'fullName' => null
+        'cardToken' => null,
+        'result' => null
     ];
 
     /**
@@ -72,10 +68,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'firstName' => false,
-        'middleName' => false,
-        'lastName' => false,
-        'fullName' => false
+        'cardToken' => false,
+        'result' => false
     ];
 
     /**
@@ -164,10 +158,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'firstName' => 'firstName',
-        'middleName' => 'middleName',
-        'lastName' => 'lastName',
-        'fullName' => 'fullName'
+        'cardToken' => 'cardToken',
+        'result' => 'result'
     ];
 
     /**
@@ -176,10 +168,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'firstName' => 'setFirstName',
-        'middleName' => 'setMiddleName',
-        'lastName' => 'setLastName',
-        'fullName' => 'setFullName'
+        'cardToken' => 'setCardToken',
+        'result' => 'setResult'
     ];
 
     /**
@@ -188,10 +178,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'firstName' => 'getFirstName',
-        'middleName' => 'getMiddleName',
-        'lastName' => 'getLastName',
-        'fullName' => 'getFullName'
+        'cardToken' => 'getCardToken',
+        'result' => 'getResult'
     ];
 
     /**
@@ -251,10 +239,8 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('firstName', $data ?? [], null);
-        $this->setIfExists('middleName', $data ?? [], null);
-        $this->setIfExists('lastName', $data ?? [], null);
-        $this->setIfExists('fullName', $data ?? [], null);
+        $this->setIfExists('cardToken', $data ?? [], null);
+        $this->setIfExists('result', $data ?? [], null);
 
             }
 
@@ -285,6 +271,12 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['cardToken'] === null) {
+            $invalidProperties[] = "'cardToken' can't be null";
+        }
+        if ($this->container['result'] === null) {
+            $invalidProperties[] = "'result' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -301,97 +293,49 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets firstName
+     * Gets cardToken
      *
-     * @return string|null
+     * @return string
      */
-    public function getFirstName()
+    public function getCardToken()
     {
-        return $this->container['firstName'];
+        return $this->container['cardToken'];
     }
 
     /**
-     * Sets firstName
+     * Sets cardToken
      *
-     * @param string|null $firstName First name.  More information:  Maximum length: 32 characters
+     * @param string $cardToken cardToken
      *
      * @return self
      */
-    public function setFirstName($firstName)
+    public function setCardToken($cardToken)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['cardToken'] = $cardToken;
 
         return $this;
     }
 
     /**
-     * Gets middleName
+     * Gets result
      *
-     * @return string|null
+     * @return \model\Result
      */
-    public function getMiddleName()
+    public function getResult()
     {
-        return $this->container['middleName'];
+        return $this->container['result'];
     }
 
     /**
-     * Sets middleName
+     * Sets result
      *
-     * @param string|null $middleName Middle name  More information:  Maximum length: 32 characters
+     * @param \model\Result $result result
      *
      * @return self
      */
-    public function setMiddleName($middleName)
+    public function setResult($result)
     {
-        $this->container['middleName'] = $middleName;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     *
-     * @return string|null
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     *
-     * @param string|null $lastName Last name  More information:  Maximum length: 32 characters
-     *
-     * @return self
-     */
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets fullName
-     *
-     * @return string|null
-     */
-    public function getFullName()
-    {
-        return $this->container['fullName'];
-    }
-
-    /**
-     * Sets fullName
-     *
-     * @param string|null $fullName Full name  More information:  Maximum length: 128 characters
-     *
-     * @return self
-     */
-    public function setFullName($fullName)
-    {
-        $this->container['fullName'] = $fullName;
+        $this->container['result'] = $result;
 
         return $this;
     }

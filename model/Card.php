@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * UserName Class Doc Comment
+ * Card Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UserName';
+    protected static $openAPIModelName = 'Card';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'firstName' => 'string',
-        'middleName' => 'string',
-        'lastName' => 'string',
-        'fullName' => 'string'
+        'cardNo' => 'string',
+        'cvv' => 'string',
+        'expiryYear' => 'string',
+        'expiryMonth' => 'string',
+        'cardholderName' => '\request\model\UserName'
     ];
 
     /**
@@ -60,10 +61,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'firstName' => null,
-        'middleName' => null,
-        'lastName' => null,
-        'fullName' => null
+        'cardNo' => null,
+        'cvv' => null,
+        'expiryYear' => null,
+        'expiryMonth' => null,
+        'cardholderName' => null
     ];
 
     /**
@@ -72,10 +74,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'firstName' => false,
-        'middleName' => false,
-        'lastName' => false,
-        'fullName' => false
+        'cardNo' => false,
+        'cvv' => false,
+        'expiryYear' => false,
+        'expiryMonth' => false,
+        'cardholderName' => false
     ];
 
     /**
@@ -164,10 +167,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'firstName' => 'firstName',
-        'middleName' => 'middleName',
-        'lastName' => 'lastName',
-        'fullName' => 'fullName'
+        'cardNo' => 'cardNo',
+        'cvv' => 'cvv',
+        'expiryYear' => 'expiryYear',
+        'expiryMonth' => 'expiryMonth',
+        'cardholderName' => 'cardholderName'
     ];
 
     /**
@@ -176,10 +180,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'firstName' => 'setFirstName',
-        'middleName' => 'setMiddleName',
-        'lastName' => 'setLastName',
-        'fullName' => 'setFullName'
+        'cardNo' => 'setCardNo',
+        'cvv' => 'setCvv',
+        'expiryYear' => 'setExpiryYear',
+        'expiryMonth' => 'setExpiryMonth',
+        'cardholderName' => 'setCardholderName'
     ];
 
     /**
@@ -188,10 +193,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'firstName' => 'getFirstName',
-        'middleName' => 'getMiddleName',
-        'lastName' => 'getLastName',
-        'fullName' => 'getFullName'
+        'cardNo' => 'getCardNo',
+        'cvv' => 'getCvv',
+        'expiryYear' => 'getExpiryYear',
+        'expiryMonth' => 'getExpiryMonth',
+        'cardholderName' => 'getCardholderName'
     ];
 
     /**
@@ -251,10 +257,11 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('firstName', $data ?? [], null);
-        $this->setIfExists('middleName', $data ?? [], null);
-        $this->setIfExists('lastName', $data ?? [], null);
-        $this->setIfExists('fullName', $data ?? [], null);
+        $this->setIfExists('cardNo', $data ?? [], null);
+        $this->setIfExists('cvv', $data ?? [], null);
+        $this->setIfExists('expiryYear', $data ?? [], null);
+        $this->setIfExists('expiryMonth', $data ?? [], null);
+        $this->setIfExists('cardholderName', $data ?? [], null);
 
             }
 
@@ -285,6 +292,21 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['cardNo'] === null) {
+            $invalidProperties[] = "'cardNo' can't be null";
+        }
+        if ($this->container['cvv'] === null) {
+            $invalidProperties[] = "'cvv' can't be null";
+        }
+        if ($this->container['expiryYear'] === null) {
+            $invalidProperties[] = "'expiryYear' can't be null";
+        }
+        if ($this->container['expiryMonth'] === null) {
+            $invalidProperties[] = "'expiryMonth' can't be null";
+        }
+        if ($this->container['cardholderName'] === null) {
+            $invalidProperties[] = "'cardholderName' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -301,97 +323,121 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets firstName
+     * Gets cardNo
      *
-     * @return string|null
+     * @return string
      */
-    public function getFirstName()
+    public function getCardNo()
     {
-        return $this->container['firstName'];
+        return $this->container['cardNo'];
     }
 
     /**
-     * Sets firstName
+     * Sets cardNo
      *
-     * @param string|null $firstName First name.  More information:  Maximum length: 32 characters
+     * @param string $cardNo cardNo
      *
      * @return self
      */
-    public function setFirstName($firstName)
+    public function setCardNo($cardNo)
     {
-        $this->container['firstName'] = $firstName;
+        $this->container['cardNo'] = $cardNo;
 
         return $this;
     }
 
     /**
-     * Gets middleName
+     * Gets cvv
      *
-     * @return string|null
+     * @return string
      */
-    public function getMiddleName()
+    public function getCvv()
     {
-        return $this->container['middleName'];
+        return $this->container['cvv'];
     }
 
     /**
-     * Sets middleName
+     * Sets cvv
      *
-     * @param string|null $middleName Middle name  More information:  Maximum length: 32 characters
+     * @param string $cvv cvv
      *
      * @return self
      */
-    public function setMiddleName($middleName)
+    public function setCvv($cvv)
     {
-        $this->container['middleName'] = $middleName;
+        $this->container['cvv'] = $cvv;
 
         return $this;
     }
 
     /**
-     * Gets lastName
+     * Gets expiryYear
      *
-     * @return string|null
+     * @return string
      */
-    public function getLastName()
+    public function getExpiryYear()
     {
-        return $this->container['lastName'];
+        return $this->container['expiryYear'];
     }
 
     /**
-     * Sets lastName
+     * Sets expiryYear
      *
-     * @param string|null $lastName Last name  More information:  Maximum length: 32 characters
+     * @param string $expiryYear expiryYear
      *
      * @return self
      */
-    public function setLastName($lastName)
+    public function setExpiryYear($expiryYear)
     {
-        $this->container['lastName'] = $lastName;
+        $this->container['expiryYear'] = $expiryYear;
 
         return $this;
     }
 
     /**
-     * Gets fullName
+     * Gets expiryMonth
      *
-     * @return string|null
+     * @return string
      */
-    public function getFullName()
+    public function getExpiryMonth()
     {
-        return $this->container['fullName'];
+        return $this->container['expiryMonth'];
     }
 
     /**
-     * Sets fullName
+     * Sets expiryMonth
      *
-     * @param string|null $fullName Full name  More information:  Maximum length: 128 characters
+     * @param string $expiryMonth expiryMonth
      *
      * @return self
      */
-    public function setFullName($fullName)
+    public function setExpiryMonth($expiryMonth)
     {
-        $this->container['fullName'] = $fullName;
+        $this->container['expiryMonth'] = $expiryMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardholderName
+     *
+     * @return \model\UserName
+     */
+    public function getCardholderName()
+    {
+        return $this->container['cardholderName'];
+    }
+
+    /**
+     * Sets cardholderName
+     *
+     * @param \model\UserName $cardholderName cardholderName
+     *
+     * @return self
+     */
+    public function setCardholderName($cardholderName)
+    {
+        $this->container['cardholderName'] = $cardholderName;
 
         return $this;
     }
