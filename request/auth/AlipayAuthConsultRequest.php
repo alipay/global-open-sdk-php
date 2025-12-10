@@ -46,6 +46,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
+        'merchantAccountId' => 'string',
         'authNotifyUrl' => 'string',
         'customerBelongsTo' => '\request\model\CustomerBelongsTo',
         'authClientId' => 'string',
@@ -70,6 +71,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'merchantAccountId' => null,
         'authNotifyUrl' => null,
         'customerBelongsTo' => null,
         'authClientId' => null,
@@ -92,6 +94,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'merchantAccountId' => false,
         'authNotifyUrl' => false,
         'customerBelongsTo' => false,
         'authClientId' => false,
@@ -194,6 +197,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
+        'merchantAccountId' => 'merchantAccountId',
         'authNotifyUrl' => 'authNotifyUrl',
         'customerBelongsTo' => 'customerBelongsTo',
         'authClientId' => 'authClientId',
@@ -216,6 +220,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
+        'merchantAccountId' => 'setMerchantAccountId',
         'authNotifyUrl' => 'setAuthNotifyUrl',
         'customerBelongsTo' => 'setCustomerBelongsTo',
         'authClientId' => 'setAuthClientId',
@@ -238,6 +243,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
+        'merchantAccountId' => 'getMerchantAccountId',
         'authNotifyUrl' => 'getAuthNotifyUrl',
         'customerBelongsTo' => 'getCustomerBelongsTo',
         'authClientId' => 'getAuthClientId',
@@ -311,6 +317,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('authNotifyUrl', $data ?? [], null);
         $this->setIfExists('customerBelongsTo', $data ?? [], null);
         $this->setIfExists('authClientId', $data ?? [], null);
@@ -385,6 +392,30 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets merchantAccountId
+     *
+     * @return string|null
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->container['merchantAccountId'];
+    }
+
+    /**
+     * Sets merchantAccountId
+     *
+     * @param string|null $merchantAccountId A unique identifier for a specific merchant account.
+     *
+     * @return self
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->container['merchantAccountId'] = $merchantAccountId;
+
+        return $this;
+    }
 
     /**
      * Gets authNotifyUrl
@@ -495,7 +526,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets scopes
      *
-     * @param \model\ScopeType[] $scopes The authorization scope. Valid values are:    BASE_USER_INFO: Indicates that the unique user ID can be obtained. USER_INFO: Indicates that the complete user information can be obtained, for example, user name, avatar, and other user information. AGREEMENT_PAY: Indicates that the user agrees to authorize for auto debit so that the merchant can use the access token to automatically deduct money from the user's account. More information:  Maximum size: 4 elements
+     * @param \model\ScopeType[] $scopes scopes
      *
      * @return self
      */
