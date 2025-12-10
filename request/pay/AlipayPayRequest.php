@@ -46,6 +46,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
+        'metadata' => 'string',
         'customizedInfo' => '\request\model\CustomizedInfo',
         'paymentQuote' => '\request\model\Quote',
         'agreementInfo' => '\request\model\AgreementInfo',
@@ -83,6 +84,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'metadata' => null,
         'customizedInfo' => null,
         'paymentQuote' => null,
         'agreementInfo' => null,
@@ -118,6 +120,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'metadata' => false,
         'customizedInfo' => false,
         'paymentQuote' => false,
         'agreementInfo' => false,
@@ -233,6 +236,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
+        'metadata' => 'metadata',
         'customizedInfo' => 'customizedInfo',
         'paymentQuote' => 'paymentQuote',
         'agreementInfo' => 'agreementInfo',
@@ -268,6 +272,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
+        'metadata' => 'setMetadata',
         'customizedInfo' => 'setCustomizedInfo',
         'paymentQuote' => 'setPaymentQuote',
         'agreementInfo' => 'setAgreementInfo',
@@ -303,6 +308,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
+        'metadata' => 'getMetadata',
         'customizedInfo' => 'getCustomizedInfo',
         'paymentQuote' => 'getPaymentQuote',
         'agreementInfo' => 'getAgreementInfo',
@@ -389,6 +395,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
         $this->setIfExists('paymentQuote', $data ?? [], null);
         $this->setIfExists('agreementInfo', $data ?? [], null);
@@ -485,6 +492,30 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata 用于商户自定义元数据信息，支持JSON格式
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
 
     /**
      * Gets customizedInfo
