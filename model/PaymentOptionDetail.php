@@ -48,7 +48,8 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'supportCardBrands' => '\request\model\SupportCardBrand[]',
         'funding' => 'string[]',
-        'supportBanks' => '\request\model\SupportBank[]'
+        'supportBanks' => '\request\model\SupportBank[]',
+        'interactionTypes' => 'string[]'
     ];
 
     /**
@@ -61,7 +62,8 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPIFormats = [
         'supportCardBrands' => null,
         'funding' => null,
-        'supportBanks' => null
+        'supportBanks' => null,
+        'interactionTypes' => null
     ];
 
     /**
@@ -72,7 +74,8 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPINullables = [
         'supportCardBrands' => false,
         'funding' => false,
-        'supportBanks' => false
+        'supportBanks' => false,
+        'interactionTypes' => false
     ];
 
     /**
@@ -163,7 +166,8 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $attributeMap = [
         'supportCardBrands' => 'supportCardBrands',
         'funding' => 'funding',
-        'supportBanks' => 'supportBanks'
+        'supportBanks' => 'supportBanks',
+        'interactionTypes' => 'interactionTypes'
     ];
 
     /**
@@ -174,7 +178,8 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $setters = [
         'supportCardBrands' => 'setSupportCardBrands',
         'funding' => 'setFunding',
-        'supportBanks' => 'setSupportBanks'
+        'supportBanks' => 'setSupportBanks',
+        'interactionTypes' => 'setInteractionTypes'
     ];
 
     /**
@@ -185,7 +190,8 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $getters = [
         'supportCardBrands' => 'getSupportCardBrands',
         'funding' => 'getFunding',
-        'supportBanks' => 'getSupportBanks'
+        'supportBanks' => 'getSupportBanks',
+        'interactionTypes' => 'getInteractionTypes'
     ];
 
     /**
@@ -248,6 +254,7 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('supportCardBrands', $data ?? [], null);
         $this->setIfExists('funding', $data ?? [], null);
         $this->setIfExists('supportBanks', $data ?? [], null);
+        $this->setIfExists('interactionTypes', $data ?? [], null);
 
             }
 
@@ -367,6 +374,30 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setSupportBanks($supportBanks)
     {
         $this->container['supportBanks'] = $supportBanks;
+
+        return $this;
+    }
+
+    /**
+     * Gets interactionTypes
+     *
+     * @return string[]|null
+     */
+    public function getInteractionTypes()
+    {
+        return $this->container['interactionTypes'];
+    }
+
+    /**
+     * Sets interactionTypes
+     *
+     * @param string[]|null $interactionTypes 表示支付方式支持的交互类型，有效取值包括QR(扫码支付)和REDIRECT(重定向支付)
+     *
+     * @return self
+     */
+    public function setInteractionTypes($interactionTypes)
+    {
+        $this->container['interactionTypes'] = $interactionTypes;
 
         return $this;
     }
