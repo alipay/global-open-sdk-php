@@ -47,7 +47,8 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
       */
     protected static $openAPITypes = [
         'accessToken' => 'string',
-        'extendInfo' => 'string'
+        'extendInfo' => 'string',
+        'merchantAccountId' => 'string'
     ];
 
     /**
@@ -59,7 +60,8 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
       */
     protected static $openAPIFormats = [
         'accessToken' => null,
-        'extendInfo' => null
+        'extendInfo' => null,
+        'merchantAccountId' => null
     ];
 
     /**
@@ -69,7 +71,8 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
       */
     protected static $openAPINullables = [
         'accessToken' => false,
-        'extendInfo' => false
+        'extendInfo' => false,
+        'merchantAccountId' => false
     ];
 
     /**
@@ -159,7 +162,8 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
      */
     protected static $attributeMap = [
         'accessToken' => 'accessToken',
-        'extendInfo' => 'extendInfo'
+        'extendInfo' => 'extendInfo',
+        'merchantAccountId' => 'merchantAccountId'
     ];
 
     /**
@@ -169,7 +173,8 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
      */
     protected static $setters = [
         'accessToken' => 'setAccessToken',
-        'extendInfo' => 'setExtendInfo'
+        'extendInfo' => 'setExtendInfo',
+        'merchantAccountId' => 'setMerchantAccountId'
     ];
 
     /**
@@ -179,7 +184,8 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
      */
     protected static $getters = [
         'accessToken' => 'getAccessToken',
-        'extendInfo' => 'getExtendInfo'
+        'extendInfo' => 'getExtendInfo',
+        'merchantAccountId' => 'getMerchantAccountId'
     ];
 
     /**
@@ -241,6 +247,7 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
     {
         $this->setIfExists('accessToken', $data ?? [], null);
         $this->setIfExists('extendInfo', $data ?? [], null);
+        $this->setIfExists('merchantAccountId', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/authorizations/revoke"); 
     }
@@ -334,6 +341,30 @@ class AlipayAuthRevokeTokenRequest   extends AlipayRequest  implements ModelInte
     public function setExtendInfo($extendInfo)
     {
         $this->container['extendInfo'] = $extendInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantAccountId
+     *
+     * @return string|null
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->container['merchantAccountId'];
+    }
+
+    /**
+     * Sets merchantAccountId
+     *
+     * @param string|null $merchantAccountId The merchant account ID for 2C2P Replatform scenario.
+     *
+     * @return self
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->container['merchantAccountId'] = $merchantAccountId;
 
         return $this;
     }
