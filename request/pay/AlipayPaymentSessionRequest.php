@@ -46,6 +46,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
+        'merchantAccountId' => 'string',
+        'metadata' => 'string',
         'allowedPaymentMethodRegions' => 'string',
         'customizedInfo' => '\request\model\CustomizedInfo',
         'paymentQuote' => '\request\model\Quote',
@@ -85,6 +87,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'merchantAccountId' => null,
+        'metadata' => null,
         'allowedPaymentMethodRegions' => null,
         'customizedInfo' => null,
         'paymentQuote' => null,
@@ -122,6 +126,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'merchantAccountId' => false,
+        'metadata' => false,
         'allowedPaymentMethodRegions' => false,
         'customizedInfo' => false,
         'paymentQuote' => false,
@@ -239,6 +245,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
+        'merchantAccountId' => 'merchantAccountId',
+        'metadata' => 'metadata',
         'allowedPaymentMethodRegions' => 'allowedPaymentMethodRegions',
         'customizedInfo' => 'customizedInfo',
         'paymentQuote' => 'paymentQuote',
@@ -276,6 +284,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
+        'merchantAccountId' => 'setMerchantAccountId',
+        'metadata' => 'setMetadata',
         'allowedPaymentMethodRegions' => 'setAllowedPaymentMethodRegions',
         'customizedInfo' => 'setCustomizedInfo',
         'paymentQuote' => 'setPaymentQuote',
@@ -313,6 +323,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
+        'merchantAccountId' => 'getMerchantAccountId',
+        'metadata' => 'getMetadata',
         'allowedPaymentMethodRegions' => 'getAllowedPaymentMethodRegions',
         'customizedInfo' => 'getCustomizedInfo',
         'paymentQuote' => 'getPaymentQuote',
@@ -401,6 +413,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('merchantAccountId', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('allowedPaymentMethodRegions', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
         $this->setIfExists('paymentQuote', $data ?? [], null);
@@ -496,6 +510,54 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets merchantAccountId
+     *
+     * @return string|null
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->container['merchantAccountId'];
+    }
+
+    /**
+     * Sets merchantAccountId
+     *
+     * @param string|null $merchantAccountId The merchant account ID
+     *
+     * @return self
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->container['merchantAccountId'] = $merchantAccountId;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata Additional metadata for the payment session
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
 
     /**
      * Gets allowedPaymentMethodRegions

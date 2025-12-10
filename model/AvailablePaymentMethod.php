@@ -46,8 +46,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paymentMethodTypeList' => '\request\model\PaymentMethodTypeItem[]',
-        'paymentMethodMetaData' => 'array<string,object>'
+        'paymentMethodMetaData' => 'array<string,object>',
+        'paymentMethodTypeList' => '\request\model\PaymentMethodTypeItem[]'
     ];
 
     /**
@@ -58,8 +58,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paymentMethodTypeList' => null,
-        'paymentMethodMetaData' => null
+        'paymentMethodMetaData' => null,
+        'paymentMethodTypeList' => null
     ];
 
     /**
@@ -68,8 +68,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'paymentMethodTypeList' => false,
-        'paymentMethodMetaData' => false
+        'paymentMethodMetaData' => false,
+        'paymentMethodTypeList' => false
     ];
 
     /**
@@ -158,8 +158,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentMethodTypeList' => 'paymentMethodTypeList',
-        'paymentMethodMetaData' => 'paymentMethodMetaData'
+        'paymentMethodMetaData' => 'paymentMethodMetaData',
+        'paymentMethodTypeList' => 'paymentMethodTypeList'
     ];
 
     /**
@@ -168,8 +168,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'paymentMethodTypeList' => 'setPaymentMethodTypeList',
-        'paymentMethodMetaData' => 'setPaymentMethodMetaData'
+        'paymentMethodMetaData' => 'setPaymentMethodMetaData',
+        'paymentMethodTypeList' => 'setPaymentMethodTypeList'
     ];
 
     /**
@@ -178,8 +178,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'paymentMethodTypeList' => 'getPaymentMethodTypeList',
-        'paymentMethodMetaData' => 'getPaymentMethodMetaData'
+        'paymentMethodMetaData' => 'getPaymentMethodMetaData',
+        'paymentMethodTypeList' => 'getPaymentMethodTypeList'
     ];
 
     /**
@@ -239,8 +239,8 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('paymentMethodTypeList', $data ?? [], null);
         $this->setIfExists('paymentMethodMetaData', $data ?? [], null);
+        $this->setIfExists('paymentMethodTypeList', $data ?? [], null);
 
             }
 
@@ -287,30 +287,6 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets paymentMethodTypeList
-     *
-     * @return \model\PaymentMethodTypeItem[]|null
-     */
-    public function getPaymentMethodTypeList()
-    {
-        return $this->container['paymentMethodTypeList'];
-    }
-
-    /**
-     * Sets paymentMethodTypeList
-     *
-     * @param \model\PaymentMethodTypeItem[]|null $paymentMethodTypeList paymentMethodTypeList
-     *
-     * @return self
-     */
-    public function setPaymentMethodTypeList($paymentMethodTypeList)
-    {
-        $this->container['paymentMethodTypeList'] = $paymentMethodTypeList;
-
-        return $this;
-    }
-
-    /**
      * Gets paymentMethodMetaData
      *
      * @return array<string,object>|null
@@ -330,6 +306,30 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
     public function setPaymentMethodMetaData($paymentMethodMetaData)
     {
         $this->container['paymentMethodMetaData'] = $paymentMethodMetaData;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentMethodTypeList
+     *
+     * @return \model\PaymentMethodTypeItem[]|null
+     */
+    public function getPaymentMethodTypeList()
+    {
+        return $this->container['paymentMethodTypeList'];
+    }
+
+    /**
+     * Sets paymentMethodTypeList
+     *
+     * @param \model\PaymentMethodTypeItem[]|null $paymentMethodTypeList paymentMethodTypeList
+     *
+     * @return self
+     */
+    public function setPaymentMethodTypeList($paymentMethodTypeList)
+    {
+        $this->container['paymentMethodTypeList'] = $paymentMethodTypeList;
 
         return $this;
     }
