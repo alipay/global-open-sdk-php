@@ -46,7 +46,8 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'vaultingRequestId' => 'string'
+        'vaultingRequestId' => 'string',
+        'merchantAccountId' => 'string'
     ];
 
     /**
@@ -57,7 +58,8 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'vaultingRequestId' => null
+        'vaultingRequestId' => null,
+        'merchantAccountId' => null
     ];
 
     /**
@@ -66,7 +68,8 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'vaultingRequestId' => false
+        'vaultingRequestId' => false,
+        'merchantAccountId' => false
     ];
 
     /**
@@ -155,7 +158,8 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'vaultingRequestId' => 'vaultingRequestId'
+        'vaultingRequestId' => 'vaultingRequestId',
+        'merchantAccountId' => 'merchantAccountId'
     ];
 
     /**
@@ -164,7 +168,8 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'vaultingRequestId' => 'setVaultingRequestId'
+        'vaultingRequestId' => 'setVaultingRequestId',
+        'merchantAccountId' => 'setMerchantAccountId'
     ];
 
     /**
@@ -173,7 +178,8 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'vaultingRequestId' => 'getVaultingRequestId'
+        'vaultingRequestId' => 'getVaultingRequestId',
+        'merchantAccountId' => 'getMerchantAccountId'
     ];
 
     /**
@@ -234,6 +240,7 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
     public function __construct(?array $data = null)
     {
         $this->setIfExists('vaultingRequestId', $data ?? [], null);
+        $this->setIfExists('merchantAccountId', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/vaults/inquireVaulting"); 
     }
@@ -303,6 +310,30 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
     public function setVaultingRequestId($vaultingRequestId)
     {
         $this->container['vaultingRequestId'] = $vaultingRequestId;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantAccountId
+     *
+     * @return string|null
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->container['merchantAccountId'];
+    }
+
+    /**
+     * Sets merchantAccountId
+     *
+     * @param string|null $merchantAccountId Merchant account ID for 2C2P integration scenario
+     *
+     * @return self
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->container['merchantAccountId'] = $merchantAccountId;
 
         return $this;
     }

@@ -52,7 +52,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'schemeUrl' => 'string',
         'applinkUrl' => 'string',
         'vaultingStatus' => 'string',
-        'paymentMethodDetail' => '\request\model\PaymentMethodDetail'
+        'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
+        'metadata' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'schemeUrl' => null,
         'applinkUrl' => null,
         'vaultingStatus' => null,
-        'paymentMethodDetail' => null
+        'paymentMethodDetail' => null,
+        'metadata' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'schemeUrl' => false,
         'applinkUrl' => false,
         'vaultingStatus' => false,
-        'paymentMethodDetail' => false
+        'paymentMethodDetail' => false,
+        'metadata' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'schemeUrl' => 'schemeUrl',
         'applinkUrl' => 'applinkUrl',
         'vaultingStatus' => 'vaultingStatus',
-        'paymentMethodDetail' => 'paymentMethodDetail'
+        'paymentMethodDetail' => 'paymentMethodDetail',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -194,7 +198,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'schemeUrl' => 'setSchemeUrl',
         'applinkUrl' => 'setApplinkUrl',
         'vaultingStatus' => 'setVaultingStatus',
-        'paymentMethodDetail' => 'setPaymentMethodDetail'
+        'paymentMethodDetail' => 'setPaymentMethodDetail',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -209,7 +214,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'schemeUrl' => 'getSchemeUrl',
         'applinkUrl' => 'getApplinkUrl',
         'vaultingStatus' => 'getVaultingStatus',
-        'paymentMethodDetail' => 'getPaymentMethodDetail'
+        'paymentMethodDetail' => 'getPaymentMethodDetail',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -276,6 +282,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('applinkUrl', $data ?? [], null);
         $this->setIfExists('vaultingStatus', $data ?? [], null);
         $this->setIfExists('paymentMethodDetail', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
 
             }
 
@@ -491,6 +498,30 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     public function setPaymentMethodDetail($paymentMethodDetail)
     {
         $this->container['paymentMethodDetail'] = $paymentMethodDetail;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata Metadata for custom data transmission
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }
