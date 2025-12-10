@@ -46,6 +46,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
+        'merchantAccountId' => 'string',
         'grantType' => '\request\model\GrantType',
         'customerBelongsTo' => '\request\model\CustomerBelongsTo',
         'authCode' => 'string',
@@ -62,6 +63,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'merchantAccountId' => null,
         'grantType' => null,
         'customerBelongsTo' => null,
         'authCode' => null,
@@ -76,6 +78,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'merchantAccountId' => false,
         'grantType' => false,
         'customerBelongsTo' => false,
         'authCode' => false,
@@ -170,6 +173,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
+        'merchantAccountId' => 'merchantAccountId',
         'grantType' => 'grantType',
         'customerBelongsTo' => 'customerBelongsTo',
         'authCode' => 'authCode',
@@ -184,6 +188,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
+        'merchantAccountId' => 'setMerchantAccountId',
         'grantType' => 'setGrantType',
         'customerBelongsTo' => 'setCustomerBelongsTo',
         'authCode' => 'setAuthCode',
@@ -198,6 +203,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
+        'merchantAccountId' => 'getMerchantAccountId',
         'grantType' => 'getGrantType',
         'customerBelongsTo' => 'getCustomerBelongsTo',
         'authCode' => 'getAuthCode',
@@ -263,6 +269,7 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('grantType', $data ?? [], null);
         $this->setIfExists('customerBelongsTo', $data ?? [], null);
         $this->setIfExists('authCode', $data ?? [], null);
@@ -320,6 +327,30 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets merchantAccountId
+     *
+     * @return string|null
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->container['merchantAccountId'];
+    }
+
+    /**
+     * Sets merchantAccountId
+     *
+     * @param string|null $merchantAccountId The merchant account ID
+     *
+     * @return self
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->container['merchantAccountId'] = $merchantAccountId;
+
+        return $this;
+    }
 
     /**
      * Gets grantType
