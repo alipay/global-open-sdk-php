@@ -47,7 +47,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'resultCode' => 'string',
-        'resultStatus' => 'object',
+        'resultStatus' => '\request\model\ResultStatusType',
         'resultMessage' => 'string'
     ];
 
@@ -326,7 +326,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets resultStatus
      *
-     * @return object
+     * @return string
      */
     public function getResultStatus()
     {
@@ -336,7 +336,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resultStatus
      *
-     * @param object $resultStatus The result status. Valid values are:  S: indicates that the result status is successful. F: indicates that the result status is failed.  U: indicates that the result status is unknown.
+     * @param string $resultStatus resultStatus
      *
      * @return self
      */
