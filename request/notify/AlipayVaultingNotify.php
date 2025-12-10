@@ -18,6 +18,27 @@ class AlipayVaultingNotify extends \Request\notify\AlipayNotify
 
     public $acquirerInfo;
 
+
+    public $metadata;
+
+    /**
+     * @return mixed
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * @param mixed $metadata
+     */
+    public function setMetadata($metadata): void
+    {
+        $this->metadata = $metadata;
+    }
+
+
+
     /**
      * @return mixed
      */

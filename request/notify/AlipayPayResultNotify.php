@@ -32,6 +32,27 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 
     public $paymentMethodType;
 
+    public $metadata;
+
+    /**
+     * @return mixed
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * @param mixed $metadata
+     */
+    public function setMetadata($metadata): void
+    {
+        $this->metadata = $metadata;
+    }
+
+
+
+
     /**
      * @return mixed
      */
