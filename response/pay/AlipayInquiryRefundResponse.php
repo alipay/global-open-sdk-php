@@ -46,6 +46,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
+        'metadata' => 'string',
         'customizedInfo' => '\request\model\CustomizedInfo',
         'arn' => 'string',
         'actualRefundAmount' => '\request\model\Amount',
@@ -69,6 +70,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'metadata' => null,
         'customizedInfo' => null,
         'arn' => null,
         'actualRefundAmount' => null,
@@ -90,6 +92,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'metadata' => false,
         'customizedInfo' => false,
         'arn' => false,
         'actualRefundAmount' => false,
@@ -191,6 +194,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
+        'metadata' => 'metadata',
         'customizedInfo' => 'customizedInfo',
         'arn' => 'arn',
         'actualRefundAmount' => 'actualRefundAmount',
@@ -212,6 +216,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
+        'metadata' => 'setMetadata',
         'customizedInfo' => 'setCustomizedInfo',
         'arn' => 'setArn',
         'actualRefundAmount' => 'setActualRefundAmount',
@@ -233,6 +238,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
+        'metadata' => 'getMetadata',
         'customizedInfo' => 'getCustomizedInfo',
         'arn' => 'getArn',
         'actualRefundAmount' => 'getActualRefundAmount',
@@ -305,6 +311,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
         $this->setIfExists('arn', $data ?? [], null);
         $this->setIfExists('actualRefundAmount', $data ?? [], null);
@@ -365,6 +372,30 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata Your metadata provided during the refund process. This parameter is returned when you provided value to the parameter in the refund API. Json format
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
 
     /**
      * Gets customizedInfo
