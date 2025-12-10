@@ -46,6 +46,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
+        'issuerName' => 'string',
         'refusalCodeRaw' => 'string',
         'refusalReasonRaw' => 'string',
         'merchantAdviceCode' => 'string',
@@ -81,6 +82,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'issuerName' => null,
         'refusalCodeRaw' => null,
         'refusalReasonRaw' => null,
         'merchantAdviceCode' => null,
@@ -114,6 +116,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'issuerName' => false,
         'refusalCodeRaw' => false,
         'refusalReasonRaw' => false,
         'merchantAdviceCode' => false,
@@ -227,6 +230,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
+        'issuerName' => 'issuerName',
         'refusalCodeRaw' => 'refusalCodeRaw',
         'refusalReasonRaw' => 'refusalReasonRaw',
         'merchantAdviceCode' => 'merchantAdviceCode',
@@ -260,6 +264,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
+        'issuerName' => 'setIssuerName',
         'refusalCodeRaw' => 'setRefusalCodeRaw',
         'refusalReasonRaw' => 'setRefusalReasonRaw',
         'merchantAdviceCode' => 'setMerchantAdviceCode',
@@ -293,6 +298,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
+        'issuerName' => 'getIssuerName',
         'refusalCodeRaw' => 'getRefusalCodeRaw',
         'refusalReasonRaw' => 'getRefusalReasonRaw',
         'merchantAdviceCode' => 'getMerchantAdviceCode',
@@ -377,6 +383,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('issuerName', $data ?? [], null);
         $this->setIfExists('refusalCodeRaw', $data ?? [], null);
         $this->setIfExists('refusalReasonRaw', $data ?? [], null);
         $this->setIfExists('merchantAdviceCode', $data ?? [], null);
@@ -446,6 +453,30 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets issuerName
+     *
+     * @return string|null
+     */
+    public function getIssuerName()
+    {
+        return $this->container['issuerName'];
+    }
+
+    /**
+     * Sets issuerName
+     *
+     * @param string|null $issuerName The name of the card issuer bank
+     *
+     * @return self
+     */
+    public function setIssuerName($issuerName)
+    {
+        $this->container['issuerName'] = $issuerName;
+
+        return $this;
+    }
 
     /**
      * Gets refusalCodeRaw

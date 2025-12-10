@@ -46,6 +46,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
+        'metadata' => 'string',
         'result' => '\request\model\Result',
         'customizedInfo' => '\request\model\CustomizedInfo',
         'processingAmount' => '\request\model\Amount',
@@ -87,6 +88,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'metadata' => null,
         'result' => null,
         'customizedInfo' => null,
         'processingAmount' => null,
@@ -126,6 +128,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'metadata' => false,
         'result' => false,
         'customizedInfo' => false,
         'processingAmount' => false,
@@ -245,6 +248,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
+        'metadata' => 'metadata',
         'result' => 'result',
         'customizedInfo' => 'customizedInfo',
         'processingAmount' => 'processingAmount',
@@ -284,6 +288,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
+        'metadata' => 'setMetadata',
         'result' => 'setResult',
         'customizedInfo' => 'setCustomizedInfo',
         'processingAmount' => 'setProcessingAmount',
@@ -323,6 +328,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
+        'metadata' => 'getMetadata',
         'result' => 'getResult',
         'customizedInfo' => 'getCustomizedInfo',
         'processingAmount' => 'getProcessingAmount',
@@ -413,6 +419,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
         $this->setIfExists('processingAmount', $data ?? [], null);
@@ -491,6 +498,30 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata Additional metadata about the payment
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
 
     /**
      * Gets result
