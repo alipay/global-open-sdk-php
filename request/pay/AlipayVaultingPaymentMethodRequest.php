@@ -46,13 +46,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
       * @var string[]
       */
     protected static $openAPITypes = [
+        'merchantAccountId' => 'string',
+        'metadata' => 'string',
         'vaultingRequestId' => 'string',
         'vaultingNotificationUrl' => 'string',
         'redirectUrl' => 'string',
         'merchantRegion' => 'string',
         'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
         'env' => '\request\model\Env',
-        'merchantAccountId' => 'string',
         'vaultingCurrency' => 'string',
         'customizedInfo' => '\request\model\CustomizedInfo'
     ];
@@ -65,13 +66,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'merchantAccountId' => null,
+        'metadata' => null,
         'vaultingRequestId' => null,
         'vaultingNotificationUrl' => null,
         'redirectUrl' => null,
         'merchantRegion' => null,
         'paymentMethodDetail' => null,
         'env' => null,
-        'merchantAccountId' => null,
         'vaultingCurrency' => null,
         'customizedInfo' => null
     ];
@@ -82,13 +84,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'merchantAccountId' => false,
+        'metadata' => false,
         'vaultingRequestId' => false,
         'vaultingNotificationUrl' => false,
         'redirectUrl' => false,
         'merchantRegion' => false,
         'paymentMethodDetail' => false,
         'env' => false,
-        'merchantAccountId' => false,
         'vaultingCurrency' => false,
         'customizedInfo' => false
     ];
@@ -179,13 +182,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $attributeMap = [
+        'merchantAccountId' => 'merchantAccountId',
+        'metadata' => 'metadata',
         'vaultingRequestId' => 'vaultingRequestId',
         'vaultingNotificationUrl' => 'vaultingNotificationUrl',
         'redirectUrl' => 'redirectUrl',
         'merchantRegion' => 'merchantRegion',
         'paymentMethodDetail' => 'paymentMethodDetail',
         'env' => 'env',
-        'merchantAccountId' => 'merchantAccountId',
         'vaultingCurrency' => 'vaultingCurrency',
         'customizedInfo' => 'customizedInfo'
     ];
@@ -196,13 +200,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $setters = [
+        'merchantAccountId' => 'setMerchantAccountId',
+        'metadata' => 'setMetadata',
         'vaultingRequestId' => 'setVaultingRequestId',
         'vaultingNotificationUrl' => 'setVaultingNotificationUrl',
         'redirectUrl' => 'setRedirectUrl',
         'merchantRegion' => 'setMerchantRegion',
         'paymentMethodDetail' => 'setPaymentMethodDetail',
         'env' => 'setEnv',
-        'merchantAccountId' => 'setMerchantAccountId',
         'vaultingCurrency' => 'setVaultingCurrency',
         'customizedInfo' => 'setCustomizedInfo'
     ];
@@ -213,13 +218,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $getters = [
+        'merchantAccountId' => 'getMerchantAccountId',
+        'metadata' => 'getMetadata',
         'vaultingRequestId' => 'getVaultingRequestId',
         'vaultingNotificationUrl' => 'getVaultingNotificationUrl',
         'redirectUrl' => 'getRedirectUrl',
         'merchantRegion' => 'getMerchantRegion',
         'paymentMethodDetail' => 'getPaymentMethodDetail',
         'env' => 'getEnv',
-        'merchantAccountId' => 'getMerchantAccountId',
         'vaultingCurrency' => 'getVaultingCurrency',
         'customizedInfo' => 'getCustomizedInfo'
     ];
@@ -281,13 +287,14 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('merchantAccountId', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('vaultingRequestId', $data ?? [], null);
         $this->setIfExists('vaultingNotificationUrl', $data ?? [], null);
         $this->setIfExists('redirectUrl', $data ?? [], null);
         $this->setIfExists('merchantRegion', $data ?? [], null);
         $this->setIfExists('paymentMethodDetail', $data ?? [], null);
         $this->setIfExists('env', $data ?? [], null);
-        $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('vaultingCurrency', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
 
@@ -350,6 +357,54 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets merchantAccountId
+     *
+     * @return string|null
+     */
+    public function getMerchantAccountId()
+    {
+        return $this->container['merchantAccountId'];
+    }
+
+    /**
+     * Sets merchantAccountId
+     *
+     * @param string|null $merchantAccountId 一点集成场景使用
+     *
+     * @return self
+     */
+    public function setMerchantAccountId($merchantAccountId)
+    {
+        $this->container['merchantAccountId'] = $merchantAccountId;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata 商户使用，Json Format，用于提交元数据信息
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
 
     /**
      * Gets vaultingRequestId
@@ -491,30 +546,6 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     public function setEnv($env)
     {
         $this->container['env'] = $env;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantAccountId
-     *
-     * @return string|null
-     */
-    public function getMerchantAccountId()
-    {
-        return $this->container['merchantAccountId'];
-    }
-
-    /**
-     * Sets merchantAccountId
-     *
-     * @param string|null $merchantAccountId merchantAccountId
-     *
-     * @return self
-     */
-    public function setMerchantAccountId($merchantAccountId)
-    {
-        $this->container['merchantAccountId'] = $merchantAccountId;
 
         return $this;
     }
