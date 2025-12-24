@@ -47,7 +47,9 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'memo' => 'string',
-        'referenceTransactionId' => 'string'
+        'referenceTransactionId' => 'string',
+        'payerAssetId' => 'string',
+        'beneficiaryAssetId' => 'string'
     ];
 
     /**
@@ -59,7 +61,9 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'memo' => null,
-        'referenceTransactionId' => null
+        'referenceTransactionId' => null,
+        'payerAssetId' => null,
+        'beneficiaryAssetId' => null
     ];
 
     /**
@@ -69,7 +73,9 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'memo' => false,
-        'referenceTransactionId' => false
+        'referenceTransactionId' => false,
+        'payerAssetId' => false,
+        'beneficiaryAssetId' => false
     ];
 
     /**
@@ -159,7 +165,9 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'memo' => 'memo',
-        'referenceTransactionId' => 'referenceTransactionId'
+        'referenceTransactionId' => 'referenceTransactionId',
+        'payerAssetId' => 'payerAssetId',
+        'beneficiaryAssetId' => 'beneficiaryAssetId'
     ];
 
     /**
@@ -169,7 +177,9 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'memo' => 'setMemo',
-        'referenceTransactionId' => 'setReferenceTransactionId'
+        'referenceTransactionId' => 'setReferenceTransactionId',
+        'payerAssetId' => 'setPayerAssetId',
+        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
     ];
 
     /**
@@ -179,7 +189,9 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'memo' => 'getMemo',
-        'referenceTransactionId' => 'getReferenceTransactionId'
+        'referenceTransactionId' => 'getReferenceTransactionId',
+        'payerAssetId' => 'getPayerAssetId',
+        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
     ];
 
     /**
@@ -241,6 +253,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('memo', $data ?? [], null);
         $this->setIfExists('referenceTransactionId', $data ?? [], null);
+        $this->setIfExists('payerAssetId', $data ?? [], null);
+        $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
 
             }
 
@@ -271,12 +285,6 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['memo'] === null) {
-            $invalidProperties[] = "'memo' can't be null";
-        }
-        if ($this->container['referenceTransactionId'] === null) {
-            $invalidProperties[] = "'referenceTransactionId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -295,7 +303,7 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets memo
      *
-     * @return string
+     * @return string|null
      */
     public function getMemo()
     {
@@ -305,7 +313,7 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets memo
      *
-     * @param string $memo memo
+     * @param string|null $memo memo
      *
      * @return self
      */
@@ -319,7 +327,7 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets referenceTransactionId
      *
-     * @return string
+     * @return string|null
      */
     public function getReferenceTransactionId()
     {
@@ -329,13 +337,61 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceTransactionId
      *
-     * @param string $referenceTransactionId referenceTransactionId
+     * @param string|null $referenceTransactionId referenceTransactionId
      *
      * @return self
      */
     public function setReferenceTransactionId($referenceTransactionId)
     {
         $this->container['referenceTransactionId'] = $referenceTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets payerAssetId
+     *
+     * @return string|null
+     */
+    public function getPayerAssetId()
+    {
+        return $this->container['payerAssetId'];
+    }
+
+    /**
+     * Sets payerAssetId
+     *
+     * @param string|null $payerAssetId payerAssetId
+     *
+     * @return self
+     */
+    public function setPayerAssetId($payerAssetId)
+    {
+        $this->container['payerAssetId'] = $payerAssetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryAssetId
+     *
+     * @return string|null
+     */
+    public function getBeneficiaryAssetId()
+    {
+        return $this->container['beneficiaryAssetId'];
+    }
+
+    /**
+     * Sets beneficiaryAssetId
+     *
+     * @param string|null $beneficiaryAssetId beneficiaryAssetId
+     *
+     * @return self
+     */
+    public function setBeneficiaryAssetId($beneficiaryAssetId)
+    {
+        $this->container['beneficiaryAssetId'] = $beneficiaryAssetId;
 
         return $this;
     }
