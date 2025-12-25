@@ -47,7 +47,9 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'statementId' => 'string',
-        'fundMoveDetail' => '\request\model\FundMoveDetail'
+        'fundMoveDetail' => '\request\model\FundMoveDetail',
+        'transactionType' => 'string',
+        'beneficiaryAssetId' => 'string'
     ];
 
     /**
@@ -59,7 +61,9 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'statementId' => null,
-        'fundMoveDetail' => null
+        'fundMoveDetail' => null,
+        'transactionType' => null,
+        'beneficiaryAssetId' => null
     ];
 
     /**
@@ -69,7 +73,9 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'statementId' => false,
-        'fundMoveDetail' => false
+        'fundMoveDetail' => false,
+        'transactionType' => false,
+        'beneficiaryAssetId' => false
     ];
 
     /**
@@ -159,7 +165,9 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'statementId' => 'statementId',
-        'fundMoveDetail' => 'fundMoveDetail'
+        'fundMoveDetail' => 'fundMoveDetail',
+        'transactionType' => 'transactionType',
+        'beneficiaryAssetId' => 'beneficiaryAssetId'
     ];
 
     /**
@@ -169,7 +177,9 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'statementId' => 'setStatementId',
-        'fundMoveDetail' => 'setFundMoveDetail'
+        'fundMoveDetail' => 'setFundMoveDetail',
+        'transactionType' => 'setTransactionType',
+        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
     ];
 
     /**
@@ -179,7 +189,9 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'statementId' => 'getStatementId',
-        'fundMoveDetail' => 'getFundMoveDetail'
+        'fundMoveDetail' => 'getFundMoveDetail',
+        'transactionType' => 'getTransactionType',
+        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
     ];
 
     /**
@@ -241,6 +253,8 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('statementId', $data ?? [], null);
         $this->setIfExists('fundMoveDetail', $data ?? [], null);
+        $this->setIfExists('transactionType', $data ?? [], null);
+        $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
 
             }
 
@@ -336,6 +350,54 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFundMoveDetail($fundMoveDetail)
     {
         $this->container['fundMoveDetail'] = $fundMoveDetail;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionType
+     *
+     * @return string|null
+     */
+    public function getTransactionType()
+    {
+        return $this->container['transactionType'];
+    }
+
+    /**
+     * Sets transactionType
+     *
+     * @param string|null $transactionType transactionType
+     *
+     * @return self
+     */
+    public function setTransactionType($transactionType)
+    {
+        $this->container['transactionType'] = $transactionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryAssetId
+     *
+     * @return string|null
+     */
+    public function getBeneficiaryAssetId()
+    {
+        return $this->container['beneficiaryAssetId'];
+    }
+
+    /**
+     * Sets beneficiaryAssetId
+     *
+     * @param string|null $beneficiaryAssetId beneficiaryAssetId
+     *
+     * @return self
+     */
+    public function setBeneficiaryAssetId($beneficiaryAssetId)
+    {
+        $this->container['beneficiaryAssetId'] = $beneficiaryAssetId;
 
         return $this;
     }
