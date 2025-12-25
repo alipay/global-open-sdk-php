@@ -46,6 +46,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
+        'paymentEvaluation' => '\request\model\PaymentEvaluation',
         'productCode' => '\request\model\ProductCodeType',
         'paymentAmount' => '\request\model\Amount',
         'merchantRegion' => 'string',
@@ -74,6 +75,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'paymentEvaluation' => null,
         'productCode' => null,
         'paymentAmount' => null,
         'merchantRegion' => null,
@@ -100,6 +102,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'paymentEvaluation' => false,
         'productCode' => false,
         'paymentAmount' => false,
         'merchantRegion' => false,
@@ -206,6 +209,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
+        'paymentEvaluation' => 'paymentEvaluation',
         'productCode' => 'productCode',
         'paymentAmount' => 'paymentAmount',
         'merchantRegion' => 'merchantRegion',
@@ -232,6 +236,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
+        'paymentEvaluation' => 'setPaymentEvaluation',
         'productCode' => 'setProductCode',
         'paymentAmount' => 'setPaymentAmount',
         'merchantRegion' => 'setMerchantRegion',
@@ -258,6 +263,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
+        'paymentEvaluation' => 'getPaymentEvaluation',
         'productCode' => 'getProductCode',
         'paymentAmount' => 'getPaymentAmount',
         'merchantRegion' => 'getMerchantRegion',
@@ -335,6 +341,7 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('paymentEvaluation', $data ?? [], null);
         $this->setIfExists('productCode', $data ?? [], null);
         $this->setIfExists('paymentAmount', $data ?? [], null);
         $this->setIfExists('merchantRegion', $data ?? [], null);
@@ -407,6 +414,30 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets paymentEvaluation
+     *
+     * @return \model\PaymentEvaluation|null
+     */
+    public function getPaymentEvaluation()
+    {
+        return $this->container['paymentEvaluation'];
+    }
+
+    /**
+     * Sets paymentEvaluation
+     *
+     * @param \model\PaymentEvaluation|null $paymentEvaluation paymentEvaluation
+     *
+     * @return self
+     */
+    public function setPaymentEvaluation($paymentEvaluation)
+    {
+        $this->container['paymentEvaluation'] = $paymentEvaluation;
+
+        return $this;
+    }
 
     /**
      * Gets productCode
