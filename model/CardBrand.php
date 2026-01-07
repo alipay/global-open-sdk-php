@@ -26,18 +26,43 @@ namespace Model;
 
 class CardBrand
 {
-    public const VISA = 'VISA';
-    public const MASTERCARD = 'MASTERCARD';
-    public const MAESTRO = 'MAESTRO';
     public const AMEX = 'AMEX';
-    public const JCB = 'JCB';
+    public const BC = 'BC';
+    public const CARNET = 'CARNET';
+    public const CARTES_BANCAIRES = 'CARTES_BANCAIRES';
+    public const CITI = 'CITI';
+    public const CUP = 'CUP';
     public const DINERS = 'DINERS';
     public const DISCOVER = 'DISCOVER';
-    public const CUP = 'CUP';
-    public const MIR = 'MIR';
     public const ELO = 'ELO';
+    public const GWANGJUBANK = 'GWANGJUBANK';
     public const HIPERCARD = 'HIPERCARD';
+    public const HYUNDAI = 'HYUNDAI';
+    public const IBK_BC = 'IBK_BC';
+    public const JCB = 'JCB';
+    public const JEJUBANK = 'JEJUBANK';
+    public const JEONBUKBANK = 'JEONBUKBANK';
+    public const KAKAOBANK = 'KAKAOBANK';
+    public const KBANK = 'KBANK';
+    public const KDBBANK = 'KDBBANK';
+    public const KEBHANA = 'KEBHANA';
+    public const KOOKMIN = 'KOOKMIN';
+    public const LOTTE = 'LOTTE';
+    public const MAESTRO = 'MAESTRO';
+    public const MASTERCARD = 'MASTERCARD';
+    public const MIR = 'MIR';
+    public const NONGHYUP = 'NONGHYUP';
+    public const POST = 'POST';
+    public const SAEMAUL = 'SAEMAUL';
+    public const SAMSUNG = 'SAMSUNG';
+    public const SAVINGBANK = 'SAVINGBANK';
+    public const SHINHAN = 'SHINHAN';
+    public const SHINHYEOP = 'SHINHYEOP';
+    public const SUHYEOP = 'SUHYEOP';
+    public const TOSSBANK = 'TOSSBANK';
     public const TROY = 'TROY';
+    public const VISA = 'VISA';
+    public const WOORI = 'WOORI';
 
     public $value;
 
@@ -46,25 +71,29 @@ class CardBrand
         $this->value = $value;
     }
 
-    public static function VISA(): self
-    {
-        return new self(self::VISA);
-    }
-    public static function MASTERCARD(): self
-    {
-        return new self(self::MASTERCARD);
-    }
-    public static function MAESTRO(): self
-    {
-        return new self(self::MAESTRO);
-    }
     public static function AMEX(): self
     {
         return new self(self::AMEX);
     }
-    public static function JCB(): self
+    public static function BC(): self
     {
-        return new self(self::JCB);
+        return new self(self::BC);
+    }
+    public static function CARNET(): self
+    {
+        return new self(self::CARNET);
+    }
+    public static function CARTES_BANCAIRES(): self
+    {
+        return new self(self::CARTES_BANCAIRES);
+    }
+    public static function CITI(): self
+    {
+        return new self(self::CITI);
+    }
+    public static function CUP(): self
+    {
+        return new self(self::CUP);
     }
     public static function DINERS(): self
     {
@@ -74,25 +103,121 @@ class CardBrand
     {
         return new self(self::DISCOVER);
     }
-    public static function CUP(): self
-    {
-        return new self(self::CUP);
-    }
-    public static function MIR(): self
-    {
-        return new self(self::MIR);
-    }
     public static function ELO(): self
     {
         return new self(self::ELO);
+    }
+    public static function GWANGJUBANK(): self
+    {
+        return new self(self::GWANGJUBANK);
     }
     public static function HIPERCARD(): self
     {
         return new self(self::HIPERCARD);
     }
+    public static function HYUNDAI(): self
+    {
+        return new self(self::HYUNDAI);
+    }
+    public static function IBK_BC(): self
+    {
+        return new self(self::IBK_BC);
+    }
+    public static function JCB(): self
+    {
+        return new self(self::JCB);
+    }
+    public static function JEJUBANK(): self
+    {
+        return new self(self::JEJUBANK);
+    }
+    public static function JEONBUKBANK(): self
+    {
+        return new self(self::JEONBUKBANK);
+    }
+    public static function KAKAOBANK(): self
+    {
+        return new self(self::KAKAOBANK);
+    }
+    public static function KBANK(): self
+    {
+        return new self(self::KBANK);
+    }
+    public static function KDBBANK(): self
+    {
+        return new self(self::KDBBANK);
+    }
+    public static function KEBHANA(): self
+    {
+        return new self(self::KEBHANA);
+    }
+    public static function KOOKMIN(): self
+    {
+        return new self(self::KOOKMIN);
+    }
+    public static function LOTTE(): self
+    {
+        return new self(self::LOTTE);
+    }
+    public static function MAESTRO(): self
+    {
+        return new self(self::MAESTRO);
+    }
+    public static function MASTERCARD(): self
+    {
+        return new self(self::MASTERCARD);
+    }
+    public static function MIR(): self
+    {
+        return new self(self::MIR);
+    }
+    public static function NONGHYUP(): self
+    {
+        return new self(self::NONGHYUP);
+    }
+    public static function POST(): self
+    {
+        return new self(self::POST);
+    }
+    public static function SAEMAUL(): self
+    {
+        return new self(self::SAEMAUL);
+    }
+    public static function SAMSUNG(): self
+    {
+        return new self(self::SAMSUNG);
+    }
+    public static function SAVINGBANK(): self
+    {
+        return new self(self::SAVINGBANK);
+    }
+    public static function SHINHAN(): self
+    {
+        return new self(self::SHINHAN);
+    }
+    public static function SHINHYEOP(): self
+    {
+        return new self(self::SHINHYEOP);
+    }
+    public static function SUHYEOP(): self
+    {
+        return new self(self::SUHYEOP);
+    }
+    public static function TOSSBANK(): self
+    {
+        return new self(self::TOSSBANK);
+    }
     public static function TROY(): self
     {
         return new self(self::TROY);
+    }
+    public static function VISA(): self
+    {
+        return new self(self::VISA);
+    }
+    public static function WOORI(): self
+    {
+        return new self(self::WOORI);
     }
 
     public function getValue(): string
