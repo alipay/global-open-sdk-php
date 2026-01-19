@@ -51,7 +51,8 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         'currencyPairs' => '\request\model\CurrencyPair[]',
         'sellCurrency' => 'string',
         'buyCurrency' => 'string',
-        'productCode' => '\request\model\ProductCodeType'
+        'productCode' => '\request\model\ProductCodeType',
+        'rateType' => '\request\model\RateType'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         'currencyPairs' => null,
         'sellCurrency' => null,
         'buyCurrency' => null,
-        'productCode' => null
+        'productCode' => null,
+        'rateType' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         'currencyPairs' => false,
         'sellCurrency' => false,
         'buyCurrency' => false,
-        'productCode' => false
+        'productCode' => false,
+        'rateType' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         'currencyPairs' => 'currencyPairs',
         'sellCurrency' => 'sellCurrency',
         'buyCurrency' => 'buyCurrency',
-        'productCode' => 'productCode'
+        'productCode' => 'productCode',
+        'rateType' => 'rateType'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         'currencyPairs' => 'setCurrencyPairs',
         'sellCurrency' => 'setSellCurrency',
         'buyCurrency' => 'setBuyCurrency',
-        'productCode' => 'setProductCode'
+        'productCode' => 'setProductCode',
+        'rateType' => 'setRateType'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         'currencyPairs' => 'getCurrencyPairs',
         'sellCurrency' => 'getSellCurrency',
         'buyCurrency' => 'getBuyCurrency',
-        'productCode' => 'getProductCode'
+        'productCode' => 'getProductCode',
+        'rateType' => 'getRateType'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
         $this->setIfExists('sellCurrency', $data ?? [], null);
         $this->setIfExists('buyCurrency', $data ?? [], null);
         $this->setIfExists('productCode', $data ?? [], null);
+        $this->setIfExists('rateType', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/inquireExchangeRate"); 
     }
@@ -455,6 +462,30 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
     public function setProductCode($productCode)
     {
         $this->container['productCode'] = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets rateType
+     *
+     * @return string|null
+     */
+    public function getRateType()
+    {
+        return $this->container['rateType'];
+    }
+
+    /**
+     * Sets rateType
+     *
+     * @param string|null $rateType rateType
+     *
+     * @return self
+     */
+    public function setRateType($rateType)
+    {
+        $this->container['rateType'] = $rateType;
 
         return $this;
     }

@@ -13,7 +13,7 @@
  */
 
 
-namespace Response\pay;
+namespace Model;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipayInquireExchangeRateResponse Class Doc Comment
+ * PaymentQuote Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymentQuote  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipayInquireExchangeRateResponse';
+    protected static $openAPIModelName = 'PaymentQuote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'quotes' => '\request\model\Quote[]',
-        'result' => '\request\model\Result',
-        'paymentQuotes' => '\request\model\PaymentQuote[]'
+        'buyCurrency' => 'string',
+        'sellCurrency' => 'string',
+        'quoteId' => 'string',
+        'exchangeRate' => 'float'
     ];
 
     /**
@@ -59,9 +60,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'quotes' => null,
-        'result' => null,
-        'paymentQuotes' => null
+        'buyCurrency' => null,
+        'sellCurrency' => null,
+        'quoteId' => null,
+        'exchangeRate' => 'decimal'
     ];
 
     /**
@@ -70,9 +72,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'quotes' => false,
-        'result' => false,
-        'paymentQuotes' => false
+        'buyCurrency' => false,
+        'sellCurrency' => false,
+        'quoteId' => false,
+        'exchangeRate' => false
     ];
 
     /**
@@ -161,9 +164,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'quotes' => 'quotes',
-        'result' => 'result',
-        'paymentQuotes' => 'paymentQuotes'
+        'buyCurrency' => 'buyCurrency',
+        'sellCurrency' => 'sellCurrency',
+        'quoteId' => 'quoteId',
+        'exchangeRate' => 'exchangeRate'
     ];
 
     /**
@@ -172,9 +176,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'quotes' => 'setQuotes',
-        'result' => 'setResult',
-        'paymentQuotes' => 'setPaymentQuotes'
+        'buyCurrency' => 'setBuyCurrency',
+        'sellCurrency' => 'setSellCurrency',
+        'quoteId' => 'setQuoteId',
+        'exchangeRate' => 'setExchangeRate'
     ];
 
     /**
@@ -183,9 +188,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'quotes' => 'getQuotes',
-        'result' => 'getResult',
-        'paymentQuotes' => 'getPaymentQuotes'
+        'buyCurrency' => 'getBuyCurrency',
+        'sellCurrency' => 'getSellCurrency',
+        'quoteId' => 'getQuoteId',
+        'exchangeRate' => 'getExchangeRate'
     ];
 
     /**
@@ -245,9 +251,10 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('quotes', $data ?? [], null);
-        $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('paymentQuotes', $data ?? [], null);
+        $this->setIfExists('buyCurrency', $data ?? [], null);
+        $this->setIfExists('sellCurrency', $data ?? [], null);
+        $this->setIfExists('quoteId', $data ?? [], null);
+        $this->setIfExists('exchangeRate', $data ?? [], null);
 
             }
 
@@ -278,12 +285,6 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
-        if ($this->container['quotes'] === null) {
-            $invalidProperties[] = "'quotes' can't be null";
-        }
-        if ($this->container['result'] === null) {
-            $invalidProperties[] = "'result' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -300,73 +301,97 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets quotes
+     * Gets buyCurrency
      *
-     * @return \model\Quote[]
+     * @return string|null
      */
-    public function getQuotes()
+    public function getBuyCurrency()
     {
-        return $this->container['quotes'];
+        return $this->container['buyCurrency'];
     }
 
     /**
-     * Sets quotes
+     * Sets buyCurrency
      *
-     * @param \model\Quote[] $quotes quotes
+     * @param string|null $buyCurrency 商户视角下买入的币种 - 商户订单定价币种
      *
      * @return self
      */
-    public function setQuotes($quotes)
+    public function setBuyCurrency($buyCurrency)
     {
-        $this->container['quotes'] = $quotes;
+        $this->container['buyCurrency'] = $buyCurrency;
 
         return $this;
     }
 
     /**
-     * Gets result
+     * Gets sellCurrency
      *
-     * @return \model\Result
+     * @return string|null
      */
-    public function getResult()
+    public function getSellCurrency()
     {
-        return $this->container['result'];
+        return $this->container['sellCurrency'];
     }
 
     /**
-     * Sets result
+     * Sets sellCurrency
      *
-     * @param \model\Result $result result
+     * @param string|null $sellCurrency 商户视角下卖出的币种 - 用户支付币种
      *
      * @return self
      */
-    public function setResult($result)
+    public function setSellCurrency($sellCurrency)
     {
-        $this->container['result'] = $result;
+        $this->container['sellCurrency'] = $sellCurrency;
 
         return $this;
     }
 
     /**
-     * Gets paymentQuotes
+     * Gets quoteId
      *
-     * @return \model\PaymentQuote[]|null
+     * @return string|null
      */
-    public function getPaymentQuotes()
+    public function getQuoteId()
     {
-        return $this->container['paymentQuotes'];
+        return $this->container['quoteId'];
     }
 
     /**
-     * Sets paymentQuotes
+     * Sets quoteId
      *
-     * @param \model\PaymentQuote[]|null $paymentQuotes paymentQuotes
+     * @param string|null $quoteId 蚂蚁为此次报价颁发的唯一id
      *
      * @return self
      */
-    public function setPaymentQuotes($paymentQuotes)
+    public function setQuoteId($quoteId)
     {
-        $this->container['paymentQuotes'] = $paymentQuotes;
+        $this->container['quoteId'] = $quoteId;
+
+        return $this;
+    }
+
+    /**
+     * Gets exchangeRate
+     *
+     * @return float|null
+     */
+    public function getExchangeRate()
+    {
+        return $this->container['exchangeRate'];
+    }
+
+    /**
+     * Sets exchangeRate
+     *
+     * @param float|null $exchangeRate 商户可直接用于乘法计算的最终汇率值，精度统一为15位decimal place
+     *
+     * @return self
+     */
+    public function setExchangeRate($exchangeRate)
+    {
+        $this->container['exchangeRate'] = $exchangeRate;
 
         return $this;
     }
