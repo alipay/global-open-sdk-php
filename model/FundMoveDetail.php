@@ -46,10 +46,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'memo' => 'string',
-        'referenceTransactionId' => 'string',
+        'payerName' => 'string',
+        'payerAccountNo' => 'string',
+        'payerChaneelAccountnumber' => 'string',
+        'payerAccountType' => 'string',
         'payerAssetId' => 'string',
-        'beneficiaryAssetId' => 'string'
+        'beneficiaryName' => 'string',
+        'beneficiaryAccountType' => 'string',
+        'beneficiaryBankCountry' => 'string',
+        'beneficiaryBankName' => 'string',
+        'beneficiaryAssetId' => 'string',
+        'remarks' => 'string',
+        'description' => 'string',
+        'memo' => 'string',
+        'referenceTransactionId' => 'string'
     ];
 
     /**
@@ -60,10 +70,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'memo' => null,
-        'referenceTransactionId' => null,
+        'payerName' => null,
+        'payerAccountNo' => null,
+        'payerChaneelAccountnumber' => null,
+        'payerAccountType' => null,
         'payerAssetId' => null,
-        'beneficiaryAssetId' => null
+        'beneficiaryName' => null,
+        'beneficiaryAccountType' => null,
+        'beneficiaryBankCountry' => null,
+        'beneficiaryBankName' => null,
+        'beneficiaryAssetId' => null,
+        'remarks' => null,
+        'description' => null,
+        'memo' => null,
+        'referenceTransactionId' => null
     ];
 
     /**
@@ -72,10 +92,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'memo' => false,
-        'referenceTransactionId' => false,
+        'payerName' => false,
+        'payerAccountNo' => false,
+        'payerChaneelAccountnumber' => false,
+        'payerAccountType' => false,
         'payerAssetId' => false,
-        'beneficiaryAssetId' => false
+        'beneficiaryName' => false,
+        'beneficiaryAccountType' => false,
+        'beneficiaryBankCountry' => false,
+        'beneficiaryBankName' => false,
+        'beneficiaryAssetId' => false,
+        'remarks' => false,
+        'description' => false,
+        'memo' => false,
+        'referenceTransactionId' => false
     ];
 
     /**
@@ -164,10 +194,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'memo' => 'memo',
-        'referenceTransactionId' => 'referenceTransactionId',
+        'payerName' => 'payerName',
+        'payerAccountNo' => 'payerAccountNo',
+        'payerChaneelAccountnumber' => 'payerChaneelAccountnumber',
+        'payerAccountType' => 'payerAccountType',
         'payerAssetId' => 'payerAssetId',
-        'beneficiaryAssetId' => 'beneficiaryAssetId'
+        'beneficiaryName' => 'beneficiaryName',
+        'beneficiaryAccountType' => 'beneficiaryAccountType',
+        'beneficiaryBankCountry' => 'beneficiaryBankCountry',
+        'beneficiaryBankName' => 'beneficiaryBankName',
+        'beneficiaryAssetId' => 'beneficiaryAssetId',
+        'remarks' => 'remarks',
+        'description' => 'description',
+        'memo' => 'memo',
+        'referenceTransactionId' => 'referenceTransactionId'
     ];
 
     /**
@@ -176,10 +216,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'memo' => 'setMemo',
-        'referenceTransactionId' => 'setReferenceTransactionId',
+        'payerName' => 'setPayerName',
+        'payerAccountNo' => 'setPayerAccountNo',
+        'payerChaneelAccountnumber' => 'setPayerChaneelAccountnumber',
+        'payerAccountType' => 'setPayerAccountType',
         'payerAssetId' => 'setPayerAssetId',
-        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
+        'beneficiaryName' => 'setBeneficiaryName',
+        'beneficiaryAccountType' => 'setBeneficiaryAccountType',
+        'beneficiaryBankCountry' => 'setBeneficiaryBankCountry',
+        'beneficiaryBankName' => 'setBeneficiaryBankName',
+        'beneficiaryAssetId' => 'setBeneficiaryAssetId',
+        'remarks' => 'setRemarks',
+        'description' => 'setDescription',
+        'memo' => 'setMemo',
+        'referenceTransactionId' => 'setReferenceTransactionId'
     ];
 
     /**
@@ -188,10 +238,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'memo' => 'getMemo',
-        'referenceTransactionId' => 'getReferenceTransactionId',
+        'payerName' => 'getPayerName',
+        'payerAccountNo' => 'getPayerAccountNo',
+        'payerChaneelAccountnumber' => 'getPayerChaneelAccountnumber',
+        'payerAccountType' => 'getPayerAccountType',
         'payerAssetId' => 'getPayerAssetId',
-        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
+        'beneficiaryName' => 'getBeneficiaryName',
+        'beneficiaryAccountType' => 'getBeneficiaryAccountType',
+        'beneficiaryBankCountry' => 'getBeneficiaryBankCountry',
+        'beneficiaryBankName' => 'getBeneficiaryBankName',
+        'beneficiaryAssetId' => 'getBeneficiaryAssetId',
+        'remarks' => 'getRemarks',
+        'description' => 'getDescription',
+        'memo' => 'getMemo',
+        'referenceTransactionId' => 'getReferenceTransactionId'
     ];
 
     /**
@@ -251,10 +311,20 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('payerName', $data ?? [], null);
+        $this->setIfExists('payerAccountNo', $data ?? [], null);
+        $this->setIfExists('payerChaneelAccountnumber', $data ?? [], null);
+        $this->setIfExists('payerAccountType', $data ?? [], null);
+        $this->setIfExists('payerAssetId', $data ?? [], null);
+        $this->setIfExists('beneficiaryName', $data ?? [], null);
+        $this->setIfExists('beneficiaryAccountType', $data ?? [], null);
+        $this->setIfExists('beneficiaryBankCountry', $data ?? [], null);
+        $this->setIfExists('beneficiaryBankName', $data ?? [], null);
+        $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
+        $this->setIfExists('remarks', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('memo', $data ?? [], null);
         $this->setIfExists('referenceTransactionId', $data ?? [], null);
-        $this->setIfExists('payerAssetId', $data ?? [], null);
-        $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
 
             }
 
@@ -285,6 +355,18 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['payerName'] === null) {
+            $invalidProperties[] = "'payerName' can't be null";
+        }
+        if ($this->container['payerAccountNo'] === null) {
+            $invalidProperties[] = "'payerAccountNo' can't be null";
+        }
+        if ($this->container['beneficiaryName'] === null) {
+            $invalidProperties[] = "'beneficiaryName' can't be null";
+        }
+        if ($this->container['referenceTransactionId'] === null) {
+            $invalidProperties[] = "'referenceTransactionId' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -301,49 +383,97 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets memo
+     * Gets payerName
      *
-     * @return string|null
+     * @return string
      */
-    public function getMemo()
+    public function getPayerName()
     {
-        return $this->container['memo'];
+        return $this->container['payerName'];
     }
 
     /**
-     * Sets memo
+     * Sets payerName
      *
-     * @param string|null $memo memo
+     * @param string $payerName 付款人姓名
      *
      * @return self
      */
-    public function setMemo($memo)
+    public function setPayerName($payerName)
     {
-        $this->container['memo'] = $memo;
+        $this->container['payerName'] = $payerName;
 
         return $this;
     }
 
     /**
-     * Gets referenceTransactionId
+     * Gets payerAccountNo
      *
-     * @return string|null
+     * @return string
      */
-    public function getReferenceTransactionId()
+    public function getPayerAccountNo()
     {
-        return $this->container['referenceTransactionId'];
+        return $this->container['payerAccountNo'];
     }
 
     /**
-     * Sets referenceTransactionId
+     * Sets payerAccountNo
      *
-     * @param string|null $referenceTransactionId referenceTransactionId
+     * @param string $payerAccountNo 付款人账号
      *
      * @return self
      */
-    public function setReferenceTransactionId($referenceTransactionId)
+    public function setPayerAccountNo($payerAccountNo)
     {
-        $this->container['referenceTransactionId'] = $referenceTransactionId;
+        $this->container['payerAccountNo'] = $payerAccountNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets payerChaneelAccountnumber
+     *
+     * @return string|null
+     */
+    public function getPayerChaneelAccountnumber()
+    {
+        return $this->container['payerChaneelAccountnumber'];
+    }
+
+    /**
+     * Sets payerChaneelAccountnumber
+     *
+     * @param string|null $payerChaneelAccountnumber 付款渠道账号
+     *
+     * @return self
+     */
+    public function setPayerChaneelAccountnumber($payerChaneelAccountnumber)
+    {
+        $this->container['payerChaneelAccountnumber'] = $payerChaneelAccountnumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets payerAccountType
+     *
+     * @return string|null
+     */
+    public function getPayerAccountType()
+    {
+        return $this->container['payerAccountType'];
+    }
+
+    /**
+     * Sets payerAccountType
+     *
+     * @param string|null $payerAccountType 付款人账户类型
+     *
+     * @return self
+     */
+    public function setPayerAccountType($payerAccountType)
+    {
+        $this->container['payerAccountType'] = $payerAccountType;
 
         return $this;
     }
@@ -361,13 +491,109 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payerAssetId
      *
-     * @param string|null $payerAssetId payerAssetId
+     * @param string|null $payerAssetId 付款人资产ID
      *
      * @return self
      */
     public function setPayerAssetId($payerAssetId)
     {
         $this->container['payerAssetId'] = $payerAssetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryName
+     *
+     * @return string
+     */
+    public function getBeneficiaryName()
+    {
+        return $this->container['beneficiaryName'];
+    }
+
+    /**
+     * Sets beneficiaryName
+     *
+     * @param string $beneficiaryName 受益人姓名
+     *
+     * @return self
+     */
+    public function setBeneficiaryName($beneficiaryName)
+    {
+        $this->container['beneficiaryName'] = $beneficiaryName;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryAccountType
+     *
+     * @return string|null
+     */
+    public function getBeneficiaryAccountType()
+    {
+        return $this->container['beneficiaryAccountType'];
+    }
+
+    /**
+     * Sets beneficiaryAccountType
+     *
+     * @param string|null $beneficiaryAccountType 受益人账户类型
+     *
+     * @return self
+     */
+    public function setBeneficiaryAccountType($beneficiaryAccountType)
+    {
+        $this->container['beneficiaryAccountType'] = $beneficiaryAccountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryBankCountry
+     *
+     * @return string|null
+     */
+    public function getBeneficiaryBankCountry()
+    {
+        return $this->container['beneficiaryBankCountry'];
+    }
+
+    /**
+     * Sets beneficiaryBankCountry
+     *
+     * @param string|null $beneficiaryBankCountry 受益人银行所在国家
+     *
+     * @return self
+     */
+    public function setBeneficiaryBankCountry($beneficiaryBankCountry)
+    {
+        $this->container['beneficiaryBankCountry'] = $beneficiaryBankCountry;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryBankName
+     *
+     * @return string|null
+     */
+    public function getBeneficiaryBankName()
+    {
+        return $this->container['beneficiaryBankName'];
+    }
+
+    /**
+     * Sets beneficiaryBankName
+     *
+     * @param string|null $beneficiaryBankName 受益人银行名称
+     *
+     * @return self
+     */
+    public function setBeneficiaryBankName($beneficiaryBankName)
+    {
+        $this->container['beneficiaryBankName'] = $beneficiaryBankName;
 
         return $this;
     }
@@ -385,13 +611,109 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets beneficiaryAssetId
      *
-     * @param string|null $beneficiaryAssetId beneficiaryAssetId
+     * @param string|null $beneficiaryAssetId 受益人资产ID
      *
      * @return self
      */
     public function setBeneficiaryAssetId($beneficiaryAssetId)
     {
         $this->container['beneficiaryAssetId'] = $beneficiaryAssetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets remarks
+     *
+     * @return string|null
+     */
+    public function getRemarks()
+    {
+        return $this->container['remarks'];
+    }
+
+    /**
+     * Sets remarks
+     *
+     * @param string|null $remarks 备注
+     *
+     * @return self
+     */
+    public function setRemarks($remarks)
+    {
+        $this->container['remarks'] = $remarks;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description 描述
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets memo
+     *
+     * @return string|null
+     */
+    public function getMemo()
+    {
+        return $this->container['memo'];
+    }
+
+    /**
+     * Sets memo
+     *
+     * @param string|null $memo 备忘录
+     *
+     * @return self
+     */
+    public function setMemo($memo)
+    {
+        $this->container['memo'] = $memo;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceTransactionId
+     *
+     * @return string
+     */
+    public function getReferenceTransactionId()
+    {
+        return $this->container['referenceTransactionId'];
+    }
+
+    /**
+     * Sets referenceTransactionId
+     *
+     * @param string $referenceTransactionId 参考交易ID
+     *
+     * @return self
+     */
+    public function setReferenceTransactionId($referenceTransactionId)
+    {
+        $this->container['referenceTransactionId'] = $referenceTransactionId;
 
         return $this;
     }

@@ -13,7 +13,7 @@
  */
 
 
-namespace Response\aba;
+namespace Model;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipayInquiryStatementListResponse Class Doc Comment
+ * ForeignExchangeQuote Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipayInquiryStatementListResponse';
+    protected static $openAPIModelName = 'ForeignExchangeQuote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'statementList' => '\request\model\Statement[]',
-        'result' => '\request\model\Result',
-        'totalCount' => '\request\model\TotalCount'
+        'exchangeRate' => 'string',
+        'sourceCurrency' => 'string',
+        'targetCurrency' => 'string',
+        'quoteTime' => 'string',
+        'quotePrice' => 'string'
     ];
 
     /**
@@ -59,9 +61,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'statementList' => null,
-        'result' => null,
-        'totalCount' => null
+        'exchangeRate' => null,
+        'sourceCurrency' => null,
+        'targetCurrency' => null,
+        'quoteTime' => null,
+        'quotePrice' => null
     ];
 
     /**
@@ -70,9 +74,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'statementList' => false,
-        'result' => false,
-        'totalCount' => false
+        'exchangeRate' => false,
+        'sourceCurrency' => false,
+        'targetCurrency' => false,
+        'quoteTime' => false,
+        'quotePrice' => false
     ];
 
     /**
@@ -161,9 +167,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'statementList' => 'statementList',
-        'result' => 'result',
-        'totalCount' => 'totalCount'
+        'exchangeRate' => 'exchangeRate',
+        'sourceCurrency' => 'sourceCurrency',
+        'targetCurrency' => 'targetCurrency',
+        'quoteTime' => 'quoteTime',
+        'quotePrice' => 'quotePrice'
     ];
 
     /**
@@ -172,9 +180,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'statementList' => 'setStatementList',
-        'result' => 'setResult',
-        'totalCount' => 'setTotalCount'
+        'exchangeRate' => 'setExchangeRate',
+        'sourceCurrency' => 'setSourceCurrency',
+        'targetCurrency' => 'setTargetCurrency',
+        'quoteTime' => 'setQuoteTime',
+        'quotePrice' => 'setQuotePrice'
     ];
 
     /**
@@ -183,9 +193,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'statementList' => 'getStatementList',
-        'result' => 'getResult',
-        'totalCount' => 'getTotalCount'
+        'exchangeRate' => 'getExchangeRate',
+        'sourceCurrency' => 'getSourceCurrency',
+        'targetCurrency' => 'getTargetCurrency',
+        'quoteTime' => 'getQuoteTime',
+        'quotePrice' => 'getQuotePrice'
     ];
 
     /**
@@ -245,9 +257,11 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('statementList', $data ?? [], null);
-        $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('exchangeRate', $data ?? [], null);
+        $this->setIfExists('sourceCurrency', $data ?? [], null);
+        $this->setIfExists('targetCurrency', $data ?? [], null);
+        $this->setIfExists('quoteTime', $data ?? [], null);
+        $this->setIfExists('quotePrice', $data ?? [], null);
 
             }
 
@@ -278,12 +292,6 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['statementList'] === null) {
-            $invalidProperties[] = "'statementList' can't be null";
-        }
-        if ($this->container['result'] === null) {
-            $invalidProperties[] = "'result' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -300,73 +308,121 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets statementList
+     * Gets exchangeRate
      *
-     * @return \model\Statement[]
+     * @return string|null
      */
-    public function getStatementList()
+    public function getExchangeRate()
     {
-        return $this->container['statementList'];
+        return $this->container['exchangeRate'];
     }
 
     /**
-     * Sets statementList
+     * Sets exchangeRate
      *
-     * @param \model\Statement[] $statementList statementList
+     * @param string|null $exchangeRate exchangeRate
      *
      * @return self
      */
-    public function setStatementList($statementList)
+    public function setExchangeRate($exchangeRate)
     {
-        $this->container['statementList'] = $statementList;
+        $this->container['exchangeRate'] = $exchangeRate;
 
         return $this;
     }
 
     /**
-     * Gets result
+     * Gets sourceCurrency
      *
-     * @return \model\Result
+     * @return string|null
      */
-    public function getResult()
+    public function getSourceCurrency()
     {
-        return $this->container['result'];
+        return $this->container['sourceCurrency'];
     }
 
     /**
-     * Sets result
+     * Sets sourceCurrency
      *
-     * @param \model\Result $result result
+     * @param string|null $sourceCurrency sourceCurrency
      *
      * @return self
      */
-    public function setResult($result)
+    public function setSourceCurrency($sourceCurrency)
     {
-        $this->container['result'] = $result;
+        $this->container['sourceCurrency'] = $sourceCurrency;
 
         return $this;
     }
 
     /**
-     * Gets totalCount
+     * Gets targetCurrency
      *
-     * @return \model\TotalCount|null
+     * @return string|null
      */
-    public function getTotalCount()
+    public function getTargetCurrency()
     {
-        return $this->container['totalCount'];
+        return $this->container['targetCurrency'];
     }
 
     /**
-     * Sets totalCount
+     * Sets targetCurrency
      *
-     * @param \model\TotalCount|null $totalCount totalCount
+     * @param string|null $targetCurrency targetCurrency
      *
      * @return self
      */
-    public function setTotalCount($totalCount)
+    public function setTargetCurrency($targetCurrency)
     {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['targetCurrency'] = $targetCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets quoteTime
+     *
+     * @return string|null
+     */
+    public function getQuoteTime()
+    {
+        return $this->container['quoteTime'];
+    }
+
+    /**
+     * Sets quoteTime
+     *
+     * @param string|null $quoteTime quoteTime
+     *
+     * @return self
+     */
+    public function setQuoteTime($quoteTime)
+    {
+        $this->container['quoteTime'] = $quoteTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets quotePrice
+     *
+     * @return string|null
+     */
+    public function getQuotePrice()
+    {
+        return $this->container['quotePrice'];
+    }
+
+    /**
+     * Sets quotePrice
+     *
+     * @param string|null $quotePrice quotePrice
+     *
+     * @return self
+     */
+    public function setQuotePrice($quotePrice)
+    {
+        $this->container['quotePrice'] = $quotePrice;
 
         return $this;
     }
