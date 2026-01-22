@@ -57,7 +57,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'arrivalAirportCode' => 'string',
         'fareBasis' => 'string',
         'couponNumber' => 'string',
-        'flightNumber' => 'string'
+        'flightNumber' => 'string',
+        'passengerNameRecord' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'arrivalAirportCode' => null,
         'fareBasis' => null,
         'couponNumber' => null,
-        'flightNumber' => null
+        'flightNumber' => null,
+        'passengerNameRecord' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'arrivalAirportCode' => false,
         'fareBasis' => false,
         'couponNumber' => false,
-        'flightNumber' => false
+        'flightNumber' => false,
+        'passengerNameRecord' => false
     ];
 
     /**
@@ -199,7 +202,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'arrivalAirportCode' => 'arrivalAirportCode',
         'fareBasis' => 'fareBasis',
         'couponNumber' => 'couponNumber',
-        'flightNumber' => 'flightNumber'
+        'flightNumber' => 'flightNumber',
+        'passengerNameRecord' => 'passengerNameRecord'
     ];
 
     /**
@@ -219,7 +223,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'arrivalAirportCode' => 'setArrivalAirportCode',
         'fareBasis' => 'setFareBasis',
         'couponNumber' => 'setCouponNumber',
-        'flightNumber' => 'setFlightNumber'
+        'flightNumber' => 'setFlightNumber',
+        'passengerNameRecord' => 'setPassengerNameRecord'
     ];
 
     /**
@@ -239,7 +244,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'arrivalAirportCode' => 'getArrivalAirportCode',
         'fareBasis' => 'getFareBasis',
         'couponNumber' => 'getCouponNumber',
-        'flightNumber' => 'getFlightNumber'
+        'flightNumber' => 'getFlightNumber',
+        'passengerNameRecord' => 'getPassengerNameRecord'
     ];
 
     /**
@@ -311,6 +317,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('fareBasis', $data ?? [], null);
         $this->setIfExists('couponNumber', $data ?? [], null);
         $this->setIfExists('flightNumber', $data ?? [], null);
+        $this->setIfExists('passengerNameRecord', $data ?? [], null);
 
             }
 
@@ -640,6 +647,30 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFlightNumber($flightNumber)
     {
         $this->container['flightNumber'] = $flightNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets passengerNameRecord
+     *
+     * @return string|null
+     */
+    public function getPassengerNameRecord()
+    {
+        return $this->container['passengerNameRecord'];
+    }
+
+    /**
+     * Sets passengerNameRecord
+     *
+     * @param string|null $passengerNameRecord Unique record locator for passenger booking
+     *
+     * @return self
+     */
+    public function setPassengerNameRecord($passengerNameRecord)
+    {
+        $this->container['passengerNameRecord'] = $passengerNameRecord;
 
         return $this;
     }

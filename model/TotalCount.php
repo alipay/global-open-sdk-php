@@ -13,7 +13,7 @@
  */
 
 
-namespace Response\aba;
+namespace Model;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipayInquiryStatementListResponse Class Doc Comment
+ * TotalCount Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TotalCount  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipayInquiryStatementListResponse';
+    protected static $openAPIModelName = 'TotalCount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'statementList' => '\request\model\Statement[]',
-        'result' => '\request\model\Result',
-        'totalCount' => '\request\model\TotalCount'
+        'totalPageNumber' => 'string',
+        'currentPageNumber' => 'string'
     ];
 
     /**
@@ -59,9 +58,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'statementList' => null,
-        'result' => null,
-        'totalCount' => null
+        'totalPageNumber' => null,
+        'currentPageNumber' => null
     ];
 
     /**
@@ -70,9 +68,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'statementList' => false,
-        'result' => false,
-        'totalCount' => false
+        'totalPageNumber' => false,
+        'currentPageNumber' => false
     ];
 
     /**
@@ -161,9 +158,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'statementList' => 'statementList',
-        'result' => 'result',
-        'totalCount' => 'totalCount'
+        'totalPageNumber' => 'totalPageNumber',
+        'currentPageNumber' => 'currentPageNumber'
     ];
 
     /**
@@ -172,9 +168,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'statementList' => 'setStatementList',
-        'result' => 'setResult',
-        'totalCount' => 'setTotalCount'
+        'totalPageNumber' => 'setTotalPageNumber',
+        'currentPageNumber' => 'setCurrentPageNumber'
     ];
 
     /**
@@ -183,9 +178,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'statementList' => 'getStatementList',
-        'result' => 'getResult',
-        'totalCount' => 'getTotalCount'
+        'totalPageNumber' => 'getTotalPageNumber',
+        'currentPageNumber' => 'getCurrentPageNumber'
     ];
 
     /**
@@ -245,9 +239,8 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('statementList', $data ?? [], null);
-        $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('totalPageNumber', $data ?? [], null);
+        $this->setIfExists('currentPageNumber', $data ?? [], null);
 
             }
 
@@ -278,12 +271,6 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['statementList'] === null) {
-            $invalidProperties[] = "'statementList' can't be null";
-        }
-        if ($this->container['result'] === null) {
-            $invalidProperties[] = "'result' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -300,73 +287,49 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets statementList
+     * Gets totalPageNumber
      *
-     * @return \model\Statement[]
+     * @return string|null
      */
-    public function getStatementList()
+    public function getTotalPageNumber()
     {
-        return $this->container['statementList'];
+        return $this->container['totalPageNumber'];
     }
 
     /**
-     * Sets statementList
+     * Sets totalPageNumber
      *
-     * @param \model\Statement[] $statementList statementList
+     * @param string|null $totalPageNumber totalPageNumber
      *
      * @return self
      */
-    public function setStatementList($statementList)
+    public function setTotalPageNumber($totalPageNumber)
     {
-        $this->container['statementList'] = $statementList;
+        $this->container['totalPageNumber'] = $totalPageNumber;
 
         return $this;
     }
 
     /**
-     * Gets result
+     * Gets currentPageNumber
      *
-     * @return \model\Result
+     * @return string|null
      */
-    public function getResult()
+    public function getCurrentPageNumber()
     {
-        return $this->container['result'];
+        return $this->container['currentPageNumber'];
     }
 
     /**
-     * Sets result
+     * Sets currentPageNumber
      *
-     * @param \model\Result $result result
+     * @param string|null $currentPageNumber currentPageNumber
      *
      * @return self
      */
-    public function setResult($result)
+    public function setCurrentPageNumber($currentPageNumber)
     {
-        $this->container['result'] = $result;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return \model\TotalCount|null
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param \model\TotalCount|null $totalCount totalCount
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['currentPageNumber'] = $currentPageNumber;
 
         return $this;
     }

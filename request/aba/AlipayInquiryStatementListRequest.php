@@ -46,6 +46,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fuzzyName' => 'string',
         'customerId' => 'string',
         'accessToken' => 'string',
         'startTime' => 'string',
@@ -64,6 +65,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fuzzyName' => null,
         'customerId' => null,
         'accessToken' => null,
         'startTime' => null,
@@ -80,6 +82,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'fuzzyName' => false,
         'customerId' => false,
         'accessToken' => false,
         'startTime' => false,
@@ -176,6 +179,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
      * @var string[]
      */
     protected static $attributeMap = [
+        'fuzzyName' => 'fuzzyName',
         'customerId' => 'customerId',
         'accessToken' => 'accessToken',
         'startTime' => 'startTime',
@@ -192,6 +196,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
      * @var string[]
      */
     protected static $setters = [
+        'fuzzyName' => 'setFuzzyName',
         'customerId' => 'setCustomerId',
         'accessToken' => 'setAccessToken',
         'startTime' => 'setStartTime',
@@ -208,6 +213,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
      * @var string[]
      */
     protected static $getters = [
+        'fuzzyName' => 'getFuzzyName',
         'customerId' => 'getCustomerId',
         'accessToken' => 'getAccessToken',
         'startTime' => 'getStartTime',
@@ -275,6 +281,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('fuzzyName', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('accessToken', $data ?? [], null);
         $this->setIfExists('startTime', $data ?? [], null);
@@ -352,6 +359,30 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fuzzyName
+     *
+     * @return string|null
+     */
+    public function getFuzzyName()
+    {
+        return $this->container['fuzzyName'];
+    }
+
+    /**
+     * Sets fuzzyName
+     *
+     * @param string|null $fuzzyName fuzzyName
+     *
+     * @return self
+     */
+    public function setFuzzyName($fuzzyName)
+    {
+        $this->container['fuzzyName'] = $fuzzyName;
+
+        return $this;
+    }
 
     /**
      * Gets customerId
