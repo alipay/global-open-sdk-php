@@ -52,7 +52,8 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address1' => 'string',
         'address2' => 'string',
         'zipCode' => 'string',
-        'label' => 'string'
+        'label' => 'string',
+        'address3' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address1' => null,
         'address2' => null,
         'zipCode' => null,
-        'label' => null
+        'label' => null,
+        'address3' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address1' => false,
         'address2' => false,
         'zipCode' => false,
-        'label' => false
+        'label' => false,
+        'address3' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address1' => 'address1',
         'address2' => 'address2',
         'zipCode' => 'zipCode',
-        'label' => 'label'
+        'label' => 'label',
+        'address3' => 'address3'
     ];
 
     /**
@@ -194,7 +198,8 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
         'zipCode' => 'setZipCode',
-        'label' => 'setLabel'
+        'label' => 'setLabel',
+        'address3' => 'setAddress3'
     ];
 
     /**
@@ -209,7 +214,8 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
         'zipCode' => 'getZipCode',
-        'label' => 'getLabel'
+        'label' => 'getLabel',
+        'address3' => 'getAddress3'
     ];
 
     /**
@@ -276,6 +282,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('address2', $data ?? [], null);
         $this->setIfExists('zipCode', $data ?? [], null);
         $this->setIfExists('label', $data ?? [], null);
+        $this->setIfExists('address3', $data ?? [], null);
 
             }
 
@@ -306,6 +313,9 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -324,7 +334,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets region
      *
-     * @return string|null
+     * @return string
      */
     public function getRegion()
     {
@@ -334,7 +344,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets region
      *
-     * @param string|null $region region
+     * @param string $region The 2-letter country or region code. For more information, see the ISO 3166 Country Codes standard.   More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -358,7 +368,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets state
      *
-     * @param string|null $state state
+     * @param string|null $state The state, country, or province name.   For card payments, if your business entity is in the United States, and the card issuing country is Canada, the United States, or the United Kingdom, set the value to a region code that consists of two to three characters and follows the ISO 3166-2 standard.   More information:  Maximum length: 8 characters
      *
      * @return self
      */
@@ -382,7 +392,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city city
+     * @param string|null $city The city, district, suburb, town, or village name.   More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -406,7 +416,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address1
      *
-     * @param string|null $address1 address1
+     * @param string|null $address1 Address line 1, for example, the street address, PO box, and company name.   More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -430,7 +440,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address2
      *
-     * @param string|null $address2 address2
+     * @param string|null $address2 Address line 2, for example, the apartment, suite, unit, and building information.   More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -454,7 +464,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets zipCode
      *
-     * @param string|null $zipCode zipCode
+     * @param string|null $zipCode The ZIP or postal code.   For card payments, if your business entity is in the United States, specify this parameter according to the following parameter value requirements:  Only contains numbers, letters, hyphens, and spaces. Must be within ten characters.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -485,6 +495,30 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLabel($label)
     {
         $this->container['label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * Gets address3
+     *
+     * @return string|null
+     */
+    public function getAddress3()
+    {
+        return $this->container['address3'];
+    }
+
+    /**
+     * Sets address3
+     *
+     * @param string|null $address3 address3
+     *
+     * @return self
+     */
+    public function setAddress3($address3)
+    {
+        $this->container['address3'] = $address3;
 
         return $this;
     }
