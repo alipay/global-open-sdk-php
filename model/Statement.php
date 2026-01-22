@@ -46,9 +46,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'statementId' => 'string',
         'fundMoveDetail' => '\request\model\FundMoveDetail',
+        'foreignExchangeQuote' => '\request\model\ForeignExchangeQuote',
+        'statementId' => 'string',
+        'transactionTime' => 'string',
         'transactionType' => 'string',
+        'originalTransactionAmount' => '\request\model\Amount',
+        'transactionAmount' => '\request\model\Amount',
+        'feeAmount' => '\request\model\Amount',
+        'netAmount' => '\request\model\Amount',
+        'accountBalance' => '\request\model\Amount',
+        'transactionId' => 'string',
+        'extTransactionId' => 'string',
+        'transactionStatus' => 'string',
         'beneficiaryAssetId' => 'string'
     ];
 
@@ -60,9 +70,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'statementId' => null,
         'fundMoveDetail' => null,
+        'foreignExchangeQuote' => null,
+        'statementId' => null,
+        'transactionTime' => null,
         'transactionType' => null,
+        'originalTransactionAmount' => null,
+        'transactionAmount' => null,
+        'feeAmount' => null,
+        'netAmount' => null,
+        'accountBalance' => null,
+        'transactionId' => null,
+        'extTransactionId' => null,
+        'transactionStatus' => null,
         'beneficiaryAssetId' => null
     ];
 
@@ -72,9 +92,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'statementId' => false,
         'fundMoveDetail' => false,
+        'foreignExchangeQuote' => false,
+        'statementId' => false,
+        'transactionTime' => false,
         'transactionType' => false,
+        'originalTransactionAmount' => false,
+        'transactionAmount' => false,
+        'feeAmount' => false,
+        'netAmount' => false,
+        'accountBalance' => false,
+        'transactionId' => false,
+        'extTransactionId' => false,
+        'transactionStatus' => false,
         'beneficiaryAssetId' => false
     ];
 
@@ -164,9 +194,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'statementId' => 'statementId',
         'fundMoveDetail' => 'fundMoveDetail',
+        'foreignExchangeQuote' => 'foreignExchangeQuote',
+        'statementId' => 'statementId',
+        'transactionTime' => 'transactionTime',
         'transactionType' => 'transactionType',
+        'originalTransactionAmount' => 'originalTransactionAmount',
+        'transactionAmount' => 'transactionAmount',
+        'feeAmount' => 'feeAmount',
+        'netAmount' => 'netAmount',
+        'accountBalance' => 'accountBalance',
+        'transactionId' => 'transactionId',
+        'extTransactionId' => 'extTransactionId',
+        'transactionStatus' => 'transactionStatus',
         'beneficiaryAssetId' => 'beneficiaryAssetId'
     ];
 
@@ -176,9 +216,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'statementId' => 'setStatementId',
         'fundMoveDetail' => 'setFundMoveDetail',
+        'foreignExchangeQuote' => 'setForeignExchangeQuote',
+        'statementId' => 'setStatementId',
+        'transactionTime' => 'setTransactionTime',
         'transactionType' => 'setTransactionType',
+        'originalTransactionAmount' => 'setOriginalTransactionAmount',
+        'transactionAmount' => 'setTransactionAmount',
+        'feeAmount' => 'setFeeAmount',
+        'netAmount' => 'setNetAmount',
+        'accountBalance' => 'setAccountBalance',
+        'transactionId' => 'setTransactionId',
+        'extTransactionId' => 'setExtTransactionId',
+        'transactionStatus' => 'setTransactionStatus',
         'beneficiaryAssetId' => 'setBeneficiaryAssetId'
     ];
 
@@ -188,9 +238,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'statementId' => 'getStatementId',
         'fundMoveDetail' => 'getFundMoveDetail',
+        'foreignExchangeQuote' => 'getForeignExchangeQuote',
+        'statementId' => 'getStatementId',
+        'transactionTime' => 'getTransactionTime',
         'transactionType' => 'getTransactionType',
+        'originalTransactionAmount' => 'getOriginalTransactionAmount',
+        'transactionAmount' => 'getTransactionAmount',
+        'feeAmount' => 'getFeeAmount',
+        'netAmount' => 'getNetAmount',
+        'accountBalance' => 'getAccountBalance',
+        'transactionId' => 'getTransactionId',
+        'extTransactionId' => 'getExtTransactionId',
+        'transactionStatus' => 'getTransactionStatus',
         'beneficiaryAssetId' => 'getBeneficiaryAssetId'
     ];
 
@@ -251,9 +311,19 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('statementId', $data ?? [], null);
         $this->setIfExists('fundMoveDetail', $data ?? [], null);
+        $this->setIfExists('foreignExchangeQuote', $data ?? [], null);
+        $this->setIfExists('statementId', $data ?? [], null);
+        $this->setIfExists('transactionTime', $data ?? [], null);
         $this->setIfExists('transactionType', $data ?? [], null);
+        $this->setIfExists('originalTransactionAmount', $data ?? [], null);
+        $this->setIfExists('transactionAmount', $data ?? [], null);
+        $this->setIfExists('feeAmount', $data ?? [], null);
+        $this->setIfExists('netAmount', $data ?? [], null);
+        $this->setIfExists('accountBalance', $data ?? [], null);
+        $this->setIfExists('transactionId', $data ?? [], null);
+        $this->setIfExists('extTransactionId', $data ?? [], null);
+        $this->setIfExists('transactionStatus', $data ?? [], null);
         $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
 
             }
@@ -285,11 +355,11 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['statementId'] === null) {
-            $invalidProperties[] = "'statementId' can't be null";
-        }
         if ($this->container['fundMoveDetail'] === null) {
             $invalidProperties[] = "'fundMoveDetail' can't be null";
+        }
+        if ($this->container['statementId'] === null) {
+            $invalidProperties[] = "'statementId' can't be null";
         }
         return $invalidProperties;
     }
@@ -305,30 +375,6 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets statementId
-     *
-     * @return string
-     */
-    public function getStatementId()
-    {
-        return $this->container['statementId'];
-    }
-
-    /**
-     * Sets statementId
-     *
-     * @param string $statementId statementId
-     *
-     * @return self
-     */
-    public function setStatementId($statementId)
-    {
-        $this->container['statementId'] = $statementId;
-
-        return $this;
-    }
 
     /**
      * Gets fundMoveDetail
@@ -355,6 +401,78 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets foreignExchangeQuote
+     *
+     * @return \model\ForeignExchangeQuote|null
+     */
+    public function getForeignExchangeQuote()
+    {
+        return $this->container['foreignExchangeQuote'];
+    }
+
+    /**
+     * Sets foreignExchangeQuote
+     *
+     * @param \model\ForeignExchangeQuote|null $foreignExchangeQuote foreignExchangeQuote
+     *
+     * @return self
+     */
+    public function setForeignExchangeQuote($foreignExchangeQuote)
+    {
+        $this->container['foreignExchangeQuote'] = $foreignExchangeQuote;
+
+        return $this;
+    }
+
+    /**
+     * Gets statementId
+     *
+     * @return string
+     */
+    public function getStatementId()
+    {
+        return $this->container['statementId'];
+    }
+
+    /**
+     * Sets statementId
+     *
+     * @param string $statementId statementId
+     *
+     * @return self
+     */
+    public function setStatementId($statementId)
+    {
+        $this->container['statementId'] = $statementId;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionTime
+     *
+     * @return string|null
+     */
+    public function getTransactionTime()
+    {
+        return $this->container['transactionTime'];
+    }
+
+    /**
+     * Sets transactionTime
+     *
+     * @param string|null $transactionTime transactionTime
+     *
+     * @return self
+     */
+    public function setTransactionTime($transactionTime)
+    {
+        $this->container['transactionTime'] = $transactionTime;
+
+        return $this;
+    }
+
+    /**
      * Gets transactionType
      *
      * @return string|null
@@ -374,6 +492,198 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTransactionType($transactionType)
     {
         $this->container['transactionType'] = $transactionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets originalTransactionAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getOriginalTransactionAmount()
+    {
+        return $this->container['originalTransactionAmount'];
+    }
+
+    /**
+     * Sets originalTransactionAmount
+     *
+     * @param \model\Amount|null $originalTransactionAmount originalTransactionAmount
+     *
+     * @return self
+     */
+    public function setOriginalTransactionAmount($originalTransactionAmount)
+    {
+        $this->container['originalTransactionAmount'] = $originalTransactionAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getTransactionAmount()
+    {
+        return $this->container['transactionAmount'];
+    }
+
+    /**
+     * Sets transactionAmount
+     *
+     * @param \model\Amount|null $transactionAmount transactionAmount
+     *
+     * @return self
+     */
+    public function setTransactionAmount($transactionAmount)
+    {
+        $this->container['transactionAmount'] = $transactionAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets feeAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getFeeAmount()
+    {
+        return $this->container['feeAmount'];
+    }
+
+    /**
+     * Sets feeAmount
+     *
+     * @param \model\Amount|null $feeAmount feeAmount
+     *
+     * @return self
+     */
+    public function setFeeAmount($feeAmount)
+    {
+        $this->container['feeAmount'] = $feeAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets netAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getNetAmount()
+    {
+        return $this->container['netAmount'];
+    }
+
+    /**
+     * Sets netAmount
+     *
+     * @param \model\Amount|null $netAmount netAmount
+     *
+     * @return self
+     */
+    public function setNetAmount($netAmount)
+    {
+        $this->container['netAmount'] = $netAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountBalance
+     *
+     * @return \model\Amount|null
+     */
+    public function getAccountBalance()
+    {
+        return $this->container['accountBalance'];
+    }
+
+    /**
+     * Sets accountBalance
+     *
+     * @param \model\Amount|null $accountBalance accountBalance
+     *
+     * @return self
+     */
+    public function setAccountBalance($accountBalance)
+    {
+        $this->container['accountBalance'] = $accountBalance;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionId
+     *
+     * @return string|null
+     */
+    public function getTransactionId()
+    {
+        return $this->container['transactionId'];
+    }
+
+    /**
+     * Sets transactionId
+     *
+     * @param string|null $transactionId transactionId
+     *
+     * @return self
+     */
+    public function setTransactionId($transactionId)
+    {
+        $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets extTransactionId
+     *
+     * @return string|null
+     */
+    public function getExtTransactionId()
+    {
+        return $this->container['extTransactionId'];
+    }
+
+    /**
+     * Sets extTransactionId
+     *
+     * @param string|null $extTransactionId extTransactionId
+     *
+     * @return self
+     */
+    public function setExtTransactionId($extTransactionId)
+    {
+        $this->container['extTransactionId'] = $extTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionStatus
+     *
+     * @return string|null
+     */
+    public function getTransactionStatus()
+    {
+        return $this->container['transactionStatus'];
+    }
+
+    /**
+     * Sets transactionStatus
+     *
+     * @param string|null $transactionStatus transactionStatus
+     *
+     * @return self
+     */
+    public function setTransactionStatus($transactionStatus)
+    {
+        $this->container['transactionStatus'] = $transactionStatus;
 
         return $this;
     }

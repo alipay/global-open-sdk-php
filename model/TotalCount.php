@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * FundMoveDetail Class Doc Comment
+ * TotalCount Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TotalCount  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'FundMoveDetail';
+    protected static $openAPIModelName = 'TotalCount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,14 +46,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'moveType' => 'string',
-        'sourceAccount' => 'string',
-        'targetAccount' => 'string',
-        'moveTime' => 'string',
-        'memo' => 'string',
-        'referenceTransactionId' => 'string',
-        'payerAssetId' => 'string',
-        'beneficiaryAssetId' => 'string'
+        'totalPageNumber' => 'string',
+        'currentPageNumber' => 'string'
     ];
 
     /**
@@ -64,14 +58,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'moveType' => null,
-        'sourceAccount' => null,
-        'targetAccount' => null,
-        'moveTime' => null,
-        'memo' => null,
-        'referenceTransactionId' => null,
-        'payerAssetId' => null,
-        'beneficiaryAssetId' => null
+        'totalPageNumber' => null,
+        'currentPageNumber' => null
     ];
 
     /**
@@ -80,14 +68,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'moveType' => false,
-        'sourceAccount' => false,
-        'targetAccount' => false,
-        'moveTime' => false,
-        'memo' => false,
-        'referenceTransactionId' => false,
-        'payerAssetId' => false,
-        'beneficiaryAssetId' => false
+        'totalPageNumber' => false,
+        'currentPageNumber' => false
     ];
 
     /**
@@ -176,14 +158,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'moveType' => 'moveType',
-        'sourceAccount' => 'sourceAccount',
-        'targetAccount' => 'targetAccount',
-        'moveTime' => 'moveTime',
-        'memo' => 'memo',
-        'referenceTransactionId' => 'referenceTransactionId',
-        'payerAssetId' => 'payerAssetId',
-        'beneficiaryAssetId' => 'beneficiaryAssetId'
+        'totalPageNumber' => 'totalPageNumber',
+        'currentPageNumber' => 'currentPageNumber'
     ];
 
     /**
@@ -192,14 +168,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'moveType' => 'setMoveType',
-        'sourceAccount' => 'setSourceAccount',
-        'targetAccount' => 'setTargetAccount',
-        'moveTime' => 'setMoveTime',
-        'memo' => 'setMemo',
-        'referenceTransactionId' => 'setReferenceTransactionId',
-        'payerAssetId' => 'setPayerAssetId',
-        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
+        'totalPageNumber' => 'setTotalPageNumber',
+        'currentPageNumber' => 'setCurrentPageNumber'
     ];
 
     /**
@@ -208,14 +178,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'moveType' => 'getMoveType',
-        'sourceAccount' => 'getSourceAccount',
-        'targetAccount' => 'getTargetAccount',
-        'moveTime' => 'getMoveTime',
-        'memo' => 'getMemo',
-        'referenceTransactionId' => 'getReferenceTransactionId',
-        'payerAssetId' => 'getPayerAssetId',
-        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
+        'totalPageNumber' => 'getTotalPageNumber',
+        'currentPageNumber' => 'getCurrentPageNumber'
     ];
 
     /**
@@ -275,14 +239,8 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('moveType', $data ?? [], null);
-        $this->setIfExists('sourceAccount', $data ?? [], null);
-        $this->setIfExists('targetAccount', $data ?? [], null);
-        $this->setIfExists('moveTime', $data ?? [], null);
-        $this->setIfExists('memo', $data ?? [], null);
-        $this->setIfExists('referenceTransactionId', $data ?? [], null);
-        $this->setIfExists('payerAssetId', $data ?? [], null);
-        $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
+        $this->setIfExists('totalPageNumber', $data ?? [], null);
+        $this->setIfExists('currentPageNumber', $data ?? [], null);
 
             }
 
@@ -329,193 +287,49 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets moveType
+     * Gets totalPageNumber
      *
      * @return string|null
      */
-    public function getMoveType()
+    public function getTotalPageNumber()
     {
-        return $this->container['moveType'];
+        return $this->container['totalPageNumber'];
     }
 
     /**
-     * Sets moveType
+     * Sets totalPageNumber
      *
-     * @param string|null $moveType moveType
+     * @param string|null $totalPageNumber totalPageNumber
      *
      * @return self
      */
-    public function setMoveType($moveType)
+    public function setTotalPageNumber($totalPageNumber)
     {
-        $this->container['moveType'] = $moveType;
+        $this->container['totalPageNumber'] = $totalPageNumber;
 
         return $this;
     }
 
     /**
-     * Gets sourceAccount
+     * Gets currentPageNumber
      *
      * @return string|null
      */
-    public function getSourceAccount()
+    public function getCurrentPageNumber()
     {
-        return $this->container['sourceAccount'];
+        return $this->container['currentPageNumber'];
     }
 
     /**
-     * Sets sourceAccount
+     * Sets currentPageNumber
      *
-     * @param string|null $sourceAccount sourceAccount
+     * @param string|null $currentPageNumber currentPageNumber
      *
      * @return self
      */
-    public function setSourceAccount($sourceAccount)
+    public function setCurrentPageNumber($currentPageNumber)
     {
-        $this->container['sourceAccount'] = $sourceAccount;
-
-        return $this;
-    }
-
-    /**
-     * Gets targetAccount
-     *
-     * @return string|null
-     */
-    public function getTargetAccount()
-    {
-        return $this->container['targetAccount'];
-    }
-
-    /**
-     * Sets targetAccount
-     *
-     * @param string|null $targetAccount targetAccount
-     *
-     * @return self
-     */
-    public function setTargetAccount($targetAccount)
-    {
-        $this->container['targetAccount'] = $targetAccount;
-
-        return $this;
-    }
-
-    /**
-     * Gets moveTime
-     *
-     * @return string|null
-     */
-    public function getMoveTime()
-    {
-        return $this->container['moveTime'];
-    }
-
-    /**
-     * Sets moveTime
-     *
-     * @param string|null $moveTime moveTime
-     *
-     * @return self
-     */
-    public function setMoveTime($moveTime)
-    {
-        $this->container['moveTime'] = $moveTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets memo
-     *
-     * @return string|null
-     */
-    public function getMemo()
-    {
-        return $this->container['memo'];
-    }
-
-    /**
-     * Sets memo
-     *
-     * @param string|null $memo memo
-     *
-     * @return self
-     */
-    public function setMemo($memo)
-    {
-        $this->container['memo'] = $memo;
-
-        return $this;
-    }
-
-    /**
-     * Gets referenceTransactionId
-     *
-     * @return string|null
-     */
-    public function getReferenceTransactionId()
-    {
-        return $this->container['referenceTransactionId'];
-    }
-
-    /**
-     * Sets referenceTransactionId
-     *
-     * @param string|null $referenceTransactionId referenceTransactionId
-     *
-     * @return self
-     */
-    public function setReferenceTransactionId($referenceTransactionId)
-    {
-        $this->container['referenceTransactionId'] = $referenceTransactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets payerAssetId
-     *
-     * @return string|null
-     */
-    public function getPayerAssetId()
-    {
-        return $this->container['payerAssetId'];
-    }
-
-    /**
-     * Sets payerAssetId
-     *
-     * @param string|null $payerAssetId payerAssetId
-     *
-     * @return self
-     */
-    public function setPayerAssetId($payerAssetId)
-    {
-        $this->container['payerAssetId'] = $payerAssetId;
-
-        return $this;
-    }
-
-    /**
-     * Gets beneficiaryAssetId
-     *
-     * @return string|null
-     */
-    public function getBeneficiaryAssetId()
-    {
-        return $this->container['beneficiaryAssetId'];
-    }
-
-    /**
-     * Sets beneficiaryAssetId
-     *
-     * @param string|null $beneficiaryAssetId beneficiaryAssetId
-     *
-     * @return self
-     */
-    public function setBeneficiaryAssetId($beneficiaryAssetId)
-    {
-        $this->container['beneficiaryAssetId'] = $beneficiaryAssetId;
+        $this->container['currentPageNumber'] = $currentPageNumber;
 
         return $this;
     }

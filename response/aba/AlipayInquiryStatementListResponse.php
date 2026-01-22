@@ -47,7 +47,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'statementList' => '\request\model\Statement[]',
-        'result' => '\request\model\Result'
+        'result' => '\request\model\Result',
+        'totalCount' => '\request\model\TotalCount',
+        'totalPageNumber' => 'string',
+        'currentPageNumber' => 'string'
     ];
 
     /**
@@ -59,7 +62,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'statementList' => null,
-        'result' => null
+        'result' => null,
+        'totalCount' => null,
+        'totalPageNumber' => null,
+        'currentPageNumber' => null
     ];
 
     /**
@@ -69,7 +75,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       */
     protected static $openAPINullables = [
         'statementList' => false,
-        'result' => false
+        'result' => false,
+        'totalCount' => false,
+        'totalPageNumber' => false,
+        'currentPageNumber' => false
     ];
 
     /**
@@ -159,7 +168,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'statementList' => 'statementList',
-        'result' => 'result'
+        'result' => 'result',
+        'totalCount' => 'totalCount',
+        'totalPageNumber' => 'totalPageNumber',
+        'currentPageNumber' => 'currentPageNumber'
     ];
 
     /**
@@ -169,7 +181,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'statementList' => 'setStatementList',
-        'result' => 'setResult'
+        'result' => 'setResult',
+        'totalCount' => 'setTotalCount',
+        'totalPageNumber' => 'setTotalPageNumber',
+        'currentPageNumber' => 'setCurrentPageNumber'
     ];
 
     /**
@@ -179,7 +194,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'statementList' => 'getStatementList',
-        'result' => 'getResult'
+        'result' => 'getResult',
+        'totalCount' => 'getTotalCount',
+        'totalPageNumber' => 'getTotalPageNumber',
+        'currentPageNumber' => 'getCurrentPageNumber'
     ];
 
     /**
@@ -241,6 +259,9 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     {
         $this->setIfExists('statementList', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
+        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('totalPageNumber', $data ?? [], null);
+        $this->setIfExists('currentPageNumber', $data ?? [], null);
 
             }
 
@@ -336,6 +357,78 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     public function setResult($result)
     {
         $this->container['result'] = $result;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalCount
+     *
+     * @return \model\TotalCount|null
+     */
+    public function getTotalCount()
+    {
+        return $this->container['totalCount'];
+    }
+
+    /**
+     * Sets totalCount
+     *
+     * @param \model\TotalCount|null $totalCount totalCount
+     *
+     * @return self
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->container['totalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalPageNumber
+     *
+     * @return string|null
+     */
+    public function getTotalPageNumber()
+    {
+        return $this->container['totalPageNumber'];
+    }
+
+    /**
+     * Sets totalPageNumber
+     *
+     * @param string|null $totalPageNumber totalPageNumber
+     *
+     * @return self
+     */
+    public function setTotalPageNumber($totalPageNumber)
+    {
+        $this->container['totalPageNumber'] = $totalPageNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPageNumber
+     *
+     * @return string|null
+     */
+    public function getCurrentPageNumber()
+    {
+        return $this->container['currentPageNumber'];
+    }
+
+    /**
+     * Sets currentPageNumber
+     *
+     * @param string|null $currentPageNumber currentPageNumber
+     *
+     * @return self
+     */
+    public function setCurrentPageNumber($currentPageNumber)
+    {
+        $this->container['currentPageNumber'] = $currentPageNumber;
 
         return $this;
     }
