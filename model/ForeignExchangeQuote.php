@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * FundMoveDetail Class Doc Comment
+ * ForeignExchangeQuote Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'FundMoveDetail';
+    protected static $openAPIModelName = 'ForeignExchangeQuote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,14 +46,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'moveType' => 'string',
-        'sourceAccount' => 'string',
-        'targetAccount' => 'string',
-        'moveTime' => 'string',
-        'memo' => 'string',
-        'referenceTransactionId' => 'string',
-        'payerAssetId' => 'string',
-        'beneficiaryAssetId' => 'string'
+        'exchangeRate' => 'string',
+        'sourceCurrency' => 'string',
+        'targetCurrency' => 'string',
+        'quoteTime' => 'string'
     ];
 
     /**
@@ -64,14 +60,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'moveType' => null,
-        'sourceAccount' => null,
-        'targetAccount' => null,
-        'moveTime' => null,
-        'memo' => null,
-        'referenceTransactionId' => null,
-        'payerAssetId' => null,
-        'beneficiaryAssetId' => null
+        'exchangeRate' => null,
+        'sourceCurrency' => null,
+        'targetCurrency' => null,
+        'quoteTime' => null
     ];
 
     /**
@@ -80,14 +72,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'moveType' => false,
-        'sourceAccount' => false,
-        'targetAccount' => false,
-        'moveTime' => false,
-        'memo' => false,
-        'referenceTransactionId' => false,
-        'payerAssetId' => false,
-        'beneficiaryAssetId' => false
+        'exchangeRate' => false,
+        'sourceCurrency' => false,
+        'targetCurrency' => false,
+        'quoteTime' => false
     ];
 
     /**
@@ -176,14 +164,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'moveType' => 'moveType',
-        'sourceAccount' => 'sourceAccount',
-        'targetAccount' => 'targetAccount',
-        'moveTime' => 'moveTime',
-        'memo' => 'memo',
-        'referenceTransactionId' => 'referenceTransactionId',
-        'payerAssetId' => 'payerAssetId',
-        'beneficiaryAssetId' => 'beneficiaryAssetId'
+        'exchangeRate' => 'exchangeRate',
+        'sourceCurrency' => 'sourceCurrency',
+        'targetCurrency' => 'targetCurrency',
+        'quoteTime' => 'quoteTime'
     ];
 
     /**
@@ -192,14 +176,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'moveType' => 'setMoveType',
-        'sourceAccount' => 'setSourceAccount',
-        'targetAccount' => 'setTargetAccount',
-        'moveTime' => 'setMoveTime',
-        'memo' => 'setMemo',
-        'referenceTransactionId' => 'setReferenceTransactionId',
-        'payerAssetId' => 'setPayerAssetId',
-        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
+        'exchangeRate' => 'setExchangeRate',
+        'sourceCurrency' => 'setSourceCurrency',
+        'targetCurrency' => 'setTargetCurrency',
+        'quoteTime' => 'setQuoteTime'
     ];
 
     /**
@@ -208,14 +188,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'moveType' => 'getMoveType',
-        'sourceAccount' => 'getSourceAccount',
-        'targetAccount' => 'getTargetAccount',
-        'moveTime' => 'getMoveTime',
-        'memo' => 'getMemo',
-        'referenceTransactionId' => 'getReferenceTransactionId',
-        'payerAssetId' => 'getPayerAssetId',
-        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
+        'exchangeRate' => 'getExchangeRate',
+        'sourceCurrency' => 'getSourceCurrency',
+        'targetCurrency' => 'getTargetCurrency',
+        'quoteTime' => 'getQuoteTime'
     ];
 
     /**
@@ -275,14 +251,10 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('moveType', $data ?? [], null);
-        $this->setIfExists('sourceAccount', $data ?? [], null);
-        $this->setIfExists('targetAccount', $data ?? [], null);
-        $this->setIfExists('moveTime', $data ?? [], null);
-        $this->setIfExists('memo', $data ?? [], null);
-        $this->setIfExists('referenceTransactionId', $data ?? [], null);
-        $this->setIfExists('payerAssetId', $data ?? [], null);
-        $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
+        $this->setIfExists('exchangeRate', $data ?? [], null);
+        $this->setIfExists('sourceCurrency', $data ?? [], null);
+        $this->setIfExists('targetCurrency', $data ?? [], null);
+        $this->setIfExists('quoteTime', $data ?? [], null);
 
             }
 
@@ -329,193 +301,97 @@ class FundMoveDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets moveType
+     * Gets exchangeRate
      *
      * @return string|null
      */
-    public function getMoveType()
+    public function getExchangeRate()
     {
-        return $this->container['moveType'];
+        return $this->container['exchangeRate'];
     }
 
     /**
-     * Sets moveType
+     * Sets exchangeRate
      *
-     * @param string|null $moveType moveType
+     * @param string|null $exchangeRate exchangeRate
      *
      * @return self
      */
-    public function setMoveType($moveType)
+    public function setExchangeRate($exchangeRate)
     {
-        $this->container['moveType'] = $moveType;
+        $this->container['exchangeRate'] = $exchangeRate;
 
         return $this;
     }
 
     /**
-     * Gets sourceAccount
+     * Gets sourceCurrency
      *
      * @return string|null
      */
-    public function getSourceAccount()
+    public function getSourceCurrency()
     {
-        return $this->container['sourceAccount'];
+        return $this->container['sourceCurrency'];
     }
 
     /**
-     * Sets sourceAccount
+     * Sets sourceCurrency
      *
-     * @param string|null $sourceAccount sourceAccount
+     * @param string|null $sourceCurrency sourceCurrency
      *
      * @return self
      */
-    public function setSourceAccount($sourceAccount)
+    public function setSourceCurrency($sourceCurrency)
     {
-        $this->container['sourceAccount'] = $sourceAccount;
+        $this->container['sourceCurrency'] = $sourceCurrency;
 
         return $this;
     }
 
     /**
-     * Gets targetAccount
+     * Gets targetCurrency
      *
      * @return string|null
      */
-    public function getTargetAccount()
+    public function getTargetCurrency()
     {
-        return $this->container['targetAccount'];
+        return $this->container['targetCurrency'];
     }
 
     /**
-     * Sets targetAccount
+     * Sets targetCurrency
      *
-     * @param string|null $targetAccount targetAccount
+     * @param string|null $targetCurrency targetCurrency
      *
      * @return self
      */
-    public function setTargetAccount($targetAccount)
+    public function setTargetCurrency($targetCurrency)
     {
-        $this->container['targetAccount'] = $targetAccount;
+        $this->container['targetCurrency'] = $targetCurrency;
 
         return $this;
     }
 
     /**
-     * Gets moveTime
+     * Gets quoteTime
      *
      * @return string|null
      */
-    public function getMoveTime()
+    public function getQuoteTime()
     {
-        return $this->container['moveTime'];
+        return $this->container['quoteTime'];
     }
 
     /**
-     * Sets moveTime
+     * Sets quoteTime
      *
-     * @param string|null $moveTime moveTime
+     * @param string|null $quoteTime quoteTime
      *
      * @return self
      */
-    public function setMoveTime($moveTime)
+    public function setQuoteTime($quoteTime)
     {
-        $this->container['moveTime'] = $moveTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets memo
-     *
-     * @return string|null
-     */
-    public function getMemo()
-    {
-        return $this->container['memo'];
-    }
-
-    /**
-     * Sets memo
-     *
-     * @param string|null $memo memo
-     *
-     * @return self
-     */
-    public function setMemo($memo)
-    {
-        $this->container['memo'] = $memo;
-
-        return $this;
-    }
-
-    /**
-     * Gets referenceTransactionId
-     *
-     * @return string|null
-     */
-    public function getReferenceTransactionId()
-    {
-        return $this->container['referenceTransactionId'];
-    }
-
-    /**
-     * Sets referenceTransactionId
-     *
-     * @param string|null $referenceTransactionId referenceTransactionId
-     *
-     * @return self
-     */
-    public function setReferenceTransactionId($referenceTransactionId)
-    {
-        $this->container['referenceTransactionId'] = $referenceTransactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets payerAssetId
-     *
-     * @return string|null
-     */
-    public function getPayerAssetId()
-    {
-        return $this->container['payerAssetId'];
-    }
-
-    /**
-     * Sets payerAssetId
-     *
-     * @param string|null $payerAssetId payerAssetId
-     *
-     * @return self
-     */
-    public function setPayerAssetId($payerAssetId)
-    {
-        $this->container['payerAssetId'] = $payerAssetId;
-
-        return $this;
-    }
-
-    /**
-     * Gets beneficiaryAssetId
-     *
-     * @return string|null
-     */
-    public function getBeneficiaryAssetId()
-    {
-        return $this->container['beneficiaryAssetId'];
-    }
-
-    /**
-     * Sets beneficiaryAssetId
-     *
-     * @param string|null $beneficiaryAssetId beneficiaryAssetId
-     *
-     * @return self
-     */
-    public function setBeneficiaryAssetId($beneficiaryAssetId)
-    {
-        $this->container['beneficiaryAssetId'] = $beneficiaryAssetId;
+        $this->container['quoteTime'] = $quoteTime;
 
         return $this;
     }
