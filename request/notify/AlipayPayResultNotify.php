@@ -34,6 +34,43 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 
     public $metadata;
 
+    public  $subscriptionOrderId;
+    public  $retryInfo;
+
+    /**
+     * @return mixed
+     */
+    public function getRetryInfo()
+    {
+        return $this->retryInfo;
+    }
+
+    /**
+     * @param mixed $retryInfo
+     */
+    public function setRetryInfo($retryInfo): void
+    {
+        $this->retryInfo = $retryInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubscriptionOrderId()
+    {
+        return $this->subscriptionOrderId;
+    }
+
+    /**
+     * @param mixed $subscriptionOrderId
+     */
+    public function setSubscriptionOrderId($subscriptionOrderId): void
+    {
+        $this->subscriptionOrderId = $subscriptionOrderId;
+    }
+
+
+
     /**
      * @return mixed
      */
