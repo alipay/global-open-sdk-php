@@ -52,7 +52,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'periodRule' => '\request\model\PeriodRule',
         'trials' => '\request\model\Trial[]',
         'subscriptionNotifyUrl' => 'string',
-        'subscriptionExpiryTime' => 'string'
+        'subscriptionExpiryTime' => 'string',
+        'allowRetry' => 'bool',
+        'maxAmountFloor' => '\request\model\Amount'
     ];
 
     /**
@@ -69,7 +71,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'periodRule' => null,
         'trials' => null,
         'subscriptionNotifyUrl' => null,
-        'subscriptionExpiryTime' => null
+        'subscriptionExpiryTime' => null,
+        'allowRetry' => null,
+        'maxAmountFloor' => null
     ];
 
     /**
@@ -84,7 +88,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'periodRule' => false,
         'trials' => false,
         'subscriptionNotifyUrl' => false,
-        'subscriptionExpiryTime' => false
+        'subscriptionExpiryTime' => false,
+        'allowRetry' => false,
+        'maxAmountFloor' => false
     ];
 
     /**
@@ -179,7 +185,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'periodRule' => 'periodRule',
         'trials' => 'trials',
         'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
-        'subscriptionExpiryTime' => 'subscriptionExpiryTime'
+        'subscriptionExpiryTime' => 'subscriptionExpiryTime',
+        'allowRetry' => 'allowRetry',
+        'maxAmountFloor' => 'maxAmountFloor'
     ];
 
     /**
@@ -194,7 +202,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'periodRule' => 'setPeriodRule',
         'trials' => 'setTrials',
         'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
-        'subscriptionExpiryTime' => 'setSubscriptionExpiryTime'
+        'subscriptionExpiryTime' => 'setSubscriptionExpiryTime',
+        'allowRetry' => 'setAllowRetry',
+        'maxAmountFloor' => 'setMaxAmountFloor'
     ];
 
     /**
@@ -209,7 +219,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'periodRule' => 'getPeriodRule',
         'trials' => 'getTrials',
         'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
-        'subscriptionExpiryTime' => 'getSubscriptionExpiryTime'
+        'subscriptionExpiryTime' => 'getSubscriptionExpiryTime',
+        'allowRetry' => 'getAllowRetry',
+        'maxAmountFloor' => 'getMaxAmountFloor'
     ];
 
     /**
@@ -276,6 +288,8 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('trials', $data ?? [], null);
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
         $this->setIfExists('subscriptionExpiryTime', $data ?? [], null);
+        $this->setIfExists('allowRetry', $data ?? [], null);
+        $this->setIfExists('maxAmountFloor', $data ?? [], null);
 
             }
 
@@ -485,6 +499,54 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSubscriptionExpiryTime($subscriptionExpiryTime)
     {
         $this->container['subscriptionExpiryTime'] = $subscriptionExpiryTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowRetry
+     *
+     * @return bool|null
+     */
+    public function getAllowRetry()
+    {
+        return $this->container['allowRetry'];
+    }
+
+    /**
+     * Sets allowRetry
+     *
+     * @param bool|null $allowRetry Field is used only in the PIX recurrence scenario. Whether to allow a retry in the event that a recurring payment fails due to insufficient balance.
+     *
+     * @return self
+     */
+    public function setAllowRetry($allowRetry)
+    {
+        $this->container['allowRetry'] = $allowRetry;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxAmountFloor
+     *
+     * @return \model\Amount|null
+     */
+    public function getMaxAmountFloor()
+    {
+        return $this->container['maxAmountFloor'];
+    }
+
+    /**
+     * Sets maxAmountFloor
+     *
+     * @param \model\Amount|null $maxAmountFloor maxAmountFloor
+     *
+     * @return self
+     */
+    public function setMaxAmountFloor($maxAmountFloor)
+    {
+        $this->container['maxAmountFloor'] = $maxAmountFloor;
 
         return $this;
     }
