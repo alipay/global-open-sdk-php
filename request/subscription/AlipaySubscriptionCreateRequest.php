@@ -50,6 +50,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'merchantAccountId' => 'string',
         'allowAccumulate' => 'bool',
         'maxAccumulateAmount' => '\request\model\Amount',
+        'allowRetry' => 'bool',
+        'maxAmountFloor' => '\request\model\Amount',
         'subscriptionRequestId' => 'string',
         'subscriptionDescription' => 'string',
         'subscriptionRedirectUrl' => 'string',
@@ -79,6 +81,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'merchantAccountId' => null,
         'allowAccumulate' => null,
         'maxAccumulateAmount' => null,
+        'allowRetry' => null,
+        'maxAmountFloor' => null,
         'subscriptionRequestId' => null,
         'subscriptionDescription' => null,
         'subscriptionRedirectUrl' => null,
@@ -106,6 +110,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'merchantAccountId' => false,
         'allowAccumulate' => false,
         'maxAccumulateAmount' => false,
+        'allowRetry' => false,
+        'maxAmountFloor' => false,
         'subscriptionRequestId' => false,
         'subscriptionDescription' => false,
         'subscriptionRedirectUrl' => false,
@@ -213,6 +219,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'merchantAccountId' => 'merchantAccountId',
         'allowAccumulate' => 'allowAccumulate',
         'maxAccumulateAmount' => 'maxAccumulateAmount',
+        'allowRetry' => 'allowRetry',
+        'maxAmountFloor' => 'maxAmountFloor',
         'subscriptionRequestId' => 'subscriptionRequestId',
         'subscriptionDescription' => 'subscriptionDescription',
         'subscriptionRedirectUrl' => 'subscriptionRedirectUrl',
@@ -240,6 +248,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'merchantAccountId' => 'setMerchantAccountId',
         'allowAccumulate' => 'setAllowAccumulate',
         'maxAccumulateAmount' => 'setMaxAccumulateAmount',
+        'allowRetry' => 'setAllowRetry',
+        'maxAmountFloor' => 'setMaxAmountFloor',
         'subscriptionRequestId' => 'setSubscriptionRequestId',
         'subscriptionDescription' => 'setSubscriptionDescription',
         'subscriptionRedirectUrl' => 'setSubscriptionRedirectUrl',
@@ -267,6 +277,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'merchantAccountId' => 'getMerchantAccountId',
         'allowAccumulate' => 'getAllowAccumulate',
         'maxAccumulateAmount' => 'getMaxAccumulateAmount',
+        'allowRetry' => 'getAllowRetry',
+        'maxAmountFloor' => 'getMaxAmountFloor',
         'subscriptionRequestId' => 'getSubscriptionRequestId',
         'subscriptionDescription' => 'getSubscriptionDescription',
         'subscriptionRedirectUrl' => 'getSubscriptionRedirectUrl',
@@ -345,6 +357,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('allowAccumulate', $data ?? [], null);
         $this->setIfExists('maxAccumulateAmount', $data ?? [], null);
+        $this->setIfExists('allowRetry', $data ?? [], null);
+        $this->setIfExists('maxAmountFloor', $data ?? [], null);
         $this->setIfExists('subscriptionRequestId', $data ?? [], null);
         $this->setIfExists('subscriptionDescription', $data ?? [], null);
         $this->setIfExists('subscriptionRedirectUrl', $data ?? [], null);
@@ -534,6 +548,54 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     public function setMaxAccumulateAmount($maxAccumulateAmount)
     {
         $this->container['maxAccumulateAmount'] = $maxAccumulateAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowRetry
+     *
+     * @return bool|null
+     */
+    public function getAllowRetry()
+    {
+        return $this->container['allowRetry'];
+    }
+
+    /**
+     * Sets allowRetry
+     *
+     * @param bool|null $allowRetry This field is only used in the PIX recurrence scenario. Default = false Whether to allow a retry in the event that a recurring payment fails due to insufficient balance.
+     *
+     * @return self
+     */
+    public function setAllowRetry($allowRetry)
+    {
+        $this->container['allowRetry'] = $allowRetry;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxAmountFloor
+     *
+     * @return \model\Amount|null
+     */
+    public function getMaxAmountFloor()
+    {
+        return $this->container['maxAmountFloor'];
+    }
+
+    /**
+     * Sets maxAmountFloor
+     *
+     * @param \model\Amount|null $maxAmountFloor maxAmountFloor
+     *
+     * @return self
+     */
+    public function setMaxAmountFloor($maxAmountFloor)
+    {
+        $this->container['maxAmountFloor'] = $maxAmountFloor;
 
         return $this;
     }
