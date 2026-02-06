@@ -59,7 +59,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'isAsyncRefund' => 'bool',
         'extendInfo' => 'string',
         'refundDetails' => '\request\model\RefundDetail[]',
-        'refundSourceAccountNo' => 'string'
+        'refundSourceAccountNo' => 'string',
+        'actualRefundAmount' => '\request\model\Amount'
     ];
 
     /**
@@ -83,7 +84,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'isAsyncRefund' => null,
         'extendInfo' => null,
         'refundDetails' => null,
-        'refundSourceAccountNo' => null
+        'refundSourceAccountNo' => null,
+        'actualRefundAmount' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'isAsyncRefund' => false,
         'extendInfo' => false,
         'refundDetails' => false,
-        'refundSourceAccountNo' => false
+        'refundSourceAccountNo' => false,
+        'actualRefundAmount' => false
     ];
 
     /**
@@ -207,7 +210,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'isAsyncRefund' => 'isAsyncRefund',
         'extendInfo' => 'extendInfo',
         'refundDetails' => 'refundDetails',
-        'refundSourceAccountNo' => 'refundSourceAccountNo'
+        'refundSourceAccountNo' => 'refundSourceAccountNo',
+        'actualRefundAmount' => 'actualRefundAmount'
     ];
 
     /**
@@ -229,7 +233,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'isAsyncRefund' => 'setIsAsyncRefund',
         'extendInfo' => 'setExtendInfo',
         'refundDetails' => 'setRefundDetails',
-        'refundSourceAccountNo' => 'setRefundSourceAccountNo'
+        'refundSourceAccountNo' => 'setRefundSourceAccountNo',
+        'actualRefundAmount' => 'setActualRefundAmount'
     ];
 
     /**
@@ -251,7 +256,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'isAsyncRefund' => 'getIsAsyncRefund',
         'extendInfo' => 'getExtendInfo',
         'refundDetails' => 'getRefundDetails',
-        'refundSourceAccountNo' => 'getRefundSourceAccountNo'
+        'refundSourceAccountNo' => 'getRefundSourceAccountNo',
+        'actualRefundAmount' => 'getActualRefundAmount'
     ];
 
     /**
@@ -325,6 +331,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         $this->setIfExists('extendInfo', $data ?? [], null);
         $this->setIfExists('refundDetails', $data ?? [], null);
         $this->setIfExists('refundSourceAccountNo', $data ?? [], null);
+        $this->setIfExists('actualRefundAmount', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/refund"); 
     }
@@ -712,6 +719,30 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     public function setRefundSourceAccountNo($refundSourceAccountNo)
     {
         $this->container['refundSourceAccountNo'] = $refundSourceAccountNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets actualRefundAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getActualRefundAmount()
+    {
+        return $this->container['actualRefundAmount'];
+    }
+
+    /**
+     * Sets actualRefundAmount
+     *
+     * @param \model\Amount|null $actualRefundAmount actualRefundAmount
+     *
+     * @return self
+     */
+    public function setActualRefundAmount($actualRefundAmount)
+    {
+        $this->container['actualRefundAmount'] = $actualRefundAmount;
 
         return $this;
     }

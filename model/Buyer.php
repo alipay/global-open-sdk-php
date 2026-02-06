@@ -52,7 +52,8 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerEmail' => 'string',
         'buyerRegistrationTime' => 'string',
         'isAccountVerified' => 'bool',
-        'successfulOrderCount' => 'int'
+        'successfulOrderCount' => 'int',
+        'buyerPhoneNoContryCode' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerEmail' => null,
         'buyerRegistrationTime' => null,
         'isAccountVerified' => null,
-        'successfulOrderCount' => null
+        'successfulOrderCount' => null,
+        'buyerPhoneNoContryCode' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerEmail' => false,
         'buyerRegistrationTime' => false,
         'isAccountVerified' => false,
-        'successfulOrderCount' => true
+        'successfulOrderCount' => true,
+        'buyerPhoneNoContryCode' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerEmail' => 'buyerEmail',
         'buyerRegistrationTime' => 'buyerRegistrationTime',
         'isAccountVerified' => 'isAccountVerified',
-        'successfulOrderCount' => 'successfulOrderCount'
+        'successfulOrderCount' => 'successfulOrderCount',
+        'buyerPhoneNoContryCode' => 'buyerPhoneNoContryCode'
     ];
 
     /**
@@ -194,7 +198,8 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerEmail' => 'setBuyerEmail',
         'buyerRegistrationTime' => 'setBuyerRegistrationTime',
         'isAccountVerified' => 'setIsAccountVerified',
-        'successfulOrderCount' => 'setSuccessfulOrderCount'
+        'successfulOrderCount' => 'setSuccessfulOrderCount',
+        'buyerPhoneNoContryCode' => 'setBuyerPhoneNoContryCode'
     ];
 
     /**
@@ -209,7 +214,8 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerEmail' => 'getBuyerEmail',
         'buyerRegistrationTime' => 'getBuyerRegistrationTime',
         'isAccountVerified' => 'getIsAccountVerified',
-        'successfulOrderCount' => 'getSuccessfulOrderCount'
+        'successfulOrderCount' => 'getSuccessfulOrderCount',
+        'buyerPhoneNoContryCode' => 'getBuyerPhoneNoContryCode'
     ];
 
     /**
@@ -276,6 +282,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('buyerRegistrationTime', $data ?? [], null);
         $this->setIfExists('isAccountVerified', $data ?? [], null);
         $this->setIfExists('successfulOrderCount', $data ?? [], null);
+        $this->setIfExists('buyerPhoneNoContryCode', $data ?? [], null);
 
             }
 
@@ -334,7 +341,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceBuyerId
      *
-     * @param string|null $referenceBuyerId The unique ID to identify the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
+     * @param string|null $referenceBuyerId The unique ID to identify the buyer.  Note: Specify this parameter when you want to use the promotion offered by Antom to this order.  More information:  Maximum length: 64 characters
      *
      * @return self
      */
@@ -485,6 +492,30 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSuccessfulOrderCount($successfulOrderCount)
     {
         $this->container['successfulOrderCount'] = $successfulOrderCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerPhoneNoContryCode
+     *
+     * @return string|null
+     */
+    public function getBuyerPhoneNoContryCode()
+    {
+        return $this->container['buyerPhoneNoContryCode'];
+    }
+
+    /**
+     * Sets buyerPhoneNoContryCode
+     *
+     * @param string|null $buyerPhoneNoContryCode 用于指定买家电话号码的国家代码，当支付方式为STCPAY时为必填字段
+     *
+     * @return self
+     */
+    public function setBuyerPhoneNoContryCode($buyerPhoneNoContryCode)
+    {
+        $this->container['buyerPhoneNoContryCode'] = $buyerPhoneNoContryCode;
 
         return $this;
     }
