@@ -13,7 +13,7 @@
  */
 
 
-namespace Model;
+namespace Request\pay;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AcquirerInfo Class Doc Comment
+ * AlipayVerifyAndCompletePaymentRequest Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayVerifyAndCompletePaymentRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AcquirerInfo';
+    protected static $openAPIModelName = 'AlipayVerifyAndCompletePaymentRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,14 +46,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'acquirerName' => 'string',
-        'referenceRequestId' => 'string',
-        'acquirerTransactionId' => 'string',
-        'acquirerMerchantId' => 'string',
-        'acquirerResultCode' => 'string',
-        'acquirerResultMessage' => 'string',
-        'acquirerMerchantName' => 'string',
-        'acquirerReasonDescription' => 'string'
+        'verifyMethod' => '\request\model\VerifyMethod',
+        'verifyRequestId' => 'string',
+        'paymentId' => 'string'
     ];
 
     /**
@@ -64,14 +59,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'acquirerName' => null,
-        'referenceRequestId' => null,
-        'acquirerTransactionId' => null,
-        'acquirerMerchantId' => null,
-        'acquirerResultCode' => null,
-        'acquirerResultMessage' => null,
-        'acquirerMerchantName' => null,
-        'acquirerReasonDescription' => null
+        'verifyMethod' => null,
+        'verifyRequestId' => null,
+        'paymentId' => null
     ];
 
     /**
@@ -80,14 +70,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'acquirerName' => false,
-        'referenceRequestId' => false,
-        'acquirerTransactionId' => false,
-        'acquirerMerchantId' => false,
-        'acquirerResultCode' => false,
-        'acquirerResultMessage' => false,
-        'acquirerMerchantName' => false,
-        'acquirerReasonDescription' => false
+        'verifyMethod' => false,
+        'verifyRequestId' => false,
+        'paymentId' => false
     ];
 
     /**
@@ -176,14 +161,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'acquirerName' => 'acquirerName',
-        'referenceRequestId' => 'referenceRequestId',
-        'acquirerTransactionId' => 'acquirerTransactionId',
-        'acquirerMerchantId' => 'acquirerMerchantId',
-        'acquirerResultCode' => 'acquirerResultCode',
-        'acquirerResultMessage' => 'acquirerResultMessage',
-        'acquirerMerchantName' => 'acquirerMerchantName',
-        'acquirerReasonDescription' => 'acquirerReasonDescription'
+        'verifyMethod' => 'verifyMethod',
+        'verifyRequestId' => 'verifyRequestId',
+        'paymentId' => 'paymentId'
     ];
 
     /**
@@ -192,14 +172,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'acquirerName' => 'setAcquirerName',
-        'referenceRequestId' => 'setReferenceRequestId',
-        'acquirerTransactionId' => 'setAcquirerTransactionId',
-        'acquirerMerchantId' => 'setAcquirerMerchantId',
-        'acquirerResultCode' => 'setAcquirerResultCode',
-        'acquirerResultMessage' => 'setAcquirerResultMessage',
-        'acquirerMerchantName' => 'setAcquirerMerchantName',
-        'acquirerReasonDescription' => 'setAcquirerReasonDescription'
+        'verifyMethod' => 'setVerifyMethod',
+        'verifyRequestId' => 'setVerifyRequestId',
+        'paymentId' => 'setPaymentId'
     ];
 
     /**
@@ -208,14 +183,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'acquirerName' => 'getAcquirerName',
-        'referenceRequestId' => 'getReferenceRequestId',
-        'acquirerTransactionId' => 'getAcquirerTransactionId',
-        'acquirerMerchantId' => 'getAcquirerMerchantId',
-        'acquirerResultCode' => 'getAcquirerResultCode',
-        'acquirerResultMessage' => 'getAcquirerResultMessage',
-        'acquirerMerchantName' => 'getAcquirerMerchantName',
-        'acquirerReasonDescription' => 'getAcquirerReasonDescription'
+        'verifyMethod' => 'getVerifyMethod',
+        'verifyRequestId' => 'getVerifyRequestId',
+        'paymentId' => 'getPaymentId'
     ];
 
     /**
@@ -275,16 +245,12 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('acquirerName', $data ?? [], null);
-        $this->setIfExists('referenceRequestId', $data ?? [], null);
-        $this->setIfExists('acquirerTransactionId', $data ?? [], null);
-        $this->setIfExists('acquirerMerchantId', $data ?? [], null);
-        $this->setIfExists('acquirerResultCode', $data ?? [], null);
-        $this->setIfExists('acquirerResultMessage', $data ?? [], null);
-        $this->setIfExists('acquirerMerchantName', $data ?? [], null);
-        $this->setIfExists('acquirerReasonDescription', $data ?? [], null);
+        $this->setIfExists('verifyMethod', $data ?? [], null);
+        $this->setIfExists('verifyRequestId', $data ?? [], null);
+        $this->setIfExists('paymentId', $data ?? [], null);
 
-            }
+         $this->setPath("/ams/api/v1/payments/verifyAndCompletePayment"); 
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -329,193 +295,73 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets acquirerName
+     * Gets verifyMethod
      *
-     * @return string|null
+     * @return \model\VerifyMethod|null
      */
-    public function getAcquirerName()
+    public function getVerifyMethod()
     {
-        return $this->container['acquirerName'];
+        return $this->container['verifyMethod'];
     }
 
     /**
-     * Sets acquirerName
+     * Sets verifyMethod
      *
-     * @param string|null $acquirerName The name of the acquirer.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
+     * @param \model\VerifyMethod|null $verifyMethod verifyMethod
      *
      * @return self
      */
-    public function setAcquirerName($acquirerName)
+    public function setVerifyMethod($verifyMethod)
     {
-        $this->container['acquirerName'] = $acquirerName;
+        $this->container['verifyMethod'] = $verifyMethod;
 
         return $this;
     }
 
     /**
-     * Gets referenceRequestId
+     * Gets verifyRequestId
      *
      * @return string|null
      */
-    public function getReferenceRequestId()
+    public function getVerifyRequestId()
     {
-        return $this->container['referenceRequestId'];
+        return $this->container['verifyRequestId'];
     }
 
     /**
-     * Sets referenceRequestId
+     * Sets verifyRequestId
      *
-     * @param string|null $referenceRequestId The unique ID that is assigned by APO to identify a payment request sent to the acquirer.  Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
+     * @param string|null $verifyRequestId verifyRequestId
      *
      * @return self
      */
-    public function setReferenceRequestId($referenceRequestId)
+    public function setVerifyRequestId($verifyRequestId)
     {
-        $this->container['referenceRequestId'] = $referenceRequestId;
+        $this->container['verifyRequestId'] = $verifyRequestId;
 
         return $this;
     }
 
     /**
-     * Gets acquirerTransactionId
+     * Gets paymentId
      *
      * @return string|null
      */
-    public function getAcquirerTransactionId()
+    public function getPaymentId()
     {
-        return $this->container['acquirerTransactionId'];
+        return $this->container['paymentId'];
     }
 
     /**
-     * Sets acquirerTransactionId
+     * Sets paymentId
      *
-     * @param string|null $acquirerTransactionId The unique ID that is assigned by the acquirer to identify a transaction.   Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
+     * @param string|null $paymentId paymentId
      *
      * @return self
      */
-    public function setAcquirerTransactionId($acquirerTransactionId)
+    public function setPaymentId($paymentId)
     {
-        $this->container['acquirerTransactionId'] = $acquirerTransactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets acquirerMerchantId
-     *
-     * @return string|null
-     */
-    public function getAcquirerMerchantId()
-    {
-        return $this->container['acquirerMerchantId'];
-    }
-
-    /**
-     * Sets acquirerMerchantId
-     *
-     * @param string|null $acquirerMerchantId The unique ID that is assigned by the acquirer to identify a merchant.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setAcquirerMerchantId($acquirerMerchantId)
-    {
-        $this->container['acquirerMerchantId'] = $acquirerMerchantId;
-
-        return $this;
-    }
-
-    /**
-     * Gets acquirerResultCode
-     *
-     * @return string|null
-     */
-    public function getAcquirerResultCode()
-    {
-        return $this->container['acquirerResultCode'];
-    }
-
-    /**
-     * Sets acquirerResultCode
-     *
-     * @param string|null $acquirerResultCode The acquirer's result code that indicates the transaction process result.    Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setAcquirerResultCode($acquirerResultCode)
-    {
-        $this->container['acquirerResultCode'] = $acquirerResultCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets acquirerResultMessage
-     *
-     * @return string|null
-     */
-    public function getAcquirerResultMessage()
-    {
-        return $this->container['acquirerResultMessage'];
-    }
-
-    /**
-     * Sets acquirerResultMessage
-     *
-     * @param string|null $acquirerResultMessage The result message that describes acquirerResultCode in detail.    Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setAcquirerResultMessage($acquirerResultMessage)
-    {
-        $this->container['acquirerResultMessage'] = $acquirerResultMessage;
-
-        return $this;
-    }
-
-    /**
-     * Gets acquirerMerchantName
-     *
-     * @return string|null
-     */
-    public function getAcquirerMerchantName()
-    {
-        return $this->container['acquirerMerchantName'];
-    }
-
-    /**
-     * Sets acquirerMerchantName
-     *
-     * @param string|null $acquirerMerchantName The merchant name registered with the acquirer
-     *
-     * @return self
-     */
-    public function setAcquirerMerchantName($acquirerMerchantName)
-    {
-        $this->container['acquirerMerchantName'] = $acquirerMerchantName;
-
-        return $this;
-    }
-
-    /**
-     * Gets acquirerReasonDescription
-     *
-     * @return string|null
-     */
-    public function getAcquirerReasonDescription()
-    {
-        return $this->container['acquirerReasonDescription'];
-    }
-
-    /**
-     * Sets acquirerReasonDescription
-     *
-     * @param string|null $acquirerReasonDescription The reason description provided by the acquirer
-     *
-     * @return self
-     */
-    public function setAcquirerReasonDescription($acquirerReasonDescription)
-    {
-        $this->container['acquirerReasonDescription'] = $acquirerReasonDescription;
+        $this->container['paymentId'] = $paymentId;
 
         return $this;
     }
