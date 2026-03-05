@@ -46,7 +46,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'supportedBrands' => 'array',
+        'supportedBrands' => 'string[]',
         'cardToken' => 'string',
         'cardNo' => 'string',
         'brand' => '\request\model\CardBrand',
@@ -540,7 +540,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets supportedBrands
      *
-     * @return array|null
+     * @return string[]|null
      */
     public function getSupportedBrands()
     {
@@ -550,7 +550,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets supportedBrands
      *
-     * @param array|null $supportedBrands Supported card brands for this payment method
+     * @param string[]|null $supportedBrands Supported card brands for this payment method
      *
      * @return self
      */
