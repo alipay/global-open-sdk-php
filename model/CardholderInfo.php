@@ -47,7 +47,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'cardHolderName' => '\request\model\UserName',
-        'billAddress' => '\request\model\Address'
+        'billAddress' => '\request\model\Address',
+        'displayName' => 'string'
     ];
 
     /**
@@ -59,7 +60,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'cardHolderName' => null,
-        'billAddress' => null
+        'billAddress' => null,
+        'displayName' => null
     ];
 
     /**
@@ -69,7 +71,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'cardHolderName' => false,
-        'billAddress' => false
+        'billAddress' => false,
+        'displayName' => false
     ];
 
     /**
@@ -159,7 +162,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'cardHolderName' => 'cardHolderName',
-        'billAddress' => 'billAddress'
+        'billAddress' => 'billAddress',
+        'displayName' => 'displayName'
     ];
 
     /**
@@ -169,7 +173,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'cardHolderName' => 'setCardHolderName',
-        'billAddress' => 'setBillAddress'
+        'billAddress' => 'setBillAddress',
+        'displayName' => 'setDisplayName'
     ];
 
     /**
@@ -179,7 +184,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'cardHolderName' => 'getCardHolderName',
-        'billAddress' => 'getBillAddress'
+        'billAddress' => 'getBillAddress',
+        'displayName' => 'getDisplayName'
     ];
 
     /**
@@ -241,6 +247,7 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('cardHolderName', $data ?? [], null);
         $this->setIfExists('billAddress', $data ?? [], null);
+        $this->setIfExists('displayName', $data ?? [], null);
 
             }
 
@@ -336,6 +343,30 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBillAddress($billAddress)
     {
         $this->container['billAddress'] = $billAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets displayName
+     *
+     * @return string|null
+     */
+    public function getDisplayName()
+    {
+        return $this->container['displayName'];
+    }
+
+    /**
+     * Sets displayName
+     *
+     * @param string|null $displayName The name that is displayed on the card
+     *
+     * @return self
+     */
+    public function setDisplayName($displayName)
+    {
+        $this->container['displayName'] = $displayName;
 
         return $this;
     }
