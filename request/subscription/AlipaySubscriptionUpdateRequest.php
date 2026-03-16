@@ -52,7 +52,9 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'periodRule' => '\request\model\PeriodRule',
         'paymentAmount' => '\request\model\Amount',
         'subscriptionEndTime' => 'string',
-        'orderInfo' => '\request\model\OrderInfo'
+        'orderInfo' => '\request\model\OrderInfo',
+        'prorationSettings' => '\request\model\ProrationSettings',
+        'nextSubscriptionDate' => 'string'
     ];
 
     /**
@@ -69,7 +71,9 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'periodRule' => null,
         'paymentAmount' => null,
         'subscriptionEndTime' => null,
-        'orderInfo' => null
+        'orderInfo' => null,
+        'prorationSettings' => null,
+        'nextSubscriptionDate' => null
     ];
 
     /**
@@ -84,7 +88,9 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'periodRule' => false,
         'paymentAmount' => false,
         'subscriptionEndTime' => false,
-        'orderInfo' => false
+        'orderInfo' => false,
+        'prorationSettings' => false,
+        'nextSubscriptionDate' => false
     ];
 
     /**
@@ -179,7 +185,9 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'periodRule' => 'periodRule',
         'paymentAmount' => 'paymentAmount',
         'subscriptionEndTime' => 'subscriptionEndTime',
-        'orderInfo' => 'orderInfo'
+        'orderInfo' => 'orderInfo',
+        'prorationSettings' => 'prorationSettings',
+        'nextSubscriptionDate' => 'nextSubscriptionDate'
     ];
 
     /**
@@ -194,7 +202,9 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'periodRule' => 'setPeriodRule',
         'paymentAmount' => 'setPaymentAmount',
         'subscriptionEndTime' => 'setSubscriptionEndTime',
-        'orderInfo' => 'setOrderInfo'
+        'orderInfo' => 'setOrderInfo',
+        'prorationSettings' => 'setProrationSettings',
+        'nextSubscriptionDate' => 'setNextSubscriptionDate'
     ];
 
     /**
@@ -209,7 +219,9 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'periodRule' => 'getPeriodRule',
         'paymentAmount' => 'getPaymentAmount',
         'subscriptionEndTime' => 'getSubscriptionEndTime',
-        'orderInfo' => 'getOrderInfo'
+        'orderInfo' => 'getOrderInfo',
+        'prorationSettings' => 'getProrationSettings',
+        'nextSubscriptionDate' => 'getNextSubscriptionDate'
     ];
 
     /**
@@ -276,6 +288,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('paymentAmount', $data ?? [], null);
         $this->setIfExists('subscriptionEndTime', $data ?? [], null);
         $this->setIfExists('orderInfo', $data ?? [], null);
+        $this->setIfExists('prorationSettings', $data ?? [], null);
+        $this->setIfExists('nextSubscriptionDate', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/subscriptions/update"); 
     }
@@ -495,6 +509,54 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     public function setOrderInfo($orderInfo)
     {
         $this->container['orderInfo'] = $orderInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets prorationSettings
+     *
+     * @return \model\ProrationSettings|null
+     */
+    public function getProrationSettings()
+    {
+        return $this->container['prorationSettings'];
+    }
+
+    /**
+     * Sets prorationSettings
+     *
+     * @param \model\ProrationSettings|null $prorationSettings prorationSettings
+     *
+     * @return self
+     */
+    public function setProrationSettings($prorationSettings)
+    {
+        $this->container['prorationSettings'] = $prorationSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets nextSubscriptionDate
+     *
+     * @return string|null
+     */
+    public function getNextSubscriptionDate()
+    {
+        return $this->container['nextSubscriptionDate'];
+    }
+
+    /**
+     * Sets nextSubscriptionDate
+     *
+     * @param string|null $nextSubscriptionDate 商户指定的下次扣款时间。遵循ISO 8601标准。  允许更改的时间要在一个周期内。  注意：由于订阅产品会在履约时间24小时前开始尝试扣款，商户指定的下次扣款时间至少要在当前时间的24小时之后。如商户指定的下次扣款时间小于当前时间的24小时，预期订阅升级失败并返回PROCCESS_FAIL错误码。
+     *
+     * @return self
+     */
+    public function setNextSubscriptionDate($nextSubscriptionDate)
+    {
+        $this->container['nextSubscriptionDate'] = $nextSubscriptionDate;
 
         return $this;
     }
