@@ -13,7 +13,7 @@
  */
 
 
-namespace Request\subscription;
+namespace Model;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipaySubscriptionUpdateRequest Class Doc Comment
+ * ProrationSettings Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipaySubscriptionUpdateRequest';
+    protected static $openAPIModelName = 'ProrationSettings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,15 +46,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subscriptionUpdateRequestId' => 'string',
-        'subscriptionId' => 'string',
-        'subscriptionDescription' => 'string',
-        'periodRule' => '\request\model\PeriodRule',
-        'paymentAmount' => '\request\model\Amount',
-        'subscriptionEndTime' => 'string',
-        'orderInfo' => '\request\model\OrderInfo',
-        'prorationSettings' => '\request\model\ProrationSettings',
-        'nextSubscriptionDate' => 'string'
+        'prorationMode' => 'string',
+        'customAmount' => '\request\model\Amount'
     ];
 
     /**
@@ -65,15 +58,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subscriptionUpdateRequestId' => null,
-        'subscriptionId' => null,
-        'subscriptionDescription' => null,
-        'periodRule' => null,
-        'paymentAmount' => null,
-        'subscriptionEndTime' => null,
-        'orderInfo' => null,
-        'prorationSettings' => null,
-        'nextSubscriptionDate' => null
+        'prorationMode' => null,
+        'customAmount' => null
     ];
 
     /**
@@ -82,15 +68,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'subscriptionUpdateRequestId' => false,
-        'subscriptionId' => false,
-        'subscriptionDescription' => false,
-        'periodRule' => false,
-        'paymentAmount' => false,
-        'subscriptionEndTime' => false,
-        'orderInfo' => false,
-        'prorationSettings' => false,
-        'nextSubscriptionDate' => false
+        'prorationMode' => false,
+        'customAmount' => false
     ];
 
     /**
@@ -179,15 +158,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'subscriptionUpdateRequestId' => 'subscriptionUpdateRequestId',
-        'subscriptionId' => 'subscriptionId',
-        'subscriptionDescription' => 'subscriptionDescription',
-        'periodRule' => 'periodRule',
-        'paymentAmount' => 'paymentAmount',
-        'subscriptionEndTime' => 'subscriptionEndTime',
-        'orderInfo' => 'orderInfo',
-        'prorationSettings' => 'prorationSettings',
-        'nextSubscriptionDate' => 'nextSubscriptionDate'
+        'prorationMode' => 'prorationMode',
+        'customAmount' => 'customAmount'
     ];
 
     /**
@@ -196,15 +168,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'subscriptionUpdateRequestId' => 'setSubscriptionUpdateRequestId',
-        'subscriptionId' => 'setSubscriptionId',
-        'subscriptionDescription' => 'setSubscriptionDescription',
-        'periodRule' => 'setPeriodRule',
-        'paymentAmount' => 'setPaymentAmount',
-        'subscriptionEndTime' => 'setSubscriptionEndTime',
-        'orderInfo' => 'setOrderInfo',
-        'prorationSettings' => 'setProrationSettings',
-        'nextSubscriptionDate' => 'setNextSubscriptionDate'
+        'prorationMode' => 'setProrationMode',
+        'customAmount' => 'setCustomAmount'
     ];
 
     /**
@@ -213,15 +178,8 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'subscriptionUpdateRequestId' => 'getSubscriptionUpdateRequestId',
-        'subscriptionId' => 'getSubscriptionId',
-        'subscriptionDescription' => 'getSubscriptionDescription',
-        'periodRule' => 'getPeriodRule',
-        'paymentAmount' => 'getPaymentAmount',
-        'subscriptionEndTime' => 'getSubscriptionEndTime',
-        'orderInfo' => 'getOrderInfo',
-        'prorationSettings' => 'getProrationSettings',
-        'nextSubscriptionDate' => 'getNextSubscriptionDate'
+        'prorationMode' => 'getProrationMode',
+        'customAmount' => 'getCustomAmount'
     ];
 
     /**
@@ -265,7 +223,21 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         return self::$openAPIModelName;
     }
 
+    public const PRORATION_MODE_PAY_CUSTOM_AMOUNT = 'IMMEDIATE_PAY_CUSTOM_AMOUNT';
+    public const PRORATION_MODE_REFUND_CUSTOM_AMOUNT = 'IMMEDIATE_REFUND_CUSTOM_AMOUNT';
 
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getProrationModeAllowableValues()
+    {
+        return [
+            self::PRORATION_MODE_PAY_CUSTOM_AMOUNT,
+            self::PRORATION_MODE_REFUND_CUSTOM_AMOUNT,
+        ];
+    }
     /**
      * Associative array for storing property values
      *
@@ -281,18 +253,10 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('subscriptionUpdateRequestId', $data ?? [], null);
-        $this->setIfExists('subscriptionId', $data ?? [], null);
-        $this->setIfExists('subscriptionDescription', $data ?? [], null);
-        $this->setIfExists('periodRule', $data ?? [], null);
-        $this->setIfExists('paymentAmount', $data ?? [], null);
-        $this->setIfExists('subscriptionEndTime', $data ?? [], null);
-        $this->setIfExists('orderInfo', $data ?? [], null);
-        $this->setIfExists('prorationSettings', $data ?? [], null);
-        $this->setIfExists('nextSubscriptionDate', $data ?? [], null);
+        $this->setIfExists('prorationMode', $data ?? [], null);
+        $this->setIfExists('customAmount', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/subscriptions/update"); 
-    }
+            }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -321,15 +285,15 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     {
         $invalidProperties = [];
 
-        if ($this->container['subscriptionUpdateRequestId'] === null) {
-            $invalidProperties[] = "'subscriptionUpdateRequestId' can't be null";
+        $allowedValues = $this->getProrationModeAllowableValues();
+        if (!is_null($this->container['prorationMode']) && !in_array($this->container['prorationMode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'prorationMode', must be one of '%s'",
+                $this->container['prorationMode'],
+                implode("', '", $allowedValues)
+            );
         }
-        if ($this->container['subscriptionId'] === null) {
-            $invalidProperties[] = "'subscriptionId' can't be null";
-        }
-        if ($this->container['orderInfo'] === null) {
-            $invalidProperties[] = "'orderInfo' can't be null";
-        }
+
         return $invalidProperties;
     }
 
@@ -346,217 +310,59 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
 
 
     /**
-     * Gets subscriptionUpdateRequestId
-     *
-     * @return string
-     */
-    public function getSubscriptionUpdateRequestId()
-    {
-        return $this->container['subscriptionUpdateRequestId'];
-    }
-
-    /**
-     * Sets subscriptionUpdateRequestId
-     *
-     * @param string $subscriptionUpdateRequestId The unique ID assigned by a merchant to identify a subscription update request.  More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setSubscriptionUpdateRequestId($subscriptionUpdateRequestId)
-    {
-        $this->container['subscriptionUpdateRequestId'] = $subscriptionUpdateRequestId;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscriptionId
-     *
-     * @return string
-     */
-    public function getSubscriptionId()
-    {
-        return $this->container['subscriptionId'];
-    }
-
-    /**
-     * Sets subscriptionId
-     *
-     * @param string $subscriptionId The unique ID assigned by Antom to identify a subscription.   More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setSubscriptionId($subscriptionId)
-    {
-        $this->container['subscriptionId'] = $subscriptionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscriptionDescription
+     * Gets prorationMode
      *
      * @return string|null
      */
-    public function getSubscriptionDescription()
+    public function getProrationMode()
     {
-        return $this->container['subscriptionDescription'];
+        return $this->container['prorationMode'];
     }
 
     /**
-     * Sets subscriptionDescription
+     * Sets prorationMode
      *
-     * @param string|null $subscriptionDescription The description of the subscription, used for displaying user consumption records and other actions.  More information:  Maximum length: 256 characters
+     * @param string|null $prorationMode 用于标识\"扣差价\"或者\"退差价\"场景。有差价处理需求场景必传。  取值范围： - IMMEDIATE_PAY_CUSTOM_AMOUNT：商户指定金额扣款模式，在这个模式下商户可以用customAmount的指定金额扣差价，差价需要商户提前算好 - IMMEDIATE_REFUND_CUSTOM_AMOUNT：商户指定金额退款模式，在这个模式下商户可以用customAmount的指定金额来退差价，差价需要商户提前算好
      *
      * @return self
      */
-    public function setSubscriptionDescription($subscriptionDescription)
+    public function setProrationMode($prorationMode)
     {
-        $this->container['subscriptionDescription'] = $subscriptionDescription;
+        $allowedValues = $this->getProrationModeAllowableValues();
+        if (!in_array($prorationMode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'prorationMode', must be one of '%s'",
+                    $prorationMode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['prorationMode'] = $prorationMode;
 
         return $this;
     }
 
     /**
-     * Gets periodRule
-     *
-     * @return \model\PeriodRule|null
-     */
-    public function getPeriodRule()
-    {
-        return $this->container['periodRule'];
-    }
-
-    /**
-     * Sets periodRule
-     *
-     * @param \model\PeriodRule|null $periodRule periodRule
-     *
-     * @return self
-     */
-    public function setPeriodRule($periodRule)
-    {
-        $this->container['periodRule'] = $periodRule;
-
-        return $this;
-    }
-
-    /**
-     * Gets paymentAmount
+     * Gets customAmount
      *
      * @return \model\Amount|null
      */
-    public function getPaymentAmount()
+    public function getCustomAmount()
     {
-        return $this->container['paymentAmount'];
+        return $this->container['customAmount'];
     }
 
     /**
-     * Sets paymentAmount
+     * Sets customAmount
      *
-     * @param \model\Amount|null $paymentAmount paymentAmount
+     * @param \model\Amount|null $customAmount customAmount
      *
      * @return self
      */
-    public function setPaymentAmount($paymentAmount)
+    public function setCustomAmount($customAmount)
     {
-        $this->container['paymentAmount'] = $paymentAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscriptionEndTime
-     *
-     * @return string|null
-     */
-    public function getSubscriptionEndTime()
-    {
-        return $this->container['subscriptionEndTime'];
-    }
-
-    /**
-     * Sets subscriptionEndTime
-     *
-     * @param string|null $subscriptionEndTime The date and time when the subscription ends.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
-     *
-     * @return self
-     */
-    public function setSubscriptionEndTime($subscriptionEndTime)
-    {
-        $this->container['subscriptionEndTime'] = $subscriptionEndTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets orderInfo
-     *
-     * @return \model\OrderInfo
-     */
-    public function getOrderInfo()
-    {
-        return $this->container['orderInfo'];
-    }
-
-    /**
-     * Sets orderInfo
-     *
-     * @param \model\OrderInfo $orderInfo orderInfo
-     *
-     * @return self
-     */
-    public function setOrderInfo($orderInfo)
-    {
-        $this->container['orderInfo'] = $orderInfo;
-
-        return $this;
-    }
-
-    /**
-     * Gets prorationSettings
-     *
-     * @return \model\ProrationSettings|null
-     */
-    public function getProrationSettings()
-    {
-        return $this->container['prorationSettings'];
-    }
-
-    /**
-     * Sets prorationSettings
-     *
-     * @param \model\ProrationSettings|null $prorationSettings prorationSettings
-     *
-     * @return self
-     */
-    public function setProrationSettings($prorationSettings)
-    {
-        $this->container['prorationSettings'] = $prorationSettings;
-
-        return $this;
-    }
-
-    /**
-     * Gets nextSubscriptionDate
-     *
-     * @return string|null
-     */
-    public function getNextSubscriptionDate()
-    {
-        return $this->container['nextSubscriptionDate'];
-    }
-
-    /**
-     * Sets nextSubscriptionDate
-     *
-     * @param string|null $nextSubscriptionDate 商户指定的下次扣款时间。遵循ISO 8601标准。  允许更改的时间要在一个周期内。  注意：由于订阅产品会在履约时间24小时前开始尝试扣款，商户指定的下次扣款时间至少要在当前时间的24小时之后。如商户指定的下次扣款时间小于当前时间的24小时，预期订阅升级失败并返回PROCCESS_FAIL错误码。
-     *
-     * @return self
-     */
-    public function setNextSubscriptionDate($nextSubscriptionDate)
-    {
-        $this->container['nextSubscriptionDate'] = $nextSubscriptionDate;
+        $this->container['customAmount'] = $customAmount;
 
         return $this;
     }
