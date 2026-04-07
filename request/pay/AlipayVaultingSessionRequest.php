@@ -337,7 +337,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets paymentMethodType
      *
-     * @param string $paymentMethodType The payment method type is included in payment method options. See Payment methods to check the valid values for card payments.    More information:  Maximum length: 64 characters
+     * @param string $paymentMethodType The type of payment method to be vaulted. The value of this parameter is fixed to CARD.
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets vaultingRequestId
      *
-     * @param string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.   More information:  Maximum length: 64 characters
+     * @param string $vaultingRequestId The unique ID that is assigned by a merchant to identify a card vaulting request.   More information:  This field is an API idempotency field. For vaulting requests that are initiated with the same value of vaultingRequestId and reach a final status of S or F, the same result is to be returned for the request.
      *
      * @return self
      */
