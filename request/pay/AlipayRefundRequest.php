@@ -400,7 +400,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     /**
      * Sets metadata
      *
-     * @param string|null $metadata Additional metadata about the refund request
+     * @param string|null $metadata This parameter is used for submitting metadata, including information for special use cases.
      *
      * @return self
      */

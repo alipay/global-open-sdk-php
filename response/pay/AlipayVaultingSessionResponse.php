@@ -292,6 +292,9 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
+        if ($this->container['result'] === null) {
+            $invalidProperties[] = "'result' can't be null";
+        }
         if ($this->container['vaultingSessionData'] === null) {
             $invalidProperties[] = "'vaultingSessionData' can't be null";
         }
@@ -319,7 +322,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets result
      *
-     * @return \model\Result|null
+     * @return \model\Result
      */
     public function getResult()
     {
@@ -329,7 +332,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets result
      *
-     * @param \model\Result|null $result result
+     * @param \model\Result $result result
      *
      * @return self
      */
@@ -425,7 +428,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets normalUrl
      *
-     * @param string|null $normalUrl The normal URL for vaulting session
+     * @param string|null $normalUrl The URL used to redirect to the card-binding page.
      *
      * @return self
      */

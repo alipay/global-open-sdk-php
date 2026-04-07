@@ -249,7 +249,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('accesstoken', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
 
-         $this->setPath("/ams/v1/aba/accounts/inquiryBalance"); 
+         $this->setPath("/ams/api/v1/aba/accounts/inquiryBalance"); 
     }
 
     /**
