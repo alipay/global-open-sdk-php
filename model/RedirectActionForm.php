@@ -285,6 +285,9 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['method'] === null) {
+            $invalidProperties[] = "'method' can't be null";
+        }
         if ($this->container['redirectUrl'] === null) {
             $invalidProperties[] = "'redirectUrl' can't be null";
         }
@@ -309,7 +312,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets method
      *
-     * @return string|null
+     * @return string
      */
     public function getMethod()
     {
@@ -319,7 +322,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets method
      *
-     * @param string|null $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
+     * @param string $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
      *
      * @return self
      */

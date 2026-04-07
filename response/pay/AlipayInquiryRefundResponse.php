@@ -434,7 +434,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets arn
      *
-     * @param string|null $arn Acquirer Reference Number
+     * @param string|null $arn Acquirer reference number. If the payment method includes an acquirer reference number, this field will have a value.
      *
      * @return self
      */
