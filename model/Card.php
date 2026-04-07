@@ -295,17 +295,11 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['cardNo'] === null) {
             $invalidProperties[] = "'cardNo' can't be null";
         }
-        if ($this->container['cvv'] === null) {
-            $invalidProperties[] = "'cvv' can't be null";
-        }
         if ($this->container['expiryYear'] === null) {
             $invalidProperties[] = "'expiryYear' can't be null";
         }
         if ($this->container['expiryMonth'] === null) {
             $invalidProperties[] = "'expiryMonth' can't be null";
-        }
-        if ($this->container['cardholderName'] === null) {
-            $invalidProperties[] = "'cardholderName' can't be null";
         }
         return $invalidProperties;
     }
@@ -335,7 +329,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardNo
      *
-     * @param string $cardNo cardNo
+     * @param string $cardNo The card number.
      *
      * @return self
      */
@@ -349,7 +343,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cvv
      *
-     * @return string
+     * @return string|null
      */
     public function getCvv()
     {
@@ -359,7 +353,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cvv
      *
-     * @param string $cvv cvv
+     * @param string|null $cvv The card verification value (CVV), which is also known as a card security code (CSC) or a card verification code (CVC).Specify this parameter when the value of paymentMethodRegion is GLOBAL, BR, CL, MX, or PE.
      *
      * @return self
      */
@@ -383,7 +377,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiryYear
      *
-     * @param string $expiryYear expiryYear
+     * @param string $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiry year is 2025, the value of this parameter is ​25​.
      *
      * @return self
      */
@@ -407,7 +401,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiryMonth
      *
-     * @param string $expiryMonth expiryMonth
+     * @param string $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiry month is February, the value of this parameter is ​02​.
      *
      * @return self
      */
@@ -421,7 +415,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cardholderName
      *
-     * @return \model\UserName
+     * @return \model\UserName|null
      */
     public function getCardholderName()
     {
@@ -431,7 +425,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cardholderName
      *
-     * @param \model\UserName $cardholderName cardholderName
+     * @param \model\UserName|null $cardholderName cardholderName
      *
      * @return self
      */

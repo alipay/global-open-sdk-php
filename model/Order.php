@@ -379,11 +379,11 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['referenceOrderId'] === null) {
             $invalidProperties[] = "'referenceOrderId' can't be null";
         }
+        if ($this->container['orderDescription'] === null) {
+            $invalidProperties[] = "'orderDescription' can't be null";
+        }
         if ($this->container['orderAmount'] === null) {
             $invalidProperties[] = "'orderAmount' can't be null";
-        }
-        if ($this->container['orderType'] === null) {
-            $invalidProperties[] = "'orderType' can't be null";
         }
         return $invalidProperties;
     }
@@ -427,7 +427,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orderDescription
      *
-     * @return string|null
+     * @return string
      */
     public function getOrderDescription()
     {
@@ -437,7 +437,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderDescription
      *
-     * @param string|null $orderDescription Summary description of the order, which is used for user consumption records display or other further actions.  More information:  Maximum length: 256 characters
+     * @param string $orderDescription Summary description of the order, which is used for user consumption records display or other further actions.  More information:  Maximum length: 256 characters
      *
      * @return self
      */
@@ -787,7 +787,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orderType
      *
-     * @return string
+     * @return string|null
      */
     public function getOrderType()
     {
@@ -797,7 +797,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderType
      *
-     * @param string $orderType test
+     * @param string|null $orderType test
      *
      * @return self
      */

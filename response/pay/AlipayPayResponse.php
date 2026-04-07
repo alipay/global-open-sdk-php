@@ -1101,7 +1101,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets promotionResult
      *
-     * @param \model\PromotionResult[]|null $promotionResult Promotion result.
+     * @param \model\PromotionResult[]|null $promotionResult Promotion result.  Note: This parameter is generated when the buyer applies a promotion during the process of placing an order.
      *
      * @return self
      */
