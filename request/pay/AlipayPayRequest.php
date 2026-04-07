@@ -506,7 +506,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets metadata
      *
-     * @param string|null $metadata 用于商户自定义元数据信息，支持JSON格式
+     * @param string|null $metadata Use this parameter to submit metadata, including information for special use cases.  Specify this parameter when you need to add metadata information.
      *
      * @return self
      */

@@ -516,11 +516,14 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['expiryYear'] === null) {
-            $invalidProperties[] = "'expiryYear' can't be null";
+        if ($this->container['cardToken'] === null) {
+            $invalidProperties[] = "'cardToken' can't be null";
         }
-        if ($this->container['expiryMonth'] === null) {
-            $invalidProperties[] = "'expiryMonth' can't be null";
+        if ($this->container['brand'] === null) {
+            $invalidProperties[] = "'brand' can't be null";
+        }
+        if ($this->container['maskedCardNo'] === null) {
+            $invalidProperties[] = "'maskedCardNo' can't be null";
         }
         return $invalidProperties;
     }
@@ -564,7 +567,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets cardToken
      *
-     * @return string|null
+     * @return string
      */
     public function getCardToken()
     {
@@ -574,7 +577,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets cardToken
      *
-     * @param string|null $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (Checkout Payment) API when initiating payments.   More information:  Maximum length: 2048 characters
+     * @param string $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (Checkout Payment) API when initiating payments.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -612,7 +615,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets brand
      *
-     * @return \model\CardBrand|null
+     * @return \model\CardBrand
      */
     public function getBrand()
     {
@@ -622,7 +625,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets brand
      *
-     * @param \model\CardBrand|null $brand brand
+     * @param \model\CardBrand $brand brand
      *
      * @return self
      */
@@ -732,7 +735,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets expiryYear
      *
-     * @return string
+     * @return string|null
      */
     public function getExpiryYear()
     {
@@ -742,7 +745,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets expiryYear
      *
-     * @param string $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiration year is 2025, the value of this parameter is 25.   More information:  Maximum length: 2 characters
+     * @param string|null $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiration year is 2025, the value of this parameter is 25.   More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -756,7 +759,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets expiryMonth
      *
-     * @return string
+     * @return string|null
      */
     public function getExpiryMonth()
     {
@@ -766,7 +769,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets expiryMonth
      *
-     * @param string $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiration month is February, the value of this parameter is 02.   More information:  Maximum length: 2 characters
+     * @param string|null $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiration month is February, the value of this parameter is 02.   More information:  Maximum length: 2 characters
      *
      * @return self
      */
@@ -876,7 +879,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets maskedCardNo
      *
-     * @return string|null
+     * @return string
      */
     public function getMaskedCardNo()
     {
@@ -886,7 +889,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets maskedCardNo
      *
-     * @param string|null $maskedCardNo The masked card number, showing only a few digits and hiding the rest.   More information:  Maximum length: 64 characters
+     * @param string $maskedCardNo The masked card number, showing only a few digits and hiding the rest.   More information:  Maximum length: 64 characters
      *
      * @return self
      */

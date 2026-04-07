@@ -53,7 +53,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerResultCode' => 'string',
         'acquirerResultMessage' => 'string',
         'acquirerMerchantName' => 'string',
-        'acquirerReasonDescription' => 'string'
+        'acquirerReasonDescription' => 'string',
+        'ptspTransactionId' => 'string',
+        'acquirerCardToken' => 'string'
     ];
 
     /**
@@ -71,7 +73,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerResultCode' => null,
         'acquirerResultMessage' => null,
         'acquirerMerchantName' => null,
-        'acquirerReasonDescription' => null
+        'acquirerReasonDescription' => null,
+        'ptspTransactionId' => null,
+        'acquirerCardToken' => null
     ];
 
     /**
@@ -87,7 +91,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerResultCode' => false,
         'acquirerResultMessage' => false,
         'acquirerMerchantName' => false,
-        'acquirerReasonDescription' => false
+        'acquirerReasonDescription' => false,
+        'ptspTransactionId' => false,
+        'acquirerCardToken' => false
     ];
 
     /**
@@ -183,7 +189,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerResultCode' => 'acquirerResultCode',
         'acquirerResultMessage' => 'acquirerResultMessage',
         'acquirerMerchantName' => 'acquirerMerchantName',
-        'acquirerReasonDescription' => 'acquirerReasonDescription'
+        'acquirerReasonDescription' => 'acquirerReasonDescription',
+        'ptspTransactionId' => 'ptspTransactionId',
+        'acquirerCardToken' => 'acquirerCardToken'
     ];
 
     /**
@@ -199,7 +207,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerResultCode' => 'setAcquirerResultCode',
         'acquirerResultMessage' => 'setAcquirerResultMessage',
         'acquirerMerchantName' => 'setAcquirerMerchantName',
-        'acquirerReasonDescription' => 'setAcquirerReasonDescription'
+        'acquirerReasonDescription' => 'setAcquirerReasonDescription',
+        'ptspTransactionId' => 'setPtspTransactionId',
+        'acquirerCardToken' => 'setAcquirerCardToken'
     ];
 
     /**
@@ -215,7 +225,9 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerResultCode' => 'getAcquirerResultCode',
         'acquirerResultMessage' => 'getAcquirerResultMessage',
         'acquirerMerchantName' => 'getAcquirerMerchantName',
-        'acquirerReasonDescription' => 'getAcquirerReasonDescription'
+        'acquirerReasonDescription' => 'getAcquirerReasonDescription',
+        'ptspTransactionId' => 'getPtspTransactionId',
+        'acquirerCardToken' => 'getAcquirerCardToken'
     ];
 
     /**
@@ -283,6 +295,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('acquirerResultMessage', $data ?? [], null);
         $this->setIfExists('acquirerMerchantName', $data ?? [], null);
         $this->setIfExists('acquirerReasonDescription', $data ?? [], null);
+        $this->setIfExists('ptspTransactionId', $data ?? [], null);
+        $this->setIfExists('acquirerCardToken', $data ?? [], null);
 
             }
 
@@ -516,6 +530,54 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcquirerReasonDescription($acquirerReasonDescription)
     {
         $this->container['acquirerReasonDescription'] = $acquirerReasonDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets ptspTransactionId
+     *
+     * @return string|null
+     */
+    public function getPtspTransactionId()
+    {
+        return $this->container['ptspTransactionId'];
+    }
+
+    /**
+     * Sets ptspTransactionId
+     *
+     * @param string|null $ptspTransactionId ptspTransactionId
+     *
+     * @return self
+     */
+    public function setPtspTransactionId($ptspTransactionId)
+    {
+        $this->container['ptspTransactionId'] = $ptspTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerCardToken
+     *
+     * @return string|null
+     */
+    public function getAcquirerCardToken()
+    {
+        return $this->container['acquirerCardToken'];
+    }
+
+    /**
+     * Sets acquirerCardToken
+     *
+     * @param string|null $acquirerCardToken The card token assigned by the acquirer for card tokenization.  Note: This parameter is returned if you integrate the APO product.  More information:  Maximum length: 64 characters
+     *
+     * @return self
+     */
+    public function setAcquirerCardToken($acquirerCardToken)
+    {
+        $this->container['acquirerCardToken'] = $acquirerCardToken;
 
         return $this;
     }
