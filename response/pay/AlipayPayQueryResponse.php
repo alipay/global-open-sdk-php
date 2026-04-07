@@ -1184,7 +1184,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId merchantAccountId
+     * @param string|null $merchantAccountId The unique ID to identify a merchant account.  Note: Specify this parameter when you use a single client ID across multiple locations.
      *
      * @return self
      */

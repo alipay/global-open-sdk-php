@@ -517,7 +517,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets clientIp
      *
-     * @param string|null $clientIp Client IP address of the device.
+     * @param string|null $clientIp The IP address of the client device.  Note: Specify this parameter when one of the following conditions is met:  You require risk control. The value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.
      *
      * @return self
      */
@@ -805,7 +805,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceLanguage
      *
-     * @param string|null $deviceLanguage Device language of the user.
+     * @param string|null $deviceLanguage The language of the device where the user places an order.  Note: Specify this parameter if you require risk control. Providing this information helps to identify black-market behavior.
      *
      * @return self
      */
@@ -829,7 +829,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deviceId
      *
-     * @param string|null $deviceId Device ID of the user.
+     * @param string|null $deviceId The unique ID of the device the user places an order with.  Note: Specify this parameter if you require risk control. This parameter can be used to build a trusted relationship between users and commonly used devices, thereby reducing risk control interruptions and increasing the payment success rate.
      *
      * @return self
      */

@@ -235,7 +235,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
     {
         $this->setIfExists('currency', $data ?? [], null);
 
-         $this->setPath("/ams/v1/aba/account/inquireAvailableQuota"); 
+         $this->setPath("/ams/api/v1/aba/account/inquireAvailableQuota"); 
     }
 
     /**
