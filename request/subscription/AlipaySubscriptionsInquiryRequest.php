@@ -242,7 +242,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('subscriptionRequestId', $data ?? [], null);
 
-         $this->setPath("/ams/v1/subscriptions/inquiry"); 
+         $this->setPath("/ams/api/v1/subscriptions/inquiry"); 
     }
 
     /**

@@ -249,7 +249,7 @@ class AlipayCreateQuoteRequest   extends AlipayRequest  implements ModelInterfac
         $this->setIfExists('sellAmount', $data ?? [], null);
         $this->setIfExists('exchangeTradeType', $data ?? [], null);
 
-         $this->setPath("/ams/v1/aba/funds/createQuote"); 
+         $this->setPath("/ams/api/v1/aba/funds/createQuote"); 
     }
 
     /**

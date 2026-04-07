@@ -371,7 +371,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId 一点集成场景使用
+     * @param string|null $merchantAccountId A unique ID to identify a specific merchant account.  Note: Specify this parameter when you use one client ID across multiple locations.
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets metadata
      *
-     * @param string|null $metadata 商户使用，Json Format，用于提交元数据信息
+     * @param string|null $metadata This parameter is used for submitting metadata, including information for special use cases.  Specify this parameter when you need to add metadata information.
      *
      * @return self
      */

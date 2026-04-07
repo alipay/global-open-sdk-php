@@ -327,7 +327,7 @@ class AlipayVaultingQueryRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId Merchant account ID for 2C2P integration scenario
+     * @param string|null $merchantAccountId A unique ID to identify a specific merchant account.  Note: Specify this parameter when you use one client ID across multiple locations.
      *
      * @return self
      */

@@ -71,7 +71,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'accountNo' => 'string',
         'exemptionRequested' => 'string',
         'credentialTypeUsed' => 'string',
-        'rrn' => 'string'
+        'rrn' => 'string',
+        'userAuthorizationStatus' => 'string'
     ];
 
     /**
@@ -107,7 +108,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'accountNo' => null,
         'exemptionRequested' => null,
         'credentialTypeUsed' => null,
-        'rrn' => null
+        'rrn' => null,
+        'userAuthorizationStatus' => null
     ];
 
     /**
@@ -141,7 +143,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'accountNo' => false,
         'exemptionRequested' => false,
         'credentialTypeUsed' => false,
-        'rrn' => false
+        'rrn' => false,
+        'userAuthorizationStatus' => false
     ];
 
     /**
@@ -255,7 +258,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'accountNo' => 'accountNo',
         'exemptionRequested' => 'exemptionRequested',
         'credentialTypeUsed' => 'credentialTypeUsed',
-        'rrn' => 'rrn'
+        'rrn' => 'rrn',
+        'userAuthorizationStatus' => 'userAuthorizationStatus'
     ];
 
     /**
@@ -289,7 +293,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'accountNo' => 'setAccountNo',
         'exemptionRequested' => 'setExemptionRequested',
         'credentialTypeUsed' => 'setCredentialTypeUsed',
-        'rrn' => 'setRrn'
+        'rrn' => 'setRrn',
+        'userAuthorizationStatus' => 'setUserAuthorizationStatus'
     ];
 
     /**
@@ -323,7 +328,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'accountNo' => 'getAccountNo',
         'exemptionRequested' => 'getExemptionRequested',
         'credentialTypeUsed' => 'getCredentialTypeUsed',
-        'rrn' => 'getRrn'
+        'rrn' => 'getRrn',
+        'userAuthorizationStatus' => 'getUserAuthorizationStatus'
     ];
 
     /**
@@ -409,6 +415,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('exemptionRequested', $data ?? [], null);
         $this->setIfExists('credentialTypeUsed', $data ?? [], null);
         $this->setIfExists('rrn', $data ?? [], null);
+        $this->setIfExists('userAuthorizationStatus', $data ?? [], null);
 
             }
 
@@ -971,7 +978,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cardCategory
      *
-     * @param string|null $cardCategory Added field for card category
+     * @param string|null $cardCategory The payment card category. Valid vaules are:  CONSUMER: the personal card COMMERCIAL: the business card
      *
      * @return self
      */
@@ -1019,7 +1026,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets exemptionRequested
      *
-     * @param string|null $exemptionRequested Added field for exemption requested
+     * @param string|null $exemptionRequested The exemption type that Antom requested for in the payment authorization. Valid values are:  lowValue: Transactions below €30 may be exempt from Strong Customer Authentication, if certain cumulative amount and transaction count criteria are met. transactionRiskAnalysis: Transactions considered at low risk of fraud based on the fraud level of the payment provider.
      *
      * @return self
      */
@@ -1043,7 +1050,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets credentialTypeUsed
      *
-     * @param string|null $credentialTypeUsed Added field for credential type used
+     * @param string|null $credentialTypeUsed Indicates whether the transaction was processed with the primary account number (PAN) or a network token.  PAN: The transaction was processed using the PAN. NETWORK_TOKEN: The transaction was processed using a network token provided by the merchant or Antom.
      *
      * @return self
      */
@@ -1074,6 +1081,30 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setRrn($rrn)
     {
         $this->container['rrn'] = $rrn;
+
+        return $this;
+    }
+
+    /**
+     * Gets userAuthorizationStatus
+     *
+     * @return string|null
+     */
+    public function getUserAuthorizationStatus()
+    {
+        return $this->container['userAuthorizationStatus'];
+    }
+
+    /**
+     * Sets userAuthorizationStatus
+     *
+     * @param string|null $userAuthorizationStatus 交易中用户是否授权绑定，当用户使用PAYPAY支付并且指定支付要素smartPaymentEnabled=true的情况下才会返回。 ● AUTHORIZED - 用户发起交易时时已授权，直接付款 ● UNAUTHORIZED - 用户发起交易时未授权，现授权后付款
+     *
+     * @return self
+     */
+    public function setUserAuthorizationStatus($userAuthorizationStatus)
+    {
+        $this->container['userAuthorizationStatus'] = $userAuthorizationStatus;
 
         return $this;
     }

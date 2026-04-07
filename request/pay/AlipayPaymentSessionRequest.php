@@ -487,9 +487,6 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         if ($this->container['paymentAmount'] === null) {
             $invalidProperties[] = "'paymentAmount' can't be null";
         }
-        if ($this->container['paymentMethod'] === null) {
-            $invalidProperties[] = "'paymentMethod' can't be null";
-        }
         if ($this->container['paymentRedirectUrl'] === null) {
             $invalidProperties[] = "'paymentRedirectUrl' can't be null";
         }
@@ -524,7 +521,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets merchantAccountId
      *
-     * @param string|null $merchantAccountId The merchant account ID
+     * @param string|null $merchantAccountId A unique ID to identify a specific merchant account.  Note: Specify this parameter when you use one client ID across multiple locations.
      *
      * @return self
      */
@@ -548,7 +545,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets metadata
      *
-     * @param string|null $metadata Additional metadata for the payment session
+     * @param string|null $metadata This parameter is used for submitting metadata, including information for special use cases.  Specify this parameter when you need to add metadata information.
      *
      * @return self
      */
@@ -572,7 +569,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets allowedPaymentMethodRegions
      *
-     * @param string|null $allowedPaymentMethodRegions Allowed payment method regions
+     * @param string|null $allowedPaymentMethodRegions A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.   Note: Specify this parameter if you want available payment methods from specific regions to be returned. For example, if you pass in GLOBAL, global cards Visa and Mastercard are returned.
      *
      * @return self
      */
@@ -850,7 +847,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets paymentMethod
      *
-     * @return \model\PaymentMethod
+     * @return \model\PaymentMethod|null
      */
     public function getPaymentMethod()
     {
@@ -860,7 +857,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets paymentMethod
      *
-     * @param \model\PaymentMethod $paymentMethod paymentMethod
+     * @param \model\PaymentMethod|null $paymentMethod paymentMethod
      *
      * @return self
      */
