@@ -235,7 +235,7 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
     {
         $this->setIfExists('rateConditionList', $data ?? [], null);
 
-         $this->setPath("/ams/v1/aba/funds/inquireRate"); 
+         $this->setPath("/ams/api/v1/aba/funds/inquireRate"); 
     }
 
     /**
