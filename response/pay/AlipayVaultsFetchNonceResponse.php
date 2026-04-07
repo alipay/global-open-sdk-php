@@ -305,7 +305,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets cardToken
      *
-     * @param string $cardToken cardToken
+     * @param string $cardToken The token of the card. The value of this parameter is used by paymentMethodId in the pay (One-time Payments) API when initiating payments.
      *
      * @return self
      */
