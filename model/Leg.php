@@ -348,6 +348,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['departureAirportCode'] === null) {
+            $invalidProperties[] = "'departureAirportCode' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -534,7 +537,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets departureAirportCode
      *
-     * @return string|null
+     * @return string
      */
     public function getDepartureAirportCode()
     {
@@ -544,7 +547,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departureAirportCode
      *
-     * @param string|null $departureAirportCode IATA code for the originating airport for this leg of the trip.  More information:  Maximum length: 8 characters
+     * @param string $departureAirportCode IATA code for the originating airport for this leg of the trip.  More information:  Maximum length: 8 characters
      *
      * @return self
      */
