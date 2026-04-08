@@ -26,32 +26,213 @@ namespace Model;
 
 class CustomerBelongsTo
 {
+    public const CARD = 'CARD';
+    public const GOOGLEPAY = 'GOOGLEPAY';
+    public const APPLEPAY = 'APPLEPAY';
+    public const EPS = 'EPS';
+    public const BANCONTACT = 'BANCONTACT';
+    public const PIX = 'PIX';
+    public const MERCADOPAGO_BR = 'MERCADOPAGO_BR';
+    public const PAGALEVE = 'PAGALEVE';
+    public const PICPAY = 'PICPAY';
+    public const MERCADOPAGO_CL = 'MERCADOPAGO_CL';
+    public const ALIPAY_CN = 'ALIPAY_CN';
+    public const JKOPAY = 'JKOPAY';
+    public const ALIPAY_HK = 'ALIPAY_HK';
+    public const OCTOPUS = 'OCTOPUS';
+    public const MPAY = 'MPAY';
+    public const PAYME = 'PAYME';
+    public const UPI = 'UPI';
+    public const ONLINEBANKING_NETBANKING = 'ONLINEBANKING_NETBANKING';
+    public const DANA = 'DANA';
+    public const KREDIVO_ID = 'KREDIVO_ID';
+    public const OVO = 'OVO';
+    public const GOPAY_ID = 'GOPAY_ID';
+    public const QRIS = 'QRIS';
+    public const SHOPEEPAY_ID = 'SHOPEEPAY_ID';
+    public const LINKAJA = 'LINKAJA';
+    public const BANCOMATPAY = 'BANCOMATPAY';
+    public const SATISPAY = 'SATISPAY';
+    public const TINABA = 'TINABA';
+    public const PAYPAY = 'PAYPAY';
+    public const KONBINI = 'KONBINI';
+    public const SEVENELEVEN = 'SEVENELEVEN';
+    public const ONLINEBANKING_PAYEASY = 'ONLINEBANKING_PAYEASY';
+    public const AUPAY = 'AUPAY';
+    public const FAMIPAY = 'FAMIPAY';
+    public const MERPAY = 'MERPAY';
+    public const PAIDY = 'PAIDY';
+    public const D_BARAI_PAY = 'D_BARAI_PAY';
+    public const RAKUTEN_PAY = 'RAKUTEN_PAY';
+    public const BOOST = 'BOOST';
+    public const TNG = 'TNG';
+    public const GRABPAY_MY = 'GRABPAY_MY';
+    public const ONLINEBANKING_FPX = 'ONLINEBANKING_FPX';
+    public const SHOPEEPAY_MY = 'SHOPEEPAY_MY';
+    public const MERCADOPAGO_MX = 'MERCADOPAGO_MX';
+    public const HIPAY = 'HIPAY';
+    public const IDEAL = 'IDEAL';
+    public const MERCADOPAGO_PE = 'MERCADOPAGO_PE';
+    public const BPI = 'BPI';
+    public const GCASH = 'GCASH';
+    public const BILLEASE = 'BILLEASE';
+    public const MAYA = 'MAYA';
+    public const ONLINEBANKING_UBP = 'ONLINEBANKING_UBP';
+    public const SHOPEEPAY_PH = 'SHOPEEPAY_PH';
+    public const GRABPAY_PH = 'GRABPAY_PH';
+    public const QRPH = 'QRPH';
+    public const PAYU = 'PAYU';
+    public const P24 = 'P24';
+    public const BLIK = 'BLIK';
+    public const MB_WAY = 'MB_WAY';
+    public const GRABPAY_SG = 'GRABPAY_SG';
+    public const PAYNOW = 'PAYNOW';
+    public const SHOPEEPAY_SG = 'SHOPEEPAY_SG';
+    public const KAKAOPAY = 'KAKAOPAY';
+    public const NAVERPAY = 'NAVERPAY';
+    public const TOSSPAY = 'TOSSPAY';
+    public const BANKTRANSFER_QUICKPAY = 'BANKTRANSFER_QUICKPAY';
+    public const DIRECT_CARRIER_BILLING_KR = 'DIRECT_CARRIER_BILLING_KR';
+    public const SAMSUNG_PAY_KR = 'SAMSUNG_PAY_KR';
+    public const BIZUM = 'BIZUM';
+    public const SEQURA = 'SEQURA';
+    public const SWISH = 'SWISH';
+    public const TWINT = 'TWINT';
     public const RABBIT_LINE_PAY = 'RABBIT_LINE_PAY';
     public const TRUEMONEY = 'TRUEMONEY';
-    public const ALIPAY_HK = 'ALIPAY_HK';
-    public const TNG = 'TNG';
-    public const ALIPAY_CN = 'ALIPAY_CN';
-    public const GCASH = 'GCASH';
-    public const DANA = 'DANA';
-    public const KAKAOPAY = 'KAKAOPAY';
-    public const BKASH = 'BKASH';
-    public const EASYPAISA = 'EASYPAISA';
-    public const PAYPAY = 'PAYPAY';
-    public const BOOST = 'BOOST';
-    public const GRABPAY_MY = 'GRABPAY_MY';
-    public const MAYA = 'MAYA';
-    public const GRABPAY_PH = 'GRABPAY_PH';
-    public const GRABPAY_SG = 'GRABPAY_SG';
-    public const NAVERPAY = 'NAVERPAY';
-    public const JKOPAY = 'JKOPAY';
+    public const ONLINBANKING_KRUNGTHAIBANK = 'ONLINBANKING_KRUNGTHAIBANK';
+    public const BANKAPP_KRUNGTHAIBANK = 'BANKAPP_KRUNGTHAIBANK';
+    public const ONLINBANKING_SIAMCOMMERICALBANK = 'ONLINBANKING_SIAMCOMMERICALBANK';
+    public const BANKAPP_SIAMCOMMERICALBANK = 'BANKAPP_SIAMCOMMERICALBANK';
+    public const ONLINBANKING_BANGKOKBANK = 'ONLINBANKING_BANGKOKBANK';
+    public const BANKAPP_BANGKOKBANK = 'BANKAPP_BANGKOKBANK';
+    public const ONLINBANKING_BANKOFAYUDHYA = 'ONLINBANKING_BANKOFAYUDHYA';
+    public const BANKAPP_BANKOFAYUDHYA = 'BANKAPP_BANKOFAYUDHYA';
+    public const ONLINBANKING_KASIKORNBANK = 'ONLINBANKING_KASIKORNBANK';
+    public const BANKTRANSFER_KASIKORNBANK = 'BANKTRANSFER_KASIKORNBANK';
+    public const BANKTRANSFER_GOVERNMENTSAVINGSBANK = 'BANKTRANSFER_GOVERNMENTSAVINGSBANK';
+    public const PROMPTPAY = 'PROMPTPAY';
+    public const SHOPEEPAY_TH = 'SHOPEEPAY_TH';
     public const KPLUS = 'KPLUS';
+    public const ONLINBANKING_YAPILY = 'ONLINBANKING_YAPILY';
+    public const ZALOPAY = 'ZALOPAY';
+    public const MOMO = 'MOMO';
+    public const BANKTRANSFER_VIA_VIETQR = 'BANKTRANSFER_VIA_VIETQR';
+    public const VIETTELMONEY = 'VIETTELMONEY';
+    public const TAMARA_SA = 'TAMARA_SA';
+    public const TAMARA_AE = 'TAMARA_AE';
+    public const TABBY = 'TABBY';
+    public const ACH_DIRECT_DEBIT = 'ACH_DIRECT_DEBIT';
     public const DIRECT_DEBIT_SIAMCOMMERCIALBANK = 'DIRECT_DEBIT_SIAMCOMMERCIALBANK';
     public const DIRECT_DEBIT_KRUNGTHAIBANK = 'DIRECT_DEBIT_KRUNGTHAIBANK';
-    public const ZALOPAY = 'ZALOPAY';
+    public const VISA = 'VISA';
+    public const MASTERCARD = 'MASTERCARD';
+    public const AMEX = 'AMEX';
+    public const DISCOVER = 'DISCOVER';
+    public const DINERS = 'DINERS';
+    public const CUP = 'CUP';
+    public const JCB = 'JCB';
+    public const HIPERCARD = 'HIPERCARD';
+    public const ELO = 'ELO';
+    public const MAESTRO = 'MAESTRO';
+    public const CARTES_BANCAIRES = 'CARTES_BANCAIRES';
+    public const KOOKMIN = 'KOOKMIN';
+    public const BC = 'BC';
+    public const NONGHYUP = 'NONGHYUP';
+    public const SHINHAN = 'SHINHAN';
+    public const SAMSUNG = 'SAMSUNG';
+    public const LOTTE = 'LOTTE';
+    public const HYUNDAI = 'HYUNDAI';
+    public const KEBHANA = 'KEBHANA';
+    public const WOORI = 'WOORI';
+    public const IBK_BC = 'IBK_BC';
+    public const GWANGJUBANK = 'GWANGJUBANK';
+    public const KDBBANK = 'KDBBANK';
+    public const SAEMAUL = 'SAEMAUL';
+    public const SHINHYEOP = 'SHINHYEOP';
+    public const CITI = 'CITI';
+    public const POST = 'POST';
+    public const SAVINGBANK = 'SAVINGBANK';
+    public const JEONBUKBANK = 'JEONBUKBANK';
+    public const JEJUBANK = 'JEJUBANK';
+    public const KAKAOBANK = 'KAKAOBANK';
+    public const KBANK = 'KBANK';
+    public const TOSSBANK = 'TOSSBANK';
+    public const SUHYEOP = 'SUHYEOP';
+    public const CARNET = 'CARNET';
+    public const TROY = 'TROY';
+    public const _20 = '20';
+    public const _26 = '26';
+    public const _31 = '31';
+    public const _33 = '33';
+    public const _43 = '43';
+    public const _45 = '45';
+    public const _49 = '49';
+    public const _52 = '52';
+    public const _53 = '53';
+    public const _54 = '54';
+    public const _64 = '64';
+    public const _65 = '65';
+    public const _69 = '69';
+    public const _85 = '85';
+    public const _88 = '88';
+    public const _90 = '90';
+    public const _95 = '95';
+    public const _99 = '99';
+    public const _112 = '112';
+    public const _119 = '119';
+    public const _129 = '129';
+    public const _131 = '131';
+    public const _136 = '136';
+    public const _141 = '141';
+    public const _143 = '143';
+    public const _144 = '144';
+    public const _153 = '153';
+    public const _154 = '154';
+    public const _158 = '158';
+    public const _161 = '161';
+    public const _222 = '222';
+    public const _223 = '223';
+    public const _243 = '243';
+    public const _266 = '266';
+    public const _270 = '270';
+    public const _271 = '271';
+    public const _272 = '272';
+    public const _274 = '274';
+    public const _275 = '275';
+    public const _279 = '279';
+    public const _280 = '280';
+    public const MYM2_U = 'MYM2U';
+    public const MYBISM = 'MYBISM';
+    public const MYRHB = 'MYRHB';
+    public const MYHLB = 'MYHLB';
+    public const MYCIMBCLICKS = 'MYCIMBCLICKS';
+    public const MYAMB = 'MYAMB';
+    public const MYPBB = 'MYPBB';
+    public const MYABB = 'MYABB';
+    public const MYAGB = 'MYAGB';
+    public const MYABMB = 'MYABMB';
+    public const MYBMMB = 'MYBMMB';
+    public const MYBOC = 'MYBOC';
+    public const MYBKRM = 'MYBKRM';
+    public const MYBSN = 'MYBSN';
+    public const MYHSBC = 'MYHSBC';
+    public const MYKFH = 'MYKFH';
+    public const MYOCBC = 'MYOCBC';
+    public const MYSCB = 'MYSCB';
+    public const MYUOB = 'MYUOB';
+    public const IPAY_MONZO = 'ipay-monzo';
+    public const IPAY_SANTANDER = 'ipay-santander';
+    public const IPAY_HSBC = 'ipay-hsbc';
+    public const IPAY_LLOYDS = 'ipay-lloyds';
+    public const IPAY_REVOLUT = 'ipay-revolut';
+    public const IPAY_BARCLAYS = 'ipay-barclays';
+    public const IPAY_NATWEST = 'ipay-natwest';
+    public const IPAY_NATIONWIDE = 'ipay-nationwide';
+    public const BKASH = 'BKASH';
+    public const EASYPAISA = 'EASYPAISA';
     public const DIRECTDEBIT_YAPILY = 'DIRECTDEBIT_YAPILY';
-    public const TOSSPAY = 'TOSSPAY';
-    public const MOMO = 'MOMO';
-    public const ANTOM_BIZ_ACCOUNT = 'ANTOM_BIZ_ACCOUNT';
+    public const ANTIM_BIZ_ACCOUNT = 'ANTIM_BIZ_ACCOUNT';
 
     public $value;
 
@@ -60,6 +241,294 @@ class CustomerBelongsTo
         $this->value = $value;
     }
 
+    public static function CARD(): self
+    {
+        return new self(self::CARD);
+    }
+    public static function GOOGLEPAY(): self
+    {
+        return new self(self::GOOGLEPAY);
+    }
+    public static function APPLEPAY(): self
+    {
+        return new self(self::APPLEPAY);
+    }
+    public static function EPS(): self
+    {
+        return new self(self::EPS);
+    }
+    public static function BANCONTACT(): self
+    {
+        return new self(self::BANCONTACT);
+    }
+    public static function PIX(): self
+    {
+        return new self(self::PIX);
+    }
+    public static function MERCADOPAGO_BR(): self
+    {
+        return new self(self::MERCADOPAGO_BR);
+    }
+    public static function PAGALEVE(): self
+    {
+        return new self(self::PAGALEVE);
+    }
+    public static function PICPAY(): self
+    {
+        return new self(self::PICPAY);
+    }
+    public static function MERCADOPAGO_CL(): self
+    {
+        return new self(self::MERCADOPAGO_CL);
+    }
+    public static function ALIPAY_CN(): self
+    {
+        return new self(self::ALIPAY_CN);
+    }
+    public static function JKOPAY(): self
+    {
+        return new self(self::JKOPAY);
+    }
+    public static function ALIPAY_HK(): self
+    {
+        return new self(self::ALIPAY_HK);
+    }
+    public static function OCTOPUS(): self
+    {
+        return new self(self::OCTOPUS);
+    }
+    public static function MPAY(): self
+    {
+        return new self(self::MPAY);
+    }
+    public static function PAYME(): self
+    {
+        return new self(self::PAYME);
+    }
+    public static function UPI(): self
+    {
+        return new self(self::UPI);
+    }
+    public static function ONLINEBANKING_NETBANKING(): self
+    {
+        return new self(self::ONLINEBANKING_NETBANKING);
+    }
+    public static function DANA(): self
+    {
+        return new self(self::DANA);
+    }
+    public static function KREDIVO_ID(): self
+    {
+        return new self(self::KREDIVO_ID);
+    }
+    public static function OVO(): self
+    {
+        return new self(self::OVO);
+    }
+    public static function GOPAY_ID(): self
+    {
+        return new self(self::GOPAY_ID);
+    }
+    public static function QRIS(): self
+    {
+        return new self(self::QRIS);
+    }
+    public static function SHOPEEPAY_ID(): self
+    {
+        return new self(self::SHOPEEPAY_ID);
+    }
+    public static function LINKAJA(): self
+    {
+        return new self(self::LINKAJA);
+    }
+    public static function BANCOMATPAY(): self
+    {
+        return new self(self::BANCOMATPAY);
+    }
+    public static function SATISPAY(): self
+    {
+        return new self(self::SATISPAY);
+    }
+    public static function TINABA(): self
+    {
+        return new self(self::TINABA);
+    }
+    public static function PAYPAY(): self
+    {
+        return new self(self::PAYPAY);
+    }
+    public static function KONBINI(): self
+    {
+        return new self(self::KONBINI);
+    }
+    public static function SEVENELEVEN(): self
+    {
+        return new self(self::SEVENELEVEN);
+    }
+    public static function ONLINEBANKING_PAYEASY(): self
+    {
+        return new self(self::ONLINEBANKING_PAYEASY);
+    }
+    public static function AUPAY(): self
+    {
+        return new self(self::AUPAY);
+    }
+    public static function FAMIPAY(): self
+    {
+        return new self(self::FAMIPAY);
+    }
+    public static function MERPAY(): self
+    {
+        return new self(self::MERPAY);
+    }
+    public static function PAIDY(): self
+    {
+        return new self(self::PAIDY);
+    }
+    public static function D_BARAI_PAY(): self
+    {
+        return new self(self::D_BARAI_PAY);
+    }
+    public static function RAKUTEN_PAY(): self
+    {
+        return new self(self::RAKUTEN_PAY);
+    }
+    public static function BOOST(): self
+    {
+        return new self(self::BOOST);
+    }
+    public static function TNG(): self
+    {
+        return new self(self::TNG);
+    }
+    public static function GRABPAY_MY(): self
+    {
+        return new self(self::GRABPAY_MY);
+    }
+    public static function ONLINEBANKING_FPX(): self
+    {
+        return new self(self::ONLINEBANKING_FPX);
+    }
+    public static function SHOPEEPAY_MY(): self
+    {
+        return new self(self::SHOPEEPAY_MY);
+    }
+    public static function MERCADOPAGO_MX(): self
+    {
+        return new self(self::MERCADOPAGO_MX);
+    }
+    public static function HIPAY(): self
+    {
+        return new self(self::HIPAY);
+    }
+    public static function IDEAL(): self
+    {
+        return new self(self::IDEAL);
+    }
+    public static function MERCADOPAGO_PE(): self
+    {
+        return new self(self::MERCADOPAGO_PE);
+    }
+    public static function BPI(): self
+    {
+        return new self(self::BPI);
+    }
+    public static function GCASH(): self
+    {
+        return new self(self::GCASH);
+    }
+    public static function BILLEASE(): self
+    {
+        return new self(self::BILLEASE);
+    }
+    public static function MAYA(): self
+    {
+        return new self(self::MAYA);
+    }
+    public static function ONLINEBANKING_UBP(): self
+    {
+        return new self(self::ONLINEBANKING_UBP);
+    }
+    public static function SHOPEEPAY_PH(): self
+    {
+        return new self(self::SHOPEEPAY_PH);
+    }
+    public static function GRABPAY_PH(): self
+    {
+        return new self(self::GRABPAY_PH);
+    }
+    public static function QRPH(): self
+    {
+        return new self(self::QRPH);
+    }
+    public static function PAYU(): self
+    {
+        return new self(self::PAYU);
+    }
+    public static function P24(): self
+    {
+        return new self(self::P24);
+    }
+    public static function BLIK(): self
+    {
+        return new self(self::BLIK);
+    }
+    public static function MB_WAY(): self
+    {
+        return new self(self::MB_WAY);
+    }
+    public static function GRABPAY_SG(): self
+    {
+        return new self(self::GRABPAY_SG);
+    }
+    public static function PAYNOW(): self
+    {
+        return new self(self::PAYNOW);
+    }
+    public static function SHOPEEPAY_SG(): self
+    {
+        return new self(self::SHOPEEPAY_SG);
+    }
+    public static function KAKAOPAY(): self
+    {
+        return new self(self::KAKAOPAY);
+    }
+    public static function NAVERPAY(): self
+    {
+        return new self(self::NAVERPAY);
+    }
+    public static function TOSSPAY(): self
+    {
+        return new self(self::TOSSPAY);
+    }
+    public static function BANKTRANSFER_QUICKPAY(): self
+    {
+        return new self(self::BANKTRANSFER_QUICKPAY);
+    }
+    public static function DIRECT_CARRIER_BILLING_KR(): self
+    {
+        return new self(self::DIRECT_CARRIER_BILLING_KR);
+    }
+    public static function SAMSUNG_PAY_KR(): self
+    {
+        return new self(self::SAMSUNG_PAY_KR);
+    }
+    public static function BIZUM(): self
+    {
+        return new self(self::BIZUM);
+    }
+    public static function SEQURA(): self
+    {
+        return new self(self::SEQURA);
+    }
+    public static function SWISH(): self
+    {
+        return new self(self::SWISH);
+    }
+    public static function TWINT(): self
+    {
+        return new self(self::TWINT);
+    }
     public static function RABBIT_LINE_PAY(): self
     {
         return new self(self::RABBIT_LINE_PAY);
@@ -68,73 +537,97 @@ class CustomerBelongsTo
     {
         return new self(self::TRUEMONEY);
     }
-    public static function ALIPAY_HK(): self
+    public static function ONLINBANKING_KRUNGTHAIBANK(): self
     {
-        return new self(self::ALIPAY_HK);
+        return new self(self::ONLINBANKING_KRUNGTHAIBANK);
     }
-    public static function TNG(): self
+    public static function BANKAPP_KRUNGTHAIBANK(): self
     {
-        return new self(self::TNG);
+        return new self(self::BANKAPP_KRUNGTHAIBANK);
     }
-    public static function ALIPAY_CN(): self
+    public static function ONLINBANKING_SIAMCOMMERICALBANK(): self
     {
-        return new self(self::ALIPAY_CN);
+        return new self(self::ONLINBANKING_SIAMCOMMERICALBANK);
     }
-    public static function GCASH(): self
+    public static function BANKAPP_SIAMCOMMERICALBANK(): self
     {
-        return new self(self::GCASH);
+        return new self(self::BANKAPP_SIAMCOMMERICALBANK);
     }
-    public static function DANA(): self
+    public static function ONLINBANKING_BANGKOKBANK(): self
     {
-        return new self(self::DANA);
+        return new self(self::ONLINBANKING_BANGKOKBANK);
     }
-    public static function KAKAOPAY(): self
+    public static function BANKAPP_BANGKOKBANK(): self
     {
-        return new self(self::KAKAOPAY);
+        return new self(self::BANKAPP_BANGKOKBANK);
     }
-    public static function BKASH(): self
+    public static function ONLINBANKING_BANKOFAYUDHYA(): self
     {
-        return new self(self::BKASH);
+        return new self(self::ONLINBANKING_BANKOFAYUDHYA);
     }
-    public static function EASYPAISA(): self
+    public static function BANKAPP_BANKOFAYUDHYA(): self
     {
-        return new self(self::EASYPAISA);
+        return new self(self::BANKAPP_BANKOFAYUDHYA);
     }
-    public static function PAYPAY(): self
+    public static function ONLINBANKING_KASIKORNBANK(): self
     {
-        return new self(self::PAYPAY);
+        return new self(self::ONLINBANKING_KASIKORNBANK);
     }
-    public static function BOOST(): self
+    public static function BANKTRANSFER_KASIKORNBANK(): self
     {
-        return new self(self::BOOST);
+        return new self(self::BANKTRANSFER_KASIKORNBANK);
     }
-    public static function GRABPAY_MY(): self
+    public static function BANKTRANSFER_GOVERNMENTSAVINGSBANK(): self
     {
-        return new self(self::GRABPAY_MY);
+        return new self(self::BANKTRANSFER_GOVERNMENTSAVINGSBANK);
     }
-    public static function MAYA(): self
+    public static function PROMPTPAY(): self
     {
-        return new self(self::MAYA);
+        return new self(self::PROMPTPAY);
     }
-    public static function GRABPAY_PH(): self
+    public static function SHOPEEPAY_TH(): self
     {
-        return new self(self::GRABPAY_PH);
-    }
-    public static function GRABPAY_SG(): self
-    {
-        return new self(self::GRABPAY_SG);
-    }
-    public static function NAVERPAY(): self
-    {
-        return new self(self::NAVERPAY);
-    }
-    public static function JKOPAY(): self
-    {
-        return new self(self::JKOPAY);
+        return new self(self::SHOPEEPAY_TH);
     }
     public static function KPLUS(): self
     {
         return new self(self::KPLUS);
+    }
+    public static function ONLINBANKING_YAPILY(): self
+    {
+        return new self(self::ONLINBANKING_YAPILY);
+    }
+    public static function ZALOPAY(): self
+    {
+        return new self(self::ZALOPAY);
+    }
+    public static function MOMO(): self
+    {
+        return new self(self::MOMO);
+    }
+    public static function BANKTRANSFER_VIA_VIETQR(): self
+    {
+        return new self(self::BANKTRANSFER_VIA_VIETQR);
+    }
+    public static function VIETTELMONEY(): self
+    {
+        return new self(self::VIETTELMONEY);
+    }
+    public static function TAMARA_SA(): self
+    {
+        return new self(self::TAMARA_SA);
+    }
+    public static function TAMARA_AE(): self
+    {
+        return new self(self::TAMARA_AE);
+    }
+    public static function TABBY(): self
+    {
+        return new self(self::TABBY);
+    }
+    public static function ACH_DIRECT_DEBIT(): self
+    {
+        return new self(self::ACH_DIRECT_DEBIT);
     }
     public static function DIRECT_DEBIT_SIAMCOMMERCIALBANK(): self
     {
@@ -144,25 +637,437 @@ class CustomerBelongsTo
     {
         return new self(self::DIRECT_DEBIT_KRUNGTHAIBANK);
     }
-    public static function ZALOPAY(): self
+    public static function VISA(): self
     {
-        return new self(self::ZALOPAY);
+        return new self(self::VISA);
+    }
+    public static function MASTERCARD(): self
+    {
+        return new self(self::MASTERCARD);
+    }
+    public static function AMEX(): self
+    {
+        return new self(self::AMEX);
+    }
+    public static function DISCOVER(): self
+    {
+        return new self(self::DISCOVER);
+    }
+    public static function DINERS(): self
+    {
+        return new self(self::DINERS);
+    }
+    public static function CUP(): self
+    {
+        return new self(self::CUP);
+    }
+    public static function JCB(): self
+    {
+        return new self(self::JCB);
+    }
+    public static function HIPERCARD(): self
+    {
+        return new self(self::HIPERCARD);
+    }
+    public static function ELO(): self
+    {
+        return new self(self::ELO);
+    }
+    public static function MAESTRO(): self
+    {
+        return new self(self::MAESTRO);
+    }
+    public static function CARTES_BANCAIRES(): self
+    {
+        return new self(self::CARTES_BANCAIRES);
+    }
+    public static function KOOKMIN(): self
+    {
+        return new self(self::KOOKMIN);
+    }
+    public static function BC(): self
+    {
+        return new self(self::BC);
+    }
+    public static function NONGHYUP(): self
+    {
+        return new self(self::NONGHYUP);
+    }
+    public static function SHINHAN(): self
+    {
+        return new self(self::SHINHAN);
+    }
+    public static function SAMSUNG(): self
+    {
+        return new self(self::SAMSUNG);
+    }
+    public static function LOTTE(): self
+    {
+        return new self(self::LOTTE);
+    }
+    public static function HYUNDAI(): self
+    {
+        return new self(self::HYUNDAI);
+    }
+    public static function KEBHANA(): self
+    {
+        return new self(self::KEBHANA);
+    }
+    public static function WOORI(): self
+    {
+        return new self(self::WOORI);
+    }
+    public static function IBK_BC(): self
+    {
+        return new self(self::IBK_BC);
+    }
+    public static function GWANGJUBANK(): self
+    {
+        return new self(self::GWANGJUBANK);
+    }
+    public static function KDBBANK(): self
+    {
+        return new self(self::KDBBANK);
+    }
+    public static function SAEMAUL(): self
+    {
+        return new self(self::SAEMAUL);
+    }
+    public static function SHINHYEOP(): self
+    {
+        return new self(self::SHINHYEOP);
+    }
+    public static function CITI(): self
+    {
+        return new self(self::CITI);
+    }
+    public static function POST(): self
+    {
+        return new self(self::POST);
+    }
+    public static function SAVINGBANK(): self
+    {
+        return new self(self::SAVINGBANK);
+    }
+    public static function JEONBUKBANK(): self
+    {
+        return new self(self::JEONBUKBANK);
+    }
+    public static function JEJUBANK(): self
+    {
+        return new self(self::JEJUBANK);
+    }
+    public static function KAKAOBANK(): self
+    {
+        return new self(self::KAKAOBANK);
+    }
+    public static function KBANK(): self
+    {
+        return new self(self::KBANK);
+    }
+    public static function TOSSBANK(): self
+    {
+        return new self(self::TOSSBANK);
+    }
+    public static function SUHYEOP(): self
+    {
+        return new self(self::SUHYEOP);
+    }
+    public static function CARNET(): self
+    {
+        return new self(self::CARNET);
+    }
+    public static function TROY(): self
+    {
+        return new self(self::TROY);
+    }
+    public static function _20(): self
+    {
+        return new self(self::_20);
+    }
+    public static function _26(): self
+    {
+        return new self(self::_26);
+    }
+    public static function _31(): self
+    {
+        return new self(self::_31);
+    }
+    public static function _33(): self
+    {
+        return new self(self::_33);
+    }
+    public static function _43(): self
+    {
+        return new self(self::_43);
+    }
+    public static function _45(): self
+    {
+        return new self(self::_45);
+    }
+    public static function _49(): self
+    {
+        return new self(self::_49);
+    }
+    public static function _52(): self
+    {
+        return new self(self::_52);
+    }
+    public static function _53(): self
+    {
+        return new self(self::_53);
+    }
+    public static function _54(): self
+    {
+        return new self(self::_54);
+    }
+    public static function _64(): self
+    {
+        return new self(self::_64);
+    }
+    public static function _65(): self
+    {
+        return new self(self::_65);
+    }
+    public static function _69(): self
+    {
+        return new self(self::_69);
+    }
+    public static function _85(): self
+    {
+        return new self(self::_85);
+    }
+    public static function _88(): self
+    {
+        return new self(self::_88);
+    }
+    public static function _90(): self
+    {
+        return new self(self::_90);
+    }
+    public static function _95(): self
+    {
+        return new self(self::_95);
+    }
+    public static function _99(): self
+    {
+        return new self(self::_99);
+    }
+    public static function _112(): self
+    {
+        return new self(self::_112);
+    }
+    public static function _119(): self
+    {
+        return new self(self::_119);
+    }
+    public static function _129(): self
+    {
+        return new self(self::_129);
+    }
+    public static function _131(): self
+    {
+        return new self(self::_131);
+    }
+    public static function _136(): self
+    {
+        return new self(self::_136);
+    }
+    public static function _141(): self
+    {
+        return new self(self::_141);
+    }
+    public static function _143(): self
+    {
+        return new self(self::_143);
+    }
+    public static function _144(): self
+    {
+        return new self(self::_144);
+    }
+    public static function _153(): self
+    {
+        return new self(self::_153);
+    }
+    public static function _154(): self
+    {
+        return new self(self::_154);
+    }
+    public static function _158(): self
+    {
+        return new self(self::_158);
+    }
+    public static function _161(): self
+    {
+        return new self(self::_161);
+    }
+    public static function _222(): self
+    {
+        return new self(self::_222);
+    }
+    public static function _223(): self
+    {
+        return new self(self::_223);
+    }
+    public static function _243(): self
+    {
+        return new self(self::_243);
+    }
+    public static function _266(): self
+    {
+        return new self(self::_266);
+    }
+    public static function _270(): self
+    {
+        return new self(self::_270);
+    }
+    public static function _271(): self
+    {
+        return new self(self::_271);
+    }
+    public static function _272(): self
+    {
+        return new self(self::_272);
+    }
+    public static function _274(): self
+    {
+        return new self(self::_274);
+    }
+    public static function _275(): self
+    {
+        return new self(self::_275);
+    }
+    public static function _279(): self
+    {
+        return new self(self::_279);
+    }
+    public static function _280(): self
+    {
+        return new self(self::_280);
+    }
+    public static function MYM2_U(): self
+    {
+        return new self(self::MYM2_U);
+    }
+    public static function MYBISM(): self
+    {
+        return new self(self::MYBISM);
+    }
+    public static function MYRHB(): self
+    {
+        return new self(self::MYRHB);
+    }
+    public static function MYHLB(): self
+    {
+        return new self(self::MYHLB);
+    }
+    public static function MYCIMBCLICKS(): self
+    {
+        return new self(self::MYCIMBCLICKS);
+    }
+    public static function MYAMB(): self
+    {
+        return new self(self::MYAMB);
+    }
+    public static function MYPBB(): self
+    {
+        return new self(self::MYPBB);
+    }
+    public static function MYABB(): self
+    {
+        return new self(self::MYABB);
+    }
+    public static function MYAGB(): self
+    {
+        return new self(self::MYAGB);
+    }
+    public static function MYABMB(): self
+    {
+        return new self(self::MYABMB);
+    }
+    public static function MYBMMB(): self
+    {
+        return new self(self::MYBMMB);
+    }
+    public static function MYBOC(): self
+    {
+        return new self(self::MYBOC);
+    }
+    public static function MYBKRM(): self
+    {
+        return new self(self::MYBKRM);
+    }
+    public static function MYBSN(): self
+    {
+        return new self(self::MYBSN);
+    }
+    public static function MYHSBC(): self
+    {
+        return new self(self::MYHSBC);
+    }
+    public static function MYKFH(): self
+    {
+        return new self(self::MYKFH);
+    }
+    public static function MYOCBC(): self
+    {
+        return new self(self::MYOCBC);
+    }
+    public static function MYSCB(): self
+    {
+        return new self(self::MYSCB);
+    }
+    public static function MYUOB(): self
+    {
+        return new self(self::MYUOB);
+    }
+    public static function IPAY_MONZO(): self
+    {
+        return new self(self::IPAY_MONZO);
+    }
+    public static function IPAY_SANTANDER(): self
+    {
+        return new self(self::IPAY_SANTANDER);
+    }
+    public static function IPAY_HSBC(): self
+    {
+        return new self(self::IPAY_HSBC);
+    }
+    public static function IPAY_LLOYDS(): self
+    {
+        return new self(self::IPAY_LLOYDS);
+    }
+    public static function IPAY_REVOLUT(): self
+    {
+        return new self(self::IPAY_REVOLUT);
+    }
+    public static function IPAY_BARCLAYS(): self
+    {
+        return new self(self::IPAY_BARCLAYS);
+    }
+    public static function IPAY_NATWEST(): self
+    {
+        return new self(self::IPAY_NATWEST);
+    }
+    public static function IPAY_NATIONWIDE(): self
+    {
+        return new self(self::IPAY_NATIONWIDE);
+    }
+    public static function BKASH(): self
+    {
+        return new self(self::BKASH);
+    }
+    public static function EASYPAISA(): self
+    {
+        return new self(self::EASYPAISA);
     }
     public static function DIRECTDEBIT_YAPILY(): self
     {
         return new self(self::DIRECTDEBIT_YAPILY);
     }
-    public static function TOSSPAY(): self
+    public static function ANTIM_BIZ_ACCOUNT(): self
     {
-        return new self(self::TOSSPAY);
-    }
-    public static function MOMO(): self
-    {
-        return new self(self::MOMO);
-    }
-    public static function ANTOM_BIZ_ACCOUNT(): self
-    {
-        return new self(self::ANTOM_BIZ_ACCOUNT);
+        return new self(self::ANTIM_BIZ_ACCOUNT);
     }
 
     public function getValue(): string
