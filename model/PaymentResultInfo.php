@@ -72,7 +72,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'string',
         'credentialTypeUsed' => 'string',
         'rrn' => 'string',
-        'userAuthorizationStatus' => 'string'
+        'userAuthorizationStatus' => 'string',
+        'authorizationCode' => 'string'
     ];
 
     /**
@@ -109,7 +110,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => null,
         'credentialTypeUsed' => null,
         'rrn' => null,
-        'userAuthorizationStatus' => null
+        'userAuthorizationStatus' => null,
+        'authorizationCode' => null
     ];
 
     /**
@@ -144,7 +146,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => false,
         'credentialTypeUsed' => false,
         'rrn' => false,
-        'userAuthorizationStatus' => false
+        'userAuthorizationStatus' => false,
+        'authorizationCode' => false
     ];
 
     /**
@@ -259,7 +262,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'exemptionRequested',
         'credentialTypeUsed' => 'credentialTypeUsed',
         'rrn' => 'rrn',
-        'userAuthorizationStatus' => 'userAuthorizationStatus'
+        'userAuthorizationStatus' => 'userAuthorizationStatus',
+        'authorizationCode' => 'authorizationCode'
     ];
 
     /**
@@ -294,7 +298,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'setExemptionRequested',
         'credentialTypeUsed' => 'setCredentialTypeUsed',
         'rrn' => 'setRrn',
-        'userAuthorizationStatus' => 'setUserAuthorizationStatus'
+        'userAuthorizationStatus' => 'setUserAuthorizationStatus',
+        'authorizationCode' => 'setAuthorizationCode'
     ];
 
     /**
@@ -329,7 +334,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'getExemptionRequested',
         'credentialTypeUsed' => 'getCredentialTypeUsed',
         'rrn' => 'getRrn',
-        'userAuthorizationStatus' => 'getUserAuthorizationStatus'
+        'userAuthorizationStatus' => 'getUserAuthorizationStatus',
+        'authorizationCode' => 'getAuthorizationCode'
     ];
 
     /**
@@ -416,6 +422,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('credentialTypeUsed', $data ?? [], null);
         $this->setIfExists('rrn', $data ?? [], null);
         $this->setIfExists('userAuthorizationStatus', $data ?? [], null);
+        $this->setIfExists('authorizationCode', $data ?? [], null);
 
             }
 
@@ -1105,6 +1112,30 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUserAuthorizationStatus($userAuthorizationStatus)
     {
         $this->container['userAuthorizationStatus'] = $userAuthorizationStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationCode
+     *
+     * @return string|null
+     */
+    public function getAuthorizationCode()
+    {
+        return $this->container['authorizationCode'];
+    }
+
+    /**
+     * Sets authorizationCode
+     *
+     * @param string|null $authorizationCode The authorization code returned by the payment channel upon successful authorization.
+     *
+     * @return self
+     */
+    public function setAuthorizationCode($authorizationCode)
+    {
+        $this->container['authorizationCode'] = $authorizationCode;
 
         return $this;
     }
