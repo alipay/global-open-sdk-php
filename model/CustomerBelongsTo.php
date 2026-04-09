@@ -26,32 +26,31 @@ namespace Model;
 
 class CustomerBelongsTo
 {
-    public const RABBIT_LINE_PAY = 'RABBIT_LINE_PAY';
-    public const TRUEMONEY = 'TRUEMONEY';
-    public const ALIPAY_HK = 'ALIPAY_HK';
-    public const TNG = 'TNG';
     public const ALIPAY_CN = 'ALIPAY_CN';
-    public const GCASH = 'GCASH';
+    public const ALIPAY_HK = 'ALIPAY_HK';
+    public const MPAY = 'MPAY';
     public const DANA = 'DANA';
-    public const KAKAOPAY = 'KAKAOPAY';
-    public const BKASH = 'BKASH';
-    public const EASYPAISA = 'EASYPAISA';
     public const PAYPAY = 'PAYPAY';
     public const BOOST = 'BOOST';
+    public const TNG = 'TNG';
     public const GRABPAY_MY = 'GRABPAY_MY';
+    public const HIPAY = 'HIPAY';
+    public const GCASH = 'GCASH';
     public const MAYA = 'MAYA';
     public const GRABPAY_PH = 'GRABPAY_PH';
     public const GRABPAY_SG = 'GRABPAY_SG';
+    public const KAKAOPAY = 'KAKAOPAY';
     public const NAVERPAY = 'NAVERPAY';
-    public const JKOPAY = 'JKOPAY';
+    public const TOSSPAY = 'TOSSPAY';
+    public const RABBIT_LINE_PAY = 'RABBIT_LINE_PAY';
+    public const TRUEMONEY = 'TRUEMONEY';
     public const KPLUS = 'KPLUS';
     public const DIRECT_DEBIT_SIAMCOMMERCIALBANK = 'DIRECT_DEBIT_SIAMCOMMERCIALBANK';
     public const DIRECT_DEBIT_KRUNGTHAIBANK = 'DIRECT_DEBIT_KRUNGTHAIBANK';
+    public const ACH_DIRECT_DEBIT = 'ACH_DIRECT_DEBIT';
     public const ZALOPAY = 'ZALOPAY';
-    public const DIRECTDEBIT_YAPILY = 'DIRECTDEBIT_YAPILY';
-    public const TOSSPAY = 'TOSSPAY';
     public const MOMO = 'MOMO';
-    public const ANTOM_BIZ_ACCOUNT = 'ANTOM_BIZ_ACCOUNT';
+    public const VIETTELMONEY = 'VIETTELMONEY';
 
     public $value;
 
@@ -60,45 +59,21 @@ class CustomerBelongsTo
         $this->value = $value;
     }
 
-    public static function RABBIT_LINE_PAY(): self
+    public static function ALIPAY_CN(): self
     {
-        return new self(self::RABBIT_LINE_PAY);
-    }
-    public static function TRUEMONEY(): self
-    {
-        return new self(self::TRUEMONEY);
+        return new self(self::ALIPAY_CN);
     }
     public static function ALIPAY_HK(): self
     {
         return new self(self::ALIPAY_HK);
     }
-    public static function TNG(): self
+    public static function MPAY(): self
     {
-        return new self(self::TNG);
-    }
-    public static function ALIPAY_CN(): self
-    {
-        return new self(self::ALIPAY_CN);
-    }
-    public static function GCASH(): self
-    {
-        return new self(self::GCASH);
+        return new self(self::MPAY);
     }
     public static function DANA(): self
     {
         return new self(self::DANA);
-    }
-    public static function KAKAOPAY(): self
-    {
-        return new self(self::KAKAOPAY);
-    }
-    public static function BKASH(): self
-    {
-        return new self(self::BKASH);
-    }
-    public static function EASYPAISA(): self
-    {
-        return new self(self::EASYPAISA);
     }
     public static function PAYPAY(): self
     {
@@ -108,9 +83,21 @@ class CustomerBelongsTo
     {
         return new self(self::BOOST);
     }
+    public static function TNG(): self
+    {
+        return new self(self::TNG);
+    }
     public static function GRABPAY_MY(): self
     {
         return new self(self::GRABPAY_MY);
+    }
+    public static function HIPAY(): self
+    {
+        return new self(self::HIPAY);
+    }
+    public static function GCASH(): self
+    {
+        return new self(self::GCASH);
     }
     public static function MAYA(): self
     {
@@ -124,13 +111,25 @@ class CustomerBelongsTo
     {
         return new self(self::GRABPAY_SG);
     }
+    public static function KAKAOPAY(): self
+    {
+        return new self(self::KAKAOPAY);
+    }
     public static function NAVERPAY(): self
     {
         return new self(self::NAVERPAY);
     }
-    public static function JKOPAY(): self
+    public static function TOSSPAY(): self
     {
-        return new self(self::JKOPAY);
+        return new self(self::TOSSPAY);
+    }
+    public static function RABBIT_LINE_PAY(): self
+    {
+        return new self(self::RABBIT_LINE_PAY);
+    }
+    public static function TRUEMONEY(): self
+    {
+        return new self(self::TRUEMONEY);
     }
     public static function KPLUS(): self
     {
@@ -144,25 +143,21 @@ class CustomerBelongsTo
     {
         return new self(self::DIRECT_DEBIT_KRUNGTHAIBANK);
     }
+    public static function ACH_DIRECT_DEBIT(): self
+    {
+        return new self(self::ACH_DIRECT_DEBIT);
+    }
     public static function ZALOPAY(): self
     {
         return new self(self::ZALOPAY);
-    }
-    public static function DIRECTDEBIT_YAPILY(): self
-    {
-        return new self(self::DIRECTDEBIT_YAPILY);
-    }
-    public static function TOSSPAY(): self
-    {
-        return new self(self::TOSSPAY);
     }
     public static function MOMO(): self
     {
         return new self(self::MOMO);
     }
-    public static function ANTOM_BIZ_ACCOUNT(): self
+    public static function VIETTELMONEY(): self
     {
-        return new self(self::ANTOM_BIZ_ACCOUNT);
+        return new self(self::VIETTELMONEY);
     }
 
     public function getValue(): string
