@@ -46,10 +46,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
+        'subscriptionId' => 'string',
+        'description' => 'string',
         'subscriptionDescription' => 'string',
+        'status' => '\request\model\SubscriptionStatus',
         'subscriptionStartTime' => 'string',
         'subscriptionEndTime' => 'string',
+        'periodType' => '\request\model\PeriodType',
+        'periodCount' => 'int',
         'periodRule' => '\request\model\PeriodRule',
+        'currentPeriodStart' => 'string',
+        'currentPeriodEnd' => 'string',
+        'currentPhaseNo' => 'int',
+        'paymentMethod' => '\request\model\PaymentMethod',
+        'paymentAmount' => '\request\model\Amount',
+        'lastUpdateTime' => 'string',
+        'relatedSubscriptionId' => 'string',
+        'trialPlan' => '\request\model\TrialPlan',
         'trials' => '\request\model\Trial[]',
         'subscriptionNotifyUrl' => 'string',
         'subscriptionExpiryTime' => 'string',
@@ -65,10 +78,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'subscriptionId' => null,
+        'description' => null,
         'subscriptionDescription' => null,
+        'status' => null,
         'subscriptionStartTime' => null,
         'subscriptionEndTime' => null,
+        'periodType' => null,
+        'periodCount' => null,
         'periodRule' => null,
+        'currentPeriodStart' => null,
+        'currentPeriodEnd' => null,
+        'currentPhaseNo' => null,
+        'paymentMethod' => null,
+        'paymentAmount' => null,
+        'lastUpdateTime' => null,
+        'relatedSubscriptionId' => null,
+        'trialPlan' => null,
         'trials' => null,
         'subscriptionNotifyUrl' => null,
         'subscriptionExpiryTime' => null,
@@ -82,10 +108,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'subscriptionId' => false,
+        'description' => false,
         'subscriptionDescription' => false,
+        'status' => false,
         'subscriptionStartTime' => false,
         'subscriptionEndTime' => false,
+        'periodType' => false,
+        'periodCount' => true,
         'periodRule' => false,
+        'currentPeriodStart' => false,
+        'currentPeriodEnd' => false,
+        'currentPhaseNo' => true,
+        'paymentMethod' => false,
+        'paymentAmount' => false,
+        'lastUpdateTime' => false,
+        'relatedSubscriptionId' => false,
+        'trialPlan' => false,
         'trials' => false,
         'subscriptionNotifyUrl' => false,
         'subscriptionExpiryTime' => false,
@@ -179,10 +218,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
+        'subscriptionId' => 'subscriptionId',
+        'description' => 'description',
         'subscriptionDescription' => 'subscriptionDescription',
+        'status' => 'status',
         'subscriptionStartTime' => 'subscriptionStartTime',
         'subscriptionEndTime' => 'subscriptionEndTime',
+        'periodType' => 'periodType',
+        'periodCount' => 'periodCount',
         'periodRule' => 'periodRule',
+        'currentPeriodStart' => 'currentPeriodStart',
+        'currentPeriodEnd' => 'currentPeriodEnd',
+        'currentPhaseNo' => 'currentPhaseNo',
+        'paymentMethod' => 'paymentMethod',
+        'paymentAmount' => 'paymentAmount',
+        'lastUpdateTime' => 'lastUpdateTime',
+        'relatedSubscriptionId' => 'relatedSubscriptionId',
+        'trialPlan' => 'trialPlan',
         'trials' => 'trials',
         'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
         'subscriptionExpiryTime' => 'subscriptionExpiryTime',
@@ -196,10 +248,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
+        'subscriptionId' => 'setSubscriptionId',
+        'description' => 'setDescription',
         'subscriptionDescription' => 'setSubscriptionDescription',
+        'status' => 'setStatus',
         'subscriptionStartTime' => 'setSubscriptionStartTime',
         'subscriptionEndTime' => 'setSubscriptionEndTime',
+        'periodType' => 'setPeriodType',
+        'periodCount' => 'setPeriodCount',
         'periodRule' => 'setPeriodRule',
+        'currentPeriodStart' => 'setCurrentPeriodStart',
+        'currentPeriodEnd' => 'setCurrentPeriodEnd',
+        'currentPhaseNo' => 'setCurrentPhaseNo',
+        'paymentMethod' => 'setPaymentMethod',
+        'paymentAmount' => 'setPaymentAmount',
+        'lastUpdateTime' => 'setLastUpdateTime',
+        'relatedSubscriptionId' => 'setRelatedSubscriptionId',
+        'trialPlan' => 'setTrialPlan',
         'trials' => 'setTrials',
         'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
         'subscriptionExpiryTime' => 'setSubscriptionExpiryTime',
@@ -213,10 +278,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
+        'subscriptionId' => 'getSubscriptionId',
+        'description' => 'getDescription',
         'subscriptionDescription' => 'getSubscriptionDescription',
+        'status' => 'getStatus',
         'subscriptionStartTime' => 'getSubscriptionStartTime',
         'subscriptionEndTime' => 'getSubscriptionEndTime',
+        'periodType' => 'getPeriodType',
+        'periodCount' => 'getPeriodCount',
         'periodRule' => 'getPeriodRule',
+        'currentPeriodStart' => 'getCurrentPeriodStart',
+        'currentPeriodEnd' => 'getCurrentPeriodEnd',
+        'currentPhaseNo' => 'getCurrentPhaseNo',
+        'paymentMethod' => 'getPaymentMethod',
+        'paymentAmount' => 'getPaymentAmount',
+        'lastUpdateTime' => 'getLastUpdateTime',
+        'relatedSubscriptionId' => 'getRelatedSubscriptionId',
+        'trialPlan' => 'getTrialPlan',
         'trials' => 'getTrials',
         'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
         'subscriptionExpiryTime' => 'getSubscriptionExpiryTime',
@@ -281,10 +359,23 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('subscriptionDescription', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('subscriptionStartTime', $data ?? [], null);
         $this->setIfExists('subscriptionEndTime', $data ?? [], null);
+        $this->setIfExists('periodType', $data ?? [], null);
+        $this->setIfExists('periodCount', $data ?? [], null);
         $this->setIfExists('periodRule', $data ?? [], null);
+        $this->setIfExists('currentPeriodStart', $data ?? [], null);
+        $this->setIfExists('currentPeriodEnd', $data ?? [], null);
+        $this->setIfExists('currentPhaseNo', $data ?? [], null);
+        $this->setIfExists('paymentMethod', $data ?? [], null);
+        $this->setIfExists('paymentAmount', $data ?? [], null);
+        $this->setIfExists('lastUpdateTime', $data ?? [], null);
+        $this->setIfExists('relatedSubscriptionId', $data ?? [], null);
+        $this->setIfExists('trialPlan', $data ?? [], null);
         $this->setIfExists('trials', $data ?? [], null);
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
         $this->setIfExists('subscriptionExpiryTime', $data ?? [], null);
@@ -348,6 +439,54 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
+     * Gets subscriptionId
+     *
+     * @return string|null
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscriptionId'];
+    }
+
+    /**
+     * Sets subscriptionId
+     *
+     * @param string|null $subscriptionId The unique ID assigned by Antom to identify a subscription.
+     *
+     * @return self
+     */
+    public function setSubscriptionId($subscriptionId)
+    {
+        $this->container['subscriptionId'] = $subscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description The description of the subscription, used for displaying user consumption records and other actions.
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * Gets subscriptionDescription
      *
      * @return string
@@ -372,6 +511,30 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
+     * Gets status
+     *
+     * @return \model\SubscriptionStatus|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \model\SubscriptionStatus|null $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
      * Gets subscriptionStartTime
      *
      * @return string
@@ -384,7 +547,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subscriptionStartTime
      *
-     * @param string $subscriptionStartTime Start time of the subscription in ISO 8601 format
+     * @param string $subscriptionStartTime The date and time when the subscription becomes active. The value follows the ISO 8601 standard format.
      *
      * @return self
      */
@@ -408,13 +571,61 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subscriptionEndTime
      *
-     * @param string|null $subscriptionEndTime End time of the subscription in ISO 8601 format
+     * @param string|null $subscriptionEndTime The date and time when the subscription ends. The value follows the ISO 8601 standard format. The subscriptionEndTime can be NULL.
      *
      * @return self
      */
     public function setSubscriptionEndTime($subscriptionEndTime)
     {
         $this->container['subscriptionEndTime'] = $subscriptionEndTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets periodType
+     *
+     * @return string|null
+     */
+    public function getPeriodType()
+    {
+        return $this->container['periodType'];
+    }
+
+    /**
+     * Sets periodType
+     *
+     * @param string|null $periodType periodType
+     *
+     * @return self
+     */
+    public function setPeriodType($periodType)
+    {
+        $this->container['periodType'] = $periodType;
+
+        return $this;
+    }
+
+    /**
+     * Gets periodCount
+     *
+     * @return int|null
+     */
+    public function getPeriodCount()
+    {
+        return $this->container['periodCount'];
+    }
+
+    /**
+     * Sets periodCount
+     *
+     * @param int|null $periodCount The number of times the period type repeats in one subscription cycle. For example, a periodCount of 2 with periodType MONTH means the subscription period is 2 months.
+     *
+     * @return self
+     */
+    public function setPeriodCount($periodCount)
+    {
+        $this->container['periodCount'] = $periodCount;
 
         return $this;
     }
@@ -439,6 +650,198 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setPeriodRule($periodRule)
     {
         $this->container['periodRule'] = $periodRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodStart
+     *
+     * @return string|null
+     */
+    public function getCurrentPeriodStart()
+    {
+        return $this->container['currentPeriodStart'];
+    }
+
+    /**
+     * Sets currentPeriodStart
+     *
+     * @param string|null $currentPeriodStart Start time of current period.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodStart($currentPeriodStart)
+    {
+        $this->container['currentPeriodStart'] = $currentPeriodStart;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodEnd
+     *
+     * @return string|null
+     */
+    public function getCurrentPeriodEnd()
+    {
+        return $this->container['currentPeriodEnd'];
+    }
+
+    /**
+     * Sets currentPeriodEnd
+     *
+     * @param string|null $currentPeriodEnd End time of current period.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodEnd($currentPeriodEnd)
+    {
+        $this->container['currentPeriodEnd'] = $currentPeriodEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPhaseNo
+     *
+     * @return int|null
+     */
+    public function getCurrentPhaseNo()
+    {
+        return $this->container['currentPhaseNo'];
+    }
+
+    /**
+     * Sets currentPhaseNo
+     *
+     * @param int|null $currentPhaseNo Indicates current phase of subscription period, start from 1.
+     *
+     * @return self
+     */
+    public function setCurrentPhaseNo($currentPhaseNo)
+    {
+        $this->container['currentPhaseNo'] = $currentPhaseNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentMethod
+     *
+     * @return \model\PaymentMethod|null
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['paymentMethod'];
+    }
+
+    /**
+     * Sets paymentMethod
+     *
+     * @param \model\PaymentMethod|null $paymentMethod paymentMethod
+     *
+     * @return self
+     */
+    public function setPaymentMethod($paymentMethod)
+    {
+        $this->container['paymentMethod'] = $paymentMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getPaymentAmount()
+    {
+        return $this->container['paymentAmount'];
+    }
+
+    /**
+     * Sets paymentAmount
+     *
+     * @param \model\Amount|null $paymentAmount paymentAmount
+     *
+     * @return self
+     */
+    public function setPaymentAmount($paymentAmount)
+    {
+        $this->container['paymentAmount'] = $paymentAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastUpdateTime
+     *
+     * @return string|null
+     */
+    public function getLastUpdateTime()
+    {
+        return $this->container['lastUpdateTime'];
+    }
+
+    /**
+     * Sets lastUpdateTime
+     *
+     * @param string|null $lastUpdateTime DateTime when the subscription is changed using the Change/Update API.
+     *
+     * @return self
+     */
+    public function setLastUpdateTime($lastUpdateTime)
+    {
+        $this->container['lastUpdateTime'] = $lastUpdateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets relatedSubscriptionId
+     *
+     * @return string|null
+     */
+    public function getRelatedSubscriptionId()
+    {
+        return $this->container['relatedSubscriptionId'];
+    }
+
+    /**
+     * Sets relatedSubscriptionId
+     *
+     * @param string|null $relatedSubscriptionId When merchants use Change API, a new subscription is created base on the current one. This field stores the ID of the original subscription and represents the relationship between the old and new subscription.
+     *
+     * @return self
+     */
+    public function setRelatedSubscriptionId($relatedSubscriptionId)
+    {
+        $this->container['relatedSubscriptionId'] = $relatedSubscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets trialPlan
+     *
+     * @return \model\TrialPlan|null
+     */
+    public function getTrialPlan()
+    {
+        return $this->container['trialPlan'];
+    }
+
+    /**
+     * Sets trialPlan
+     *
+     * @param \model\TrialPlan|null $trialPlan trialPlan
+     *
+     * @return self
+     */
+    public function setTrialPlan($trialPlan)
+    {
+        $this->container['trialPlan'] = $trialPlan;
 
         return $this;
     }
@@ -528,7 +931,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets allowRetry
      *
-     * @param bool|null $allowRetry Field is used only in the PIX recurrence scenario. Whether to allow a retry in the event that a recurring payment fails due to insufficient balance.
+     * @param bool|null $allowRetry Field is used only in the PIX recurrence scenario.  Whether to allow a retry in the event that a recurring payment fails due to insufficient balance.
      *
      * @return self
      */
