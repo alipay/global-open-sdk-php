@@ -72,7 +72,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'string',
         'credentialTypeUsed' => 'string',
         'rrn' => 'string',
-        'userAuthorizationStatus' => 'string'
+        'userAuthorizationStatus' => 'string',
+        'authorizationCode' => 'string'
     ];
 
     /**
@@ -109,7 +110,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => null,
         'credentialTypeUsed' => null,
         'rrn' => null,
-        'userAuthorizationStatus' => null
+        'userAuthorizationStatus' => null,
+        'authorizationCode' => null
     ];
 
     /**
@@ -144,7 +146,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => false,
         'credentialTypeUsed' => false,
         'rrn' => false,
-        'userAuthorizationStatus' => false
+        'userAuthorizationStatus' => false,
+        'authorizationCode' => false
     ];
 
     /**
@@ -259,7 +262,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'exemptionRequested',
         'credentialTypeUsed' => 'credentialTypeUsed',
         'rrn' => 'rrn',
-        'userAuthorizationStatus' => 'userAuthorizationStatus'
+        'userAuthorizationStatus' => 'userAuthorizationStatus',
+        'authorizationCode' => 'authorizationCode'
     ];
 
     /**
@@ -294,7 +298,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'setExemptionRequested',
         'credentialTypeUsed' => 'setCredentialTypeUsed',
         'rrn' => 'setRrn',
-        'userAuthorizationStatus' => 'setUserAuthorizationStatus'
+        'userAuthorizationStatus' => 'setUserAuthorizationStatus',
+        'authorizationCode' => 'setAuthorizationCode'
     ];
 
     /**
@@ -329,7 +334,8 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'exemptionRequested' => 'getExemptionRequested',
         'credentialTypeUsed' => 'getCredentialTypeUsed',
         'rrn' => 'getRrn',
-        'userAuthorizationStatus' => 'getUserAuthorizationStatus'
+        'userAuthorizationStatus' => 'getUserAuthorizationStatus',
+        'authorizationCode' => 'getAuthorizationCode'
     ];
 
     /**
@@ -416,6 +422,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('credentialTypeUsed', $data ?? [], null);
         $this->setIfExists('rrn', $data ?? [], null);
         $this->setIfExists('userAuthorizationStatus', $data ?? [], null);
+        $this->setIfExists('authorizationCode', $data ?? [], null);
 
             }
 
@@ -930,7 +937,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryMonth
      *
-     * @param string|null $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiry month is February, the value of this parameter is 02.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
+     * @param string|null $expiryMonth The month the card expires. Pass in two digits representing the month. For example, if the expiry month is February, the value of this parameter is 02. Note: This parameter is returned when the value of paymentMethodType in the pay (One-time Payments) API is CARD.
      *
      * @return self
      */
@@ -954,7 +961,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryYear
      *
-     * @param string|null $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiry year is 2025, the value of this parameter is 25.  Note: This parameter is returned when the value of paymentMethodType in the pay (Checkout Payment) API is CARD for specific merchants in specific regions.  More information:  Maximum length: 2 characters
+     * @param string|null $expiryYear The year the card expires. Pass in the last two digits of the year number. For example, if the expiry year is 2025, the value of this parameter is 25. Note: This parameter is returned when the value of paymentMethodType in the pay (One-time Payments) API is CARD.
      *
      * @return self
      */
@@ -1105,6 +1112,30 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUserAuthorizationStatus($userAuthorizationStatus)
     {
         $this->container['userAuthorizationStatus'] = $userAuthorizationStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationCode
+     *
+     * @return string|null
+     */
+    public function getAuthorizationCode()
+    {
+        return $this->container['authorizationCode'];
+    }
+
+    /**
+     * Sets authorizationCode
+     *
+     * @param string|null $authorizationCode The authorization code returned by the payment channel upon successful authorization.
+     *
+     * @return self
+     */
+    public function setAuthorizationCode($authorizationCode)
+    {
+        $this->container['authorizationCode'] = $authorizationCode;
 
         return $this;
     }
