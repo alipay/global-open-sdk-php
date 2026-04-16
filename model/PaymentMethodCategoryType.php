@@ -33,6 +33,7 @@ class PaymentMethodCategoryType
     public const ONLINE_BANKING = 'ONLINE_BANKING';
     public const CARD = 'CARD';
     public const OTC = 'OTC';
+    public const VA = 'VA';
 
     public $value;
 
@@ -68,6 +69,10 @@ class PaymentMethodCategoryType
     public static function OTC(): self
     {
         return new self(self::OTC);
+    }
+    public static function VA(): self
+    {
+        return new self(self::VA);
     }
 
     public function getValue(): string
