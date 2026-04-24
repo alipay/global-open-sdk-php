@@ -46,7 +46,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transferFromMethod' => '\request\model\PaymentMethod',
         'transferFromAmount' => '\request\model\Amount'
     ];
 
@@ -58,7 +57,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'transferFromMethod' => null,
         'transferFromAmount' => null
     ];
 
@@ -68,7 +66,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'transferFromMethod' => false,
         'transferFromAmount' => false
     ];
 
@@ -158,7 +155,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'transferFromMethod' => 'transferFromMethod',
         'transferFromAmount' => 'transferFromAmount'
     ];
 
@@ -168,7 +164,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'transferFromMethod' => 'setTransferFromMethod',
         'transferFromAmount' => 'setTransferFromAmount'
     ];
 
@@ -178,7 +173,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'transferFromMethod' => 'getTransferFromMethod',
         'transferFromAmount' => 'getTransferFromAmount'
     ];
 
@@ -239,7 +233,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('transferFromMethod', $data ?? [], null);
         $this->setIfExists('transferFromAmount', $data ?? [], null);
 
             }
@@ -271,9 +264,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['transferFromMethod'] === null) {
-            $invalidProperties[] = "'transferFromMethod' can't be null";
-        }
         if ($this->container['transferFromAmount'] === null) {
             $invalidProperties[] = "'transferFromAmount' can't be null";
         }
@@ -291,30 +281,6 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets transferFromMethod
-     *
-     * @return \model\PaymentMethod
-     */
-    public function getTransferFromMethod()
-    {
-        return $this->container['transferFromMethod'];
-    }
-
-    /**
-     * Sets transferFromMethod
-     *
-     * @param \model\PaymentMethod $transferFromMethod transferFromMethod
-     *
-     * @return self
-     */
-    public function setTransferFromMethod($transferFromMethod)
-    {
-        $this->container['transferFromMethod'] = $transferFromMethod;
-
-        return $this;
-    }
 
     /**
      * Gets transferFromAmount
