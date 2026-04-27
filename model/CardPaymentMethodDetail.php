@@ -433,7 +433,27 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
+    public const FUNDING_CREDIT = 'CREDIT';
+    public const FUNDING_DEBIT = 'DEBIT';
+    public const FUNDING_PREPAID = 'PREPAID';
+    public const FUNDING_CHARGE = 'CHARGE';
+    public const FUNDING_DEFERRED_DEBIT = 'DEFERRED_DEBIT';
 
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFundingAllowableValues()
+    {
+        return [
+            self::FUNDING_CREDIT,
+            self::FUNDING_DEBIT,
+            self::FUNDING_PREPAID,
+            self::FUNDING_CHARGE,
+            self::FUNDING_DEFERRED_DEBIT,
+        ];
+    }
     /**
      * Associative array for storing property values
      *
@@ -525,6 +545,15 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['maskedCardNo'] === null) {
             $invalidProperties[] = "'maskedCardNo' can't be null";
         }
+        $allowedValues = $this->getFundingAllowableValues();
+        if (!is_null($this->container['funding']) && !in_array($this->container['funding'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'funding', must be one of '%s'",
+                $this->container['funding'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -961,12 +990,22 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets funding
      *
-     * @param string|null $funding funding
+     * @param string|null $funding The funding type of the card.  Valid values are:  CREDIT: indicates a credit card. DEBIT: indicates a debit card. PREPAID: indicates a prepaid card. CHARGE: indicates a charge card. DEFERRED_DEBIT: indicates a deferred debit card.  This parameter is returned when the value of paymentMethodType is CARD and the information is available from the channel.
      *
      * @return self
      */
     public function setFunding($funding)
     {
+        $allowedValues = $this->getFundingAllowableValues();
+        if (!in_array($funding, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'funding', must be one of '%s'",
+                    $funding,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['funding'] = $funding;
 
         return $this;
@@ -1057,7 +1096,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets issuerName
      *
-     * @param string|null $issuerName issuerName
+     * @param string|null $issuerName The issuer name of the card.  This parameter is returned when the value of paymentMethodType is CARD and the information is available from the channel.
      *
      * @return self
      */
@@ -1081,7 +1120,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets issuingCountry
      *
-     * @param string|null $issuingCountry issuingCountry
+     * @param string|null $issuingCountry The issuing country of the card. The value of this parameter is a 2-letter country code that follows ISO 3166 Country Codes standard.  This parameter is returned when the value of paymentMethodType is CARD and the information is available from the channel.
      *
      * @return self
      */
