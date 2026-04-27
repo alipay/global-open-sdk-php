@@ -53,7 +53,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'transactionTypeList' => 'string[]',
         'currencyList' => 'string[]',
         'pageSize' => 'int',
-        'pageNumber' => 'int'
+        'pageNumber' => 'int',
+        'assetId' => 'string'
     ];
 
     /**
@@ -71,7 +72,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'transactionTypeList' => null,
         'currencyList' => null,
         'pageSize' => null,
-        'pageNumber' => null
+        'pageNumber' => null,
+        'assetId' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'transactionTypeList' => false,
         'currencyList' => false,
         'pageSize' => true,
-        'pageNumber' => true
+        'pageNumber' => true,
+        'assetId' => false
     ];
 
     /**
@@ -183,7 +186,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'transactionTypeList' => 'transactionTypeList',
         'currencyList' => 'currencyList',
         'pageSize' => 'pageSize',
-        'pageNumber' => 'pageNumber'
+        'pageNumber' => 'pageNumber',
+        'assetId' => 'assetId'
     ];
 
     /**
@@ -199,7 +203,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'transactionTypeList' => 'setTransactionTypeList',
         'currencyList' => 'setCurrencyList',
         'pageSize' => 'setPageSize',
-        'pageNumber' => 'setPageNumber'
+        'pageNumber' => 'setPageNumber',
+        'assetId' => 'setAssetId'
     ];
 
     /**
@@ -215,7 +220,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'transactionTypeList' => 'getTransactionTypeList',
         'currencyList' => 'getCurrencyList',
         'pageSize' => 'getPageSize',
-        'pageNumber' => 'getPageNumber'
+        'pageNumber' => 'getPageNumber',
+        'assetId' => 'getAssetId'
     ];
 
     /**
@@ -323,6 +329,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('currencyList', $data ?? [], null);
         $this->setIfExists('pageSize', $data ?? [], null);
         $this->setIfExists('pageNumber', $data ?? [], null);
+        $this->setIfExists('assetId', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/aba/accounts/inquiryStatement"); 
     }
@@ -594,6 +601,30 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     public function setPageNumber($pageNumber)
     {
         $this->container['pageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets assetId
+     *
+     * @return string|null
+     */
+    public function getAssetId()
+    {
+        return $this->container['assetId'];
+    }
+
+    /**
+     * Sets assetId
+     *
+     * @param string|null $assetId The card's assetId that merchants want to query. Only available if they want to filter by.
+     *
+     * @return self
+     */
+    public function setAssetId($assetId)
+    {
+        $this->container['assetId'] = $assetId;
 
         return $this;
     }

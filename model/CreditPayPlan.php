@@ -49,7 +49,8 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'installmentNum' => 'int',
         'interval' => 'string',
         'creditPayFeeType' => '\request\model\CreditPayFeeType',
-        'feePercentage' => 'int'
+        'feePercentage' => 'int',
+        'interestRate' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'installmentNum' => null,
         'interval' => null,
         'creditPayFeeType' => null,
-        'feePercentage' => null
+        'feePercentage' => null,
+        'interestRate' => null
     ];
 
     /**
@@ -75,7 +77,8 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'installmentNum' => true,
         'interval' => false,
         'creditPayFeeType' => false,
-        'feePercentage' => true
+        'feePercentage' => true,
+        'interestRate' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'installmentNum' => 'installmentNum',
         'interval' => 'interval',
         'creditPayFeeType' => 'creditPayFeeType',
-        'feePercentage' => 'feePercentage'
+        'feePercentage' => 'feePercentage',
+        'interestRate' => 'interestRate'
     ];
 
     /**
@@ -179,7 +183,8 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'installmentNum' => 'setInstallmentNum',
         'interval' => 'setInterval',
         'creditPayFeeType' => 'setCreditPayFeeType',
-        'feePercentage' => 'setFeePercentage'
+        'feePercentage' => 'setFeePercentage',
+        'interestRate' => 'setInterestRate'
     ];
 
     /**
@@ -191,7 +196,8 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'installmentNum' => 'getInstallmentNum',
         'interval' => 'getInterval',
         'creditPayFeeType' => 'getCreditPayFeeType',
-        'feePercentage' => 'getFeePercentage'
+        'feePercentage' => 'getFeePercentage',
+        'interestRate' => 'getInterestRate'
     ];
 
     /**
@@ -255,6 +261,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('interval', $data ?? [], null);
         $this->setIfExists('creditPayFeeType', $data ?? [], null);
         $this->setIfExists('feePercentage', $data ?? [], null);
+        $this->setIfExists('interestRate', $data ?? [], null);
 
             }
 
@@ -392,6 +399,30 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFeePercentage($feePercentage)
     {
         $this->container['feePercentage'] = $feePercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets interestRate
+     *
+     * @return string|null
+     */
+    public function getInterestRate()
+    {
+        return $this->container['interestRate'];
+    }
+
+    /**
+     * Sets interestRate
+     *
+     * @param string|null $interestRate The installment interest rate in percentage. For example, interestRate = 0.1 indicates that the installment interest rate is 0.1%.  Note: This field is returned when the payment method is CARD, the payment is paid in installments, and the channel provides the interest rate information.  More information:  Maximum length: 16 characters The value must be a decimal.  Field attributes: - Idempotency: Not applicable for notification fields - Nullable: Yes - Invalid input restrictions: Must be a decimal number - Return condition: Returned when the payment method is CARD, the payment is paid in installments, and the channel provides the interest rate information
+     *
+     * @return self
+     */
+    public function setInterestRate($interestRate)
+    {
+        $this->container['interestRate'] = $interestRate;
 
         return $this;
     }
