@@ -23,6 +23,29 @@ class AlipayBillNotify extends AlipayNotify
     public $lastUpdate;
     public $metadata;
 
+    /**
+     * The unique identifier for a single card authorization within an order.
+     * Each card authorization creates exactly one bill. Multiple bills can belong to the same order.
+     * Maximum length: 32 characters
+     */
+    public $billNo;
+
+    /**
+     * @return mixed
+     */
+    public function getBillNo()
+    {
+        return $this->billNo;
+    }
+
+    /**
+     * @param mixed $billNo
+     */
+    public function setBillNo($billNo): void
+    {
+        $this->billNo = $billNo;
+    }
+
     public function __construct($notifyBody)
     {
         $notify = $this->parseNotifyBody($notifyBody);
@@ -81,6 +104,7 @@ class AlipayBillNotify extends AlipayNotify
         if (isset($notify['metadata'])) {
             $this->setMetadata($notify['metadata']);
         }
+
     }
 
     // --- Getters and Setters ---
