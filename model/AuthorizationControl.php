@@ -52,7 +52,8 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedAuthTimes' => 'int',
         'allowedCurrencies' => 'string[]',
         'cardLimitDetail' => '\request\model\CardLimitDetail',
-        'cardLimitInfo' => '\request\model\CardLimitInfo'
+        'cardLimitInfo' => '\request\model\CardLimitInfo',
+        'refundPreference' => '\request\model\RefundPreference'
     ];
 
     /**
@@ -69,7 +70,8 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedAuthTimes' => null,
         'allowedCurrencies' => null,
         'cardLimitDetail' => null,
-        'cardLimitInfo' => null
+        'cardLimitInfo' => null,
+        'refundPreference' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedAuthTimes' => true,
         'allowedCurrencies' => false,
         'cardLimitDetail' => false,
-        'cardLimitInfo' => false
+        'cardLimitInfo' => false,
+        'refundPreference' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedAuthTimes' => 'allowedAuthTimes',
         'allowedCurrencies' => 'allowedCurrencies',
         'cardLimitDetail' => 'cardLimitDetail',
-        'cardLimitInfo' => 'cardLimitInfo'
+        'cardLimitInfo' => 'cardLimitInfo',
+        'refundPreference' => 'refundPreference'
     ];
 
     /**
@@ -194,7 +198,8 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedAuthTimes' => 'setAllowedAuthTimes',
         'allowedCurrencies' => 'setAllowedCurrencies',
         'cardLimitDetail' => 'setCardLimitDetail',
-        'cardLimitInfo' => 'setCardLimitInfo'
+        'cardLimitInfo' => 'setCardLimitInfo',
+        'refundPreference' => 'setRefundPreference'
     ];
 
     /**
@@ -209,7 +214,8 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedAuthTimes' => 'getAllowedAuthTimes',
         'allowedCurrencies' => 'getAllowedCurrencies',
         'cardLimitDetail' => 'getCardLimitDetail',
-        'cardLimitInfo' => 'getCardLimitInfo'
+        'cardLimitInfo' => 'getCardLimitInfo',
+        'refundPreference' => 'getRefundPreference'
     ];
 
     /**
@@ -276,6 +282,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('allowedCurrencies', $data ?? [], null);
         $this->setIfExists('cardLimitDetail', $data ?? [], null);
         $this->setIfExists('cardLimitInfo', $data ?? [], null);
+        $this->setIfExists('refundPreference', $data ?? [], null);
 
             }
 
@@ -306,6 +313,9 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
+        if ($this->container['cardLimitDetail'] === null) {
+            $invalidProperties[] = "'cardLimitDetail' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -444,7 +454,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets cardLimitDetail
      *
-     * @return \model\CardLimitDetail|null
+     * @return \model\CardLimitDetail
      */
     public function getCardLimitDetail()
     {
@@ -454,7 +464,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets cardLimitDetail
      *
-     * @param \model\CardLimitDetail|null $cardLimitDetail cardLimitDetail
+     * @param \model\CardLimitDetail $cardLimitDetail cardLimitDetail
      *
      * @return self
      */
@@ -485,6 +495,30 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCardLimitInfo($cardLimitInfo)
     {
         $this->container['cardLimitInfo'] = $cardLimitInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets refundPreference
+     *
+     * @return \model\RefundPreference|null
+     */
+    public function getRefundPreference()
+    {
+        return $this->container['refundPreference'];
+    }
+
+    /**
+     * Sets refundPreference
+     *
+     * @param \model\RefundPreference|null $refundPreference refundPreference
+     *
+     * @return self
+     */
+    public function setRefundPreference($refundPreference)
+    {
+        $this->container['refundPreference'] = $refundPreference;
 
         return $this;
     }
