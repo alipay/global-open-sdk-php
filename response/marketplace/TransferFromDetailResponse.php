@@ -13,7 +13,7 @@
  */
 
 
-namespace Request\marketplace;
+namespace Response\marketplace;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipayCreateTransferRequest Class Doc Comment
+ * TransferFromDetailResponse Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransferFromDetailResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipayCreateTransferRequest';
+    protected static $openAPIModelName = 'TransferFromDetailResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,9 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transferRequestId' => 'string',
-        'transferFromDetail' => '\request\model\TransferFromDetail',
-        'transferToDetail' => '\request\model\TransferToDetail'
+        'transferFromMethod' => '\request\model\PaymentMethodResponse',
+        'transferFromAmount' => '\request\model\Amount',
+        'feeAmount' => '\request\model\Amount'
     ];
 
     /**
@@ -59,9 +59,9 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'transferRequestId' => null,
-        'transferFromDetail' => null,
-        'transferToDetail' => null
+        'transferFromMethod' => null,
+        'transferFromAmount' => null,
+        'feeAmount' => null
     ];
 
     /**
@@ -70,9 +70,9 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'transferRequestId' => false,
-        'transferFromDetail' => false,
-        'transferToDetail' => false
+        'transferFromMethod' => false,
+        'transferFromAmount' => false,
+        'feeAmount' => false
     ];
 
     /**
@@ -161,9 +161,9 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
-        'transferRequestId' => 'transferRequestId',
-        'transferFromDetail' => 'transferFromDetail',
-        'transferToDetail' => 'transferToDetail'
+        'transferFromMethod' => 'transferFromMethod',
+        'transferFromAmount' => 'transferFromAmount',
+        'feeAmount' => 'feeAmount'
     ];
 
     /**
@@ -172,9 +172,9 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-        'transferRequestId' => 'setTransferRequestId',
-        'transferFromDetail' => 'setTransferFromDetail',
-        'transferToDetail' => 'setTransferToDetail'
+        'transferFromMethod' => 'setTransferFromMethod',
+        'transferFromAmount' => 'setTransferFromAmount',
+        'feeAmount' => 'setFeeAmount'
     ];
 
     /**
@@ -183,9 +183,9 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
-        'transferRequestId' => 'getTransferRequestId',
-        'transferFromDetail' => 'getTransferFromDetail',
-        'transferToDetail' => 'getTransferToDetail'
+        'transferFromMethod' => 'getTransferFromMethod',
+        'transferFromAmount' => 'getTransferFromAmount',
+        'feeAmount' => 'getFeeAmount'
     ];
 
     /**
@@ -245,12 +245,11 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('transferRequestId', $data ?? [], null);
-        $this->setIfExists('transferFromDetail', $data ?? [], null);
-        $this->setIfExists('transferToDetail', $data ?? [], null);
+        $this->setIfExists('transferFromMethod', $data ?? [], null);
+        $this->setIfExists('transferFromAmount', $data ?? [], null);
+        $this->setIfExists('feeAmount', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/funds/createTransfer"); 
-    }
+            }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -279,14 +278,11 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
     {
         $invalidProperties = [];
 
-        if ($this->container['transferRequestId'] === null) {
-            $invalidProperties[] = "'transferRequestId' can't be null";
+        if ($this->container['transferFromMethod'] === null) {
+            $invalidProperties[] = "'transferFromMethod' can't be null";
         }
-        if ($this->container['transferFromDetail'] === null) {
-            $invalidProperties[] = "'transferFromDetail' can't be null";
-        }
-        if ($this->container['transferToDetail'] === null) {
-            $invalidProperties[] = "'transferToDetail' can't be null";
+        if ($this->container['transferFromAmount'] === null) {
+            $invalidProperties[] = "'transferFromAmount' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,73 +300,73 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
 
 
     /**
-     * Gets transferRequestId
+     * Gets transferFromMethod
      *
-     * @return string
+     * @return \model\PaymentMethodResponse
      */
-    public function getTransferRequestId()
+    public function getTransferFromMethod()
     {
-        return $this->container['transferRequestId'];
+        return $this->container['transferFromMethod'];
     }
 
     /**
-     * Sets transferRequestId
+     * Sets transferFromMethod
      *
-     * @param string $transferRequestId The unique ID assigned by the merchant to identify a transfer request. This field is an API idempotency field.
+     * @param \model\PaymentMethodResponse $transferFromMethod transferFromMethod
      *
      * @return self
      */
-    public function setTransferRequestId($transferRequestId)
+    public function setTransferFromMethod($transferFromMethod)
     {
-        $this->container['transferRequestId'] = $transferRequestId;
+        $this->container['transferFromMethod'] = $transferFromMethod;
 
         return $this;
     }
 
     /**
-     * Gets transferFromDetail
+     * Gets transferFromAmount
      *
-     * @return \model\TransferFromDetail
+     * @return \model\Amount
      */
-    public function getTransferFromDetail()
+    public function getTransferFromAmount()
     {
-        return $this->container['transferFromDetail'];
+        return $this->container['transferFromAmount'];
     }
 
     /**
-     * Sets transferFromDetail
+     * Sets transferFromAmount
      *
-     * @param \model\TransferFromDetail $transferFromDetail transferFromDetail
+     * @param \model\Amount $transferFromAmount transferFromAmount
      *
      * @return self
      */
-    public function setTransferFromDetail($transferFromDetail)
+    public function setTransferFromAmount($transferFromAmount)
     {
-        $this->container['transferFromDetail'] = $transferFromDetail;
+        $this->container['transferFromAmount'] = $transferFromAmount;
 
         return $this;
     }
 
     /**
-     * Gets transferToDetail
+     * Gets feeAmount
      *
-     * @return \model\TransferToDetail
+     * @return \model\Amount|null
      */
-    public function getTransferToDetail()
+    public function getFeeAmount()
     {
-        return $this->container['transferToDetail'];
+        return $this->container['feeAmount'];
     }
 
     /**
-     * Sets transferToDetail
+     * Sets feeAmount
      *
-     * @param \model\TransferToDetail $transferToDetail transferToDetail
+     * @param \model\Amount|null $feeAmount feeAmount
      *
      * @return self
      */
-    public function setTransferToDetail($transferToDetail)
+    public function setFeeAmount($feeAmount)
     {
-        $this->container['transferToDetail'] = $transferToDetail;
+        $this->container['feeAmount'] = $feeAmount;
 
         return $this;
     }
