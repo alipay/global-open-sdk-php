@@ -19,7 +19,7 @@ namespace Model;
  * PeriodType Class Doc Comment
  *
  * @category Class
- * @description The subscription period type. Valid values are:  WEEK: indicates that the subscription period is measured in weeks. MONTH: indicates that the subscription period is measured in months. QUARTER: indicates that the subscription period is measured in quarters. HALF_YEAR: indicates that the subscription period is measured in half years. YEAR: indicates that the subscription period is measured in years.
+ * @description The subscription period type. Valid values are:  DAY: indicates that the subscription period is measured in days. WEEK: indicates that the subscription period is measured in weeks. MONTH: indicates that the subscription period is measured in months. QUARTER: indicates that the subscription period is measured in quarters. HALF_YEAR: indicates that the subscription period is measured in half years. YEAR: indicates that the subscription period is measured in years.
  * @package  request
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -27,6 +27,7 @@ namespace Model;
 
 class PeriodType
 {
+    public const DAY = 'DAY';
     public const WEEK = 'WEEK';
     public const MONTH = 'MONTH';
     public const QUARTER = 'QUARTER';
@@ -40,6 +41,10 @@ class PeriodType
         $this->value = $value;
     }
 
+    public static function DAY(): self
+    {
+        return new self(self::DAY);
+    }
     public static function WEEK(): self
     {
         return new self(self::WEEK);
