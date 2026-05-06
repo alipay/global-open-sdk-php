@@ -223,8 +223,8 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    public const PRORATION_MODE_PAY_CUSTOM_AMOUNT = 'IMMEDIATE_PAY_CUSTOM_AMOUNT';
-    public const PRORATION_MODE_REFUND_CUSTOM_AMOUNT = 'IMMEDIATE_REFUND_CUSTOM_AMOUNT';
+    public const PRORATION_MODE_IMMEDIATE_PAY_CUSTOM_AMOUNT = 'IMMEDIATE_PAY_CUSTOM_AMOUNT';
+    public const PRORATION_MODE_IMMEDIATE_REFUND_CUSTOM_AMOUNT = 'IMMEDIATE_REFUND_CUSTOM_AMOUNT';
 
     /**
      * Gets allowable values of the enum
@@ -234,8 +234,8 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function getProrationModeAllowableValues()
     {
         return [
-            self::PRORATION_MODE_PAY_CUSTOM_AMOUNT,
-            self::PRORATION_MODE_REFUND_CUSTOM_AMOUNT,
+            self::PRORATION_MODE_IMMEDIATE_PAY_CUSTOM_AMOUNT,
+            self::PRORATION_MODE_IMMEDIATE_REFUND_CUSTOM_AMOUNT,
         ];
     }
     /**
