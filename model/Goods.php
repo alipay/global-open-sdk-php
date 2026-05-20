@@ -58,6 +58,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'goodsImageUrl' => 'string',
         'priceId' => 'string',
         'goodsDiscountAmount' => '\request\model\Amount',
+        'goodsEndsOnTime' => 'string',
         'crossSell' => '\request\model\Goods'
     ];
 
@@ -81,6 +82,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'goodsImageUrl' => null,
         'priceId' => null,
         'goodsDiscountAmount' => null,
+        'goodsEndsOnTime' => null,
         'crossSell' => null
     ];
 
@@ -102,6 +104,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'goodsImageUrl' => false,
         'priceId' => false,
         'goodsDiscountAmount' => false,
+        'goodsEndsOnTime' => false,
         'crossSell' => false
     ];
 
@@ -203,6 +206,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'goodsImageUrl' => 'goodsImageUrl',
         'priceId' => 'priceId',
         'goodsDiscountAmount' => 'goodsDiscountAmount',
+        'goodsEndsOnTime' => 'goodsEndsOnTime',
         'crossSell' => 'crossSell'
     ];
 
@@ -224,6 +228,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'goodsImageUrl' => 'setGoodsImageUrl',
         'priceId' => 'setPriceId',
         'goodsDiscountAmount' => 'setGoodsDiscountAmount',
+        'goodsEndsOnTime' => 'setGoodsEndsOnTime',
         'crossSell' => 'setCrossSell'
     ];
 
@@ -245,6 +250,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'goodsImageUrl' => 'getGoodsImageUrl',
         'priceId' => 'getPriceId',
         'goodsDiscountAmount' => 'getGoodsDiscountAmount',
+        'goodsEndsOnTime' => 'getGoodsEndsOnTime',
         'crossSell' => 'getCrossSell'
     ];
 
@@ -317,6 +323,7 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('goodsImageUrl', $data ?? [], null);
         $this->setIfExists('priceId', $data ?? [], null);
         $this->setIfExists('goodsDiscountAmount', $data ?? [], null);
+        $this->setIfExists('goodsEndsOnTime', $data ?? [], null);
         $this->setIfExists('crossSell', $data ?? [], null);
 
             }
@@ -653,6 +660,30 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGoodsDiscountAmount($goodsDiscountAmount)
     {
         $this->container['goodsDiscountAmount'] = $goodsDiscountAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets goodsEndsOnTime
+     *
+     * @return string|null
+     */
+    public function getGoodsEndsOnTime()
+    {
+        return $this->container['goodsEndsOnTime'];
+    }
+
+    /**
+     * Sets goodsEndsOnTime
+     *
+     * @param string|null $goodsEndsOnTime The maximum end date for the service goods. Applicable when the merchant type is Service (e.g., online courses, beauty packages).    The value follows the ISO 8601 standard format. For example, \"2025-11-27T12:00:01+08:30\".
+     *
+     * @return self
+     */
+    public function setGoodsEndsOnTime($goodsEndsOnTime)
+    {
+        $this->container['goodsEndsOnTime'] = $goodsEndsOnTime;
 
         return $this;
     }
