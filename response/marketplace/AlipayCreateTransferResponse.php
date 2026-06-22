@@ -47,10 +47,10 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
-        'transferId' => 'string',
         'transferRequestId' => 'string',
-        'transferFromDetail' => '\request\model\TransferFromDetail',
-        'transferToDetail' => '\request\model\TransferToDetail'
+        'transferId' => 'string',
+        'transferFromDetail' => '\request\model\TransferFromDetailResponse',
+        'transferToDetail' => '\request\model\TransferToDetailResponse'
     ];
 
     /**
@@ -62,8 +62,8 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'result' => null,
-        'transferId' => null,
         'transferRequestId' => null,
+        'transferId' => null,
         'transferFromDetail' => null,
         'transferToDetail' => null
     ];
@@ -75,8 +75,8 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPINullables = [
         'result' => false,
-        'transferId' => false,
         'transferRequestId' => false,
+        'transferId' => false,
         'transferFromDetail' => false,
         'transferToDetail' => false
     ];
@@ -168,8 +168,8 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'result' => 'result',
-        'transferId' => 'transferId',
         'transferRequestId' => 'transferRequestId',
+        'transferId' => 'transferId',
         'transferFromDetail' => 'transferFromDetail',
         'transferToDetail' => 'transferToDetail'
     ];
@@ -181,8 +181,8 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'result' => 'setResult',
-        'transferId' => 'setTransferId',
         'transferRequestId' => 'setTransferRequestId',
+        'transferId' => 'setTransferId',
         'transferFromDetail' => 'setTransferFromDetail',
         'transferToDetail' => 'setTransferToDetail'
     ];
@@ -194,8 +194,8 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'result' => 'getResult',
-        'transferId' => 'getTransferId',
         'transferRequestId' => 'getTransferRequestId',
+        'transferId' => 'getTransferId',
         'transferFromDetail' => 'getTransferFromDetail',
         'transferToDetail' => 'getTransferToDetail'
     ];
@@ -258,8 +258,8 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     public function __construct(?array $data = null)
     {
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('transferId', $data ?? [], null);
         $this->setIfExists('transferRequestId', $data ?? [], null);
+        $this->setIfExists('transferId', $data ?? [], null);
         $this->setIfExists('transferFromDetail', $data ?? [], null);
         $this->setIfExists('transferToDetail', $data ?? [], null);
 
@@ -294,9 +294,6 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['transferToDetail'] === null) {
-            $invalidProperties[] = "'transferToDetail' can't be null";
         }
         return $invalidProperties;
     }
@@ -338,30 +335,6 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets transferId
-     *
-     * @return string|null
-     */
-    public function getTransferId()
-    {
-        return $this->container['transferId'];
-    }
-
-    /**
-     * Sets transferId
-     *
-     * @param string|null $transferId The unique ID assigned by Antom to identify a transfer.  This parameter is returned when the value of result.resultStatus is U.   More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setTransferId($transferId)
-    {
-        $this->container['transferId'] = $transferId;
-
-        return $this;
-    }
-
-    /**
      * Gets transferRequestId
      *
      * @return string|null
@@ -374,7 +347,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferRequestId
      *
-     * @param string|null $transferRequestId The unique ID assigned by the marketplace to identify a transfer request.  This parameter is returned when the value of result.resultStatus is U.   More information:  Maximum length: 64 characters
+     * @param string|null $transferRequestId The unique ID assigned by the merchant to identify a transfer request. Note: This field is returned on demand only when the value of result.resultStatus is S.
      *
      * @return self
      */
@@ -386,9 +359,33 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets transferId
+     *
+     * @return string|null
+     */
+    public function getTransferId()
+    {
+        return $this->container['transferId'];
+    }
+
+    /**
+     * Sets transferId
+     *
+     * @param string|null $transferId The unique ID assigned by Antom to identify a transfer. Note: This field is returned on demand only when the value of result.resultStatus is S.
+     *
+     * @return self
+     */
+    public function setTransferId($transferId)
+    {
+        $this->container['transferId'] = $transferId;
+
+        return $this;
+    }
+
+    /**
      * Gets transferFromDetail
      *
-     * @return \model\TransferFromDetail|null
+     * @return \model\TransferFromDetailResponse|null
      */
     public function getTransferFromDetail()
     {
@@ -398,7 +395,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferFromDetail
      *
-     * @param \model\TransferFromDetail|null $transferFromDetail transferFromDetail
+     * @param \model\TransferFromDetailResponse|null $transferFromDetail transferFromDetail
      *
      * @return self
      */
@@ -412,7 +409,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets transferToDetail
      *
-     * @return \model\TransferToDetail
+     * @return \model\TransferToDetailResponse|null
      */
     public function getTransferToDetail()
     {
@@ -422,7 +419,7 @@ class AlipayCreateTransferResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets transferToDetail
      *
-     * @param \model\TransferToDetail $transferToDetail transferToDetail
+     * @param \model\TransferToDetailResponse|null $transferToDetail transferToDetail
      *
      * @return self
      */

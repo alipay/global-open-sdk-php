@@ -47,12 +47,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'transferToMethod' => '\request\model\PaymentMethod',
-        'transferToCurrency' => 'string',
-        'feeAmount' => '\request\model\Amount',
-        'actualTransferToAmount' => '\request\model\Amount',
-        'purposeCode' => 'string',
+        'transferToAmount' => '\request\model\Amount',
         'transferNotifyUrl' => 'string',
-        'transferRemark' => 'string'
+        'transferRemark' => 'string',
+        'transferMemo' => 'string'
     ];
 
     /**
@@ -64,12 +62,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'transferToMethod' => null,
-        'transferToCurrency' => null,
-        'feeAmount' => null,
-        'actualTransferToAmount' => null,
-        'purposeCode' => null,
+        'transferToAmount' => null,
         'transferNotifyUrl' => null,
-        'transferRemark' => null
+        'transferRemark' => null,
+        'transferMemo' => null
     ];
 
     /**
@@ -79,12 +75,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPINullables = [
         'transferToMethod' => false,
-        'transferToCurrency' => false,
-        'feeAmount' => false,
-        'actualTransferToAmount' => false,
-        'purposeCode' => false,
+        'transferToAmount' => false,
         'transferNotifyUrl' => false,
-        'transferRemark' => false
+        'transferRemark' => false,
+        'transferMemo' => false
     ];
 
     /**
@@ -174,12 +168,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'transferToMethod' => 'transferToMethod',
-        'transferToCurrency' => 'transferToCurrency',
-        'feeAmount' => 'feeAmount',
-        'actualTransferToAmount' => 'actualTransferToAmount',
-        'purposeCode' => 'purposeCode',
+        'transferToAmount' => 'transferToAmount',
         'transferNotifyUrl' => 'transferNotifyUrl',
-        'transferRemark' => 'transferRemark'
+        'transferRemark' => 'transferRemark',
+        'transferMemo' => 'transferMemo'
     ];
 
     /**
@@ -189,12 +181,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'transferToMethod' => 'setTransferToMethod',
-        'transferToCurrency' => 'setTransferToCurrency',
-        'feeAmount' => 'setFeeAmount',
-        'actualTransferToAmount' => 'setActualTransferToAmount',
-        'purposeCode' => 'setPurposeCode',
+        'transferToAmount' => 'setTransferToAmount',
         'transferNotifyUrl' => 'setTransferNotifyUrl',
-        'transferRemark' => 'setTransferRemark'
+        'transferRemark' => 'setTransferRemark',
+        'transferMemo' => 'setTransferMemo'
     ];
 
     /**
@@ -204,12 +194,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'transferToMethod' => 'getTransferToMethod',
-        'transferToCurrency' => 'getTransferToCurrency',
-        'feeAmount' => 'getFeeAmount',
-        'actualTransferToAmount' => 'getActualTransferToAmount',
-        'purposeCode' => 'getPurposeCode',
+        'transferToAmount' => 'getTransferToAmount',
         'transferNotifyUrl' => 'getTransferNotifyUrl',
-        'transferRemark' => 'getTransferRemark'
+        'transferRemark' => 'getTransferRemark',
+        'transferMemo' => 'getTransferMemo'
     ];
 
     /**
@@ -270,12 +258,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('transferToMethod', $data ?? [], null);
-        $this->setIfExists('transferToCurrency', $data ?? [], null);
-        $this->setIfExists('feeAmount', $data ?? [], null);
-        $this->setIfExists('actualTransferToAmount', $data ?? [], null);
-        $this->setIfExists('purposeCode', $data ?? [], null);
+        $this->setIfExists('transferToAmount', $data ?? [], null);
         $this->setIfExists('transferNotifyUrl', $data ?? [], null);
         $this->setIfExists('transferRemark', $data ?? [], null);
+        $this->setIfExists('transferMemo', $data ?? [], null);
 
             }
 
@@ -309,11 +295,8 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['transferToMethod'] === null) {
             $invalidProperties[] = "'transferToMethod' can't be null";
         }
-        if ($this->container['transferToCurrency'] === null) {
-            $invalidProperties[] = "'transferToCurrency' can't be null";
-        }
-        if ($this->container['purposeCode'] === null) {
-            $invalidProperties[] = "'purposeCode' can't be null";
+        if ($this->container['transferToAmount'] === null) {
+            $invalidProperties[] = "'transferToAmount' can't be null";
         }
         return $invalidProperties;
     }
@@ -355,97 +338,25 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets transferToCurrency
+     * Gets transferToAmount
      *
-     * @return string
+     * @return \model\Amount
      */
-    public function getTransferToCurrency()
+    public function getTransferToAmount()
     {
-        return $this->container['transferToCurrency'];
+        return $this->container['transferToAmount'];
     }
 
     /**
-     * Sets transferToCurrency
+     * Sets transferToAmount
      *
-     * @param string $transferToCurrency A 3-character ISO-4217 currency code representing the currency that the beneficiary collects.    More information:  Maximum length: 3 characters
+     * @param \model\Amount $transferToAmount transferToAmount
      *
      * @return self
      */
-    public function setTransferToCurrency($transferToCurrency)
+    public function setTransferToAmount($transferToAmount)
     {
-        $this->container['transferToCurrency'] = $transferToCurrency;
-
-        return $this;
-    }
-
-    /**
-     * Gets feeAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getFeeAmount()
-    {
-        return $this->container['feeAmount'];
-    }
-
-    /**
-     * Sets feeAmount
-     *
-     * @param \model\Amount|null $feeAmount feeAmount
-     *
-     * @return self
-     */
-    public function setFeeAmount($feeAmount)
-    {
-        $this->container['feeAmount'] = $feeAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets actualTransferToAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getActualTransferToAmount()
-    {
-        return $this->container['actualTransferToAmount'];
-    }
-
-    /**
-     * Sets actualTransferToAmount
-     *
-     * @param \model\Amount|null $actualTransferToAmount actualTransferToAmount
-     *
-     * @return self
-     */
-    public function setActualTransferToAmount($actualTransferToAmount)
-    {
-        $this->container['actualTransferToAmount'] = $actualTransferToAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets purposeCode
-     *
-     * @return string
-     */
-    public function getPurposeCode()
-    {
-        return $this->container['purposeCode'];
-    }
-
-    /**
-     * Sets purposeCode
-     *
-     * @param string $purposeCode Defines the purpose of the transfer. The value of this parameter is fixed to GSD, which means goods bought or sold.    More information:  Maximum length: 3 characters
-     *
-     * @return self
-     */
-    public function setPurposeCode($purposeCode)
-    {
-        $this->container['purposeCode'] = $purposeCode;
+        $this->container['transferToAmount'] = $transferToAmount;
 
         return $this;
     }
@@ -463,7 +374,7 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferNotifyUrl
      *
-     * @param string|null $transferNotifyUrl If you specify this parameter, Antom will send the transfer result notification to this URL. The URL must be either specified in the request or set in Antom Dashboard.  Specify this parameter if you want to receive an asynchronous notification of the transfer result. If this URL is specified in both the request and Antom Dashboard, the value specified in the request takes precedence.    More information:  Maximum length: 2048 characters
+     * @param string|null $transferNotifyUrl The URL that is used to receive the transfer result notification.
      *
      * @return self
      */
@@ -487,13 +398,37 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets transferRemark
      *
-     * @param string|null $transferRemark Remark information for the transfer.  Specify this parameter if you want to provide additional remarks or relevant information regarding the payout.  More information:  Maximum length: 1024 characters
+     * @param string|null $transferRemark Information provided for bank settlements.
      *
      * @return self
      */
     public function setTransferRemark($transferRemark)
     {
         $this->container['transferRemark'] = $transferRemark;
+
+        return $this;
+    }
+
+    /**
+     * Gets transferMemo
+     *
+     * @return string|null
+     */
+    public function getTransferMemo()
+    {
+        return $this->container['transferMemo'];
+    }
+
+    /**
+     * Sets transferMemo
+     *
+     * @param string|null $transferMemo The transfer memo that the merchant leaves.
+     *
+     * @return self
+     */
+    public function setTransferMemo($transferMemo)
+    {
+        $this->container['transferMemo'] = $transferMemo;
 
         return $this;
     }
