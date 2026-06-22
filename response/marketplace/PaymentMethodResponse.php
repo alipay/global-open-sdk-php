@@ -13,7 +13,7 @@
  */
 
 
-namespace Request\marketplace;
+namespace Response\marketplace;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipayCreateTransferRequest Class Doc Comment
+ * PaymentMethodResponse Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymentMethodResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipayCreateTransferRequest';
+    protected static $openAPIModelName = 'PaymentMethodResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transferRequestId' => 'string',
-        'transferFromDetail' => '\request\model\TransferFromDetail',
-        'transferToDetail' => '\request\model\TransferToDetail'
+        'paymentMethodType' => 'string',
+        'customerId' => 'string'
     ];
 
     /**
@@ -59,9 +58,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'transferRequestId' => null,
-        'transferFromDetail' => null,
-        'transferToDetail' => null
+        'paymentMethodType' => null,
+        'customerId' => null
     ];
 
     /**
@@ -70,9 +68,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'transferRequestId' => false,
-        'transferFromDetail' => false,
-        'transferToDetail' => false
+        'paymentMethodType' => false,
+        'customerId' => false
     ];
 
     /**
@@ -161,9 +158,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
-        'transferRequestId' => 'transferRequestId',
-        'transferFromDetail' => 'transferFromDetail',
-        'transferToDetail' => 'transferToDetail'
+        'paymentMethodType' => 'paymentMethodType',
+        'customerId' => 'customerId'
     ];
 
     /**
@@ -172,9 +168,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-        'transferRequestId' => 'setTransferRequestId',
-        'transferFromDetail' => 'setTransferFromDetail',
-        'transferToDetail' => 'setTransferToDetail'
+        'paymentMethodType' => 'setPaymentMethodType',
+        'customerId' => 'setCustomerId'
     ];
 
     /**
@@ -183,9 +178,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
-        'transferRequestId' => 'getTransferRequestId',
-        'transferFromDetail' => 'getTransferFromDetail',
-        'transferToDetail' => 'getTransferToDetail'
+        'paymentMethodType' => 'getPaymentMethodType',
+        'customerId' => 'getCustomerId'
     ];
 
     /**
@@ -245,12 +239,10 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('transferRequestId', $data ?? [], null);
-        $this->setIfExists('transferFromDetail', $data ?? [], null);
-        $this->setIfExists('transferToDetail', $data ?? [], null);
+        $this->setIfExists('paymentMethodType', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/funds/createTransfer"); 
-    }
+            }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -279,14 +271,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
     {
         $invalidProperties = [];
 
-        if ($this->container['transferRequestId'] === null) {
-            $invalidProperties[] = "'transferRequestId' can't be null";
-        }
-        if ($this->container['transferFromDetail'] === null) {
-            $invalidProperties[] = "'transferFromDetail' can't be null";
-        }
-        if ($this->container['transferToDetail'] === null) {
-            $invalidProperties[] = "'transferToDetail' can't be null";
+        if ($this->container['paymentMethodType'] === null) {
+            $invalidProperties[] = "'paymentMethodType' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,73 +290,49 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
 
 
     /**
-     * Gets transferRequestId
+     * Gets paymentMethodType
      *
      * @return string
      */
-    public function getTransferRequestId()
+    public function getPaymentMethodType()
     {
-        return $this->container['transferRequestId'];
+        return $this->container['paymentMethodType'];
     }
 
     /**
-     * Sets transferRequestId
+     * Sets paymentMethodType
      *
-     * @param string $transferRequestId The unique ID assigned by the merchant to identify a transfer request. This field is an API idempotency field.
+     * @param string $paymentMethodType The payment method type that is included in payment method options. The value is fixed as: - ANTOM_BIZ_ACCOUNT: Use Antom Biz Account to send or receive funds.
      *
      * @return self
      */
-    public function setTransferRequestId($transferRequestId)
+    public function setPaymentMethodType($paymentMethodType)
     {
-        $this->container['transferRequestId'] = $transferRequestId;
+        $this->container['paymentMethodType'] = $paymentMethodType;
 
         return $this;
     }
 
     /**
-     * Gets transferFromDetail
+     * Gets customerId
      *
-     * @return \model\TransferFromDetail
+     * @return string|null
      */
-    public function getTransferFromDetail()
+    public function getCustomerId()
     {
-        return $this->container['transferFromDetail'];
+        return $this->container['customerId'];
     }
 
     /**
-     * Sets transferFromDetail
+     * Sets customerId
      *
-     * @param \model\TransferFromDetail $transferFromDetail transferFromDetail
+     * @param string|null $customerId The unique ID to identify a customer.
      *
      * @return self
      */
-    public function setTransferFromDetail($transferFromDetail)
+    public function setCustomerId($customerId)
     {
-        $this->container['transferFromDetail'] = $transferFromDetail;
-
-        return $this;
-    }
-
-    /**
-     * Gets transferToDetail
-     *
-     * @return \model\TransferToDetail
-     */
-    public function getTransferToDetail()
-    {
-        return $this->container['transferToDetail'];
-    }
-
-    /**
-     * Sets transferToDetail
-     *
-     * @param \model\TransferToDetail $transferToDetail transferToDetail
-     *
-     * @return self
-     */
-    public function setTransferToDetail($transferToDetail)
-    {
-        $this->container['transferToDetail'] = $transferToDetail;
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
