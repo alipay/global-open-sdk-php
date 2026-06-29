@@ -55,7 +55,7 @@ class CustomerBelongsTo
     public const BKASH = 'BKASH';
     public const EASYPAISA = 'EASYPAISA';
     public const DIRECTDEBIT_YAPILY = 'DIRECTDEBIT_YAPILY';
-    public const ANTIM_BIZ_ACCOUNT = 'ANTIM_BIZ_ACCOUNT';
+    public const ANTOM_BIZ_ACCOUNT = 'ANTOM_BIZ_ACCOUNT';
 
     public $value;
 
@@ -180,9 +180,9 @@ class CustomerBelongsTo
     {
         return new self(self::DIRECTDEBIT_YAPILY);
     }
-    public static function ANTIM_BIZ_ACCOUNT(): self
+    public static function ANTOM_BIZ_ACCOUNT(): self
     {
-        return new self(self::ANTIM_BIZ_ACCOUNT);
+        return new self(self::ANTOM_BIZ_ACCOUNT);
     }
 
     public function getValue(): string

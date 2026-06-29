@@ -53,7 +53,9 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'applinkUrl' => 'string',
         'vaultingStatus' => 'string',
         'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
-        'metadata' => 'string'
+        'metadata' => 'string',
+        'vaultingResultCode' => 'string',
+        'vaultingResultMessage' => 'string'
     ];
 
     /**
@@ -71,7 +73,9 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'applinkUrl' => null,
         'vaultingStatus' => null,
         'paymentMethodDetail' => null,
-        'metadata' => null
+        'metadata' => null,
+        'vaultingResultCode' => null,
+        'vaultingResultMessage' => null
     ];
 
     /**
@@ -87,7 +91,9 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'applinkUrl' => false,
         'vaultingStatus' => false,
         'paymentMethodDetail' => false,
-        'metadata' => false
+        'metadata' => false,
+        'vaultingResultCode' => false,
+        'vaultingResultMessage' => false
     ];
 
     /**
@@ -183,7 +189,9 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'applinkUrl' => 'applinkUrl',
         'vaultingStatus' => 'vaultingStatus',
         'paymentMethodDetail' => 'paymentMethodDetail',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'vaultingResultCode' => 'vaultingResultCode',
+        'vaultingResultMessage' => 'vaultingResultMessage'
     ];
 
     /**
@@ -199,7 +207,9 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'applinkUrl' => 'setApplinkUrl',
         'vaultingStatus' => 'setVaultingStatus',
         'paymentMethodDetail' => 'setPaymentMethodDetail',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'vaultingResultCode' => 'setVaultingResultCode',
+        'vaultingResultMessage' => 'setVaultingResultMessage'
     ];
 
     /**
@@ -215,7 +225,9 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'applinkUrl' => 'getApplinkUrl',
         'vaultingStatus' => 'getVaultingStatus',
         'paymentMethodDetail' => 'getPaymentMethodDetail',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'vaultingResultCode' => 'getVaultingResultCode',
+        'vaultingResultMessage' => 'getVaultingResultMessage'
     ];
 
     /**
@@ -283,6 +295,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('vaultingStatus', $data ?? [], null);
         $this->setIfExists('paymentMethodDetail', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('vaultingResultCode', $data ?? [], null);
+        $this->setIfExists('vaultingResultMessage', $data ?? [], null);
 
             }
 
@@ -522,6 +536,54 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets vaultingResultCode
+     *
+     * @return string|null
+     */
+    public function getVaultingResultCode()
+    {
+        return $this->container['vaultingResultCode'];
+    }
+
+    /**
+     * Sets vaultingResultCode
+     *
+     * @param string|null $vaultingResultCode The vaulting result code, corresponding to vaultingStatus.  When vaultingStatus is SUCCESS, the value is SUCCESS. When vaultingStatus is PROCESSING, the value is VERIFICATION_IN_PROCESS. When vaultingStatus is FAIL, the value is a specific error code returned by the card scheme, issuing bank, or acquirer; when the channel error cannot be mapped, the value is PROCESS_FAIL.  Note: This parameter is returned when the value of result.resultStatus is S.  Possible values when vaultingStatus is FAIL include: ACCESS_DENIED, ACCOUNT_CLOSED, AUTHENTICATION_REQUIRED, BLOCKED_FIRST_USED, CARD_EXPIRED, CARD_NOT_SUPPORTED, DO_NOT_HONOR, FRAUD_REJECT, INVALID_CARD_NUMBER, INVALID_CVV, INVALID_EXPIRATION_DATE, LOST_CARD, NO_SELECTED_ACCOUNT, ORDER_IS_CLOSED, PAYMENT_AMOUNT_EXCEED_LIMIT, PAYMENT_COUNT_EXCEED_LIMIT, PICKUP_CARD, POLICY, PROCESS_FAIL, RESTRICTED_CARD, STOLEN_CARD, USER_BALANCE_NOT_ENOUGH, USER_PAYMENT_VERIFICATION_FAILED, VERIFY_TIMES_EXCEED_LIMIT. Additional values may be added in the future as channel capabilities evolve.  More information:  Maximum length: 64 characters
+     *
+     * @return self
+     */
+    public function setVaultingResultCode($vaultingResultCode)
+    {
+        $this->container['vaultingResultCode'] = $vaultingResultCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets vaultingResultMessage
+     *
+     * @return string|null
+     */
+    public function getVaultingResultMessage()
+    {
+        return $this->container['vaultingResultMessage'];
+    }
+
+    /**
+     * Sets vaultingResultMessage
+     *
+     * @param string|null $vaultingResultMessage The readable description of vaultingResultCode.  When vaultingResultCode is SUCCESS, the value is \"success.\". When vaultingResultCode is VERIFICATION_IN_PROCESS, the value is \"The verification is still under process.\". When vaultingStatus is FAIL, the value is the specific error description corresponding to vaultingResultCode.  Note: This parameter is returned when the value of result.resultStatus is S.  More information:  Maximum length: 256 characters
+     *
+     * @return self
+     */
+    public function setVaultingResultMessage($vaultingResultMessage)
+    {
+        $this->container['vaultingResultMessage'] = $vaultingResultMessage;
 
         return $this;
     }
