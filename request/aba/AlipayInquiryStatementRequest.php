@@ -267,6 +267,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
 
     public const TRANSACTION_TYPE_LIST_PAYMENT = 'PAYMENT';
     public const TRANSACTION_TYPE_LIST_PAYMENT_REFUND = 'PAYMENT_REFUND';
+    public const TRANSACTION_TYPE_LIST_CHARGE = 'CHARGE';
+    public const TRANSACTION_TYPE_LIST_CHARGE_REFUND = 'CHARGE_REFUND';
     public const TRANSACTION_TYPE_LIST_TOPUP = 'TOPUP';
     public const TRANSACTION_TYPE_LIST_SETTLEMENT = 'SETTLEMENT';
     public const TRANSACTION_TYPE_LIST_WITHDRAW = 'WITHDRAW';
@@ -278,8 +280,14 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     public const TRANSACTION_TYPE_LIST_EXCHANGE = 'EXCHANGE';
     public const TRANSACTION_TYPE_LIST_CREDIT_LOAN = 'CREDIT_LOAN';
     public const TRANSACTION_TYPE_LIST_CREDIT_REPAY = 'CREDIT_REPAY';
+    public const TRANSACTION_TYPE_LIST_CREDIT_REPAYMENT = 'CREDIT_REPAYMENT';
+    public const TRANSACTION_TYPE_LIST_DIRECT_PAYMENT = 'DIRECT_PAYMENT';
+    public const TRANSACTION_TYPE_LIST_DIRECT_REFUND = 'DIRECT_REFUND';
     public const TRANSACTION_TYPE_LIST_CARD_PAYMENT = 'CARD_PAYMENT';
     public const TRANSACTION_TYPE_LIST_CARD_REFUND = 'CARD_REFUND';
+    public const TRANSACTION_TYPE_LIST_OVERFLOW_DEBIT = 'OVERFLOW_DEBIT';
+    public const TRANSACTION_TYPE_LIST_OVERFLOW_CREDIT = 'OVERFLOW_CREDIT';
+    public const TRANSACTION_TYPE_LIST_CASH_BACK = 'CASH_BACK';
 
     /**
      * Gets allowable values of the enum
@@ -291,6 +299,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         return [
             self::TRANSACTION_TYPE_LIST_PAYMENT,
             self::TRANSACTION_TYPE_LIST_PAYMENT_REFUND,
+            self::TRANSACTION_TYPE_LIST_CHARGE,
+            self::TRANSACTION_TYPE_LIST_CHARGE_REFUND,
             self::TRANSACTION_TYPE_LIST_TOPUP,
             self::TRANSACTION_TYPE_LIST_SETTLEMENT,
             self::TRANSACTION_TYPE_LIST_WITHDRAW,
@@ -302,8 +312,14 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
             self::TRANSACTION_TYPE_LIST_EXCHANGE,
             self::TRANSACTION_TYPE_LIST_CREDIT_LOAN,
             self::TRANSACTION_TYPE_LIST_CREDIT_REPAY,
+            self::TRANSACTION_TYPE_LIST_CREDIT_REPAYMENT,
+            self::TRANSACTION_TYPE_LIST_DIRECT_PAYMENT,
+            self::TRANSACTION_TYPE_LIST_DIRECT_REFUND,
             self::TRANSACTION_TYPE_LIST_CARD_PAYMENT,
             self::TRANSACTION_TYPE_LIST_CARD_REFUND,
+            self::TRANSACTION_TYPE_LIST_OVERFLOW_DEBIT,
+            self::TRANSACTION_TYPE_LIST_OVERFLOW_CREDIT,
+            self::TRANSACTION_TYPE_LIST_CASH_BACK,
         ];
     }
     /**
@@ -513,7 +529,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets transactionTypeList
      *
-     * @param string[]|null $transactionTypeList If no value passed, the API shall return all transactions. Antom only supports [0-1] single type for the current time.
+     * @param string[]|null $transactionTypeList The type of transaction that this API requests. If no value passed, the API shall return all transactions. Antom only supports [0-1] single type for the current time.  Valid values: - OVERFLOW_DEBIT: Indicates a fund outflow from the main account to the overflow account. Applicable to MY region merchants only. - OVERFLOW_CREDIT: Indicates a fund inflow to the main account back from the overflow account. Applicable to MY region merchants only. - CASH_BACK: Indicates a fund inflow for cashBack credit settlement to the merchant's main account. Applicable to CN and HK region merchants with VCC cashback feature enabled only.  If not provided, returns all transaction types (including OVERFLOW_DEBIT, OVERFLOW_CREDIT, CASH_BACK). Unknown enum value: rejected with INVALID_PARAMETER.
      *
      * @return self
      */
