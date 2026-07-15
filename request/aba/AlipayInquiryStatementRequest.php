@@ -50,7 +50,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'accessToken' => 'string',
         'startTime' => 'mixed',
         'endTime' => 'string',
-        'transactionTypeList' => '\request\model\StatementTransactionType[]',
+        'transactionTypeList' => 'string[]',
         'currencyList' => 'string[]',
         'pageSize' => 'int',
         'pageNumber' => 'int',
@@ -265,7 +265,63 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         return self::$openAPIModelName;
     }
 
+    public const TRANSACTION_TYPE_LIST_PAYMENT = 'PAYMENT';
+    public const TRANSACTION_TYPE_LIST_PAYMENT_REFUND = 'PAYMENT_REFUND';
+    public const TRANSACTION_TYPE_LIST_CHARGE = 'CHARGE';
+    public const TRANSACTION_TYPE_LIST_CHARGE_REFUND = 'CHARGE_REFUND';
+    public const TRANSACTION_TYPE_LIST_TOPUP = 'TOPUP';
+    public const TRANSACTION_TYPE_LIST_SETTLEMENT = 'SETTLEMENT';
+    public const TRANSACTION_TYPE_LIST_WITHDRAW = 'WITHDRAW';
+    public const TRANSACTION_TYPE_LIST_WITHDRAW_RETURN = 'WITHDRAW_RETURN';
+    public const TRANSACTION_TYPE_LIST_TRANSFER = 'TRANSFER';
+    public const TRANSACTION_TYPE_LIST_TRANSFER_RETURN = 'TRANSFER_RETURN';
+    public const TRANSACTION_TYPE_LIST_TRANSFER_TO_CHINA = 'TRANSFER_TO_CHINA';
+    public const TRANSACTION_TYPE_LIST_TRANSFER_RECIPIENT = 'TRANSFER_RECIPIENT';
+    public const TRANSACTION_TYPE_LIST_EXCHANGE = 'EXCHANGE';
+    public const TRANSACTION_TYPE_LIST_CREDIT_LOAN = 'CREDIT_LOAN';
+    public const TRANSACTION_TYPE_LIST_CREDIT_REPAY = 'CREDIT_REPAY';
+    public const TRANSACTION_TYPE_LIST_CREDIT_REPAYMENT = 'CREDIT_REPAYMENT';
+    public const TRANSACTION_TYPE_LIST_DIRECT_PAYMENT = 'DIRECT_PAYMENT';
+    public const TRANSACTION_TYPE_LIST_DIRECT_REFUND = 'DIRECT_REFUND';
+    public const TRANSACTION_TYPE_LIST_CARD_PAYMENT = 'CARD_PAYMENT';
+    public const TRANSACTION_TYPE_LIST_CARD_REFUND = 'CARD_REFUND';
+    public const TRANSACTION_TYPE_LIST_OVERFLOW_DEBIT = 'OVERFLOW_DEBIT';
+    public const TRANSACTION_TYPE_LIST_OVERFLOW_CREDIT = 'OVERFLOW_CREDIT';
+    public const TRANSACTION_TYPE_LIST_CASH_BACK = 'CASH_BACK';
 
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTransactionTypeListAllowableValues()
+    {
+        return [
+            self::TRANSACTION_TYPE_LIST_PAYMENT,
+            self::TRANSACTION_TYPE_LIST_PAYMENT_REFUND,
+            self::TRANSACTION_TYPE_LIST_CHARGE,
+            self::TRANSACTION_TYPE_LIST_CHARGE_REFUND,
+            self::TRANSACTION_TYPE_LIST_TOPUP,
+            self::TRANSACTION_TYPE_LIST_SETTLEMENT,
+            self::TRANSACTION_TYPE_LIST_WITHDRAW,
+            self::TRANSACTION_TYPE_LIST_WITHDRAW_RETURN,
+            self::TRANSACTION_TYPE_LIST_TRANSFER,
+            self::TRANSACTION_TYPE_LIST_TRANSFER_RETURN,
+            self::TRANSACTION_TYPE_LIST_TRANSFER_TO_CHINA,
+            self::TRANSACTION_TYPE_LIST_TRANSFER_RECIPIENT,
+            self::TRANSACTION_TYPE_LIST_EXCHANGE,
+            self::TRANSACTION_TYPE_LIST_CREDIT_LOAN,
+            self::TRANSACTION_TYPE_LIST_CREDIT_REPAY,
+            self::TRANSACTION_TYPE_LIST_CREDIT_REPAYMENT,
+            self::TRANSACTION_TYPE_LIST_DIRECT_PAYMENT,
+            self::TRANSACTION_TYPE_LIST_DIRECT_REFUND,
+            self::TRANSACTION_TYPE_LIST_CARD_PAYMENT,
+            self::TRANSACTION_TYPE_LIST_CARD_REFUND,
+            self::TRANSACTION_TYPE_LIST_OVERFLOW_DEBIT,
+            self::TRANSACTION_TYPE_LIST_OVERFLOW_CREDIT,
+            self::TRANSACTION_TYPE_LIST_CASH_BACK,
+        ];
+    }
     /**
      * Associative array for storing property values
      *
@@ -463,7 +519,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     /**
      * Gets transactionTypeList
      *
-     * @return \model\StatementTransactionType[]|null
+     * @return string[]|null
      */
     public function getTransactionTypeList()
     {
@@ -473,12 +529,21 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets transactionTypeList
      *
-     * @param \model\StatementTransactionType[]|null $transactionTypeList The type of transaction that this API requests. If no value passed, the API shall return all transactions. Antom only supports [0-1] single type for the current time.  Valid values: - OVERFLOW_DEBIT: Indicates a fund outflow from the main account to the overflow account. Applicable to MY region merchants only. - OVERFLOW_CREDIT: Indicates a fund inflow to the main account back from the overflow account. Applicable to MY region merchants only. - CASH_BACK: Indicates a fund inflow for cashBack credit settlement to the merchant's main account. Applicable to CN and HK region merchants with VCC cashback feature enabled only.  If not provided, returns all transaction types (including OVERFLOW_DEBIT, OVERFLOW_CREDIT, CASH_BACK). Unknown enum value: rejected with INVALID_PARAMETER.
+     * @param string[]|null $transactionTypeList The type of transaction that this API requests. If no value passed, the API shall return all transactions. Antom only supports [0-1] single type for the current time.  Valid values: - OVERFLOW_DEBIT: Indicates a fund outflow from the main account to the overflow account. Applicable to MY region merchants only. - OVERFLOW_CREDIT: Indicates a fund inflow to the main account back from the overflow account. Applicable to MY region merchants only. - CASH_BACK: Indicates a fund inflow for cashBack credit settlement to the merchant's main account. Applicable to CN and HK region merchants with VCC cashback feature enabled only.  If not provided, returns all transaction types (including OVERFLOW_DEBIT, OVERFLOW_CREDIT, CASH_BACK). Unknown enum value: rejected with INVALID_PARAMETER.
      *
      * @return self
      */
     public function setTransactionTypeList($transactionTypeList)
     {
+        $allowedValues = $this->getTransactionTypeListAllowableValues();
+        if (array_diff($transactionTypeList, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'transactionTypeList', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['transactionTypeList'] = $transactionTypeList;
 
         return $this;
