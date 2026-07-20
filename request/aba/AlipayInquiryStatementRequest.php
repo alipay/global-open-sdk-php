@@ -54,7 +54,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'currencyList' => 'string[]',
         'pageSize' => 'int',
         'pageNumber' => 'int',
-        'assetId' => 'string'
+        'assetId' => 'string',
+        'fuzzyName' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'currencyList' => null,
         'pageSize' => null,
         'pageNumber' => null,
-        'assetId' => null
+        'assetId' => null,
+        'fuzzyName' => null
     ];
 
     /**
@@ -90,7 +92,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'currencyList' => false,
         'pageSize' => true,
         'pageNumber' => true,
-        'assetId' => false
+        'assetId' => false,
+        'fuzzyName' => false
     ];
 
     /**
@@ -187,7 +190,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'currencyList' => 'currencyList',
         'pageSize' => 'pageSize',
         'pageNumber' => 'pageNumber',
-        'assetId' => 'assetId'
+        'assetId' => 'assetId',
+        'fuzzyName' => 'fuzzyName'
     ];
 
     /**
@@ -204,7 +208,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'currencyList' => 'setCurrencyList',
         'pageSize' => 'setPageSize',
         'pageNumber' => 'setPageNumber',
-        'assetId' => 'setAssetId'
+        'assetId' => 'setAssetId',
+        'fuzzyName' => 'setFuzzyName'
     ];
 
     /**
@@ -221,7 +226,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'currencyList' => 'getCurrencyList',
         'pageSize' => 'getPageSize',
         'pageNumber' => 'getPageNumber',
-        'assetId' => 'getAssetId'
+        'assetId' => 'getAssetId',
+        'fuzzyName' => 'getFuzzyName'
     ];
 
     /**
@@ -346,6 +352,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('pageSize', $data ?? [], null);
         $this->setIfExists('pageNumber', $data ?? [], null);
         $this->setIfExists('assetId', $data ?? [], null);
+        $this->setIfExists('fuzzyName', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/aba/accounts/inquiryStatement"); 
     }
@@ -641,6 +648,30 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     public function setAssetId($assetId)
     {
         $this->container['assetId'] = $assetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets fuzzyName
+     *
+     * @return string|null
+     */
+    public function getFuzzyName()
+    {
+        return $this->container['fuzzyName'];
+    }
+
+    /**
+     * Sets fuzzyName
+     *
+     * @param string|null $fuzzyName The value used to filter beneficiaries using fuzzy matching.
+     *
+     * @return self
+     */
+    public function setFuzzyName($fuzzyName)
+    {
+        $this->container['fuzzyName'] = $fuzzyName;
 
         return $this;
     }
