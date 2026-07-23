@@ -36,6 +36,8 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 
     public  $subscriptionOrderId;
     public  $retryInfo;
+    public  $updateRequestId;
+    public  $authExpiryTime;
 
     /**
      * @return mixed
@@ -316,6 +318,38 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     public function setAcquirerInfo($acquirerInfo)
     {
         $this->acquirerInfo = $acquirerInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdateRequestId()
+    {
+        return $this->updateRequestId;
+    }
+
+    /**
+     * @param mixed $updateRequestId
+     */
+    public function setUpdateRequestId($updateRequestId): void
+    {
+        $this->updateRequestId = $updateRequestId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthExpiryTime()
+    {
+        return $this->authExpiryTime;
+    }
+
+    /**
+     * @param mixed $authExpiryTime
+     */
+    public function setAuthExpiryTime($authExpiryTime): void
+    {
+        $this->authExpiryTime = $authExpiryTime;
     }
 
 
