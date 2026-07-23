@@ -53,7 +53,9 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionAmount' => '\request\model\Amount',
         'transactionRequestId' => 'string',
         'transactionTime' => 'string',
-        'acquirerInfo' => '\request\model\AcquirerInfo'
+        'acquirerInfo' => '\request\model\AcquirerInfo',
+        'grossSettlementAmount' => '\request\model\Amount',
+        'settlementQuote' => '\request\model\Quote'
     ];
 
     /**
@@ -71,7 +73,9 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionAmount' => null,
         'transactionRequestId' => null,
         'transactionTime' => null,
-        'acquirerInfo' => null
+        'acquirerInfo' => null,
+        'grossSettlementAmount' => null,
+        'settlementQuote' => null
     ];
 
     /**
@@ -87,7 +91,9 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionAmount' => false,
         'transactionRequestId' => false,
         'transactionTime' => false,
-        'acquirerInfo' => false
+        'acquirerInfo' => false,
+        'grossSettlementAmount' => false,
+        'settlementQuote' => false
     ];
 
     /**
@@ -183,7 +189,9 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionAmount' => 'transactionAmount',
         'transactionRequestId' => 'transactionRequestId',
         'transactionTime' => 'transactionTime',
-        'acquirerInfo' => 'acquirerInfo'
+        'acquirerInfo' => 'acquirerInfo',
+        'grossSettlementAmount' => 'grossSettlementAmount',
+        'settlementQuote' => 'settlementQuote'
     ];
 
     /**
@@ -199,7 +207,9 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionAmount' => 'setTransactionAmount',
         'transactionRequestId' => 'setTransactionRequestId',
         'transactionTime' => 'setTransactionTime',
-        'acquirerInfo' => 'setAcquirerInfo'
+        'acquirerInfo' => 'setAcquirerInfo',
+        'grossSettlementAmount' => 'setGrossSettlementAmount',
+        'settlementQuote' => 'setSettlementQuote'
     ];
 
     /**
@@ -215,7 +225,9 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionAmount' => 'getTransactionAmount',
         'transactionRequestId' => 'getTransactionRequestId',
         'transactionTime' => 'getTransactionTime',
-        'acquirerInfo' => 'getAcquirerInfo'
+        'acquirerInfo' => 'getAcquirerInfo',
+        'grossSettlementAmount' => 'getGrossSettlementAmount',
+        'settlementQuote' => 'getSettlementQuote'
     ];
 
     /**
@@ -283,6 +295,8 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('transactionRequestId', $data ?? [], null);
         $this->setIfExists('transactionTime', $data ?? [], null);
         $this->setIfExists('acquirerInfo', $data ?? [], null);
+        $this->setIfExists('grossSettlementAmount', $data ?? [], null);
+        $this->setIfExists('settlementQuote', $data ?? [], null);
 
             }
 
@@ -534,6 +548,54 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcquirerInfo($acquirerInfo)
     {
         $this->container['acquirerInfo'] = $acquirerInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets grossSettlementAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getGrossSettlementAmount()
+    {
+        return $this->container['grossSettlementAmount'];
+    }
+
+    /**
+     * Sets grossSettlementAmount
+     *
+     * @param \model\Amount|null $grossSettlementAmount grossSettlementAmount
+     *
+     * @return self
+     */
+    public function setGrossSettlementAmount($grossSettlementAmount)
+    {
+        $this->container['grossSettlementAmount'] = $grossSettlementAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlementQuote
+     *
+     * @return \model\Quote|null
+     */
+    public function getSettlementQuote()
+    {
+        return $this->container['settlementQuote'];
+    }
+
+    /**
+     * Sets settlementQuote
+     *
+     * @param \model\Quote|null $settlementQuote settlementQuote
+     *
+     * @return self
+     */
+    public function setSettlementQuote($settlementQuote)
+    {
+        $this->container['settlementQuote'] = $settlementQuote;
 
         return $this;
     }

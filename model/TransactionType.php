@@ -32,6 +32,7 @@ class TransactionType
     public const CANCEL = 'CANCEL';
     public const AUTHORIZATION = 'AUTHORIZATION';
     public const VOID = 'VOID';
+    public const INCREMENTAL = 'INCREMENTAL';
 
     public $value;
 
@@ -63,6 +64,10 @@ class TransactionType
     public static function VOID(): self
     {
         return new self(self::VOID);
+    }
+    public static function INCREMENTAL(): self
+    {
+        return new self(self::INCREMENTAL);
     }
 
     public function getValue(): string

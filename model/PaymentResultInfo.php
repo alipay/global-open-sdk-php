@@ -73,7 +73,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'credentialTypeUsed' => 'string',
         'rrn' => 'string',
         'userAuthorizationStatus' => 'string',
-        'authorizationCode' => 'string'
+        'authorizationCode' => 'string',
+        'incrementalAuthorizationAvailable' => 'bool',
+        'extendedAuthorizationAvailable' => 'bool',
+        'refundOnAuthorizationAvailable' => 'bool'
     ];
 
     /**
@@ -111,7 +114,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'credentialTypeUsed' => null,
         'rrn' => null,
         'userAuthorizationStatus' => null,
-        'authorizationCode' => null
+        'authorizationCode' => null,
+        'incrementalAuthorizationAvailable' => null,
+        'extendedAuthorizationAvailable' => null,
+        'refundOnAuthorizationAvailable' => null
     ];
 
     /**
@@ -147,7 +153,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'credentialTypeUsed' => false,
         'rrn' => false,
         'userAuthorizationStatus' => false,
-        'authorizationCode' => false
+        'authorizationCode' => false,
+        'incrementalAuthorizationAvailable' => false,
+        'extendedAuthorizationAvailable' => false,
+        'refundOnAuthorizationAvailable' => false
     ];
 
     /**
@@ -263,7 +272,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'credentialTypeUsed' => 'credentialTypeUsed',
         'rrn' => 'rrn',
         'userAuthorizationStatus' => 'userAuthorizationStatus',
-        'authorizationCode' => 'authorizationCode'
+        'authorizationCode' => 'authorizationCode',
+        'incrementalAuthorizationAvailable' => 'incrementalAuthorizationAvailable',
+        'extendedAuthorizationAvailable' => 'extendedAuthorizationAvailable',
+        'refundOnAuthorizationAvailable' => 'refundOnAuthorizationAvailable'
     ];
 
     /**
@@ -299,7 +311,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'credentialTypeUsed' => 'setCredentialTypeUsed',
         'rrn' => 'setRrn',
         'userAuthorizationStatus' => 'setUserAuthorizationStatus',
-        'authorizationCode' => 'setAuthorizationCode'
+        'authorizationCode' => 'setAuthorizationCode',
+        'incrementalAuthorizationAvailable' => 'setIncrementalAuthorizationAvailable',
+        'extendedAuthorizationAvailable' => 'setExtendedAuthorizationAvailable',
+        'refundOnAuthorizationAvailable' => 'setRefundOnAuthorizationAvailable'
     ];
 
     /**
@@ -335,7 +350,10 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         'credentialTypeUsed' => 'getCredentialTypeUsed',
         'rrn' => 'getRrn',
         'userAuthorizationStatus' => 'getUserAuthorizationStatus',
-        'authorizationCode' => 'getAuthorizationCode'
+        'authorizationCode' => 'getAuthorizationCode',
+        'incrementalAuthorizationAvailable' => 'getIncrementalAuthorizationAvailable',
+        'extendedAuthorizationAvailable' => 'getExtendedAuthorizationAvailable',
+        'refundOnAuthorizationAvailable' => 'getRefundOnAuthorizationAvailable'
     ];
 
     /**
@@ -423,6 +441,9 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('rrn', $data ?? [], null);
         $this->setIfExists('userAuthorizationStatus', $data ?? [], null);
         $this->setIfExists('authorizationCode', $data ?? [], null);
+        $this->setIfExists('incrementalAuthorizationAvailable', $data ?? [], null);
+        $this->setIfExists('extendedAuthorizationAvailable', $data ?? [], null);
+        $this->setIfExists('refundOnAuthorizationAvailable', $data ?? [], null);
 
             }
 
@@ -1136,6 +1157,78 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAuthorizationCode($authorizationCode)
     {
         $this->container['authorizationCode'] = $authorizationCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets incrementalAuthorizationAvailable
+     *
+     * @return bool|null
+     */
+    public function getIncrementalAuthorizationAvailable()
+    {
+        return $this->container['incrementalAuthorizationAvailable'];
+    }
+
+    /**
+     * Sets incrementalAuthorizationAvailable
+     *
+     * @param bool|null $incrementalAuthorizationAvailable Whether this pre-auth supports incremental auth. Returned when auth is successful.
+     *
+     * @return self
+     */
+    public function setIncrementalAuthorizationAvailable($incrementalAuthorizationAvailable)
+    {
+        $this->container['incrementalAuthorizationAvailable'] = $incrementalAuthorizationAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets extendedAuthorizationAvailable
+     *
+     * @return bool|null
+     */
+    public function getExtendedAuthorizationAvailable()
+    {
+        return $this->container['extendedAuthorizationAvailable'];
+    }
+
+    /**
+     * Sets extendedAuthorizationAvailable
+     *
+     * @param bool|null $extendedAuthorizationAvailable Whether this pre-auth supports extended auth. Returned when auth is successful.
+     *
+     * @return self
+     */
+    public function setExtendedAuthorizationAvailable($extendedAuthorizationAvailable)
+    {
+        $this->container['extendedAuthorizationAvailable'] = $extendedAuthorizationAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets refundOnAuthorizationAvailable
+     *
+     * @return bool|null
+     */
+    public function getRefundOnAuthorizationAvailable()
+    {
+        return $this->container['refundOnAuthorizationAvailable'];
+    }
+
+    /**
+     * Sets refundOnAuthorizationAvailable
+     *
+     * @param bool|null $refundOnAuthorizationAvailable Whether subsequent refunds can be made via paymentId. Returned when auth is successful.
+     *
+     * @return self
+     */
+    public function setRefundOnAuthorizationAvailable($refundOnAuthorizationAvailable)
+    {
+        $this->container['refundOnAuthorizationAvailable'] = $refundOnAuthorizationAvailable;
 
         return $this;
     }
