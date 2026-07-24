@@ -73,7 +73,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => '\request\model\PaymentVerificationData',
         'extendInfo' => 'string',
         'merchantAccountId' => 'string',
-        'dualOfflinePayment' => 'bool'
+        'dualOfflinePayment' => 'bool',
+        'teaDrinkerPlusTest' => 'string'
     ];
 
     /**
@@ -111,7 +112,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => null,
         'extendInfo' => null,
         'merchantAccountId' => null,
-        'dualOfflinePayment' => null
+        'dualOfflinePayment' => null,
+        'teaDrinkerPlusTest' => null
     ];
 
     /**
@@ -147,7 +149,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => false,
         'extendInfo' => false,
         'merchantAccountId' => false,
-        'dualOfflinePayment' => false
+        'dualOfflinePayment' => false,
+        'teaDrinkerPlusTest' => false
     ];
 
     /**
@@ -263,7 +266,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => 'paymentVerificationData',
         'extendInfo' => 'extendInfo',
         'merchantAccountId' => 'merchantAccountId',
-        'dualOfflinePayment' => 'dualOfflinePayment'
+        'dualOfflinePayment' => 'dualOfflinePayment',
+        'teaDrinkerPlusTest' => 'teaDrinkerPlusTest'
     ];
 
     /**
@@ -299,7 +303,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => 'setPaymentVerificationData',
         'extendInfo' => 'setExtendInfo',
         'merchantAccountId' => 'setMerchantAccountId',
-        'dualOfflinePayment' => 'setDualOfflinePayment'
+        'dualOfflinePayment' => 'setDualOfflinePayment',
+        'teaDrinkerPlusTest' => 'setTeaDrinkerPlusTest'
     ];
 
     /**
@@ -335,7 +340,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => 'getPaymentVerificationData',
         'extendInfo' => 'getExtendInfo',
         'merchantAccountId' => 'getMerchantAccountId',
-        'dualOfflinePayment' => 'getDualOfflinePayment'
+        'dualOfflinePayment' => 'getDualOfflinePayment',
+        'teaDrinkerPlusTest' => 'getTeaDrinkerPlusTest'
     ];
 
     /**
@@ -423,6 +429,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('extendInfo', $data ?? [], null);
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
+        $this->setIfExists('teaDrinkerPlusTest', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/pay"); 
     }
@@ -1161,6 +1168,30 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     public function setDualOfflinePayment($dualOfflinePayment)
     {
         $this->container['dualOfflinePayment'] = $dualOfflinePayment;
+
+        return $this;
+    }
+
+    /**
+     * Gets teaDrinkerPlusTest
+     *
+     * @return string|null
+     */
+    public function getTeaDrinkerPlusTest()
+    {
+        return $this->container['teaDrinkerPlusTest'];
+    }
+
+    /**
+     * Sets teaDrinkerPlusTest
+     *
+     * @param string|null $teaDrinkerPlusTest Test parameter for TeaDrinkerPlus
+     *
+     * @return self
+     */
+    public function setTeaDrinkerPlusTest($teaDrinkerPlusTest)
+    {
+        $this->container['teaDrinkerPlusTest'] = $teaDrinkerPlusTest;
 
         return $this;
     }
