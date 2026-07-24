@@ -72,7 +72,11 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'appIdentifier' => 'string',
         'paymentResultInfo' => '\request\model\PaymentResultInfo',
         'acquirerInfo' => '\request\model\AcquirerInfo',
-        'promotionResult' => '\request\model\PromotionResult[]'
+        'promotionResult' => '\request\model\PromotionResult[]',
+        'subscriptionId' => 'string',
+        'status' => 'string',
+        'currentPeriodStart' => 'string',
+        'currentPeriodEnd' => 'string'
     ];
 
     /**
@@ -109,7 +113,11 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'appIdentifier' => null,
         'paymentResultInfo' => null,
         'acquirerInfo' => null,
-        'promotionResult' => null
+        'promotionResult' => null,
+        'subscriptionId' => null,
+        'status' => null,
+        'currentPeriodStart' => null,
+        'currentPeriodEnd' => null
     ];
 
     /**
@@ -144,7 +152,11 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'appIdentifier' => false,
         'paymentResultInfo' => false,
         'acquirerInfo' => false,
-        'promotionResult' => false
+        'promotionResult' => false,
+        'subscriptionId' => false,
+        'status' => false,
+        'currentPeriodStart' => false,
+        'currentPeriodEnd' => false
     ];
 
     /**
@@ -259,7 +271,11 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'appIdentifier' => 'appIdentifier',
         'paymentResultInfo' => 'paymentResultInfo',
         'acquirerInfo' => 'acquirerInfo',
-        'promotionResult' => 'promotionResult'
+        'promotionResult' => 'promotionResult',
+        'subscriptionId' => 'subscriptionId',
+        'status' => 'status',
+        'currentPeriodStart' => 'currentPeriodStart',
+        'currentPeriodEnd' => 'currentPeriodEnd'
     ];
 
     /**
@@ -294,7 +310,11 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'appIdentifier' => 'setAppIdentifier',
         'paymentResultInfo' => 'setPaymentResultInfo',
         'acquirerInfo' => 'setAcquirerInfo',
-        'promotionResult' => 'setPromotionResult'
+        'promotionResult' => 'setPromotionResult',
+        'subscriptionId' => 'setSubscriptionId',
+        'status' => 'setStatus',
+        'currentPeriodStart' => 'setCurrentPeriodStart',
+        'currentPeriodEnd' => 'setCurrentPeriodEnd'
     ];
 
     /**
@@ -329,7 +349,11 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'appIdentifier' => 'getAppIdentifier',
         'paymentResultInfo' => 'getPaymentResultInfo',
         'acquirerInfo' => 'getAcquirerInfo',
-        'promotionResult' => 'getPromotionResult'
+        'promotionResult' => 'getPromotionResult',
+        'subscriptionId' => 'getSubscriptionId',
+        'status' => 'getStatus',
+        'currentPeriodStart' => 'getCurrentPeriodStart',
+        'currentPeriodEnd' => 'getCurrentPeriodEnd'
     ];
 
     /**
@@ -416,6 +440,10 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('paymentResultInfo', $data ?? [], null);
         $this->setIfExists('acquirerInfo', $data ?? [], null);
         $this->setIfExists('promotionResult', $data ?? [], null);
+        $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('currentPeriodStart', $data ?? [], null);
+        $this->setIfExists('currentPeriodEnd', $data ?? [], null);
 
             }
 
@@ -1108,6 +1136,102 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setPromotionResult($promotionResult)
     {
         $this->container['promotionResult'] = $promotionResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionId
+     *
+     * @return string|null
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscriptionId'];
+    }
+
+    /**
+     * Sets subscriptionId
+     *
+     * @param string|null $subscriptionId The subscription ID echo.
+     *
+     * @return self
+     */
+    public function setSubscriptionId($subscriptionId)
+    {
+        $this->container['subscriptionId'] = $subscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status The subscription status after payment/token binding.
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodStart
+     *
+     * @return string|null
+     */
+    public function getCurrentPeriodStart()
+    {
+        return $this->container['currentPeriodStart'];
+    }
+
+    /**
+     * Sets currentPeriodStart
+     *
+     * @param string|null $currentPeriodStart The start time of the billing cycle.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodStart($currentPeriodStart)
+    {
+        $this->container['currentPeriodStart'] = $currentPeriodStart;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodEnd
+     *
+     * @return string|null
+     */
+    public function getCurrentPeriodEnd()
+    {
+        return $this->container['currentPeriodEnd'];
+    }
+
+    /**
+     * Sets currentPeriodEnd
+     *
+     * @param string|null $currentPeriodEnd The end time of the billing cycle.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodEnd($currentPeriodEnd)
+    {
+        $this->container['currentPeriodEnd'] = $currentPeriodEnd;
 
         return $this;
     }
