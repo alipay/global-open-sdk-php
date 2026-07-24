@@ -73,7 +73,9 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => '\request\model\PaymentVerificationData',
         'extendInfo' => 'string',
         'merchantAccountId' => 'string',
-        'dualOfflinePayment' => 'bool'
+        'dualOfflinePayment' => 'bool',
+        'teaDrinkerPlusTest' => 'string',
+        'ordertestrequesttone' => 'string'
     ];
 
     /**
@@ -111,7 +113,9 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => null,
         'extendInfo' => null,
         'merchantAccountId' => null,
-        'dualOfflinePayment' => null
+        'dualOfflinePayment' => null,
+        'teaDrinkerPlusTest' => null,
+        'ordertestrequesttone' => null
     ];
 
     /**
@@ -147,7 +151,9 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => false,
         'extendInfo' => false,
         'merchantAccountId' => false,
-        'dualOfflinePayment' => false
+        'dualOfflinePayment' => false,
+        'teaDrinkerPlusTest' => false,
+        'ordertestrequesttone' => false
     ];
 
     /**
@@ -263,7 +269,9 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => 'paymentVerificationData',
         'extendInfo' => 'extendInfo',
         'merchantAccountId' => 'merchantAccountId',
-        'dualOfflinePayment' => 'dualOfflinePayment'
+        'dualOfflinePayment' => 'dualOfflinePayment',
+        'teaDrinkerPlusTest' => 'teaDrinkerPlusTest',
+        'ordertestrequesttone' => 'ordertestrequesttone'
     ];
 
     /**
@@ -299,7 +307,9 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => 'setPaymentVerificationData',
         'extendInfo' => 'setExtendInfo',
         'merchantAccountId' => 'setMerchantAccountId',
-        'dualOfflinePayment' => 'setDualOfflinePayment'
+        'dualOfflinePayment' => 'setDualOfflinePayment',
+        'teaDrinkerPlusTest' => 'setTeaDrinkerPlusTest',
+        'ordertestrequesttone' => 'setOrdertestrequesttone'
     ];
 
     /**
@@ -335,7 +345,9 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'paymentVerificationData' => 'getPaymentVerificationData',
         'extendInfo' => 'getExtendInfo',
         'merchantAccountId' => 'getMerchantAccountId',
-        'dualOfflinePayment' => 'getDualOfflinePayment'
+        'dualOfflinePayment' => 'getDualOfflinePayment',
+        'teaDrinkerPlusTest' => 'getTeaDrinkerPlusTest',
+        'ordertestrequesttone' => 'getOrdertestrequesttone'
     ];
 
     /**
@@ -423,6 +435,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('extendInfo', $data ?? [], null);
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
+        $this->setIfExists('teaDrinkerPlusTest', $data ?? [], null);
+        $this->setIfExists('ordertestrequesttone', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/pay"); 
     }
@@ -1161,6 +1175,54 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     public function setDualOfflinePayment($dualOfflinePayment)
     {
         $this->container['dualOfflinePayment'] = $dualOfflinePayment;
+
+        return $this;
+    }
+
+    /**
+     * Gets teaDrinkerPlusTest
+     *
+     * @return string|null
+     */
+    public function getTeaDrinkerPlusTest()
+    {
+        return $this->container['teaDrinkerPlusTest'];
+    }
+
+    /**
+     * Sets teaDrinkerPlusTest
+     *
+     * @param string|null $teaDrinkerPlusTest Test parameter for TeaDrinkerPlus
+     *
+     * @return self
+     */
+    public function setTeaDrinkerPlusTest($teaDrinkerPlusTest)
+    {
+        $this->container['teaDrinkerPlusTest'] = $teaDrinkerPlusTest;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordertestrequesttone
+     *
+     * @return string|null
+     */
+    public function getOrdertestrequesttone()
+    {
+        return $this->container['ordertestrequesttone'];
+    }
+
+    /**
+     * Sets ordertestrequesttone
+     *
+     * @param string|null $ordertestrequesttone 5.6 号测试
+     *
+     * @return self
+     */
+    public function setOrdertestrequesttone($ordertestrequesttone)
+    {
+        $this->container['ordertestrequesttone'] = $ordertestrequesttone;
 
         return $this;
     }
