@@ -13,7 +13,7 @@
  */
 
 
-namespace Response\pay;
+namespace Model;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * AlipayPaymentSessionResponse Class Doc Comment
+ * BillingSubscription Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AlipayPaymentSessionResponse';
+    protected static $openAPIModelName = 'BillingSubscription';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,14 +46,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'paymentSessionData' => 'string',
-        'paymentSessionExpiryTime' => 'string',
-        'paymentSessionId' => 'string',
-        'normalUrl' => 'string',
-        'url' => 'string',
-        'subscriptionId' => 'string',
-        'invoiceId' => 'string'
+        'customerId' => 'string',
+        'trialSettings' => '\request\model\BillingTrialSettings',
+        'paymentBehavior' => 'string',
+        'collectionMethod' => 'string',
+        'daysUntilDue' => 'int',
+        'billingCycleAnchor' => 'string',
+        'cancelAt' => 'string',
+        'cancelAtPeriodEnd' => 'bool',
+        'description' => 'string',
+        'discounts' => '\request\model\BillingSubscriptionDiscount[]',
+        'allowPromotionCode' => 'bool',
+        'subscriptionNotifyUrl' => 'string'
     ];
 
     /**
@@ -64,14 +68,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'result' => null,
-        'paymentSessionData' => null,
-        'paymentSessionExpiryTime' => null,
-        'paymentSessionId' => null,
-        'normalUrl' => null,
-        'url' => null,
-        'subscriptionId' => null,
-        'invoiceId' => null
+        'customerId' => null,
+        'trialSettings' => null,
+        'paymentBehavior' => null,
+        'collectionMethod' => null,
+        'daysUntilDue' => null,
+        'billingCycleAnchor' => null,
+        'cancelAt' => null,
+        'cancelAtPeriodEnd' => null,
+        'description' => null,
+        'discounts' => null,
+        'allowPromotionCode' => null,
+        'subscriptionNotifyUrl' => null
     ];
 
     /**
@@ -80,14 +88,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'result' => false,
-        'paymentSessionData' => false,
-        'paymentSessionExpiryTime' => false,
-        'paymentSessionId' => false,
-        'normalUrl' => false,
-        'url' => false,
-        'subscriptionId' => false,
-        'invoiceId' => false
+        'customerId' => false,
+        'trialSettings' => false,
+        'paymentBehavior' => false,
+        'collectionMethod' => false,
+        'daysUntilDue' => true,
+        'billingCycleAnchor' => false,
+        'cancelAt' => false,
+        'cancelAtPeriodEnd' => false,
+        'description' => false,
+        'discounts' => false,
+        'allowPromotionCode' => false,
+        'subscriptionNotifyUrl' => false
     ];
 
     /**
@@ -176,14 +188,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'result' => 'result',
-        'paymentSessionData' => 'paymentSessionData',
-        'paymentSessionExpiryTime' => 'paymentSessionExpiryTime',
-        'paymentSessionId' => 'paymentSessionId',
-        'normalUrl' => 'normalUrl',
-        'url' => 'url',
-        'subscriptionId' => 'subscriptionId',
-        'invoiceId' => 'invoiceId'
+        'customerId' => 'customerId',
+        'trialSettings' => 'trialSettings',
+        'paymentBehavior' => 'paymentBehavior',
+        'collectionMethod' => 'collectionMethod',
+        'daysUntilDue' => 'daysUntilDue',
+        'billingCycleAnchor' => 'billingCycleAnchor',
+        'cancelAt' => 'cancelAt',
+        'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
+        'description' => 'description',
+        'discounts' => 'discounts',
+        'allowPromotionCode' => 'allowPromotionCode',
+        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl'
     ];
 
     /**
@@ -192,14 +208,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'result' => 'setResult',
-        'paymentSessionData' => 'setPaymentSessionData',
-        'paymentSessionExpiryTime' => 'setPaymentSessionExpiryTime',
-        'paymentSessionId' => 'setPaymentSessionId',
-        'normalUrl' => 'setNormalUrl',
-        'url' => 'setUrl',
-        'subscriptionId' => 'setSubscriptionId',
-        'invoiceId' => 'setInvoiceId'
+        'customerId' => 'setCustomerId',
+        'trialSettings' => 'setTrialSettings',
+        'paymentBehavior' => 'setPaymentBehavior',
+        'collectionMethod' => 'setCollectionMethod',
+        'daysUntilDue' => 'setDaysUntilDue',
+        'billingCycleAnchor' => 'setBillingCycleAnchor',
+        'cancelAt' => 'setCancelAt',
+        'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
+        'description' => 'setDescription',
+        'discounts' => 'setDiscounts',
+        'allowPromotionCode' => 'setAllowPromotionCode',
+        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl'
     ];
 
     /**
@@ -208,14 +228,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'result' => 'getResult',
-        'paymentSessionData' => 'getPaymentSessionData',
-        'paymentSessionExpiryTime' => 'getPaymentSessionExpiryTime',
-        'paymentSessionId' => 'getPaymentSessionId',
-        'normalUrl' => 'getNormalUrl',
-        'url' => 'getUrl',
-        'subscriptionId' => 'getSubscriptionId',
-        'invoiceId' => 'getInvoiceId'
+        'customerId' => 'getCustomerId',
+        'trialSettings' => 'getTrialSettings',
+        'paymentBehavior' => 'getPaymentBehavior',
+        'collectionMethod' => 'getCollectionMethod',
+        'daysUntilDue' => 'getDaysUntilDue',
+        'billingCycleAnchor' => 'getBillingCycleAnchor',
+        'cancelAt' => 'getCancelAt',
+        'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
+        'description' => 'getDescription',
+        'discounts' => 'getDiscounts',
+        'allowPromotionCode' => 'getAllowPromotionCode',
+        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl'
     ];
 
     /**
@@ -275,14 +299,18 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('paymentSessionData', $data ?? [], null);
-        $this->setIfExists('paymentSessionExpiryTime', $data ?? [], null);
-        $this->setIfExists('paymentSessionId', $data ?? [], null);
-        $this->setIfExists('normalUrl', $data ?? [], null);
-        $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('subscriptionId', $data ?? [], null);
-        $this->setIfExists('invoiceId', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('trialSettings', $data ?? [], null);
+        $this->setIfExists('paymentBehavior', $data ?? [], null);
+        $this->setIfExists('collectionMethod', $data ?? [], null);
+        $this->setIfExists('daysUntilDue', $data ?? [], null);
+        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
+        $this->setIfExists('cancelAt', $data ?? [], null);
+        $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('discounts', $data ?? [], null);
+        $this->setIfExists('allowPromotionCode', $data ?? [], null);
+        $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
 
             }
 
@@ -313,18 +341,6 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['result'] === null) {
-            $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['paymentSessionData'] === null) {
-            $invalidProperties[] = "'paymentSessionData' can't be null";
-        }
-        if ($this->container['paymentSessionExpiryTime'] === null) {
-            $invalidProperties[] = "'paymentSessionExpiryTime' can't be null";
-        }
-        if ($this->container['paymentSessionId'] === null) {
-            $invalidProperties[] = "'paymentSessionId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -341,193 +357,289 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets result
-     *
-     * @return \model\Result
-     */
-    public function getResult()
-    {
-        return $this->container['result'];
-    }
-
-    /**
-     * Sets result
-     *
-     * @param \model\Result $result result
-     *
-     * @return self
-     */
-    public function setResult($result)
-    {
-        $this->container['result'] = $result;
-
-        return $this;
-    }
-
-    /**
-     * Gets paymentSessionData
-     *
-     * @return string
-     */
-    public function getPaymentSessionData()
-    {
-        return $this->container['paymentSessionData'];
-    }
-
-    /**
-     * Sets paymentSessionData
-     *
-     * @param string $paymentSessionData The encrypted payment session data. Pass the data to your front end to initiate the client-side SDK.    More information:  Maximum length: 4096 characters
-     *
-     * @return self
-     */
-    public function setPaymentSessionData($paymentSessionData)
-    {
-        $this->container['paymentSessionData'] = $paymentSessionData;
-
-        return $this;
-    }
-
-    /**
-     * Gets paymentSessionExpiryTime
-     *
-     * @return string
-     */
-    public function getPaymentSessionExpiryTime()
-    {
-        return $this->container['paymentSessionExpiryTime'];
-    }
-
-    /**
-     * Sets paymentSessionExpiryTime
-     *
-     * @param string $paymentSessionExpiryTime The specific date and time after which the payment session will expire.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
-     *
-     * @return self
-     */
-    public function setPaymentSessionExpiryTime($paymentSessionExpiryTime)
-    {
-        $this->container['paymentSessionExpiryTime'] = $paymentSessionExpiryTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets paymentSessionId
-     *
-     * @return string
-     */
-    public function getPaymentSessionId()
-    {
-        return $this->container['paymentSessionId'];
-    }
-
-    /**
-     * Sets paymentSessionId
-     *
-     * @param string $paymentSessionId The encrypted ID that is assigned by Antom to identify a payment session.    More information:  Maximum length: 64 characters
-     *
-     * @return self
-     */
-    public function setPaymentSessionId($paymentSessionId)
-    {
-        $this->container['paymentSessionId'] = $paymentSessionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets normalUrl
+     * Gets customerId
      *
      * @return string|null
      */
-    public function getNormalUrl()
+    public function getCustomerId()
     {
-        return $this->container['normalUrl'];
+        return $this->container['customerId'];
     }
 
     /**
-     * Sets normalUrl
+     * Sets customerId
      *
-     * @param string|null $normalUrl The URL used to redirect to the Checkout Page.  More information:  Maximum length: 2048 characters
+     * @param string|null $customerId The customer ID.
      *
      * @return self
      */
-    public function setNormalUrl($normalUrl)
+    public function setCustomerId($customerId)
     {
-        $this->container['normalUrl'] = $normalUrl;
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets trialSettings
      *
-     * @return string|null
+     * @return \model\BillingTrialSettings|null
      */
-    public function getUrl()
+    public function getTrialSettings()
     {
-        return $this->container['url'];
+        return $this->container['trialSettings'];
     }
 
     /**
-     * Sets url
+     * Sets trialSettings
      *
-     * @param string|null $url The URL for payment session
+     * @param \model\BillingTrialSettings|null $trialSettings trialSettings
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setTrialSettings($trialSettings)
     {
-        $this->container['url'] = $url;
+        $this->container['trialSettings'] = $trialSettings;
 
         return $this;
     }
 
     /**
-     * Gets subscriptionId
+     * Gets paymentBehavior
      *
      * @return string|null
      */
-    public function getSubscriptionId()
+    public function getPaymentBehavior()
     {
-        return $this->container['subscriptionId'];
+        return $this->container['paymentBehavior'];
     }
 
     /**
-     * Sets subscriptionId
+     * Sets paymentBehavior
      *
-     * @param string|null $subscriptionId The system-created subscription ID. Always returned when subscription is provided in the request.
+     * @param string|null $paymentBehavior Payment behavior.
      *
      * @return self
      */
-    public function setSubscriptionId($subscriptionId)
+    public function setPaymentBehavior($paymentBehavior)
     {
-        $this->container['subscriptionId'] = $subscriptionId;
+        $this->container['paymentBehavior'] = $paymentBehavior;
 
         return $this;
     }
 
     /**
-     * Gets invoiceId
+     * Gets collectionMethod
      *
      * @return string|null
      */
-    public function getInvoiceId()
+    public function getCollectionMethod()
     {
-        return $this->container['invoiceId'];
+        return $this->container['collectionMethod'];
     }
 
     /**
-     * Sets invoiceId
+     * Sets collectionMethod
      *
-     * @param string|null $invoiceId The draft invoice ID created for the first billing cycle. Empty for trial subscriptions.
+     * @param string|null $collectionMethod Collection method.
      *
      * @return self
      */
-    public function setInvoiceId($invoiceId)
+    public function setCollectionMethod($collectionMethod)
     {
-        $this->container['invoiceId'] = $invoiceId;
+        $this->container['collectionMethod'] = $collectionMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets daysUntilDue
+     *
+     * @return int|null
+     */
+    public function getDaysUntilDue()
+    {
+        return $this->container['daysUntilDue'];
+    }
+
+    /**
+     * Sets daysUntilDue
+     *
+     * @param int|null $daysUntilDue Number of days until due.
+     *
+     * @return self
+     */
+    public function setDaysUntilDue($daysUntilDue)
+    {
+        $this->container['daysUntilDue'] = $daysUntilDue;
+
+        return $this;
+    }
+
+    /**
+     * Gets billingCycleAnchor
+     *
+     * @return string|null
+     */
+    public function getBillingCycleAnchor()
+    {
+        return $this->container['billingCycleAnchor'];
+    }
+
+    /**
+     * Sets billingCycleAnchor
+     *
+     * @param string|null $billingCycleAnchor Billing cycle anchor time.
+     *
+     * @return self
+     */
+    public function setBillingCycleAnchor($billingCycleAnchor)
+    {
+        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelAt
+     *
+     * @return string|null
+     */
+    public function getCancelAt()
+    {
+        return $this->container['cancelAt'];
+    }
+
+    /**
+     * Sets cancelAt
+     *
+     * @param string|null $cancelAt Cancellation time.
+     *
+     * @return self
+     */
+    public function setCancelAt($cancelAt)
+    {
+        $this->container['cancelAt'] = $cancelAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelAtPeriodEnd
+     *
+     * @return bool|null
+     */
+    public function getCancelAtPeriodEnd()
+    {
+        return $this->container['cancelAtPeriodEnd'];
+    }
+
+    /**
+     * Sets cancelAtPeriodEnd
+     *
+     * @param bool|null $cancelAtPeriodEnd Whether to cancel at period end.
+     *
+     * @return self
+     */
+    public function setCancelAtPeriodEnd($cancelAtPeriodEnd)
+    {
+        $this->container['cancelAtPeriodEnd'] = $cancelAtPeriodEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description Description.
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets discounts
+     *
+     * @return \model\BillingSubscriptionDiscount[]|null
+     */
+    public function getDiscounts()
+    {
+        return $this->container['discounts'];
+    }
+
+    /**
+     * Sets discounts
+     *
+     * @param \model\BillingSubscriptionDiscount[]|null $discounts Discounts applied to the subscription.
+     *
+     * @return self
+     */
+    public function setDiscounts($discounts)
+    {
+        $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowPromotionCode
+     *
+     * @return bool|null
+     */
+    public function getAllowPromotionCode()
+    {
+        return $this->container['allowPromotionCode'];
+    }
+
+    /**
+     * Sets allowPromotionCode
+     *
+     * @param bool|null $allowPromotionCode Whether to allow promotion codes.
+     *
+     * @return self
+     */
+    public function setAllowPromotionCode($allowPromotionCode)
+    {
+        $this->container['allowPromotionCode'] = $allowPromotionCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionNotifyUrl
+     *
+     * @return string|null
+     */
+    public function getSubscriptionNotifyUrl()
+    {
+        return $this->container['subscriptionNotifyUrl'];
+    }
+
+    /**
+     * Sets subscriptionNotifyUrl
+     *
+     * @param string|null $subscriptionNotifyUrl The URL for subscription notifications.
+     *
+     * @return self
+     */
+    public function setSubscriptionNotifyUrl($subscriptionNotifyUrl)
+    {
+        $this->container['subscriptionNotifyUrl'] = $subscriptionNotifyUrl;
 
         return $this;
     }
