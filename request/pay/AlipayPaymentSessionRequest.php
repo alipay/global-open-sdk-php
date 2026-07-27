@@ -76,7 +76,9 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'savedPaymentMethods' => '\request\model\PaymentMethod[]',
         'locale' => 'string',
         'availablePaymentMethod' => '\request\model\AvailablePaymentMethod',
-        'paymentExpiryTime' => 'string'
+        'paymentExpiryTime' => 'string',
+        'subscription' => '\request\model\BillingSubscription',
+        'automaticTax' => '\request\model\AutomaticTax'
     ];
 
     /**
@@ -117,7 +119,9 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'savedPaymentMethods' => null,
         'locale' => null,
         'availablePaymentMethod' => null,
-        'paymentExpiryTime' => null
+        'paymentExpiryTime' => null,
+        'subscription' => null,
+        'automaticTax' => null
     ];
 
     /**
@@ -156,7 +160,9 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'savedPaymentMethods' => false,
         'locale' => false,
         'availablePaymentMethod' => false,
-        'paymentExpiryTime' => false
+        'paymentExpiryTime' => false,
+        'subscription' => false,
+        'automaticTax' => false
     ];
 
     /**
@@ -275,7 +281,9 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'savedPaymentMethods' => 'savedPaymentMethods',
         'locale' => 'locale',
         'availablePaymentMethod' => 'availablePaymentMethod',
-        'paymentExpiryTime' => 'paymentExpiryTime'
+        'paymentExpiryTime' => 'paymentExpiryTime',
+        'subscription' => 'subscription',
+        'automaticTax' => 'automaticTax'
     ];
 
     /**
@@ -314,7 +322,9 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'savedPaymentMethods' => 'setSavedPaymentMethods',
         'locale' => 'setLocale',
         'availablePaymentMethod' => 'setAvailablePaymentMethod',
-        'paymentExpiryTime' => 'setPaymentExpiryTime'
+        'paymentExpiryTime' => 'setPaymentExpiryTime',
+        'subscription' => 'setSubscription',
+        'automaticTax' => 'setAutomaticTax'
     ];
 
     /**
@@ -353,7 +363,9 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'savedPaymentMethods' => 'getSavedPaymentMethods',
         'locale' => 'getLocale',
         'availablePaymentMethod' => 'getAvailablePaymentMethod',
-        'paymentExpiryTime' => 'getPaymentExpiryTime'
+        'paymentExpiryTime' => 'getPaymentExpiryTime',
+        'subscription' => 'getSubscription',
+        'automaticTax' => 'getAutomaticTax'
     ];
 
     /**
@@ -444,6 +456,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('locale', $data ?? [], null);
         $this->setIfExists('availablePaymentMethod', $data ?? [], null);
         $this->setIfExists('paymentExpiryTime', $data ?? [], null);
+        $this->setIfExists('subscription', $data ?? [], null);
+        $this->setIfExists('automaticTax', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/createPaymentSession"); 
     }
@@ -1248,6 +1262,54 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     public function setPaymentExpiryTime($paymentExpiryTime)
     {
         $this->container['paymentExpiryTime'] = $paymentExpiryTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription
+     *
+     * @return \model\BillingSubscription|null
+     */
+    public function getSubscription()
+    {
+        return $this->container['subscription'];
+    }
+
+    /**
+     * Sets subscription
+     *
+     * @param \model\BillingSubscription|null $subscription subscription
+     *
+     * @return self
+     */
+    public function setSubscription($subscription)
+    {
+        $this->container['subscription'] = $subscription;
+
+        return $this;
+    }
+
+    /**
+     * Gets automaticTax
+     *
+     * @return \model\AutomaticTax|null
+     */
+    public function getAutomaticTax()
+    {
+        return $this->container['automaticTax'];
+    }
+
+    /**
+     * Sets automaticTax
+     *
+     * @param \model\AutomaticTax|null $automaticTax automaticTax
+     *
+     * @return self
+     */
+    public function setAutomaticTax($automaticTax)
+    {
+        $this->container['automaticTax'] = $automaticTax;
 
         return $this;
     }
