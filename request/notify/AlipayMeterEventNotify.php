@@ -5,6 +5,8 @@ namespace Request\notify;
 class AlipayMeterEventNotify extends \Request\notify\AlipayNotify
 {
     public $eventName;
+
+    /** @var \Model\ErrorEvent[] */
     public $errorEvents;
 
     public function getEventName()

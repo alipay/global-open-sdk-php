@@ -118,6 +118,10 @@ abstract class BaseAlipayClient
     }
 
     private static $RESERVED_HEADERS = ["signature", "client-id", "request-time", "content-type", "agent-token"];
+    private static $SANDBOX_PRODUCTION_PATH_PREFIXES = [
+        "/ams/api/v1/billing/",
+        "/ams/api/v1/meter/",
+    ];
 
     public function executeWithHeaders($request, $extraHeaders = [])
     {
@@ -299,9 +303,22 @@ abstract class BaseAlipayClient
     {
         if ($this->isSandboxMode) {
             $originPath = $alipayRequest->getPath();
+            if ($this->shouldUseProductionPathInSandbox($originPath)) {
+                return;
+            }
             $newPath = preg_replace('/\/ams\/api/', '/ams/sandbox/api', $originPath, 1);
             $alipayRequest->setPath($newPath);
         }
+    }
+
+    private function shouldUseProductionPathInSandbox($path)
+    {
+        foreach (self::$SANDBOX_PRODUCTION_PATH_PREFIXES as $prefix) {
+            if (strpos($path, $prefix) === 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     abstract protected function buildCustomHeader();
