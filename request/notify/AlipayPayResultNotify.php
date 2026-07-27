@@ -38,6 +38,7 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     public  $retryInfo;
     public  $updateRequestId;
     public  $authExpiryTime;
+    public  $taxCalculationId;
 
     /**
      * @return mixed
@@ -350,6 +351,22 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     public function setAuthExpiryTime($authExpiryTime): void
     {
         $this->authExpiryTime = $authExpiryTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTaxCalculationId()
+    {
+        return $this->taxCalculationId;
+    }
+
+    /**
+     * @param mixed $taxCalculationId
+     */
+    public function setTaxCalculationId($taxCalculationId): void
+    {
+        $this->taxCalculationId = $taxCalculationId;
     }
 
 
