@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * Paginator Class Doc Comment
+ * TaxTransaction Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Paginator';
+    protected static $openAPIModelName = 'TaxTransaction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currentPage' => 'int',
-        'pageSize' => 'int',
-        'totalPage' => 'int',
-        'totalCount' => 'int'
+        'taxTransactionId' => 'string',
+        'taxCalculationId' => 'string',
+        'type' => 'string',
+        'taxAmount' => 'string',
+        'currency' => 'string',
+        'status' => 'string',
+        'failureReason' => 'string',
+        'taxDate' => 'string',
+        'postedAt' => 'string',
+        'referencePaymentId' => 'string',
+        'referenceRefundId' => 'string'
     ];
 
     /**
@@ -60,10 +67,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'currentPage' => null,
-        'pageSize' => null,
-        'totalPage' => null,
-        'totalCount' => null
+        'taxTransactionId' => null,
+        'taxCalculationId' => null,
+        'type' => null,
+        'taxAmount' => null,
+        'currency' => null,
+        'status' => null,
+        'failureReason' => null,
+        'taxDate' => null,
+        'postedAt' => null,
+        'referencePaymentId' => null,
+        'referenceRefundId' => null
     ];
 
     /**
@@ -72,10 +86,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'currentPage' => true,
-        'pageSize' => true,
-        'totalPage' => true,
-        'totalCount' => true
+        'taxTransactionId' => false,
+        'taxCalculationId' => false,
+        'type' => false,
+        'taxAmount' => false,
+        'currency' => false,
+        'status' => false,
+        'failureReason' => false,
+        'taxDate' => false,
+        'postedAt' => false,
+        'referencePaymentId' => false,
+        'referenceRefundId' => false
     ];
 
     /**
@@ -164,10 +185,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'currentPage' => 'currentPage',
-        'pageSize' => 'pageSize',
-        'totalPage' => 'totalPage',
-        'totalCount' => 'totalCount'
+        'taxTransactionId' => 'taxTransactionId',
+        'taxCalculationId' => 'taxCalculationId',
+        'type' => 'type',
+        'taxAmount' => 'taxAmount',
+        'currency' => 'currency',
+        'status' => 'status',
+        'failureReason' => 'failureReason',
+        'taxDate' => 'taxDate',
+        'postedAt' => 'postedAt',
+        'referencePaymentId' => 'referencePaymentId',
+        'referenceRefundId' => 'referenceRefundId'
     ];
 
     /**
@@ -176,10 +204,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'currentPage' => 'setCurrentPage',
-        'pageSize' => 'setPageSize',
-        'totalPage' => 'setTotalPage',
-        'totalCount' => 'setTotalCount'
+        'taxTransactionId' => 'setTaxTransactionId',
+        'taxCalculationId' => 'setTaxCalculationId',
+        'type' => 'setType',
+        'taxAmount' => 'setTaxAmount',
+        'currency' => 'setCurrency',
+        'status' => 'setStatus',
+        'failureReason' => 'setFailureReason',
+        'taxDate' => 'setTaxDate',
+        'postedAt' => 'setPostedAt',
+        'referencePaymentId' => 'setReferencePaymentId',
+        'referenceRefundId' => 'setReferenceRefundId'
     ];
 
     /**
@@ -188,10 +223,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'currentPage' => 'getCurrentPage',
-        'pageSize' => 'getPageSize',
-        'totalPage' => 'getTotalPage',
-        'totalCount' => 'getTotalCount'
+        'taxTransactionId' => 'getTaxTransactionId',
+        'taxCalculationId' => 'getTaxCalculationId',
+        'type' => 'getType',
+        'taxAmount' => 'getTaxAmount',
+        'currency' => 'getCurrency',
+        'status' => 'getStatus',
+        'failureReason' => 'getFailureReason',
+        'taxDate' => 'getTaxDate',
+        'postedAt' => 'getPostedAt',
+        'referencePaymentId' => 'getReferencePaymentId',
+        'referenceRefundId' => 'getReferenceRefundId'
     ];
 
     /**
@@ -251,10 +293,17 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('currentPage', $data ?? [], null);
-        $this->setIfExists('pageSize', $data ?? [], null);
-        $this->setIfExists('totalPage', $data ?? [], null);
-        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('taxTransactionId', $data ?? [], null);
+        $this->setIfExists('taxCalculationId', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('taxAmount', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('failureReason', $data ?? [], null);
+        $this->setIfExists('taxDate', $data ?? [], null);
+        $this->setIfExists('postedAt', $data ?? [], null);
+        $this->setIfExists('referencePaymentId', $data ?? [], null);
+        $this->setIfExists('referenceRefundId', $data ?? [], null);
 
             }
 
@@ -285,17 +334,26 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['currentPage'] === null) {
-            $invalidProperties[] = "'currentPage' can't be null";
+        if ($this->container['taxTransactionId'] === null) {
+            $invalidProperties[] = "'taxTransactionId' can't be null";
         }
-        if ($this->container['pageSize'] === null) {
-            $invalidProperties[] = "'pageSize' can't be null";
+        if ($this->container['taxCalculationId'] === null) {
+            $invalidProperties[] = "'taxCalculationId' can't be null";
         }
-        if ($this->container['totalPage'] === null) {
-            $invalidProperties[] = "'totalPage' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
-        if ($this->container['totalCount'] === null) {
-            $invalidProperties[] = "'totalCount' can't be null";
+        if ($this->container['taxAmount'] === null) {
+            $invalidProperties[] = "'taxAmount' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        if ($this->container['taxDate'] === null) {
+            $invalidProperties[] = "'taxDate' can't be null";
         }
         return $invalidProperties;
     }
@@ -313,97 +371,265 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets currentPage
+     * Gets taxTransactionId
      *
-     * @return int
+     * @return string
      */
-    public function getCurrentPage()
+    public function getTaxTransactionId()
     {
-        return $this->container['currentPage'];
+        return $this->container['taxTransactionId'];
     }
 
     /**
-     * Sets currentPage
+     * Sets taxTransactionId
      *
-     * @param int $currentPage The current page number, start from 1.
+     * @param string $taxTransactionId The unique ID assigned by Antom to identify a tax transaction. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setCurrentPage($currentPage)
+    public function setTaxTransactionId($taxTransactionId)
     {
-        $this->container['currentPage'] = $currentPage;
+        $this->container['taxTransactionId'] = $taxTransactionId;
 
         return $this;
     }
 
     /**
-     * Gets pageSize
+     * Gets taxCalculationId
      *
-     * @return int
+     * @return string
      */
-    public function getPageSize()
+    public function getTaxCalculationId()
     {
-        return $this->container['pageSize'];
+        return $this->container['taxCalculationId'];
     }
 
     /**
-     * Sets pageSize
+     * Sets taxCalculationId
      *
-     * @param int $pageSize The maximum records returned per page.
+     * @param string $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setPageSize($pageSize)
+    public function setTaxCalculationId($taxCalculationId)
     {
-        $this->container['pageSize'] = $pageSize;
+        $this->container['taxCalculationId'] = $taxCalculationId;
 
         return $this;
     }
 
     /**
-     * Gets totalPage
+     * Gets type
      *
-     * @return int
+     * @return string
      */
-    public function getTotalPage()
+    public function getType()
     {
-        return $this->container['totalPage'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets totalPage
+     * Sets type
      *
-     * @param int $totalPage Total number of pages.
+     * @param string $type The type. Maximum length: 16 characters. Note: See documentation for details.
      *
      * @return self
      */
-    public function setTotalPage($totalPage)
+    public function setType($type)
     {
-        $this->container['totalPage'] = $totalPage;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets totalCount
+     * Gets taxAmount
      *
-     * @return int
+     * @return string
      */
-    public function getTotalCount()
+    public function getTaxAmount()
     {
-        return $this->container['totalCount'];
+        return $this->container['taxAmount'];
     }
 
     /**
-     * Sets totalCount
+     * Sets taxAmount
      *
-     * @param int $totalCount Total items that match the criteria.
+     * @param string $taxAmount The tax amount. Maximum length: 19 characters.
      *
      * @return self
      */
-    public function setTotalCount($totalCount)
+    public function setTaxAmount($taxAmount)
     {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['taxAmount'] = $taxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets failureReason
+     *
+     * @return string|null
+     */
+    public function getFailureReason()
+    {
+        return $this->container['failureReason'];
+    }
+
+    /**
+     * Sets failureReason
+     *
+     * @param string|null $failureReason The failure reason. Maximum length: 256 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setFailureReason($failureReason)
+    {
+        $this->container['failureReason'] = $failureReason;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxDate
+     *
+     * @return string
+     */
+    public function getTaxDate()
+    {
+        return $this->container['taxDate'];
+    }
+
+    /**
+     * Sets taxDate
+     *
+     * @param string $taxDate The tax date. Maximum length: 32 characters.
+     *
+     * @return self
+     */
+    public function setTaxDate($taxDate)
+    {
+        $this->container['taxDate'] = $taxDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets postedAt
+     *
+     * @return string|null
+     */
+    public function getPostedAt()
+    {
+        return $this->container['postedAt'];
+    }
+
+    /**
+     * Sets postedAt
+     *
+     * @param string|null $postedAt The time when the tax transaction was posted. Maximum length: 32 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setPostedAt($postedAt)
+    {
+        $this->container['postedAt'] = $postedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets referencePaymentId
+     *
+     * @return string|null
+     */
+    public function getReferencePaymentId()
+    {
+        return $this->container['referencePaymentId'];
+    }
+
+    /**
+     * Sets referencePaymentId
+     *
+     * @param string|null $referencePaymentId The reference payment ID. Maximum length: 64 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setReferencePaymentId($referencePaymentId)
+    {
+        $this->container['referencePaymentId'] = $referencePaymentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceRefundId
+     *
+     * @return string|null
+     */
+    public function getReferenceRefundId()
+    {
+        return $this->container['referenceRefundId'];
+    }
+
+    /**
+     * Sets referenceRefundId
+     *
+     * @param string|null $referenceRefundId The reference refund ID. Maximum length: 64 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setReferenceRefundId($referenceRefundId)
+    {
+        $this->container['referenceRefundId'] = $referenceRefundId;
 
         return $this;
     }

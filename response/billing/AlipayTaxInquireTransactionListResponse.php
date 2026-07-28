@@ -13,7 +13,7 @@
  */
 
 
-namespace Model;
+namespace Response\billing;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * Paginator Class Doc Comment
+ * AlipayTaxInquireTransactionListResponse Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Paginator';
+    protected static $openAPIModelName = 'AlipayTaxInquireTransactionListResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currentPage' => 'int',
-        'pageSize' => 'int',
-        'totalPage' => 'int',
-        'totalCount' => 'int'
+        'result' => '\request\model\Result',
+        'transactions' => '\request\model\TaxTransaction[]',
+        'paginator' => '\request\model\Paginator'
     ];
 
     /**
@@ -60,10 +59,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'currentPage' => null,
-        'pageSize' => null,
-        'totalPage' => null,
-        'totalCount' => null
+        'result' => null,
+        'transactions' => null,
+        'paginator' => null
     ];
 
     /**
@@ -72,10 +70,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'currentPage' => true,
-        'pageSize' => true,
-        'totalPage' => true,
-        'totalCount' => true
+        'result' => false,
+        'transactions' => false,
+        'paginator' => false
     ];
 
     /**
@@ -164,10 +161,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'currentPage' => 'currentPage',
-        'pageSize' => 'pageSize',
-        'totalPage' => 'totalPage',
-        'totalCount' => 'totalCount'
+        'result' => 'result',
+        'transactions' => 'transactions',
+        'paginator' => 'paginator'
     ];
 
     /**
@@ -176,10 +172,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'currentPage' => 'setCurrentPage',
-        'pageSize' => 'setPageSize',
-        'totalPage' => 'setTotalPage',
-        'totalCount' => 'setTotalCount'
+        'result' => 'setResult',
+        'transactions' => 'setTransactions',
+        'paginator' => 'setPaginator'
     ];
 
     /**
@@ -188,10 +183,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'currentPage' => 'getCurrentPage',
-        'pageSize' => 'getPageSize',
-        'totalPage' => 'getTotalPage',
-        'totalCount' => 'getTotalCount'
+        'result' => 'getResult',
+        'transactions' => 'getTransactions',
+        'paginator' => 'getPaginator'
     ];
 
     /**
@@ -251,10 +245,9 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('currentPage', $data ?? [], null);
-        $this->setIfExists('pageSize', $data ?? [], null);
-        $this->setIfExists('totalPage', $data ?? [], null);
-        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('result', $data ?? [], null);
+        $this->setIfExists('transactions', $data ?? [], null);
+        $this->setIfExists('paginator', $data ?? [], null);
 
             }
 
@@ -285,17 +278,8 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['currentPage'] === null) {
-            $invalidProperties[] = "'currentPage' can't be null";
-        }
-        if ($this->container['pageSize'] === null) {
-            $invalidProperties[] = "'pageSize' can't be null";
-        }
-        if ($this->container['totalPage'] === null) {
-            $invalidProperties[] = "'totalPage' can't be null";
-        }
-        if ($this->container['totalCount'] === null) {
-            $invalidProperties[] = "'totalCount' can't be null";
+        if ($this->container['result'] === null) {
+            $invalidProperties[] = "'result' can't be null";
         }
         return $invalidProperties;
     }
@@ -313,97 +297,73 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets currentPage
+     * Gets result
      *
-     * @return int
+     * @return \model\Result
      */
-    public function getCurrentPage()
+    public function getResult()
     {
-        return $this->container['currentPage'];
+        return $this->container['result'];
     }
 
     /**
-     * Sets currentPage
+     * Sets result
      *
-     * @param int $currentPage The current page number, start from 1.
+     * @param \model\Result $result result
      *
      * @return self
      */
-    public function setCurrentPage($currentPage)
+    public function setResult($result)
     {
-        $this->container['currentPage'] = $currentPage;
+        $this->container['result'] = $result;
 
         return $this;
     }
 
     /**
-     * Gets pageSize
+     * Gets transactions
      *
-     * @return int
+     * @return \model\TaxTransaction[]|null
      */
-    public function getPageSize()
+    public function getTransactions()
     {
-        return $this->container['pageSize'];
+        return $this->container['transactions'];
     }
 
     /**
-     * Sets pageSize
+     * Sets transactions
      *
-     * @param int $pageSize The maximum records returned per page.
+     * @param \model\TaxTransaction[]|null $transactions The transactions. Note: See documentation for details.
      *
      * @return self
      */
-    public function setPageSize($pageSize)
+    public function setTransactions($transactions)
     {
-        $this->container['pageSize'] = $pageSize;
+        $this->container['transactions'] = $transactions;
 
         return $this;
     }
 
     /**
-     * Gets totalPage
+     * Gets paginator
      *
-     * @return int
+     * @return \model\Paginator|null
      */
-    public function getTotalPage()
+    public function getPaginator()
     {
-        return $this->container['totalPage'];
+        return $this->container['paginator'];
     }
 
     /**
-     * Sets totalPage
+     * Sets paginator
      *
-     * @param int $totalPage Total number of pages.
+     * @param \model\Paginator|null $paginator paginator
      *
      * @return self
      */
-    public function setTotalPage($totalPage)
+    public function setPaginator($paginator)
     {
-        $this->container['totalPage'] = $totalPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int $totalCount Total items that match the criteria.
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['paginator'] = $paginator;
 
         return $this;
     }

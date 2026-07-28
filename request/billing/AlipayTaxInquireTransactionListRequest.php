@@ -13,7 +13,7 @@
  */
 
 
-namespace Model;
+namespace Request\billing;
 
 use \ArrayAccess;
 use Request\AlipayRequest;
@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * Paginator Class Doc Comment
+ * AlipayTaxInquireTransactionListRequest Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Paginator';
+    protected static $openAPIModelName = 'AlipayTaxInquireTransactionListRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,11 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'taxCalculationId' => 'string',
+        'paymentId' => 'string',
+        'refundId' => 'string',
         'currentPage' => 'int',
-        'pageSize' => 'int',
-        'totalPage' => 'int',
-        'totalCount' => 'int'
+        'pageSize' => 'int'
     ];
 
     /**
@@ -60,10 +61,11 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'taxCalculationId' => null,
+        'paymentId' => null,
+        'refundId' => null,
         'currentPage' => null,
-        'pageSize' => null,
-        'totalPage' => null,
-        'totalCount' => null
+        'pageSize' => null
     ];
 
     /**
@@ -72,10 +74,11 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'taxCalculationId' => false,
+        'paymentId' => false,
+        'refundId' => false,
         'currentPage' => true,
-        'pageSize' => true,
-        'totalPage' => true,
-        'totalCount' => true
+        'pageSize' => true
     ];
 
     /**
@@ -164,10 +167,11 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'taxCalculationId' => 'taxCalculationId',
+        'paymentId' => 'paymentId',
+        'refundId' => 'refundId',
         'currentPage' => 'currentPage',
-        'pageSize' => 'pageSize',
-        'totalPage' => 'totalPage',
-        'totalCount' => 'totalCount'
+        'pageSize' => 'pageSize'
     ];
 
     /**
@@ -176,10 +180,11 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'taxCalculationId' => 'setTaxCalculationId',
+        'paymentId' => 'setPaymentId',
+        'refundId' => 'setRefundId',
         'currentPage' => 'setCurrentPage',
-        'pageSize' => 'setPageSize',
-        'totalPage' => 'setTotalPage',
-        'totalCount' => 'setTotalCount'
+        'pageSize' => 'setPageSize'
     ];
 
     /**
@@ -188,10 +193,11 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'taxCalculationId' => 'getTaxCalculationId',
+        'paymentId' => 'getPaymentId',
+        'refundId' => 'getRefundId',
         'currentPage' => 'getCurrentPage',
-        'pageSize' => 'getPageSize',
-        'totalPage' => 'getTotalPage',
-        'totalCount' => 'getTotalCount'
+        'pageSize' => 'getPageSize'
     ];
 
     /**
@@ -251,12 +257,14 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('taxCalculationId', $data ?? [], null);
+        $this->setIfExists('paymentId', $data ?? [], null);
+        $this->setIfExists('refundId', $data ?? [], null);
         $this->setIfExists('currentPage', $data ?? [], null);
         $this->setIfExists('pageSize', $data ?? [], null);
-        $this->setIfExists('totalPage', $data ?? [], null);
-        $this->setIfExists('totalCount', $data ?? [], null);
 
-            }
+         $this->setPath("/ams/api/v1/tax/inquireTransactionList"); 
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -285,18 +293,6 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['currentPage'] === null) {
-            $invalidProperties[] = "'currentPage' can't be null";
-        }
-        if ($this->container['pageSize'] === null) {
-            $invalidProperties[] = "'pageSize' can't be null";
-        }
-        if ($this->container['totalPage'] === null) {
-            $invalidProperties[] = "'totalPage' can't be null";
-        }
-        if ($this->container['totalCount'] === null) {
-            $invalidProperties[] = "'totalCount' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -313,9 +309,81 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets taxCalculationId
+     *
+     * @return string|null
+     */
+    public function getTaxCalculationId()
+    {
+        return $this->container['taxCalculationId'];
+    }
+
+    /**
+     * Sets taxCalculationId
+     *
+     * @param string|null $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setTaxCalculationId($taxCalculationId)
+    {
+        $this->container['taxCalculationId'] = $taxCalculationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentId
+     *
+     * @return string|null
+     */
+    public function getPaymentId()
+    {
+        return $this->container['paymentId'];
+    }
+
+    /**
+     * Sets paymentId
+     *
+     * @param string|null $paymentId The unique ID assigned by Antom to identify a payment. Maximum length: 64 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setPaymentId($paymentId)
+    {
+        $this->container['paymentId'] = $paymentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets refundId
+     *
+     * @return string|null
+     */
+    public function getRefundId()
+    {
+        return $this->container['refundId'];
+    }
+
+    /**
+     * Sets refundId
+     *
+     * @param string|null $refundId The refund ID. Maximum length: 64 characters. Note: See documentation for details.
+     *
+     * @return self
+     */
+    public function setRefundId($refundId)
+    {
+        $this->container['refundId'] = $refundId;
+
+        return $this;
+    }
+
+    /**
      * Gets currentPage
      *
-     * @return int
+     * @return int|null
      */
     public function getCurrentPage()
     {
@@ -325,7 +393,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currentPage
      *
-     * @param int $currentPage The current page number, start from 1.
+     * @param int|null $currentPage The current page number.
      *
      * @return self
      */
@@ -339,7 +407,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets pageSize
      *
-     * @return int
+     * @return int|null
      */
     public function getPageSize()
     {
@@ -349,61 +417,13 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pageSize
      *
-     * @param int $pageSize The maximum records returned per page.
+     * @param int|null $pageSize The number of records per page.
      *
      * @return self
      */
     public function setPageSize($pageSize)
     {
         $this->container['pageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalPage
-     *
-     * @return int
-     */
-    public function getTotalPage()
-    {
-        return $this->container['totalPage'];
-    }
-
-    /**
-     * Sets totalPage
-     *
-     * @param int $totalPage Total number of pages.
-     *
-     * @return self
-     */
-    public function setTotalPage($totalPage)
-    {
-        $this->container['totalPage'] = $totalPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int $totalCount Total items that match the criteria.
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
 
         return $this;
     }
