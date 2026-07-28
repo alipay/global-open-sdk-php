@@ -51,7 +51,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'paymentSessionExpiryTime' => 'string',
         'paymentSessionId' => 'string',
         'normalUrl' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'subscriptionId' => 'string',
+        'invoiceId' => 'string'
     ];
 
     /**
@@ -67,7 +69,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'paymentSessionExpiryTime' => null,
         'paymentSessionId' => null,
         'normalUrl' => null,
-        'url' => null
+        'url' => null,
+        'subscriptionId' => null,
+        'invoiceId' => null
     ];
 
     /**
@@ -81,7 +85,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'paymentSessionExpiryTime' => false,
         'paymentSessionId' => false,
         'normalUrl' => false,
-        'url' => false
+        'url' => false,
+        'subscriptionId' => false,
+        'invoiceId' => false
     ];
 
     /**
@@ -175,7 +181,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'paymentSessionExpiryTime' => 'paymentSessionExpiryTime',
         'paymentSessionId' => 'paymentSessionId',
         'normalUrl' => 'normalUrl',
-        'url' => 'url'
+        'url' => 'url',
+        'subscriptionId' => 'subscriptionId',
+        'invoiceId' => 'invoiceId'
     ];
 
     /**
@@ -189,7 +197,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'paymentSessionExpiryTime' => 'setPaymentSessionExpiryTime',
         'paymentSessionId' => 'setPaymentSessionId',
         'normalUrl' => 'setNormalUrl',
-        'url' => 'setUrl'
+        'url' => 'setUrl',
+        'subscriptionId' => 'setSubscriptionId',
+        'invoiceId' => 'setInvoiceId'
     ];
 
     /**
@@ -203,7 +213,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'paymentSessionExpiryTime' => 'getPaymentSessionExpiryTime',
         'paymentSessionId' => 'getPaymentSessionId',
         'normalUrl' => 'getNormalUrl',
-        'url' => 'getUrl'
+        'url' => 'getUrl',
+        'subscriptionId' => 'getSubscriptionId',
+        'invoiceId' => 'getInvoiceId'
     ];
 
     /**
@@ -269,6 +281,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('paymentSessionId', $data ?? [], null);
         $this->setIfExists('normalUrl', $data ?? [], null);
         $this->setIfExists('url', $data ?? [], null);
+        $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('invoiceId', $data ?? [], null);
 
             }
 
@@ -466,6 +480,54 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     public function setUrl($url)
     {
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionId
+     *
+     * @return string|null
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscriptionId'];
+    }
+
+    /**
+     * Sets subscriptionId
+     *
+     * @param string|null $subscriptionId The system-created subscription ID. Always returned when subscription is provided in the request.
+     *
+     * @return self
+     */
+    public function setSubscriptionId($subscriptionId)
+    {
+        $this->container['subscriptionId'] = $subscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceId
+     *
+     * @return string|null
+     */
+    public function getInvoiceId()
+    {
+        return $this->container['invoiceId'];
+    }
+
+    /**
+     * Sets invoiceId
+     *
+     * @param string|null $invoiceId The draft invoice ID created for the first billing cycle. Empty for trial subscriptions.
+     *
+     * @return self
+     */
+    public function setInvoiceId($invoiceId)
+    {
+        $this->container['invoiceId'] = $invoiceId;
 
         return $this;
     }

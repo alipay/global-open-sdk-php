@@ -117,6 +117,94 @@ abstract class BaseAlipayClient
         return $alipayRsp;
     }
 
+    private static $RESERVED_HEADERS = ["signature", "client-id", "request-time", "content-type", "agent-token"];
+    private static $SANDBOX_PRODUCTION_PATH_PREFIXES = [
+        "/ams/api/v1/billing/",
+        "/ams/api/v1/meter/",
+    ];
+
+    public function executeWithHeaders($request, $extraHeaders = [])
+    {
+
+        if ($request->getClientId() === null || trim($request->getClientId()) === "") {
+            $request->setClientId($this->clientId);
+        }
+
+        $this->checkRequestParam($request);
+
+        $clientId = $request->getClientId();
+        if (strpos($clientId, "SANDBOX_") === 0) {
+            $this->isSandboxMode = true;
+        }
+        $this->adjustSandboxUrl($request);
+        $httpMethod = $request->getHttpMethod();
+        $path = $request->getPath();
+        $keyVersion = $request->getKeyVersion();
+        $reqTime = date(DATE_ISO8601);
+        $reqBody = json_encode($request);
+
+        $signValue = $this->genSignValue($httpMethod, $path, $clientId, $reqTime, $reqBody);
+        $baseHeaders = $this->buildBaseHeader($reqTime, $clientId, $keyVersion, $signValue);
+        $customHeaders = $this->buildCustomHeader();
+        if (isset($customHeaders) && count($customHeaders) > 0) {
+            $headers = array_merge($baseHeaders, $customHeaders);
+        } else {
+            $headers = $baseHeaders;
+        }
+        if (!empty($extraHeaders)) {
+            $existingKeys = [];
+            foreach ($headers as $line) {
+                $colonPos = strpos($line, ':');
+                if ($colonPos !== false) {
+                    $existingKeys[strtolower(substr($line, 0, $colonPos))] = true;
+                }
+            }
+            foreach ($extraHeaders as $key => $value) {
+                if ($key === null || $key === "") {
+                    continue;
+                }
+                $lk = strtolower($key);
+                if (in_array($lk, self::$RESERVED_HEADERS, true)) {
+                    continue;
+                }
+                if (isset($existingKeys[$lk])) {
+                    continue;
+                }
+                $headers[] = $key . ":" . $value;
+                $existingKeys[$lk] = true;
+            }
+        }
+
+        $requestUrl = $this->genRequestUrl($path);
+        $rsp = $this->sendRequest($requestUrl, $httpMethod, $headers, $reqBody);
+        if (!isset($rsp) || $rsp == null) {
+            throw new \Exception("HttpRpcResult is null.");
+        }
+
+        $rspBody = $rsp->getRspBody();
+        $rspSignValue = $rsp->getRspSign();
+        $rspTime = $rsp->getRspTime();
+
+        $alipayRsp = json_decode($rspBody);
+
+        $result = $alipayRsp->result;
+        if (!isset($result)) {
+            throw new \Exception("Response data error,result field is null,rspBody:" . $rspBody);
+        }
+
+        if (!isset($rspSignValue) || trim($rspSignValue) === "" || !isset($rspTime) || trim($rspTime) === "") {
+            return $alipayRsp;
+        }
+
+        $isVerifyPass = $this->checkRspSign($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue);
+
+        if (!$isVerifyPass) {
+            throw new \Exception("Response signature verify fail.");
+        }
+
+        return $alipayRsp;
+    }
+
     private function checkRequestParam($request)
     {
 
@@ -215,9 +303,22 @@ abstract class BaseAlipayClient
     {
         if ($this->isSandboxMode) {
             $originPath = $alipayRequest->getPath();
+            if ($this->shouldUseProductionPathInSandbox($originPath)) {
+                return;
+            }
             $newPath = preg_replace('/\/ams\/api/', '/ams/sandbox/api', $originPath, 1);
             $alipayRequest->setPath($newPath);
         }
+    }
+
+    private function shouldUseProductionPathInSandbox($path)
+    {
+        foreach (self::$SANDBOX_PRODUCTION_PATH_PREFIXES as $prefix) {
+            if (strpos($path, $prefix) === 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     abstract protected function buildCustomHeader();

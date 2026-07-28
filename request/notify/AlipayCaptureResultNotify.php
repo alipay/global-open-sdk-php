@@ -18,6 +18,8 @@ class AlipayCaptureResultNotify extends \Request\notify\AlipayNotify
 
     public $acquirerInfo;
 
+    public $taxCalculationId;
+
     /**
      * @return mixed
      */
@@ -128,6 +130,22 @@ class AlipayCaptureResultNotify extends \Request\notify\AlipayNotify
     public function setAcquirerInfo($acquirerInfo)
     {
         $this->acquirerInfo = $acquirerInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTaxCalculationId()
+    {
+        return $this->taxCalculationId;
+    }
+
+    /**
+     * @param mixed $taxCalculationId
+     */
+    public function setTaxCalculationId($taxCalculationId): void
+    {
+        $this->taxCalculationId = $taxCalculationId;
     }
 
 
