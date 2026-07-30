@@ -86,6 +86,7 @@ abstract class BaseAlipayClient
         } else {
             $headers = $baseHeaders;
         }
+        $headers = $this->applySdkUserAgent($headers);
 
         $requestUrl = $this->genRequestUrl($path);
         $rsp = $this->sendRequest($requestUrl, $httpMethod, $headers, $reqBody);
@@ -117,7 +118,7 @@ abstract class BaseAlipayClient
         return $alipayRsp;
     }
 
-    private static $RESERVED_HEADERS = ["signature", "client-id", "request-time", "content-type", "agent-token"];
+    private static $RESERVED_HEADERS = ["signature", "client-id", "request-time", "content-type", "agent-token", "user-agent"];
     private static $SANDBOX_PRODUCTION_PATH_PREFIXES = [
         "/ams/api/v1/billing/",
         "/ams/api/v1/meter/",
@@ -174,6 +175,7 @@ abstract class BaseAlipayClient
                 $existingKeys[$lk] = true;
             }
         }
+        $headers = $this->applySdkUserAgent($headers);
 
         $requestUrl = $this->genRequestUrl($path);
         $rsp = $this->sendRequest($requestUrl, $httpMethod, $headers, $reqBody);
@@ -267,7 +269,7 @@ abstract class BaseAlipayClient
     {
         $baseHeader = array();
         $baseHeader[] = "Content-Type:application/json; charset=UTF-8";
-        $baseHeader[] = "User-Agent:global-alipay-sdk-php";
+        $baseHeader[] = "User-Agent:" . SdkVersion::userAgent();
         $baseHeader[] = "Request-Time:" . $requestTime;
         $baseHeader[] = "client-id:" . $clientId;
 
@@ -281,6 +283,20 @@ abstract class BaseAlipayClient
         $signatureHeader = "algorithm=RSA256,keyVersion=" . $keyVersion . ",signature=" . $signValue;
         $baseHeader[] = "Signature:" . $signatureHeader;
         return $baseHeader;
+    }
+
+    private function applySdkUserAgent($headers)
+    {
+        $result = array();
+        foreach ($headers as $header) {
+            $colonPos = strpos($header, ':');
+            if ($colonPos !== false && strtolower(substr($header, 0, $colonPos)) === 'user-agent') {
+                continue;
+            }
+            $result[] = $header;
+        }
+        $result[] = "User-Agent:" . SdkVersion::userAgent();
+        return $result;
     }
 
     private function genRequestUrl($path)

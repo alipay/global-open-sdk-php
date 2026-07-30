@@ -230,6 +230,7 @@ require __DIR__ . '/model/FundMoveDetail.php';
 
 
 //client
+require __DIR__ . '/client/SdkVersion.php';
 require __DIR__ . '/client/BaseAlipayClient.php';
 require __DIR__ . '/client/DefaultAlipayClient.php';
 require __DIR__ . '/client/SignatureTool.php';
