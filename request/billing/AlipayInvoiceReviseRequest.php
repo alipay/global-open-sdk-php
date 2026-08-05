@@ -49,7 +49,8 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         'invoiceId' => 'string',
         'invoiceRequestId' => 'string',
         'invoiceRevisionRequestId' => 'string',
-        'void' => 'bool'
+        'void' => 'bool',
+        'invoiceNotifyUrl' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         'invoiceId' => null,
         'invoiceRequestId' => null,
         'invoiceRevisionRequestId' => null,
-        'void' => null
+        'void' => null,
+        'invoiceNotifyUrl' => null
     ];
 
     /**
@@ -75,7 +77,8 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         'invoiceId' => false,
         'invoiceRequestId' => false,
         'invoiceRevisionRequestId' => false,
-        'void' => false
+        'void' => false,
+        'invoiceNotifyUrl' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         'invoiceId' => 'invoiceId',
         'invoiceRequestId' => 'invoiceRequestId',
         'invoiceRevisionRequestId' => 'invoiceRevisionRequestId',
-        'void' => 'void'
+        'void' => 'void',
+        'invoiceNotifyUrl' => 'invoiceNotifyUrl'
     ];
 
     /**
@@ -179,7 +183,8 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         'invoiceId' => 'setInvoiceId',
         'invoiceRequestId' => 'setInvoiceRequestId',
         'invoiceRevisionRequestId' => 'setInvoiceRevisionRequestId',
-        'void' => 'setVoid'
+        'void' => 'setVoid',
+        'invoiceNotifyUrl' => 'setInvoiceNotifyUrl'
     ];
 
     /**
@@ -191,7 +196,8 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         'invoiceId' => 'getInvoiceId',
         'invoiceRequestId' => 'getInvoiceRequestId',
         'invoiceRevisionRequestId' => 'getInvoiceRevisionRequestId',
-        'void' => 'getVoid'
+        'void' => 'getVoid',
+        'invoiceNotifyUrl' => 'getInvoiceNotifyUrl'
     ];
 
     /**
@@ -255,6 +261,7 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
         $this->setIfExists('invoiceRequestId', $data ?? [], null);
         $this->setIfExists('invoiceRevisionRequestId', $data ?? [], null);
         $this->setIfExists('void', $data ?? [], null);
+        $this->setIfExists('invoiceNotifyUrl', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/invoice/revise"); 
     }
@@ -399,6 +406,30 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
     public function setVoid($void)
     {
         $this->container['void'] = $void;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceNotifyUrl
+     *
+     * @return string|null
+     */
+    public function getInvoiceNotifyUrl()
+    {
+        return $this->container['invoiceNotifyUrl'];
+    }
+
+    /**
+     * Sets invoiceNotifyUrl
+     *
+     * @param string|null $invoiceNotifyUrl The URL that Antom uses to send the invoice payment status change notification to. Only HTTPS is supported. Maximum length: 2048 characters.
+     *
+     * @return self
+     */
+    public function setInvoiceNotifyUrl($invoiceNotifyUrl)
+    {
+        $this->container['invoiceNotifyUrl'] = $invoiceNotifyUrl;
 
         return $this;
     }

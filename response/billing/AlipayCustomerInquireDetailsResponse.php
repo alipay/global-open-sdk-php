@@ -53,14 +53,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'email' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
-        'mobileNo' => 'string',
         'country' => 'string',
         'state' => 'string',
         'city' => 'string',
         'address' => 'string',
         'addressDetail' => 'string',
         'zipcode' => 'string',
-        'shippingName' => 'string',
         'shippingPhone' => 'string',
         'shippingCountry' => 'string',
         'shippingState' => 'string',
@@ -70,11 +68,17 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingZipCode' => 'string',
         'description' => 'string',
         'currency' => 'string',
-        'preferredLocales' => 'string',
+        'preferredLocales' => 'string[]',
         'defaultPaymentMethod' => 'string',
         'status' => 'string',
         'referenceCustomerId' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'array<string,string>',
+        'phoneNo' => 'string',
+        'countryCode' => 'string',
+        'billingEmail' => 'string',
+        'shippingFirstName' => 'string',
+        'shippingLastName' => 'string',
+        'shippingCountryCode' => 'string'
     ];
 
     /**
@@ -92,14 +96,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'email' => null,
         'firstName' => null,
         'lastName' => null,
-        'mobileNo' => null,
         'country' => null,
         'state' => null,
         'city' => null,
         'address' => null,
         'addressDetail' => null,
         'zipcode' => null,
-        'shippingName' => null,
         'shippingPhone' => null,
         'shippingCountry' => null,
         'shippingState' => null,
@@ -113,7 +115,13 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'defaultPaymentMethod' => null,
         'status' => null,
         'referenceCustomerId' => null,
-        'metadata' => null
+        'metadata' => null,
+        'phoneNo' => null,
+        'countryCode' => null,
+        'billingEmail' => null,
+        'shippingFirstName' => null,
+        'shippingLastName' => null,
+        'shippingCountryCode' => null
     ];
 
     /**
@@ -129,14 +137,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'email' => false,
         'firstName' => false,
         'lastName' => false,
-        'mobileNo' => false,
         'country' => false,
         'state' => false,
         'city' => false,
         'address' => false,
         'addressDetail' => false,
         'zipcode' => false,
-        'shippingName' => false,
         'shippingPhone' => false,
         'shippingCountry' => false,
         'shippingState' => false,
@@ -150,7 +156,13 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'defaultPaymentMethod' => false,
         'status' => false,
         'referenceCustomerId' => false,
-        'metadata' => false
+        'metadata' => false,
+        'phoneNo' => false,
+        'countryCode' => false,
+        'billingEmail' => false,
+        'shippingFirstName' => false,
+        'shippingLastName' => false,
+        'shippingCountryCode' => false
     ];
 
     /**
@@ -246,14 +258,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'email' => 'email',
         'firstName' => 'firstName',
         'lastName' => 'lastName',
-        'mobileNo' => 'mobileNo',
         'country' => 'country',
         'state' => 'state',
         'city' => 'city',
         'address' => 'address',
         'addressDetail' => 'addressDetail',
         'zipcode' => 'zipcode',
-        'shippingName' => 'shippingName',
         'shippingPhone' => 'shippingPhone',
         'shippingCountry' => 'shippingCountry',
         'shippingState' => 'shippingState',
@@ -267,7 +277,13 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'defaultPaymentMethod' => 'defaultPaymentMethod',
         'status' => 'status',
         'referenceCustomerId' => 'referenceCustomerId',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'phoneNo' => 'phoneNo',
+        'countryCode' => 'countryCode',
+        'billingEmail' => 'billingEmail',
+        'shippingFirstName' => 'shippingFirstName',
+        'shippingLastName' => 'shippingLastName',
+        'shippingCountryCode' => 'shippingCountryCode'
     ];
 
     /**
@@ -283,14 +299,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'email' => 'setEmail',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
-        'mobileNo' => 'setMobileNo',
         'country' => 'setCountry',
         'state' => 'setState',
         'city' => 'setCity',
         'address' => 'setAddress',
         'addressDetail' => 'setAddressDetail',
         'zipcode' => 'setZipcode',
-        'shippingName' => 'setShippingName',
         'shippingPhone' => 'setShippingPhone',
         'shippingCountry' => 'setShippingCountry',
         'shippingState' => 'setShippingState',
@@ -304,7 +318,13 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'defaultPaymentMethod' => 'setDefaultPaymentMethod',
         'status' => 'setStatus',
         'referenceCustomerId' => 'setReferenceCustomerId',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'phoneNo' => 'setPhoneNo',
+        'countryCode' => 'setCountryCode',
+        'billingEmail' => 'setBillingEmail',
+        'shippingFirstName' => 'setShippingFirstName',
+        'shippingLastName' => 'setShippingLastName',
+        'shippingCountryCode' => 'setShippingCountryCode'
     ];
 
     /**
@@ -320,14 +340,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'email' => 'getEmail',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
-        'mobileNo' => 'getMobileNo',
         'country' => 'getCountry',
         'state' => 'getState',
         'city' => 'getCity',
         'address' => 'getAddress',
         'addressDetail' => 'getAddressDetail',
         'zipcode' => 'getZipcode',
-        'shippingName' => 'getShippingName',
         'shippingPhone' => 'getShippingPhone',
         'shippingCountry' => 'getShippingCountry',
         'shippingState' => 'getShippingState',
@@ -341,7 +359,13 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'defaultPaymentMethod' => 'getDefaultPaymentMethod',
         'status' => 'getStatus',
         'referenceCustomerId' => 'getReferenceCustomerId',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'phoneNo' => 'getPhoneNo',
+        'countryCode' => 'getCountryCode',
+        'billingEmail' => 'getBillingEmail',
+        'shippingFirstName' => 'getShippingFirstName',
+        'shippingLastName' => 'getShippingLastName',
+        'shippingCountryCode' => 'getShippingCountryCode'
     ];
 
     /**
@@ -408,14 +432,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('firstName', $data ?? [], null);
         $this->setIfExists('lastName', $data ?? [], null);
-        $this->setIfExists('mobileNo', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('addressDetail', $data ?? [], null);
         $this->setIfExists('zipcode', $data ?? [], null);
-        $this->setIfExists('shippingName', $data ?? [], null);
         $this->setIfExists('shippingPhone', $data ?? [], null);
         $this->setIfExists('shippingCountry', $data ?? [], null);
         $this->setIfExists('shippingState', $data ?? [], null);
@@ -430,6 +452,12 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('referenceCustomerId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('phoneNo', $data ?? [], null);
+        $this->setIfExists('countryCode', $data ?? [], null);
+        $this->setIfExists('billingEmail', $data ?? [], null);
+        $this->setIfExists('shippingFirstName', $data ?? [], null);
+        $this->setIfExists('shippingLastName', $data ?? [], null);
+        $this->setIfExists('shippingCountryCode', $data ?? [], null);
 
             }
 
@@ -647,30 +675,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets mobileNo
-     *
-     * @return string|null
-     */
-    public function getMobileNo()
-    {
-        return $this->container['mobileNo'];
-    }
-
-    /**
-     * Sets mobileNo
-     *
-     * @param string|null $mobileNo The mobile phone number. Maximum length: 32 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setMobileNo($mobileNo)
-    {
-        $this->container['mobileNo'] = $mobileNo;
-
-        return $this;
-    }
-
-    /**
      * Gets country
      *
      * @return string|null
@@ -810,30 +814,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     public function setZipcode($zipcode)
     {
         $this->container['zipcode'] = $zipcode;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingName
-     *
-     * @return string|null
-     */
-    public function getShippingName()
-    {
-        return $this->container['shippingName'];
-    }
-
-    /**
-     * Sets shippingName
-     *
-     * @param string|null $shippingName The shipping name. Maximum length: 512 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setShippingName($shippingName)
-    {
-        $this->container['shippingName'] = $shippingName;
 
         return $this;
     }
@@ -1057,7 +1037,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Gets preferredLocales
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getPreferredLocales()
     {
@@ -1067,7 +1047,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets preferredLocales
      *
-     * @param string|null $preferredLocales The preferred language or locale settings. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string[]|null $preferredLocales The preferred language or locale settings. Maximum length: 256 characters. Note: See documentation for details.
      *
      * @return self
      */
@@ -1170,6 +1150,150 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets phoneNo
+     *
+     * @return string|null
+     */
+    public function getPhoneNo()
+    {
+        return $this->container['phoneNo'];
+    }
+
+    /**
+     * Sets phoneNo
+     *
+     * @param string|null $phoneNo The customer's phone number (digits only). Replaces deprecated mobileNo. Maximum length: 32 characters.
+     *
+     * @return self
+     */
+    public function setPhoneNo($phoneNo)
+    {
+        $this->container['phoneNo'] = $phoneNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryCode
+     *
+     * @return string|null
+     */
+    public function getCountryCode()
+    {
+        return $this->container['countryCode'];
+    }
+
+    /**
+     * Sets countryCode
+     *
+     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with phoneNo. Required when phoneNo is provided. Maximum length: 2 characters.
+     *
+     * @return self
+     */
+    public function setCountryCode($countryCode)
+    {
+        $this->container['countryCode'] = $countryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets billingEmail
+     *
+     * @return string|null
+     */
+    public function getBillingEmail()
+    {
+        return $this->container['billingEmail'];
+    }
+
+    /**
+     * Sets billingEmail
+     *
+     * @param string|null $billingEmail Invoice recipient email address (independent of account email). Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setBillingEmail($billingEmail)
+    {
+        $this->container['billingEmail'] = $billingEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingFirstName
+     *
+     * @return string|null
+     */
+    public function getShippingFirstName()
+    {
+        return $this->container['shippingFirstName'];
+    }
+
+    /**
+     * Sets shippingFirstName
+     *
+     * @param string|null $shippingFirstName Shipping recipient first name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setShippingFirstName($shippingFirstName)
+    {
+        $this->container['shippingFirstName'] = $shippingFirstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingLastName
+     *
+     * @return string|null
+     */
+    public function getShippingLastName()
+    {
+        return $this->container['shippingLastName'];
+    }
+
+    /**
+     * Sets shippingLastName
+     *
+     * @param string|null $shippingLastName Shipping recipient last name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setShippingLastName($shippingLastName)
+    {
+        $this->container['shippingLastName'] = $shippingLastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingCountryCode
+     *
+     * @return string|null
+     */
+    public function getShippingCountryCode()
+    {
+        return $this->container['shippingCountryCode'];
+    }
+
+    /**
+     * Sets shippingCountryCode
+     *
+     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with shippingPhone. Maximum length: 8 characters.
+     *
+     * @return self
+     */
+    public function setShippingCountryCode($shippingCountryCode)
+    {
+        $this->container['shippingCountryCode'] = $shippingCountryCode;
 
         return $this;
     }

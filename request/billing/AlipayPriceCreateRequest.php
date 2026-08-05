@@ -78,7 +78,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'unitLabel' => null,
         'meterId' => null,
         'recurring' => null,
-        'includedQuantity' => null,
+        'includedQuantity' => 'int64',
         'tiersMode' => null,
         'tiers' => null,
         'metadata' => null
@@ -99,7 +99,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'unitLabel' => false,
         'meterId' => false,
         'recurring' => false,
-        'includedQuantity' => true,
+        'includedQuantity' => false,
         'tiersMode' => false,
         'tiers' => false,
         'metadata' => false

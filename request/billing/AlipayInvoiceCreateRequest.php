@@ -59,7 +59,8 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'string',
         'paymentMethod' => '\request\model\PaymentMethod',
         'shipping' => '\request\model\InvoiceShipping',
-        'discounts' => '\request\model\BillingDiscount[]'
+        'discounts' => '\request\model\BillingDiscount[]',
+        'invoiceNotifyUrl' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => null,
         'paymentMethod' => null,
         'shipping' => null,
-        'discounts' => null
+        'discounts' => null,
+        'invoiceNotifyUrl' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => false,
         'paymentMethod' => false,
         'shipping' => false,
-        'discounts' => false
+        'discounts' => false,
+        'invoiceNotifyUrl' => false
     ];
 
     /**
@@ -207,7 +210,8 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'collectionMethod',
         'paymentMethod' => 'paymentMethod',
         'shipping' => 'shipping',
-        'discounts' => 'discounts'
+        'discounts' => 'discounts',
+        'invoiceNotifyUrl' => 'invoiceNotifyUrl'
     ];
 
     /**
@@ -229,7 +233,8 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'setCollectionMethod',
         'paymentMethod' => 'setPaymentMethod',
         'shipping' => 'setShipping',
-        'discounts' => 'setDiscounts'
+        'discounts' => 'setDiscounts',
+        'invoiceNotifyUrl' => 'setInvoiceNotifyUrl'
     ];
 
     /**
@@ -251,7 +256,8 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'getCollectionMethod',
         'paymentMethod' => 'getPaymentMethod',
         'shipping' => 'getShipping',
-        'discounts' => 'getDiscounts'
+        'discounts' => 'getDiscounts',
+        'invoiceNotifyUrl' => 'getInvoiceNotifyUrl'
     ];
 
     /**
@@ -325,6 +331,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         $this->setIfExists('paymentMethod', $data ?? [], null);
         $this->setIfExists('shipping', $data ?? [], null);
         $this->setIfExists('discounts', $data ?? [], null);
+        $this->setIfExists('invoiceNotifyUrl', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/invoice/create"); 
     }
@@ -715,6 +722,30 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     public function setDiscounts($discounts)
     {
         $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceNotifyUrl
+     *
+     * @return string|null
+     */
+    public function getInvoiceNotifyUrl()
+    {
+        return $this->container['invoiceNotifyUrl'];
+    }
+
+    /**
+     * Sets invoiceNotifyUrl
+     *
+     * @param string|null $invoiceNotifyUrl The URL that Antom uses to send the invoice payment status change notification to. Only HTTPS is supported. Maximum length: 2048 characters.
+     *
+     * @return self
+     */
+    public function setInvoiceNotifyUrl($invoiceNotifyUrl)
+    {
+        $this->container['invoiceNotifyUrl'] = $invoiceNotifyUrl;
 
         return $this;
     }

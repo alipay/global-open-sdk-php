@@ -66,7 +66,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'paymentAmount' => '\request\model\Amount',
         'settlementStrategy' => '\request\model\SettlementStrategy',
         'env' => '\request\model\Env',
-        'trials' => '\request\model\Trial[]'
+        'trials' => '\request\model\Trial[]',
+        'subscriptionInfo' => '\request\model\CreateSubscriptionInfo'
     ];
 
     /**
@@ -97,7 +98,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'paymentAmount' => null,
         'settlementStrategy' => null,
         'env' => null,
-        'trials' => null
+        'trials' => null,
+        'subscriptionInfo' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'paymentAmount' => false,
         'settlementStrategy' => false,
         'env' => false,
-        'trials' => false
+        'trials' => false,
+        'subscriptionInfo' => false
     ];
 
     /**
@@ -235,7 +238,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'paymentAmount' => 'paymentAmount',
         'settlementStrategy' => 'settlementStrategy',
         'env' => 'env',
-        'trials' => 'trials'
+        'trials' => 'trials',
+        'subscriptionInfo' => 'subscriptionInfo'
     ];
 
     /**
@@ -264,7 +268,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'paymentAmount' => 'setPaymentAmount',
         'settlementStrategy' => 'setSettlementStrategy',
         'env' => 'setEnv',
-        'trials' => 'setTrials'
+        'trials' => 'setTrials',
+        'subscriptionInfo' => 'setSubscriptionInfo'
     ];
 
     /**
@@ -293,7 +298,8 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'paymentAmount' => 'getPaymentAmount',
         'settlementStrategy' => 'getSettlementStrategy',
         'env' => 'getEnv',
-        'trials' => 'getTrials'
+        'trials' => 'getTrials',
+        'subscriptionInfo' => 'getSubscriptionInfo'
     ];
 
     /**
@@ -374,6 +380,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('settlementStrategy', $data ?? [], null);
         $this->setIfExists('env', $data ?? [], null);
         $this->setIfExists('trials', $data ?? [], null);
+        $this->setIfExists('subscriptionInfo', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/subscriptions/create"); 
     }
@@ -956,6 +963,30 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     public function setTrials($trials)
     {
         $this->container['trials'] = $trials;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionInfo
+     *
+     * @return \model\CreateSubscriptionInfo|null
+     */
+    public function getSubscriptionInfo()
+    {
+        return $this->container['subscriptionInfo'];
+    }
+
+    /**
+     * Sets subscriptionInfo
+     *
+     * @param \model\CreateSubscriptionInfo|null $subscriptionInfo subscriptionInfo
+     *
+     * @return self
+     */
+    public function setSubscriptionInfo($subscriptionInfo)
+    {
+        $this->container['subscriptionInfo'] = $subscriptionInfo;
 
         return $this;
     }

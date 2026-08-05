@@ -56,7 +56,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'string',
         'totalAmount' => '\request\model\Amount',
         'paidAmount' => '\request\model\Amount',
-        'remainingAmount' => '\request\model\Amount',
+        'remainAmount' => '\request\model\Amount',
         'currency' => 'string',
         'paidTime' => 'string',
         'voidedTime' => 'string',
@@ -87,7 +87,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => null,
         'totalAmount' => null,
         'paidAmount' => null,
-        'remainingAmount' => null,
+        'remainAmount' => null,
         'currency' => null,
         'paidTime' => null,
         'voidedTime' => null,
@@ -116,7 +116,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => false,
         'totalAmount' => false,
         'paidAmount' => false,
-        'remainingAmount' => false,
+        'remainAmount' => false,
         'currency' => false,
         'paidTime' => false,
         'voidedTime' => false,
@@ -225,7 +225,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'status',
         'totalAmount' => 'totalAmount',
         'paidAmount' => 'paidAmount',
-        'remainingAmount' => 'remainingAmount',
+        'remainAmount' => 'remainAmount',
         'currency' => 'currency',
         'paidTime' => 'paidTime',
         'voidedTime' => 'voidedTime',
@@ -254,7 +254,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'setStatus',
         'totalAmount' => 'setTotalAmount',
         'paidAmount' => 'setPaidAmount',
-        'remainingAmount' => 'setRemainingAmount',
+        'remainAmount' => 'setRemainAmount',
         'currency' => 'setCurrency',
         'paidTime' => 'setPaidTime',
         'voidedTime' => 'setVoidedTime',
@@ -283,7 +283,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'getStatus',
         'totalAmount' => 'getTotalAmount',
         'paidAmount' => 'getPaidAmount',
-        'remainingAmount' => 'getRemainingAmount',
+        'remainAmount' => 'getRemainAmount',
         'currency' => 'getCurrency',
         'paidTime' => 'getPaidTime',
         'voidedTime' => 'getVoidedTime',
@@ -363,7 +363,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('paidAmount', $data ?? [], null);
-        $this->setIfExists('remainingAmount', $data ?? [], null);
+        $this->setIfExists('remainAmount', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('paidTime', $data ?? [], null);
         $this->setIfExists('voidedTime', $data ?? [], null);
@@ -425,8 +425,8 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['paidAmount'] === null) {
             $invalidProperties[] = "'paidAmount' can't be null";
         }
-        if ($this->container['remainingAmount'] === null) {
-            $invalidProperties[] = "'remainingAmount' can't be null";
+        if ($this->container['remainAmount'] === null) {
+            $invalidProperties[] = "'remainAmount' can't be null";
         }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
@@ -702,25 +702,25 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets remainingAmount
+     * Gets remainAmount
      *
      * @return \model\Amount
      */
-    public function getRemainingAmount()
+    public function getRemainAmount()
     {
-        return $this->container['remainingAmount'];
+        return $this->container['remainAmount'];
     }
 
     /**
-     * Sets remainingAmount
+     * Sets remainAmount
      *
-     * @param \model\Amount $remainingAmount remainingAmount
+     * @param \model\Amount $remainAmount remainAmount
      *
      * @return self
      */
-    public function setRemainingAmount($remainingAmount)
+    public function setRemainAmount($remainAmount)
     {
-        $this->container['remainingAmount'] = $remainingAmount;
+        $this->container['remainAmount'] = $remainAmount;
 
         return $this;
     }

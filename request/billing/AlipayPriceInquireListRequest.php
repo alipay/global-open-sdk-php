@@ -51,7 +51,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         'active' => 'bool',
         'startingAfter' => 'string',
         'endingBefore' => 'string',
-        'list' => 'int',
+        'limit' => 'int',
         'includeTotal' => 'bool'
     ];
 
@@ -68,7 +68,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         'active' => null,
         'startingAfter' => null,
         'endingBefore' => null,
-        'list' => null,
+        'limit' => null,
         'includeTotal' => null
     ];
 
@@ -83,7 +83,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         'active' => false,
         'startingAfter' => false,
         'endingBefore' => false,
-        'list' => true,
+        'limit' => true,
         'includeTotal' => false
     ];
 
@@ -178,7 +178,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         'active' => 'active',
         'startingAfter' => 'startingAfter',
         'endingBefore' => 'endingBefore',
-        'list' => 'list',
+        'limit' => 'limit',
         'includeTotal' => 'includeTotal'
     ];
 
@@ -193,7 +193,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         'active' => 'setActive',
         'startingAfter' => 'setStartingAfter',
         'endingBefore' => 'setEndingBefore',
-        'list' => 'setList',
+        'limit' => 'setLimit',
         'includeTotal' => 'setIncludeTotal'
     ];
 
@@ -208,7 +208,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         'active' => 'getActive',
         'startingAfter' => 'getStartingAfter',
         'endingBefore' => 'getEndingBefore',
-        'list' => 'getList',
+        'limit' => 'getLimit',
         'includeTotal' => 'getIncludeTotal'
     ];
 
@@ -274,7 +274,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('startingAfter', $data ?? [], null);
         $this->setIfExists('endingBefore', $data ?? [], null);
-        $this->setIfExists('list', $data ?? [], null);
+        $this->setIfExists('limit', $data ?? [], null);
         $this->setIfExists('includeTotal', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/price/inquireList"); 
@@ -443,25 +443,25 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     }
 
     /**
-     * Gets list
+     * Gets limit
      *
      * @return int|null
      */
-    public function getList()
+    public function getLimit()
     {
-        return $this->container['list'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets list
+     * Sets limit
      *
-     * @param int|null $list The list. Maximum length: 32 characters.
+     * @param int|null $limit The maximum number of prices returned per page. Value range: 1 - 100. Default value: 20.
      *
      * @return self
      */
-    public function setList($list)
+    public function setLimit($limit)
     {
-        $this->container['list'] = $list;
+        $this->container['limit'] = $limit;
 
         return $this;
     }
