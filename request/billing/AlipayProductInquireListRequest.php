@@ -52,7 +52,8 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'active' => 'bool',
         'type' => 'string',
         'keyword' => 'string',
-        'includeTotal' => 'bool'
+        'includeTotal' => 'bool',
+        'usageType' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'active' => null,
         'type' => null,
         'keyword' => null,
-        'includeTotal' => null
+        'includeTotal' => null,
+        'usageType' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'active' => false,
         'type' => false,
         'keyword' => false,
-        'includeTotal' => false
+        'includeTotal' => false,
+        'usageType' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'active' => 'active',
         'type' => 'type',
         'keyword' => 'keyword',
-        'includeTotal' => 'includeTotal'
+        'includeTotal' => 'includeTotal',
+        'usageType' => 'usageType'
     ];
 
     /**
@@ -194,7 +198,8 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'active' => 'setActive',
         'type' => 'setType',
         'keyword' => 'setKeyword',
-        'includeTotal' => 'setIncludeTotal'
+        'includeTotal' => 'setIncludeTotal',
+        'usageType' => 'setUsageType'
     ];
 
     /**
@@ -209,7 +214,8 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'active' => 'getActive',
         'type' => 'getType',
         'keyword' => 'getKeyword',
-        'includeTotal' => 'getIncludeTotal'
+        'includeTotal' => 'getIncludeTotal',
+        'usageType' => 'getUsageType'
     ];
 
     /**
@@ -276,6 +282,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('keyword', $data ?? [], null);
         $this->setIfExists('includeTotal', $data ?? [], null);
+        $this->setIfExists('usageType', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/product/inquireList"); 
     }
@@ -486,6 +493,30 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
     public function setIncludeTotal($includeTotal)
     {
         $this->container['includeTotal'] = $includeTotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets usageType
+     *
+     * @return string|null
+     */
+    public function getUsageType()
+    {
+        return $this->container['usageType'];
+    }
+
+    /**
+     * Sets usageType
+     *
+     * @param string|null $usageType Filter by usage type. Valid values: LICENSED, METERED. O - When provided, returns only products that have prices with matching usage type.
+     *
+     * @return self
+     */
+    public function setUsageType($usageType)
+    {
+        $this->container['usageType'] = $usageType;
 
         return $this;
     }

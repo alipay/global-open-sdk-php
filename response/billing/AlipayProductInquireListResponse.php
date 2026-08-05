@@ -49,7 +49,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         'result' => '\request\model\Result',
         'products' => '\request\model\Product[]',
         'hasMore' => 'bool',
-        'totalCount' => 'int'
+        'total' => 'int'
     ];
 
     /**
@@ -63,7 +63,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         'result' => null,
         'products' => null,
         'hasMore' => null,
-        'totalCount' => null
+        'total' => null
     ];
 
     /**
@@ -75,7 +75,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         'result' => false,
         'products' => false,
         'hasMore' => false,
-        'totalCount' => true
+        'total' => true
     ];
 
     /**
@@ -167,7 +167,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         'result' => 'result',
         'products' => 'products',
         'hasMore' => 'hasMore',
-        'totalCount' => 'totalCount'
+        'total' => 'total'
     ];
 
     /**
@@ -179,7 +179,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         'result' => 'setResult',
         'products' => 'setProducts',
         'hasMore' => 'setHasMore',
-        'totalCount' => 'setTotalCount'
+        'total' => 'setTotal'
     ];
 
     /**
@@ -191,7 +191,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         'result' => 'getResult',
         'products' => 'getProducts',
         'hasMore' => 'getHasMore',
-        'totalCount' => 'getTotalCount'
+        'total' => 'getTotal'
     ];
 
     /**
@@ -254,7 +254,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
-        $this->setIfExists('totalCount', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
 
             }
 
@@ -382,25 +382,25 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets totalCount
+     * Gets total
      *
      * @return int|null
      */
-    public function getTotalCount()
+    public function getTotal()
     {
-        return $this->container['totalCount'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets totalCount
+     * Sets total
      *
-     * @param int|null $totalCount The total number of records. Note: See documentation for details.
+     * @param int|null $total The total number of records. Note: See documentation for details.
      *
      * @return self
      */
-    public function setTotalCount($totalCount)
+    public function setTotal($total)
     {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['total'] = $total;
 
         return $this;
     }
