@@ -4,35 +4,15 @@ namespace Request\notify;
 
 class AlipayInvoiceNotify extends \Request\notify\AlipayNotify
 {
-    public $merchantRequestId;
-    public $eventTime;
     public $invoiceId;
-    public $subscriptionId;
     public $customerId;
-    public $status;
-    public $previousStatus;
     public $reason;
     public $reasonDescription;
-
-    public function getMerchantRequestId()
-    {
-        return $this->merchantRequestId;
-    }
-
-    public function setMerchantRequestId($merchantRequestId): void
-    {
-        $this->merchantRequestId = $merchantRequestId;
-    }
-
-    public function getEventTime()
-    {
-        return $this->eventTime;
-    }
-
-    public function setEventTime($eventTime): void
-    {
-        $this->eventTime = $eventTime;
-    }
+    public $invoiceRequestId;
+    public $invoiceStatus;
+    public $invoiceAmount;
+    public $paymentInfo;
+    public $subscription;
 
     public function getInvoiceId()
     {
@@ -44,16 +24,6 @@ class AlipayInvoiceNotify extends \Request\notify\AlipayNotify
         $this->invoiceId = $invoiceId;
     }
 
-    public function getSubscriptionId()
-    {
-        return $this->subscriptionId;
-    }
-
-    public function setSubscriptionId($subscriptionId): void
-    {
-        $this->subscriptionId = $subscriptionId;
-    }
-
     public function getCustomerId()
     {
         return $this->customerId;
@@ -62,26 +32,6 @@ class AlipayInvoiceNotify extends \Request\notify\AlipayNotify
     public function setCustomerId($customerId): void
     {
         $this->customerId = $customerId;
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    public function setStatus($status): void
-    {
-        $this->status = $status;
-    }
-
-    public function getPreviousStatus()
-    {
-        return $this->previousStatus;
-    }
-
-    public function setPreviousStatus($previousStatus): void
-    {
-        $this->previousStatus = $previousStatus;
     }
 
     public function getReason()
@@ -102,5 +52,55 @@ class AlipayInvoiceNotify extends \Request\notify\AlipayNotify
     public function setReasonDescription($reasonDescription): void
     {
         $this->reasonDescription = $reasonDescription;
+    }
+
+    public function getInvoiceRequestId()
+    {
+        return $this->invoiceRequestId;
+    }
+
+    public function setInvoiceRequestId($invoiceRequestId): void
+    {
+        $this->invoiceRequestId = $invoiceRequestId;
+    }
+
+    public function getInvoiceStatus()
+    {
+        return $this->invoiceStatus;
+    }
+
+    public function setInvoiceStatus($invoiceStatus): void
+    {
+        $this->invoiceStatus = $invoiceStatus;
+    }
+
+    public function getInvoiceAmount()
+    {
+        return $this->invoiceAmount;
+    }
+
+    public function setInvoiceAmount($invoiceAmount): void
+    {
+        $this->invoiceAmount = $invoiceAmount;
+    }
+
+    public function getPaymentInfo()
+    {
+        return $this->paymentInfo;
+    }
+
+    public function setPaymentInfo($paymentInfo): void
+    {
+        $this->paymentInfo = $paymentInfo;
+    }
+
+    public function getSubscription()
+    {
+        return $this->subscription;
+    }
+
+    public function setSubscription($subscription): void
+    {
+        $this->subscription = $subscription;
     }
 }

@@ -12,6 +12,7 @@ class AlipayBillingSubscriptionNotify extends \Request\notify\AlipayNotify
     public $reason;
     public $reasonDescription;
     public $previousStatus;
+    public $fixedAmount;
 
     public function getMerchantRequestId()
     {
@@ -91,5 +92,15 @@ class AlipayBillingSubscriptionNotify extends \Request\notify\AlipayNotify
     public function setPreviousStatus($previousStatus): void
     {
         $this->previousStatus = $previousStatus;
+    }
+
+    public function getFixedAmount()
+    {
+        return $this->fixedAmount;
+    }
+
+    public function setFixedAmount($fixedAmount): void
+    {
+        $this->fixedAmount = $fixedAmount;
     }
 }
