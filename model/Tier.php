@@ -59,7 +59,7 @@ class Tier  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upTo' => null,
+        'upTo' => 'int64',
         'unitAmount' => null,
         'flatAmount' => null
     ];
@@ -70,7 +70,7 @@ class Tier  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'upTo' => true,
+        'upTo' => false,
         'unitAmount' => false,
         'flatAmount' => false
     ];

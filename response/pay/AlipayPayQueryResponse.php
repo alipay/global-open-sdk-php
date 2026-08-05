@@ -77,7 +77,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantAccountId' => 'string',
         'promotionResults' => '\request\model\PromotionResult[]',
         'earliestSettlementTime' => 'string',
-        'paymentMethodType' => 'string'
+        'paymentMethodType' => 'string',
+        'retryInfo' => '\request\model\RetryInfo'
     ];
 
     /**
@@ -119,7 +120,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantAccountId' => null,
         'promotionResults' => null,
         'earliestSettlementTime' => null,
-        'paymentMethodType' => null
+        'paymentMethodType' => null,
+        'retryInfo' => null
     ];
 
     /**
@@ -159,7 +161,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantAccountId' => false,
         'promotionResults' => false,
         'earliestSettlementTime' => false,
-        'paymentMethodType' => false
+        'paymentMethodType' => false,
+        'retryInfo' => false
     ];
 
     /**
@@ -279,7 +282,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantAccountId' => 'merchantAccountId',
         'promotionResults' => 'promotionResults',
         'earliestSettlementTime' => 'earliestSettlementTime',
-        'paymentMethodType' => 'paymentMethodType'
+        'paymentMethodType' => 'paymentMethodType',
+        'retryInfo' => 'retryInfo'
     ];
 
     /**
@@ -319,7 +323,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantAccountId' => 'setMerchantAccountId',
         'promotionResults' => 'setPromotionResults',
         'earliestSettlementTime' => 'setEarliestSettlementTime',
-        'paymentMethodType' => 'setPaymentMethodType'
+        'paymentMethodType' => 'setPaymentMethodType',
+        'retryInfo' => 'setRetryInfo'
     ];
 
     /**
@@ -359,7 +364,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantAccountId' => 'getMerchantAccountId',
         'promotionResults' => 'getPromotionResults',
         'earliestSettlementTime' => 'getEarliestSettlementTime',
-        'paymentMethodType' => 'getPaymentMethodType'
+        'paymentMethodType' => 'getPaymentMethodType',
+        'retryInfo' => 'getRetryInfo'
     ];
 
     /**
@@ -451,6 +457,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('promotionResults', $data ?? [], null);
         $this->setIfExists('earliestSettlementTime', $data ?? [], null);
         $this->setIfExists('paymentMethodType', $data ?? [], null);
+        $this->setIfExists('retryInfo', $data ?? [], null);
 
             }
 
@@ -1263,6 +1270,30 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     public function setPaymentMethodType($paymentMethodType)
     {
         $this->container['paymentMethodType'] = $paymentMethodType;
+
+        return $this;
+    }
+
+    /**
+     * Gets retryInfo
+     *
+     * @return \model\RetryInfo|null
+     */
+    public function getRetryInfo()
+    {
+        return $this->container['retryInfo'];
+    }
+
+    /**
+     * Sets retryInfo
+     *
+     * @param \model\RetryInfo|null $retryInfo retryInfo
+     *
+     * @return self
+     */
+    public function setRetryInfo($retryInfo)
+    {
+        $this->container['retryInfo'] = $retryInfo;
 
         return $this;
     }

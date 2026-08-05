@@ -63,7 +63,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'discountAmount' => '\request\model\Amount',
         'totalAmount' => '\request\model\Amount',
         'paidAmount' => '\request\model\Amount',
-        'remainingAmount' => '\request\model\Amount',
+        'remainAmount' => '\request\model\Amount',
         'taxAmount' => '\request\model\Amount',
         'paymentDeductedAmount' => '\request\model\Amount',
         'collectionMethod' => 'string',
@@ -108,7 +108,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'discountAmount' => null,
         'totalAmount' => null,
         'paidAmount' => null,
-        'remainingAmount' => null,
+        'remainAmount' => null,
         'taxAmount' => null,
         'paymentDeductedAmount' => null,
         'collectionMethod' => null,
@@ -151,7 +151,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'discountAmount' => false,
         'totalAmount' => false,
         'paidAmount' => false,
-        'remainingAmount' => false,
+        'remainAmount' => false,
         'taxAmount' => false,
         'paymentDeductedAmount' => false,
         'collectionMethod' => false,
@@ -274,7 +274,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'discountAmount' => 'discountAmount',
         'totalAmount' => 'totalAmount',
         'paidAmount' => 'paidAmount',
-        'remainingAmount' => 'remainingAmount',
+        'remainAmount' => 'remainAmount',
         'taxAmount' => 'taxAmount',
         'paymentDeductedAmount' => 'paymentDeductedAmount',
         'collectionMethod' => 'collectionMethod',
@@ -317,7 +317,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'discountAmount' => 'setDiscountAmount',
         'totalAmount' => 'setTotalAmount',
         'paidAmount' => 'setPaidAmount',
-        'remainingAmount' => 'setRemainingAmount',
+        'remainAmount' => 'setRemainAmount',
         'taxAmount' => 'setTaxAmount',
         'paymentDeductedAmount' => 'setPaymentDeductedAmount',
         'collectionMethod' => 'setCollectionMethod',
@@ -360,7 +360,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'discountAmount' => 'getDiscountAmount',
         'totalAmount' => 'getTotalAmount',
         'paidAmount' => 'getPaidAmount',
-        'remainingAmount' => 'getRemainingAmount',
+        'remainAmount' => 'getRemainAmount',
         'taxAmount' => 'getTaxAmount',
         'paymentDeductedAmount' => 'getPaymentDeductedAmount',
         'collectionMethod' => 'getCollectionMethod',
@@ -454,7 +454,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('discountAmount', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('paidAmount', $data ?? [], null);
-        $this->setIfExists('remainingAmount', $data ?? [], null);
+        $this->setIfExists('remainAmount', $data ?? [], null);
         $this->setIfExists('taxAmount', $data ?? [], null);
         $this->setIfExists('paymentDeductedAmount', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
@@ -541,8 +541,8 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         if ($this->container['paidAmount'] === null) {
             $invalidProperties[] = "'paidAmount' can't be null";
         }
-        if ($this->container['remainingAmount'] === null) {
-            $invalidProperties[] = "'remainingAmount' can't be null";
+        if ($this->container['remainAmount'] === null) {
+            $invalidProperties[] = "'remainAmount' can't be null";
         }
         if ($this->container['taxAmount'] === null) {
             $invalidProperties[] = "'taxAmount' can't be null";
@@ -992,25 +992,25 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets remainingAmount
+     * Gets remainAmount
      *
      * @return \model\Amount
      */
-    public function getRemainingAmount()
+    public function getRemainAmount()
     {
-        return $this->container['remainingAmount'];
+        return $this->container['remainAmount'];
     }
 
     /**
-     * Sets remainingAmount
+     * Sets remainAmount
      *
-     * @param \model\Amount $remainingAmount remainingAmount
+     * @param \model\Amount $remainAmount remainAmount
      *
      * @return self
      */
-    public function setRemainingAmount($remainingAmount)
+    public function setRemainAmount($remainAmount)
     {
-        $this->container['remainingAmount'] = $remainingAmount;
+        $this->container['remainAmount'] = $remainAmount;
 
         return $this;
     }

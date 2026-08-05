@@ -57,6 +57,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         'unitAmount' => '\request\model\Amount',
         'recurring' => '\request\model\RecurringSettings',
         'active' => 'bool',
+        'includedQuantity' => 'int',
         'tiersMode' => 'string',
         'tiers' => '\request\model\Tier[]',
         'metadata' => 'array<string,string>',
@@ -84,6 +85,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         'unitAmount' => null,
         'recurring' => null,
         'active' => null,
+        'includedQuantity' => 'int64',
         'tiersMode' => null,
         'tiers' => null,
         'metadata' => null,
@@ -109,6 +111,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         'unitAmount' => false,
         'recurring' => false,
         'active' => false,
+        'includedQuantity' => false,
         'tiersMode' => false,
         'tiers' => false,
         'metadata' => false,
@@ -214,6 +217,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         'unitAmount' => 'unitAmount',
         'recurring' => 'recurring',
         'active' => 'active',
+        'includedQuantity' => 'includedQuantity',
         'tiersMode' => 'tiersMode',
         'tiers' => 'tiers',
         'metadata' => 'metadata',
@@ -239,6 +243,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         'unitAmount' => 'setUnitAmount',
         'recurring' => 'setRecurring',
         'active' => 'setActive',
+        'includedQuantity' => 'setIncludedQuantity',
         'tiersMode' => 'setTiersMode',
         'tiers' => 'setTiers',
         'metadata' => 'setMetadata',
@@ -264,6 +269,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         'unitAmount' => 'getUnitAmount',
         'recurring' => 'getRecurring',
         'active' => 'getActive',
+        'includedQuantity' => 'getIncludedQuantity',
         'tiersMode' => 'getTiersMode',
         'tiers' => 'getTiers',
         'metadata' => 'getMetadata',
@@ -340,6 +346,7 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
         $this->setIfExists('unitAmount', $data ?? [], null);
         $this->setIfExists('recurring', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
+        $this->setIfExists('includedQuantity', $data ?? [], null);
         $this->setIfExists('tiersMode', $data ?? [], null);
         $this->setIfExists('tiers', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -669,6 +676,30 @@ class AlipayPriceInquireDetailsResponse  implements ModelInterface, ArrayAccess,
     public function setActive($active)
     {
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets includedQuantity
+     *
+     * @return int|null
+     */
+    public function getIncludedQuantity()
+    {
+        return $this->container['includedQuantity'];
+    }
+
+    /**
+     * Sets includedQuantity
+     *
+     * @param int|null $includedQuantity The included quantity.
+     *
+     * @return self
+     */
+    public function setIncludedQuantity($includedQuantity)
+    {
+        $this->container['includedQuantity'] = $includedQuantity;
 
         return $this;
     }

@@ -67,7 +67,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'subscriptionNotifyUrl' => 'string',
         'subscriptionExpiryTime' => 'string',
         'allowRetry' => 'bool',
-        'maxAmountFloor' => '\request\model\Amount'
+        'maxAmountFloor' => '\request\model\Amount',
+        'fixedAmount' => '\request\model\Amount',
+        'retryMode' => 'string',
+        'subscriptionOrderId' => 'string'
     ];
 
     /**
@@ -99,7 +102,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'subscriptionNotifyUrl' => null,
         'subscriptionExpiryTime' => null,
         'allowRetry' => null,
-        'maxAmountFloor' => null
+        'maxAmountFloor' => null,
+        'fixedAmount' => null,
+        'retryMode' => null,
+        'subscriptionOrderId' => null
     ];
 
     /**
@@ -129,7 +135,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'subscriptionNotifyUrl' => false,
         'subscriptionExpiryTime' => false,
         'allowRetry' => false,
-        'maxAmountFloor' => false
+        'maxAmountFloor' => false,
+        'fixedAmount' => false,
+        'retryMode' => false,
+        'subscriptionOrderId' => false
     ];
 
     /**
@@ -239,7 +248,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
         'subscriptionExpiryTime' => 'subscriptionExpiryTime',
         'allowRetry' => 'allowRetry',
-        'maxAmountFloor' => 'maxAmountFloor'
+        'maxAmountFloor' => 'maxAmountFloor',
+        'fixedAmount' => 'fixedAmount',
+        'retryMode' => 'retryMode',
+        'subscriptionOrderId' => 'subscriptionOrderId'
     ];
 
     /**
@@ -269,7 +281,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
         'subscriptionExpiryTime' => 'setSubscriptionExpiryTime',
         'allowRetry' => 'setAllowRetry',
-        'maxAmountFloor' => 'setMaxAmountFloor'
+        'maxAmountFloor' => 'setMaxAmountFloor',
+        'fixedAmount' => 'setFixedAmount',
+        'retryMode' => 'setRetryMode',
+        'subscriptionOrderId' => 'setSubscriptionOrderId'
     ];
 
     /**
@@ -299,7 +314,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
         'subscriptionExpiryTime' => 'getSubscriptionExpiryTime',
         'allowRetry' => 'getAllowRetry',
-        'maxAmountFloor' => 'getMaxAmountFloor'
+        'maxAmountFloor' => 'getMaxAmountFloor',
+        'fixedAmount' => 'getFixedAmount',
+        'retryMode' => 'getRetryMode',
+        'subscriptionOrderId' => 'getSubscriptionOrderId'
     ];
 
     /**
@@ -381,6 +399,9 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('subscriptionExpiryTime', $data ?? [], null);
         $this->setIfExists('allowRetry', $data ?? [], null);
         $this->setIfExists('maxAmountFloor', $data ?? [], null);
+        $this->setIfExists('fixedAmount', $data ?? [], null);
+        $this->setIfExists('retryMode', $data ?? [], null);
+        $this->setIfExists('subscriptionOrderId', $data ?? [], null);
 
             }
 
@@ -962,6 +983,78 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setMaxAmountFloor($maxAmountFloor)
     {
         $this->container['maxAmountFloor'] = $maxAmountFloor;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixedAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getFixedAmount()
+    {
+        return $this->container['fixedAmount'];
+    }
+
+    /**
+     * Sets fixedAmount
+     *
+     * @param \model\Amount|null $fixedAmount fixedAmount
+     *
+     * @return self
+     */
+    public function setFixedAmount($fixedAmount)
+    {
+        $this->container['fixedAmount'] = $fixedAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets retryMode
+     *
+     * @return string|null
+     */
+    public function getRetryMode()
+    {
+        return $this->container['retryMode'];
+    }
+
+    /**
+     * Sets retryMode
+     *
+     * @param string|null $retryMode The retry mode. Valid values are MANUAL and AUTOMATIC. Defaults to MANUAL when allowRetry is true. Only used in the PIX recurrence scenario. Maximum length: 9 characters.
+     *
+     * @return self
+     */
+    public function setRetryMode($retryMode)
+    {
+        $this->container['retryMode'] = $retryMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionOrderId
+     *
+     * @return string|null
+     */
+    public function getSubscriptionOrderId()
+    {
+        return $this->container['subscriptionOrderId'];
+    }
+
+    /**
+     * Sets subscriptionOrderId
+     *
+     * @param string|null $subscriptionOrderId The order number for this subscription period. Used in PIX recurrence retry schedule payment scenarios. Maximum length: 32 characters.
+     *
+     * @return self
+     */
+    public function setSubscriptionOrderId($subscriptionOrderId)
+    {
+        $this->container['subscriptionOrderId'] = $subscriptionOrderId;
 
         return $this;
     }
