@@ -119,9 +119,8 @@ abstract class BaseAlipayClient
     }
 
     private static $RESERVED_HEADERS = ["signature", "client-id", "request-time", "content-type", "agent-token", "user-agent"];
+    // Billing and Meter APIs now support sandbox. Keep the filter logic for future use.
     private static $SANDBOX_PRODUCTION_PATH_PREFIXES = [
-        "/ams/api/v1/billing/",
-        "/ams/api/v1/meter/",
     ];
 
     public function executeWithHeaders($request, $extraHeaders = [])
