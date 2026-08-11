@@ -49,7 +49,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'discountId' => 'string',
         'couponId' => 'string',
         'type' => 'string',
-        'percentOff' => 'int',
+        'percentOff' => 'string',
         'amountOff' => '\request\model\Amount',
         'duration' => 'string',
         'times' => 'int',
@@ -83,7 +83,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'discountId' => false,
         'couponId' => false,
         'type' => false,
-        'percentOff' => true,
+        'percentOff' => false,
         'amountOff' => false,
         'duration' => false,
         'times' => true,
@@ -406,7 +406,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
     /**
      * Gets percentOff
      *
-     * @return int|null
+     * @return string|null
      */
     public function getPercentOff()
     {
@@ -416,7 +416,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
     /**
      * Sets percentOff
      *
-     * @param int|null $percentOff The percent off. Note: See documentation for details.
+     * @param string|null $percentOff Percentage discount as a decimal string.
      *
      * @return self
      */

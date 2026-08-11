@@ -300,7 +300,7 @@ class AlipayInvoiceInquireDetailsRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceId System-generated invoice ID. The primary lookup key. Exactly one of `invoiceId` or `invoiceRequestId` must be provided. If both are provided and resolve to the same invoice, the request succeeds. Omit this field when looking up by `invoiceRequestId`.
      *
      * @return self
      */
@@ -324,7 +324,7 @@ class AlipayInvoiceInquireDetailsRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceRequestId
      *
-     * @param string|null $invoiceRequestId The invoice request id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceRequestId Merchant-supplied idempotency key from invoice creation. Allows merchants to look up invoices using their own reference without storing the system-generated `invoiceId`. Exactly one of `invoiceId` or `invoiceRequestId` must be provided. If both are provided and resolve to the same invoice, the request succeeds. Omit this field when looking up by `invoiceId`.
      *
      * @return self
      */

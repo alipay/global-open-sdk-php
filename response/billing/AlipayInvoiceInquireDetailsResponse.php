@@ -65,7 +65,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidAmount' => '\request\model\Amount',
         'remainAmount' => '\request\model\Amount',
         'taxAmount' => '\request\model\Amount',
-        'paymentDeductedAmount' => '\request\model\Amount',
         'collectionMethod' => 'string',
         'paymentMethod' => '\request\model\PaymentMethod',
         'shipping' => '\request\model\InvoiceShipping',
@@ -76,11 +75,14 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidTime' => 'string',
         'description' => 'string',
         'items' => '\request\model\InvoiceItem[]',
-        'payments' => '\request\model\Payment[]',
+        'payments' => '\request\model\InvoicePayment[]',
         'invoiceNotes' => '\request\model\InvoiceNote[]',
         'gmtCreate' => 'string',
         'gmtUpdate' => 'string',
-        'discounts' => '\request\model\BillingDiscount[]'
+        'discounts' => '\request\model\BillingDiscount[]',
+        'postPaymentCreditNotesAmount' => '\request\model\Amount',
+        'prePaymentCreditNotesAmount' => '\request\model\Amount',
+        'paymentDeducted' => '\request\model\Amount'
     ];
 
     /**
@@ -110,7 +112,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidAmount' => null,
         'remainAmount' => null,
         'taxAmount' => null,
-        'paymentDeductedAmount' => null,
         'collectionMethod' => null,
         'paymentMethod' => null,
         'shipping' => null,
@@ -125,7 +126,10 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'invoiceNotes' => null,
         'gmtCreate' => null,
         'gmtUpdate' => null,
-        'discounts' => null
+        'discounts' => null,
+        'postPaymentCreditNotesAmount' => null,
+        'prePaymentCreditNotesAmount' => null,
+        'paymentDeducted' => null
     ];
 
     /**
@@ -153,7 +157,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidAmount' => false,
         'remainAmount' => false,
         'taxAmount' => false,
-        'paymentDeductedAmount' => false,
         'collectionMethod' => false,
         'paymentMethod' => false,
         'shipping' => false,
@@ -168,7 +171,10 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'invoiceNotes' => false,
         'gmtCreate' => false,
         'gmtUpdate' => false,
-        'discounts' => false
+        'discounts' => false,
+        'postPaymentCreditNotesAmount' => false,
+        'prePaymentCreditNotesAmount' => false,
+        'paymentDeducted' => false
     ];
 
     /**
@@ -276,7 +282,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidAmount' => 'paidAmount',
         'remainAmount' => 'remainAmount',
         'taxAmount' => 'taxAmount',
-        'paymentDeductedAmount' => 'paymentDeductedAmount',
         'collectionMethod' => 'collectionMethod',
         'paymentMethod' => 'paymentMethod',
         'shipping' => 'shipping',
@@ -291,7 +296,10 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'invoiceNotes' => 'invoiceNotes',
         'gmtCreate' => 'gmtCreate',
         'gmtUpdate' => 'gmtUpdate',
-        'discounts' => 'discounts'
+        'discounts' => 'discounts',
+        'postPaymentCreditNotesAmount' => 'postPaymentCreditNotesAmount',
+        'prePaymentCreditNotesAmount' => 'prePaymentCreditNotesAmount',
+        'paymentDeducted' => 'paymentDeducted'
     ];
 
     /**
@@ -319,7 +327,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidAmount' => 'setPaidAmount',
         'remainAmount' => 'setRemainAmount',
         'taxAmount' => 'setTaxAmount',
-        'paymentDeductedAmount' => 'setPaymentDeductedAmount',
         'collectionMethod' => 'setCollectionMethod',
         'paymentMethod' => 'setPaymentMethod',
         'shipping' => 'setShipping',
@@ -334,7 +341,10 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'invoiceNotes' => 'setInvoiceNotes',
         'gmtCreate' => 'setGmtCreate',
         'gmtUpdate' => 'setGmtUpdate',
-        'discounts' => 'setDiscounts'
+        'discounts' => 'setDiscounts',
+        'postPaymentCreditNotesAmount' => 'setPostPaymentCreditNotesAmount',
+        'prePaymentCreditNotesAmount' => 'setPrePaymentCreditNotesAmount',
+        'paymentDeducted' => 'setPaymentDeducted'
     ];
 
     /**
@@ -362,7 +372,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'paidAmount' => 'getPaidAmount',
         'remainAmount' => 'getRemainAmount',
         'taxAmount' => 'getTaxAmount',
-        'paymentDeductedAmount' => 'getPaymentDeductedAmount',
         'collectionMethod' => 'getCollectionMethod',
         'paymentMethod' => 'getPaymentMethod',
         'shipping' => 'getShipping',
@@ -377,7 +386,10 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'invoiceNotes' => 'getInvoiceNotes',
         'gmtCreate' => 'getGmtCreate',
         'gmtUpdate' => 'getGmtUpdate',
-        'discounts' => 'getDiscounts'
+        'discounts' => 'getDiscounts',
+        'postPaymentCreditNotesAmount' => 'getPostPaymentCreditNotesAmount',
+        'prePaymentCreditNotesAmount' => 'getPrePaymentCreditNotesAmount',
+        'paymentDeducted' => 'getPaymentDeducted'
     ];
 
     /**
@@ -456,7 +468,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('paidAmount', $data ?? [], null);
         $this->setIfExists('remainAmount', $data ?? [], null);
         $this->setIfExists('taxAmount', $data ?? [], null);
-        $this->setIfExists('paymentDeductedAmount', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('paymentMethod', $data ?? [], null);
         $this->setIfExists('shipping', $data ?? [], null);
@@ -472,6 +483,9 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('gmtCreate', $data ?? [], null);
         $this->setIfExists('gmtUpdate', $data ?? [], null);
         $this->setIfExists('discounts', $data ?? [], null);
+        $this->setIfExists('postPaymentCreditNotesAmount', $data ?? [], null);
+        $this->setIfExists('prePaymentCreditNotesAmount', $data ?? [], null);
+        $this->setIfExists('paymentDeducted', $data ?? [], null);
 
             }
 
@@ -504,69 +518,6 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['invoiceRequestId'] === null) {
-            $invalidProperties[] = "'invoiceRequestId' can't be null";
-        }
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
-        }
-        if ($this->container['invoiceNumber'] === null) {
-            $invalidProperties[] = "'invoiceNumber' can't be null";
-        }
-        if ($this->container['reason'] === null) {
-            $invalidProperties[] = "'reason' can't be null";
-        }
-        if ($this->container['phaseNo'] === null) {
-            $invalidProperties[] = "'phaseNo' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['subtotal'] === null) {
-            $invalidProperties[] = "'subtotal' can't be null";
-        }
-        if ($this->container['discountAmount'] === null) {
-            $invalidProperties[] = "'discountAmount' can't be null";
-        }
-        if ($this->container['totalAmount'] === null) {
-            $invalidProperties[] = "'totalAmount' can't be null";
-        }
-        if ($this->container['paidAmount'] === null) {
-            $invalidProperties[] = "'paidAmount' can't be null";
-        }
-        if ($this->container['remainAmount'] === null) {
-            $invalidProperties[] = "'remainAmount' can't be null";
-        }
-        if ($this->container['taxAmount'] === null) {
-            $invalidProperties[] = "'taxAmount' can't be null";
-        }
-        if ($this->container['collectionMethod'] === null) {
-            $invalidProperties[] = "'collectionMethod' can't be null";
-        }
-        if ($this->container['periodStart'] === null) {
-            $invalidProperties[] = "'periodStart' can't be null";
-        }
-        if ($this->container['periodEnd'] === null) {
-            $invalidProperties[] = "'periodEnd' can't be null";
-        }
-        if ($this->container['dueDate'] === null) {
-            $invalidProperties[] = "'dueDate' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
-        if ($this->container['gmtCreate'] === null) {
-            $invalidProperties[] = "'gmtCreate' can't be null";
-        }
-        if ($this->container['gmtUpdate'] === null) {
-            $invalidProperties[] = "'gmtUpdate' can't be null";
         }
         return $invalidProperties;
     }
@@ -610,7 +561,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -620,7 +571,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId System-generated invoice ID. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -634,7 +585,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets invoiceRequestId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceRequestId()
     {
@@ -644,7 +595,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceRequestId
      *
-     * @param string $invoiceRequestId The invoice request id. Maximum length: 64 characters.
+     * @param string|null $invoiceRequestId Merchant-supplied idempotency key (echo-back from creation). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -668,7 +619,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Associated subscription ID. Omitted for standalone manual invoices (invoices not linked to a subscription). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -682,7 +633,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets customerId
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerId()
     {
@@ -692,7 +643,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId Customer ID this invoice belongs to. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -706,7 +657,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets invoiceNumber
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceNumber()
     {
@@ -716,7 +667,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceNumber
      *
-     * @param string $invoiceNumber The invoice number. Maximum length: 64 characters.
+     * @param string|null $invoiceNumber Human-readable sequential invoice number, unique per merchant (e.g., `INV-0001`). Generated by `InvoiceNumberSequenceService` at creation time. Suitable for display on PDFs and customer-facing pages. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -740,7 +691,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerFirstName
      *
-     * @param string|null $customerFirstName The customer first name. Maximum length: 256 characters.
+     * @param string|null $customerFirstName Customer's first name. Populated from the customer record at invoice creation time. PII - see the six-element PII disclosure below the table. Omitted when not set on the customer record. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -764,7 +715,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerLastName
      *
-     * @param string|null $customerLastName The customer last name. Maximum length: 256 characters.
+     * @param string|null $customerLastName Customer's last name. Populated from the customer record at invoice creation time. PII - see the six-element PII disclosure below the table. Omitted when not set on the customer record. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -788,7 +739,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerEmail
      *
-     * @param string|null $customerEmail The email address of the customer. Maximum length: 256 characters.
+     * @param string|null $customerEmail Customer's email address. Populated from the customer record at invoice creation time. PII - see the six-element PII disclosure below the table. Omitted when not set on the customer record. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -802,7 +753,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets reason
      *
-     * @return string
+     * @return string|null
      */
     public function getReason()
     {
@@ -812,7 +763,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets reason
      *
-     * @param string $reason The reason for the status change. Maximum length: 32 characters.
+     * @param string|null $reason Invoice creation reason: `MANUAL`, `SUBSCRIPTION_CREATION`, `SUBSCRIPTION_RECURRENCE`, `SUBSCRIPTION_UPDATE`. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -826,7 +777,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets phaseNo
      *
-     * @return string
+     * @return string|null
      */
     public function getPhaseNo()
     {
@@ -836,7 +787,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets phaseNo
      *
-     * @param string $phaseNo The phase no.
+     * @param string|null $phaseNo Subscription phase number. Identifies which billing phase generated this invoice. Value range: 1-unlimited. Returned only for subscription-generated invoices (`reason` != `MANUAL`); omitted for manual invoices. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -850,7 +801,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -860,7 +811,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Current invoice status: `DRAFT`, `OPEN`, `PAID`, `UNCOLLECTIBLE`, `VOID`. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -874,7 +825,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -884,7 +835,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets currency
      *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
+     * @param string|null $currency Three-letter ISO currency code in uppercase (e.g., `\"USD\"`). The invoice currency. All `Amount.currency` sub-fields within this response echo the same uppercase code. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -898,7 +849,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets subtotal
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getSubtotal()
     {
@@ -908,7 +859,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets subtotal
      *
-     * @param \model\Amount $subtotal subtotal
+     * @param \model\Amount|null $subtotal subtotal
      *
      * @return self
      */
@@ -922,7 +873,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets discountAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getDiscountAmount()
     {
@@ -932,7 +883,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets discountAmount
      *
-     * @param \model\Amount $discountAmount discountAmount
+     * @param \model\Amount|null $discountAmount discountAmount
      *
      * @return self
      */
@@ -946,7 +897,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets totalAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getTotalAmount()
     {
@@ -956,7 +907,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets totalAmount
      *
-     * @param \model\Amount $totalAmount totalAmount
+     * @param \model\Amount|null $totalAmount totalAmount
      *
      * @return self
      */
@@ -970,7 +921,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets paidAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getPaidAmount()
     {
@@ -980,7 +931,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paidAmount
      *
-     * @param \model\Amount $paidAmount paidAmount
+     * @param \model\Amount|null $paidAmount paidAmount
      *
      * @return self
      */
@@ -994,7 +945,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets remainAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getRemainAmount()
     {
@@ -1004,7 +955,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets remainAmount
      *
-     * @param \model\Amount $remainAmount remainAmount
+     * @param \model\Amount|null $remainAmount remainAmount
      *
      * @return self
      */
@@ -1018,7 +969,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets taxAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getTaxAmount()
     {
@@ -1028,7 +979,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets taxAmount
      *
-     * @param \model\Amount $taxAmount taxAmount
+     * @param \model\Amount|null $taxAmount taxAmount
      *
      * @return self
      */
@@ -1040,33 +991,9 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets paymentDeductedAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getPaymentDeductedAmount()
-    {
-        return $this->container['paymentDeductedAmount'];
-    }
-
-    /**
-     * Sets paymentDeductedAmount
-     *
-     * @param \model\Amount|null $paymentDeductedAmount paymentDeductedAmount
-     *
-     * @return self
-     */
-    public function setPaymentDeductedAmount($paymentDeductedAmount)
-    {
-        $this->container['paymentDeductedAmount'] = $paymentDeductedAmount;
-
-        return $this;
-    }
-
-    /**
      * Gets collectionMethod
      *
-     * @return string
+     * @return string|null
      */
     public function getCollectionMethod()
     {
@@ -1076,7 +1003,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets collectionMethod
      *
-     * @param string $collectionMethod The collection method. Maximum length: 32 characters.
+     * @param string|null $collectionMethod Payment collection method. Allowed values: `CHARGE_AUTOMATICALLY` - automatically charge the customer's default payment method when the invoice is finalized; `SEND_INVOICE` - send the invoice to the customer for manual payment via email. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1148,7 +1075,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets hostedInvoiceUrl
      *
-     * @param string|null $hostedInvoiceUrl The hosted invoice url. Maximum length: 2048 characters.
+     * @param string|null $hostedInvoiceUrl URL to the invoice hosted page where the merchant/customer can view, download, or pay the invoice. The URL carries an opaque signed view token - it does not expose the raw `invoiceId` or `merchantId`. Links expire per the view-link validity period (see the `createViewLink` API) and are invalidated when the invoice is voided. Returned when: (1) invoice is OPEN (auto-generated during finalization), or (2) invoice is DRAFT and a view link was created via `createViewLink` API. Omitted if neither condition is met. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1162,7 +1089,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets periodStart
      *
-     * @return string
+     * @return string|null
      */
     public function getPeriodStart()
     {
@@ -1172,7 +1099,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets periodStart
      *
-     * @param string $periodStart The period start. Maximum length: 24 characters.
+     * @param string|null $periodStart Billing period start timestamp (ISO 8601, e.g., `2026-03-01T00:00:00+00:00`). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1186,7 +1113,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets periodEnd
      *
-     * @return string
+     * @return string|null
      */
     public function getPeriodEnd()
     {
@@ -1196,7 +1123,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets periodEnd
      *
-     * @param string $periodEnd The period end. Maximum length: 24 characters.
+     * @param string|null $periodEnd Billing period end timestamp (ISO 8601). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1210,7 +1137,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets dueDate
      *
-     * @return string
+     * @return string|null
      */
     public function getDueDate()
     {
@@ -1220,7 +1147,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets dueDate
      *
-     * @param string $dueDate The due date. Maximum length: 24 characters.
+     * @param string|null $dueDate Payment due date, format: `yyyy-MM-dd` (date-only, no time component). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1244,7 +1171,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paidTime
      *
-     * @param string|null $paidTime The paid time. Maximum length: 24 characters.
+     * @param string|null $paidTime Timestamp when the invoice was fully paid (ISO 8601). Omitted if unpaid. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1268,7 +1195,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 512 characters.
+     * @param string|null $description Invoice-level description text displayed on the invoice. Note: line items carry their own `description` field (max 256) scoped to the individual line item. Omitted when not set. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1282,7 +1209,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets items
      *
-     * @return \model\InvoiceItem[]
+     * @return \model\InvoiceItem[]|null
      */
     public function getItems()
     {
@@ -1292,7 +1219,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets items
      *
-     * @param \model\InvoiceItem[] $items The items.
+     * @param \model\InvoiceItem[]|null $items Array of line items that make up this invoice. May be empty for invoices with only manual amounts. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1306,7 +1233,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets payments
      *
-     * @return \model\Payment[]|null
+     * @return \model\InvoicePayment[]|null
      */
     public function getPayments()
     {
@@ -1316,7 +1243,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets payments
      *
-     * @param \model\Payment[]|null $payments The payments.
+     * @param \model\InvoicePayment[]|null $payments Payment attempts for this invoice. Queried by merchantId and invoiceId. Omitted if no payment attempts exist. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1340,7 +1267,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceNotes
      *
-     * @param \model\InvoiceNote[]|null $invoiceNotes The invoice notes.
+     * @param \model\InvoiceNote[]|null $invoiceNotes Array of notes attached to the invoice, sorted by time descending (most recent first). Each note captures contextual information about an action performed on the invoice (e.g., void, finalize, paid). Stored in the invoice metadata. Omitted if no notes exist for the invoice. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1354,7 +1281,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets gmtCreate
      *
-     * @return string
+     * @return string|null
      */
     public function getGmtCreate()
     {
@@ -1364,7 +1291,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets gmtCreate
      *
-     * @param string $gmtCreate The creation time. Maximum length: 24 characters.
+     * @param string|null $gmtCreate ISO 8601 timestamp of invoice creation (e.g., `2026-03-01T00:59:55+00:00`). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1378,7 +1305,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets gmtUpdate
      *
-     * @return string
+     * @return string|null
      */
     public function getGmtUpdate()
     {
@@ -1388,7 +1315,7 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets gmtUpdate
      *
-     * @param string $gmtUpdate The gmt update. Maximum length: 24 characters.
+     * @param string|null $gmtUpdate ISO 8601 timestamp of last invoice update. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1412,13 +1339,85 @@ class AlipayInvoiceInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets discounts
      *
-     * @param \model\BillingDiscount[]|null $discounts The discounts applied.
+     * @param \model\BillingDiscount[]|null $discounts Invoice-level discount items applied to this invoice. Each element carries either a `couponId` or `promotionCodeId`. Parsed from the invoice `discountItemIds` JSON column at query time. The computed total is reflected in `discountAmount`. Omitted if no discounts are applied. See DiscountItem Object below for field details. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setDiscounts($discounts)
     {
         $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets postPaymentCreditNotesAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getPostPaymentCreditNotesAmount()
+    {
+        return $this->container['postPaymentCreditNotesAmount'];
+    }
+
+    /**
+     * Sets postPaymentCreditNotesAmount
+     *
+     * @param \model\Amount|null $postPaymentCreditNotesAmount postPaymentCreditNotesAmount
+     *
+     * @return self
+     */
+    public function setPostPaymentCreditNotesAmount($postPaymentCreditNotesAmount)
+    {
+        $this->container['postPaymentCreditNotesAmount'] = $postPaymentCreditNotesAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets prePaymentCreditNotesAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getPrePaymentCreditNotesAmount()
+    {
+        return $this->container['prePaymentCreditNotesAmount'];
+    }
+
+    /**
+     * Sets prePaymentCreditNotesAmount
+     *
+     * @param \model\Amount|null $prePaymentCreditNotesAmount prePaymentCreditNotesAmount
+     *
+     * @return self
+     */
+    public function setPrePaymentCreditNotesAmount($prePaymentCreditNotesAmount)
+    {
+        $this->container['prePaymentCreditNotesAmount'] = $prePaymentCreditNotesAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentDeducted
+     *
+     * @return \model\Amount|null
+     */
+    public function getPaymentDeducted()
+    {
+        return $this->container['paymentDeducted'];
+    }
+
+    /**
+     * Sets paymentDeducted
+     *
+     * @param \model\Amount|null $paymentDeducted paymentDeducted
+     *
+     * @return self
+     */
+    public function setPaymentDeducted($paymentDeducted)
+    {
+        $this->container['paymentDeducted'] = $paymentDeducted;
 
         return $this;
     }

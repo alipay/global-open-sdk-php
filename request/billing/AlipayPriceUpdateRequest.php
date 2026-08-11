@@ -48,9 +48,9 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     protected static $openAPITypes = [
         'priceId' => 'string',
         'name' => 'string',
-        'metadata' => 'array<string,string>',
-        'metadataKeysToRemove' => 'string',
-        'active' => 'bool'
+        'metadata' => 'string',
+        'active' => 'bool',
+        'defaultPrice' => 'bool'
     ];
 
     /**
@@ -64,8 +64,8 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
         'priceId' => null,
         'name' => null,
         'metadata' => null,
-        'metadataKeysToRemove' => null,
-        'active' => null
+        'active' => null,
+        'defaultPrice' => null
     ];
 
     /**
@@ -77,8 +77,8 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
         'priceId' => false,
         'name' => false,
         'metadata' => false,
-        'metadataKeysToRemove' => false,
-        'active' => false
+        'active' => false,
+        'defaultPrice' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
         'priceId' => 'priceId',
         'name' => 'name',
         'metadata' => 'metadata',
-        'metadataKeysToRemove' => 'metadataKeysToRemove',
-        'active' => 'active'
+        'active' => 'active',
+        'defaultPrice' => 'defaultPrice'
     ];
 
     /**
@@ -183,8 +183,8 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
         'priceId' => 'setPriceId',
         'name' => 'setName',
         'metadata' => 'setMetadata',
-        'metadataKeysToRemove' => 'setMetadataKeysToRemove',
-        'active' => 'setActive'
+        'active' => 'setActive',
+        'defaultPrice' => 'setDefaultPrice'
     ];
 
     /**
@@ -196,8 +196,8 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
         'priceId' => 'getPriceId',
         'name' => 'getName',
         'metadata' => 'getMetadata',
-        'metadataKeysToRemove' => 'getMetadataKeysToRemove',
-        'active' => 'getActive'
+        'active' => 'getActive',
+        'defaultPrice' => 'getDefaultPrice'
     ];
 
     /**
@@ -260,8 +260,8 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
         $this->setIfExists('priceId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('metadataKeysToRemove', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
+        $this->setIfExists('defaultPrice', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/price/update"); 
     }
@@ -324,7 +324,7 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets priceId
      *
-     * @param string $priceId The price ID. Maximum length: 32 characters.
+     * @param string $priceId Price ID to update. Cannot be null. Format: price_ prefix + alphanumeric suffix. This field serves as the idempotent key for this operation
      *
      * @return self
      */
@@ -348,7 +348,7 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets name
      *
-     * @param string|null $name The name. Maximum length: 128 characters.
+     * @param string|null $name Price name. O - Present with value: update; present with null: clear; absent: no change. Can be null
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -372,37 +372,13 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 20 characters. Note: See documentation for details.
+     * @param string|null $metadata Custom metadata encoded as a JSON object string. When provided, the value fully replaces the existing metadata; keys are not merged. When omitted, the existing value is unchanged. PII must not be stored.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadataKeysToRemove
-     *
-     * @return string|null
-     */
-    public function getMetadataKeysToRemove()
-    {
-        return $this->container['metadataKeysToRemove'];
-    }
-
-    /**
-     * Sets metadataKeysToRemove
-     *
-     * @param string|null $metadataKeysToRemove The metadata keys to remove. Maximum length: 20 characters.
-     *
-     * @return self
-     */
-    public function setMetadataKeysToRemove($metadataKeysToRemove)
-    {
-        $this->container['metadataKeysToRemove'] = $metadataKeysToRemove;
 
         return $this;
     }
@@ -420,13 +396,37 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets active
      *
-     * @param bool|null $active The active.
+     * @param bool|null $active Price active status. O - explicit true=activate, explicit false=deactivate, absent or null=no change. There is no \"clear\" semantic for active - it is always either true or false. For Boolean fields on update APIs, null/absent means \"no change\" (not \"set to null\"). See Section 6.8 Update API Null/Absent Semantics for the authoritative definition. When deactivated (active=false), the price cannot be used for new subscriptions; existing subscriptions continue using the price
      *
      * @return self
      */
     public function setActive($active)
     {
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultPrice
+     *
+     * @return bool|null
+     */
+    public function getDefaultPrice()
+    {
+        return $this->container['defaultPrice'];
+    }
+
+    /**
+     * Sets defaultPrice
+     *
+     * @param bool|null $defaultPrice Whether this price is the default price for the product. O - Only `true` is accepted; `false` or absent means no change. When set to true, this price becomes the default price of the product and any previous default price of that product is automatically un-defaulted. Cannot be combined with active=false in the same request - a default price must remain active
+     *
+     * @return self
+     */
+    public function setDefaultPrice($defaultPrice)
+    {
+        $this->container['defaultPrice'] = $defaultPrice;
 
         return $this;
     }

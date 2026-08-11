@@ -309,18 +309,6 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['hostedInvoiceUrl'] === null) {
-            $invalidProperties[] = "'hostedInvoiceUrl' can't be null";
-        }
-        if ($this->container['finalizedAt'] === null) {
-            $invalidProperties[] = "'finalizedAt' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -363,7 +351,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -373,7 +361,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Invoice ID that was finalized (echo-back). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -387,7 +375,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -397,7 +385,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $status New invoice status: `OPEN`. The invoice is now visible to the customer and ready for payment. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -411,7 +399,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets hostedInvoiceUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getHostedInvoiceUrl()
     {
@@ -421,7 +409,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets hostedInvoiceUrl
      *
-     * @param string $hostedInvoiceUrl The hosted invoice url. Maximum length: 2048 characters.
+     * @param string|null $hostedInvoiceUrl URL to the hosted invoice page where the customer can view and pay the invoice online. Same URL returned by the Create Invoice API and Invoice Send API. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -435,7 +423,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets finalizedAt
      *
-     * @return string
+     * @return string|null
      */
     public function getFinalizedAt()
     {
@@ -445,7 +433,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets finalizedAt
      *
-     * @param string $finalizedAt The finalized at. Maximum length: 24 characters.
+     * @param string|null $finalizedAt ISO 8601 timestamp of when the invoice was finalized (e.g., `2026-05-10T14:30:00+00:00`). This is the official time the invoice became OPEN and visible to the customer. Maps to internal DB column `finalized_time` (DATETIME) on `ibilling_invoice`. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -469,7 +457,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Echo-back of the `invoiceNote` provided in the request, if any. The note is stored in the `invoiceNotes` array in the invoice metadata with `action=finalize`. Can be null (no note provided). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -493,7 +481,7 @@ class AlipayInvoiceFinalizeResponse  implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus The email sending status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $sendStatus Email send status. Returned only when `autoSend=true` in the request. Enum values: `SENT` - email dispatched successfully; `FAILED` - email dispatch failed (retry allowed). Can be null (when `autoSend=false` or absent). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

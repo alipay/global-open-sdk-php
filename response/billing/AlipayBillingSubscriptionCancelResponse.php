@@ -49,11 +49,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'result' => '\request\model\ResultInfo',
         'subscriptionId' => 'string',
         'status' => 'string',
-        'cancellationReason' => 'string',
-        'cancellationDetails' => '\request\model\BillingSubscriptionCancelCancellationDetails',
         'canceledAt' => 'string',
         'cancelAtPeriodEnd' => 'bool',
-        'creditNoteId' => 'string'
+        'creditNoteId' => 'string',
+        'creditNoteAmount' => 'int',
+        'creditNoteCurrency' => 'string'
     ];
 
     /**
@@ -67,11 +67,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'result' => null,
         'subscriptionId' => null,
         'status' => null,
-        'cancellationReason' => null,
-        'cancellationDetails' => null,
         'canceledAt' => null,
         'cancelAtPeriodEnd' => null,
-        'creditNoteId' => null
+        'creditNoteId' => null,
+        'creditNoteAmount' => 'int64',
+        'creditNoteCurrency' => null
     ];
 
     /**
@@ -83,11 +83,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'result' => false,
         'subscriptionId' => false,
         'status' => false,
-        'cancellationReason' => false,
-        'cancellationDetails' => false,
         'canceledAt' => false,
         'cancelAtPeriodEnd' => false,
-        'creditNoteId' => false
+        'creditNoteId' => false,
+        'creditNoteAmount' => false,
+        'creditNoteCurrency' => false
     ];
 
     /**
@@ -179,11 +179,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'result' => 'result',
         'subscriptionId' => 'subscriptionId',
         'status' => 'status',
-        'cancellationReason' => 'cancellationReason',
-        'cancellationDetails' => 'cancellationDetails',
         'canceledAt' => 'canceledAt',
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
-        'creditNoteId' => 'creditNoteId'
+        'creditNoteId' => 'creditNoteId',
+        'creditNoteAmount' => 'creditNoteAmount',
+        'creditNoteCurrency' => 'creditNoteCurrency'
     ];
 
     /**
@@ -195,11 +195,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'result' => 'setResult',
         'subscriptionId' => 'setSubscriptionId',
         'status' => 'setStatus',
-        'cancellationReason' => 'setCancellationReason',
-        'cancellationDetails' => 'setCancellationDetails',
         'canceledAt' => 'setCanceledAt',
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
-        'creditNoteId' => 'setCreditNoteId'
+        'creditNoteId' => 'setCreditNoteId',
+        'creditNoteAmount' => 'setCreditNoteAmount',
+        'creditNoteCurrency' => 'setCreditNoteCurrency'
     ];
 
     /**
@@ -211,11 +211,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'result' => 'getResult',
         'subscriptionId' => 'getSubscriptionId',
         'status' => 'getStatus',
-        'cancellationReason' => 'getCancellationReason',
-        'cancellationDetails' => 'getCancellationDetails',
         'canceledAt' => 'getCanceledAt',
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
-        'creditNoteId' => 'getCreditNoteId'
+        'creditNoteId' => 'getCreditNoteId',
+        'creditNoteAmount' => 'getCreditNoteAmount',
+        'creditNoteCurrency' => 'getCreditNoteCurrency'
     ];
 
     /**
@@ -278,11 +278,11 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('cancellationReason', $data ?? [], null);
-        $this->setIfExists('cancellationDetails', $data ?? [], null);
         $this->setIfExists('canceledAt', $data ?? [], null);
         $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
         $this->setIfExists('creditNoteId', $data ?? [], null);
+        $this->setIfExists('creditNoteAmount', $data ?? [], null);
+        $this->setIfExists('creditNoteCurrency', $data ?? [], null);
 
             }
 
@@ -416,54 +416,6 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets cancellationReason
-     *
-     * @return string|null
-     */
-    public function getCancellationReason()
-    {
-        return $this->container['cancellationReason'];
-    }
-
-    /**
-     * Sets cancellationReason
-     *
-     * @param string|null $cancellationReason The cancellation reason. Maximum length: 64 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setCancellationReason($cancellationReason)
-    {
-        $this->container['cancellationReason'] = $cancellationReason;
-
-        return $this;
-    }
-
-    /**
-     * Gets cancellationDetails
-     *
-     * @return \model\BillingSubscriptionCancelCancellationDetails|null
-     */
-    public function getCancellationDetails()
-    {
-        return $this->container['cancellationDetails'];
-    }
-
-    /**
-     * Sets cancellationDetails
-     *
-     * @param \model\BillingSubscriptionCancelCancellationDetails|null $cancellationDetails cancellationDetails
-     *
-     * @return self
-     */
-    public function setCancellationDetails($cancellationDetails)
-    {
-        $this->container['cancellationDetails'] = $cancellationDetails;
-
-        return $this;
-    }
-
-    /**
      * Gets canceledAt
      *
      * @return string
@@ -524,13 +476,61 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
     /**
      * Sets creditNoteId
      *
-     * @param string|null $creditNoteId The credit note ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $creditNoteId The generated credit note ID. Returned for an immediate termination that generates prorated credit. Maximum length: 64 characters.
      *
      * @return self
      */
     public function setCreditNoteId($creditNoteId)
     {
         $this->container['creditNoteId'] = $creditNoteId;
+
+        return $this;
+    }
+
+    /**
+     * Gets creditNoteAmount
+     *
+     * @return int|null
+     */
+    public function getCreditNoteAmount()
+    {
+        return $this->container['creditNoteAmount'];
+    }
+
+    /**
+     * Sets creditNoteAmount
+     *
+     * @param int|null $creditNoteAmount The credit amount in the smallest currency unit. Returned together with `creditNoteId` and `creditNoteCurrency`.
+     *
+     * @return self
+     */
+    public function setCreditNoteAmount($creditNoteAmount)
+    {
+        $this->container['creditNoteAmount'] = $creditNoteAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets creditNoteCurrency
+     *
+     * @return string|null
+     */
+    public function getCreditNoteCurrency()
+    {
+        return $this->container['creditNoteCurrency'];
+    }
+
+    /**
+     * Sets creditNoteCurrency
+     *
+     * @param string|null $creditNoteCurrency The three-letter ISO 4217 currency code for `creditNoteAmount`. Returned together with `creditNoteId`. Maximum length: 3 characters.
+     *
+     * @return self
+     */
+    public function setCreditNoteCurrency($creditNoteCurrency)
+    {
+        $this->container['creditNoteCurrency'] = $creditNoteCurrency;
 
         return $this;
     }

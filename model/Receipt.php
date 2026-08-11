@@ -55,7 +55,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'string',
         'reason' => 'string',
         'collectionMethod' => 'string',
-        'paymentMethod' => 'string',
+        'paymentMethod' => '\request\model\ReceiptPaymentMethod',
         'subtotal' => '\request\model\Amount',
         'totalAmount' => '\request\model\Amount',
         'paidAmount' => '\request\model\Amount',
@@ -68,9 +68,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'gmtCreate' => 'string',
         'gmtUpdate' => 'string',
-        'customerFirstName' => 'string',
-        'customerLastName' => 'string',
-        'customerEmail' => 'string',
         'paymentMethodType' => 'string',
         'discountAmount' => '\request\model\Amount',
         'taxAmount' => '\request\model\Amount',
@@ -117,9 +114,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => null,
         'gmtCreate' => null,
         'gmtUpdate' => null,
-        'customerFirstName' => null,
-        'customerLastName' => null,
-        'customerEmail' => null,
         'paymentMethodType' => null,
         'discountAmount' => null,
         'taxAmount' => null,
@@ -164,9 +158,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => false,
         'gmtCreate' => false,
         'gmtUpdate' => false,
-        'customerFirstName' => false,
-        'customerLastName' => false,
-        'customerEmail' => false,
         'paymentMethodType' => false,
         'discountAmount' => false,
         'taxAmount' => false,
@@ -291,9 +282,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'description',
         'gmtCreate' => 'gmtCreate',
         'gmtUpdate' => 'gmtUpdate',
-        'customerFirstName' => 'customerFirstName',
-        'customerLastName' => 'customerLastName',
-        'customerEmail' => 'customerEmail',
         'paymentMethodType' => 'paymentMethodType',
         'discountAmount' => 'discountAmount',
         'taxAmount' => 'taxAmount',
@@ -338,9 +326,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'setDescription',
         'gmtCreate' => 'setGmtCreate',
         'gmtUpdate' => 'setGmtUpdate',
-        'customerFirstName' => 'setCustomerFirstName',
-        'customerLastName' => 'setCustomerLastName',
-        'customerEmail' => 'setCustomerEmail',
         'paymentMethodType' => 'setPaymentMethodType',
         'discountAmount' => 'setDiscountAmount',
         'taxAmount' => 'setTaxAmount',
@@ -385,9 +370,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'getDescription',
         'gmtCreate' => 'getGmtCreate',
         'gmtUpdate' => 'getGmtUpdate',
-        'customerFirstName' => 'getCustomerFirstName',
-        'customerLastName' => 'getCustomerLastName',
-        'customerEmail' => 'getCustomerEmail',
         'paymentMethodType' => 'getPaymentMethodType',
         'discountAmount' => 'getDiscountAmount',
         'taxAmount' => 'getTaxAmount',
@@ -483,9 +465,6 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('gmtCreate', $data ?? [], null);
         $this->setIfExists('gmtUpdate', $data ?? [], null);
-        $this->setIfExists('customerFirstName', $data ?? [], null);
-        $this->setIfExists('customerLastName', $data ?? [], null);
-        $this->setIfExists('customerEmail', $data ?? [], null);
         $this->setIfExists('paymentMethodType', $data ?? [], null);
         $this->setIfExists('discountAmount', $data ?? [], null);
         $this->setIfExists('taxAmount', $data ?? [], null);
@@ -588,7 +567,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets receiptId
      *
-     * @param string $receiptId The receipt ID. Maximum length: 64 characters.
+     * @param string $receiptId Receipt ID. Unique identifier.
      *
      * @return self
      */
@@ -612,7 +591,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Filter by associated invoice ID. Returns receipts linked to this invoice. Can be null (no filter).
      *
      * @return self
      */
@@ -636,7 +615,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string $customerId Filter by customer ID. Returns only receipts belonging to this customer. Can be null (no filter).
      *
      * @return self
      */
@@ -660,7 +639,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Filter by associated subscription ID. Returns receipts linked to this subscription. Can be null (no filter).
      *
      * @return self
      */
@@ -684,7 +663,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets originalReceiptId
      *
-     * @param string|null $originalReceiptId The original receipt id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $originalReceiptId Original receipt ID for refund receipts. Only set when receiptType=REFUND. Null for PAYMENT receipts.
      *
      * @return self
      */
@@ -708,7 +687,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets receiptType
      *
-     * @param string $receiptType The receipt type. Maximum length: 16 characters.
+     * @param string $receiptType Filter by receipt type. Allowed values: `PAYMENT` (receipt for a payment), `REFUND` (receipt for a refund). Unknown type values are silently ignored (treated as no filter for that value). Can be null (no filter).
      *
      * @return self
      */
@@ -732,7 +711,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 32 characters.
+     * @param string $status Filter by receipt status. Allowed values: `ACTIVE` (payment receipt with no refunds), `PARTIALLY_REFUNDED` (some amount refunded), `REFUNDED` (fully refunded). Unknown status values are silently ignored (treated as no filter for that value). Can be null (no filter).
      *
      * @return self
      */
@@ -756,7 +735,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reason
      *
-     * @param string $reason The reason for the status change. Maximum length: 32 characters.
+     * @param string $reason Reason for receipt creation. Allowed values: `SUBSCRIPTION_CREATION`, `RECURRENCE`, `UPDATE`, `TRIAL_END`, `REFUND`. Merchants should handle unknown enum values gracefully (e.g., log for review); new values may be added without version change.
      *
      * @return self
      */
@@ -780,7 +759,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets collectionMethod
      *
-     * @param string|null $collectionMethod The collection method. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $collectionMethod Payment collection method: `CHARGE_AUTOMATICALLY` or `SEND_INVOICE`. Returned when the receipt has an associated collection method; null when not applicable (e.g., manual payment confirmation).
      *
      * @return self
      */
@@ -794,7 +773,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets paymentMethod
      *
-     * @return string|null
+     * @return \model\ReceiptPaymentMethod|null
      */
     public function getPaymentMethod()
     {
@@ -804,7 +783,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethod
      *
-     * @param string|null $paymentMethod The payment method. Maximum length: 32 characters. Note: See documentation for details.
+     * @param \model\ReceiptPaymentMethod|null $paymentMethod paymentMethod
      *
      * @return self
      */
@@ -996,7 +975,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodStart
      *
-     * @param string|null $periodStart The period start. Maximum length: 24 characters.
+     * @param string|null $periodStart ISO 8601 timestamp of billing period start. Null if not subscription-based.
      *
      * @return self
      */
@@ -1020,7 +999,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodEnd
      *
-     * @param string|null $periodEnd The period end. Maximum length: 24 characters.
+     * @param string|null $periodEnd ISO 8601 timestamp of billing period end. Null if not subscription-based.
      *
      * @return self
      */
@@ -1044,7 +1023,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 512 characters.
+     * @param string|null $description Receipt narrative. Returned when merchant set a receipt narrative; null if no description was provided.
      *
      * @return self
      */
@@ -1068,7 +1047,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtCreate
      *
-     * @param string $gmtCreate The creation time. Maximum length: 24 characters.
+     * @param string $gmtCreate ISO 8601 timestamp of receipt creation.
      *
      * @return self
      */
@@ -1092,85 +1071,13 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtUpdate
      *
-     * @param string $gmtUpdate The gmt update. Maximum length: 24 characters.
+     * @param string $gmtUpdate ISO 8601 timestamp of last receipt update.
      *
      * @return self
      */
     public function setGmtUpdate($gmtUpdate)
     {
         $this->container['gmtUpdate'] = $gmtUpdate;
-
-        return $this;
-    }
-
-    /**
-     * Gets customerFirstName
-     *
-     * @return string|null
-     */
-    public function getCustomerFirstName()
-    {
-        return $this->container['customerFirstName'];
-    }
-
-    /**
-     * Sets customerFirstName
-     *
-     * @param string|null $customerFirstName The customer first name. Maximum length: 256 characters.
-     *
-     * @return self
-     */
-    public function setCustomerFirstName($customerFirstName)
-    {
-        $this->container['customerFirstName'] = $customerFirstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets customerLastName
-     *
-     * @return string|null
-     */
-    public function getCustomerLastName()
-    {
-        return $this->container['customerLastName'];
-    }
-
-    /**
-     * Sets customerLastName
-     *
-     * @param string|null $customerLastName The customer last name. Maximum length: 256 characters.
-     *
-     * @return self
-     */
-    public function setCustomerLastName($customerLastName)
-    {
-        $this->container['customerLastName'] = $customerLastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets customerEmail
-     *
-     * @return string|null
-     */
-    public function getCustomerEmail()
-    {
-        return $this->container['customerEmail'];
-    }
-
-    /**
-     * Sets customerEmail
-     *
-     * @param string|null $customerEmail The email address of the customer. Maximum length: 256 characters.
-     *
-     * @return self
-     */
-    public function setCustomerEmail($customerEmail)
-    {
-        $this->container['customerEmail'] = $customerEmail;
 
         return $this;
     }
@@ -1188,7 +1095,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentMethodType
      *
-     * @param string|null $paymentMethodType The payment method type. Maximum length: 32 characters.
+     * @param string|null $paymentMethodType Payment method type (e.g., `CARD`, `WALLET`). Can be null.
      *
      * @return self
      */
@@ -1308,7 +1215,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fxRate
      *
-     * @param string|null $fxRate The fx rate. Maximum length: 32 characters.
+     * @param string|null $fxRate Foreign exchange rate applied when payment currency differs from settlement currency. Null for same-currency transactions.
      *
      * @return self
      */
@@ -1332,7 +1239,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fxRateId
      *
-     * @param string|null $fxRateId The fx rate id. Maximum length: 64 characters.
+     * @param string|null $fxRateId FX rate reference ID for audit and reconciliation. Null when no FX rate was applied.
      *
      * @return self
      */
@@ -1356,7 +1263,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dueDate
      *
-     * @param string|null $dueDate The due date. Maximum length: 24 characters.
+     * @param string|null $dueDate ISO 8601 timestamp of payment due date. Null for receipts without a due date.
      *
      * @return self
      */
@@ -1380,7 +1287,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paidTime
      *
-     * @param string|null $paidTime The paid time. Maximum length: 24 characters.
+     * @param string|null $paidTime ISO 8601 timestamp of when payment was completed. Null for unpaid receipts.
      *
      * @return self
      */
@@ -1404,7 +1311,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID assigned by a merchant to identify a payment request. Maximum length: 128 characters.
+     * @param string|null $paymentRequestId Outbound payment request ID used as idempotency key. Null for offline confirmations.
      *
      * @return self
      */
@@ -1428,7 +1335,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payToRequestId
      *
-     * @param string|null $payToRequestId The pay to request id. Maximum length: 128 characters.
+     * @param string|null $payToRequestId Payment order request ID. Null if not applicable.
      *
      * @return self
      */
@@ -1452,7 +1359,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payToId
      *
-     * @param string|null $payToId The pay to id. Maximum length: 64 characters.
+     * @param string|null $payToId Payment order ID. Null if not applicable.
      *
      * @return self
      */
@@ -1476,7 +1383,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets footer
      *
-     * @param string|null $footer The footer. Maximum length: 256 characters.
+     * @param string|null $footer Receipt footer text. Can be null.
      *
      * @return self
      */
@@ -1500,7 +1407,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fileUrl
      *
-     * @param string|null $fileUrl The file url. Maximum length: 2048 characters.
+     * @param string|null $fileUrl URL to the receipt PDF file. Can be null (PDF not yet generated).
      *
      * @return self
      */

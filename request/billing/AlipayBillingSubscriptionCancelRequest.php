@@ -324,7 +324,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string $subscriptionId The target subscription ID. Repeated cancellation requests for the same subscription return the existing cancellation result. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -372,7 +372,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
     /**
      * Sets cancellationReason
      *
-     * @param string|null $cancellationReason The cancellation reason. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $cancellationReason A free-text cancellation reason. Do not include personally identifiable information. At least one of `cancellationReason` and `cancellationDetails.feedback` must be provided. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -420,7 +420,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
     /**
      * Sets prorationBehavior
      *
-     * @param string|null $prorationBehavior The proration behavior. Maximum length: 18 characters.
+     * @param string|null $prorationBehavior The proration behavior for immediate termination. Valid values are CREATE_PRORATIONS, NONE, and ALWAYS_INVOICE. Maximum length: 18 characters.
      *
      * @return self
      */

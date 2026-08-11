@@ -327,7 +327,7 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceId Invoice ID of the DRAFT or OPEN invoice to revise. Format: `inv_` + 10-char alphanumeric. Can be null if `invoiceRequestId` is provided.
      *
      * @return self
      */
@@ -351,7 +351,7 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceRequestId
      *
-     * @param string|null $invoiceRequestId The invoice request id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceRequestId Alternative lookup by idempotency key. Can be null if `invoiceId` is provided.
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceRevisionRequestId
      *
-     * @param string $invoiceRevisionRequestId The invoice revision request id. Maximum length: 64 characters.
+     * @param string $invoiceRevisionRequestId Idempotency key for the revision operation. Stored as `invoiceRequestId` on the new invoice. Backed by UK `(merchant_id, invoice_revision_request_id)`. Accepts alphanumeric, hyphens, underscores. Cannot be null.
      *
      * @return self
      */
@@ -399,7 +399,7 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets void
      *
-     * @param bool $void The void.
+     * @param bool $void Controls the revision mode: `true` = void original invoice + create new (atomic); `false` = clone original without voiding (original untouched). Cannot be null.
      *
      * @return self
      */
@@ -423,7 +423,7 @@ class AlipayInvoiceReviseRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceNotifyUrl
      *
-     * @param string|null $invoiceNotifyUrl The URL that Antom uses to send the invoice payment status change notification to. Only HTTPS is supported. Maximum length: 2048 characters.
+     * @param string|null $invoiceNotifyUrl Updated HTTPS URL that receives invoice payment-status notifications for the revised invoice. Maximum length: 2048 characters.
      *
      * @return self
      */

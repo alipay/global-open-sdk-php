@@ -47,7 +47,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
       */
     protected static $openAPITypes = [
         'invoiceId' => 'string',
-        'sendRequestId' => 'string'
+        'ccEmails' => 'string[]',
+        'internalNote' => 'string',
+        'includePaymentLink' => 'bool'
     ];
 
     /**
@@ -59,7 +61,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
       */
     protected static $openAPIFormats = [
         'invoiceId' => null,
-        'sendRequestId' => null
+        'ccEmails' => null,
+        'internalNote' => null,
+        'includePaymentLink' => null
     ];
 
     /**
@@ -69,7 +73,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
       */
     protected static $openAPINullables = [
         'invoiceId' => false,
-        'sendRequestId' => false
+        'ccEmails' => false,
+        'internalNote' => false,
+        'includePaymentLink' => false
     ];
 
     /**
@@ -159,7 +165,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
      */
     protected static $attributeMap = [
         'invoiceId' => 'invoiceId',
-        'sendRequestId' => 'sendRequestId'
+        'ccEmails' => 'ccEmails',
+        'internalNote' => 'internalNote',
+        'includePaymentLink' => 'includePaymentLink'
     ];
 
     /**
@@ -169,7 +177,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
      */
     protected static $setters = [
         'invoiceId' => 'setInvoiceId',
-        'sendRequestId' => 'setSendRequestId'
+        'ccEmails' => 'setCcEmails',
+        'internalNote' => 'setInternalNote',
+        'includePaymentLink' => 'setIncludePaymentLink'
     ];
 
     /**
@@ -179,7 +189,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
      */
     protected static $getters = [
         'invoiceId' => 'getInvoiceId',
-        'sendRequestId' => 'getSendRequestId'
+        'ccEmails' => 'getCcEmails',
+        'internalNote' => 'getInternalNote',
+        'includePaymentLink' => 'getIncludePaymentLink'
     ];
 
     /**
@@ -240,7 +252,9 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
     public function __construct(?array $data = null)
     {
         $this->setIfExists('invoiceId', $data ?? [], null);
-        $this->setIfExists('sendRequestId', $data ?? [], null);
+        $this->setIfExists('ccEmails', $data ?? [], null);
+        $this->setIfExists('internalNote', $data ?? [], null);
+        $this->setIfExists('includePaymentLink', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/invoice/send"); 
     }
@@ -303,7 +317,7 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Invoice ID to send. Must be in OPEN or PAID status and belong to the requesting merchant. Validated before any email dispatch. Cannot be null.
      *
      * @return self
      */
@@ -315,25 +329,73 @@ class AlipayInvoiceSendRequest   extends AlipayRequest  implements ModelInterfac
     }
 
     /**
-     * Gets sendRequestId
+     * Gets ccEmails
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getSendRequestId()
+    public function getCcEmails()
     {
-        return $this->container['sendRequestId'];
+        return $this->container['ccEmails'];
     }
 
     /**
-     * Sets sendRequestId
+     * Sets ccEmails
      *
-     * @param string|null $sendRequestId The send request id. Maximum length: 64 characters.
+     * @param string[]|null $ccEmails CC email addresses to include in the invoice email. Optional; when omitted, only the primary customer email is used.
      *
      * @return self
      */
-    public function setSendRequestId($sendRequestId)
+    public function setCcEmails($ccEmails)
     {
-        $this->container['sendRequestId'] = $sendRequestId;
+        $this->container['ccEmails'] = $ccEmails;
+
+        return $this;
+    }
+
+    /**
+     * Gets internalNote
+     *
+     * @return string|null
+     */
+    public function getInternalNote()
+    {
+        return $this->container['internalNote'];
+    }
+
+    /**
+     * Sets internalNote
+     *
+     * @param string|null $internalNote Internal note attached to the send request for merchant reference. Not visible to the customer.
+     *
+     * @return self
+     */
+    public function setInternalNote($internalNote)
+    {
+        $this->container['internalNote'] = $internalNote;
+
+        return $this;
+    }
+
+    /**
+     * Gets includePaymentLink
+     *
+     * @return bool|null
+     */
+    public function getIncludePaymentLink()
+    {
+        return $this->container['includePaymentLink'];
+    }
+
+    /**
+     * Sets includePaymentLink
+     *
+     * @param bool|null $includePaymentLink Whether to include the payment link in the invoice email. Default: `true`. When `false`, the email is sent without a payment link.
+     *
+     * @return self
+     */
+    public function setIncludePaymentLink($includePaymentLink)
+    {
+        $this->container['includePaymentLink'] = $includePaymentLink;
 
         return $this;
     }

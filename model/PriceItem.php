@@ -302,7 +302,7 @@ class PriceItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priceId
      *
-     * @param string $priceId The price ID. Maximum length: 64 characters.
+     * @param string $priceId Price ID referencing pre-created Recurring Price. Not null
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class PriceItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quantity
      *
-     * @param int|null $quantity The quantity.
+     * @param int|null $quantity Quantity for licensed type. Default: 1, Min: 1. Can be null (defaults to 1)
      *
      * @return self
      */

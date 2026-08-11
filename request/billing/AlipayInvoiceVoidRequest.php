@@ -46,7 +46,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'voidRequestId' => 'string',
         'invoiceId' => 'string',
         'invoiceNote' => 'string'
     ];
@@ -59,7 +58,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'voidRequestId' => null,
         'invoiceId' => null,
         'invoiceNote' => null
     ];
@@ -70,7 +68,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'voidRequestId' => false,
         'invoiceId' => false,
         'invoiceNote' => false
     ];
@@ -161,7 +158,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'voidRequestId' => 'voidRequestId',
         'invoiceId' => 'invoiceId',
         'invoiceNote' => 'invoiceNote'
     ];
@@ -172,7 +168,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'voidRequestId' => 'setVoidRequestId',
         'invoiceId' => 'setInvoiceId',
         'invoiceNote' => 'setInvoiceNote'
     ];
@@ -183,7 +178,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'voidRequestId' => 'getVoidRequestId',
         'invoiceId' => 'getInvoiceId',
         'invoiceNote' => 'getInvoiceNote'
     ];
@@ -245,7 +239,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('voidRequestId', $data ?? [], null);
         $this->setIfExists('invoiceId', $data ?? [], null);
         $this->setIfExists('invoiceNote', $data ?? [], null);
 
@@ -279,9 +272,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
     {
         $invalidProperties = [];
 
-        if ($this->container['voidRequestId'] === null) {
-            $invalidProperties[] = "'voidRequestId' can't be null";
-        }
         if ($this->container['invoiceId'] === null) {
             $invalidProperties[] = "'invoiceId' can't be null";
         }
@@ -301,30 +291,6 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
 
 
     /**
-     * Gets voidRequestId
-     *
-     * @return string
-     */
-    public function getVoidRequestId()
-    {
-        return $this->container['voidRequestId'];
-    }
-
-    /**
-     * Sets voidRequestId
-     *
-     * @param string $voidRequestId The void request id. Maximum length: 64 characters.
-     *
-     * @return self
-     */
-    public function setVoidRequestId($voidRequestId)
-    {
-        $this->container['voidRequestId'] = $voidRequestId;
-
-        return $this;
-    }
-
-    /**
      * Gets invoiceId
      *
      * @return string
@@ -337,7 +303,7 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Invoice ID to void. Must belong to the requesting merchant. Format: `inv_` + 10-char alphanumeric. Validated before any state transition. Cannot be null.
      *
      * @return self
      */
@@ -361,7 +327,7 @@ class AlipayInvoiceVoidRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Optional note attached to the invoice for this void action. Stored as an entry in the `invoiceNotes` array in the invoice metadata with `action=void`. Enables merchants to attach contextual notes (e.g., \"Voided due to customer request\") to the invoice audit trail. Can be null (defaults to null - no note provided).
      *
      * @return self
      */

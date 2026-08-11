@@ -310,7 +310,7 @@ class AlipayInvoiceFinalizeRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Invoice ID to finalize. Must be DRAFT status and belong to the merchant. Cannot be null.
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class AlipayInvoiceFinalizeRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets autoSend
      *
-     * @param bool|null $autoSend Indicates whether to automatically send the notification.
+     * @param bool|null $autoSend Whether to send the invoice email to the customer after finalization. `true` = send email; `false` = do not send email (default, prevents unintended emails during bulk finalization). Merchants who need the email can explicitly set `autoSend=true`. Use `false` for bulk finalization scenarios to avoid email storms. Can be null (defaults to false).
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class AlipayInvoiceFinalizeRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Optional note attached to the invoice for this finalize action. Stored as an entry in the `invoiceNotes` array in the invoice metadata with `action=finalize`. Enables merchants to attach contextual notes (e.g., \"Finalized after review\") to the invoice audit trail. Can be null (defaults to null - no note provided).
      *
      * @return self
      */

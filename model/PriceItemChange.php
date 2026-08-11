@@ -46,10 +46,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'changeType' => 'string',
+        'type' => 'string',
+        'itemId' => 'string',
         'currentPriceId' => 'string',
         'newPriceId' => 'string',
-        'quantity' => 'int'
+        'newQuantity' => 'int'
     ];
 
     /**
@@ -60,10 +61,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'changeType' => null,
+        'type' => null,
+        'itemId' => null,
         'currentPriceId' => null,
         'newPriceId' => null,
-        'quantity' => null
+        'newQuantity' => null
     ];
 
     /**
@@ -72,10 +74,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'changeType' => false,
+        'type' => false,
+        'itemId' => false,
         'currentPriceId' => false,
         'newPriceId' => false,
-        'quantity' => true
+        'newQuantity' => true
     ];
 
     /**
@@ -164,10 +167,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'changeType' => 'changeType',
+        'type' => 'type',
+        'itemId' => 'itemId',
         'currentPriceId' => 'currentPriceId',
         'newPriceId' => 'newPriceId',
-        'quantity' => 'quantity'
+        'newQuantity' => 'newQuantity'
     ];
 
     /**
@@ -176,10 +180,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'changeType' => 'setChangeType',
+        'type' => 'setType',
+        'itemId' => 'setItemId',
         'currentPriceId' => 'setCurrentPriceId',
         'newPriceId' => 'setNewPriceId',
-        'quantity' => 'setQuantity'
+        'newQuantity' => 'setNewQuantity'
     ];
 
     /**
@@ -188,10 +193,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'changeType' => 'getChangeType',
+        'type' => 'getType',
+        'itemId' => 'getItemId',
         'currentPriceId' => 'getCurrentPriceId',
         'newPriceId' => 'getNewPriceId',
-        'quantity' => 'getQuantity'
+        'newQuantity' => 'getNewQuantity'
     ];
 
     /**
@@ -251,10 +257,11 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('changeType', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('itemId', $data ?? [], null);
         $this->setIfExists('currentPriceId', $data ?? [], null);
         $this->setIfExists('newPriceId', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('newQuantity', $data ?? [], null);
 
             }
 
@@ -285,8 +292,8 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['changeType'] === null) {
-            $invalidProperties[] = "'changeType' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,25 +311,49 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets changeType
+     * Gets type
      *
      * @return string
      */
-    public function getChangeType()
+    public function getType()
     {
-        return $this->container['changeType'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets changeType
+     * Sets type
      *
-     * @param string $changeType The change type. Maximum length: 7 characters.
+     * @param string $type The change type. Valid values are CHANGE, ADD, and REMOVE. Maximum length: 7 characters.
      *
      * @return self
      */
-    public function setChangeType($changeType)
+    public function setType($type)
     {
-        $this->container['changeType'] = $changeType;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets itemId
+     *
+     * @return string|null
+     */
+    public function getItemId()
+    {
+        return $this->container['itemId'];
+    }
+
+    /**
+     * Sets itemId
+     *
+     * @param string|null $itemId The subscription item ID. Provide it when the item to change or remove is known. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setItemId($itemId)
+    {
+        $this->container['itemId'] = $itemId;
 
         return $this;
     }
@@ -376,25 +407,25 @@ class PriceItemChange  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets quantity
+     * Gets newQuantity
      *
      * @return int|null
      */
-    public function getQuantity()
+    public function getNewQuantity()
     {
-        return $this->container['quantity'];
+        return $this->container['newQuantity'];
     }
 
     /**
-     * Sets quantity
+     * Sets newQuantity
      *
-     * @param int|null $quantity The quantity. Note: See documentation for details.
+     * @param int|null $newQuantity The new quantity. Applicable when type is CHANGE or ADD. Value range: 1-999999.
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setNewQuantity($newQuantity)
     {
-        $this->container['quantity'] = $quantity;
+        $this->container['newQuantity'] = $newQuantity;
 
         return $this;
     }

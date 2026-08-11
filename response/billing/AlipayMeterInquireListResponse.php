@@ -47,6 +47,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
+        'pageNum' => 'int',
+        'pageSize' => 'int',
+        'totalCount' => 'int',
         'meters' => '\request\model\Meter[]'
     ];
 
@@ -59,6 +62,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'result' => null,
+        'pageNum' => null,
+        'pageSize' => null,
+        'totalCount' => null,
         'meters' => null
     ];
 
@@ -69,6 +75,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPINullables = [
         'result' => false,
+        'pageNum' => true,
+        'pageSize' => true,
+        'totalCount' => true,
         'meters' => false
     ];
 
@@ -159,6 +168,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'result' => 'result',
+        'pageNum' => 'pageNum',
+        'pageSize' => 'pageSize',
+        'totalCount' => 'totalCount',
         'meters' => 'meters'
     ];
 
@@ -169,6 +181,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'result' => 'setResult',
+        'pageNum' => 'setPageNum',
+        'pageSize' => 'setPageSize',
+        'totalCount' => 'setTotalCount',
         'meters' => 'setMeters'
     ];
 
@@ -179,6 +194,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'result' => 'getResult',
+        'pageNum' => 'getPageNum',
+        'pageSize' => 'getPageSize',
+        'totalCount' => 'getTotalCount',
         'meters' => 'getMeters'
     ];
 
@@ -240,6 +258,9 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
     public function __construct(?array $data = null)
     {
         $this->setIfExists('result', $data ?? [], null);
+        $this->setIfExists('pageNum', $data ?? [], null);
+        $this->setIfExists('pageSize', $data ?? [], null);
+        $this->setIfExists('totalCount', $data ?? [], null);
         $this->setIfExists('meters', $data ?? [], null);
 
             }
@@ -314,6 +335,78 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets pageNum
+     *
+     * @return int|null
+     */
+    public function getPageNum()
+    {
+        return $this->container['pageNum'];
+    }
+
+    /**
+     * Sets pageNum
+     *
+     * @param int|null $pageNum The current page number. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->container['pageNum'] = $pageNum;
+
+        return $this;
+    }
+
+    /**
+     * Gets pageSize
+     *
+     * @return int|null
+     */
+    public function getPageSize()
+    {
+        return $this->container['pageSize'];
+    }
+
+    /**
+     * Sets pageSize
+     *
+     * @param int|null $pageSize The number of records on the current page. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->container['pageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalCount
+     *
+     * @return int|null
+     */
+    public function getTotalCount()
+    {
+        return $this->container['totalCount'];
+    }
+
+    /**
+     * Sets totalCount
+     *
+     * @param int|null $totalCount The total number of matching meters at query time. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->container['totalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
      * Gets meters
      *
      * @return \model\Meter[]|null
@@ -326,7 +419,7 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets meters
      *
-     * @param \model\Meter[]|null $meters The meters. Note: See documentation for details.
+     * @param \model\Meter[]|null $meters The matching meters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

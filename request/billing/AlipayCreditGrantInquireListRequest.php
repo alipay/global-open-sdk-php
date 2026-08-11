@@ -46,6 +46,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pageNum' => 'int',
+        'pageSize' => 'int',
         'customerId' => 'string',
         'status' => 'string'
     ];
@@ -58,6 +60,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pageNum' => null,
+        'pageSize' => null,
         'customerId' => null,
         'status' => null
     ];
@@ -68,6 +72,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'pageNum' => true,
+        'pageSize' => true,
         'customerId' => false,
         'status' => false
     ];
@@ -158,6 +164,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
      * @var string[]
      */
     protected static $attributeMap = [
+        'pageNum' => 'pageNum',
+        'pageSize' => 'pageSize',
         'customerId' => 'customerId',
         'status' => 'status'
     ];
@@ -168,6 +176,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
      * @var string[]
      */
     protected static $setters = [
+        'pageNum' => 'setPageNum',
+        'pageSize' => 'setPageSize',
         'customerId' => 'setCustomerId',
         'status' => 'setStatus'
     ];
@@ -178,6 +188,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
      * @var string[]
      */
     protected static $getters = [
+        'pageNum' => 'getPageNum',
+        'pageSize' => 'getPageSize',
         'customerId' => 'getCustomerId',
         'status' => 'getStatus'
     ];
@@ -239,6 +251,8 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('pageNum', $data ?? [], null);
+        $this->setIfExists('pageSize', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
 
@@ -286,6 +300,54 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pageNum
+     *
+     * @return int|null
+     */
+    public function getPageNum()
+    {
+        return $this->container['pageNum'];
+    }
+
+    /**
+     * Sets pageNum
+     *
+     * @param int|null $pageNum The page number. The value must be at least 1. The default value is 1. A page beyond the last page returns SUCCESS with an empty `creditGrants` array.
+     *
+     * @return self
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->container['pageNum'] = $pageNum;
+
+        return $this;
+    }
+
+    /**
+     * Gets pageSize
+     *
+     * @return int|null
+     */
+    public function getPageSize()
+    {
+        return $this->container['pageSize'];
+    }
+
+    /**
+     * Sets pageSize
+     *
+     * @param int|null $pageSize The number of records per page. Value range: 1-100. The default value is 10.
+     *
+     * @return self
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->container['pageSize'] = $pageSize;
+
+        return $this;
+    }
 
     /**
      * Gets customerId

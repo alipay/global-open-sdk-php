@@ -58,9 +58,8 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'minAmount' => '\request\model\PromotionCodeInquireDetailsMinAmount',
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
-        'metadata' => 'array<string,string>',
-        'createTime' => 'string',
-        'updateTime' => 'string'
+        'metadata' => 'string',
+        'createTime' => 'string'
     ];
 
     /**
@@ -84,8 +83,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'oneTimeOnly' => null,
         'customerId' => null,
         'metadata' => null,
-        'createTime' => null,
-        'updateTime' => null
+        'createTime' => null
     ];
 
     /**
@@ -107,8 +105,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'oneTimeOnly' => false,
         'customerId' => false,
         'metadata' => false,
-        'createTime' => false,
-        'updateTime' => false
+        'createTime' => false
     ];
 
     /**
@@ -210,8 +207,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'oneTimeOnly' => 'oneTimeOnly',
         'customerId' => 'customerId',
         'metadata' => 'metadata',
-        'createTime' => 'createTime',
-        'updateTime' => 'updateTime'
+        'createTime' => 'createTime'
     ];
 
     /**
@@ -233,8 +229,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'oneTimeOnly' => 'setOneTimeOnly',
         'customerId' => 'setCustomerId',
         'metadata' => 'setMetadata',
-        'createTime' => 'setCreateTime',
-        'updateTime' => 'setUpdateTime'
+        'createTime' => 'setCreateTime'
     ];
 
     /**
@@ -256,8 +251,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'oneTimeOnly' => 'getOneTimeOnly',
         'customerId' => 'getCustomerId',
         'metadata' => 'getMetadata',
-        'createTime' => 'getCreateTime',
-        'updateTime' => 'getUpdateTime'
+        'createTime' => 'getCreateTime'
     ];
 
     /**
@@ -331,7 +325,6 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('createTime', $data ?? [], null);
-        $this->setIfExists('updateTime', $data ?? [], null);
 
             }
 
@@ -417,7 +410,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets promotionCodeId
      *
-     * @param string|null $promotionCodeId The promotion code ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $promotionCodeId System-generated promotion code ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -441,7 +434,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets promotionCodeRequestId
      *
-     * @param string|null $promotionCodeRequestId The promotion code request id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $promotionCodeRequestId Merchant-supplied idempotency key used at creation. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -465,7 +458,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets code
      *
-     * @param string|null $code The code. Maximum length: 128 characters. Note: See documentation for details.
+     * @param string|null $code The promotion code string. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -489,7 +482,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets couponId
      *
-     * @param string|null $couponId The coupon ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $couponId Parent coupon's ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -513,7 +506,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Promotion code status: `ACTIVE` / `INACTIVE` only - the DB persists these two values and no `EXPIRED` status is derived at read time. A promotion code past its `expiryTime` is no longer redeemable; compare `expiryTime` to the current time to detect expiry. Future status values may be added; merchants must handle unrecognized values gracefully (log and skip). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -537,7 +530,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets maxRedemptions
      *
-     * @param int|null $maxRedemptions The max redemptions. Note: See documentation for details.
+     * @param int|null $maxRedemptions Maximum redemption count. Value range: 0-999999. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -561,7 +554,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets redeemedCount
      *
-     * @param int|null $redeemedCount The redeemed count. Note: See documentation for details.
+     * @param int|null $redeemedCount Number of times the promotion code has been redeemed. Value range: 0-999999. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -585,7 +578,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets expiryTime
      *
-     * @param string|null $expiryTime The expiry time. Note: See documentation for details.
+     * @param string|null $expiryTime Expiry time (UTC, ISO 8601). Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -633,7 +626,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets oneTimeOnly
      *
-     * @param bool|null $oneTimeOnly The one time only. Note: See documentation for details.
+     * @param bool|null $oneTimeOnly Whether code is one-time per customer. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -657,7 +650,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $customerId Restricted customer's ID. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -671,7 +664,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -681,7 +674,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters. Note: See documentation for details.
+     * @param string|null $metadata Merchant-defined key-value pairs. Returned when resultCode is `SUCCESS` and the field was set. The value must be a valid JSON object string.
      *
      * @return self
      */
@@ -705,37 +698,13 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
     /**
      * Sets createTime
      *
-     * @param string|null $createTime The create time. Note: See documentation for details.
+     * @param string|null $createTime Creation time (UTC, ISO 8601). Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
     public function setCreateTime($createTime)
     {
         $this->container['createTime'] = $createTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets updateTime
-     *
-     * @return string|null
-     */
-    public function getUpdateTime()
-    {
-        return $this->container['updateTime'];
-    }
-
-    /**
-     * Sets updateTime
-     *
-     * @param string|null $updateTime The update time. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setUpdateTime($updateTime)
-    {
-        $this->container['updateTime'] = $updateTime;
 
         return $this;
     }

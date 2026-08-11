@@ -58,8 +58,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paidAmount' => '\request\model\Amount',
         'remainAmount' => '\request\model\Amount',
         'currency' => 'string',
-        'paidTime' => 'string',
-        'voidedTime' => 'string',
         'periodStart' => 'string',
         'periodEnd' => 'string',
         'dueDate' => 'string',
@@ -89,8 +87,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paidAmount' => null,
         'remainAmount' => null,
         'currency' => null,
-        'paidTime' => null,
-        'voidedTime' => null,
         'periodStart' => null,
         'periodEnd' => null,
         'dueDate' => null,
@@ -118,8 +114,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paidAmount' => false,
         'remainAmount' => false,
         'currency' => false,
-        'paidTime' => false,
-        'voidedTime' => false,
         'periodStart' => false,
         'periodEnd' => false,
         'dueDate' => false,
@@ -227,8 +221,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paidAmount' => 'paidAmount',
         'remainAmount' => 'remainAmount',
         'currency' => 'currency',
-        'paidTime' => 'paidTime',
-        'voidedTime' => 'voidedTime',
         'periodStart' => 'periodStart',
         'periodEnd' => 'periodEnd',
         'dueDate' => 'dueDate',
@@ -256,8 +248,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paidAmount' => 'setPaidAmount',
         'remainAmount' => 'setRemainAmount',
         'currency' => 'setCurrency',
-        'paidTime' => 'setPaidTime',
-        'voidedTime' => 'setVoidedTime',
         'periodStart' => 'setPeriodStart',
         'periodEnd' => 'setPeriodEnd',
         'dueDate' => 'setDueDate',
@@ -285,8 +275,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paidAmount' => 'getPaidAmount',
         'remainAmount' => 'getRemainAmount',
         'currency' => 'getCurrency',
-        'paidTime' => 'getPaidTime',
-        'voidedTime' => 'getVoidedTime',
         'periodStart' => 'getPeriodStart',
         'periodEnd' => 'getPeriodEnd',
         'dueDate' => 'getDueDate',
@@ -365,8 +353,6 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('paidAmount', $data ?? [], null);
         $this->setIfExists('remainAmount', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('paidTime', $data ?? [], null);
-        $this->setIfExists('voidedTime', $data ?? [], null);
         $this->setIfExists('periodStart', $data ?? [], null);
         $this->setIfExists('periodEnd', $data ?? [], null);
         $this->setIfExists('dueDate', $data ?? [], null);
@@ -474,7 +460,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId System-generated invoice ID. Format: `inv_` + 10-char alphanumeric. Cannot be null.
      *
      * @return self
      */
@@ -498,7 +484,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string $subscriptionId Associated subscription ID. May be null for standalone manual invoices. Can be null.
      *
      * @return self
      */
@@ -522,7 +508,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string $customerId Customer ID this invoice belongs to. Cannot be null.
      *
      * @return self
      */
@@ -546,7 +532,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerFirstName
      *
-     * @param string|null $customerFirstName The customer first name. Maximum length: 256 characters.
+     * @param string|null $customerFirstName Customer's first name. Populated from the customer record at invoice creation time. Displayed on merchant portal list view. Can be null.
      *
      * @return self
      */
@@ -570,7 +556,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerLastName
      *
-     * @param string|null $customerLastName The customer last name. Maximum length: 256 characters.
+     * @param string|null $customerLastName Customer's last name. Populated from the customer record at invoice creation time. Displayed on merchant portal list view. Can be null.
      *
      * @return self
      */
@@ -594,7 +580,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerEmail
      *
-     * @param string|null $customerEmail The email address of the customer. Maximum length: 256 characters.
+     * @param string|null $customerEmail Customer's email address. Populated from the customer record at invoice creation time. Displayed on merchant portal list view. Can be null.
      *
      * @return self
      */
@@ -618,7 +604,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reason
      *
-     * @param string $reason The reason for the status change. Maximum length: 32 characters.
+     * @param string $reason Invoice creation reason: `SUBSCRIPTION_CREATION`, `SUBSCRIPTION_RECURRENCE`, `SUBSCRIPTION_UPDATE`. Cannot be null.
      *
      * @return self
      */
@@ -642,7 +628,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string $status Current invoice status: `DRAFT`, `OPEN`, `PAID`, `UNCOLLECTIBLE`, `VOID`. Cannot be null.
      *
      * @return self
      */
@@ -738,61 +724,13 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
+     * @param string $currency Three-letter ISO currency code in uppercase (e.g., `\"USD\"`). The invoice currency. Cannot be null.
      *
      * @return self
      */
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets paidTime
-     *
-     * @return string|null
-     */
-    public function getPaidTime()
-    {
-        return $this->container['paidTime'];
-    }
-
-    /**
-     * Sets paidTime
-     *
-     * @param string|null $paidTime The paid time. Maximum length: 24 characters.
-     *
-     * @return self
-     */
-    public function setPaidTime($paidTime)
-    {
-        $this->container['paidTime'] = $paidTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets voidedTime
-     *
-     * @return string|null
-     */
-    public function getVoidedTime()
-    {
-        return $this->container['voidedTime'];
-    }
-
-    /**
-     * Sets voidedTime
-     *
-     * @param string|null $voidedTime The voided time. Maximum length: 24 characters.
-     *
-     * @return self
-     */
-    public function setVoidedTime($voidedTime)
-    {
-        $this->container['voidedTime'] = $voidedTime;
 
         return $this;
     }
@@ -810,7 +748,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodStart
      *
-     * @param string $periodStart The period start. Maximum length: 24 characters.
+     * @param string $periodStart Billing period start timestamp (ISO 8601). Cannot be null.
      *
      * @return self
      */
@@ -834,7 +772,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodEnd
      *
-     * @param string $periodEnd The period end. Maximum length: 24 characters.
+     * @param string $periodEnd Billing period end timestamp (ISO 8601). Cannot be null.
      *
      * @return self
      */
@@ -858,7 +796,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dueDate
      *
-     * @param string $dueDate The due date. Maximum length: 24 characters.
+     * @param string $dueDate Payment due date (ISO 8601). Cannot be null.
      *
      * @return self
      */
@@ -882,7 +820,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtCreate
      *
-     * @param string $gmtCreate The creation time. Maximum length: 24 characters.
+     * @param string $gmtCreate ISO 8601 timestamp of invoice creation. Cannot be null.
      *
      * @return self
      */
@@ -906,7 +844,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtUpdate
      *
-     * @param string $gmtUpdate The gmt update. Maximum length: 24 characters.
+     * @param string $gmtUpdate ISO 8601 timestamp of last invoice update. Cannot be null.
      *
      * @return self
      */
@@ -930,7 +868,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 512 characters.
+     * @param string|null $description Invoice description text. Can be null.
      *
      * @return self
      */
@@ -954,7 +892,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pdfFileUrl
      *
-     * @param string|null $pdfFileUrl The pdf file url. Maximum length: 2048 characters.
+     * @param string|null $pdfFileUrl URL of the generated PDF file for download. Can be null (PDF not yet generated).
      *
      * @return self
      */

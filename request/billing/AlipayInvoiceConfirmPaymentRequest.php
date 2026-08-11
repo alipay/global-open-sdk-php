@@ -51,7 +51,8 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'paymentMethod' => 'string',
         'reference' => 'string',
         'autoSend' => 'bool',
-        'invoiceNote' => 'string'
+        'invoiceNote' => 'string',
+        'ccEmails' => 'string[]'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'paymentMethod' => null,
         'reference' => null,
         'autoSend' => null,
-        'invoiceNote' => null
+        'invoiceNote' => null,
+        'ccEmails' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'paymentMethod' => false,
         'reference' => false,
         'autoSend' => false,
-        'invoiceNote' => false
+        'invoiceNote' => false,
+        'ccEmails' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'paymentMethod' => 'paymentMethod',
         'reference' => 'reference',
         'autoSend' => 'autoSend',
-        'invoiceNote' => 'invoiceNote'
+        'invoiceNote' => 'invoiceNote',
+        'ccEmails' => 'ccEmails'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'paymentMethod' => 'setPaymentMethod',
         'reference' => 'setReference',
         'autoSend' => 'setAutoSend',
-        'invoiceNote' => 'setInvoiceNote'
+        'invoiceNote' => 'setInvoiceNote',
+        'ccEmails' => 'setCcEmails'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'paymentMethod' => 'getPaymentMethod',
         'reference' => 'getReference',
         'autoSend' => 'getAutoSend',
-        'invoiceNote' => 'getInvoiceNote'
+        'invoiceNote' => 'getInvoiceNote',
+        'ccEmails' => 'getCcEmails'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('reference', $data ?? [], null);
         $this->setIfExists('autoSend', $data ?? [], null);
         $this->setIfExists('invoiceNote', $data ?? [], null);
+        $this->setIfExists('ccEmails', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/invoice/confirmPayment"); 
     }
@@ -334,7 +341,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Invoice ID to confirm payment for. Must be in OPEN or UNCOLLECTIBLE status and belong to the requesting merchant. Validated before any state transition. Cannot be null.
      *
      * @return self
      */
@@ -358,7 +365,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets confirmationType
      *
-     * @param string $confirmationType The confirmation type. Maximum length: 32 characters.
+     * @param string $confirmationType Payment confirmation type. Currently only `OFFLINE` is supported - indicates a manual offline payment (bank transfer, cash, check) was received by the merchant. This field is an extensibility point for future confirmation types (e.g., `CREDIT_NOTE_OFFSET`). Cannot be null. Allowed values: `OFFLINE`. Note: Future values may be added; merchants should handle unknown values gracefully.
      *
      * @return self
      */
@@ -382,7 +389,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets paymentMethod
      *
-     * @param string|null $paymentMethod The payment method. Maximum length: 32 characters.
+     * @param string|null $paymentMethod Offline payment method used by the customer. Must be one of: `BANK_TRANSFER` - payment received via bank/wire transfer; `CASH` - cash payment received in person; `CHECK` - payment by physical check; `WIRE_TRANSFER` - domestic or international wire transfer; `OTHER` - any other offline payment method not listed above. Validated against `OfflinePaymentMethodEnum` when provided. When not provided or blank, defaults to `OTHER`. Helps merchants categorize payments for reconciliation. Note: Future enum values may be added; merchants should handle unknown values as `OTHER`. Can be null.
      *
      * @return self
      */
@@ -406,7 +413,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets reference
      *
-     * @param string|null $reference The reference. Maximum length: 256 characters.
+     * @param string|null $reference Merchant-supplied payment reference for audit trail (e.g., bank transfer number, check number). Stored on the payment record for reconciliation. Can be null.
      *
      * @return self
      */
@@ -430,7 +437,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets autoSend
      *
-     * @param bool|null $autoSend Indicates whether to automatically send the notification.
+     * @param bool|null $autoSend Whether to automatically send the receipt email to the customer after successful payment confirmation. `true` = send receipt email; `false` = do not send; not set = treat as `false`. Can be null (defaults to false).
      *
      * @return self
      */
@@ -454,13 +461,37 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Optional note attached to the invoice for this payment confirmation action. Stored as an entry in the `invoiceNotes` array in the invoice metadata with `action=paid`. Enables merchants to attach contextual notes (e.g., \"Payment received via bank transfer\") to the invoice audit trail. Can be null (defaults to null - no note provided).
      *
      * @return self
      */
     public function setInvoiceNote($invoiceNote)
     {
         $this->container['invoiceNote'] = $invoiceNote;
+
+        return $this;
+    }
+
+    /**
+     * Gets ccEmails
+     *
+     * @return string[]|null
+     */
+    public function getCcEmails()
+    {
+        return $this->container['ccEmails'];
+    }
+
+    /**
+     * Sets ccEmails
+     *
+     * @param string[]|null $ccEmails CC email addresses for receipt notification. Optional. When `autoSend` is true, the receipt email is also sent to these addresses. Can be null.
+     *
+     * @return self
+     */
+    public function setCcEmails($ccEmails)
+    {
+        $this->container['ccEmails'] = $ccEmails;
 
         return $this;
     }

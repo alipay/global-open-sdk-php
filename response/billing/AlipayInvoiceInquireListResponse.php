@@ -50,7 +50,9 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         'invoices' => '\request\model\Invoice[]',
         'total' => 'string',
         'hasMore' => 'bool',
-        'nextCursor' => 'string'
+        'nextCursor' => 'string',
+        'degrade' => 'bool',
+        'previousCursor' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         'invoices' => null,
         'total' => null,
         'hasMore' => null,
-        'nextCursor' => null
+        'nextCursor' => null,
+        'degrade' => null,
+        'previousCursor' => null
     ];
 
     /**
@@ -78,7 +82,9 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         'invoices' => false,
         'total' => false,
         'hasMore' => false,
-        'nextCursor' => false
+        'nextCursor' => false,
+        'degrade' => false,
+        'previousCursor' => false
     ];
 
     /**
@@ -171,7 +177,9 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         'invoices' => 'invoices',
         'total' => 'total',
         'hasMore' => 'hasMore',
-        'nextCursor' => 'nextCursor'
+        'nextCursor' => 'nextCursor',
+        'degrade' => 'degrade',
+        'previousCursor' => 'previousCursor'
     ];
 
     /**
@@ -184,7 +192,9 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         'invoices' => 'setInvoices',
         'total' => 'setTotal',
         'hasMore' => 'setHasMore',
-        'nextCursor' => 'setNextCursor'
+        'nextCursor' => 'setNextCursor',
+        'degrade' => 'setDegrade',
+        'previousCursor' => 'setPreviousCursor'
     ];
 
     /**
@@ -197,7 +207,9 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         'invoices' => 'getInvoices',
         'total' => 'getTotal',
         'hasMore' => 'getHasMore',
-        'nextCursor' => 'getNextCursor'
+        'nextCursor' => 'getNextCursor',
+        'degrade' => 'getDegrade',
+        'previousCursor' => 'getPreviousCursor'
     ];
 
     /**
@@ -262,6 +274,8 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('nextCursor', $data ?? [], null);
+        $this->setIfExists('degrade', $data ?? [], null);
+        $this->setIfExists('previousCursor', $data ?? [], null);
 
             }
 
@@ -294,12 +308,6 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['invoices'] === null) {
-            $invalidProperties[] = "'invoices' can't be null";
-        }
-        if ($this->container['hasMore'] === null) {
-            $invalidProperties[] = "'hasMore' can't be null";
         }
         return $invalidProperties;
     }
@@ -343,7 +351,7 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets invoices
      *
-     * @return \model\Invoice[]
+     * @return \model\Invoice[]|null
      */
     public function getInvoices()
     {
@@ -353,7 +361,7 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets invoices
      *
-     * @param \model\Invoice[] $invoices The invoices.
+     * @param \model\Invoice[]|null $invoices Array of invoice summary objects. May be empty if no invoices match. Maximum 100 elements per page (controlled by `limit` parameter). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -377,7 +385,7 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets total
      *
-     * @param string|null $total The total. Note: See documentation for details.
+     * @param string|null $total Total number of matching records across all pages. Requires an extra `COUNT` query - use `includeTotal=true` to request it. Absent from response when `includeTotal` is omitted or `false`. Can be null (not returned by default). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -391,7 +399,7 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets hasMore
      *
-     * @return bool
+     * @return bool|null
      */
     public function getHasMore()
     {
@@ -401,7 +409,7 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets hasMore
      *
-     * @param bool $hasMore The has more.
+     * @param bool|null $hasMore Whether more results exist beyond the current page. Detected by fetching `limit + 1` rows internally - if the extra row exists, `hasMore=true` (the extra row is not returned). `false` = last page - hide the \"Next\" button. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -425,13 +433,61 @@ class AlipayInvoiceInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets nextCursor
      *
-     * @param string|null $nextCursor The next cursor. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $nextCursor The `invoiceId` of the last invoice in the current page. Use this value as `startingAfter` in the next request to fetch the next page. Absent when `hasMore=false`. Can be null (no more pages). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setNextCursor($nextCursor)
     {
         $this->container['nextCursor'] = $nextCursor;
+
+        return $this;
+    }
+
+    /**
+     * Gets degrade
+     *
+     * @return bool|null
+     */
+    public function getDegrade()
+    {
+        return $this->container['degrade'];
+    }
+
+    /**
+     * Sets degrade
+     *
+     * @param bool|null $degrade Whether the degrade DB served the query (ZSearch fallback path). `null` when ZSearch served the query normally (backward-compatible with existing callers). `true` when degrade DB served the query. Can be null. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setDegrade($degrade)
+    {
+        $this->container['degrade'] = $degrade;
+
+        return $this;
+    }
+
+    /**
+     * Gets previousCursor
+     *
+     * @return string|null
+     */
+    public function getPreviousCursor()
+    {
+        return $this->container['previousCursor'];
+    }
+
+    /**
+     * Sets previousCursor
+     *
+     * @param string|null $previousCursor The `invoiceId` of the first invoice in the current page. Use this value as `endingBefore` to navigate further backward. Only populated when the current request used `endingBefore`. Not populated in forward navigation. Can be null. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setPreviousCursor($previousCursor)
+    {
+        $this->container['previousCursor'] = $previousCursor;
 
         return $this;
     }

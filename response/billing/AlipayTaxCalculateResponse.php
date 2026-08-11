@@ -337,17 +337,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['taxCalculationId'] === null) {
-            $invalidProperties[] = "'taxCalculationId' can't be null";
-        }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['totalAmount'] === null) {
-            $invalidProperties[] = "'totalAmount' can't be null";
-        }
-        if ($this->container['lineItems'] === null) {
-            $invalidProperties[] = "'lineItems' can't be null";
         }
         if ($this->container['taxBreakdown'] === null) {
             $invalidProperties[] = "'taxBreakdown' can't be null";
@@ -400,7 +391,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets taxCalculationId
      *
-     * @return string
+     * @return string|null
      */
     public function getTaxCalculationId()
     {
@@ -410,7 +401,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets taxCalculationId
      *
-     * @param string $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters. Note: See documentation for details.
      *
      * @return self
      */
@@ -448,7 +439,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets totalAmount
      *
-     * @return string
+     * @return string|null
      */
     public function getTotalAmount()
     {
@@ -458,7 +449,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets totalAmount
      *
-     * @param string $totalAmount The total amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param string|null $totalAmount The total amount. Maximum length: 19 characters. Note: See documentation for details.
      *
      * @return self
      */
@@ -520,7 +511,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets lineItems
      *
-     * @return \model\TaxCalculatedLineItem[]
+     * @return \model\TaxCalculatedLineItem[]|null
      */
     public function getLineItems()
     {
@@ -530,7 +521,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets lineItems
      *
-     * @param \model\TaxCalculatedLineItem[] $lineItems The line item list. Note: See documentation for details.
+     * @param \model\TaxCalculatedLineItem[]|null $lineItems The line item list. Note: See documentation for details.
      *
      * @return self
      */

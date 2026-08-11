@@ -54,7 +54,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
         'description' => 'string',
         'images' => 'string[]',
         'unitLabel' => 'string',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'active' => 'bool',
         'createdAt' => 'string',
         'deactivatedAt' => 'string',
@@ -351,21 +351,6 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['productId'] === null) {
-            $invalidProperties[] = "'productId' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -408,7 +393,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets productId
      *
-     * @return string
+     * @return string|null
      */
     public function getProductId()
     {
@@ -418,7 +403,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string|null $productId System-generated product ID. Format: prod_ prefix + alphanumeric suffix (e.g., prod_2xK8mN3pQ7) Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -442,7 +427,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets productRequestId
      *
-     * @param string|null $productRequestId The product request id. Maximum length: 64 characters.
+     * @param string|null $productRequestId Echo of the idempotent request key from the request. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -456,7 +441,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -466,7 +451,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets name
      *
-     * @param string $name The name. Maximum length: 100 characters.
+     * @param string|null $name Product name. Echo of request value Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -480,7 +465,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -490,7 +475,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets type
      *
-     * @param string $type The type. Maximum length: 16 characters.
+     * @param string|null $type Product type. Enum: SERVICE(intangible digital service or SaaS offering - checkout skips shipping address collection), GOOD(tangible physical product requiring delivery - checkout collects shipping address). Echo of request value (or default SERVICE if not provided). Forward compatibility: If a new value is added in the future, clients that do not recognize it should treat it as an unknown value and not break Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -514,7 +499,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Product description. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -538,7 +523,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets images
      *
-     * @param string[]|null $images The images.
+     * @param string[]|null $images Product image URLs. O - Returned when non-null and non-empty; absent if null or empty Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -562,7 +547,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters.
+     * @param string|null $unitLabel Product-level unit label. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -576,7 +561,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -586,7 +571,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Metadata encoded as a JSON object string. Returned only when `result.resultCode` is `SUCCESS` and metadata was set. The SDK must expose the stored string unchanged.
      *
      * @return self
      */
@@ -600,7 +585,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets active
      *
-     * @return bool
+     * @return bool|null
      */
     public function getActive()
     {
@@ -610,7 +595,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets active
      *
-     * @param bool $active The active.
+     * @param bool|null $active Product active status. true=product is active and can be used for new subscriptions, false=product is deactivated and cannot be used for new subscriptions. Default: true. Cannot be null. Deactivated products can be reactivated via Update active=true Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -624,7 +609,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -634,7 +619,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets createdAt
      *
-     * @param string $createdAt The created at. Maximum length: 29 characters.
+     * @param string|null $createdAt ISO 8601 creation timestamp. Cannot be null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -658,7 +643,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets deactivatedAt
      *
-     * @param string|null $deactivatedAt The deactivated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $deactivatedAt ISO 8601 deactivation timestamp. O - Returned when product has been deactivated (active=false); absent when product is active Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -682,7 +667,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets updatedAt
      *
-     * @param string|null $updatedAt The updated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $updatedAt ISO 8601 last update timestamp. O - Returned when non-null; absent from response if never updated after creation Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -48,12 +48,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPITypes = [
         'productId' => 'string',
         'name' => 'string',
-        'type' => 'string',
         'description' => 'string',
         'images' => 'string[]',
         'unitLabel' => 'string',
-        'metadata' => 'array<string,string>',
-        'metadataKeysToRemove' => 'string[]',
+        'metadata' => 'string',
         'active' => 'bool'
     ];
 
@@ -67,12 +65,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPIFormats = [
         'productId' => null,
         'name' => null,
-        'type' => null,
         'description' => null,
         'images' => null,
         'unitLabel' => null,
         'metadata' => null,
-        'metadataKeysToRemove' => null,
         'active' => null
     ];
 
@@ -84,12 +80,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPINullables = [
         'productId' => false,
         'name' => false,
-        'type' => false,
         'description' => false,
         'images' => false,
         'unitLabel' => false,
         'metadata' => false,
-        'metadataKeysToRemove' => false,
         'active' => false
     ];
 
@@ -181,12 +175,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     protected static $attributeMap = [
         'productId' => 'productId',
         'name' => 'name',
-        'type' => 'type',
         'description' => 'description',
         'images' => 'images',
         'unitLabel' => 'unitLabel',
         'metadata' => 'metadata',
-        'metadataKeysToRemove' => 'metadataKeysToRemove',
         'active' => 'active'
     ];
 
@@ -198,12 +190,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     protected static $setters = [
         'productId' => 'setProductId',
         'name' => 'setName',
-        'type' => 'setType',
         'description' => 'setDescription',
         'images' => 'setImages',
         'unitLabel' => 'setUnitLabel',
         'metadata' => 'setMetadata',
-        'metadataKeysToRemove' => 'setMetadataKeysToRemove',
         'active' => 'setActive'
     ];
 
@@ -215,12 +205,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     protected static $getters = [
         'productId' => 'getProductId',
         'name' => 'getName',
-        'type' => 'getType',
         'description' => 'getDescription',
         'images' => 'getImages',
         'unitLabel' => 'getUnitLabel',
         'metadata' => 'getMetadata',
-        'metadataKeysToRemove' => 'getMetadataKeysToRemove',
         'active' => 'getActive'
     ];
 
@@ -283,12 +271,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     {
         $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('images', $data ?? [], null);
         $this->setIfExists('unitLabel', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('metadataKeysToRemove', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/product/update"); 
@@ -352,7 +338,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string $productId Product ID to update. Cannot be null. Format: prod_ prefix + alphanumeric suffix. This field serves as the idempotent key for this operation
      *
      * @return self
      */
@@ -376,37 +362,13 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets name
      *
-     * @param string|null $name The name. Maximum length: 100 characters.
+     * @param string|null $name Product name. O - When provided, updates name. When null, rejected with PARAM_ILLEGAL error (name is mandatory and cannot be cleared). When absent, no change. Characters & ' \" are not allowed (XSS prevention - see Section 4.1.1 name field)
      *
      * @return self
      */
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type The type. Maximum length: 16 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }
@@ -424,7 +386,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Product description. O - Present with value: update; present with null: clear; absent: no change. Can be null
      *
      * @return self
      */
@@ -448,7 +410,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets images
      *
-     * @param string[]|null $images The images. Note: See documentation for details.
+     * @param string[]|null $images Product image URLs. O - Present with value: full-replacement of entire image list; present with null: clear all images; absent: no change. Each URL must start with http:// or https://, max 2048 characters. Full-replacement: providing images replaces the entire array, not appends. Merchants are responsible for availability of externally-hosted URLs; Antom does not validate external URL accessibility. See Section 6.13 for image management workflow
      *
      * @return self
      */
@@ -472,7 +434,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $unitLabel Product-level unit label. O - Present with value: update; present with null: clear; absent: no change. Can be null
      *
      * @return self
      */
@@ -486,7 +448,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -496,37 +458,13 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Custom metadata encoded as a JSON object string. When provided, the value fully replaces the existing metadata; keys are not merged. When omitted, the existing value is unchanged. PII must not be stored.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadataKeysToRemove
-     *
-     * @return string[]|null
-     */
-    public function getMetadataKeysToRemove()
-    {
-        return $this->container['metadataKeysToRemove'];
-    }
-
-    /**
-     * Sets metadataKeysToRemove
-     *
-     * @param string[]|null $metadataKeysToRemove The metadata keys to remove. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setMetadataKeysToRemove($metadataKeysToRemove)
-    {
-        $this->container['metadataKeysToRemove'] = $metadataKeysToRemove;
 
         return $this;
     }
@@ -544,7 +482,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets active
      *
-     * @param bool|null $active The active. Note: See documentation for details.
+     * @param bool|null $active Product active status. O - explicit true=activate, explicit false=deactivate, absent or null=no change. There is no \"clear\" semantic for active - it is always either true or false. When deactivated (active=false), the product cannot be used for new subscriptions; existing subscriptions continue using the product
      *
      * @return self
      */

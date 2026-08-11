@@ -302,15 +302,6 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['invoiceRequestId'] === null) {
-            $invalidProperties[] = "'invoiceRequestId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -353,7 +344,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -363,7 +354,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId System-generated unique invoice ID. Used as the primary identifier for subsequent API calls (query, update, void). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -377,7 +368,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets invoiceRequestId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceRequestId()
     {
@@ -387,7 +378,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets invoiceRequestId
      *
-     * @param string $invoiceRequestId The invoice request id. Maximum length: 64 characters.
+     * @param string|null $invoiceRequestId Echo-back of the merchant-supplied idempotency key from the request. Enables merchant-side correlation between request and response. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -401,7 +392,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -411,7 +402,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Current invoice status: `DRAFT` or `OPEN`. Determines which subsequent operations are available (edit for DRAFT, pay for OPEN). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -435,7 +426,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets hostedInvoiceUrl
      *
-     * @param string|null $hostedInvoiceUrl The hosted invoice url. Maximum length: 2048 characters. Note: See documentation for details.
+     * @param string|null $hostedInvoiceUrl URL to the customer-facing hosted invoice page. Auto-generated for OPEN invoices. When `status=DRAFT`, this field is not returned - use the [Create View Link API](createViewLink.md) to generate a view URL for DRAFT invoices. Cannot be null when present. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -459,7 +450,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus The email sending status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $sendStatus Email send status. Returned only when `autoSend=true` in the request. Enum values: `SENT` - email dispatched successfully; `FAILED` - email dispatch failed (retry allowed). Can be null (when `autoSend=false` or absent). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

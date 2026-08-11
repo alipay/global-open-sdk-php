@@ -1192,7 +1192,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The existing subscription ID, pre-created via the create subscription API.
+     * @param string|null $subscriptionId The existing subscription ID created by the Billing subscription API. It is mutually exclusive with subscriptionInfo. When provided, omit paymentAmount and order.
      *
      * @return self
      */

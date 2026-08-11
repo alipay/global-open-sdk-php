@@ -335,7 +335,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets pageNum
      *
-     * @param int|null $pageNum The page num.
+     * @param int|null $pageNum The page number. The value must be at least 1. The default value is 1. A page beyond the last page returns SUCCESS with an empty `meters` array.
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets pageSize
      *
-     * @param int|null $pageSize The number of records per page.
+     * @param int|null $pageSize The number of records per page. Value range: 1-100. The default value is 10.
      *
      * @return self
      */

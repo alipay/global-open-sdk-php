@@ -48,12 +48,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     protected static $openAPITypes = [
         'status' => 'string',
         'customerId' => 'string',
-        'expiresBefore' => 'string',
-        'expiresAfter' => 'string',
+        'subscriptionId' => 'string',
+        'gmtCreateStart' => 'string',
+        'gmtCreateEnd' => 'string',
+        'sortOrder' => 'string',
         'startingAfter' => 'string',
         'endingBefore' => 'string',
-        'limit' => 'int',
-        'includeTotal' => 'bool'
+        'limit' => 'int'
     ];
 
     /**
@@ -66,12 +67,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     protected static $openAPIFormats = [
         'status' => null,
         'customerId' => null,
-        'expiresBefore' => null,
-        'expiresAfter' => null,
+        'subscriptionId' => null,
+        'gmtCreateStart' => null,
+        'gmtCreateEnd' => null,
+        'sortOrder' => null,
         'startingAfter' => null,
         'endingBefore' => null,
-        'limit' => null,
-        'includeTotal' => null
+        'limit' => null
     ];
 
     /**
@@ -82,12 +84,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     protected static $openAPINullables = [
         'status' => false,
         'customerId' => false,
-        'expiresBefore' => false,
-        'expiresAfter' => false,
+        'subscriptionId' => false,
+        'gmtCreateStart' => false,
+        'gmtCreateEnd' => false,
+        'sortOrder' => false,
         'startingAfter' => false,
         'endingBefore' => false,
-        'limit' => true,
-        'includeTotal' => false
+        'limit' => true
     ];
 
     /**
@@ -178,12 +181,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     protected static $attributeMap = [
         'status' => 'status',
         'customerId' => 'customerId',
-        'expiresBefore' => 'expiresBefore',
-        'expiresAfter' => 'expiresAfter',
+        'subscriptionId' => 'subscriptionId',
+        'gmtCreateStart' => 'gmtCreateStart',
+        'gmtCreateEnd' => 'gmtCreateEnd',
+        'sortOrder' => 'sortOrder',
         'startingAfter' => 'startingAfter',
         'endingBefore' => 'endingBefore',
-        'limit' => 'limit',
-        'includeTotal' => 'includeTotal'
+        'limit' => 'limit'
     ];
 
     /**
@@ -194,12 +198,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     protected static $setters = [
         'status' => 'setStatus',
         'customerId' => 'setCustomerId',
-        'expiresBefore' => 'setExpiresBefore',
-        'expiresAfter' => 'setExpiresAfter',
+        'subscriptionId' => 'setSubscriptionId',
+        'gmtCreateStart' => 'setGmtCreateStart',
+        'gmtCreateEnd' => 'setGmtCreateEnd',
+        'sortOrder' => 'setSortOrder',
         'startingAfter' => 'setStartingAfter',
         'endingBefore' => 'setEndingBefore',
-        'limit' => 'setLimit',
-        'includeTotal' => 'setIncludeTotal'
+        'limit' => 'setLimit'
     ];
 
     /**
@@ -210,12 +215,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     protected static $getters = [
         'status' => 'getStatus',
         'customerId' => 'getCustomerId',
-        'expiresBefore' => 'getExpiresBefore',
-        'expiresAfter' => 'getExpiresAfter',
+        'subscriptionId' => 'getSubscriptionId',
+        'gmtCreateStart' => 'getGmtCreateStart',
+        'gmtCreateEnd' => 'getGmtCreateEnd',
+        'sortOrder' => 'getSortOrder',
         'startingAfter' => 'getStartingAfter',
         'endingBefore' => 'getEndingBefore',
-        'limit' => 'getLimit',
-        'includeTotal' => 'getIncludeTotal'
+        'limit' => 'getLimit'
     ];
 
     /**
@@ -277,12 +283,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     {
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
-        $this->setIfExists('expiresBefore', $data ?? [], null);
-        $this->setIfExists('expiresAfter', $data ?? [], null);
+        $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('gmtCreateStart', $data ?? [], null);
+        $this->setIfExists('gmtCreateEnd', $data ?? [], null);
+        $this->setIfExists('sortOrder', $data ?? [], null);
         $this->setIfExists('startingAfter', $data ?? [], null);
         $this->setIfExists('endingBefore', $data ?? [], null);
         $this->setIfExists('limit', $data ?? [], null);
-        $this->setIfExists('includeTotal', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/subscription/inquireList"); 
     }
@@ -378,49 +385,97 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     }
 
     /**
-     * Gets expiresBefore
+     * Gets subscriptionId
      *
      * @return string|null
      */
-    public function getExpiresBefore()
+    public function getSubscriptionId()
     {
-        return $this->container['expiresBefore'];
+        return $this->container['subscriptionId'];
     }
 
     /**
-     * Sets expiresBefore
+     * Sets subscriptionId
      *
-     * @param string|null $expiresBefore The expires before.
+     * @param string|null $subscriptionId Filters by an exact subscription ID. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setExpiresBefore($expiresBefore)
+    public function setSubscriptionId($subscriptionId)
     {
-        $this->container['expiresBefore'] = $expiresBefore;
+        $this->container['subscriptionId'] = $subscriptionId;
 
         return $this;
     }
 
     /**
-     * Gets expiresAfter
+     * Gets gmtCreateStart
      *
      * @return string|null
      */
-    public function getExpiresAfter()
+    public function getGmtCreateStart()
     {
-        return $this->container['expiresAfter'];
+        return $this->container['gmtCreateStart'];
     }
 
     /**
-     * Sets expiresAfter
+     * Sets gmtCreateStart
      *
-     * @param string|null $expiresAfter The expires after.
+     * @param string|null $gmtCreateStart Filters subscriptions whose `createTime` is greater than or equal to this ISO 8601 date-time.
      *
      * @return self
      */
-    public function setExpiresAfter($expiresAfter)
+    public function setGmtCreateStart($gmtCreateStart)
     {
-        $this->container['expiresAfter'] = $expiresAfter;
+        $this->container['gmtCreateStart'] = $gmtCreateStart;
+
+        return $this;
+    }
+
+    /**
+     * Gets gmtCreateEnd
+     *
+     * @return string|null
+     */
+    public function getGmtCreateEnd()
+    {
+        return $this->container['gmtCreateEnd'];
+    }
+
+    /**
+     * Sets gmtCreateEnd
+     *
+     * @param string|null $gmtCreateEnd Filters subscriptions whose `createTime` is less than or equal to this ISO 8601 date-time.
+     *
+     * @return self
+     */
+    public function setGmtCreateEnd($gmtCreateEnd)
+    {
+        $this->container['gmtCreateEnd'] = $gmtCreateEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets sortOrder
+     *
+     * @return string|null
+     */
+    public function getSortOrder()
+    {
+        return $this->container['sortOrder'];
+    }
+
+    /**
+     * Sets sortOrder
+     *
+     * @param string|null $sortOrder The creation-time sort order. Valid values are ASC and DESC. The default value is DESC. Maximum length: 4 characters.
+     *
+     * @return self
+     */
+    public function setSortOrder($sortOrder)
+    {
+        $this->container['sortOrder'] = $sortOrder;
 
         return $this;
     }
@@ -438,7 +493,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $startingAfter The forward-pagination cursor. This field is mutually exclusive with `endingBefore`. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -462,7 +517,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $endingBefore The backward-pagination cursor. This field is mutually exclusive with `startingAfter`. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -486,37 +541,13 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     /**
      * Sets limit
      *
-     * @param int|null $limit The limit.
+     * @param int|null $limit The maximum number of results per page. Value range: 1-100. The default value is 20.
      *
      * @return self
      */
     public function setLimit($limit)
     {
         $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets includeTotal
-     *
-     * @return bool|null
-     */
-    public function getIncludeTotal()
-    {
-        return $this->container['includeTotal'];
-    }
-
-    /**
-     * Sets includeTotal
-     *
-     * @param bool|null $includeTotal The include total.
-     *
-     * @return self
-     */
-    public function setIncludeTotal($includeTotal)
-    {
-        $this->container['includeTotal'] = $includeTotal;
 
         return $this;
     }

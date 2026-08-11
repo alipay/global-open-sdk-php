@@ -50,7 +50,7 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'invoiceId' => 'string',
         'type' => 'string',
         'totalAmount' => '\request\model\Amount',
-        'items' => '\request\model\LineItem[]',
+        'items' => '\request\model\CreditNoteCreateItem[]',
         'refundAmount' => '\request\model\Amount',
         'refundDestination' => 'string',
         'reason' => 'string',
@@ -59,7 +59,8 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'emailType' => 'string',
         'language' => 'string',
         'effectiveDate' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string',
+        'creditNoteNotifyUrl' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'emailType' => null,
         'language' => null,
         'effectiveDate' => null,
-        'metadata' => null
+        'metadata' => null,
+        'creditNoteNotifyUrl' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'emailType' => false,
         'language' => false,
         'effectiveDate' => false,
-        'metadata' => false
+        'metadata' => false,
+        'creditNoteNotifyUrl' => false
     ];
 
     /**
@@ -207,7 +210,8 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'emailType' => 'emailType',
         'language' => 'language',
         'effectiveDate' => 'effectiveDate',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'creditNoteNotifyUrl' => 'creditNoteNotifyUrl'
     ];
 
     /**
@@ -229,7 +233,8 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'emailType' => 'setEmailType',
         'language' => 'setLanguage',
         'effectiveDate' => 'setEffectiveDate',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'creditNoteNotifyUrl' => 'setCreditNoteNotifyUrl'
     ];
 
     /**
@@ -251,7 +256,8 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         'emailType' => 'getEmailType',
         'language' => 'getLanguage',
         'effectiveDate' => 'getEffectiveDate',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'creditNoteNotifyUrl' => 'getCreditNoteNotifyUrl'
     ];
 
     /**
@@ -325,6 +331,7 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('language', $data ?? [], null);
         $this->setIfExists('effectiveDate', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('creditNoteNotifyUrl', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/creditNote/create"); 
     }
@@ -482,7 +489,7 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
     /**
      * Gets items
      *
-     * @return \model\LineItem[]|null
+     * @return \model\CreditNoteCreateItem[]|null
      */
     public function getItems()
     {
@@ -492,7 +499,7 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets items
      *
-     * @param \model\LineItem[]|null $items The items. Note: See documentation for details.
+     * @param \model\CreditNoteCreateItem[]|null $items The credit note items. Item-level quantity and itemAmount follow the conditional rules documented by CreditNoteCreateItem.
      *
      * @return self
      */
@@ -698,7 +705,7 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -708,13 +715,37 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters.
+     * @param string|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters. The value must be a valid JSON object string.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets creditNoteNotifyUrl
+     *
+     * @return string|null
+     */
+    public function getCreditNoteNotifyUrl()
+    {
+        return $this->container['creditNoteNotifyUrl'];
+    }
+
+    /**
+     * Sets creditNoteNotifyUrl
+     *
+     * @param string|null $creditNoteNotifyUrl The URL that receives credit note notifications. Maximum length: 2048 characters.
+     *
+     * @return self
+     */
+    public function setCreditNoteNotifyUrl($creditNoteNotifyUrl)
+    {
+        $this->container['creditNoteNotifyUrl'] = $creditNoteNotifyUrl;
 
         return $this;
     }

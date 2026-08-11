@@ -46,15 +46,9 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\CouponUpdateResult',
+        'result' => '\request\model\ResultInfo',
         'couponId' => 'string',
-        'couponName' => 'string',
-        'status' => 'string',
-        'maxRedemptions' => 'int',
-        'redeemedCount' => 'int',
-        'redeemBy' => 'string',
-        'metadata' => 'array<string,string>',
-        'updateTime' => 'string'
+        'status' => 'string'
     ];
 
     /**
@@ -67,13 +61,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'result' => null,
         'couponId' => null,
-        'couponName' => null,
-        'status' => null,
-        'maxRedemptions' => null,
-        'redeemedCount' => null,
-        'redeemBy' => null,
-        'metadata' => null,
-        'updateTime' => null
+        'status' => null
     ];
 
     /**
@@ -84,13 +72,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPINullables = [
         'result' => false,
         'couponId' => false,
-        'couponName' => false,
-        'status' => false,
-        'maxRedemptions' => true,
-        'redeemedCount' => true,
-        'redeemBy' => false,
-        'metadata' => false,
-        'updateTime' => false
+        'status' => false
     ];
 
     /**
@@ -181,13 +163,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'result' => 'result',
         'couponId' => 'couponId',
-        'couponName' => 'couponName',
-        'status' => 'status',
-        'maxRedemptions' => 'maxRedemptions',
-        'redeemedCount' => 'redeemedCount',
-        'redeemBy' => 'redeemBy',
-        'metadata' => 'metadata',
-        'updateTime' => 'updateTime'
+        'status' => 'status'
     ];
 
     /**
@@ -198,13 +174,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'result' => 'setResult',
         'couponId' => 'setCouponId',
-        'couponName' => 'setCouponName',
-        'status' => 'setStatus',
-        'maxRedemptions' => 'setMaxRedemptions',
-        'redeemedCount' => 'setRedeemedCount',
-        'redeemBy' => 'setRedeemBy',
-        'metadata' => 'setMetadata',
-        'updateTime' => 'setUpdateTime'
+        'status' => 'setStatus'
     ];
 
     /**
@@ -215,13 +185,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'result' => 'getResult',
         'couponId' => 'getCouponId',
-        'couponName' => 'getCouponName',
-        'status' => 'getStatus',
-        'maxRedemptions' => 'getMaxRedemptions',
-        'redeemedCount' => 'getRedeemedCount',
-        'redeemBy' => 'getRedeemBy',
-        'metadata' => 'getMetadata',
-        'updateTime' => 'getUpdateTime'
+        'status' => 'getStatus'
     ];
 
     /**
@@ -283,13 +247,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('couponId', $data ?? [], null);
-        $this->setIfExists('couponName', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('maxRedemptions', $data ?? [], null);
-        $this->setIfExists('redeemedCount', $data ?? [], null);
-        $this->setIfExists('redeemBy', $data ?? [], null);
-        $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('updateTime', $data ?? [], null);
 
             }
 
@@ -341,7 +299,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets result
      *
-     * @return \model\CouponUpdateResult
+     * @return \model\ResultInfo
      */
     public function getResult()
     {
@@ -351,7 +309,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets result
      *
-     * @param \model\CouponUpdateResult $result result
+     * @param \model\ResultInfo $result result
      *
      * @return self
      */
@@ -375,37 +333,13 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets couponId
      *
-     * @param string|null $couponId The coupon ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $couponId Updated coupon's ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
     public function setCouponId($couponId)
     {
         $this->container['couponId'] = $couponId;
-
-        return $this;
-    }
-
-    /**
-     * Gets couponName
-     *
-     * @return string|null
-     */
-    public function getCouponName()
-    {
-        return $this->container['couponName'];
-    }
-
-    /**
-     * Sets couponName
-     *
-     * @param string|null $couponName The coupon name. Maximum length: 128 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setCouponName($couponName)
-    {
-        $this->container['couponName'] = $couponName;
 
         return $this;
     }
@@ -423,133 +357,13 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Coupon status after update. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxRedemptions
-     *
-     * @return int|null
-     */
-    public function getMaxRedemptions()
-    {
-        return $this->container['maxRedemptions'];
-    }
-
-    /**
-     * Sets maxRedemptions
-     *
-     * @param int|null $maxRedemptions The max redemptions. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setMaxRedemptions($maxRedemptions)
-    {
-        $this->container['maxRedemptions'] = $maxRedemptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets redeemedCount
-     *
-     * @return int|null
-     */
-    public function getRedeemedCount()
-    {
-        return $this->container['redeemedCount'];
-    }
-
-    /**
-     * Sets redeemedCount
-     *
-     * @param int|null $redeemedCount The redeemed count. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setRedeemedCount($redeemedCount)
-    {
-        $this->container['redeemedCount'] = $redeemedCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets redeemBy
-     *
-     * @return string|null
-     */
-    public function getRedeemBy()
-    {
-        return $this->container['redeemBy'];
-    }
-
-    /**
-     * Sets redeemBy
-     *
-     * @param string|null $redeemBy The redeem by. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setRedeemBy($redeemBy)
-    {
-        $this->container['redeemBy'] = $redeemBy;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return array<string,string>|null
-     */
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setMetadata($metadata)
-    {
-        $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets updateTime
-     *
-     * @return string|null
-     */
-    public function getUpdateTime()
-    {
-        return $this->container['updateTime'];
-    }
-
-    /**
-     * Sets updateTime
-     *
-     * @param string|null $updateTime The update time. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setUpdateTime($updateTime)
-    {
-        $this->container['updateTime'] = $updateTime;
 
         return $this;
     }

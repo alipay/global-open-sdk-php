@@ -47,9 +47,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
       */
     protected static $openAPITypes = [
         'subscriptionId' => 'string',
-        'billingCycleAnchor' => 'string',
-        'prorationBehavior' => 'string',
-        'prorationDate' => 'string',
         'reasonCode' => 'string'
     ];
 
@@ -62,9 +59,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
       */
     protected static $openAPIFormats = [
         'subscriptionId' => null,
-        'billingCycleAnchor' => null,
-        'prorationBehavior' => null,
-        'prorationDate' => null,
         'reasonCode' => null
     ];
 
@@ -75,9 +69,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
       */
     protected static $openAPINullables = [
         'subscriptionId' => false,
-        'billingCycleAnchor' => false,
-        'prorationBehavior' => false,
-        'prorationDate' => false,
         'reasonCode' => false
     ];
 
@@ -168,9 +159,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
      */
     protected static $attributeMap = [
         'subscriptionId' => 'subscriptionId',
-        'billingCycleAnchor' => 'billingCycleAnchor',
-        'prorationBehavior' => 'prorationBehavior',
-        'prorationDate' => 'prorationDate',
         'reasonCode' => 'reasonCode'
     ];
 
@@ -181,9 +169,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
      */
     protected static $setters = [
         'subscriptionId' => 'setSubscriptionId',
-        'billingCycleAnchor' => 'setBillingCycleAnchor',
-        'prorationBehavior' => 'setProrationBehavior',
-        'prorationDate' => 'setProrationDate',
         'reasonCode' => 'setReasonCode'
     ];
 
@@ -194,9 +179,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
      */
     protected static $getters = [
         'subscriptionId' => 'getSubscriptionId',
-        'billingCycleAnchor' => 'getBillingCycleAnchor',
-        'prorationBehavior' => 'getProrationBehavior',
-        'prorationDate' => 'getProrationDate',
         'reasonCode' => 'getReasonCode'
     ];
 
@@ -258,9 +240,6 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
     public function __construct(?array $data = null)
     {
         $this->setIfExists('subscriptionId', $data ?? [], null);
-        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
-        $this->setIfExists('prorationBehavior', $data ?? [], null);
-        $this->setIfExists('prorationDate', $data ?? [], null);
         $this->setIfExists('reasonCode', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/subscription/resume"); 
@@ -327,85 +306,13 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string $subscriptionId The ID of the paused subscription to resume. If payment is already in progress, a repeated request returns PAYMENT_IN_PROCESSING without creating another charge. If the subscription is already active, the operation returns SUCCESS without changing it. Maximum length: 64 characters.
      *
      * @return self
      */
     public function setSubscriptionId($subscriptionId)
     {
         $this->container['subscriptionId'] = $subscriptionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingCycleAnchor
-     *
-     * @return string|null
-     */
-    public function getBillingCycleAnchor()
-    {
-        return $this->container['billingCycleAnchor'];
-    }
-
-    /**
-     * Sets billingCycleAnchor
-     *
-     * @param string|null $billingCycleAnchor The billing cycle anchor. Maximum length: 9 characters.
-     *
-     * @return self
-     */
-    public function setBillingCycleAnchor($billingCycleAnchor)
-    {
-        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
-
-        return $this;
-    }
-
-    /**
-     * Gets prorationBehavior
-     *
-     * @return string|null
-     */
-    public function getProrationBehavior()
-    {
-        return $this->container['prorationBehavior'];
-    }
-
-    /**
-     * Sets prorationBehavior
-     *
-     * @param string|null $prorationBehavior The proration behavior. Maximum length: 18 characters.
-     *
-     * @return self
-     */
-    public function setProrationBehavior($prorationBehavior)
-    {
-        $this->container['prorationBehavior'] = $prorationBehavior;
-
-        return $this;
-    }
-
-    /**
-     * Gets prorationDate
-     *
-     * @return string|null
-     */
-    public function getProrationDate()
-    {
-        return $this->container['prorationDate'];
-    }
-
-    /**
-     * Sets prorationDate
-     *
-     * @param string|null $prorationDate The proration date.
-     *
-     * @return self
-     */
-    public function setProrationDate($prorationDate)
-    {
-        $this->container['prorationDate'] = $prorationDate;
 
         return $this;
     }
@@ -423,7 +330,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
     /**
      * Sets reasonCode
      *
-     * @param string $reasonCode The reason code. Maximum length: 64 characters.
+     * @param string $reasonCode The reason for resuming the subscription, recorded for audit purposes. HTML tags are not allowed. Maximum length: 64 characters.
      *
      * @return self
      */

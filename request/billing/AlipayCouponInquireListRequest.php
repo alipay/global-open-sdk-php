@@ -328,7 +328,7 @@ class AlipayCouponInquireListRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 32 characters.
+     * @param string|null $status Filter by coupon status. Allowed values: `ACTIVE`, `INACTIVE`. If not provided, returns coupons of all statuses.
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class AlipayCouponInquireListRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets discountType
      *
-     * @param string|null $discountType The discount type. Maximum length: 16 characters.
+     * @param string|null $discountType Filter by discount type. Allowed values: `PERCENT`, `AMOUNT`. If not provided, returns all discount types.
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class AlipayCouponInquireListRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $startingAfter Cursor for forward pagination - return coupons created before this couponId (older items). Pass the `nextCursor` from the previous response. Mutually exclusive with `endingBefore`.
      *
      * @return self
      */
@@ -400,7 +400,7 @@ class AlipayCouponInquireListRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $endingBefore Cursor for backward pagination - return coupons created after this couponId (newer items). Mutually exclusive with `startingAfter`.
      *
      * @return self
      */
@@ -424,7 +424,7 @@ class AlipayCouponInquireListRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets limit
      *
-     * @param int|null $limit The limit.
+     * @param int|null $limit Number of records per page. Value range: 1-100. Defaults to 20 if not provided.
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class AlipayCouponInquireListRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets includeTotal
      *
-     * @param bool|null $includeTotal The include total.
+     * @param bool|null $includeTotal When `true`, an additional COUNT query is executed to populate `total` in the response. Default: `false`.
      *
      * @return self
      */

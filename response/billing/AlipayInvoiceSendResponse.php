@@ -288,12 +288,6 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['hostedInvoiceUrl'] === null) {
-            $invalidProperties[] = "'hostedInvoiceUrl' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +330,7 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -346,7 +340,7 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Invoice ID that was sent (echo-back of the request). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -370,7 +364,7 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus The email sending status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $sendStatus Email delivery status. Returned only when `result.resultCode=SUCCESS`. Allowed values: `SENT` - email dispatched successfully to the customer; `FAILED` - email service unavailable or dispatch failed, retry is allowed. Cannot be null when present. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -384,7 +378,7 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets hostedInvoiceUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getHostedInvoiceUrl()
     {
@@ -394,7 +388,7 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets hostedInvoiceUrl
      *
-     * @param string $hostedInvoiceUrl The hosted invoice url. Maximum length: 2048 characters.
+     * @param string|null $hostedInvoiceUrl URL to the hosted invoice page where the customer can view and pay the invoice online. This is the same hosted page returned by the Create Invoice API. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -47,10 +47,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'subscriptionId' => 'string',
+        'subscriptionRequestId' => 'string',
         'status' => 'string',
         'customerId' => 'string',
+        'description' => 'string',
+        'billingMode' => 'string',
+        'currentPeriodStart' => 'string',
         'currentPeriodEnd' => 'string',
-        'createdAt' => 'string'
+        'cancelAtPeriodEnd' => 'bool',
+        'canceledAt' => 'string',
+        'cancelAt' => 'string',
+        'billingCycleAnchor' => 'string',
+        'trialStart' => 'string',
+        'trialEnd' => 'string',
+        'subtotal' => '\request\model\Amount',
+        'discountAmount' => '\request\model\Amount',
+        'totalAmount' => '\request\model\Amount',
+        'priceItems' => '\request\model\BillingSubscriptionPriceItem[]',
+        'terminationReason' => 'string',
+        'createTime' => 'string'
     ];
 
     /**
@@ -62,10 +77,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'subscriptionId' => null,
+        'subscriptionRequestId' => null,
         'status' => null,
         'customerId' => null,
+        'description' => null,
+        'billingMode' => null,
+        'currentPeriodStart' => null,
         'currentPeriodEnd' => null,
-        'createdAt' => null
+        'cancelAtPeriodEnd' => null,
+        'canceledAt' => null,
+        'cancelAt' => null,
+        'billingCycleAnchor' => null,
+        'trialStart' => null,
+        'trialEnd' => null,
+        'subtotal' => null,
+        'discountAmount' => null,
+        'totalAmount' => null,
+        'priceItems' => null,
+        'terminationReason' => null,
+        'createTime' => null
     ];
 
     /**
@@ -75,10 +105,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'subscriptionId' => false,
+        'subscriptionRequestId' => false,
         'status' => false,
         'customerId' => false,
+        'description' => false,
+        'billingMode' => false,
+        'currentPeriodStart' => false,
         'currentPeriodEnd' => false,
-        'createdAt' => false
+        'cancelAtPeriodEnd' => false,
+        'canceledAt' => false,
+        'cancelAt' => false,
+        'billingCycleAnchor' => false,
+        'trialStart' => false,
+        'trialEnd' => false,
+        'subtotal' => false,
+        'discountAmount' => false,
+        'totalAmount' => false,
+        'priceItems' => false,
+        'terminationReason' => false,
+        'createTime' => false
     ];
 
     /**
@@ -168,10 +213,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'subscriptionId' => 'subscriptionId',
+        'subscriptionRequestId' => 'subscriptionRequestId',
         'status' => 'status',
         'customerId' => 'customerId',
+        'description' => 'description',
+        'billingMode' => 'billingMode',
+        'currentPeriodStart' => 'currentPeriodStart',
         'currentPeriodEnd' => 'currentPeriodEnd',
-        'createdAt' => 'createdAt'
+        'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
+        'canceledAt' => 'canceledAt',
+        'cancelAt' => 'cancelAt',
+        'billingCycleAnchor' => 'billingCycleAnchor',
+        'trialStart' => 'trialStart',
+        'trialEnd' => 'trialEnd',
+        'subtotal' => 'subtotal',
+        'discountAmount' => 'discountAmount',
+        'totalAmount' => 'totalAmount',
+        'priceItems' => 'priceItems',
+        'terminationReason' => 'terminationReason',
+        'createTime' => 'createTime'
     ];
 
     /**
@@ -181,10 +241,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'subscriptionId' => 'setSubscriptionId',
+        'subscriptionRequestId' => 'setSubscriptionRequestId',
         'status' => 'setStatus',
         'customerId' => 'setCustomerId',
+        'description' => 'setDescription',
+        'billingMode' => 'setBillingMode',
+        'currentPeriodStart' => 'setCurrentPeriodStart',
         'currentPeriodEnd' => 'setCurrentPeriodEnd',
-        'createdAt' => 'setCreatedAt'
+        'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
+        'canceledAt' => 'setCanceledAt',
+        'cancelAt' => 'setCancelAt',
+        'billingCycleAnchor' => 'setBillingCycleAnchor',
+        'trialStart' => 'setTrialStart',
+        'trialEnd' => 'setTrialEnd',
+        'subtotal' => 'setSubtotal',
+        'discountAmount' => 'setDiscountAmount',
+        'totalAmount' => 'setTotalAmount',
+        'priceItems' => 'setPriceItems',
+        'terminationReason' => 'setTerminationReason',
+        'createTime' => 'setCreateTime'
     ];
 
     /**
@@ -194,10 +269,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'subscriptionId' => 'getSubscriptionId',
+        'subscriptionRequestId' => 'getSubscriptionRequestId',
         'status' => 'getStatus',
         'customerId' => 'getCustomerId',
+        'description' => 'getDescription',
+        'billingMode' => 'getBillingMode',
+        'currentPeriodStart' => 'getCurrentPeriodStart',
         'currentPeriodEnd' => 'getCurrentPeriodEnd',
-        'createdAt' => 'getCreatedAt'
+        'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
+        'canceledAt' => 'getCanceledAt',
+        'cancelAt' => 'getCancelAt',
+        'billingCycleAnchor' => 'getBillingCycleAnchor',
+        'trialStart' => 'getTrialStart',
+        'trialEnd' => 'getTrialEnd',
+        'subtotal' => 'getSubtotal',
+        'discountAmount' => 'getDiscountAmount',
+        'totalAmount' => 'getTotalAmount',
+        'priceItems' => 'getPriceItems',
+        'terminationReason' => 'getTerminationReason',
+        'createTime' => 'getCreateTime'
     ];
 
     /**
@@ -258,10 +348,25 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('subscriptionRequestId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('billingMode', $data ?? [], null);
+        $this->setIfExists('currentPeriodStart', $data ?? [], null);
         $this->setIfExists('currentPeriodEnd', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
+        $this->setIfExists('canceledAt', $data ?? [], null);
+        $this->setIfExists('cancelAt', $data ?? [], null);
+        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
+        $this->setIfExists('trialStart', $data ?? [], null);
+        $this->setIfExists('trialEnd', $data ?? [], null);
+        $this->setIfExists('subtotal', $data ?? [], null);
+        $this->setIfExists('discountAmount', $data ?? [], null);
+        $this->setIfExists('totalAmount', $data ?? [], null);
+        $this->setIfExists('priceItems', $data ?? [], null);
+        $this->setIfExists('terminationReason', $data ?? [], null);
+        $this->setIfExists('createTime', $data ?? [], null);
 
             }
 
@@ -301,11 +406,14 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['customerId'] === null) {
             $invalidProperties[] = "'customerId' can't be null";
         }
+        if ($this->container['currentPeriodStart'] === null) {
+            $invalidProperties[] = "'currentPeriodStart' can't be null";
+        }
         if ($this->container['currentPeriodEnd'] === null) {
             $invalidProperties[] = "'currentPeriodEnd' can't be null";
         }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
+        if ($this->container['createTime'] === null) {
+            $invalidProperties[] = "'createTime' can't be null";
         }
         return $invalidProperties;
     }
@@ -342,6 +450,30 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSubscriptionId($subscriptionId)
     {
         $this->container['subscriptionId'] = $subscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionRequestId
+     *
+     * @return string|null
+     */
+    public function getSubscriptionRequestId()
+    {
+        return $this->container['subscriptionRequestId'];
+    }
+
+    /**
+     * Sets subscriptionRequestId
+     *
+     * @param string|null $subscriptionRequestId The original idempotency key used to create the subscription. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setSubscriptionRequestId($subscriptionRequestId)
+    {
+        $this->container['subscriptionRequestId'] = $subscriptionRequestId;
 
         return $this;
     }
@@ -395,6 +527,78 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description The subscription description. Maximum length: 500 characters.
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets billingMode
+     *
+     * @return string|null
+     */
+    public function getBillingMode()
+    {
+        return $this->container['billingMode'];
+    }
+
+    /**
+     * Sets billingMode
+     *
+     * @param string|null $billingMode The billing mode. Valid values are LICENSED, METERED, and MIXED. Maximum length: 8 characters.
+     *
+     * @return self
+     */
+    public function setBillingMode($billingMode)
+    {
+        $this->container['billingMode'] = $billingMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodStart
+     *
+     * @return string
+     */
+    public function getCurrentPeriodStart()
+    {
+        return $this->container['currentPeriodStart'];
+    }
+
+    /**
+     * Sets currentPeriodStart
+     *
+     * @param string $currentPeriodStart The start of the current billing period in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodStart($currentPeriodStart)
+    {
+        $this->container['currentPeriodStart'] = $currentPeriodStart;
+
+        return $this;
+    }
+
+    /**
      * Gets currentPeriodEnd
      *
      * @return string
@@ -407,7 +611,7 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currentPeriodEnd
      *
-     * @param string $currentPeriodEnd The current period end.
+     * @param string $currentPeriodEnd The end of the current billing period in ISO 8601 format.
      *
      * @return self
      */
@@ -419,25 +623,289 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets createdAt
+     * Gets cancelAtPeriodEnd
      *
-     * @return string
+     * @return bool|null
      */
-    public function getCreatedAt()
+    public function getCancelAtPeriodEnd()
     {
-        return $this->container['createdAt'];
+        return $this->container['cancelAtPeriodEnd'];
     }
 
     /**
-     * Sets createdAt
+     * Sets cancelAtPeriodEnd
      *
-     * @param string $createdAt The created at.
+     * @param bool|null $cancelAtPeriodEnd Whether the subscription is scheduled to be canceled at the end of the current period.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCancelAtPeriodEnd($cancelAtPeriodEnd)
     {
-        $this->container['createdAt'] = $createdAt;
+        $this->container['cancelAtPeriodEnd'] = $cancelAtPeriodEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets canceledAt
+     *
+     * @return string|null
+     */
+    public function getCanceledAt()
+    {
+        return $this->container['canceledAt'];
+    }
+
+    /**
+     * Sets canceledAt
+     *
+     * @param string|null $canceledAt The cancellation time in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCanceledAt($canceledAt)
+    {
+        $this->container['canceledAt'] = $canceledAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelAt
+     *
+     * @return string|null
+     */
+    public function getCancelAt()
+    {
+        return $this->container['cancelAt'];
+    }
+
+    /**
+     * Sets cancelAt
+     *
+     * @param string|null $cancelAt The scheduled cancellation time in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCancelAt($cancelAt)
+    {
+        $this->container['cancelAt'] = $cancelAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets billingCycleAnchor
+     *
+     * @return string|null
+     */
+    public function getBillingCycleAnchor()
+    {
+        return $this->container['billingCycleAnchor'];
+    }
+
+    /**
+     * Sets billingCycleAnchor
+     *
+     * @param string|null $billingCycleAnchor The billing cycle anchor in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setBillingCycleAnchor($billingCycleAnchor)
+    {
+        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
+
+        return $this;
+    }
+
+    /**
+     * Gets trialStart
+     *
+     * @return string|null
+     */
+    public function getTrialStart()
+    {
+        return $this->container['trialStart'];
+    }
+
+    /**
+     * Sets trialStart
+     *
+     * @param string|null $trialStart The trial start time in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setTrialStart($trialStart)
+    {
+        $this->container['trialStart'] = $trialStart;
+
+        return $this;
+    }
+
+    /**
+     * Gets trialEnd
+     *
+     * @return string|null
+     */
+    public function getTrialEnd()
+    {
+        return $this->container['trialEnd'];
+    }
+
+    /**
+     * Sets trialEnd
+     *
+     * @param string|null $trialEnd The trial end time in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setTrialEnd($trialEnd)
+    {
+        $this->container['trialEnd'] = $trialEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets subtotal
+     *
+     * @return \model\Amount|null
+     */
+    public function getSubtotal()
+    {
+        return $this->container['subtotal'];
+    }
+
+    /**
+     * Sets subtotal
+     *
+     * @param \model\Amount|null $subtotal subtotal
+     *
+     * @return self
+     */
+    public function setSubtotal($subtotal)
+    {
+        $this->container['subtotal'] = $subtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     *
+     * @param \model\Amount|null $discountAmount discountAmount
+     *
+     * @return self
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->container['discountAmount'] = $discountAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['totalAmount'];
+    }
+
+    /**
+     * Sets totalAmount
+     *
+     * @param \model\Amount|null $totalAmount totalAmount
+     *
+     * @return self
+     */
+    public function setTotalAmount($totalAmount)
+    {
+        $this->container['totalAmount'] = $totalAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceItems
+     *
+     * @return \model\BillingSubscriptionPriceItem[]|null
+     */
+    public function getPriceItems()
+    {
+        return $this->container['priceItems'];
+    }
+
+    /**
+     * Sets priceItems
+     *
+     * @param \model\BillingSubscriptionPriceItem[]|null $priceItems The subscription price items.
+     *
+     * @return self
+     */
+    public function setPriceItems($priceItems)
+    {
+        $this->container['priceItems'] = $priceItems;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminationReason
+     *
+     * @return string|null
+     */
+    public function getTerminationReason()
+    {
+        return $this->container['terminationReason'];
+    }
+
+    /**
+     * Sets terminationReason
+     *
+     * @param string|null $terminationReason The termination reason. Returned when the status is TERMINATED. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setTerminationReason($terminationReason)
+    {
+        $this->container['terminationReason'] = $terminationReason;
+
+        return $this;
+    }
+
+    /**
+     * Gets createTime
+     *
+     * @return string
+     */
+    public function getCreateTime()
+    {
+        return $this->container['createTime'];
+    }
+
+    /**
+     * Sets createTime
+     *
+     * @param string $createTime The subscription creation time in ISO 8601 format. List results are sorted by this field in descending order by default.
+     *
+     * @return self
+     */
+    public function setCreateTime($createTime)
+    {
+        $this->container['createTime'] = $createTime;
 
         return $this;
     }

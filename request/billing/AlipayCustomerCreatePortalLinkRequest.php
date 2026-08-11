@@ -48,7 +48,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     protected static $openAPITypes = [
         'customerId' => 'string',
         'email' => 'string',
-        'expiryDays' => 'int',
         'features' => 'string[]',
         'autoSend' => 'bool',
         'settingId' => 'string'
@@ -64,7 +63,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     protected static $openAPIFormats = [
         'customerId' => null,
         'email' => null,
-        'expiryDays' => null,
         'features' => null,
         'autoSend' => null,
         'settingId' => null
@@ -78,7 +76,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     protected static $openAPINullables = [
         'customerId' => false,
         'email' => false,
-        'expiryDays' => true,
         'features' => false,
         'autoSend' => false,
         'settingId' => false
@@ -172,7 +169,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     protected static $attributeMap = [
         'customerId' => 'customerId',
         'email' => 'email',
-        'expiryDays' => 'expiryDays',
         'features' => 'features',
         'autoSend' => 'autoSend',
         'settingId' => 'settingId'
@@ -186,7 +182,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     protected static $setters = [
         'customerId' => 'setCustomerId',
         'email' => 'setEmail',
-        'expiryDays' => 'setExpiryDays',
         'features' => 'setFeatures',
         'autoSend' => 'setAutoSend',
         'settingId' => 'setSettingId'
@@ -200,7 +195,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     protected static $getters = [
         'customerId' => 'getCustomerId',
         'email' => 'getEmail',
-        'expiryDays' => 'getExpiryDays',
         'features' => 'getFeatures',
         'autoSend' => 'getAutoSend',
         'settingId' => 'getSettingId'
@@ -265,7 +259,6 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     {
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('expiryDays', $data ?? [], null);
         $this->setIfExists('features', $data ?? [], null);
         $this->setIfExists('autoSend', $data ?? [], null);
         $this->setIfExists('settingId', $data ?? [], null);
@@ -328,7 +321,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $customerId Customer ID to target. When both `customerId` and `email` are supplied, `customerId` takes precedence.
      *
      * @return self
      */
@@ -352,37 +345,13 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets email
      *
-     * @param string|null $email The email address. Maximum length: 254 characters. Note: See documentation for details.
+     * @param string|null $email Customer email for lookup. When multiple customers share the email, the most recently created (by `gmtCreate DESC`) is selected. Maximum length: 254 characters (RFC 5322).
      *
      * @return self
      */
     public function setEmail($email)
     {
         $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets expiryDays
-     *
-     * @return int|null
-     */
-    public function getExpiryDays()
-    {
-        return $this->container['expiryDays'];
-    }
-
-    /**
-     * Sets expiryDays
-     *
-     * @param int|null $expiryDays The token validity period in days.
-     *
-     * @return self
-     */
-    public function setExpiryDays($expiryDays)
-    {
-        $this->container['expiryDays'] = $expiryDays;
 
         return $this;
     }
@@ -400,7 +369,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets features
      *
-     * @param string[]|null $features The feature list. Note: See documentation for details.
+     * @param string[]|null $features Feature set enabled for this portal session. Allowed values: `SUBSCRIPTION`, `INVOICE`, `PAYMENT_METHOD`. Empty/absent list -> ALL features enabled by default (NOT an intersection with settingId features, as previously documented). The portal settings referenced by `settingId` may further restrict which features are shown at render time.
      *
      * @return self
      */
@@ -424,7 +393,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets autoSend
      *
-     * @param bool|null $autoSend Indicates whether to automatically send the notification.
+     * @param bool|null $autoSend When `true`, best-effort email the portal URL to the customer. Default: `false`. Failure never blocks link creation.
      *
      * @return self
      */
@@ -448,7 +417,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets settingId
      *
-     * @param string|null $settingId The setting configuration ID. Maximum length: 64 characters.
+     * @param string|null $settingId Portal setting configuration ID. Passed through token payload, parsed by iexpfront.
      *
      * @return self
      */
