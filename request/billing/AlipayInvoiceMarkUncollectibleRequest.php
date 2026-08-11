@@ -303,7 +303,7 @@ class AlipayInvoiceMarkUncollectibleRequest   extends AlipayRequest  implements 
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Invoice ID to mark as uncollectible. Must be in OPEN status and belong to the requesting merchant. Format: `inv_` + 10-char alphanumeric. Validated before any state transition. Cannot be null.
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class AlipayInvoiceMarkUncollectibleRequest   extends AlipayRequest  implements 
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Optional note attached to the invoice for this mark uncollectible action. Stored as an entry in the `invoiceNotes` array in the invoice metadata with `action=mark_uncollectible`. Enables merchants to attach contextual notes (e.g., \"Customer declared bankruptcy\") to the invoice audit trail. Can be null (defaults to null - no note provided).
      *
      * @return self
      */

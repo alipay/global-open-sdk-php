@@ -49,14 +49,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'result' => '\request\model\ResultInfo',
         'subscriptionId' => 'string',
         'status' => 'string',
-        'billingCycleAnchor' => 'string',
-        'pauseCollection' => '\request\model\BillingSubscriptionUpdatePauseCollection',
-        'trialSettings' => '\request\model\BillingSubscriptionUpdateTrialSettings',
         'subscriptionItems' => '\request\model\SubscriptionItem[]',
         'prorationInvoiceId' => 'string',
+        'prorationInvoiceAmount' => 'int',
+        'prorationInvoiceCurrency' => 'string',
         'creditNoteId' => 'string',
-        'cancelAtPeriodEnd' => 'bool',
-        'canceledAt' => 'string',
+        'creditNoteAmount' => 'int',
+        'creditNoteCurrency' => 'string',
+        'pendingUpdate' => 'bool',
         'prorationDate' => 'string'
     ];
 
@@ -71,14 +71,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'result' => null,
         'subscriptionId' => null,
         'status' => null,
-        'billingCycleAnchor' => null,
-        'pauseCollection' => null,
-        'trialSettings' => null,
         'subscriptionItems' => null,
         'prorationInvoiceId' => null,
+        'prorationInvoiceAmount' => 'int64',
+        'prorationInvoiceCurrency' => null,
         'creditNoteId' => null,
-        'cancelAtPeriodEnd' => null,
-        'canceledAt' => null,
+        'creditNoteAmount' => 'int64',
+        'creditNoteCurrency' => null,
+        'pendingUpdate' => null,
         'prorationDate' => null
     ];
 
@@ -91,14 +91,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'result' => false,
         'subscriptionId' => false,
         'status' => false,
-        'billingCycleAnchor' => false,
-        'pauseCollection' => false,
-        'trialSettings' => false,
         'subscriptionItems' => false,
         'prorationInvoiceId' => false,
+        'prorationInvoiceAmount' => false,
+        'prorationInvoiceCurrency' => false,
         'creditNoteId' => false,
-        'cancelAtPeriodEnd' => false,
-        'canceledAt' => false,
+        'creditNoteAmount' => false,
+        'creditNoteCurrency' => false,
+        'pendingUpdate' => false,
         'prorationDate' => false
     ];
 
@@ -191,14 +191,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'result' => 'result',
         'subscriptionId' => 'subscriptionId',
         'status' => 'status',
-        'billingCycleAnchor' => 'billingCycleAnchor',
-        'pauseCollection' => 'pauseCollection',
-        'trialSettings' => 'trialSettings',
         'subscriptionItems' => 'subscriptionItems',
         'prorationInvoiceId' => 'prorationInvoiceId',
+        'prorationInvoiceAmount' => 'prorationInvoiceAmount',
+        'prorationInvoiceCurrency' => 'prorationInvoiceCurrency',
         'creditNoteId' => 'creditNoteId',
-        'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
-        'canceledAt' => 'canceledAt',
+        'creditNoteAmount' => 'creditNoteAmount',
+        'creditNoteCurrency' => 'creditNoteCurrency',
+        'pendingUpdate' => 'pendingUpdate',
         'prorationDate' => 'prorationDate'
     ];
 
@@ -211,14 +211,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'result' => 'setResult',
         'subscriptionId' => 'setSubscriptionId',
         'status' => 'setStatus',
-        'billingCycleAnchor' => 'setBillingCycleAnchor',
-        'pauseCollection' => 'setPauseCollection',
-        'trialSettings' => 'setTrialSettings',
         'subscriptionItems' => 'setSubscriptionItems',
         'prorationInvoiceId' => 'setProrationInvoiceId',
+        'prorationInvoiceAmount' => 'setProrationInvoiceAmount',
+        'prorationInvoiceCurrency' => 'setProrationInvoiceCurrency',
         'creditNoteId' => 'setCreditNoteId',
-        'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
-        'canceledAt' => 'setCanceledAt',
+        'creditNoteAmount' => 'setCreditNoteAmount',
+        'creditNoteCurrency' => 'setCreditNoteCurrency',
+        'pendingUpdate' => 'setPendingUpdate',
         'prorationDate' => 'setProrationDate'
     ];
 
@@ -231,14 +231,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'result' => 'getResult',
         'subscriptionId' => 'getSubscriptionId',
         'status' => 'getStatus',
-        'billingCycleAnchor' => 'getBillingCycleAnchor',
-        'pauseCollection' => 'getPauseCollection',
-        'trialSettings' => 'getTrialSettings',
         'subscriptionItems' => 'getSubscriptionItems',
         'prorationInvoiceId' => 'getProrationInvoiceId',
+        'prorationInvoiceAmount' => 'getProrationInvoiceAmount',
+        'prorationInvoiceCurrency' => 'getProrationInvoiceCurrency',
         'creditNoteId' => 'getCreditNoteId',
-        'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
-        'canceledAt' => 'getCanceledAt',
+        'creditNoteAmount' => 'getCreditNoteAmount',
+        'creditNoteCurrency' => 'getCreditNoteCurrency',
+        'pendingUpdate' => 'getPendingUpdate',
         'prorationDate' => 'getProrationDate'
     ];
 
@@ -302,14 +302,14 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
-        $this->setIfExists('pauseCollection', $data ?? [], null);
-        $this->setIfExists('trialSettings', $data ?? [], null);
         $this->setIfExists('subscriptionItems', $data ?? [], null);
         $this->setIfExists('prorationInvoiceId', $data ?? [], null);
+        $this->setIfExists('prorationInvoiceAmount', $data ?? [], null);
+        $this->setIfExists('prorationInvoiceCurrency', $data ?? [], null);
         $this->setIfExists('creditNoteId', $data ?? [], null);
-        $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
-        $this->setIfExists('canceledAt', $data ?? [], null);
+        $this->setIfExists('creditNoteAmount', $data ?? [], null);
+        $this->setIfExists('creditNoteCurrency', $data ?? [], null);
+        $this->setIfExists('pendingUpdate', $data ?? [], null);
         $this->setIfExists('prorationDate', $data ?? [], null);
 
             }
@@ -343,12 +343,6 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['subscriptionId'] === null) {
-            $invalidProperties[] = "'subscriptionId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
         }
         return $invalidProperties;
     }
@@ -392,7 +386,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Gets subscriptionId
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionId()
     {
@@ -402,7 +396,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -416,7 +410,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -426,85 +420,13 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 20 characters.
+     * @param string|null $status The current status. Maximum length: 20 characters.
      *
      * @return self
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingCycleAnchor
-     *
-     * @return string|null
-     */
-    public function getBillingCycleAnchor()
-    {
-        return $this->container['billingCycleAnchor'];
-    }
-
-    /**
-     * Sets billingCycleAnchor
-     *
-     * @param string|null $billingCycleAnchor The billing cycle anchor. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setBillingCycleAnchor($billingCycleAnchor)
-    {
-        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
-
-        return $this;
-    }
-
-    /**
-     * Gets pauseCollection
-     *
-     * @return \model\BillingSubscriptionUpdatePauseCollection|null
-     */
-    public function getPauseCollection()
-    {
-        return $this->container['pauseCollection'];
-    }
-
-    /**
-     * Sets pauseCollection
-     *
-     * @param \model\BillingSubscriptionUpdatePauseCollection|null $pauseCollection pauseCollection
-     *
-     * @return self
-     */
-    public function setPauseCollection($pauseCollection)
-    {
-        $this->container['pauseCollection'] = $pauseCollection;
-
-        return $this;
-    }
-
-    /**
-     * Gets trialSettings
-     *
-     * @return \model\BillingSubscriptionUpdateTrialSettings|null
-     */
-    public function getTrialSettings()
-    {
-        return $this->container['trialSettings'];
-    }
-
-    /**
-     * Sets trialSettings
-     *
-     * @param \model\BillingSubscriptionUpdateTrialSettings|null $trialSettings trialSettings
-     *
-     * @return self
-     */
-    public function setTrialSettings($trialSettings)
-    {
-        $this->container['trialSettings'] = $trialSettings;
 
         return $this;
     }
@@ -558,6 +480,54 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     }
 
     /**
+     * Gets prorationInvoiceAmount
+     *
+     * @return int|null
+     */
+    public function getProrationInvoiceAmount()
+    {
+        return $this->container['prorationInvoiceAmount'];
+    }
+
+    /**
+     * Sets prorationInvoiceAmount
+     *
+     * @param int|null $prorationInvoiceAmount The proration invoice amount in the smallest currency unit. Returned together with prorationInvoiceId.
+     *
+     * @return self
+     */
+    public function setProrationInvoiceAmount($prorationInvoiceAmount)
+    {
+        $this->container['prorationInvoiceAmount'] = $prorationInvoiceAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets prorationInvoiceCurrency
+     *
+     * @return string|null
+     */
+    public function getProrationInvoiceCurrency()
+    {
+        return $this->container['prorationInvoiceCurrency'];
+    }
+
+    /**
+     * Sets prorationInvoiceCurrency
+     *
+     * @param string|null $prorationInvoiceCurrency The currency of prorationInvoiceAmount as a three-letter ISO 4217 code.
+     *
+     * @return self
+     */
+    public function setProrationInvoiceCurrency($prorationInvoiceCurrency)
+    {
+        $this->container['prorationInvoiceCurrency'] = $prorationInvoiceCurrency;
+
+        return $this;
+    }
+
+    /**
      * Gets creditNoteId
      *
      * @return string|null
@@ -582,49 +552,73 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets cancelAtPeriodEnd
+     * Gets creditNoteAmount
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getCancelAtPeriodEnd()
+    public function getCreditNoteAmount()
     {
-        return $this->container['cancelAtPeriodEnd'];
+        return $this->container['creditNoteAmount'];
     }
 
     /**
-     * Sets cancelAtPeriodEnd
+     * Sets creditNoteAmount
      *
-     * @param bool|null $cancelAtPeriodEnd The cancel at period end. Note: See documentation for details.
+     * @param int|null $creditNoteAmount The credit note amount in the smallest currency unit. Returned together with creditNoteId.
      *
      * @return self
      */
-    public function setCancelAtPeriodEnd($cancelAtPeriodEnd)
+    public function setCreditNoteAmount($creditNoteAmount)
     {
-        $this->container['cancelAtPeriodEnd'] = $cancelAtPeriodEnd;
+        $this->container['creditNoteAmount'] = $creditNoteAmount;
 
         return $this;
     }
 
     /**
-     * Gets canceledAt
+     * Gets creditNoteCurrency
      *
      * @return string|null
      */
-    public function getCanceledAt()
+    public function getCreditNoteCurrency()
     {
-        return $this->container['canceledAt'];
+        return $this->container['creditNoteCurrency'];
     }
 
     /**
-     * Sets canceledAt
+     * Sets creditNoteCurrency
      *
-     * @param string|null $canceledAt The canceled at. Note: See documentation for details.
+     * @param string|null $creditNoteCurrency The currency of creditNoteAmount as a three-letter ISO 4217 code.
      *
      * @return self
      */
-    public function setCanceledAt($canceledAt)
+    public function setCreditNoteCurrency($creditNoteCurrency)
     {
-        $this->container['canceledAt'] = $canceledAt;
+        $this->container['creditNoteCurrency'] = $creditNoteCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingUpdate
+     *
+     * @return bool|null
+     */
+    public function getPendingUpdate()
+    {
+        return $this->container['pendingUpdate'];
+    }
+
+    /**
+     * Sets pendingUpdate
+     *
+     * @param bool|null $pendingUpdate Whether a payment-gated upgrade or quantity increase is staged but not yet effective. When true, subscriptionItems can still describe the currently effective items.
+     *
+     * @return self
+     */
+    public function setPendingUpdate($pendingUpdate)
+    {
+        $this->container['pendingUpdate'] = $pendingUpdate;
 
         return $this;
     }
@@ -642,7 +636,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets prorationDate
      *
-     * @param string|null $prorationDate The proration date. Note: See documentation for details.
+     * @param string|null $prorationDate The date and time used to calculate proration in ISO 8601 format.
      *
      * @return self
      */

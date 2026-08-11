@@ -50,7 +50,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
         'status' => 'string',
         'maxRedemptions' => 'int',
         'expiryTime' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string'
     ];
 
     /**
@@ -324,7 +324,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
     /**
      * Sets promotionCodeId
      *
-     * @param string $promotionCodeId The promotion code ID. Maximum length: 64 characters.
+     * @param string $promotionCodeId System-generated promotion code ID to update. Cannot be empty.
      *
      * @return self
      */
@@ -348,7 +348,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Status transition. Accepted values: `ACTIVE` / `INACTIVE`. Drives an ACTIVE <-> INACTIVE state change. When null/blank, status is left unchanged.
      *
      * @return self
      */
@@ -372,7 +372,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
     /**
      * Sets maxRedemptions
      *
-     * @param int|null $maxRedemptions The max redemptions.
+     * @param int|null $maxRedemptions Updated maximum redemption count. Value range: 0-999999 (same as create).
      *
      * @return self
      */
@@ -396,7 +396,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
     /**
      * Sets expiryTime
      *
-     * @param string|null $expiryTime The expiry time.
+     * @param string|null $expiryTime Updated expiry time (UTC, ISO 8601). Must be a future time; a past value returns `PARAM_ILLEGAL`.
      *
      * @return self
      */
@@ -410,7 +410,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -420,7 +420,7 @@ class AlipayPromotionCodeUpdateRequest   extends AlipayRequest  implements Model
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters.
+     * @param string|null $metadata Updated merchant-defined key-value pairs. Full replacement semantics. Enforced constraints: up to 50 keys; each key up to 40 characters; each value up to 500 characters (in addition to the 65535 max length). The value must be a valid JSON object string.
      *
      * @return self
      */

@@ -46,15 +46,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
-        'limit' => 'int',
         'status' => 'string',
-        'receiptType' => 'string',
-        'invoiceId' => 'string',
         'subscriptionId' => 'string',
         'customerId' => 'string',
         'startDate' => 'string',
         'endDate' => 'string',
-        'receiptIds' => 'string[]'
+        'receiptIds' => 'string[]',
+        'fileFormat' => 'string',
+        'language' => 'string',
+        'downloadType' => 'string',
+        'columnPreset' => 'string'
     ];
 
     /**
@@ -65,15 +66,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'limit' => null,
         'status' => null,
-        'receiptType' => null,
-        'invoiceId' => null,
         'subscriptionId' => null,
         'customerId' => null,
         'startDate' => null,
         'endDate' => null,
-        'receiptIds' => null
+        'receiptIds' => null,
+        'fileFormat' => null,
+        'language' => null,
+        'downloadType' => null,
+        'columnPreset' => null
     ];
 
     /**
@@ -82,15 +84,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'limit' => true,
         'status' => false,
-        'receiptType' => false,
-        'invoiceId' => false,
         'subscriptionId' => false,
         'customerId' => false,
         'startDate' => false,
         'endDate' => false,
-        'receiptIds' => false
+        'receiptIds' => false,
+        'fileFormat' => false,
+        'language' => false,
+        'downloadType' => false,
+        'columnPreset' => false
     ];
 
     /**
@@ -179,15 +182,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
-        'limit' => 'limit',
         'status' => 'status',
-        'receiptType' => 'receiptType',
-        'invoiceId' => 'invoiceId',
         'subscriptionId' => 'subscriptionId',
         'customerId' => 'customerId',
         'startDate' => 'startDate',
         'endDate' => 'endDate',
-        'receiptIds' => 'receiptIds'
+        'receiptIds' => 'receiptIds',
+        'fileFormat' => 'fileFormat',
+        'language' => 'language',
+        'downloadType' => 'downloadType',
+        'columnPreset' => 'columnPreset'
     ];
 
     /**
@@ -196,15 +200,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-        'limit' => 'setLimit',
         'status' => 'setStatus',
-        'receiptType' => 'setReceiptType',
-        'invoiceId' => 'setInvoiceId',
         'subscriptionId' => 'setSubscriptionId',
         'customerId' => 'setCustomerId',
         'startDate' => 'setStartDate',
         'endDate' => 'setEndDate',
-        'receiptIds' => 'setReceiptIds'
+        'receiptIds' => 'setReceiptIds',
+        'fileFormat' => 'setFileFormat',
+        'language' => 'setLanguage',
+        'downloadType' => 'setDownloadType',
+        'columnPreset' => 'setColumnPreset'
     ];
 
     /**
@@ -213,15 +218,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
-        'limit' => 'getLimit',
         'status' => 'getStatus',
-        'receiptType' => 'getReceiptType',
-        'invoiceId' => 'getInvoiceId',
         'subscriptionId' => 'getSubscriptionId',
         'customerId' => 'getCustomerId',
         'startDate' => 'getStartDate',
         'endDate' => 'getEndDate',
-        'receiptIds' => 'getReceiptIds'
+        'receiptIds' => 'getReceiptIds',
+        'fileFormat' => 'getFileFormat',
+        'language' => 'getLanguage',
+        'downloadType' => 'getDownloadType',
+        'columnPreset' => 'getColumnPreset'
     ];
 
     /**
@@ -281,15 +287,16 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('limit', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('receiptType', $data ?? [], null);
-        $this->setIfExists('invoiceId', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('startDate', $data ?? [], null);
         $this->setIfExists('endDate', $data ?? [], null);
         $this->setIfExists('receiptIds', $data ?? [], null);
+        $this->setIfExists('fileFormat', $data ?? [], null);
+        $this->setIfExists('language', $data ?? [], null);
+        $this->setIfExists('downloadType', $data ?? [], null);
+        $this->setIfExists('columnPreset', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/receipt/export"); 
     }
@@ -321,6 +328,9 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     {
         $invalidProperties = [];
 
+        if ($this->container['downloadType'] === null) {
+            $invalidProperties[] = "'downloadType' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -337,30 +347,6 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
 
 
     /**
-     * Gets limit
-     *
-     * @return int|null
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     *
-     * @param int|null $limit The limit.
-     *
-     * @return self
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return string|null
@@ -373,61 +359,13 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Filter by receipt status. Allowed values: `ACTIVE`, `PARTIALLY_REFUNDED`, `REFUNDED`. Can be null (no filter).
      *
      * @return self
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets receiptType
-     *
-     * @return string|null
-     */
-    public function getReceiptType()
-    {
-        return $this->container['receiptType'];
-    }
-
-    /**
-     * Sets receiptType
-     *
-     * @param string|null $receiptType The receipt type. Maximum length: 16 characters.
-     *
-     * @return self
-     */
-    public function setReceiptType($receiptType)
-    {
-        $this->container['receiptType'] = $receiptType;
-
-        return $this;
-    }
-
-    /**
-     * Gets invoiceId
-     *
-     * @return string|null
-     */
-    public function getInvoiceId()
-    {
-        return $this->container['invoiceId'];
-    }
-
-    /**
-     * Sets invoiceId
-     *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters.
-     *
-     * @return self
-     */
-    public function setInvoiceId($invoiceId)
-    {
-        $this->container['invoiceId'] = $invoiceId;
 
         return $this;
     }
@@ -445,7 +383,7 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Filter receipts by associated subscription ID. Returns only receipts linked to this subscription. Can be null (no filter).
      *
      * @return self
      */
@@ -469,7 +407,7 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId Filter by customer ID. Returns only receipts belonging to this customer. Can be null (no filter).
      *
      * @return self
      */
@@ -493,7 +431,7 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets startDate
      *
-     * @param string|null $startDate The start date. Maximum length: 24 characters.
+     * @param string|null $startDate Date range start for receipt creation time (ISO 8601 format, e.g., `2026-04-01T00:00:00+00:00`). Can be null (no lower bound).
      *
      * @return self
      */
@@ -517,7 +455,7 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets endDate
      *
-     * @param string|null $endDate The end date. Maximum length: 24 characters.
+     * @param string|null $endDate Date range end for receipt creation time (ISO 8601 format, e.g., `2026-04-30T23:59:59+00:00`). Can be null (no upper bound).
      *
      * @return self
      */
@@ -541,13 +479,109 @@ class AlipayReceiptExportRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets receiptIds
      *
-     * @param string[]|null $receiptIds The receipt ids.
+     * @param string[]|null $receiptIds Filter by exact list of receipt IDs. Max 1000 elements. When provided, other filters (`status`, `customerId`, `subscriptionId`, `startDate`, `endDate`) are ignored. Can be null (no filter).
      *
      * @return self
      */
     public function setReceiptIds($receiptIds)
     {
         $this->container['receiptIds'] = $receiptIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets fileFormat
+     *
+     * @return string|null
+     */
+    public function getFileFormat()
+    {
+        return $this->container['fileFormat'];
+    }
+
+    /**
+     * Sets fileFormat
+     *
+     * @param string|null $fileFormat Output file format. Allowed values: `csv` (default), `xlsx`. Can be null (defaults to `csv`).
+     *
+     * @return self
+     */
+    public function setFileFormat($fileFormat)
+    {
+        $this->container['fileFormat'] = $fileFormat;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     *
+     * @return string|null
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     *
+     * @param string|null $language BCP-47 language code for localized column headers (e.g., `en`, `zh`). Can be null (defaults to `en`).
+     *
+     * @return self
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets downloadType
+     *
+     * @return string
+     */
+    public function getDownloadType()
+    {
+        return $this->container['downloadType'];
+    }
+
+    /**
+     * Sets downloadType
+     *
+     * @param string $downloadType Type of entity to export. Must be `RECEIPT`. Required - no default.
+     *
+     * @return self
+     */
+    public function setDownloadType($downloadType)
+    {
+        $this->container['downloadType'] = $downloadType;
+
+        return $this;
+    }
+
+    /**
+     * Gets columnPreset
+     *
+     * @return string|null
+     */
+    public function getColumnPreset()
+    {
+        return $this->container['columnPreset'];
+    }
+
+    /**
+     * Sets columnPreset
+     *
+     * @param string|null $columnPreset Column selection preset. Allowed values: `DEFAULT` (standard columns), `ALL` (all available columns). Can be null (defaults to `DEFAULT`).
+     *
+     * @return self
+     */
+    public function setColumnPreset($columnPreset)
+    {
+        $this->container['columnPreset'] = $columnPreset;
 
         return $this;
     }

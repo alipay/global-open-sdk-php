@@ -307,6 +307,9 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     {
         $invalidProperties = [];
 
+        if ($this->container['productId'] === null) {
+            $invalidProperties[] = "'productId' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -325,7 +328,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Gets productId
      *
-     * @return string|null
+     * @return string
      */
     public function getProductId()
     {
@@ -335,7 +338,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets productId
      *
-     * @param string|null $productId The product ID. Maximum length: 32 characters.
+     * @param string $productId M - Product ID to filter by. Cannot be null.
      *
      * @return self
      */
@@ -359,7 +362,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets pricingModel
      *
-     * @param string|null $pricingModel The pricing model. Maximum length: 24 characters.
+     * @param string|null $pricingModel Filter by pricing model. O - When provided, returns only prices with the specified pricing model; when absent, returns all pricing models. Enum: PER_UNIT, TIERED. Can be null; default null. Invalid values return PARAM_ILLEGAL error
      *
      * @return self
      */
@@ -383,7 +386,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets active
      *
-     * @param bool|null $active The active.
+     * @param bool|null $active Filter by active status. O - true=return only active prices, false=return only deactivated prices, absent or null=return all prices. No default value
      *
      * @return self
      */
@@ -407,7 +410,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $startingAfter Cursor: price ID after which to return results (forward pagination). O - When provided, returns prices sorted by createdAt DESC, priceId DESC whose createdAt is strictly before the price identified by startingAfter. Can be null; default null. Must not be combined with endingBefore (returns PARAM_ILLEGAL). The cursor price ID must exist and belong to the merchant (returns PARAM_ILLEGAL if not found). Sort order: primary createdAt DESC, secondary priceId DESC (tiebreaker for prices with identical timestamps). Aligned with Stripe cursor-based pagination pattern
      *
      * @return self
      */
@@ -431,7 +434,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $endingBefore Cursor: price ID before which to return results (backward pagination). O - When provided, returns prices sorted by createdAt DESC, priceId DESC whose createdAt is strictly after the price identified by endingBefore. Can be null; default null. Must not be combined with startingAfter (returns PARAM_ILLEGAL). The cursor price ID must exist and belong to the merchant (returns PARAM_ILLEGAL if not found). Sort order: primary createdAt DESC, secondary priceId DESC (tiebreaker for prices with identical timestamps). Aligned with Stripe cursor-based pagination pattern
      *
      * @return self
      */
@@ -455,7 +458,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets limit
      *
-     * @param int|null $limit The maximum number of prices returned per page. Value range: 1 - 100. Default value: 20.
+     * @param int|null $limit Maximum number of prices to return per page. O - Default: 10. Can be null; default 10. Out-of-range values (e.g., 0, negative, or >100) return PARAM_ILLEGAL error. Aligned with Stripe cursor-based pagination pattern
      *
      * @return self
      */
@@ -479,7 +482,7 @@ class AlipayPriceInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets includeTotal
      *
-     * @param bool|null $includeTotal The include total.
+     * @param bool|null $includeTotal Request total count in response. O - When explicitly set to false, the response omits the total field. Default: true. Setting to false avoids a COUNT query which may reduce latency. Can be null; default true
      *
      * @return self
      */

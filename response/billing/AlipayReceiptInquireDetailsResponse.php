@@ -85,11 +85,10 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'description' => 'string',
         'fileUrl' => 'string',
         'items' => '\request\model\ReceiptItem[]',
-        'payments' => '\request\model\Payment[]',
+        'payments' => '\request\model\InvoicePayment[]',
         'gmtCreate' => 'string',
         'gmtUpdate' => 'string',
-        'paymentMethodType' => 'string',
-        'footer' => 'string'
+        'paymentMethodType' => 'string'
     ];
 
     /**
@@ -142,8 +141,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'payments' => null,
         'gmtCreate' => null,
         'gmtUpdate' => null,
-        'paymentMethodType' => null,
-        'footer' => null
+        'paymentMethodType' => null
     ];
 
     /**
@@ -194,8 +192,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'payments' => false,
         'gmtCreate' => false,
         'gmtUpdate' => false,
-        'paymentMethodType' => false,
-        'footer' => false
+        'paymentMethodType' => false
     ];
 
     /**
@@ -326,8 +323,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'payments' => 'payments',
         'gmtCreate' => 'gmtCreate',
         'gmtUpdate' => 'gmtUpdate',
-        'paymentMethodType' => 'paymentMethodType',
-        'footer' => 'footer'
+        'paymentMethodType' => 'paymentMethodType'
     ];
 
     /**
@@ -378,8 +374,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'payments' => 'setPayments',
         'gmtCreate' => 'setGmtCreate',
         'gmtUpdate' => 'setGmtUpdate',
-        'paymentMethodType' => 'setPaymentMethodType',
-        'footer' => 'setFooter'
+        'paymentMethodType' => 'setPaymentMethodType'
     ];
 
     /**
@@ -430,8 +425,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'payments' => 'getPayments',
         'gmtCreate' => 'getGmtCreate',
         'gmtUpdate' => 'getGmtUpdate',
-        'paymentMethodType' => 'getPaymentMethodType',
-        'footer' => 'getFooter'
+        'paymentMethodType' => 'getPaymentMethodType'
     ];
 
     /**
@@ -534,7 +528,6 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('gmtCreate', $data ?? [], null);
         $this->setIfExists('gmtUpdate', $data ?? [], null);
         $this->setIfExists('paymentMethodType', $data ?? [], null);
-        $this->setIfExists('footer', $data ?? [], null);
 
             }
 
@@ -567,39 +560,6 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['receiptId'] === null) {
-            $invalidProperties[] = "'receiptId' can't be null";
-        }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
-        }
-        if ($this->container['receiptType'] === null) {
-            $invalidProperties[] = "'receiptType' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['reason'] === null) {
-            $invalidProperties[] = "'reason' can't be null";
-        }
-        if ($this->container['totalAmount'] === null) {
-            $invalidProperties[] = "'totalAmount' can't be null";
-        }
-        if ($this->container['subtotal'] === null) {
-            $invalidProperties[] = "'subtotal' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
-        }
-        if ($this->container['gmtCreate'] === null) {
-            $invalidProperties[] = "'gmtCreate' can't be null";
-        }
-        if ($this->container['gmtUpdate'] === null) {
-            $invalidProperties[] = "'gmtUpdate' can't be null";
         }
         return $invalidProperties;
     }
@@ -643,7 +603,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets receiptId
      *
-     * @return string
+     * @return string|null
      */
     public function getReceiptId()
     {
@@ -653,7 +613,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets receiptId
      *
-     * @param string $receiptId The receipt ID. Maximum length: 64 characters.
+     * @param string|null $receiptId Receipt ID. Unique identifier for the receipt. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -677,7 +637,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets originalReceiptId
      *
-     * @param string|null $originalReceiptId The original receipt id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $originalReceiptId Original receipt ID for refund receipts (FK -> ibilling_receipt.receipt_id). Only set when receiptType=REFUND. Null for PAYMENT receipts. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -691,7 +651,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -701,7 +661,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Associated Invoice ID. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -725,7 +685,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Associated Subscription ID. Null for standalone receipts not tied to a subscription. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -739,7 +699,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets customerId
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerId()
     {
@@ -749,7 +709,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId Customer ID. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -773,7 +733,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID assigned by Antom to identify a payment. Maximum length: 64 characters.
+     * @param string|null $paymentId Associated Payment transaction ID. Null for refund receipts. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -797,7 +757,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets refundId
      *
-     * @param string|null $refundId The refund id. Maximum length: 64 characters.
+     * @param string|null $refundId Associated Refund transaction ID. Null for payment receipts. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -811,7 +771,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets receiptType
      *
-     * @return string
+     * @return string|null
      */
     public function getReceiptType()
     {
@@ -821,7 +781,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets receiptType
      *
-     * @param string $receiptType The receipt type. Maximum length: 16 characters.
+     * @param string|null $receiptType Receipt type. Allowed values: `PAYMENT` - receipt for a payment transaction; `REFUND` - receipt for a refund transaction. Merchants should handle unknown enum values gracefully. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -835,7 +795,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -845,7 +805,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 32 characters.
+     * @param string|null $status Receipt lifecycle status. Allowed values: `ACTIVE` - payment receipt with no refunds applied, receipt is final; `PARTIALLY_REFUNDED` - some amount has been refunded, receipt reflects partial refund; `REFUNDED` - fully refunded, no remaining balance. Merchants should handle unknown enum values gracefully. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -859,7 +819,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets reason
      *
-     * @return string
+     * @return string|null
      */
     public function getReason()
     {
@@ -869,7 +829,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets reason
      *
-     * @param string $reason The reason for the status change. Maximum length: 32 characters.
+     * @param string|null $reason Reason for receipt creation. Allowed values: `SUBSCRIPTION_CREATION` - receipt generated when a new subscription is first charged; `RECURRENCE` - receipt generated for a recurring billing cycle; `UPDATE` - receipt generated when a subscription change (upgrade, downgrade, or quantity change) triggers a proration charge or credit; `TRIAL_END` - receipt generated when a free trial ends and the first paid charge occurs; `REFUND` - receipt generated for a refund transaction. Merchants should handle unknown enum values gracefully. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -893,7 +853,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerFirstName
      *
-     * @param string|null $customerFirstName The customer first name. Maximum length: 256 characters.
+     * @param string|null $customerFirstName Customer's first name. Populated from the customer record at receipt creation time. Null if the customer record had no `firstName` at receipt creation time. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -917,7 +877,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerLastName
      *
-     * @param string|null $customerLastName The customer last name. Maximum length: 256 characters.
+     * @param string|null $customerLastName Customer's last name. Populated from the customer record at receipt creation time. Null if the customer record had no `lastName` at receipt creation time. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -941,7 +901,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets customerEmail
      *
-     * @param string|null $customerEmail The email address of the customer. Maximum length: 256 characters.
+     * @param string|null $customerEmail Customer's email address. Populated from the customer record at receipt creation time. Null if the customer record had no email at receipt creation time. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -965,7 +925,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets collectionMethod
      *
-     * @param string|null $collectionMethod The collection method. Maximum length: 32 characters.
+     * @param string|null $collectionMethod Payment collection method. Allowed values: `CHARGE_AUTOMATICALLY` - payment is collected automatically at billing cycle; `SEND_INVOICE` - payment is collected via a sent invoice. Null when not applicable (e.g., manual payment confirmation). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -979,7 +939,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets totalAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getTotalAmount()
     {
@@ -989,7 +949,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets totalAmount
      *
-     * @param \model\Amount $totalAmount totalAmount
+     * @param \model\Amount|null $totalAmount totalAmount
      *
      * @return self
      */
@@ -1003,7 +963,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets subtotal
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getSubtotal()
     {
@@ -1013,7 +973,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets subtotal
      *
-     * @param \model\Amount $subtotal subtotal
+     * @param \model\Amount|null $subtotal subtotal
      *
      * @return self
      */
@@ -1253,7 +1213,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets fxRate
      *
-     * @param string|null $fxRate The fx rate. Maximum length: 32 characters.
+     * @param string|null $fxRate Foreign exchange rate applied when payment currency differs from settlement currency (e.g., `1.0600`). Null for same-currency transactions. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1277,7 +1237,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets fxRateId
      *
-     * @param string|null $fxRateId The fx rate id. Maximum length: 64 characters.
+     * @param string|null $fxRateId FX rate reference ID for audit and reconciliation. Null when no FX rate was applied. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1301,7 +1261,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paymentMethod
      *
-     * @param string|null $paymentMethod The payment method. Maximum length: 32 characters.
+     * @param string|null $paymentMethod Payment method used. Allowed values: `CARD`, `BANK_TRANSFER`, `WALLET`, `OFFLINE`. Null for offline payment or when payment method is not available. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1325,7 +1285,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets periodStart
      *
-     * @param string|null $periodStart The period start. Maximum length: 24 characters.
+     * @param string|null $periodStart ISO 8601 timestamp of billing period start. Null if not subscription-based. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1349,7 +1309,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets periodEnd
      *
-     * @param string|null $periodEnd The period end. Maximum length: 24 characters.
+     * @param string|null $periodEnd ISO 8601 timestamp of billing period end. Null if not subscription-based. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1373,7 +1333,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paidTime
      *
-     * @param string|null $paidTime The paid time. Maximum length: 24 characters.
+     * @param string|null $paidTime ISO 8601 timestamp of when payment was completed. Null for REFUND-type receipts or unpaid receipts. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1397,7 +1357,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets dueDate
      *
-     * @param string|null $dueDate The due date. Maximum length: 24 characters.
+     * @param string|null $dueDate ISO 8601 timestamp of payment due date. Null for receipts without a due date (e.g., auto-charged subscriptions). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1421,7 +1381,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID assigned by a merchant to identify a payment request. Maximum length: 128 characters.
+     * @param string|null $paymentRequestId Outbound payment request ID used as idempotency key for the payment call. Null for offline confirmations or when no payment was initiated. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1445,7 +1405,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets payToRequestId
      *
-     * @param string|null $payToRequestId The pay to request id. Maximum length: 128 characters.
+     * @param string|null $payToRequestId Payment order request ID. Null if not applicable. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1469,7 +1429,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets payToId
      *
-     * @param string|null $payToId The pay to id. Maximum length: 64 characters.
+     * @param string|null $payToId Payment order ID. Null if not applicable. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1493,7 +1453,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 512 characters.
+     * @param string|null $description Receipt description or narrative set by the merchant. Null if no description was provided. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1517,7 +1477,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets fileUrl
      *
-     * @param string|null $fileUrl The file url. Maximum length: 2048 characters.
+     * @param string|null $fileUrl URL to the hosted receipt page or downloadable receipt PDF. Null if receipt file has not been generated. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1531,7 +1491,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets items
      *
-     * @return \model\ReceiptItem[]
+     * @return \model\ReceiptItem[]|null
      */
     public function getItems()
     {
@@ -1541,7 +1501,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets items
      *
-     * @param \model\ReceiptItem[] $items The items.
+     * @param \model\ReceiptItem[]|null $items Line items from the associated invoice. Sorted by `periodStart` desc, then `itemId` desc. Invoices rarely exceed 100 line items; if truncated, use the Invoice Detail API for the full list. See LineItem Object below. Note: When the associated invoice has more than 100 items, only the 100 most recent items are returned. Check the Invoice Detail API for the complete list. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1555,7 +1515,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets payments
      *
-     * @return \model\Payment[]|null
+     * @return \model\InvoicePayment[]|null
      */
     public function getPayments()
     {
@@ -1565,7 +1525,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets payments
      *
-     * @param \model\Payment[]|null $payments The payments.
+     * @param \model\InvoicePayment[]|null $payments Payment attempt history for the associated invoice. Sorted by `attemptNo` asc (chronological). Invoices rarely exceed 50 payment attempts; if truncated, contact Antom support. See PaymentInfo Object below. Null if no payment attempts exist. Note: When there are more than 50 payment attempts, only the first 50 are returned. Contact Antom support for the complete list. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1579,7 +1539,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets gmtCreate
      *
-     * @return string
+     * @return string|null
      */
     public function getGmtCreate()
     {
@@ -1589,7 +1549,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets gmtCreate
      *
-     * @param string $gmtCreate The creation time. Maximum length: 24 characters.
+     * @param string|null $gmtCreate ISO 8601 timestamp of receipt creation. Maximum length: 29 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1603,7 +1563,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets gmtUpdate
      *
-     * @return string
+     * @return string|null
      */
     public function getGmtUpdate()
     {
@@ -1613,7 +1573,7 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets gmtUpdate
      *
-     * @param string $gmtUpdate The gmt update. Maximum length: 24 characters.
+     * @param string|null $gmtUpdate ISO 8601 timestamp of last receipt update. Maximum length: 29 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1637,37 +1597,13 @@ class AlipayReceiptInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paymentMethodType
      *
-     * @param string|null $paymentMethodType The payment method type. Maximum length: 32 characters.
+     * @param string|null $paymentMethodType Payment method type (e.g., `CARD`, `WALLET`). Null if not set. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setPaymentMethodType($paymentMethodType)
     {
         $this->container['paymentMethodType'] = $paymentMethodType;
-
-        return $this;
-    }
-
-    /**
-     * Gets footer
-     *
-     * @return string|null
-     */
-    public function getFooter()
-    {
-        return $this->container['footer'];
-    }
-
-    /**
-     * Sets footer
-     *
-     * @param string|null $footer The footer.
-     *
-     * @return self
-     */
-    public function setFooter($footer)
-    {
-        $this->container['footer'] = $footer;
 
         return $this;
     }

@@ -65,20 +65,21 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingCity' => 'string',
         'shippingAddress' => 'string',
         'shippingAddressDetail' => 'string',
-        'shippingZipCode' => 'string',
         'description' => 'string',
         'currency' => 'string',
         'preferredLocales' => 'string[]',
         'defaultPaymentMethod' => 'string',
         'status' => 'string',
         'referenceCustomerId' => 'string',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'phoneNo' => 'string',
         'countryCode' => 'string',
         'billingEmail' => 'string',
         'shippingFirstName' => 'string',
         'shippingLastName' => 'string',
-        'shippingCountryCode' => 'string'
+        'shippingCountryCode' => 'string',
+        'shippingZipcode' => 'string',
+        'gmtCreate' => 'string'
     ];
 
     /**
@@ -108,7 +109,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingCity' => null,
         'shippingAddress' => null,
         'shippingAddressDetail' => null,
-        'shippingZipCode' => null,
         'description' => null,
         'currency' => null,
         'preferredLocales' => null,
@@ -121,7 +121,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'billingEmail' => null,
         'shippingFirstName' => null,
         'shippingLastName' => null,
-        'shippingCountryCode' => null
+        'shippingCountryCode' => null,
+        'shippingZipcode' => null,
+        'gmtCreate' => null
     ];
 
     /**
@@ -149,7 +151,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingCity' => false,
         'shippingAddress' => false,
         'shippingAddressDetail' => false,
-        'shippingZipCode' => false,
         'description' => false,
         'currency' => false,
         'preferredLocales' => false,
@@ -162,7 +163,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'billingEmail' => false,
         'shippingFirstName' => false,
         'shippingLastName' => false,
-        'shippingCountryCode' => false
+        'shippingCountryCode' => false,
+        'shippingZipcode' => false,
+        'gmtCreate' => false
     ];
 
     /**
@@ -270,7 +273,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingCity' => 'shippingCity',
         'shippingAddress' => 'shippingAddress',
         'shippingAddressDetail' => 'shippingAddressDetail',
-        'shippingZipCode' => 'shippingZipCode',
         'description' => 'description',
         'currency' => 'currency',
         'preferredLocales' => 'preferredLocales',
@@ -283,7 +285,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'billingEmail' => 'billingEmail',
         'shippingFirstName' => 'shippingFirstName',
         'shippingLastName' => 'shippingLastName',
-        'shippingCountryCode' => 'shippingCountryCode'
+        'shippingCountryCode' => 'shippingCountryCode',
+        'shippingZipcode' => 'shippingZipcode',
+        'gmtCreate' => 'gmtCreate'
     ];
 
     /**
@@ -311,7 +315,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingCity' => 'setShippingCity',
         'shippingAddress' => 'setShippingAddress',
         'shippingAddressDetail' => 'setShippingAddressDetail',
-        'shippingZipCode' => 'setShippingZipCode',
         'description' => 'setDescription',
         'currency' => 'setCurrency',
         'preferredLocales' => 'setPreferredLocales',
@@ -324,7 +327,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'billingEmail' => 'setBillingEmail',
         'shippingFirstName' => 'setShippingFirstName',
         'shippingLastName' => 'setShippingLastName',
-        'shippingCountryCode' => 'setShippingCountryCode'
+        'shippingCountryCode' => 'setShippingCountryCode',
+        'shippingZipcode' => 'setShippingZipcode',
+        'gmtCreate' => 'setGmtCreate'
     ];
 
     /**
@@ -352,7 +357,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'shippingCity' => 'getShippingCity',
         'shippingAddress' => 'getShippingAddress',
         'shippingAddressDetail' => 'getShippingAddressDetail',
-        'shippingZipCode' => 'getShippingZipCode',
         'description' => 'getDescription',
         'currency' => 'getCurrency',
         'preferredLocales' => 'getPreferredLocales',
@@ -365,7 +369,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'billingEmail' => 'getBillingEmail',
         'shippingFirstName' => 'getShippingFirstName',
         'shippingLastName' => 'getShippingLastName',
-        'shippingCountryCode' => 'getShippingCountryCode'
+        'shippingCountryCode' => 'getShippingCountryCode',
+        'shippingZipcode' => 'getShippingZipcode',
+        'gmtCreate' => 'getGmtCreate'
     ];
 
     /**
@@ -444,7 +450,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         $this->setIfExists('shippingCity', $data ?? [], null);
         $this->setIfExists('shippingAddress', $data ?? [], null);
         $this->setIfExists('shippingAddressDetail', $data ?? [], null);
-        $this->setIfExists('shippingZipCode', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('preferredLocales', $data ?? [], null);
@@ -458,6 +463,8 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         $this->setIfExists('shippingFirstName', $data ?? [], null);
         $this->setIfExists('shippingLastName', $data ?? [], null);
         $this->setIfExists('shippingCountryCode', $data ?? [], null);
+        $this->setIfExists('shippingZipcode', $data ?? [], null);
+        $this->setIfExists('gmtCreate', $data ?? [], null);
 
             }
 
@@ -543,7 +550,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $customerId System-generated customer ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -567,7 +574,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets customerRequestId
      *
-     * @param string|null $customerRequestId The unique ID assigned by a merchant to identify a request. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $customerRequestId Merchant-supplied idempotency key used at creation. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -591,7 +598,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets alipayUserId
      *
-     * @param string|null $alipayUserId The Alipay user ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $alipayUserId Bound Alipay user ID for channel routing and risk control. Returned when resultCode is `SUCCESS` and the field was set; omitted (not returned as null) if not set.
      *
      * @return self
      */
@@ -615,7 +622,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets email
      *
-     * @param string|null $email The email address. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $email Customer email address. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -639,7 +646,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets firstName
      *
-     * @param string|null $firstName The first name. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $firstName Customer first name. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -663,7 +670,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets lastName
      *
-     * @param string|null $lastName The last name. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $lastName Customer last name. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -687,7 +694,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets country
      *
-     * @param string|null $country The country or region code. Maximum length: 8 characters. Note: See documentation for details.
+     * @param string|null $country Billing address country (ISO 3166-1 alpha-2). Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -711,7 +718,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets state
      *
-     * @param string|null $state The state or province. Maximum length: 128 characters. Note: See documentation for details.
+     * @param string|null $state Billing address state. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -735,7 +742,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets city
      *
-     * @param string|null $city The city. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $city Billing address city. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -759,7 +766,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets address
      *
-     * @param string|null $address The address. Maximum length: 1024 characters. Note: See documentation for details.
+     * @param string|null $address Billing address street line 1. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -783,7 +790,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets addressDetail
      *
-     * @param string|null $addressDetail The detailed address information. Maximum length: 2048 characters. Note: See documentation for details.
+     * @param string|null $addressDetail Billing address street line 2. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -807,7 +814,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets zipcode
      *
-     * @param string|null $zipcode The ZIP or postal code. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $zipcode Billing address postal code. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -831,7 +838,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingPhone
      *
-     * @param string|null $shippingPhone The shipping phone. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $shippingPhone Shipping phone. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -855,7 +862,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingCountry
      *
-     * @param string|null $shippingCountry The shipping country. Maximum length: 8 characters. Note: See documentation for details.
+     * @param string|null $shippingCountry Shipping country (ISO 3166-1 alpha-2). Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -879,7 +886,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingState
      *
-     * @param string|null $shippingState The shipping state. Maximum length: 128 characters. Note: See documentation for details.
+     * @param string|null $shippingState Shipping state. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -903,7 +910,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingCity
      *
-     * @param string|null $shippingCity The shipping city. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $shippingCity Shipping city. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -927,7 +934,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingAddress
      *
-     * @param string|null $shippingAddress The shipping address. Maximum length: 1024 characters. Note: See documentation for details.
+     * @param string|null $shippingAddress Shipping street line 1. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -951,37 +958,13 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingAddressDetail
      *
-     * @param string|null $shippingAddressDetail The shipping address detail. Maximum length: 2048 characters. Note: See documentation for details.
+     * @param string|null $shippingAddressDetail Shipping street line 2. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
     public function setShippingAddressDetail($shippingAddressDetail)
     {
         $this->container['shippingAddressDetail'] = $shippingAddressDetail;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingZipCode
-     *
-     * @return string|null
-     */
-    public function getShippingZipCode()
-    {
-        return $this->container['shippingZipCode'];
-    }
-
-    /**
-     * Sets shippingZipCode
-     *
-     * @param string|null $shippingZipCode The shipping zip code. Maximum length: 32 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setShippingZipCode($shippingZipCode)
-    {
-        $this->container['shippingZipCode'] = $shippingZipCode;
 
         return $this;
     }
@@ -999,7 +982,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters. Note: See documentation for details.
+     * @param string|null $description Free-text description. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1023,7 +1006,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets currency
      *
-     * @param string|null $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 8 characters. Note: See documentation for details.
+     * @param string|null $currency Default currency (ISO 4217). Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1047,7 +1030,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets preferredLocales
      *
-     * @param string[]|null $preferredLocales The preferred language or locale settings. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string[]|null $preferredLocales Preferred locale(s). Maximum size: 5 elements. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1071,7 +1054,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets defaultPaymentMethod
      *
-     * @param string|null $defaultPaymentMethod The default payment method token. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $defaultPaymentMethod Default payment method token. Sourced from `defaultCustomerPaymentMethodId`. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1095,7 +1078,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Customer status: `ACTIVE` / `DELETED`. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -1119,7 +1102,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets referenceCustomerId
      *
-     * @param string|null $referenceCustomerId The customer ID in the merchant system. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $referenceCustomerId Merchant's internal customer ID reference. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1133,7 +1116,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -1143,7 +1126,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Note: See documentation for details.
+     * @param string|null $metadata Merchant-defined metadata encoded as a JSON object string. Maximum length: 500 characters. Returned only when result.resultCode is SUCCESS and the field was set.
      *
      * @return self
      */
@@ -1167,7 +1150,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets phoneNo
      *
-     * @param string|null $phoneNo The customer's phone number (digits only). Replaces deprecated mobileNo. Maximum length: 32 characters.
+     * @param string|null $phoneNo Customer phone number (digits only). Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1191,7 +1174,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets countryCode
      *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with phoneNo. Required when phoneNo is provided. Maximum length: 2 characters.
+     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with `phoneNo`. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1215,7 +1198,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets billingEmail
      *
-     * @param string|null $billingEmail Invoice recipient email address (independent of account email). Maximum length: 256 characters.
+     * @param string|null $billingEmail Invoice recipient email (independent of account `email`). Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1239,7 +1222,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingFirstName
      *
-     * @param string|null $shippingFirstName Shipping recipient first name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $shippingFirstName Shipping recipient first name. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1263,7 +1246,7 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingLastName
      *
-     * @param string|null $shippingLastName Shipping recipient last name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $shippingLastName Shipping recipient last name. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -1287,13 +1270,61 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets shippingCountryCode
      *
-     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with shippingPhone. Maximum length: 8 characters.
+     * @param string|null $shippingCountryCode Shipping address numeric calling code. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
     public function setShippingCountryCode($shippingCountryCode)
     {
         $this->container['shippingCountryCode'] = $shippingCountryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingZipcode
+     *
+     * @return string|null
+     */
+    public function getShippingZipcode()
+    {
+        return $this->container['shippingZipcode'];
+    }
+
+    /**
+     * Sets shippingZipcode
+     *
+     * @param string|null $shippingZipcode Shipping postal code. Wire name: `shippingZipcode`. Returned when resultCode is `SUCCESS` and the field was set.
+     *
+     * @return self
+     */
+    public function setShippingZipcode($shippingZipcode)
+    {
+        $this->container['shippingZipcode'] = $shippingZipcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets gmtCreate
+     *
+     * @return string|null
+     */
+    public function getGmtCreate()
+    {
+        return $this->container['gmtCreate'];
+    }
+
+    /**
+     * Sets gmtCreate
+     *
+     * @param string|null $gmtCreate Customer creation timestamp. Note: there is NO `updateTime` / `gmtModified` field on `CustomerQueryDetailsResult`. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setGmtCreate($gmtCreate)
+    {
+        $this->container['gmtCreate'] = $gmtCreate;
 
         return $this;
     }

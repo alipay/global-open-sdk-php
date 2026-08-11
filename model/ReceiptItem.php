@@ -405,7 +405,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets itemId
      *
-     * @param string $itemId The item id. Maximum length: 64 characters.
+     * @param string $itemId Line item ID. Unique identifier.
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string $description The description. Maximum length: 512 characters.
+     * @param string $description Line item description (e.g., \"1 x Pro Plan (at $10.00/month)\").
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quantity
      *
-     * @param int $quantity The quantity.
+     * @param int $quantity Quantity of the item. Default: 1.
      *
      * @return self
      */
@@ -549,7 +549,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets usageQuantity
      *
-     * @param string|null $usageQuantity The usage quantity.
+     * @param string|null $usageQuantity Metered usage quantity. Null if not metered.
      *
      * @return self
      */
@@ -573,7 +573,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets usageUnit
      *
-     * @param string|null $usageUnit The usage unit. Maximum length: 32 characters.
+     * @param string|null $usageUnit Usage unit (e.g., `requests`, `gb`). Null if not metered.
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodStart
      *
-     * @param string|null $periodStart The period start. Maximum length: 24 characters.
+     * @param string|null $periodStart ISO 8601 timestamp of coverage period start. Null if not subscription-based.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periodEnd
      *
-     * @param string|null $periodEnd The period end. Maximum length: 24 characters.
+     * @param string|null $periodEnd ISO 8601 timestamp of coverage period end. Null if not subscription-based.
      *
      * @return self
      */
@@ -693,7 +693,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets proration
      *
-     * @param bool|null $proration The proration.
+     * @param bool|null $proration Whether this is a proration adjustment. Default: false.
      *
      * @return self
      */
@@ -717,7 +717,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtCreate
      *
-     * @param string $gmtCreate The creation time. Maximum length: 24 characters.
+     * @param string $gmtCreate ISO 8601 timestamp of line item creation. Maximum length: 29 characters.
      *
      * @return self
      */
@@ -741,7 +741,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtUpdate
      *
-     * @param string $gmtUpdate The gmt update. Maximum length: 24 characters.
+     * @param string $gmtUpdate ISO 8601 timestamp of last line item update. Maximum length: 29 characters.
      *
      * @return self
      */

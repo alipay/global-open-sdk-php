@@ -46,7 +46,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\InvoiceCreateViewLinkResult',
+        'result' => '\request\model\ResultInfo',
         'token' => 'string',
         'viewUrl' => 'string',
         'expiresAt' => 'string'
@@ -306,7 +306,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets result
      *
-     * @return \model\InvoiceCreateViewLinkResult
+     * @return \model\ResultInfo
      */
     public function getResult()
     {
@@ -316,7 +316,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets result
      *
-     * @param \model\InvoiceCreateViewLinkResult $result result
+     * @param \model\ResultInfo $result result
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets token
      *
-     * @param string|null $token The encrypted token. Maximum length: 1024 characters. Note: See documentation for details.
+     * @param string|null $token Encrypted token embedding `invoiceId`, `merchantId`, and `expiryTimestamp` in the pipe-delimited format `invoiceId|merchantId|expiryTimestamp` (e.g., `inv_20260413_000123|MID_001|1713590400000`). Encrypted via AES-CBC through iBCM. See Token Structure section for full details. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets viewUrl
      *
-     * @param string|null $viewUrl The view url. Maximum length: 2048 characters. Note: See documentation for details.
+     * @param string|null $viewUrl Full shareable URL for the invoice view page. Format: `{baseUrl}?token={encodedToken}`. Returned when `resultStatus` is `S` and `resultCode` is `SUCCESS`, and DRM `baseUrl` is configured. When DRM `baseUrl` is not configured, this field is absent (not returned); the `token` is still returned and merchants can construct the URL client-side. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets expiresAt
      *
-     * @param string|null $expiresAt The expiration time. Maximum length: 24 characters. Note: See documentation for details.
+     * @param string|null $expiresAt ISO 8601 absolute timestamp indicating when the token and view link expire. Calculated as: `requestProcessingTime + (linkExpiryDays x 86400 seconds)`, then rounded UP to the start of the following UTC day. This means the effective link validity is always slightly longer than requested (up to ~24 hours extra). When `linkExpiryDays` is not provided, the default of 7 days is used. Example: request at `2026-04-13T10:00:00Z` + 7 days = calculated expiry `2026-04-20T10:00:00Z`, rounded up to `2026-04-21T00:00:00Z`. The link is valid until midnight UTC of the day after the calculated expiry. Format: `yyyy-MM-dd'T'HH:mm:ss'Z'` (e.g., `2026-04-21T00:00:00Z`). Returned when `resultStatus` is `S` and `resultCode` is `SUCCESS`. Cannot be null when present. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -62,7 +62,7 @@ class AlipayCreditNoteInquireListResponse  implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'result' => null,
         'hasMore' => null,
-        'totalCount' => null,
+        'totalCount' => 'int64',
         'list' => null
     ];
 
@@ -74,7 +74,7 @@ class AlipayCreditNoteInquireListResponse  implements ModelInterface, ArrayAcces
     protected static $openAPINullables = [
         'result' => false,
         'hasMore' => false,
-        'totalCount' => true,
+        'totalCount' => false,
         'list' => false
     ];
 

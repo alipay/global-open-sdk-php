@@ -69,7 +69,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'currency' => 'string',
         'preferredLocales' => 'string[]',
         'defaultPaymentMethod' => 'string',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'phoneNo' => 'string',
         'countryCode' => 'string',
         'billingEmail' => 'string',
@@ -471,6 +471,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         if ($this->container['customerRequestId'] === null) {
             $invalidProperties[] = "'customerRequestId' can't be null";
         }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -499,7 +502,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets customerRequestId
      *
-     * @param string $customerRequestId The unique ID assigned by a merchant to identify a request. Maximum length: 64 characters.
+     * @param string $customerRequestId Merchant-supplied idempotency key for this create request. Must be unique per merchant. Cannot be empty. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -523,7 +526,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets referenceCustomerId
      *
-     * @param string|null $referenceCustomerId The customer ID in the merchant system. Maximum length: 32 characters.
+     * @param string|null $referenceCustomerId Merchant's own customer identifier in their system. Used for cross-system reference. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -547,7 +550,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets alipayUserId
      *
-     * @param string|null $alipayUserId The Alipay user ID. Maximum length: 64 characters.
+     * @param string|null $alipayUserId Alipay user ID bound to this customer. Used to associate the Antom customer profile with an Alipay account, enabling channel routing to Alipay payment methods and risk identification. Antom-specific field - see Section 4.2.3.3 for competitor comparison. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -561,7 +564,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets email
      *
-     * @return string|null
+     * @return string
      */
     public function getEmail()
     {
@@ -571,7 +574,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets email
      *
-     * @param string|null $email The email address. Maximum length: 256 characters.
+     * @param string $email Customer's email address. Required - a missing or blank value returns `PARAM_ILLEGAL`. No email-format validation is applied; any non-blank string is accepted. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -595,7 +598,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets firstName
      *
-     * @param string|null $firstName The first name. Maximum length: 256 characters.
+     * @param string|null $firstName Customer's first name. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -619,7 +622,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets lastName
      *
-     * @param string|null $lastName The last name. Maximum length: 256 characters.
+     * @param string|null $lastName Customer's last name. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -643,7 +646,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets country
      *
-     * @param string|null $country The country or region code. Maximum length: 8 characters.
+     * @param string|null $country Billing address country code. Format: ISO 3166-1 alpha-2 (e.g. `US`, `SG`). Maximum length: 2 characters.
      *
      * @return self
      */
@@ -667,7 +670,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets state
      *
-     * @param string|null $state The state or province. Maximum length: 128 characters.
+     * @param string|null $state Billing address state/province. Maximum length: 128 characters.
      *
      * @return self
      */
@@ -691,7 +694,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets city
      *
-     * @param string|null $city The city. Maximum length: 256 characters.
+     * @param string|null $city Billing address city. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -715,7 +718,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets address
      *
-     * @param string|null $address The address. Maximum length: 1024 characters.
+     * @param string|null $address Billing address street line 1. Maximum length: 1024 characters.
      *
      * @return self
      */
@@ -739,7 +742,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets addressDetail
      *
-     * @param string|null $addressDetail The detailed address information. Maximum length: 2048 characters.
+     * @param string|null $addressDetail Billing address street line 2 / additional detail. Maximum length: 2048 characters.
      *
      * @return self
      */
@@ -763,7 +766,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets zipcode
      *
-     * @param string|null $zipcode The ZIP or postal code. Maximum length: 32 characters.
+     * @param string|null $zipcode Billing address postal/zip code. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -787,7 +790,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingPhone
      *
-     * @param string|null $shippingPhone The shipping phone. Maximum length: 32 characters.
+     * @param string|null $shippingPhone Recipient phone number for shipping. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -811,7 +814,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingCountry
      *
-     * @param string|null $shippingCountry The shipping country. Maximum length: 8 characters.
+     * @param string|null $shippingCountry Shipping address country code. Format: ISO 3166-1 alpha-2. Maximum length: 2 characters.
      *
      * @return self
      */
@@ -835,7 +838,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingState
      *
-     * @param string|null $shippingState The shipping state. Maximum length: 128 characters.
+     * @param string|null $shippingState Shipping address state/province. Maximum length: 128 characters.
      *
      * @return self
      */
@@ -859,7 +862,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingCity
      *
-     * @param string|null $shippingCity The shipping city. Maximum length: 256 characters.
+     * @param string|null $shippingCity Shipping address city. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -883,7 +886,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingAddress
      *
-     * @param string|null $shippingAddress The shipping address. Maximum length: 1024 characters.
+     * @param string|null $shippingAddress Shipping address street line 1. Maximum length: 1024 characters.
      *
      * @return self
      */
@@ -907,7 +910,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingAddressDetail
      *
-     * @param string|null $shippingAddressDetail The shipping address detail. Maximum length: 2048 characters.
+     * @param string|null $shippingAddressDetail Shipping address street line 2 / additional detail. Maximum length: 2048 characters.
      *
      * @return self
      */
@@ -931,7 +934,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingZipcode
      *
-     * @param string|null $shippingZipcode The shipping zipcode. Maximum length: 32 characters.
+     * @param string|null $shippingZipcode Shipping address postal/zip code. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -955,7 +958,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Free-text description for the customer record. Maximum length: 1024 characters.
      *
      * @return self
      */
@@ -979,7 +982,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets currency
      *
-     * @param string|null $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 8 characters.
+     * @param string|null $currency Customer's default currency. Format: ISO 4217 alphabetic code (e.g. `USD`, `SGD`). Maximum length: 3 characters.
      *
      * @return self
      */
@@ -1003,7 +1006,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets preferredLocales
      *
-     * @param string[]|null $preferredLocales The preferred language or locale settings.
+     * @param string[]|null $preferredLocales Customer's preferred locale(s) for communications (e.g. `[\"en-US\", \"fr-FR\"]`). Maximum size: 5 elements.
      *
      * @return self
      */
@@ -1027,7 +1030,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets defaultPaymentMethod
      *
-     * @param string|null $defaultPaymentMethod The default payment method token. Maximum length: 64 characters.
+     * @param string|null $defaultPaymentMethod Default payment method token for recurring charges. Any non-blank value at create time is rejected with `PARAM_ILLEGAL` (\"defaultPaymentMethod cannot be set during customer creation; create the customer first and then update its default payment method\"). Set this field via `customer.update` after creation. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -1041,7 +1044,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -1051,7 +1054,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters. Note: See documentation for details.
+     * @param string|null $metadata Merchant-defined metadata encoded as a JSON object string. Maximum length: 500 characters. A non-empty value must contain a valid JSON object string.
      *
      * @return self
      */
@@ -1075,7 +1078,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets phoneNo
      *
-     * @param string|null $phoneNo The customer's phone number (digits only). Replaces deprecated mobileNo. Maximum length: 32 characters.
+     * @param string|null $phoneNo Customer's phone number (digits only). Maximum length: 32 characters. Cross-field constraint: when `phoneNo` is provided, `countryCode` is required; omitting it returns `PARAM_ILLEGAL`.
      *
      * @return self
      */
@@ -1099,7 +1102,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets countryCode
      *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with phoneNo. Required when phoneNo is provided. Maximum length: 2 characters.
+     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with `phoneNo` (NOT a numeric dial prefix). Required when `phoneNo` is provided. Maximum length: 2 characters.
      *
      * @return self
      */
@@ -1123,7 +1126,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets billingEmail
      *
-     * @param string|null $billingEmail Invoice recipient email address (independent of account email). Maximum length: 256 characters.
+     * @param string|null $billingEmail Invoice recipient email address (independent of account `email`). Maximum length: 256 characters.
      *
      * @return self
      */
@@ -1147,7 +1150,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingFirstName
      *
-     * @param string|null $shippingFirstName Shipping recipient first name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $shippingFirstName Shipping recipient first name. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -1171,7 +1174,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingLastName
      *
-     * @param string|null $shippingLastName Shipping recipient last name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $shippingLastName Shipping recipient last name. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -1195,7 +1198,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets shippingCountryCode
      *
-     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with shippingPhone. Maximum length: 8 characters.
+     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with `phoneNo`. Required when `shippingPhone` is provided. Maximum length: 2 characters.
      *
      * @return self
      */

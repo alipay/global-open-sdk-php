@@ -46,8 +46,7 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
       * @var string[]
       */
     protected static $openAPITypes = [
-        'productId' => 'string',
-        'includePrices' => 'bool'
+        'productId' => 'string'
     ];
 
     /**
@@ -58,8 +57,7 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'productId' => null,
-        'includePrices' => null
+        'productId' => null
     ];
 
     /**
@@ -68,8 +66,7 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'productId' => false,
-        'includePrices' => false
+        'productId' => false
     ];
 
     /**
@@ -158,8 +155,7 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $attributeMap = [
-        'productId' => 'productId',
-        'includePrices' => 'includePrices'
+        'productId' => 'productId'
     ];
 
     /**
@@ -168,8 +164,7 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $setters = [
-        'productId' => 'setProductId',
-        'includePrices' => 'setIncludePrices'
+        'productId' => 'setProductId'
     ];
 
     /**
@@ -178,8 +173,7 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $getters = [
-        'productId' => 'getProductId',
-        'includePrices' => 'getIncludePrices'
+        'productId' => 'getProductId'
     ];
 
     /**
@@ -240,7 +234,6 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
     public function __construct(?array $data = null)
     {
         $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('includePrices', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/product/inquireDetails"); 
     }
@@ -303,37 +296,13 @@ class AlipayProductInquireDetailsRequest   extends AlipayRequest  implements Mod
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string $productId Product ID to query. Cannot be null. Format: prod_ prefix + alphanumeric suffix (e.g., prod_2xK8mN3pQ7). This field serves as the idempotent key for this operation
      *
      * @return self
      */
     public function setProductId($productId)
     {
         $this->container['productId'] = $productId;
-
-        return $this;
-    }
-
-    /**
-     * Gets includePrices
-     *
-     * @return bool|null
-     */
-    public function getIncludePrices()
-    {
-        return $this->container['includePrices'];
-    }
-
-    /**
-     * Sets includePrices
-     *
-     * @param bool|null $includePrices The include prices.
-     *
-     * @return self
-     */
-    public function setIncludePrices($includePrices)
-    {
-        $this->container['includePrices'] = $includePrices;
 
         return $this;
     }

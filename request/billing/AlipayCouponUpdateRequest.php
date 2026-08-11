@@ -49,9 +49,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         'couponId' => 'string',
         'couponName' => 'string',
         'status' => 'string',
-        'maxRedemptions' => 'int',
         'redeemBy' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string',
+        'maxRedemptions' => 'int'
     ];
 
     /**
@@ -65,9 +65,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         'couponId' => null,
         'couponName' => null,
         'status' => null,
-        'maxRedemptions' => null,
         'redeemBy' => null,
-        'metadata' => null
+        'metadata' => null,
+        'maxRedemptions' => null
     ];
 
     /**
@@ -79,9 +79,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         'couponId' => false,
         'couponName' => false,
         'status' => false,
-        'maxRedemptions' => true,
         'redeemBy' => false,
-        'metadata' => false
+        'metadata' => false,
+        'maxRedemptions' => true
     ];
 
     /**
@@ -173,9 +173,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         'couponId' => 'couponId',
         'couponName' => 'couponName',
         'status' => 'status',
-        'maxRedemptions' => 'maxRedemptions',
         'redeemBy' => 'redeemBy',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'maxRedemptions' => 'maxRedemptions'
     ];
 
     /**
@@ -187,9 +187,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         'couponId' => 'setCouponId',
         'couponName' => 'setCouponName',
         'status' => 'setStatus',
-        'maxRedemptions' => 'setMaxRedemptions',
         'redeemBy' => 'setRedeemBy',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'maxRedemptions' => 'setMaxRedemptions'
     ];
 
     /**
@@ -201,9 +201,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         'couponId' => 'getCouponId',
         'couponName' => 'getCouponName',
         'status' => 'getStatus',
-        'maxRedemptions' => 'getMaxRedemptions',
         'redeemBy' => 'getRedeemBy',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'maxRedemptions' => 'getMaxRedemptions'
     ];
 
     /**
@@ -266,9 +266,9 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
         $this->setIfExists('couponId', $data ?? [], null);
         $this->setIfExists('couponName', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('maxRedemptions', $data ?? [], null);
         $this->setIfExists('redeemBy', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('maxRedemptions', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/coupon/update"); 
     }
@@ -331,7 +331,7 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets couponId
      *
-     * @param string $couponId The coupon ID. Maximum length: 64 characters.
+     * @param string $couponId System-generated coupon ID to update. Cannot be empty.
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets couponName
      *
-     * @param string|null $couponName The coupon name. Maximum length: 128 characters.
+     * @param string|null $couponName Updated display name. Maximum length: 128 characters.
      *
      * @return self
      */
@@ -379,37 +379,13 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Status transition. Accepted values: `ACTIVE` / `INACTIVE`. Drives an ACTIVE <-> INACTIVE state change. When null/blank, status is left unchanged. `EXPIRED` is system-derived and cannot be set via this API - passing `EXPIRED` returns `PARAM_ILLEGAL`.
      *
      * @return self
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxRedemptions
-     *
-     * @return int|null
-     */
-    public function getMaxRedemptions()
-    {
-        return $this->container['maxRedemptions'];
-    }
-
-    /**
-     * Sets maxRedemptions
-     *
-     * @param int|null $maxRedemptions The max redemptions. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setMaxRedemptions($maxRedemptions)
-    {
-        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }
@@ -427,7 +403,7 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets redeemBy
      *
-     * @param string|null $redeemBy The redeem by.
+     * @param string|null $redeemBy Updated redemption expiry time (UTC, ISO 8601). The new deadline must not be earlier than the current `redeemBy` - shortening is rejected with `PARAM_ILLEGAL`.
      *
      * @return self
      */
@@ -441,7 +417,7 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -451,13 +427,37 @@ class AlipayCouponUpdateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Updated merchant-defined key-value pairs. Full replacement semantics: the entire metadata object is replaced. The value must be a valid JSON object string.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxRedemptions
+     *
+     * @return int|null
+     */
+    public function getMaxRedemptions()
+    {
+        return $this->container['maxRedemptions'];
+    }
+
+    /**
+     * Sets maxRedemptions
+     *
+     * @param int|null $maxRedemptions Updated maximum redemption count. The new value must be greater than or equal to the number of times already redeemed (`redeemedCount`).
+     *
+     * @return self
+     */
+    public function setMaxRedemptions($maxRedemptions)
+    {
+        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }

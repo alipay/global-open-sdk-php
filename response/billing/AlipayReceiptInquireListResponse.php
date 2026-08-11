@@ -295,12 +295,6 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['receipts'] === null) {
-            $invalidProperties[] = "'receipts' can't be null";
-        }
-        if ($this->container['hasMore'] === null) {
-            $invalidProperties[] = "'hasMore' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -343,7 +337,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets receipts
      *
-     * @return \model\Receipt[]
+     * @return \model\Receipt[]|null
      */
     public function getReceipts()
     {
@@ -353,7 +347,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets receipts
      *
-     * @param \model\Receipt[] $receipts The receipts.
+     * @param \model\Receipt[]|null $receipts List of receipt summaries, limited to `limit` (max 100) per page. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -377,7 +371,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets total
      *
-     * @param int|null $total The total. Note: See documentation for details.
+     * @param int|null $total Total number of matching records across all pages. Requires an extra `COUNT` query - use `includeTotal=true` to request it. Absent from response when `includeTotal` is omitted or `false`. Can be null (not returned by default). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -391,7 +385,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets hasMore
      *
-     * @return bool
+     * @return bool|null
      */
     public function getHasMore()
     {
@@ -401,7 +395,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets hasMore
      *
-     * @param bool $hasMore The has more.
+     * @param bool|null $hasMore Whether more results exist beyond the current page. Detected by fetching `limit + 1` rows internally - if the extra row exists, `hasMore=true` (the extra row is not returned). `false` = last page - hide the \"Next\" button. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -425,7 +419,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets nextCursor
      *
-     * @param string|null $nextCursor The next cursor. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $nextCursor The `receiptId` of the last receipt in the current page. Use this value as `startingAfter` in the next request to fetch the next page. Absent when `hasMore=false`. Can be null (no more pages). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

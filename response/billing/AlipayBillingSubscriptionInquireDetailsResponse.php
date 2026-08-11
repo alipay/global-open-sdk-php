@@ -49,8 +49,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'result' => '\request\model\ResultInfo',
         'subscriptionId' => 'string',
         'subscriptionRequestId' => 'string',
-        'createdAt' => 'string',
+        'createTime' => 'string',
         'status' => 'string',
+        'billingMode' => 'string',
+        'paymentBehavior' => 'string',
         'currentPeriodStart' => 'string',
         'currentPeriodEnd' => 'string',
         'billingCycleAnchor' => 'string',
@@ -58,8 +60,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => 'string',
         'trialStart' => 'string',
         'trialEnd' => 'string',
-        'trialSettings' => '\request\model\BillingSubscriptionInquireDetailsTrialSettings',
-        'pauseCollection' => '\request\model\BillingSubscriptionInquireDetailsPauseCollection',
+        'trialSettings' => '\request\model\BillingSubscriptionTrialSettings',
         'cancelAt' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
@@ -67,9 +68,12 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'terminationReason' => 'string',
         'description' => 'string',
         'defaultPaymentMethod' => 'string',
-        'subscriptionItems' => '\request\model\SubscriptionItem[]',
+        'subtotal' => '\request\model\Amount',
+        'discountAmount' => '\request\model\Amount',
+        'totalAmount' => '\request\model\Amount',
+        'priceItems' => '\request\model\BillingSubscriptionPriceItem[]',
         'discounts' => '\request\model\BillingSubscriptionDiscountInfo[]',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string'
     ];
 
     /**
@@ -83,8 +87,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'result' => null,
         'subscriptionId' => null,
         'subscriptionRequestId' => null,
-        'createdAt' => null,
+        'createTime' => null,
         'status' => null,
+        'billingMode' => null,
+        'paymentBehavior' => null,
         'currentPeriodStart' => null,
         'currentPeriodEnd' => null,
         'billingCycleAnchor' => null,
@@ -93,7 +99,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'trialStart' => null,
         'trialEnd' => null,
         'trialSettings' => null,
-        'pauseCollection' => null,
         'cancelAt' => null,
         'collectionMethod' => null,
         'daysUntilDue' => null,
@@ -101,7 +106,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'terminationReason' => null,
         'description' => null,
         'defaultPaymentMethod' => null,
-        'subscriptionItems' => null,
+        'subtotal' => null,
+        'discountAmount' => null,
+        'totalAmount' => null,
+        'priceItems' => null,
         'discounts' => null,
         'metadata' => null
     ];
@@ -115,8 +123,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'result' => false,
         'subscriptionId' => false,
         'subscriptionRequestId' => false,
-        'createdAt' => false,
+        'createTime' => false,
         'status' => false,
+        'billingMode' => false,
+        'paymentBehavior' => false,
         'currentPeriodStart' => false,
         'currentPeriodEnd' => false,
         'billingCycleAnchor' => false,
@@ -125,7 +135,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'trialStart' => false,
         'trialEnd' => false,
         'trialSettings' => false,
-        'pauseCollection' => false,
         'cancelAt' => false,
         'collectionMethod' => false,
         'daysUntilDue' => true,
@@ -133,7 +142,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'terminationReason' => false,
         'description' => false,
         'defaultPaymentMethod' => false,
-        'subscriptionItems' => false,
+        'subtotal' => false,
+        'discountAmount' => false,
+        'totalAmount' => false,
+        'priceItems' => false,
         'discounts' => false,
         'metadata' => false
     ];
@@ -227,8 +239,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'result' => 'result',
         'subscriptionId' => 'subscriptionId',
         'subscriptionRequestId' => 'subscriptionRequestId',
-        'createdAt' => 'createdAt',
+        'createTime' => 'createTime',
         'status' => 'status',
+        'billingMode' => 'billingMode',
+        'paymentBehavior' => 'paymentBehavior',
         'currentPeriodStart' => 'currentPeriodStart',
         'currentPeriodEnd' => 'currentPeriodEnd',
         'billingCycleAnchor' => 'billingCycleAnchor',
@@ -237,7 +251,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'trialStart' => 'trialStart',
         'trialEnd' => 'trialEnd',
         'trialSettings' => 'trialSettings',
-        'pauseCollection' => 'pauseCollection',
         'cancelAt' => 'cancelAt',
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
@@ -245,7 +258,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'terminationReason' => 'terminationReason',
         'description' => 'description',
         'defaultPaymentMethod' => 'defaultPaymentMethod',
-        'subscriptionItems' => 'subscriptionItems',
+        'subtotal' => 'subtotal',
+        'discountAmount' => 'discountAmount',
+        'totalAmount' => 'totalAmount',
+        'priceItems' => 'priceItems',
         'discounts' => 'discounts',
         'metadata' => 'metadata'
     ];
@@ -259,8 +275,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'result' => 'setResult',
         'subscriptionId' => 'setSubscriptionId',
         'subscriptionRequestId' => 'setSubscriptionRequestId',
-        'createdAt' => 'setCreatedAt',
+        'createTime' => 'setCreateTime',
         'status' => 'setStatus',
+        'billingMode' => 'setBillingMode',
+        'paymentBehavior' => 'setPaymentBehavior',
         'currentPeriodStart' => 'setCurrentPeriodStart',
         'currentPeriodEnd' => 'setCurrentPeriodEnd',
         'billingCycleAnchor' => 'setBillingCycleAnchor',
@@ -269,7 +287,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'trialStart' => 'setTrialStart',
         'trialEnd' => 'setTrialEnd',
         'trialSettings' => 'setTrialSettings',
-        'pauseCollection' => 'setPauseCollection',
         'cancelAt' => 'setCancelAt',
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
@@ -277,7 +294,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'terminationReason' => 'setTerminationReason',
         'description' => 'setDescription',
         'defaultPaymentMethod' => 'setDefaultPaymentMethod',
-        'subscriptionItems' => 'setSubscriptionItems',
+        'subtotal' => 'setSubtotal',
+        'discountAmount' => 'setDiscountAmount',
+        'totalAmount' => 'setTotalAmount',
+        'priceItems' => 'setPriceItems',
         'discounts' => 'setDiscounts',
         'metadata' => 'setMetadata'
     ];
@@ -291,8 +311,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'result' => 'getResult',
         'subscriptionId' => 'getSubscriptionId',
         'subscriptionRequestId' => 'getSubscriptionRequestId',
-        'createdAt' => 'getCreatedAt',
+        'createTime' => 'getCreateTime',
         'status' => 'getStatus',
+        'billingMode' => 'getBillingMode',
+        'paymentBehavior' => 'getPaymentBehavior',
         'currentPeriodStart' => 'getCurrentPeriodStart',
         'currentPeriodEnd' => 'getCurrentPeriodEnd',
         'billingCycleAnchor' => 'getBillingCycleAnchor',
@@ -301,7 +323,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'trialStart' => 'getTrialStart',
         'trialEnd' => 'getTrialEnd',
         'trialSettings' => 'getTrialSettings',
-        'pauseCollection' => 'getPauseCollection',
         'cancelAt' => 'getCancelAt',
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
@@ -309,7 +330,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'terminationReason' => 'getTerminationReason',
         'description' => 'getDescription',
         'defaultPaymentMethod' => 'getDefaultPaymentMethod',
-        'subscriptionItems' => 'getSubscriptionItems',
+        'subtotal' => 'getSubtotal',
+        'discountAmount' => 'getDiscountAmount',
+        'totalAmount' => 'getTotalAmount',
+        'priceItems' => 'getPriceItems',
         'discounts' => 'getDiscounts',
         'metadata' => 'getMetadata'
     ];
@@ -374,8 +398,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('subscriptionRequestId', $data ?? [], null);
-        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('createTime', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('billingMode', $data ?? [], null);
+        $this->setIfExists('paymentBehavior', $data ?? [], null);
         $this->setIfExists('currentPeriodStart', $data ?? [], null);
         $this->setIfExists('currentPeriodEnd', $data ?? [], null);
         $this->setIfExists('billingCycleAnchor', $data ?? [], null);
@@ -384,7 +410,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         $this->setIfExists('trialStart', $data ?? [], null);
         $this->setIfExists('trialEnd', $data ?? [], null);
         $this->setIfExists('trialSettings', $data ?? [], null);
-        $this->setIfExists('pauseCollection', $data ?? [], null);
         $this->setIfExists('cancelAt', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('daysUntilDue', $data ?? [], null);
@@ -392,7 +417,10 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         $this->setIfExists('terminationReason', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('defaultPaymentMethod', $data ?? [], null);
-        $this->setIfExists('subscriptionItems', $data ?? [], null);
+        $this->setIfExists('subtotal', $data ?? [], null);
+        $this->setIfExists('discountAmount', $data ?? [], null);
+        $this->setIfExists('totalAmount', $data ?? [], null);
+        $this->setIfExists('priceItems', $data ?? [], null);
         $this->setIfExists('discounts', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
 
@@ -427,27 +455,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['subscriptionId'] === null) {
-            $invalidProperties[] = "'subscriptionId' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['currentPeriodStart'] === null) {
-            $invalidProperties[] = "'currentPeriodStart' can't be null";
-        }
-        if ($this->container['currentPeriodEnd'] === null) {
-            $invalidProperties[] = "'currentPeriodEnd' can't be null";
-        }
-        if ($this->container['cancelAtPeriodEnd'] === null) {
-            $invalidProperties[] = "'cancelAtPeriodEnd' can't be null";
-        }
-        if ($this->container['collectionMethod'] === null) {
-            $invalidProperties[] = "'collectionMethod' can't be null";
         }
         return $invalidProperties;
     }
@@ -491,7 +498,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets subscriptionId
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionId()
     {
@@ -501,7 +508,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -537,25 +544,25 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     }
 
     /**
-     * Gets createdAt
+     * Gets createTime
      *
-     * @return string
+     * @return string|null
      */
-    public function getCreatedAt()
+    public function getCreateTime()
     {
-        return $this->container['createdAt'];
+        return $this->container['createTime'];
     }
 
     /**
-     * Sets createdAt
+     * Sets createTime
      *
-     * @param string $createdAt The created at.
+     * @param string|null $createTime The subscription creation time in ISO 8601 format. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
-    public function setCreatedAt($createdAt)
+    public function setCreateTime($createTime)
     {
-        $this->container['createdAt'] = $createdAt;
+        $this->container['createTime'] = $createTime;
 
         return $this;
     }
@@ -563,7 +570,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -573,7 +580,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 20 characters.
+     * @param string|null $status The current status. Maximum length: 20 characters.
      *
      * @return self
      */
@@ -585,9 +592,57 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     }
 
     /**
+     * Gets billingMode
+     *
+     * @return string|null
+     */
+    public function getBillingMode()
+    {
+        return $this->container['billingMode'];
+    }
+
+    /**
+     * Sets billingMode
+     *
+     * @param string|null $billingMode The billing mode. Valid values are LICENSED, METERED, and MIXED. Maximum length: 8 characters.
+     *
+     * @return self
+     */
+    public function setBillingMode($billingMode)
+    {
+        $this->container['billingMode'] = $billingMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentBehavior
+     *
+     * @return string|null
+     */
+    public function getPaymentBehavior()
+    {
+        return $this->container['paymentBehavior'];
+    }
+
+    /**
+     * Sets paymentBehavior
+     *
+     * @param string|null $paymentBehavior The payment behavior used for the initial subscription payment. Valid values are ALLOW_INCOMPLETE, ERROR_IF_INCOMPLETE, and PENDING_IF_INCOMPLETE.
+     *
+     * @return self
+     */
+    public function setPaymentBehavior($paymentBehavior)
+    {
+        $this->container['paymentBehavior'] = $paymentBehavior;
+
+        return $this;
+    }
+
+    /**
      * Gets currentPeriodStart
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrentPeriodStart()
     {
@@ -597,7 +652,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets currentPeriodStart
      *
-     * @param string $currentPeriodStart The current period start.
+     * @param string|null $currentPeriodStart The current period start.
      *
      * @return self
      */
@@ -611,7 +666,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets currentPeriodEnd
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrentPeriodEnd()
     {
@@ -621,7 +676,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets currentPeriodEnd
      *
-     * @param string $currentPeriodEnd The current period end.
+     * @param string|null $currentPeriodEnd The current period end.
      *
      * @return self
      */
@@ -659,7 +714,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets cancelAtPeriodEnd
      *
-     * @return bool
+     * @return bool|null
      */
     public function getCancelAtPeriodEnd()
     {
@@ -669,7 +724,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets cancelAtPeriodEnd
      *
-     * @param bool $cancelAtPeriodEnd The cancel at period end.
+     * @param bool|null $cancelAtPeriodEnd The cancel at period end.
      *
      * @return self
      */
@@ -755,7 +810,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets trialSettings
      *
-     * @return \model\BillingSubscriptionInquireDetailsTrialSettings|null
+     * @return \model\BillingSubscriptionTrialSettings|null
      */
     public function getTrialSettings()
     {
@@ -765,37 +820,13 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets trialSettings
      *
-     * @param \model\BillingSubscriptionInquireDetailsTrialSettings|null $trialSettings trialSettings
+     * @param \model\BillingSubscriptionTrialSettings|null $trialSettings trialSettings
      *
      * @return self
      */
     public function setTrialSettings($trialSettings)
     {
         $this->container['trialSettings'] = $trialSettings;
-
-        return $this;
-    }
-
-    /**
-     * Gets pauseCollection
-     *
-     * @return \model\BillingSubscriptionInquireDetailsPauseCollection|null
-     */
-    public function getPauseCollection()
-    {
-        return $this->container['pauseCollection'];
-    }
-
-    /**
-     * Sets pauseCollection
-     *
-     * @param \model\BillingSubscriptionInquireDetailsPauseCollection|null $pauseCollection pauseCollection
-     *
-     * @return self
-     */
-    public function setPauseCollection($pauseCollection)
-    {
-        $this->container['pauseCollection'] = $pauseCollection;
 
         return $this;
     }
@@ -827,7 +858,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets collectionMethod
      *
-     * @return string
+     * @return string|null
      */
     public function getCollectionMethod()
     {
@@ -837,7 +868,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets collectionMethod
      *
-     * @param string $collectionMethod The collection method. Maximum length: 22 characters.
+     * @param string|null $collectionMethod The collection method. Maximum length: 22 characters.
      *
      * @return self
      */
@@ -969,25 +1000,97 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     }
 
     /**
-     * Gets subscriptionItems
+     * Gets subtotal
      *
-     * @return \model\SubscriptionItem[]|null
+     * @return \model\Amount|null
      */
-    public function getSubscriptionItems()
+    public function getSubtotal()
     {
-        return $this->container['subscriptionItems'];
+        return $this->container['subtotal'];
     }
 
     /**
-     * Sets subscriptionItems
+     * Sets subtotal
      *
-     * @param \model\SubscriptionItem[]|null $subscriptionItems The subscription items. Maximum length: 20 characters.
+     * @param \model\Amount|null $subtotal subtotal
      *
      * @return self
      */
-    public function setSubscriptionItems($subscriptionItems)
+    public function setSubtotal($subtotal)
     {
-        $this->container['subscriptionItems'] = $subscriptionItems;
+        $this->container['subtotal'] = $subtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     *
+     * @param \model\Amount|null $discountAmount discountAmount
+     *
+     * @return self
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->container['discountAmount'] = $discountAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['totalAmount'];
+    }
+
+    /**
+     * Sets totalAmount
+     *
+     * @param \model\Amount|null $totalAmount totalAmount
+     *
+     * @return self
+     */
+    public function setTotalAmount($totalAmount)
+    {
+        $this->container['totalAmount'] = $totalAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceItems
+     *
+     * @return \model\BillingSubscriptionPriceItem[]|null
+     */
+    public function getPriceItems()
+    {
+        return $this->container['priceItems'];
+    }
+
+    /**
+     * Sets priceItems
+     *
+     * @param \model\BillingSubscriptionPriceItem[]|null $priceItems The subscription price items. Maximum size: 100.
+     *
+     * @return self
+     */
+    public function setPriceItems($priceItems)
+    {
+        $this->container['priceItems'] = $priceItems;
 
         return $this;
     }
@@ -1019,7 +1122,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -1029,7 +1132,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Note: See documentation for details.
+     * @param string|null $metadata Custom metadata for special use cases. Note: See documentation for details. The value must be a valid JSON object string.
      *
      * @return self
      */

@@ -325,7 +325,7 @@ class InvoiceNote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets noteId
      *
-     * @param string $noteId The note id. Maximum length: 64 characters.
+     * @param string $noteId Unique identifier for this note within the array (UUID). Cannot be null.
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class InvoiceNote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets note
      *
-     * @param string $note The note. Maximum length: 512 characters.
+     * @param string $note The actual note content. Provided by the merchant when performing an action on the invoice. Cannot be null.
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class InvoiceNote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets action
      *
-     * @param string $action The action. Maximum length: 32 characters.
+     * @param string $action The action that triggered this note. Allowed values: `CREATE` - invoice created; `UPDATE` - invoice updated; `FINALIZE` - invoice finalized (DRAFT->OPEN); `VOID` - invoice voided; `MARK_UNCOLLECTIBLE` - invoice marked uncollectible; `PAID` - payment confirmed. Cannot be null.
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class InvoiceNote  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets noteTime
      *
-     * @param string $noteTime The note time. Maximum length: 24 characters.
+     * @param string $noteTime ISO 8601 timestamp of when the note was created. Cannot be null.
      *
      * @return self
      */

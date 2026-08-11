@@ -47,7 +47,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'shippingName' => '\request\model\UserName',
-        'shippingAddress' => '\request\model\Address',
+        'shippingAddress' => '\request\model\InvoiceAddress',
         'shippingCarrier' => 'string',
         'shippingNumber' => 'string',
         'shippingPhoneNo' => 'string',
@@ -390,7 +390,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shippingAddress
      *
-     * @return \model\Address|null
+     * @return \model\InvoiceAddress|null
      */
     public function getShippingAddress()
     {
@@ -400,7 +400,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingAddress
      *
-     * @param \model\Address|null $shippingAddress shippingAddress
+     * @param \model\InvoiceAddress|null $shippingAddress shippingAddress
      *
      * @return self
      */
@@ -424,7 +424,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingCarrier
      *
-     * @param string|null $shippingCarrier The shipping carrier. Maximum length: 128 characters.
+     * @param string|null $shippingCarrier Delivery service provider (e.g., FedEx, UPS, USPS). Characters `<`, `>`, and `&` are not allowed.
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingNumber
      *
-     * @param string|null $shippingNumber The shipping number. Maximum length: 128 characters.
+     * @param string|null $shippingNumber Tracking number.
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingPhoneNo
      *
-     * @param string|null $shippingPhoneNo The shipping phone no. Maximum length: 16 characters.
+     * @param string|null $shippingPhoneNo Recipient phone number.
      *
      * @return self
      */
@@ -496,7 +496,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipToEmail
      *
-     * @param string|null $shipToEmail The ship to email. Maximum length: 256 characters.
+     * @param string|null $shipToEmail Recipient email address. Must be a valid email format.
      *
      * @return self
      */
@@ -664,7 +664,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shippingMethodIndicator
      *
-     * @param string|null $shippingMethodIndicator The shipping method indicator. Maximum length: 32 characters.
+     * @param string|null $shippingMethodIndicator Shipping method indicator for 3DS risk assessment. Allowed EMVCo values: `01`, `02`, `03`, `04`, `05`, `06`, and `07`. Use `07` when no other value applies and provide details in `notes`. Maximum length: 32 characters.
      *
      * @return self
      */

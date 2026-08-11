@@ -49,12 +49,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'promotionCodeRequestId' => 'string',
         'couponId' => 'string',
         'code' => 'string',
-        'maxRedeemSize' => 'int',
         'expiryTime' => 'string',
         'minAmount' => '\request\model\PromotionCodeCreateMinAmount',
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string',
+        'maxRedemptions' => 'int'
     ];
 
     /**
@@ -68,12 +68,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'promotionCodeRequestId' => null,
         'couponId' => null,
         'code' => null,
-        'maxRedeemSize' => null,
         'expiryTime' => null,
         'minAmount' => null,
         'oneTimeOnly' => null,
         'customerId' => null,
-        'metadata' => null
+        'metadata' => null,
+        'maxRedemptions' => null
     ];
 
     /**
@@ -85,12 +85,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'promotionCodeRequestId' => false,
         'couponId' => false,
         'code' => false,
-        'maxRedeemSize' => true,
         'expiryTime' => false,
         'minAmount' => false,
         'oneTimeOnly' => false,
         'customerId' => false,
-        'metadata' => false
+        'metadata' => false,
+        'maxRedemptions' => true
     ];
 
     /**
@@ -182,12 +182,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'promotionCodeRequestId' => 'promotionCodeRequestId',
         'couponId' => 'couponId',
         'code' => 'code',
-        'maxRedeemSize' => 'maxRedeemSize',
         'expiryTime' => 'expiryTime',
         'minAmount' => 'minAmount',
         'oneTimeOnly' => 'oneTimeOnly',
         'customerId' => 'customerId',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'maxRedemptions' => 'maxRedemptions'
     ];
 
     /**
@@ -199,12 +199,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'promotionCodeRequestId' => 'setPromotionCodeRequestId',
         'couponId' => 'setCouponId',
         'code' => 'setCode',
-        'maxRedeemSize' => 'setMaxRedeemSize',
         'expiryTime' => 'setExpiryTime',
         'minAmount' => 'setMinAmount',
         'oneTimeOnly' => 'setOneTimeOnly',
         'customerId' => 'setCustomerId',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'maxRedemptions' => 'setMaxRedemptions'
     ];
 
     /**
@@ -216,12 +216,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'promotionCodeRequestId' => 'getPromotionCodeRequestId',
         'couponId' => 'getCouponId',
         'code' => 'getCode',
-        'maxRedeemSize' => 'getMaxRedeemSize',
         'expiryTime' => 'getExpiryTime',
         'minAmount' => 'getMinAmount',
         'oneTimeOnly' => 'getOneTimeOnly',
         'customerId' => 'getCustomerId',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'maxRedemptions' => 'getMaxRedemptions'
     ];
 
     /**
@@ -284,12 +284,12 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         $this->setIfExists('promotionCodeRequestId', $data ?? [], null);
         $this->setIfExists('couponId', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('maxRedeemSize', $data ?? [], null);
         $this->setIfExists('expiryTime', $data ?? [], null);
         $this->setIfExists('minAmount', $data ?? [], null);
         $this->setIfExists('oneTimeOnly', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('maxRedemptions', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/promotionCode/create"); 
     }
@@ -355,7 +355,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets promotionCodeRequestId
      *
-     * @param string $promotionCodeRequestId The promotion code request id. Maximum length: 64 characters.
+     * @param string $promotionCodeRequestId Merchant-supplied idempotency key for this create request. Must be unique per merchant. Cannot be empty. Maximum length: 64 characters. Idempotent replay: if a request is repeated with the same `promotionCodeRequestId` and the same parameters, the API returns `SUCCESS` together with the previously created promotion code. Replaying the same `promotionCodeRequestId` with different parameters returns `PARAM_ILLEGAL`.
      *
      * @return self
      */
@@ -379,7 +379,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets couponId
      *
-     * @param string $couponId The coupon ID. Maximum length: 64 characters.
+     * @param string $couponId ID of the parent coupon this promotion code is associated with. The coupon must exist and be ACTIVE. Cannot be empty. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -403,37 +403,13 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets code
      *
-     * @param string|null $code The code. Maximum length: 128 characters.
+     * @param string|null $code The customer-facing promotion code string (e.g. `SUMMER20`). Must be unique per merchant. Allowed characters for merchant-supplied codes: uppercase letters (A-Z), digits (0-9), hyphens (-), and underscores (_). If not provided, the server auto-generates a 12-character readable code (uppercase letters + digits; ambiguous characters O/0/I/1/L removed; uniqueness guaranteed with up to 5 retry attempts). If the supplied code collides with an existing code of the merchant, `PROMOTION_CODE_DUPLICATED` is returned. Maximum length: 128 characters.
      *
      * @return self
      */
     public function setCode($code)
     {
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxRedeemSize
-     *
-     * @return int|null
-     */
-    public function getMaxRedeemSize()
-    {
-        return $this->container['maxRedeemSize'];
-    }
-
-    /**
-     * Sets maxRedeemSize
-     *
-     * @param int|null $maxRedeemSize The max redeem size.
-     *
-     * @return self
-     */
-    public function setMaxRedeemSize($maxRedeemSize)
-    {
-        $this->container['maxRedeemSize'] = $maxRedeemSize;
 
         return $this;
     }
@@ -451,7 +427,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets expiryTime
      *
-     * @param string|null $expiryTime The expiry time.
+     * @param string|null $expiryTime UTC timestamp (ISO 8601) after which the promotion code can no longer be redeemed. Must be a future time; a past value returns `PARAM_ILLEGAL`. If not set, the code has no independent expiry (subject to parent coupon's `redeemBy`).
      *
      * @return self
      */
@@ -499,7 +475,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets oneTimeOnly
      *
-     * @param bool|null $oneTimeOnly The one time only.
+     * @param bool|null $oneTimeOnly If `true`, each customer can only redeem this promotion code once. Default: `false`.
      *
      * @return self
      */
@@ -523,7 +499,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId If set, restricts this promotion code to a specific customer. Must be a valid `customerId` in the system. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -537,7 +513,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -547,13 +523,37 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters.
+     * @param string|null $metadata Merchant-defined key-value pairs stored as JSON string. Enforced constraints: max 50 keys; each key max 40 characters; each value max 500 characters. Requests exceeding these limits return `PARAM_ILLEGAL`. The value must be a valid JSON object string.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxRedemptions
+     *
+     * @return int|null
+     */
+    public function getMaxRedemptions()
+    {
+        return $this->container['maxRedemptions'];
+    }
+
+    /**
+     * Sets maxRedemptions
+     *
+     * @param int|null $maxRedemptions Maximum number of times this promotion code can be redeemed. If not set or 0, redemptions are unlimited. Value range: 0-999999.
+     *
+     * @return self
+     */
+    public function setMaxRedemptions($maxRedemptions)
+    {
+        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }

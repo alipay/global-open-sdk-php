@@ -48,7 +48,8 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
         'invoiceId' => 'string',
-        'status' => 'string'
+        'status' => 'string',
+        'previousInvoiceId' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     protected static $openAPIFormats = [
         'result' => null,
         'invoiceId' => null,
-        'status' => null
+        'status' => null,
+        'previousInvoiceId' => null
     ];
 
     /**
@@ -72,7 +74,8 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     protected static $openAPINullables = [
         'result' => false,
         'invoiceId' => false,
-        'status' => false
+        'status' => false,
+        'previousInvoiceId' => false
     ];
 
     /**
@@ -163,7 +166,8 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     protected static $attributeMap = [
         'result' => 'result',
         'invoiceId' => 'invoiceId',
-        'status' => 'status'
+        'status' => 'status',
+        'previousInvoiceId' => 'previousInvoiceId'
     ];
 
     /**
@@ -174,7 +178,8 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     protected static $setters = [
         'result' => 'setResult',
         'invoiceId' => 'setInvoiceId',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'previousInvoiceId' => 'setPreviousInvoiceId'
     ];
 
     /**
@@ -185,7 +190,8 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     protected static $getters = [
         'result' => 'getResult',
         'invoiceId' => 'getInvoiceId',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'previousInvoiceId' => 'getPreviousInvoiceId'
     ];
 
     /**
@@ -248,6 +254,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('invoiceId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('previousInvoiceId', $data ?? [], null);
 
             }
 
@@ -280,12 +287,6 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
         }
         return $invalidProperties;
     }
@@ -329,7 +330,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -339,7 +340,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Invoice ID (echo-back). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -353,7 +354,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -363,13 +364,37 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Invoice status after edit: always `DRAFT`. The edit API only operates on DRAFT invoices - successful edits always return `DRAFT` status. This confirms the invoice remains in editable state. See enum table below. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets previousInvoiceId
+     *
+     * @return string|null
+     */
+    public function getPreviousInvoiceId()
+    {
+        return $this->container['previousInvoiceId'];
+    }
+
+    /**
+     * Sets previousInvoiceId
+     *
+     * @param string|null $previousInvoiceId Previous invoice ID when customer reassignment occurred (soft-delete + recreate). Null for normal updates. Populated only when `customerId` was changed, causing the invoice to be recreated with a new ID in a different shard. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setPreviousInvoiceId($previousInvoiceId)
+    {
+        $this->container['previousInvoiceId'] = $previousInvoiceId;
 
         return $this;
     }

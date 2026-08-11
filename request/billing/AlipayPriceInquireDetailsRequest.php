@@ -296,7 +296,7 @@ class AlipayPriceInquireDetailsRequest   extends AlipayRequest  implements Model
     /**
      * Sets priceId
      *
-     * @param string $priceId The price ID. Maximum length: 32 characters.
+     * @param string $priceId Price ID to query. Cannot be null. Format: price_ prefix + alphanumeric suffix. This field serves as the idempotent key for this operation
      *
      * @return self
      */

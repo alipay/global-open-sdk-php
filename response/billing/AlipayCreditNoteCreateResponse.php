@@ -60,12 +60,11 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'reason' => 'string',
         'reasonDescription' => 'string',
         'refundDestination' => 'string',
-        'items' => '\request\model\CreditNoteCreateItems',
+        'items' => '\request\model\CreditNoteItem[]',
         'memo' => 'string',
         'effectiveDate' => 'string',
         'issuedAt' => 'string',
         'refundedAt' => 'string',
-        'voidedAt' => 'string',
         'createdAt' => 'string'
     ];
 
@@ -96,7 +95,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => null,
         'issuedAt' => null,
         'refundedAt' => null,
-        'voidedAt' => null,
         'createdAt' => null
     ];
 
@@ -125,7 +123,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => false,
         'issuedAt' => false,
         'refundedAt' => false,
-        'voidedAt' => false,
         'createdAt' => false
     ];
 
@@ -234,7 +231,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'effectiveDate',
         'issuedAt' => 'issuedAt',
         'refundedAt' => 'refundedAt',
-        'voidedAt' => 'voidedAt',
         'createdAt' => 'createdAt'
     ];
 
@@ -263,7 +259,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'setEffectiveDate',
         'issuedAt' => 'setIssuedAt',
         'refundedAt' => 'setRefundedAt',
-        'voidedAt' => 'setVoidedAt',
         'createdAt' => 'setCreatedAt'
     ];
 
@@ -292,7 +287,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'getEffectiveDate',
         'issuedAt' => 'getIssuedAt',
         'refundedAt' => 'getRefundedAt',
-        'voidedAt' => 'getVoidedAt',
         'createdAt' => 'getCreatedAt'
     ];
 
@@ -372,7 +366,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('effectiveDate', $data ?? [], null);
         $this->setIfExists('issuedAt', $data ?? [], null);
         $this->setIfExists('refundedAt', $data ?? [], null);
-        $this->setIfExists('voidedAt', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
 
             }
@@ -761,7 +754,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Gets items
      *
-     * @return \model\CreditNoteCreateItems|null
+     * @return \model\CreditNoteItem[]|null
      */
     public function getItems()
     {
@@ -771,7 +764,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets items
      *
-     * @param \model\CreditNoteCreateItems|null $items items
+     * @param \model\CreditNoteItem[]|null $items The credit note items returned when the credit note is created successfully.
      *
      * @return self
      */
@@ -874,30 +867,6 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
     public function setRefundedAt($refundedAt)
     {
         $this->container['refundedAt'] = $refundedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets voidedAt
-     *
-     * @return string|null
-     */
-    public function getVoidedAt()
-    {
-        return $this->container['voidedAt'];
-    }
-
-    /**
-     * Sets voidedAt
-     *
-     * @param string|null $voidedAt The voided at. Maximum length: 29 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setVoidedAt($voidedAt)
-    {
-        $this->container['voidedAt'] = $voidedAt;
 
         return $this;
     }

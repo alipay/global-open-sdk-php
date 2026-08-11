@@ -288,12 +288,6 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['products'] === null) {
-            $invalidProperties[] = "'products' can't be null";
-        }
-        if ($this->container['hasMore'] === null) {
-            $invalidProperties[] = "'hasMore' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +330,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets products
      *
-     * @return \model\Product[]
+     * @return \model\Product[]|null
      */
     public function getProducts()
     {
@@ -346,7 +340,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets products
      *
-     * @param \model\Product[] $products The products.
+     * @param \model\Product[]|null $products Product list. Always present; empty array `[]` when no results. When products array contains items, each Product object's M fields (productId, name, type, active, createdAt) are mandatory Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -360,7 +354,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Gets hasMore
      *
-     * @return bool
+     * @return bool|null
      */
     public function getHasMore()
     {
@@ -370,7 +364,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets hasMore
      *
-     * @param bool $hasMore The has more.
+     * @param bool|null $hasMore Whether more results exist beyond the current page. `true` if more results exist, `false` otherwise. Detection logic: `hasMore = (fetchedRows == limit + 1)` - the server fetches limit+1 rows; if the extra row exists, hasMore=true and only `limit` rows are returned. Aligned with Stripe cursor-based pagination pattern Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -394,7 +388,7 @@ class AlipayProductInquireListResponse  implements ModelInterface, ArrayAccess, 
     /**
      * Sets total
      *
-     * @param int|null $total The total number of records. Note: See documentation for details.
+     * @param int|null $total Total product count matching the query. O - Returned by default (includeTotal defaults to true). Set includeTotal=false to omit and avoid COUNT query latency. When present, enables UI page navigation; when absent, use hasMore for \"Load More\" / infinite scroll patterns Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -288,12 +288,6 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['prices'] === null) {
-            $invalidProperties[] = "'prices' can't be null";
-        }
-        if ($this->container['hasMore'] === null) {
-            $invalidProperties[] = "'hasMore' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +330,7 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Gets prices
      *
-     * @return \model\Price[]
+     * @return \model\Price[]|null
      */
     public function getPrices()
     {
@@ -346,7 +340,7 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets prices
      *
-     * @param \model\Price[] $prices The prices.
+     * @param \model\Price[]|null $prices Price list. M - Always present; empty array `[]` when no results match. When prices array is non-empty, each Price object's M fields (priceId, productId, pricingModel, active, createdAt) are mandatory Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -360,7 +354,7 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Gets hasMore
      *
-     * @return bool
+     * @return bool|null
      */
     public function getHasMore()
     {
@@ -370,7 +364,7 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets hasMore
      *
-     * @param bool $hasMore The has more.
+     * @param bool|null $hasMore Whether more results exist beyond the current page. `true` if more results exist, `false` otherwise. Detection logic: `hasMore = (fetchedRows == limit + 1)` - the server fetches limit+1 rows; if the extra row exists, hasMore=true and only `limit` rows are returned. Sort order: primary createdAt DESC, secondary priceId DESC. Aligned with Stripe cursor-based pagination pattern Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -394,7 +388,7 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
     /**
      * Sets total
      *
-     * @param int|null $total The total number of records. Note: See documentation for details.
+     * @param int|null $total Total price count matching the query. O - Returned by default; absent only when includeTotal is explicitly set to false. When present, enables UI page navigation; when absent, use hasMore for \"Load More\" / infinite scroll patterns Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

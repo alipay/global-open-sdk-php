@@ -52,7 +52,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
         'description' => 'string',
         'images' => 'string[]',
         'unitLabel' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string'
     ];
 
     /**
@@ -338,7 +338,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets productRequestId
      *
-     * @param string|null $productRequestId The product request id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $productRequestId Optional idempotency key for product creation. Maximum length: 64 characters; letters, digits, hyphens, and underscores are allowed. A retry with the same key and request body returns the original result. Reusing the key with a different request body returns `BIZ_DUPLICATE_PRODUCT_REQUEST`. Omitting the key allows network retries to create duplicate products.
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets name
      *
-     * @param string $name The name. Maximum length: 100 characters.
+     * @param string $name Product name. Required. Maximum length: 128 characters. Characters `<`, `>`, `&`, `'`, and `\"` are not allowed.
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets type
      *
-     * @param string|null $type The type. Maximum length: 16 characters.
+     * @param string|null $type Product type. O - Default: SERVICE. Enum: SERVICE(intangible digital service or SaaS offering - checkout skips shipping address collection), GOOD(tangible physical product requiring delivery - checkout collects shipping address). Cannot be null when present; if absent, defaults to SERVICE
      *
      * @return self
      */
@@ -410,7 +410,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Optional product description. Maximum length: 256 characters. Characters `<`, `>`, `&`, `'`, and `\"` are not allowed.
      *
      * @return self
      */
@@ -434,7 +434,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets images
      *
-     * @param string[]|null $images The images. Note: See documentation for details.
+     * @param string[]|null $images Optional initial product image URLs. Maximum size: 8 elements; maximum length: 2048 characters per URL. Each URL must use HTTP or HTTPS. Characters `<`, `>`, `&`, `'`, and `\"` are not allowed.
      *
      * @return self
      */
@@ -458,7 +458,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $unitLabel Product-level unit label (e.g., \"seat\", \"API call\"). C - Optional at creation; required when any linked price uses usageType=LICENSED or METERED (if absent at that point, Price-level unitLabel must provide the value). Price-level unitLabel overrides Product-level unitLabel when both are set; if Price-level is absent, Product-level is inherited. Can be null; default null. Characters & ' \" are not allowed
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -482,7 +482,7 @@ class AlipayProductCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Note: See documentation for details.
+     * @param string|null $metadata Optional metadata encoded as a JSON object string. The SDK must forward the string unchanged. Maximum size: 20 entries. Keys must use lowerCamelCase alphanumeric text and be at most 40 characters. Values are at most 500 characters and cannot contain `<`, `>`, `&`, `'`, or `\"`. PII must not be stored. Invalid keys, values, or entry counts return `INVALID_METADATA_KEY`, `INVALID_METADATA_VALUE`, or `INVALID_METADATA_SIZE`.
      *
      * @return self
      */

@@ -48,12 +48,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'promotionCodeRequestId' => 'string',
         'code' => 'string',
-        'maxRedemptions' => 'int',
         'expiryTime' => 'string',
         'minAmount' => '\request\model\Amount',
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string',
+        'maxRedemptions' => 'int'
     ];
 
     /**
@@ -66,12 +66,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'promotionCodeRequestId' => null,
         'code' => null,
-        'maxRedemptions' => null,
         'expiryTime' => null,
         'minAmount' => null,
         'oneTimeOnly' => null,
         'customerId' => null,
-        'metadata' => null
+        'metadata' => null,
+        'maxRedemptions' => null
     ];
 
     /**
@@ -82,12 +82,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPINullables = [
         'promotionCodeRequestId' => false,
         'code' => false,
-        'maxRedemptions' => true,
         'expiryTime' => false,
         'minAmount' => false,
         'oneTimeOnly' => false,
         'customerId' => false,
-        'metadata' => false
+        'metadata' => false,
+        'maxRedemptions' => true
     ];
 
     /**
@@ -178,12 +178,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'promotionCodeRequestId' => 'promotionCodeRequestId',
         'code' => 'code',
-        'maxRedemptions' => 'maxRedemptions',
         'expiryTime' => 'expiryTime',
         'minAmount' => 'minAmount',
         'oneTimeOnly' => 'oneTimeOnly',
         'customerId' => 'customerId',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'maxRedemptions' => 'maxRedemptions'
     ];
 
     /**
@@ -194,12 +194,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'promotionCodeRequestId' => 'setPromotionCodeRequestId',
         'code' => 'setCode',
-        'maxRedemptions' => 'setMaxRedemptions',
         'expiryTime' => 'setExpiryTime',
         'minAmount' => 'setMinAmount',
         'oneTimeOnly' => 'setOneTimeOnly',
         'customerId' => 'setCustomerId',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'maxRedemptions' => 'setMaxRedemptions'
     ];
 
     /**
@@ -210,12 +210,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'promotionCodeRequestId' => 'getPromotionCodeRequestId',
         'code' => 'getCode',
-        'maxRedemptions' => 'getMaxRedemptions',
         'expiryTime' => 'getExpiryTime',
         'minAmount' => 'getMinAmount',
         'oneTimeOnly' => 'getOneTimeOnly',
         'customerId' => 'getCustomerId',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'maxRedemptions' => 'getMaxRedemptions'
     ];
 
     /**
@@ -277,12 +277,12 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('promotionCodeRequestId', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('maxRedemptions', $data ?? [], null);
         $this->setIfExists('expiryTime', $data ?? [], null);
         $this->setIfExists('minAmount', $data ?? [], null);
         $this->setIfExists('oneTimeOnly', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('maxRedemptions', $data ?? [], null);
 
             }
 
@@ -344,7 +344,7 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotionCodeRequestId
      *
-     * @param string $promotionCodeRequestId The promotion code request id. Maximum length: 128 characters.
+     * @param string $promotionCodeRequestId Idempotency key for the nested promotion code. Must be unique per merchant. Independent of the coupon's `couponRequestId`.
      *
      * @return self
      */
@@ -368,37 +368,13 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets code
      *
-     * @param string|null $code The code. Maximum length: 128 characters.
+     * @param string|null $code Public promotion code string. If not provided, the server auto-generates a 12-character readable code (uppercase letters + digits, ambiguous chars O/0/I/1/L removed). Must be unique per merchant.
      *
      * @return self
      */
     public function setCode($code)
     {
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxRedemptions
-     *
-     * @return int|null
-     */
-    public function getMaxRedemptions()
-    {
-        return $this->container['maxRedemptions'];
-    }
-
-    /**
-     * Sets maxRedemptions
-     *
-     * @param int|null $maxRedemptions The max redemptions.
-     *
-     * @return self
-     */
-    public function setMaxRedemptions($maxRedemptions)
-    {
-        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }
@@ -416,7 +392,7 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiryTime
      *
-     * @param string|null $expiryTime The expiry time. Maximum length: 24 characters.
+     * @param string|null $expiryTime UTC timestamp (ISO 8601) after which the code expires.
      *
      * @return self
      */
@@ -464,7 +440,7 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets oneTimeOnly
      *
-     * @param bool|null $oneTimeOnly The one time only.
+     * @param bool|null $oneTimeOnly If `true`, each customer can only redeem this code once. Default: `false`.
      *
      * @return self
      */
@@ -488,7 +464,7 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId If set, restricts this code to a specific customer. Must be a valid customerId in the system.
      *
      * @return self
      */
@@ -502,7 +478,7 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -512,13 +488,37 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Merchant-defined key-value pairs stored as JSON string. Enforced constraints: max 50 keys; each key max 40 characters; each value max 500 characters. Requests exceeding these limits return `PARAM_ILLEGAL`. The value must be a valid JSON object string.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxRedemptions
+     *
+     * @return int|null
+     */
+    public function getMaxRedemptions()
+    {
+        return $this->container['maxRedemptions'];
+    }
+
+    /**
+     * Sets maxRedemptions
+     *
+     * @param int|null $maxRedemptions Maximum redemption count for this code. If not set or 0, unlimited. Value range: 0-999999.
+     *
+     * @return self
+     */
+    public function setMaxRedemptions($maxRedemptions)
+    {
+        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }

@@ -307,7 +307,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceId System-generated invoice ID returned at invoice creation time. Can be null if `invoiceRequestId` is provided. Format: alphanumeric with hyphens and underscores, max 64 characters (e.g., `inv_20260413_000123`).
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceRequestId
      *
-     * @param string|null $invoiceRequestId The invoice request id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceRequestId Merchant-supplied idempotency key used when the invoice was originally created. Can be null if `invoiceId` is provided.
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     /**
      * Sets linkExpiryDays
      *
-     * @param int|null $linkExpiryDays The link expiry days.
+     * @param int|null $linkExpiryDays Number of days until the link expires. Defaults to 7 days if not provided. Cannot be zero or negative. Range: 1-365. Can be null (defaults to 7).
      *
      * @return self
      */

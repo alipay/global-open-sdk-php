@@ -363,7 +363,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $startingAfter Cursor for forward pagination - return receipts after this `receiptId`. Think of it as a bookmark: pass the `nextCursor` from the previous response to get the next batch of receipts. Mutually exclusive with `endingBefore` (both -> `PARAM_ILLEGAL`). When omitted, returns the first page (newest receipts first). Always use the LAST receipt's ID from the current page - using the first ID will skip records. Can be null (first page).
      *
      * @return self
      */
@@ -387,7 +387,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $endingBefore Cursor for backward pagination - return receipts before this `receiptId`. Pass the first receipt's `receiptId` from the current page to go back to the previous page. Mutually exclusive with `startingAfter`. Can be null (not used).
      *
      * @return self
      */
@@ -411,7 +411,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets limit
      *
-     * @param int|null $limit The limit.
+     * @param int|null $limit Maximum number of receipts per page. Internally, `limit + 1` rows are fetched to determine `hasMore` - the extra row is not returned. Can be null (defaults to 20).
      *
      * @return self
      */
@@ -435,7 +435,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets includeTotal
      *
-     * @param bool|null $includeTotal The include total.
+     * @param bool|null $includeTotal Whether to include the `total` count of matching records in the response. `true` = include total count (an additional `COUNT` query is executed); `false` or omitted = exclude total count (better performance). Can be null (defaults to false).
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId Filter by customer ID. Returns only receipts belonging to this customer. Can be null (no filter).
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Filter by associated invoice ID. Returns receipts linked to this invoice. Can be null (no filter).
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Filter by associated subscription ID. Returns receipts linked to this subscription. Can be null (no filter).
      *
      * @return self
      */
@@ -531,7 +531,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 32 characters.
+     * @param string|null $status Filter by receipt status. Allowed values: `ACTIVE` (payment receipt with no refunds), `PARTIALLY_REFUNDED` (some amount refunded), `REFUNDED` (fully refunded). Unknown status values are silently ignored (treated as no filter for that value). Can be null (no filter).
      *
      * @return self
      */
@@ -555,7 +555,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets receiptType
      *
-     * @param string|null $receiptType The receipt type. Maximum length: 16 characters.
+     * @param string|null $receiptType Filter by receipt type. Allowed values: `PAYMENT` (receipt for a payment), `REFUND` (receipt for a refund). Unknown type values are silently ignored (treated as no filter for that value). Can be null (no filter).
      *
      * @return self
      */
@@ -579,7 +579,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets startDate
      *
-     * @param string|null $startDate The start date. Maximum length: 24 characters.
+     * @param string|null $startDate Date range start for receipt creation time (ISO 8601 format, e.g., `2026-04-01T00:00:00+00:00`). Can be null (no lower bound).
      *
      * @return self
      */
@@ -603,7 +603,7 @@ class AlipayReceiptInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets endDate
      *
-     * @param string|null $endDate The end date. Maximum length: 24 characters.
+     * @param string|null $endDate Date range end for receipt creation time (ISO 8601 format, e.g., `2026-04-30T23:59:59+00:00`). Can be null (no upper bound).
      *
      * @return self
      */

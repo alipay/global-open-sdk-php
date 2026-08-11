@@ -295,15 +295,6 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['markedUncollectibleAt'] === null) {
-            $invalidProperties[] = "'markedUncollectibleAt' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -346,7 +337,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -356,7 +347,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Invoice ID that was marked uncollectible (echo-back of request). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -370,7 +361,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -380,7 +371,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $status New invoice status after marking: `UNCOLLECTIBLE`. The invoice is now in a terminal write-off state for bad debt accounting. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -394,7 +385,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Gets markedUncollectibleAt
      *
-     * @return string
+     * @return string|null
      */
     public function getMarkedUncollectibleAt()
     {
@@ -404,7 +395,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Sets markedUncollectibleAt
      *
-     * @param string $markedUncollectibleAt The marked uncollectible at. Maximum length: 24 characters.
+     * @param string|null $markedUncollectibleAt ISO 8601 timestamp of when the invoice was marked uncollectible (e.g., `2026-05-26T10:30:00+00:00`). This is the official time the invoice entered the UNCOLLECTIBLE state for audit and financial reporting. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -428,7 +419,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Echo-back of the `invoiceNote` provided in the request, if any. The note is stored in the `invoiceNotes` array in the invoice metadata with `action=mark_uncollectible`. Can be null (no note provided). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

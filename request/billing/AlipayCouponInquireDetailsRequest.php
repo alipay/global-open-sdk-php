@@ -296,7 +296,7 @@ class AlipayCouponInquireDetailsRequest   extends AlipayRequest  implements Mode
     /**
      * Sets couponId
      *
-     * @param string $couponId The coupon ID. Maximum length: 64 characters.
+     * @param string $couponId System-generated coupon ID to query. Cannot be empty. Maximum length: 64 characters.
      *
      * @return self
      */
