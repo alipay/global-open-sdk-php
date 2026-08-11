@@ -333,7 +333,7 @@ class AlipayCustomerDeleteResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $customerId The deleted customer's ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class AlipayCustomerDeleteResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Always `DELETED` when resultCode is `SUCCESS`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

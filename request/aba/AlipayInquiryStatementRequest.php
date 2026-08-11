@@ -48,7 +48,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     protected static $openAPITypes = [
         'customerId' => 'string',
         'accessToken' => 'string',
-        'startTime' => 'mixed',
+        'startTime' => 'string',
         'endTime' => 'string',
         'transactionTypeList' => 'string[]',
         'currencyList' => 'string[]',
@@ -86,7 +86,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     protected static $openAPINullables = [
         'customerId' => false,
         'accessToken' => false,
-        'startTime' => true,
+        'startTime' => false,
         'endTime' => false,
         'transactionTypeList' => false,
         'currencyList' => false,
@@ -468,7 +468,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     /**
      * Gets startTime
      *
-     * @return mixed
+     * @return string
      */
     public function getStartTime()
     {
@@ -478,22 +478,12 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets startTime
      *
-     * @param mixed $startTime start time of statement query. The value follows the ISO 8601 standard format. The time interval between startTime and endTime cannot be more than 3 months (equivalent to 100 days).
+     * @param string $startTime start time of statement query. The value follows the ISO 8601 standard format. The time interval between startTime and endTime cannot be more than 3 months (equivalent to 100 days).
      *
      * @return self
      */
     public function setStartTime($startTime)
     {
-        if (is_null($startTime)) {
-            array_push($this->openAPINullablesSetToNull, 'startTime');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('startTime', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
         $this->container['startTime'] = $startTime;
 
         return $this;

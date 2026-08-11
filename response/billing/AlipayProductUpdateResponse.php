@@ -53,11 +53,12 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'description' => 'string',
         'images' => 'string[]',
         'unitLabel' => 'string',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'active' => 'bool',
         'createdAt' => 'string',
         'deactivatedAt' => 'string',
-        'updatedAt' => 'string'
+        'updatedAt' => 'string',
+        'productRequestId' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'active' => null,
         'createdAt' => null,
         'deactivatedAt' => null,
-        'updatedAt' => null
+        'updatedAt' => null,
+        'productRequestId' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'active' => false,
         'createdAt' => false,
         'deactivatedAt' => false,
-        'updatedAt' => false
+        'updatedAt' => false,
+        'productRequestId' => false
     ];
 
     /**
@@ -199,7 +202,8 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'active' => 'active',
         'createdAt' => 'createdAt',
         'deactivatedAt' => 'deactivatedAt',
-        'updatedAt' => 'updatedAt'
+        'updatedAt' => 'updatedAt',
+        'productRequestId' => 'productRequestId'
     ];
 
     /**
@@ -219,7 +223,8 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'active' => 'setActive',
         'createdAt' => 'setCreatedAt',
         'deactivatedAt' => 'setDeactivatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'updatedAt' => 'setUpdatedAt',
+        'productRequestId' => 'setProductRequestId'
     ];
 
     /**
@@ -239,7 +244,8 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'active' => 'getActive',
         'createdAt' => 'getCreatedAt',
         'deactivatedAt' => 'getDeactivatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'updatedAt' => 'getUpdatedAt',
+        'productRequestId' => 'getProductRequestId'
     ];
 
     /**
@@ -311,6 +317,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('deactivatedAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('productRequestId', $data ?? [], null);
 
             }
 
@@ -343,21 +350,6 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['productId'] === null) {
-            $invalidProperties[] = "'productId' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -401,7 +393,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets productId
      *
-     * @return string
+     * @return string|null
      */
     public function getProductId()
     {
@@ -411,7 +403,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string|null $productId Updated product ID Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -425,7 +417,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -435,7 +427,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets name
      *
-     * @param string $name The name. Maximum length: 100 characters.
+     * @param string|null $name Product name Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -449,7 +441,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -459,7 +451,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets type
      *
-     * @param string $type The type. Maximum length: 16 characters.
+     * @param string|null $type Product type. Enum: SERVICE, GOOD. See Section 4.1.1 Create Product request for full behavioral descriptions Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -483,7 +475,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Product description. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -507,7 +499,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets images
      *
-     * @param string[]|null $images The images.
+     * @param string[]|null $images Product image URLs Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -531,7 +523,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters.
+     * @param string|null $unitLabel Product-level unit label. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -545,7 +537,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -555,7 +547,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Custom metadata encoded as a JSON object string. The returned value reflects the full stored metadata after replacement. PII must not be stored. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -569,7 +561,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets active
      *
-     * @return bool
+     * @return bool|null
      */
     public function getActive()
     {
@@ -579,7 +571,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets active
      *
-     * @param bool $active The active.
+     * @param bool|null $active Product active status. true=product is active and can be used for new subscriptions, false=product is deactivated and cannot be used for new subscriptions. Cannot be null. Deactivated products can be reactivated via Update active=true Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -593,7 +585,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -603,7 +595,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets createdAt
      *
-     * @param string $createdAt The created at. Maximum length: 29 characters.
+     * @param string|null $createdAt ISO 8601 creation timestamp Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -627,7 +619,7 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets deactivatedAt
      *
-     * @param string|null $deactivatedAt The deactivated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $deactivatedAt ISO 8601 deactivation timestamp. O - Returned when product has been deactivated (active=false); absent when product is active Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -651,13 +643,37 @@ class AlipayProductUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets updatedAt
      *
-     * @param string|null $updatedAt The updated at. Maximum length: 29 characters.
+     * @param string|null $updatedAt ISO 8601 last update timestamp. O - Returned when non-null; absent from response if never updated after creation Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setUpdatedAt($updatedAt)
     {
         $this->container['updatedAt'] = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets productRequestId
+     *
+     * @return string|null
+     */
+    public function getProductRequestId()
+    {
+        return $this->container['productRequestId'];
+    }
+
+    /**
+     * Sets productRequestId
+     *
+     * @param string|null $productRequestId Idempotency key. O - May be null in the response when the value is not set. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setProductRequestId($productRequestId)
+    {
+        $this->container['productRequestId'] = $productRequestId;
 
         return $this;
     }

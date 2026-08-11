@@ -348,7 +348,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 256 characters.
+     * @param string|null $description Human-readable description of the invoice. Appears on the invoice PDF and hosted page. HTML tags are stripped for XSS prevention. Can be null.
      *
      * @return self
      */
@@ -420,7 +420,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets priceId
      *
-     * @param string|null $priceId The price ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $priceId Price identifier from the Antom price catalog. The unit amount and currency are resolved from the price catalog entry. Use this for items linked to the product/price catalog. Can be null when using `itemAmount` or `unitAmount` pricing models.
      *
      * @return self
      */
@@ -444,7 +444,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets productId
      *
-     * @param string|null $productId The product ID. Maximum length: 64 characters.
+     * @param string|null $productId External product identifier associated with this line item. Stored in item metadata; used for reconciliation and reporting. Can be null.
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets quantity
      *
-     * @param int|null $quantity The quantity.
+     * @param int|null $quantity Quantity of units. Integer only; decimal quantities are not supported in v1. Defaults to 1 if omitted. Required for unit-amount and price-object pricing models, and ignored for fixed-amount pricing. Value range: 1 to 999999.
      *
      * @return self
      */
@@ -492,7 +492,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets itemId
      *
-     * @param string|null $itemId The item id. Maximum length: 64 characters.
+     * @param string|null $itemId Item identifier for upsert during update operations. When provided in an update request, the system queries by itemId + merchantId to determine whether to update an existing item or create a new one. Omit for create operations. Can be null.
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets supplyStart
      *
-     * @param string|null $supplyStart The supply start.
+     * @param string|null $supplyStart Service/goods supply period start date (ISO 8601 format, e.g. `\"2026-01-15T00:00:00Z\"`). NULL if not applicable. Complements billing period coverage fields. Can be null.
      *
      * @return self
      */
@@ -540,7 +540,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets supplyEnd
      *
-     * @param string|null $supplyEnd The supply end. Note: See documentation for details.
+     * @param string|null $supplyEnd Service/goods supply period end date (ISO 8601 format, e.g. `\"2026-01-31T23:59:59Z\"`). NULL if not applicable. If both `supplyStart` and `supplyEnd` are provided, `supplyStart` must be before `supplyEnd`. Can be null.
      *
      * @return self
      */

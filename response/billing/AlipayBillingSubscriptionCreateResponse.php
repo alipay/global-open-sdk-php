@@ -57,13 +57,13 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'billingCycleAnchor' => 'string',
         'trialStart' => 'string',
         'trialEnd' => 'string',
+        'trialSettings' => '\request\model\BillingSubscriptionTrialSettings',
         'cancelAt' => 'string',
-        'cancelAtPeriodEnd' => 'bool',
         'description' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
         'subscriptionItems' => '\request\model\SubscriptionItem[]',
-        'discounts' => '\request\model\BillingSubscriptionCreateDiscount[]',
+        'discounts' => '\request\model\BillingDiscount[]',
         'subscriptionNotifyUrl' => 'string'
     ];
 
@@ -86,8 +86,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'billingCycleAnchor' => null,
         'trialStart' => null,
         'trialEnd' => null,
+        'trialSettings' => null,
         'cancelAt' => null,
-        'cancelAtPeriodEnd' => null,
         'description' => null,
         'collectionMethod' => null,
         'daysUntilDue' => null,
@@ -113,8 +113,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'billingCycleAnchor' => false,
         'trialStart' => false,
         'trialEnd' => false,
+        'trialSettings' => false,
         'cancelAt' => false,
-        'cancelAtPeriodEnd' => false,
         'description' => false,
         'collectionMethod' => false,
         'daysUntilDue' => true,
@@ -220,8 +220,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'billingCycleAnchor' => 'billingCycleAnchor',
         'trialStart' => 'trialStart',
         'trialEnd' => 'trialEnd',
+        'trialSettings' => 'trialSettings',
         'cancelAt' => 'cancelAt',
-        'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
         'description' => 'description',
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
@@ -247,8 +247,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'billingCycleAnchor' => 'setBillingCycleAnchor',
         'trialStart' => 'setTrialStart',
         'trialEnd' => 'setTrialEnd',
+        'trialSettings' => 'setTrialSettings',
         'cancelAt' => 'setCancelAt',
-        'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
         'description' => 'setDescription',
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
@@ -274,8 +274,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'billingCycleAnchor' => 'getBillingCycleAnchor',
         'trialStart' => 'getTrialStart',
         'trialEnd' => 'getTrialEnd',
+        'trialSettings' => 'getTrialSettings',
         'cancelAt' => 'getCancelAt',
-        'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
         'description' => 'getDescription',
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
@@ -352,8 +352,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         $this->setIfExists('billingCycleAnchor', $data ?? [], null);
         $this->setIfExists('trialStart', $data ?? [], null);
         $this->setIfExists('trialEnd', $data ?? [], null);
+        $this->setIfExists('trialSettings', $data ?? [], null);
         $this->setIfExists('cancelAt', $data ?? [], null);
-        $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('daysUntilDue', $data ?? [], null);
@@ -392,30 +392,6 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['subscriptionRequestId'] === null) {
-            $invalidProperties[] = "'subscriptionRequestId' can't be null";
-        }
-        if ($this->container['subscriptionId'] === null) {
-            $invalidProperties[] = "'subscriptionId' can't be null";
-        }
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['currentPeriodStart'] === null) {
-            $invalidProperties[] = "'currentPeriodStart' can't be null";
-        }
-        if ($this->container['currentPeriodEnd'] === null) {
-            $invalidProperties[] = "'currentPeriodEnd' can't be null";
-        }
-        if ($this->container['collectionMethod'] === null) {
-            $invalidProperties[] = "'collectionMethod' can't be null";
-        }
-        if ($this->container['subscriptionItems'] === null) {
-            $invalidProperties[] = "'subscriptionItems' can't be null";
         }
         return $invalidProperties;
     }
@@ -459,7 +435,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets subscriptionRequestId
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionRequestId()
     {
@@ -469,7 +445,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets subscriptionRequestId
      *
-     * @param string $subscriptionRequestId The subscription request id. Maximum length: 64 characters.
+     * @param string|null $subscriptionRequestId Idempotency key echo-back. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -483,7 +459,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets subscriptionId
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionId()
     {
@@ -493,7 +469,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Created subscription ID. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -507,7 +483,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets customerId
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerId()
     {
@@ -517,7 +493,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId The customer this subscription belongs to. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -541,7 +517,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceId ID of the draft Invoice created alongside the subscription. Returned when subscription creation generates an invoice (i.e., non-zero amount or trial with invoice). Can be null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -555,7 +531,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -565,7 +541,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 20 characters.
+     * @param string|null $status Subscription status after creation. Possible values at creation: INCOMPLETE (first payment pending), TRIALING (trial configured). ACTIVE can only appear after Step 2 (`payments/pay`) succeeds and is never returned at creation (2026-08-06 code-verified darksite audit). Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -579,7 +555,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets currentPeriodStart
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrentPeriodStart()
     {
@@ -589,7 +565,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets currentPeriodStart
      *
-     * @param string $currentPeriodStart The current period start.
+     * @param string|null $currentPeriodStart Billing period start. ISO 8601 with timezone offset. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -603,7 +579,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets currentPeriodEnd
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrentPeriodEnd()
     {
@@ -613,7 +589,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets currentPeriodEnd
      *
-     * @param string $currentPeriodEnd The current period end.
+     * @param string|null $currentPeriodEnd Billing period end. ISO 8601 with timezone offset. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -637,7 +613,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets billingCycleAnchor
      *
-     * @param string|null $billingCycleAnchor The billing cycle anchor. Note: See documentation for details.
+     * @param string|null $billingCycleAnchor Billing cycle anchor - the reference point all future billing periods are measured from. System-derived, not merchant-writable (it was withdrawn from the request; see the request table). Derivation: without a trial -> the subscription creation timestamp (NOW); with a trial -> the trial end date (`trialEnd`), so the first paid cycle begins when the trial ends. The anchor always describes the full, uncapped cycle - setting `cancelAt` inside the first period shortens `currentPeriodEnd` but leaves `billingCycleAnchor` unchanged. ISO 8601 with timezone offset. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -661,7 +637,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets trialStart
      *
-     * @param string|null $trialStart The trial start. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $trialStart Trial start. ISO 8601 with timezone offset Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -685,13 +661,37 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets trialEnd
      *
-     * @param string|null $trialEnd The trial end. Note: See documentation for details.
+     * @param string|null $trialEnd Trial end. ISO 8601 with timezone offset Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setTrialEnd($trialEnd)
     {
         $this->container['trialEnd'] = $trialEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets trialSettings
+     *
+     * @return \model\BillingSubscriptionTrialSettings|null
+     */
+    public function getTrialSettings()
+    {
+        return $this->container['trialSettings'];
+    }
+
+    /**
+     * Sets trialSettings
+     *
+     * @param \model\BillingSubscriptionTrialSettings|null $trialSettings trialSettings
+     *
+     * @return self
+     */
+    public function setTrialSettings($trialSettings)
+    {
+        $this->container['trialSettings'] = $trialSettings;
 
         return $this;
     }
@@ -709,37 +709,13 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets cancelAt
      *
-     * @param string|null $cancelAt The cancel at. Note: See documentation for details.
+     * @param string|null $cancelAt Scheduled cancellation timestamp Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setCancelAt($cancelAt)
     {
         $this->container['cancelAt'] = $cancelAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets cancelAtPeriodEnd
-     *
-     * @return bool|null
-     */
-    public function getCancelAtPeriodEnd()
-    {
-        return $this->container['cancelAtPeriodEnd'];
-    }
-
-    /**
-     * Sets cancelAtPeriodEnd
-     *
-     * @param bool|null $cancelAtPeriodEnd The cancel at period end. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setCancelAtPeriodEnd($cancelAtPeriodEnd)
-    {
-        $this->container['cancelAtPeriodEnd'] = $cancelAtPeriodEnd;
 
         return $this;
     }
@@ -757,7 +733,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 500 characters. Note: See documentation for details.
+     * @param string|null $description Subscription description echo-back. No HTML tags Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -771,7 +747,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets collectionMethod
      *
-     * @return string
+     * @return string|null
      */
     public function getCollectionMethod()
     {
@@ -781,7 +757,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets collectionMethod
      *
-     * @param string $collectionMethod The collection method.
+     * @param string|null $collectionMethod Collection method echo-back. Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -805,7 +781,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets daysUntilDue
      *
-     * @param int|null $daysUntilDue The days until due. Note: See documentation for details.
+     * @param int|null $daysUntilDue Days until invoice due Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -819,7 +795,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets subscriptionItems
      *
-     * @return \model\SubscriptionItem[]
+     * @return \model\SubscriptionItem[]|null
      */
     public function getSubscriptionItems()
     {
@@ -829,7 +805,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets subscriptionItems
      *
-     * @param \model\SubscriptionItem[] $subscriptionItems The subscription items.
+     * @param \model\SubscriptionItem[]|null $subscriptionItems Created subscription items - one per request `priceItems` entry. No maximum limit (matches the unbounded request `priceItems`). Not null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -843,7 +819,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Gets discounts
      *
-     * @return \model\BillingSubscriptionCreateDiscount[]|null
+     * @return \model\BillingDiscount[]|null
      */
     public function getDiscounts()
     {
@@ -853,7 +829,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets discounts
      *
-     * @param \model\BillingSubscriptionCreateDiscount[]|null $discounts The discounts applied. Note: See documentation for details.
+     * @param \model\BillingDiscount[]|null $discounts Discount preference echo-back from request - at most 1 item, matching the request limit. Not Antom-generated data - echoed as provided by merchant in request Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -877,7 +853,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     /**
      * Sets subscriptionNotifyUrl
      *
-     * @param string|null $subscriptionNotifyUrl The subscription notify url. Maximum length: 512 characters. Note: See documentation for details.
+     * @param string|null $subscriptionNotifyUrl Subscription notification URL echo-back Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -46,7 +46,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'productIds' => 'string[]'
+        'products' => '\request\model\CouponApplicableProduct[]'
     ];
 
     /**
@@ -57,7 +57,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'productIds' => null
+        'products' => null
     ];
 
     /**
@@ -66,7 +66,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'productIds' => false
+        'products' => false
     ];
 
     /**
@@ -155,7 +155,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'productIds' => 'productIds'
+        'products' => 'products'
     ];
 
     /**
@@ -164,7 +164,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'productIds' => 'setProductIds'
+        'products' => 'setProducts'
     ];
 
     /**
@@ -173,7 +173,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'productIds' => 'getProductIds'
+        'products' => 'getProducts'
     ];
 
     /**
@@ -233,7 +233,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('productIds', $data ?? [], null);
+        $this->setIfExists('products', $data ?? [], null);
 
             }
 
@@ -264,9 +264,6 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['productIds'] === null) {
-            $invalidProperties[] = "'productIds' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -283,25 +280,25 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets productIds
+     * Gets products
      *
-     * @return string[]
+     * @return \model\CouponApplicableProduct[]|null
      */
-    public function getProductIds()
+    public function getProducts()
     {
-        return $this->container['productIds'];
+        return $this->container['products'];
     }
 
     /**
-     * Sets productIds
+     * Sets products
      *
-     * @param string[] $productIds The product ids. Maximum length: 64 characters.
+     * @param \model\CouponApplicableProduct[]|null $products Products to which the coupon applies. Product details are assembled by the server.
      *
      * @return self
      */
-    public function setProductIds($productIds)
+    public function setProducts($products)
     {
-        $this->container['productIds'] = $productIds;
+        $this->container['products'] = $products;
 
         return $this;
     }

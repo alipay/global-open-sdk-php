@@ -53,13 +53,13 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'description' => 'string',
         'images' => 'string[]',
         'unitLabel' => 'string',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'active' => 'bool',
         'createdAt' => 'string',
         'deactivatedAt' => 'string',
         'updatedAt' => 'string',
         'prices' => '\request\model\Price[]',
-        'hasMorePrices' => 'bool'
+        'productRequestId' => 'string'
     ];
 
     /**
@@ -83,7 +83,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => null,
         'updatedAt' => null,
         'prices' => null,
-        'hasMorePrices' => null
+        'productRequestId' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => false,
         'updatedAt' => false,
         'prices' => false,
-        'hasMorePrices' => false
+        'productRequestId' => false
     ];
 
     /**
@@ -207,7 +207,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'deactivatedAt',
         'updatedAt' => 'updatedAt',
         'prices' => 'prices',
-        'hasMorePrices' => 'hasMorePrices'
+        'productRequestId' => 'productRequestId'
     ];
 
     /**
@@ -229,7 +229,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'setDeactivatedAt',
         'updatedAt' => 'setUpdatedAt',
         'prices' => 'setPrices',
-        'hasMorePrices' => 'setHasMorePrices'
+        'productRequestId' => 'setProductRequestId'
     ];
 
     /**
@@ -251,7 +251,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'getDeactivatedAt',
         'updatedAt' => 'getUpdatedAt',
         'prices' => 'getPrices',
-        'hasMorePrices' => 'getHasMorePrices'
+        'productRequestId' => 'getProductRequestId'
     ];
 
     /**
@@ -324,7 +324,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('deactivatedAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('prices', $data ?? [], null);
-        $this->setIfExists('hasMorePrices', $data ?? [], null);
+        $this->setIfExists('productRequestId', $data ?? [], null);
 
             }
 
@@ -357,21 +357,6 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['productId'] === null) {
-            $invalidProperties[] = "'productId' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -415,7 +400,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets productId
      *
-     * @return string
+     * @return string|null
      */
     public function getProductId()
     {
@@ -425,7 +410,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string|null $productId System-generated product ID Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -439,7 +424,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -449,7 +434,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets name
      *
-     * @param string $name The name. Maximum length: 100 characters.
+     * @param string|null $name Product name Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -463,7 +448,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -473,7 +458,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets type
      *
-     * @param string $type The type. Maximum length: 16 characters.
+     * @param string|null $type Product type. Enum: SERVICE(intangible digital service or SaaS offering - checkout skips shipping address collection), GOOD(tangible physical product requiring delivery - checkout collects shipping address) Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -497,7 +482,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Product description. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -521,7 +506,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets images
      *
-     * @param string[]|null $images The images.
+     * @param string[]|null $images Product image URLs. O - Returned when non-null and non-empty; absent if null or empty Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -545,7 +530,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters.
+     * @param string|null $unitLabel Product-level unit label. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -559,7 +544,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -569,7 +554,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Custom key-value metadata stored as JSON string. O - May be null in the response when the value is not set The value must be a valid JSON object string. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -583,7 +568,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets active
      *
-     * @return bool
+     * @return bool|null
      */
     public function getActive()
     {
@@ -593,7 +578,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets active
      *
-     * @param bool $active The active.
+     * @param bool|null $active Product active status. true=product is active and can be used for new subscriptions, false=product is deactivated and cannot be used for new subscriptions. Cannot be null. Deactivated products can be reactivated via Update active=true Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -607,7 +592,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -617,7 +602,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets createdAt
      *
-     * @param string $createdAt The created at. Maximum length: 29 characters.
+     * @param string|null $createdAt ISO 8601 creation timestamp Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -641,7 +626,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets deactivatedAt
      *
-     * @param string|null $deactivatedAt The deactivated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $deactivatedAt ISO 8601 deactivation timestamp. O - Returned when product has been deactivated (active=false); absent when product is active Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -665,7 +650,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets updatedAt
      *
-     * @param string|null $updatedAt The updated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $updatedAt ISO 8601 last update timestamp. O - Returned when non-null; absent from response if never updated after creation Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -689,7 +674,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets prices
      *
-     * @param \model\Price[]|null $prices The prices. Note: See documentation for details.
+     * @param \model\Price[]|null $prices Active default prices only for this product. O - Returned when the product has at least one active default price; absent when no active default prices exist. Only prices where `defaultPrice=true` AND `active=true` are included - non-default prices and deactivated prices are excluded. Callers must use the Price List API (`/ams/api/v1/billing/price/inquireList`) to retrieve non-default or inactive prices. When prices array contains items, each Price object's M fields (priceId, productId, pricingModel, active, createdAt) are mandatory Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -701,25 +686,25 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets hasMorePrices
+     * Gets productRequestId
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getHasMorePrices()
+    public function getProductRequestId()
     {
-        return $this->container['hasMorePrices'];
+        return $this->container['productRequestId'];
     }
 
     /**
-     * Sets hasMorePrices
+     * Sets productRequestId
      *
-     * @param bool|null $hasMorePrices The has more prices. Note: See documentation for details.
+     * @param string|null $productRequestId Idempotency key. O - May be null in the response when the value is not set. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
-    public function setHasMorePrices($hasMorePrices)
+    public function setProductRequestId($productRequestId)
     {
-        $this->container['hasMorePrices'] = $hasMorePrices;
+        $this->container['productRequestId'] = $productRequestId;
 
         return $this;
     }

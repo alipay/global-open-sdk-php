@@ -56,13 +56,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         'durationType' => 'string',
         'durationValue' => 'int',
         'durationUnit' => 'string',
-        'maxRedemptions' => 'int',
-        'redeemedCount' => 'int',
         'redeemBy' => 'string',
         'appliesTo' => '\request\model\CouponInquireDetailsAppliesTo',
         'status' => 'string',
-        'metadata' => 'array<string,string>',
-        'createTime' => 'string'
+        'metadata' => 'string',
+        'gmtCreate' => 'string',
+        'maxRedemptions' => 'int',
+        'redeemedCount' => 'int'
     ];
 
     /**
@@ -83,13 +83,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         'durationType' => null,
         'durationValue' => null,
         'durationUnit' => null,
-        'maxRedemptions' => null,
-        'redeemedCount' => null,
         'redeemBy' => null,
         'appliesTo' => null,
         'status' => null,
         'metadata' => null,
-        'createTime' => null
+        'gmtCreate' => null,
+        'maxRedemptions' => null,
+        'redeemedCount' => null
     ];
 
     /**
@@ -108,13 +108,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         'durationType' => false,
         'durationValue' => true,
         'durationUnit' => false,
-        'maxRedemptions' => true,
-        'redeemedCount' => true,
         'redeemBy' => false,
         'appliesTo' => false,
         'status' => false,
         'metadata' => false,
-        'createTime' => false
+        'gmtCreate' => false,
+        'maxRedemptions' => true,
+        'redeemedCount' => true
     ];
 
     /**
@@ -213,13 +213,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         'durationType' => 'durationType',
         'durationValue' => 'durationValue',
         'durationUnit' => 'durationUnit',
-        'maxRedemptions' => 'maxRedemptions',
-        'redeemedCount' => 'redeemedCount',
         'redeemBy' => 'redeemBy',
         'appliesTo' => 'appliesTo',
         'status' => 'status',
         'metadata' => 'metadata',
-        'createTime' => 'createTime'
+        'gmtCreate' => 'gmtCreate',
+        'maxRedemptions' => 'maxRedemptions',
+        'redeemedCount' => 'redeemedCount'
     ];
 
     /**
@@ -238,13 +238,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         'durationType' => 'setDurationType',
         'durationValue' => 'setDurationValue',
         'durationUnit' => 'setDurationUnit',
-        'maxRedemptions' => 'setMaxRedemptions',
-        'redeemedCount' => 'setRedeemedCount',
         'redeemBy' => 'setRedeemBy',
         'appliesTo' => 'setAppliesTo',
         'status' => 'setStatus',
         'metadata' => 'setMetadata',
-        'createTime' => 'setCreateTime'
+        'gmtCreate' => 'setGmtCreate',
+        'maxRedemptions' => 'setMaxRedemptions',
+        'redeemedCount' => 'setRedeemedCount'
     ];
 
     /**
@@ -263,13 +263,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         'durationType' => 'getDurationType',
         'durationValue' => 'getDurationValue',
         'durationUnit' => 'getDurationUnit',
-        'maxRedemptions' => 'getMaxRedemptions',
-        'redeemedCount' => 'getRedeemedCount',
         'redeemBy' => 'getRedeemBy',
         'appliesTo' => 'getAppliesTo',
         'status' => 'getStatus',
         'metadata' => 'getMetadata',
-        'createTime' => 'getCreateTime'
+        'gmtCreate' => 'getGmtCreate',
+        'maxRedemptions' => 'getMaxRedemptions',
+        'redeemedCount' => 'getRedeemedCount'
     ];
 
     /**
@@ -339,13 +339,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
         $this->setIfExists('durationType', $data ?? [], null);
         $this->setIfExists('durationValue', $data ?? [], null);
         $this->setIfExists('durationUnit', $data ?? [], null);
-        $this->setIfExists('maxRedemptions', $data ?? [], null);
-        $this->setIfExists('redeemedCount', $data ?? [], null);
         $this->setIfExists('redeemBy', $data ?? [], null);
         $this->setIfExists('appliesTo', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('createTime', $data ?? [], null);
+        $this->setIfExists('gmtCreate', $data ?? [], null);
+        $this->setIfExists('maxRedemptions', $data ?? [], null);
+        $this->setIfExists('redeemedCount', $data ?? [], null);
 
             }
 
@@ -431,7 +431,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets couponId
      *
-     * @param string|null $couponId The coupon ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $couponId System-generated coupon ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -455,7 +455,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets couponRequestId
      *
-     * @param string|null $couponRequestId The coupon request id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $couponRequestId Merchant-supplied idempotency key used at creation. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -479,7 +479,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets couponName
      *
-     * @param string|null $couponName The coupon name. Maximum length: 128 characters. Note: See documentation for details.
+     * @param string|null $couponName Coupon display name. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -503,7 +503,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets discountType
      *
-     * @param string|null $discountType The discount type. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $discountType Discount type: `PERCENT` or `AMOUNT`. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -527,7 +527,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets percentOff
      *
-     * @param string|null $percentOff The percent off. Note: See documentation for details.
+     * @param string|null $percentOff Percentage discount value (up to 2 decimal places). Returned when `discountType` = `PERCENT`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -575,7 +575,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets durationType
      *
-     * @param string|null $durationType The duration type. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $durationType Duration type: `ONCE` / `REPEATING` / `FOREVER`. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -599,7 +599,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets durationValue
      *
-     * @param int|null $durationValue The duration value. Note: See documentation for details.
+     * @param int|null $durationValue Duration value. Returned when `durationType` = `REPEATING`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -623,61 +623,13 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets durationUnit
      *
-     * @param string|null $durationUnit The duration unit. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $durationUnit Duration unit. Returned when `durationType` = `REPEATING`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setDurationUnit($durationUnit)
     {
         $this->container['durationUnit'] = $durationUnit;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxRedemptions
-     *
-     * @return int|null
-     */
-    public function getMaxRedemptions()
-    {
-        return $this->container['maxRedemptions'];
-    }
-
-    /**
-     * Sets maxRedemptions
-     *
-     * @param int|null $maxRedemptions The max redemptions. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setMaxRedemptions($maxRedemptions)
-    {
-        $this->container['maxRedemptions'] = $maxRedemptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets redeemedCount
-     *
-     * @return int|null
-     */
-    public function getRedeemedCount()
-    {
-        return $this->container['redeemedCount'];
-    }
-
-    /**
-     * Sets redeemedCount
-     *
-     * @param int|null $redeemedCount The redeemed count. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setRedeemedCount($redeemedCount)
-    {
-        $this->container['redeemedCount'] = $redeemedCount;
 
         return $this;
     }
@@ -695,7 +647,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets redeemBy
      *
-     * @param string|null $redeemBy The redeem by. Note: See documentation for details.
+     * @param string|null $redeemBy Redemption expiry time. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -743,7 +695,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Coupon status: `ACTIVE` / `INACTIVE`. Returned when resultCode is `SUCCESS`. EXPIRED note (D-3): the system persists only `ACTIVE`/`INACTIVE`; EXPIRED has no read-time derivation today. When `status` is `ACTIVE`, compare `redeemBy` with the current time to detect an expired coupon.
      *
      * @return self
      */
@@ -757,7 +709,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -767,7 +719,7 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Maximum length: 65535 characters. Note: See documentation for details.
+     * @param string|null $metadata Merchant-defined key-value pairs. Returned when resultCode is `SUCCESS` and the field was set. The value must be a valid JSON object string.
      *
      * @return self
      */
@@ -779,25 +731,73 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets createTime
+     * Gets gmtCreate
      *
      * @return string|null
      */
-    public function getCreateTime()
+    public function getGmtCreate()
     {
-        return $this->container['createTime'];
+        return $this->container['gmtCreate'];
     }
 
     /**
-     * Sets createTime
+     * Sets gmtCreate
      *
-     * @param string|null $createTime The create time. Note: See documentation for details.
+     * @param string|null $gmtCreate Creation time (UTC, ISO 8601). Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
-    public function setCreateTime($createTime)
+    public function setGmtCreate($gmtCreate)
     {
-        $this->container['createTime'] = $createTime;
+        $this->container['gmtCreate'] = $gmtCreate;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxRedemptions
+     *
+     * @return int|null
+     */
+    public function getMaxRedemptions()
+    {
+        return $this->container['maxRedemptions'];
+    }
+
+    /**
+     * Sets maxRedemptions
+     *
+     * @param int|null $maxRedemptions Maximum redemption count. Returned when resultCode is `SUCCESS`.
+     *
+     * @return self
+     */
+    public function setMaxRedemptions($maxRedemptions)
+    {
+        $this->container['maxRedemptions'] = $maxRedemptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemedCount
+     *
+     * @return int|null
+     */
+    public function getRedeemedCount()
+    {
+        return $this->container['redeemedCount'];
+    }
+
+    /**
+     * Sets redeemedCount
+     *
+     * @param int|null $redeemedCount Number of times the coupon has been redeemed. Returned when resultCode is `SUCCESS`.
+     *
+     * @return self
+     */
+    public function setRedeemedCount($redeemedCount)
+    {
+        $this->container['redeemedCount'] = $redeemedCount;
 
         return $this;
     }

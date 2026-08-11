@@ -48,7 +48,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'itemId' => 'string',
         'priceId' => 'string',
-        'quantity' => 'string'
+        'quantity' => 'int',
+        'currentPeriodStart' => 'string',
+        'currentPeriodEnd' => 'string',
+        'recurringIntervalCount' => 'int'
     ];
 
     /**
@@ -61,7 +64,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPIFormats = [
         'itemId' => null,
         'priceId' => null,
-        'quantity' => null
+        'quantity' => null,
+        'currentPeriodStart' => null,
+        'currentPeriodEnd' => null,
+        'recurringIntervalCount' => null
     ];
 
     /**
@@ -72,7 +78,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPINullables = [
         'itemId' => false,
         'priceId' => false,
-        'quantity' => false
+        'quantity' => true,
+        'currentPeriodStart' => false,
+        'currentPeriodEnd' => false,
+        'recurringIntervalCount' => true
     ];
 
     /**
@@ -163,7 +172,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $attributeMap = [
         'itemId' => 'itemId',
         'priceId' => 'priceId',
-        'quantity' => 'quantity'
+        'quantity' => 'quantity',
+        'currentPeriodStart' => 'currentPeriodStart',
+        'currentPeriodEnd' => 'currentPeriodEnd',
+        'recurringIntervalCount' => 'recurringIntervalCount'
     ];
 
     /**
@@ -174,7 +186,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'itemId' => 'setItemId',
         'priceId' => 'setPriceId',
-        'quantity' => 'setQuantity'
+        'quantity' => 'setQuantity',
+        'currentPeriodStart' => 'setCurrentPeriodStart',
+        'currentPeriodEnd' => 'setCurrentPeriodEnd',
+        'recurringIntervalCount' => 'setRecurringIntervalCount'
     ];
 
     /**
@@ -185,7 +200,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'itemId' => 'getItemId',
         'priceId' => 'getPriceId',
-        'quantity' => 'getQuantity'
+        'quantity' => 'getQuantity',
+        'currentPeriodStart' => 'getCurrentPeriodStart',
+        'currentPeriodEnd' => 'getCurrentPeriodEnd',
+        'recurringIntervalCount' => 'getRecurringIntervalCount'
     ];
 
     /**
@@ -248,6 +266,9 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('itemId', $data ?? [], null);
         $this->setIfExists('priceId', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('currentPeriodStart', $data ?? [], null);
+        $this->setIfExists('currentPeriodEnd', $data ?? [], null);
+        $this->setIfExists('recurringIntervalCount', $data ?? [], null);
 
             }
 
@@ -315,7 +336,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets itemId
      *
-     * @param string $itemId The item id. Maximum length: 64 characters.
+     * @param string $itemId Subscription item ID. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -339,7 +360,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets priceId
      *
-     * @param string $priceId The price ID. Maximum length: 64 characters.
+     * @param string $priceId Price ID. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -353,7 +374,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets quantity
      *
-     * @return string
+     * @return int
      */
     public function getQuantity()
     {
@@ -363,13 +384,85 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets quantity
      *
-     * @param string $quantity The quantity.
+     * @param int $quantity The quantity of the subscription item.
      *
      * @return self
      */
     public function setQuantity($quantity)
     {
         $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodStart
+     *
+     * @return string|null
+     */
+    public function getCurrentPeriodStart()
+    {
+        return $this->container['currentPeriodStart'];
+    }
+
+    /**
+     * Sets currentPeriodStart
+     *
+     * @param string|null $currentPeriodStart The start of the current billing period in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodStart($currentPeriodStart)
+    {
+        $this->container['currentPeriodStart'] = $currentPeriodStart;
+
+        return $this;
+    }
+
+    /**
+     * Gets currentPeriodEnd
+     *
+     * @return string|null
+     */
+    public function getCurrentPeriodEnd()
+    {
+        return $this->container['currentPeriodEnd'];
+    }
+
+    /**
+     * Sets currentPeriodEnd
+     *
+     * @param string|null $currentPeriodEnd The end of the current billing period in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCurrentPeriodEnd($currentPeriodEnd)
+    {
+        $this->container['currentPeriodEnd'] = $currentPeriodEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurringIntervalCount
+     *
+     * @return int|null
+     */
+    public function getRecurringIntervalCount()
+    {
+        return $this->container['recurringIntervalCount'];
+    }
+
+    /**
+     * Sets recurringIntervalCount
+     *
+     * @param int|null $recurringIntervalCount The number of recurring intervals in each billing period.
+     *
+     * @return self
+     */
+    public function setRecurringIntervalCount($recurringIntervalCount)
+    {
+        $this->container['recurringIntervalCount'] = $recurringIntervalCount;
 
         return $this;
     }

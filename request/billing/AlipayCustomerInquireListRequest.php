@@ -54,10 +54,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'email' => 'string',
         'phoneNo' => 'string',
         'countryCode' => 'string',
-        'billingEmail' => 'string',
-        'shippingFirstName' => 'string',
-        'shippingLastName' => 'string',
-        'shippingCountryCode' => 'string'
+        'gmtCreateEnd' => 'string',
+        'customerId' => 'string',
+        'country' => 'string[]',
+        'emailPrefix' => 'string',
+        'gmtCreateStart' => 'string'
     ];
 
     /**
@@ -76,10 +77,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'email' => null,
         'phoneNo' => null,
         'countryCode' => null,
-        'billingEmail' => null,
-        'shippingFirstName' => null,
-        'shippingLastName' => null,
-        'shippingCountryCode' => null
+        'gmtCreateEnd' => null,
+        'customerId' => null,
+        'country' => null,
+        'emailPrefix' => null,
+        'gmtCreateStart' => null
     ];
 
     /**
@@ -96,10 +98,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'email' => false,
         'phoneNo' => false,
         'countryCode' => false,
-        'billingEmail' => false,
-        'shippingFirstName' => false,
-        'shippingLastName' => false,
-        'shippingCountryCode' => false
+        'gmtCreateEnd' => false,
+        'customerId' => false,
+        'country' => false,
+        'emailPrefix' => false,
+        'gmtCreateStart' => false
     ];
 
     /**
@@ -196,10 +199,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'email' => 'email',
         'phoneNo' => 'phoneNo',
         'countryCode' => 'countryCode',
-        'billingEmail' => 'billingEmail',
-        'shippingFirstName' => 'shippingFirstName',
-        'shippingLastName' => 'shippingLastName',
-        'shippingCountryCode' => 'shippingCountryCode'
+        'gmtCreateEnd' => 'gmtCreateEnd',
+        'customerId' => 'customerId',
+        'country' => 'country',
+        'emailPrefix' => 'emailPrefix',
+        'gmtCreateStart' => 'gmtCreateStart'
     ];
 
     /**
@@ -216,10 +220,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'email' => 'setEmail',
         'phoneNo' => 'setPhoneNo',
         'countryCode' => 'setCountryCode',
-        'billingEmail' => 'setBillingEmail',
-        'shippingFirstName' => 'setShippingFirstName',
-        'shippingLastName' => 'setShippingLastName',
-        'shippingCountryCode' => 'setShippingCountryCode'
+        'gmtCreateEnd' => 'setGmtCreateEnd',
+        'customerId' => 'setCustomerId',
+        'country' => 'setCountry',
+        'emailPrefix' => 'setEmailPrefix',
+        'gmtCreateStart' => 'setGmtCreateStart'
     ];
 
     /**
@@ -236,10 +241,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'email' => 'getEmail',
         'phoneNo' => 'getPhoneNo',
         'countryCode' => 'getCountryCode',
-        'billingEmail' => 'getBillingEmail',
-        'shippingFirstName' => 'getShippingFirstName',
-        'shippingLastName' => 'getShippingLastName',
-        'shippingCountryCode' => 'getShippingCountryCode'
+        'gmtCreateEnd' => 'getGmtCreateEnd',
+        'customerId' => 'getCustomerId',
+        'country' => 'getCountry',
+        'emailPrefix' => 'getEmailPrefix',
+        'gmtCreateStart' => 'getGmtCreateStart'
     ];
 
     /**
@@ -307,10 +313,11 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('phoneNo', $data ?? [], null);
         $this->setIfExists('countryCode', $data ?? [], null);
-        $this->setIfExists('billingEmail', $data ?? [], null);
-        $this->setIfExists('shippingFirstName', $data ?? [], null);
-        $this->setIfExists('shippingLastName', $data ?? [], null);
-        $this->setIfExists('shippingCountryCode', $data ?? [], null);
+        $this->setIfExists('gmtCreateEnd', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('emailPrefix', $data ?? [], null);
+        $this->setIfExists('gmtCreateStart', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/customer/inquireList"); 
     }
@@ -370,7 +377,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $startingAfter Cursor for forward pagination - return customers created before this `customerId` (older items). Pass the `nextCursor` from the previous response. Mutually exclusive with `endingBefore`.
      *
      * @return self
      */
@@ -394,7 +401,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $endingBefore Cursor for backward pagination - return customers created after this `customerId` (newer items). Mutually exclusive with `startingAfter`.
      *
      * @return self
      */
@@ -418,7 +425,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets limit
      *
-     * @param int|null $limit The limit.
+     * @param int|null $limit Page size. Value range: 1-100. Default: 20.
      *
      * @return self
      */
@@ -442,7 +449,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets includeTotal
      *
-     * @param bool|null $includeTotal The include total.
+     * @param bool|null $includeTotal When `true`, an additional COUNT query is executed to populate `total` in the response. Default: `false`.
      *
      * @return self
      */
@@ -466,7 +473,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Filter by customer status. Allowed values: `ACTIVE`, `DELETED`. If not provided, returns customers of all statuses.
      *
      * @return self
      */
@@ -490,7 +497,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets email
      *
-     * @param string|null $email The email address. Maximum length: 256 characters.
+     * @param string|null $email Filter by exact email address match. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -514,7 +521,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets phoneNo
      *
-     * @param string|null $phoneNo The customer's phone number (digits only). Replaces deprecated mobileNo. Maximum length: 32 characters.
+     * @param string|null $phoneNo Filter by phone number (canonical). Cross-field constraint: when `phoneNo` is provided, `countryCode` is REQUIRED - omitting it returns `PARAM_ILLEGAL`.
      *
      * @return self
      */
@@ -538,7 +545,7 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     /**
      * Sets countryCode
      *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with phoneNo. Required when phoneNo is provided. Maximum length: 2 characters.
+     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with `phoneNo`. Required when `phoneNo` is provided.
      *
      * @return self
      */
@@ -550,97 +557,121 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     }
 
     /**
-     * Gets billingEmail
+     * Gets gmtCreateEnd
      *
      * @return string|null
      */
-    public function getBillingEmail()
+    public function getGmtCreateEnd()
     {
-        return $this->container['billingEmail'];
+        return $this->container['gmtCreateEnd'];
     }
 
     /**
-     * Sets billingEmail
+     * Sets gmtCreateEnd
      *
-     * @param string|null $billingEmail Invoice recipient email address (independent of account email). Maximum length: 256 characters.
+     * @param string|null $gmtCreateEnd Inclusive end of the creation-timestamp range. Closed interval with `gmtCreateStart`.
      *
      * @return self
      */
-    public function setBillingEmail($billingEmail)
+    public function setGmtCreateEnd($gmtCreateEnd)
     {
-        $this->container['billingEmail'] = $billingEmail;
+        $this->container['gmtCreateEnd'] = $gmtCreateEnd;
 
         return $this;
     }
 
     /**
-     * Gets shippingFirstName
+     * Gets customerId
      *
      * @return string|null
      */
-    public function getShippingFirstName()
+    public function getCustomerId()
     {
-        return $this->container['shippingFirstName'];
+        return $this->container['customerId'];
     }
 
     /**
-     * Sets shippingFirstName
+     * Sets customerId
      *
-     * @param string|null $shippingFirstName Shipping recipient first name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $customerId Filter by exact customer ID (single exact match).
      *
      * @return self
      */
-    public function setShippingFirstName($shippingFirstName)
+    public function setCustomerId($customerId)
     {
-        $this->container['shippingFirstName'] = $shippingFirstName;
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
 
     /**
-     * Gets shippingLastName
+     * Gets country
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getShippingLastName()
+    public function getCountry()
     {
-        return $this->container['shippingLastName'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets shippingLastName
+     * Sets country
      *
-     * @param string|null $shippingLastName Shipping recipient last name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string[]|null $country Filter by billing country codes (ISO 3166-1 alpha-2) using SQL `IN` clause. Maximum size: 50 elements.
      *
      * @return self
      */
-    public function setShippingLastName($shippingLastName)
+    public function setCountry($country)
     {
-        $this->container['shippingLastName'] = $shippingLastName;
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets shippingCountryCode
+     * Gets emailPrefix
      *
      * @return string|null
      */
-    public function getShippingCountryCode()
+    public function getEmailPrefix()
     {
-        return $this->container['shippingCountryCode'];
+        return $this->container['emailPrefix'];
     }
 
     /**
-     * Sets shippingCountryCode
+     * Sets emailPrefix
      *
-     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with shippingPhone. Maximum length: 8 characters.
+     * @param string|null $emailPrefix Filter by email LIKE prefix% (e.g. `\"alice\"` matches `alice@example.com`, `alice.smith@example.com`). Maximum length: 256 characters.
      *
      * @return self
      */
-    public function setShippingCountryCode($shippingCountryCode)
+    public function setEmailPrefix($emailPrefix)
     {
-        $this->container['shippingCountryCode'] = $shippingCountryCode;
+        $this->container['emailPrefix'] = $emailPrefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets gmtCreateStart
+     *
+     * @return string|null
+     */
+    public function getGmtCreateStart()
+    {
+        return $this->container['gmtCreateStart'];
+    }
+
+    /**
+     * Sets gmtCreateStart
+     *
+     * @param string|null $gmtCreateStart Inclusive start of the creation-timestamp range. Closed interval with `gmtCreateEnd`.
+     *
+     * @return self
+     */
+    public function setGmtCreateStart($gmtCreateStart)
+    {
+        $this->container['gmtCreateStart'] = $gmtCreateStart;
 
         return $this;
     }

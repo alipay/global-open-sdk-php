@@ -46,12 +46,12 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\CouponCreateResult',
+        'result' => '\request\model\ResultInfo',
         'couponId' => 'string',
         'couponName' => 'string',
         'discountType' => 'string',
         'status' => 'string',
-        'promotionCodes' => '\request\model\PromotionCode[]'
+        'promotionCodes' => '\request\model\CouponPromotionCode[]'
     ];
 
     /**
@@ -320,7 +320,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets result
      *
-     * @return \model\CouponCreateResult
+     * @return \model\ResultInfo
      */
     public function getResult()
     {
@@ -330,7 +330,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets result
      *
-     * @param \model\CouponCreateResult $result result
+     * @param \model\ResultInfo $result result
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets couponId
      *
-     * @param string|null $couponId The coupon ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $couponId System-generated unique coupon ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -378,7 +378,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets couponName
      *
-     * @param string|null $couponName The coupon name. Maximum length: 128 characters. Note: See documentation for details.
+     * @param string|null $couponName Coupon display name. Returned when resultCode is `SUCCESS` and the field was set.
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets discountType
      *
-     * @param string|null $discountType The discount type. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $discountType Discount type: `PERCENT` or `AMOUNT`. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -426,7 +426,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Coupon status. Always `ACTIVE` on initial creation. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -440,7 +440,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets promotionCodes
      *
-     * @return \model\PromotionCode[]|null
+     * @return \model\CouponPromotionCode[]|null
      */
     public function getPromotionCodes()
     {
@@ -450,7 +450,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets promotionCodes
      *
-     * @param \model\PromotionCode[]|null $promotionCodes The promotion codes. Note: See documentation for details.
+     * @param \model\CouponPromotionCode[]|null $promotionCodes Nested promotion codes created atomically. Non-empty only when the request carried `promotionCodes` AND all were created successfully. Null/empty when the field was omitted. Maximum size: 10 elements. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

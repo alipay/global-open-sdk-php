@@ -299,7 +299,7 @@ class BillingDiscount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets couponId
      *
-     * @param string|null $couponId Coupon ID.
+     * @param string|null $couponId Coupon ID associated with the discount. Exactly one of `couponId` and `promotionCodeId` can be provided in a discount request; responses return the identifier that was applied. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -323,7 +323,7 @@ class BillingDiscount  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotionCodeId
      *
-     * @param string|null $promotionCodeId Promotion code ID.
+     * @param string|null $promotionCodeId Promotion code ID associated with the discount. Exactly one of `couponId` and `promotionCodeId` can be provided in a discount request; responses return the identifier that was applied. Maximum length: 64 characters.
      *
      * @return self
      */

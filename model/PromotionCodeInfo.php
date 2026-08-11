@@ -337,7 +337,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets promotionCodeId
      *
-     * @param string|null $promotionCodeId The promotion code ID. Maximum length: 64 characters.
+     * @param string|null $promotionCodeId System-generated promotion code ID.
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets code
      *
-     * @param string|null $code The code. Maximum length: 128 characters.
+     * @param string|null $code The promotion code string.
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Filter by promotion code status. Allowed values: `ACTIVE`, `INACTIVE`. If not provided, returns all statuses.
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets maxRedemptions
      *
-     * @param int|null $maxRedemptions The max redemptions.
+     * @param int|null $maxRedemptions Maximum redemption count. Value range: 0-999999.
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets redeemedCount
      *
-     * @param int|null $redeemedCount The redeemed count.
+     * @param int|null $redeemedCount Number of times redeemed. Value range: 0-999999.
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expiryTime
      *
-     * @param string|null $expiryTime The expiry time. Note: See documentation for details.
+     * @param string|null $expiryTime Expiry time. Returned when the field was set.
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class PromotionCodeInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets createTime
      *
-     * @param string $createTime The create time.
+     * @param string $createTime Creation time (UTC, ISO 8601).
      *
      * @return self
      */

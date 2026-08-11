@@ -53,7 +53,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountOff' => '\request\model\Amount',
         'redeemBy' => 'string',
         'status' => 'string',
-        'createTime' => 'string'
+        'maxRedemptions' => 'int',
+        'redeemedCount' => 'int'
     ];
 
     /**
@@ -71,7 +72,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountOff' => null,
         'redeemBy' => null,
         'status' => null,
-        'createTime' => null
+        'maxRedemptions' => null,
+        'redeemedCount' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountOff' => false,
         'redeemBy' => false,
         'status' => false,
-        'createTime' => false
+        'maxRedemptions' => true,
+        'redeemedCount' => true
     ];
 
     /**
@@ -183,7 +186,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountOff' => 'amountOff',
         'redeemBy' => 'redeemBy',
         'status' => 'status',
-        'createTime' => 'createTime'
+        'maxRedemptions' => 'maxRedemptions',
+        'redeemedCount' => 'redeemedCount'
     ];
 
     /**
@@ -199,7 +203,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountOff' => 'setAmountOff',
         'redeemBy' => 'setRedeemBy',
         'status' => 'setStatus',
-        'createTime' => 'setCreateTime'
+        'maxRedemptions' => 'setMaxRedemptions',
+        'redeemedCount' => 'setRedeemedCount'
     ];
 
     /**
@@ -215,7 +220,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'amountOff' => 'getAmountOff',
         'redeemBy' => 'getRedeemBy',
         'status' => 'getStatus',
-        'createTime' => 'getCreateTime'
+        'maxRedemptions' => 'getMaxRedemptions',
+        'redeemedCount' => 'getRedeemedCount'
     ];
 
     /**
@@ -282,7 +288,8 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('amountOff', $data ?? [], null);
         $this->setIfExists('redeemBy', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('createTime', $data ?? [], null);
+        $this->setIfExists('maxRedemptions', $data ?? [], null);
+        $this->setIfExists('redeemedCount', $data ?? [], null);
 
             }
 
@@ -341,7 +348,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets couponId
      *
-     * @param string|null $couponId The coupon ID. Maximum length: 64 characters.
+     * @param string|null $couponId System-generated coupon ID.
      *
      * @return self
      */
@@ -365,7 +372,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets couponName
      *
-     * @param string|null $couponName The coupon name. Maximum length: 128 characters.
+     * @param string|null $couponName Coupon display name.
      *
      * @return self
      */
@@ -389,7 +396,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discountType
      *
-     * @param string|null $discountType The discount type. Maximum length: 16 characters.
+     * @param string|null $discountType Filter by discount type. Allowed values: `PERCENT`, `AMOUNT`. If not provided, returns all discount types.
      *
      * @return self
      */
@@ -413,7 +420,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets percentOff
      *
-     * @param string|null $percentOff The percent off. Note: See documentation for details.
+     * @param string|null $percentOff Percentage discount (up to 2 decimal places). Returned when `discountType` = `PERCENT`.
      *
      * @return self
      */
@@ -461,7 +468,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redeemBy
      *
-     * @param string|null $redeemBy The redeem by.
+     * @param string|null $redeemBy Redemption expiry time.
      *
      * @return self
      */
@@ -485,7 +492,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Filter by coupon status. Allowed values: `ACTIVE`, `INACTIVE`. If not provided, returns coupons of all statuses.
      *
      * @return self
      */
@@ -497,25 +504,49 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets createTime
+     * Gets maxRedemptions
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getCreateTime()
+    public function getMaxRedemptions()
     {
-        return $this->container['createTime'];
+        return $this->container['maxRedemptions'];
     }
 
     /**
-     * Sets createTime
+     * Sets maxRedemptions
      *
-     * @param string|null $createTime The create time.
+     * @param int|null $maxRedemptions The maximum redemption count.
      *
      * @return self
      */
-    public function setCreateTime($createTime)
+    public function setMaxRedemptions($maxRedemptions)
     {
-        $this->container['createTime'] = $createTime;
+        $this->container['maxRedemptions'] = $maxRedemptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemedCount
+     *
+     * @return int|null
+     */
+    public function getRedeemedCount()
+    {
+        return $this->container['redeemedCount'];
+    }
+
+    /**
+     * Sets redeemedCount
+     *
+     * @param int|null $redeemedCount The number of times the coupon has been redeemed.
+     *
+     * @return self
+     */
+    public function setRedeemedCount($redeemedCount)
+    {
+        $this->container['redeemedCount'] = $redeemedCount;
 
         return $this;
     }

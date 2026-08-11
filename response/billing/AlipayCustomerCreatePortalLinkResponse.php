@@ -50,9 +50,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'string',
         'portalUrl' => 'string',
         'expiresAt' => 'string',
-        'sendStatus' => 'string',
-        'success' => 'bool',
-        'errorContext' => '\request\model\ErrorStack'
+        'sendStatus' => 'string'
     ];
 
     /**
@@ -67,9 +65,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => null,
         'portalUrl' => null,
         'expiresAt' => null,
-        'sendStatus' => null,
-        'success' => null,
-        'errorContext' => null
+        'sendStatus' => null
     ];
 
     /**
@@ -82,9 +78,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => false,
         'portalUrl' => false,
         'expiresAt' => false,
-        'sendStatus' => false,
-        'success' => false,
-        'errorContext' => false
+        'sendStatus' => false
     ];
 
     /**
@@ -177,9 +171,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'token',
         'portalUrl' => 'portalUrl',
         'expiresAt' => 'expiresAt',
-        'sendStatus' => 'sendStatus',
-        'success' => 'success',
-        'errorContext' => 'errorContext'
+        'sendStatus' => 'sendStatus'
     ];
 
     /**
@@ -192,9 +184,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'setToken',
         'portalUrl' => 'setPortalUrl',
         'expiresAt' => 'setExpiresAt',
-        'sendStatus' => 'setSendStatus',
-        'success' => 'setSuccess',
-        'errorContext' => 'setErrorContext'
+        'sendStatus' => 'setSendStatus'
     ];
 
     /**
@@ -207,9 +197,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'getToken',
         'portalUrl' => 'getPortalUrl',
         'expiresAt' => 'getExpiresAt',
-        'sendStatus' => 'getSendStatus',
-        'success' => 'getSuccess',
-        'errorContext' => 'getErrorContext'
+        'sendStatus' => 'getSendStatus'
     ];
 
     /**
@@ -274,8 +262,6 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         $this->setIfExists('portalUrl', $data ?? [], null);
         $this->setIfExists('expiresAt', $data ?? [], null);
         $this->setIfExists('sendStatus', $data ?? [], null);
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('errorContext', $data ?? [], null);
 
             }
 
@@ -308,15 +294,6 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['token'] === null) {
-            $invalidProperties[] = "'token' can't be null";
-        }
-        if ($this->container['expiresAt'] === null) {
-            $invalidProperties[] = "'expiresAt' can't be null";
-        }
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
         }
         return $invalidProperties;
     }
@@ -360,7 +337,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Gets token
      *
-     * @return string
+     * @return string|null
      */
     public function getToken()
     {
@@ -370,7 +347,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets token
      *
-     * @param string $token The encrypted token. Maximum length: 512 characters.
+     * @param string|null $token Opaque URL-safe bearer token. Treat it as a credential: do not log, parse, or store its internal structure - the format may change without notice. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -394,7 +371,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets portalUrl
      *
-     * @param string|null $portalUrl The portal access URL. Maximum length: 1024 characters. Note: See documentation for details.
+     * @param string|null $portalUrl Fully-qualified portal URL. Null when the portal base URL is not configured for the merchant - in that case build the URL from `token`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -408,7 +385,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Gets expiresAt
      *
-     * @return string
+     * @return string|null
      */
     public function getExpiresAt()
     {
@@ -418,7 +395,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets expiresAt
      *
-     * @param string $expiresAt The expiration time.
+     * @param string|null $expiresAt Token expiration timestamp. Format: `yyyy-MM-dd HH:mm:ss` (NOT ISO 8601). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -442,61 +419,13 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus The email sending status. Maximum length: 6 characters. Note: See documentation for details.
+     * @param string|null $sendStatus `SENT` / `FAILED`. Populated only when request `autoSend=true`. Best-effort: failure never blocks link creation. Null when `autoSend=false`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setSendStatus($sendStatus)
     {
         $this->container['sendStatus'] = $sendStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success Indicates whether the operation is successful.
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorContext
-     *
-     * @return \model\ErrorStack|null
-     */
-    public function getErrorContext()
-    {
-        return $this->container['errorContext'];
-    }
-
-    /**
-     * Sets errorContext
-     *
-     * @param \model\ErrorStack|null $errorContext errorContext
-     *
-     * @return self
-     */
-    public function setErrorContext($errorContext)
-    {
-        $this->container['errorContext'] = $errorContext;
 
         return $this;
     }

@@ -54,6 +54,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'type' => 'string',
         'status' => 'string',
         'totalAmount' => '\request\model\Amount',
+        'refundAmount' => '\request\model\Amount',
         'refundStatus' => 'string',
         'refundId' => 'string',
         'reason' => 'string',
@@ -61,7 +62,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'refundDestination' => 'string',
         'effectiveDate' => 'string',
         'memo' => 'string',
-        'items' => '\request\model\CreditNoteInquireDetailsItems',
+        'items' => '\request\model\CreditNoteItem[]',
         'issuedAt' => 'string',
         'refundedAt' => 'string',
         'voidedAt' => 'string',
@@ -84,6 +85,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'type' => null,
         'status' => null,
         'totalAmount' => null,
+        'refundAmount' => null,
         'refundStatus' => null,
         'refundId' => null,
         'reason' => null,
@@ -112,6 +114,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'type' => false,
         'status' => false,
         'totalAmount' => false,
+        'refundAmount' => false,
         'refundStatus' => false,
         'refundId' => false,
         'reason' => false,
@@ -220,6 +223,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'type' => 'type',
         'status' => 'status',
         'totalAmount' => 'totalAmount',
+        'refundAmount' => 'refundAmount',
         'refundStatus' => 'refundStatus',
         'refundId' => 'refundId',
         'reason' => 'reason',
@@ -248,6 +252,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'type' => 'setType',
         'status' => 'setStatus',
         'totalAmount' => 'setTotalAmount',
+        'refundAmount' => 'setRefundAmount',
         'refundStatus' => 'setRefundStatus',
         'refundId' => 'setRefundId',
         'reason' => 'setReason',
@@ -276,6 +281,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'type' => 'getType',
         'status' => 'getStatus',
         'totalAmount' => 'getTotalAmount',
+        'refundAmount' => 'getRefundAmount',
         'refundStatus' => 'getRefundStatus',
         'refundId' => 'getRefundId',
         'reason' => 'getReason',
@@ -355,6 +361,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
+        $this->setIfExists('refundAmount', $data ?? [], null);
         $this->setIfExists('refundStatus', $data ?? [], null);
         $this->setIfExists('refundId', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
@@ -608,6 +615,30 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
     }
 
     /**
+     * Gets refundAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getRefundAmount()
+    {
+        return $this->container['refundAmount'];
+    }
+
+    /**
+     * Sets refundAmount
+     *
+     * @param \model\Amount|null $refundAmount refundAmount
+     *
+     * @return self
+     */
+    public function setRefundAmount($refundAmount)
+    {
+        $this->container['refundAmount'] = $refundAmount;
+
+        return $this;
+    }
+
+    /**
      * Gets refundStatus
      *
      * @return string|null
@@ -778,7 +809,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
     /**
      * Gets items
      *
-     * @return \model\CreditNoteInquireDetailsItems|null
+     * @return \model\CreditNoteItem[]|null
      */
     public function getItems()
     {
@@ -788,7 +819,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
     /**
      * Sets items
      *
-     * @param \model\CreditNoteInquireDetailsItems|null $items items
+     * @param \model\CreditNoteItem[]|null $items The credit note items.
      *
      * @return self
      */

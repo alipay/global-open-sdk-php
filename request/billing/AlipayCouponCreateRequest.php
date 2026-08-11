@@ -54,11 +54,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'durationType' => 'string',
         'durationValue' => 'int',
         'durationUnit' => 'string',
-        'maxRedemptions' => 'int',
         'redeemBy' => 'string',
         'appliesTo' => '\request\model\CouponCreateAppliesTo',
-        'metadata' => 'array<string,string>',
-        'promotionCodes' => '\request\model\PromotionCode[]'
+        'metadata' => 'string',
+        'promotionCodes' => '\request\model\PromotionCode[]',
+        'maxRedemptions' => 'int'
     ];
 
     /**
@@ -77,11 +77,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'durationType' => null,
         'durationValue' => null,
         'durationUnit' => null,
-        'maxRedemptions' => null,
         'redeemBy' => null,
         'appliesTo' => null,
         'metadata' => null,
-        'promotionCodes' => null
+        'promotionCodes' => null,
+        'maxRedemptions' => null
     ];
 
     /**
@@ -98,11 +98,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'durationType' => false,
         'durationValue' => true,
         'durationUnit' => false,
-        'maxRedemptions' => true,
         'redeemBy' => false,
         'appliesTo' => false,
         'metadata' => false,
-        'promotionCodes' => false
+        'promotionCodes' => false,
+        'maxRedemptions' => true
     ];
 
     /**
@@ -199,11 +199,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'durationType' => 'durationType',
         'durationValue' => 'durationValue',
         'durationUnit' => 'durationUnit',
-        'maxRedemptions' => 'maxRedemptions',
         'redeemBy' => 'redeemBy',
         'appliesTo' => 'appliesTo',
         'metadata' => 'metadata',
-        'promotionCodes' => 'promotionCodes'
+        'promotionCodes' => 'promotionCodes',
+        'maxRedemptions' => 'maxRedemptions'
     ];
 
     /**
@@ -220,11 +220,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'durationType' => 'setDurationType',
         'durationValue' => 'setDurationValue',
         'durationUnit' => 'setDurationUnit',
-        'maxRedemptions' => 'setMaxRedemptions',
         'redeemBy' => 'setRedeemBy',
         'appliesTo' => 'setAppliesTo',
         'metadata' => 'setMetadata',
-        'promotionCodes' => 'setPromotionCodes'
+        'promotionCodes' => 'setPromotionCodes',
+        'maxRedemptions' => 'setMaxRedemptions'
     ];
 
     /**
@@ -241,11 +241,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'durationType' => 'getDurationType',
         'durationValue' => 'getDurationValue',
         'durationUnit' => 'getDurationUnit',
-        'maxRedemptions' => 'getMaxRedemptions',
         'redeemBy' => 'getRedeemBy',
         'appliesTo' => 'getAppliesTo',
         'metadata' => 'getMetadata',
-        'promotionCodes' => 'getPromotionCodes'
+        'promotionCodes' => 'getPromotionCodes',
+        'maxRedemptions' => 'getMaxRedemptions'
     ];
 
     /**
@@ -313,11 +313,11 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         $this->setIfExists('durationType', $data ?? [], null);
         $this->setIfExists('durationValue', $data ?? [], null);
         $this->setIfExists('durationUnit', $data ?? [], null);
-        $this->setIfExists('maxRedemptions', $data ?? [], null);
         $this->setIfExists('redeemBy', $data ?? [], null);
         $this->setIfExists('appliesTo', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('promotionCodes', $data ?? [], null);
+        $this->setIfExists('maxRedemptions', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/coupon/create"); 
     }
@@ -386,7 +386,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets couponRequestId
      *
-     * @param string $couponRequestId The coupon request id. Maximum length: 64 characters.
+     * @param string $couponRequestId Merchant-supplied idempotency key for this create request. Must be unique per merchant. Cannot be empty. Maximum length: 64 characters. Idempotent replay: if a request is repeated with the same `couponRequestId` and the same parameters, the API returns `SUCCESS` together with the previously created coupon (no new coupon is created); a replay with different parameters returns `PARAM_ILLEGAL`.
      *
      * @return self
      */
@@ -410,7 +410,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets couponName
      *
-     * @param string|null $couponName The coupon name. Maximum length: 128 characters.
+     * @param string|null $couponName Display name for the coupon. Maximum length: 128 characters.
      *
      * @return self
      */
@@ -434,7 +434,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets discountType
      *
-     * @param string $discountType The discount type. Maximum length: 16 characters.
+     * @param string $discountType Type of discount. Allowed values: `PERCENT` (percentage off) or `AMOUNT` (fixed amount off). Cannot be empty.
      *
      * @return self
      */
@@ -458,7 +458,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets percentOff
      *
-     * @param string|null $percentOff The percent off. Note: See documentation for details.
+     * @param string|null $percentOff Percentage discount value. Up to 2 decimal places. Value range: 0.01-100.00. Examples: `20` (20% off), `33.33` (33.33% off), `100` (100% off / free). Values with more than 2 decimal places (e.g. `33.333`) are rejected with `PARAM_ILLEGAL`. Required when `discountType` = `PERCENT`; must be null when `discountType` = `AMOUNT`.
      *
      * @return self
      */
@@ -506,7 +506,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets durationType
      *
-     * @param string $durationType The duration type. Maximum length: 16 characters.
+     * @param string $durationType How long the discount applies to a subscription. Allowed values: `ONCE` (applied once on the next invoice only; discount is marked EXPIRED immediately after the first invoice), `REPEATING` (applied for a calendar duration defined by `durationValue` x `durationUnit` - see below for detailed semantics), `FOREVER` (applied indefinitely to all future invoices; discount remains ACTIVE until manually deactivated).
      *
      * @return self
      */
@@ -530,7 +530,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets durationValue
      *
-     * @param int|null $durationValue The duration value. Note: See documentation for details.
+     * @param int|null $durationValue The numeric component of the coupon's calendar duration. Required when `durationType` = `REPEATING`; must be null otherwise. Combined with `durationUnit`, it defines a half-open time window `[startTime, startTime + durationValue x durationUnit)` starting from the coupon's first application to a subscription. At each billing cycle, the system uses the billing period start time (not the invoice generation task's execution time) as the reference point to check the window. If the reference time is before the expiry boundary, the full discount is applied to the invoice; if the reference time is at or after the boundary, the discount is not applied and is marked EXPIRED. No proration is performed for partial overlap. Value range: 1-120. Examples: (1) `durationValue=3, durationUnit=MONTH` -> coupon effective for 3 calendar months from first use; a monthly subscription receives the discount on 3 invoices. (2) `durationValue=2, durationUnit=WEEK` -> effective for 2 calendar weeks (14 days); a monthly subscription only receives the discount on the first invoice. (3) `durationValue=21, durationUnit=DAY` -> effective for 21 calendar days; a monthly subscription only receives the discount on the first invoice (billing period start of the second invoice is ~30 days later, outside the window).
      *
      * @return self
      */
@@ -554,37 +554,13 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets durationUnit
      *
-     * @param string|null $durationUnit The duration unit. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $durationUnit The time unit for the coupon duration. Required when `durationType` is `REPEATING`. Allowed values are `DAY`, `WEEK`, `MONTH`, and `YEAR`. Combined with `durationValue` to define the calendar-based effective window.
      *
      * @return self
      */
     public function setDurationUnit($durationUnit)
     {
         $this->container['durationUnit'] = $durationUnit;
-
-        return $this;
-    }
-
-    /**
-     * Gets maxRedemptions
-     *
-     * @return int|null
-     */
-    public function getMaxRedemptions()
-    {
-        return $this->container['maxRedemptions'];
-    }
-
-    /**
-     * Sets maxRedemptions
-     *
-     * @param int|null $maxRedemptions The max redemptions.
-     *
-     * @return self
-     */
-    public function setMaxRedemptions($maxRedemptions)
-    {
-        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }
@@ -602,7 +578,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets redeemBy
      *
-     * @param string|null $redeemBy The redeem by. Maximum length: 24 characters.
+     * @param string|null $redeemBy UTC timestamp (ISO 8601) after which the coupon can no longer be redeemed. If not set, the coupon has no expiry.
      *
      * @return self
      */
@@ -640,7 +616,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -650,7 +626,7 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Merchant-defined key-value pairs stored as JSON string. Enforced constraints: max 50 keys; each key max 40 characters; each value max 500 characters. Requests exceeding these limits return `PARAM_ILLEGAL`. The value must be a valid JSON object string.
      *
      * @return self
      */
@@ -674,13 +650,37 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
     /**
      * Sets promotionCodes
      *
-     * @param \model\PromotionCode[]|null $promotionCodes The promotion codes.
+     * @param \model\PromotionCode[]|null $promotionCodes Optional nested promotion code descriptors. When non-empty, the server atomically creates the coupon and all listed promotion codes in a single transaction. When provided, each element must include `promotionCodeRequestId`. Maximum size: 10. See Section 4.2.3.7 for PromotionCodeCreateInfo structure.
      *
      * @return self
      */
     public function setPromotionCodes($promotionCodes)
     {
         $this->container['promotionCodes'] = $promotionCodes;
+
+        return $this;
+    }
+
+    /**
+     * Gets maxRedemptions
+     *
+     * @return int|null
+     */
+    public function getMaxRedemptions()
+    {
+        return $this->container['maxRedemptions'];
+    }
+
+    /**
+     * Sets maxRedemptions
+     *
+     * @param int|null $maxRedemptions Maximum number of times the coupon can be redeemed across all promotion codes. If not set or set to 0, redemptions are unlimited. Value range: 0-999999.
+     *
+     * @return self
+     */
+    public function setMaxRedemptions($maxRedemptions)
+    {
+        $this->container['maxRedemptions'] = $maxRedemptions;
 
         return $this;
     }

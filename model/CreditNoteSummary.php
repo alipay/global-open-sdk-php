@@ -52,6 +52,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         'type' => 'string',
         'status' => 'string',
         'totalAmount' => '\request\model\Amount',
+        'refundAmount' => '\request\model\Amount',
         'reason' => 'string',
         'effectiveDate' => 'string',
         'refundStatus' => 'string',
@@ -74,6 +75,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         'type' => null,
         'status' => null,
         'totalAmount' => null,
+        'refundAmount' => null,
         'reason' => null,
         'effectiveDate' => null,
         'refundStatus' => null,
@@ -94,6 +96,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         'type' => false,
         'status' => false,
         'totalAmount' => false,
+        'refundAmount' => false,
         'reason' => false,
         'effectiveDate' => false,
         'refundStatus' => false,
@@ -194,6 +197,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         'type' => 'type',
         'status' => 'status',
         'totalAmount' => 'totalAmount',
+        'refundAmount' => 'refundAmount',
         'reason' => 'reason',
         'effectiveDate' => 'effectiveDate',
         'refundStatus' => 'refundStatus',
@@ -214,6 +218,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         'type' => 'setType',
         'status' => 'setStatus',
         'totalAmount' => 'setTotalAmount',
+        'refundAmount' => 'setRefundAmount',
         'reason' => 'setReason',
         'effectiveDate' => 'setEffectiveDate',
         'refundStatus' => 'setRefundStatus',
@@ -234,6 +239,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         'type' => 'getType',
         'status' => 'getStatus',
         'totalAmount' => 'getTotalAmount',
+        'refundAmount' => 'getRefundAmount',
         'reason' => 'getReason',
         'effectiveDate' => 'getEffectiveDate',
         'refundStatus' => 'getRefundStatus',
@@ -305,6 +311,7 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
+        $this->setIfExists('refundAmount', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
         $this->setIfExists('effectiveDate', $data ?? [], null);
         $this->setIfExists('refundStatus', $data ?? [], null);
@@ -517,6 +524,30 @@ class CreditNoteSummary  implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setTotalAmount($totalAmount)
     {
         $this->container['totalAmount'] = $totalAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets refundAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getRefundAmount()
+    {
+        return $this->container['refundAmount'];
+    }
+
+    /**
+     * Sets refundAmount
+     *
+     * @param \model\Amount|null $refundAmount refundAmount
+     *
+     * @return self
+     */
+    public function setRefundAmount($refundAmount)
+    {
+        $this->container['refundAmount'] = $refundAmount;
 
         return $this;
     }

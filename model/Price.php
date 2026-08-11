@@ -51,6 +51,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'pricingModel' => 'string',
         'usageType' => 'string',
+        'defaultPrice' => 'bool',
         'unitLabel' => 'string',
         'meterId' => 'string',
         'unitAmount' => '\request\model\Amount',
@@ -59,7 +60,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'includedQuantity' => 'int',
         'tiersMode' => 'string',
         'tiers' => '\request\model\Tier[]',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'createdAt' => 'string',
         'deactivatedAt' => 'string',
         'updatedAt' => 'string'
@@ -78,6 +79,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'pricingModel' => null,
         'usageType' => null,
+        'defaultPrice' => null,
         'unitLabel' => null,
         'meterId' => null,
         'unitAmount' => null,
@@ -103,6 +105,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => false,
         'pricingModel' => false,
         'usageType' => false,
+        'defaultPrice' => false,
         'unitLabel' => false,
         'meterId' => false,
         'unitAmount' => false,
@@ -208,6 +211,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'pricingModel' => 'pricingModel',
         'usageType' => 'usageType',
+        'defaultPrice' => 'defaultPrice',
         'unitLabel' => 'unitLabel',
         'meterId' => 'meterId',
         'unitAmount' => 'unitAmount',
@@ -233,6 +237,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'pricingModel' => 'setPricingModel',
         'usageType' => 'setUsageType',
+        'defaultPrice' => 'setDefaultPrice',
         'unitLabel' => 'setUnitLabel',
         'meterId' => 'setMeterId',
         'unitAmount' => 'setUnitAmount',
@@ -258,6 +263,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'pricingModel' => 'getPricingModel',
         'usageType' => 'getUsageType',
+        'defaultPrice' => 'getDefaultPrice',
         'unitLabel' => 'getUnitLabel',
         'meterId' => 'getMeterId',
         'unitAmount' => 'getUnitAmount',
@@ -334,6 +340,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('pricingModel', $data ?? [], null);
         $this->setIfExists('usageType', $data ?? [], null);
+        $this->setIfExists('defaultPrice', $data ?? [], null);
         $this->setIfExists('unitLabel', $data ?? [], null);
         $this->setIfExists('meterId', $data ?? [], null);
         $this->setIfExists('unitAmount', $data ?? [], null);
@@ -419,7 +426,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priceId
      *
-     * @param string $priceId The price ID. Maximum length: 32 characters.
+     * @param string $priceId System-generated price ID
      *
      * @return self
      */
@@ -443,7 +450,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string $productId System-generated product ID
      *
      * @return self
      */
@@ -467,7 +474,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name The name. Maximum length: 100 characters.
+     * @param string|null $name Product name
      *
      * @return self
      */
@@ -491,7 +498,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pricingModel
      *
-     * @param string $pricingModel The pricing model. Maximum length: 24 characters.
+     * @param string $pricingModel Pricing model type. Aligned with Price API. Enum: PER_UNIT(per-unit pricing - charge is unitAmount x quantity; when includedQuantity is present, charge = ceil(quantity / includedQuantity) x unitAmount for package pricing), TIERED(tiered pricing - tier-based pricing with tiersMode GRADUATED or VOLUME; actual pricing comes from tier definitions). Forward compatibility: If a new value is added in the future, clients that do not recognize it should treat it as an unknown value and not break
      *
      * @return self
      */
@@ -515,13 +522,37 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets usageType
      *
-     * @param string|null $usageType The usage type. Maximum length: 16 characters.
+     * @param string|null $usageType Usage type. O - May be null in the response when the value is not set. Enum: LICENSED(fixed quantity billing - subscription item quantity is set at subscription creation and changed manually via update API), METERED(metered usage billing - quantity is tracked by external metering system and reported via Usage Report API). Forward compatibility: If a new value is added in the future, clients that do not recognize it should treat it as an unknown value and not break. Full structure definitions for recurring, includedQuantity, tiersMode, tiers are documented in price-apis.md
      *
      * @return self
      */
     public function setUsageType($usageType)
     {
         $this->container['usageType'] = $usageType;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultPrice
+     *
+     * @return bool|null
+     */
+    public function getDefaultPrice()
+    {
+        return $this->container['defaultPrice'];
+    }
+
+    /**
+     * Sets defaultPrice
+     *
+     * @param bool|null $defaultPrice Whether this price is the default price for the product. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setDefaultPrice($defaultPrice)
+    {
+        $this->container['defaultPrice'] = $defaultPrice;
 
         return $this;
     }
@@ -539,7 +570,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters.
+     * @param string|null $unitLabel Product-level unit label. O - May be null in the response when the value is not set
      *
      * @return self
      */
@@ -563,7 +594,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meterId
      *
-     * @param string|null $meterId The meter ID. Maximum length: 32 characters.
+     * @param string|null $meterId External meter reference. O - May be null in the response when the value is not set
      *
      * @return self
      */
@@ -635,7 +666,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets active
      *
-     * @param bool $active The active.
+     * @param bool $active Product active status. true=product is active and can be used for new subscriptions, false=product is deactivated and cannot be used for new subscriptions. Cannot be null. Deactivated products can be reactivated via Update active=true
      *
      * @return self
      */
@@ -659,7 +690,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets includedQuantity
      *
-     * @param int|null $includedQuantity The included quantity.
+     * @param int|null $includedQuantity Included quantity for package pricing. O - May be null in the response when the value is not set. See price-apis.md for includedQuantity semantics
      *
      * @return self
      */
@@ -683,7 +714,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tiersMode
      *
-     * @param string|null $tiersMode The tiers mode. Maximum length: 16 characters.
+     * @param string|null $tiersMode Tiered pricing mode. O - May be null in the response when the value is not set. Enum: GRADUATED(graduated volume pricing), VOLUME(flat-tier volume pricing). See price-apis.md for tier structure definition
      *
      * @return self
      */
@@ -707,7 +738,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tiers
      *
-     * @param \model\Tier[]|null $tiers The tiers.
+     * @param \model\Tier[]|null $tiers Tier definitions. O - May be null in the response when the value is not set. Structure defined in price-apis.md
      *
      * @return self
      */
@@ -721,7 +752,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -731,7 +762,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Custom key-value metadata stored as JSON string. O - May be null in the response when the value is not set The value must be a valid JSON object string.
      *
      * @return self
      */
@@ -755,7 +786,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets createdAt
      *
-     * @param string $createdAt The created at. Maximum length: 29 characters.
+     * @param string $createdAt ISO 8601 creation timestamp
      *
      * @return self
      */
@@ -779,7 +810,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deactivatedAt
      *
-     * @param string|null $deactivatedAt The deactivated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $deactivatedAt ISO 8601 deactivation timestamp. O - Returned when product has been deactivated (active=false); absent when product is active
      *
      * @return self
      */
@@ -803,7 +834,7 @@ class Price  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updatedAt
      *
-     * @param string|null $updatedAt The updated at. Maximum length: 29 characters.
+     * @param string|null $updatedAt ISO 8601 last update timestamp. O - Returned when non-null; absent from response if never updated after creation
      *
      * @return self
      */

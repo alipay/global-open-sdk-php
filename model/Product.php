@@ -47,12 +47,13 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'productId' => 'string',
+        'productRequestId' => 'string',
         'name' => 'string',
         'type' => 'string',
         'description' => 'string',
         'images' => 'string[]',
         'unitLabel' => 'string',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'active' => 'bool',
         'createdAt' => 'string',
         'deactivatedAt' => 'string',
@@ -68,6 +69,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'productId' => null,
+        'productRequestId' => null,
         'name' => null,
         'type' => null,
         'description' => null,
@@ -87,6 +89,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'productId' => false,
+        'productRequestId' => false,
         'name' => false,
         'type' => false,
         'description' => false,
@@ -186,6 +189,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'productId' => 'productId',
+        'productRequestId' => 'productRequestId',
         'name' => 'name',
         'type' => 'type',
         'description' => 'description',
@@ -205,6 +209,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'productId' => 'setProductId',
+        'productRequestId' => 'setProductRequestId',
         'name' => 'setName',
         'type' => 'setType',
         'description' => 'setDescription',
@@ -224,6 +229,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'productId' => 'getProductId',
+        'productRequestId' => 'getProductRequestId',
         'name' => 'getName',
         'type' => 'getType',
         'description' => 'getDescription',
@@ -294,6 +300,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('productRequestId', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -377,13 +384,37 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string $productId System-generated product ID
      *
      * @return self
      */
     public function setProductId($productId)
     {
         $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Gets productRequestId
+     *
+     * @return string|null
+     */
+    public function getProductRequestId()
+    {
+        return $this->container['productRequestId'];
+    }
+
+    /**
+     * Sets productRequestId
+     *
+     * @param string|null $productRequestId The idempotency key supplied when the product was created. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setProductRequestId($productRequestId)
+    {
+        $this->container['productRequestId'] = $productRequestId;
 
         return $this;
     }
@@ -401,7 +432,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name The name. Maximum length: 100 characters.
+     * @param string $name Product name
      *
      * @return self
      */
@@ -425,7 +456,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param string $type The type. Maximum length: 16 characters.
+     * @param string $type Filter by product type. O - When provided, returns only products of the specified type; when absent, returns all types. Enum: SERVICE, GOOD. Can be null; default null. Invalid values return PARAM_ILLEGAL error
      *
      * @return self
      */
@@ -449,7 +480,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 1024 characters.
+     * @param string|null $description Product description. O - May be null in the response when the value is not set
      *
      * @return self
      */
@@ -473,7 +504,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets images
      *
-     * @param string[]|null $images The images.
+     * @param string[]|null $images Product image URLs
      *
      * @return self
      */
@@ -497,7 +528,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters.
+     * @param string|null $unitLabel Product-level unit label. O - May be null in the response when the value is not set
      *
      * @return self
      */
@@ -511,7 +542,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -521,7 +552,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Custom key-value metadata stored as JSON string The value must be a valid JSON object string.
      *
      * @return self
      */
@@ -545,7 +576,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets active
      *
-     * @param bool $active The active.
+     * @param bool $active Filter by active status. O - true=return only active products, false=return only deactivated products, absent or null=return all products. No default value
      *
      * @return self
      */
@@ -569,7 +600,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets createdAt
      *
-     * @param string $createdAt The created at. Maximum length: 29 characters.
+     * @param string $createdAt ISO 8601 creation timestamp
      *
      * @return self
      */
@@ -593,7 +624,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets deactivatedAt
      *
-     * @param string|null $deactivatedAt The deactivated at. Maximum length: 29 characters. Note: See documentation for details.
+     * @param string|null $deactivatedAt ISO 8601 deactivation timestamp. O - Returned when product has been deactivated (active=false); absent when product is active
      *
      * @return self
      */
@@ -617,7 +648,7 @@ class Product  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updatedAt
      *
-     * @param string|null $updatedAt The updated at. Maximum length: 29 characters.
+     * @param string|null $updatedAt ISO 8601 last update timestamp. O - Returned when non-null; absent from response if never updated after creation
      *
      * @return self
      */

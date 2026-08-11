@@ -49,16 +49,15 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'subscriptionId' => 'string',
         'priceItemChanges' => '\request\model\PriceItemChange[]',
         'prorationBehavior' => 'string',
-        'prorationDate' => 'string',
-        'pauseCollection' => '\request\model\BillingSubscriptionUpdatePauseCollection',
-        'billingCycleAnchor' => 'string',
-        'trialSettings' => '\request\model\BillingSubscriptionUpdateTrialSettings',
+        'resetBillingCycleAnchor' => 'bool',
+        'trialSettings' => '\request\model\BillingTrialSettings',
         'cancelAtPeriodEnd' => 'bool',
+        'cancelAt' => 'string',
+        'cancellationDetails' => '\request\model\BillingSubscriptionCancellationDetails',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
-        'defaultPaymentMethod' => 'string',
         'description' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string'
     ];
 
     /**
@@ -72,14 +71,13 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'subscriptionId' => null,
         'priceItemChanges' => null,
         'prorationBehavior' => null,
-        'prorationDate' => null,
-        'pauseCollection' => null,
-        'billingCycleAnchor' => null,
+        'resetBillingCycleAnchor' => null,
         'trialSettings' => null,
         'cancelAtPeriodEnd' => null,
+        'cancelAt' => null,
+        'cancellationDetails' => null,
         'collectionMethod' => null,
         'daysUntilDue' => null,
-        'defaultPaymentMethod' => null,
         'description' => null,
         'metadata' => null
     ];
@@ -93,14 +91,13 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'subscriptionId' => false,
         'priceItemChanges' => false,
         'prorationBehavior' => false,
-        'prorationDate' => false,
-        'pauseCollection' => false,
-        'billingCycleAnchor' => false,
+        'resetBillingCycleAnchor' => false,
         'trialSettings' => false,
         'cancelAtPeriodEnd' => false,
+        'cancelAt' => false,
+        'cancellationDetails' => false,
         'collectionMethod' => false,
         'daysUntilDue' => true,
-        'defaultPaymentMethod' => false,
         'description' => false,
         'metadata' => false
     ];
@@ -194,14 +191,13 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'subscriptionId' => 'subscriptionId',
         'priceItemChanges' => 'priceItemChanges',
         'prorationBehavior' => 'prorationBehavior',
-        'prorationDate' => 'prorationDate',
-        'pauseCollection' => 'pauseCollection',
-        'billingCycleAnchor' => 'billingCycleAnchor',
+        'resetBillingCycleAnchor' => 'resetBillingCycleAnchor',
         'trialSettings' => 'trialSettings',
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
+        'cancelAt' => 'cancelAt',
+        'cancellationDetails' => 'cancellationDetails',
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
-        'defaultPaymentMethod' => 'defaultPaymentMethod',
         'description' => 'description',
         'metadata' => 'metadata'
     ];
@@ -215,14 +211,13 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'subscriptionId' => 'setSubscriptionId',
         'priceItemChanges' => 'setPriceItemChanges',
         'prorationBehavior' => 'setProrationBehavior',
-        'prorationDate' => 'setProrationDate',
-        'pauseCollection' => 'setPauseCollection',
-        'billingCycleAnchor' => 'setBillingCycleAnchor',
+        'resetBillingCycleAnchor' => 'setResetBillingCycleAnchor',
         'trialSettings' => 'setTrialSettings',
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
+        'cancelAt' => 'setCancelAt',
+        'cancellationDetails' => 'setCancellationDetails',
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
-        'defaultPaymentMethod' => 'setDefaultPaymentMethod',
         'description' => 'setDescription',
         'metadata' => 'setMetadata'
     ];
@@ -236,14 +231,13 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'subscriptionId' => 'getSubscriptionId',
         'priceItemChanges' => 'getPriceItemChanges',
         'prorationBehavior' => 'getProrationBehavior',
-        'prorationDate' => 'getProrationDate',
-        'pauseCollection' => 'getPauseCollection',
-        'billingCycleAnchor' => 'getBillingCycleAnchor',
+        'resetBillingCycleAnchor' => 'getResetBillingCycleAnchor',
         'trialSettings' => 'getTrialSettings',
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
+        'cancelAt' => 'getCancelAt',
+        'cancellationDetails' => 'getCancellationDetails',
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
-        'defaultPaymentMethod' => 'getDefaultPaymentMethod',
         'description' => 'getDescription',
         'metadata' => 'getMetadata'
     ];
@@ -308,14 +302,13 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('priceItemChanges', $data ?? [], null);
         $this->setIfExists('prorationBehavior', $data ?? [], null);
-        $this->setIfExists('prorationDate', $data ?? [], null);
-        $this->setIfExists('pauseCollection', $data ?? [], null);
-        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
+        $this->setIfExists('resetBillingCycleAnchor', $data ?? [], null);
         $this->setIfExists('trialSettings', $data ?? [], null);
         $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
+        $this->setIfExists('cancelAt', $data ?? [], null);
+        $this->setIfExists('cancellationDetails', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('daysUntilDue', $data ?? [], null);
-        $this->setIfExists('defaultPaymentMethod', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
 
@@ -440,73 +433,25 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     }
 
     /**
-     * Gets prorationDate
+     * Gets resetBillingCycleAnchor
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getProrationDate()
+    public function getResetBillingCycleAnchor()
     {
-        return $this->container['prorationDate'];
+        return $this->container['resetBillingCycleAnchor'];
     }
 
     /**
-     * Sets prorationDate
+     * Sets resetBillingCycleAnchor
      *
-     * @param string|null $prorationDate The proration date.
+     * @param bool|null $resetBillingCycleAnchor Whether to reset the billing cycle anchor when the update takes effect.
      *
      * @return self
      */
-    public function setProrationDate($prorationDate)
+    public function setResetBillingCycleAnchor($resetBillingCycleAnchor)
     {
-        $this->container['prorationDate'] = $prorationDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets pauseCollection
-     *
-     * @return \model\BillingSubscriptionUpdatePauseCollection|null
-     */
-    public function getPauseCollection()
-    {
-        return $this->container['pauseCollection'];
-    }
-
-    /**
-     * Sets pauseCollection
-     *
-     * @param \model\BillingSubscriptionUpdatePauseCollection|null $pauseCollection pauseCollection
-     *
-     * @return self
-     */
-    public function setPauseCollection($pauseCollection)
-    {
-        $this->container['pauseCollection'] = $pauseCollection;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingCycleAnchor
-     *
-     * @return string|null
-     */
-    public function getBillingCycleAnchor()
-    {
-        return $this->container['billingCycleAnchor'];
-    }
-
-    /**
-     * Sets billingCycleAnchor
-     *
-     * @param string|null $billingCycleAnchor The billing cycle anchor. Maximum length: 9 characters.
-     *
-     * @return self
-     */
-    public function setBillingCycleAnchor($billingCycleAnchor)
-    {
-        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
+        $this->container['resetBillingCycleAnchor'] = $resetBillingCycleAnchor;
 
         return $this;
     }
@@ -514,7 +459,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     /**
      * Gets trialSettings
      *
-     * @return \model\BillingSubscriptionUpdateTrialSettings|null
+     * @return \model\BillingTrialSettings|null
      */
     public function getTrialSettings()
     {
@@ -524,7 +469,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     /**
      * Sets trialSettings
      *
-     * @param \model\BillingSubscriptionUpdateTrialSettings|null $trialSettings trialSettings
+     * @param \model\BillingTrialSettings|null $trialSettings trialSettings
      *
      * @return self
      */
@@ -555,6 +500,54 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     public function setCancelAtPeriodEnd($cancelAtPeriodEnd)
     {
         $this->container['cancelAtPeriodEnd'] = $cancelAtPeriodEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelAt
+     *
+     * @return string|null
+     */
+    public function getCancelAt()
+    {
+        return $this->container['cancelAt'];
+    }
+
+    /**
+     * Sets cancelAt
+     *
+     * @param string|null $cancelAt The time when the subscription is scheduled for cancellation in ISO 8601 format.
+     *
+     * @return self
+     */
+    public function setCancelAt($cancelAt)
+    {
+        $this->container['cancelAt'] = $cancelAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancellationDetails
+     *
+     * @return \model\BillingSubscriptionCancellationDetails|null
+     */
+    public function getCancellationDetails()
+    {
+        return $this->container['cancellationDetails'];
+    }
+
+    /**
+     * Sets cancellationDetails
+     *
+     * @param \model\BillingSubscriptionCancellationDetails|null $cancellationDetails cancellationDetails
+     *
+     * @return self
+     */
+    public function setCancellationDetails($cancellationDetails)
+    {
+        $this->container['cancellationDetails'] = $cancellationDetails;
 
         return $this;
     }
@@ -608,30 +601,6 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     }
 
     /**
-     * Gets defaultPaymentMethod
-     *
-     * @return string|null
-     */
-    public function getDefaultPaymentMethod()
-    {
-        return $this->container['defaultPaymentMethod'];
-    }
-
-    /**
-     * Sets defaultPaymentMethod
-     *
-     * @param string|null $defaultPaymentMethod The default payment method token. Maximum length: 64 characters.
-     *
-     * @return self
-     */
-    public function setDefaultPaymentMethod($defaultPaymentMethod)
-    {
-        $this->container['defaultPaymentMethod'] = $defaultPaymentMethod;
-
-        return $this;
-    }
-
-    /**
      * Gets description
      *
      * @return string|null
@@ -658,7 +627,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -668,7 +637,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Custom metadata encoded as a JSON object string. When provided, the value fully replaces the existing metadata. When omitted, the existing value is unchanged.
      *
      * @return self
      */

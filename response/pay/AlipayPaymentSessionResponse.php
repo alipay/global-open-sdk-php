@@ -497,7 +497,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The system-created subscription ID. Always returned when subscription is provided in the request.
+     * @param string|null $subscriptionId The created subscription ID. Returned only when the request contains subscription and result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -521,7 +521,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The draft invoice ID created for the first billing cycle. Empty for trial subscriptions.
+     * @param string|null $invoiceId The invoice ID generated at subscription creation. Returned only for a non-trial subscription when result.resultCode is SUCCESS.
      *
      * @return self
      */
