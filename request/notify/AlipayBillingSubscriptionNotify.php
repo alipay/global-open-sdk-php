@@ -4,7 +4,11 @@ namespace Request\notify;
 
 class AlipayBillingSubscriptionNotify extends \Request\notify\AlipayNotify
 {
-    public $merchantRequestId;
+    /**
+     * The original subscription request ID and merchant-side idempotency key used for notification
+     * deduplication.
+     */
+    public $subscriptionRequestId;
     public $eventTime;
     public $subscriptionId;
     public $invoiceId;
@@ -14,14 +18,14 @@ class AlipayBillingSubscriptionNotify extends \Request\notify\AlipayNotify
     public $previousStatus;
     public $fixedAmount;
 
-    public function getMerchantRequestId()
+    public function getSubscriptionRequestId()
     {
-        return $this->merchantRequestId;
+        return $this->subscriptionRequestId;
     }
 
-    public function setMerchantRequestId($merchantRequestId): void
+    public function setSubscriptionRequestId($subscriptionRequestId): void
     {
-        $this->merchantRequestId = $merchantRequestId;
+        $this->subscriptionRequestId = $subscriptionRequestId;
     }
 
     public function getEventTime()

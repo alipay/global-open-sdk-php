@@ -38,6 +38,11 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     public  $retryInfo;
     public  $updateRequestId;
     public  $authExpiryTime;
+    /**
+     * The tax calculation ID associated with the payment. Retain it for reconciliation and
+     * subsequent refunds; query tax details through inquireTransactionList. It does not indicate
+     * that tax has been posted or recorded. If absent, the payment is not subject to tax.
+     */
     public  $taxCalculationId;
 
     /**
