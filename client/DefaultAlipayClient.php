@@ -4,6 +4,13 @@ namespace Client;
 
 class DefaultAlipayClient extends \Client\BaseAlipayClient
 {
+    private $uploadGatewayUrl;
+    private $fileGatewayUrl;
+    private $fileClientId;
+    private $fileMerchantPrivateKey;
+    private $fileAlipayPublicKey;
+    private $fileAgentToken;
+
     public function __construct()
     {
         $a = func_get_args();
@@ -16,21 +23,64 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
     public function __construct6($gatewayUrl, $merchantPrivateKey, $alipayPublicKey)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey);
+        $this->configureFileClient($gatewayUrl, null, $merchantPrivateKey, $alipayPublicKey, null);
     }
 
     public function __construct7($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId);
+        $this->configureFileClient($gatewayUrl, $clientId, $merchantPrivateKey, $alipayPublicKey, null);
     }
 
     public function __construct8($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken)
     {
         parent::__construct($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId, $agentToken);
+        $this->configureFileClient($gatewayUrl, $clientId, $merchantPrivateKey, $alipayPublicKey, $agentToken);
     }
 
     protected function buildCustomHeader()
     {
         return null;
+    }
+
+    public function setUploadGatewayUrl($uploadGatewayUrl)
+    {
+        $this->uploadGatewayUrl = UploadGatewayResolver::normalizeExplicit($uploadGatewayUrl);
+        return $this;
+    }
+
+    /**
+     * Uploads an SDK-provided file request through the OpenApiV2File transport.
+     *
+     * @param \Request\AlipayFileRequest $request
+     * @return mixed
+     */
+    public function uploadFile($request)
+    {
+        if (!$request instanceof \Request\AlipayFileRequest) {
+            throw new \InvalidArgumentException('request must be an SDK-provided AlipayFileRequest');
+        }
+        return FileUploadExecutor::execute(
+            $request,
+            [
+                'gatewayUrl' => $this->fileGatewayUrl,
+                'uploadGatewayUrl' => $this->uploadGatewayUrl,
+                'clientId' => $this->fileClientId,
+                'merchantPrivateKey' => $this->fileMerchantPrivateKey,
+                'alipayPublicKey' => $this->fileAlipayPublicKey,
+                'agentToken' => $this->fileAgentToken,
+                'customHeaders' => $this->buildCustomHeader(),
+            ]
+        );
+    }
+
+    private function configureFileClient($gatewayUrl, $clientId, $merchantPrivateKey, $alipayPublicKey, $agentToken)
+    {
+        $this->fileGatewayUrl = $gatewayUrl;
+        $this->fileClientId = $clientId;
+        $this->fileMerchantPrivateKey = $merchantPrivateKey;
+        $this->fileAlipayPublicKey = $alipayPublicKey;
+        $this->fileAgentToken = $agentToken;
     }
 
     protected function sendRequest($requestUrl, $httpMethod, $headers, $reqBody)
@@ -78,7 +128,6 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
         return $httpRpcResult;
     }
 
-
     private function getResponseTime($headerItem)
     {
         if (strstr($headerItem, "response-time")) {
@@ -98,5 +147,4 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
         }
         return null;
     }
-
 }
