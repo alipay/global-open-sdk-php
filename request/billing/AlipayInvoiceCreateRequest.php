@@ -403,7 +403,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceRequestId
      *
-     * @param string $invoiceRequestId The invoice request id. Maximum length: 64 characters.
+     * @param string $invoiceRequestId Merchant-supplied idempotency key. Repeating the same `invoiceRequestId` returns the originally created invoice (true idempotency - same key, same result). Must be unique per merchant. Backed by a unique constraint `UK(merchant_id, invoice_request_id)` on `ibilling_invoice`. Accepts alphanumeric characters, and underscores. Cannot be null.
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string $customerId Customer ID this invoice belongs to. The customer must exist and belong to the requesting merchant. Cannot be null.
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId The subscription this invoice is linked to. Leave empty for standalone invoices. If provided, the subscription must exist and belong to the requesting merchant. Can be null.
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets currency
      *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
+     * @param string $currency Three-letter ISO currency code in uppercase. The currency in which the invoice item will be charged (e.g., `\"USD\"`). Must be consistent across all monetary fields in the request. Cannot be null.
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets items
      *
-     * @param \model\InvoiceCreateItem[] $items The items.
+     * @param \model\InvoiceCreateItem[] $items Line items for the invoice. Minimum 1 item. Maximum 100 for standalone invoices, 20 for subscription-linked invoices (subscription invoices use batch price calculation which requires shared recurring settings). Each item supports three pricing models: Model 1 (Fixed Amount via `itemAmount`), Model 2 (Unit Amount x Quantity via `unitAmount`), Model 3 (Price Object via `priceId`). Only one model per item; mixing is rejected. Additionally, all items within the same invoice must use the same pricing model - mixed pricing models across items are rejected. Cannot be null or empty.
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Invoice status on creation. Allowed values: `DRAFT` and `OPEN`. Defaults to `DRAFT` when omitted. When set to `OPEN`, `dueDate` is required. Maximum length: 16 characters.
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets autoSend
      *
-     * @param bool|null $autoSend Indicates whether to automatically send the notification. Note: See documentation for details.
+     * @param bool|null $autoSend Whether to email the invoice to the customer when created as `OPEN`. When `true`, the email is sent idempotently - sending the same invoice twice won't produce duplicate emails. Can be null (defaults to false).
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets ccEmails
      *
-     * @param string[]|null $ccEmails The cc emails.
+     * @param string[]|null $ccEmails CC email addresses for invoice notification. When `autoSend` is `true`, the invoice email is also sent to these addresses. Can be null.
      *
      * @return self
      */
@@ -595,7 +595,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 512 characters.
+     * @param string|null $description Human-readable description of the invoice. Appears on the invoice PDF and hosted page. HTML tags are stripped for XSS prevention. Can be null.
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets dueDate
      *
-     * @param string|null $dueDate The due date. Maximum length: 24 characters. Note: See documentation for details.
+     * @param string|null $dueDate Payment due date. Format: ISO 8601 date (`yyyy-MM-dd`, e.g., `\"2026-06-01\"`) or full ISO 8601 datetime with timezone offset (e.g., `\"2026-06-01T23:59:59+00:00\"`). Date-only values are interpreted as end-of-day in the merchant's acquiring-region timezone. Required when `status=OPEN`; optional when `status=DRAFT`. Past dates are rejected with `PARAM_ILLEGAL`. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -643,7 +643,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets collectionMethod
      *
-     * @param string|null $collectionMethod The collection method. Maximum length: 32 characters.
+     * @param string|null $collectionMethod Payment collection method. See enum table below. Default: `CHARGE_AUTOMATICALLY`. Can be null (defaults to `CHARGE_AUTOMATICALLY`).
      *
      * @return self
      */
@@ -715,7 +715,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets discounts
      *
-     * @param \model\BillingDiscount[]|null $discounts The discounts applied.
+     * @param \model\BillingDiscount[]|null $discounts Invoice-level discount items. Each item carries either a `couponId` or `promotionCodeId` (at least one must be provided per element). Multiple discounts are applied sequentially to the invoice subtotal in the order they appear. The system resolves each discount reference to its actual discount value (percentage or fixed amount) at creation time and computes the resulting `discountAmount` internally. Can be null. See DiscountItem Object below for field details.
      *
      * @return self
      */
@@ -739,7 +739,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceNotifyUrl
      *
-     * @param string|null $invoiceNotifyUrl The URL that Antom uses to send the invoice payment status change notification to. Only HTTPS is supported. Maximum length: 2048 characters.
+     * @param string|null $invoiceNotifyUrl HTTPS URL that receives invoice payment-status notifications. When omitted, invoice notifications are not sent. Maximum length: 2048 characters.
      *
      * @return self
      */

@@ -47,9 +47,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
-        'status' => 'string',
-        'downloadUrl' => 'string',
-        'expiresAt' => 'string'
+        'fileFormat' => 'string',
+        'expiresAt' => 'string',
+        'fileUrl' => 'string',
+        'fileSize' => 'int',
+        'fileName' => 'string'
     ];
 
     /**
@@ -61,9 +63,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'result' => null,
-        'status' => null,
-        'downloadUrl' => null,
-        'expiresAt' => null
+        'fileFormat' => null,
+        'expiresAt' => null,
+        'fileUrl' => null,
+        'fileSize' => 'int64',
+        'fileName' => null
     ];
 
     /**
@@ -73,9 +77,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPINullables = [
         'result' => false,
-        'status' => false,
-        'downloadUrl' => false,
-        'expiresAt' => false
+        'fileFormat' => false,
+        'expiresAt' => false,
+        'fileUrl' => false,
+        'fileSize' => false,
+        'fileName' => false
     ];
 
     /**
@@ -165,9 +171,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'result' => 'result',
-        'status' => 'status',
-        'downloadUrl' => 'downloadUrl',
-        'expiresAt' => 'expiresAt'
+        'fileFormat' => 'fileFormat',
+        'expiresAt' => 'expiresAt',
+        'fileUrl' => 'fileUrl',
+        'fileSize' => 'fileSize',
+        'fileName' => 'fileName'
     ];
 
     /**
@@ -177,9 +185,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'result' => 'setResult',
-        'status' => 'setStatus',
-        'downloadUrl' => 'setDownloadUrl',
-        'expiresAt' => 'setExpiresAt'
+        'fileFormat' => 'setFileFormat',
+        'expiresAt' => 'setExpiresAt',
+        'fileUrl' => 'setFileUrl',
+        'fileSize' => 'setFileSize',
+        'fileName' => 'setFileName'
     ];
 
     /**
@@ -189,9 +199,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'result' => 'getResult',
-        'status' => 'getStatus',
-        'downloadUrl' => 'getDownloadUrl',
-        'expiresAt' => 'getExpiresAt'
+        'fileFormat' => 'getFileFormat',
+        'expiresAt' => 'getExpiresAt',
+        'fileUrl' => 'getFileUrl',
+        'fileSize' => 'getFileSize',
+        'fileName' => 'getFileName'
     ];
 
     /**
@@ -252,9 +264,11 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
     public function __construct(?array $data = null)
     {
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('downloadUrl', $data ?? [], null);
+        $this->setIfExists('fileFormat', $data ?? [], null);
         $this->setIfExists('expiresAt', $data ?? [], null);
+        $this->setIfExists('fileUrl', $data ?? [], null);
+        $this->setIfExists('fileSize', $data ?? [], null);
+        $this->setIfExists('fileName', $data ?? [], null);
 
             }
 
@@ -287,15 +301,6 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['downloadUrl'] === null) {
-            $invalidProperties[] = "'downloadUrl' can't be null";
-        }
-        if ($this->container['expiresAt'] === null) {
-            $invalidProperties[] = "'expiresAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -337,49 +342,25 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets status
+     * Gets fileFormat
      *
-     * @return string
+     * @return string|null
      */
-    public function getStatus()
+    public function getFileFormat()
     {
-        return $this->container['status'];
+        return $this->container['fileFormat'];
     }
 
     /**
-     * Sets status
+     * Sets fileFormat
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $fileFormat MIME type of the generated file. The response returns the MIME type corresponding to the requested format: `csv` -> `text/csv`, `xlsx` -> `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`. Note: the response `fileFormat` returns the MIME type, not the request format code. The request accepts `csv`/`xlsx`. Maximum length: 128 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setFileFormat($fileFormat)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets downloadUrl
-     *
-     * @return string
-     */
-    public function getDownloadUrl()
-    {
-        return $this->container['downloadUrl'];
-    }
-
-    /**
-     * Sets downloadUrl
-     *
-     * @param string $downloadUrl The download url. Maximum length: 2048 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setDownloadUrl($downloadUrl)
-    {
-        $this->container['downloadUrl'] = $downloadUrl;
+        $this->container['fileFormat'] = $fileFormat;
 
         return $this;
     }
@@ -387,7 +368,7 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets expiresAt
      *
-     * @return string
+     * @return string|null
      */
     public function getExpiresAt()
     {
@@ -397,13 +378,85 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets expiresAt
      *
-     * @param string $expiresAt The expiration time. Maximum length: 24 characters.
+     * @param string|null $expiresAt Expiry timestamp of the signed `fileUrl` in ISO 8601 format. Maximum length: 29 characters. After this time, accessing the URL returns HTTP 403. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setExpiresAt($expiresAt)
     {
         $this->container['expiresAt'] = $expiresAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets fileUrl
+     *
+     * @return string|null
+     */
+    public function getFileUrl()
+    {
+        return $this->container['fileUrl'];
+    }
+
+    /**
+     * Sets fileUrl
+     *
+     * @param string|null $fileUrl Signed OSS URL for file download. URL is time-limited; see `expiresAt`. After expiry, accessing the URL returns HTTP 403. Maximum length: 2048 characters. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setFileUrl($fileUrl)
+    {
+        $this->container['fileUrl'] = $fileUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets fileSize
+     *
+     * @return int|null
+     */
+    public function getFileSize()
+    {
+        return $this->container['fileSize'];
+    }
+
+    /**
+     * Sets fileSize
+     *
+     * @param int|null $fileSize File size in bytes. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setFileSize($fileSize)
+    {
+        $this->container['fileSize'] = $fileSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets fileName
+     *
+     * @return string|null
+     */
+    public function getFileName()
+    {
+        return $this->container['fileName'];
+    }
+
+    /**
+     * Sets fileName
+     *
+     * @param string|null $fileName Generated file name (e.g., `invoices_20260401_20260430_1685000000.csv`). Maximum length: 256 characters. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setFileName($fileName)
+    {
+        $this->container['fileName'] = $fileName;
 
         return $this;
     }

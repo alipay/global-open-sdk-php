@@ -51,11 +51,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'paymentBehavior' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
-        'billingCycleAnchor' => 'string',
         'cancelAt' => 'string',
         'cancelAtPeriodEnd' => 'bool',
         'description' => 'string',
         'discounts' => '\request\model\BillingDiscount[]',
+        'defaultPaymentMethod' => 'string',
         'allowPromotionCode' => 'bool',
         'subscriptionNotifyUrl' => 'string'
     ];
@@ -73,11 +73,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'paymentBehavior' => null,
         'collectionMethod' => null,
         'daysUntilDue' => null,
-        'billingCycleAnchor' => null,
         'cancelAt' => null,
         'cancelAtPeriodEnd' => null,
         'description' => null,
         'discounts' => null,
+        'defaultPaymentMethod' => null,
         'allowPromotionCode' => null,
         'subscriptionNotifyUrl' => null
     ];
@@ -93,11 +93,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'paymentBehavior' => false,
         'collectionMethod' => false,
         'daysUntilDue' => true,
-        'billingCycleAnchor' => false,
         'cancelAt' => false,
         'cancelAtPeriodEnd' => false,
         'description' => false,
         'discounts' => false,
+        'defaultPaymentMethod' => false,
         'allowPromotionCode' => false,
         'subscriptionNotifyUrl' => false
     ];
@@ -193,11 +193,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'paymentBehavior' => 'paymentBehavior',
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
-        'billingCycleAnchor' => 'billingCycleAnchor',
         'cancelAt' => 'cancelAt',
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
         'description' => 'description',
         'discounts' => 'discounts',
+        'defaultPaymentMethod' => 'defaultPaymentMethod',
         'allowPromotionCode' => 'allowPromotionCode',
         'subscriptionNotifyUrl' => 'subscriptionNotifyUrl'
     ];
@@ -213,11 +213,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'paymentBehavior' => 'setPaymentBehavior',
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
-        'billingCycleAnchor' => 'setBillingCycleAnchor',
         'cancelAt' => 'setCancelAt',
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
         'description' => 'setDescription',
         'discounts' => 'setDiscounts',
+        'defaultPaymentMethod' => 'setDefaultPaymentMethod',
         'allowPromotionCode' => 'setAllowPromotionCode',
         'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl'
     ];
@@ -233,11 +233,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'paymentBehavior' => 'getPaymentBehavior',
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
-        'billingCycleAnchor' => 'getBillingCycleAnchor',
         'cancelAt' => 'getCancelAt',
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
         'description' => 'getDescription',
         'discounts' => 'getDiscounts',
+        'defaultPaymentMethod' => 'getDefaultPaymentMethod',
         'allowPromotionCode' => 'getAllowPromotionCode',
         'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl'
     ];
@@ -304,11 +304,11 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('paymentBehavior', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('daysUntilDue', $data ?? [], null);
-        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
         $this->setIfExists('cancelAt', $data ?? [], null);
         $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('discounts', $data ?? [], null);
+        $this->setIfExists('defaultPaymentMethod', $data ?? [], null);
         $this->setIfExists('allowPromotionCode', $data ?? [], null);
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
 
@@ -417,7 +417,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets paymentBehavior
      *
-     * @param string|null $paymentBehavior Payment behavior.
+     * @param string|null $paymentBehavior The payment behavior for subscription creation. The currently supported value is ALLOW_INCOMPLETE.
      *
      * @return self
      */
@@ -472,30 +472,6 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setDaysUntilDue($daysUntilDue)
     {
         $this->container['daysUntilDue'] = $daysUntilDue;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingCycleAnchor
-     *
-     * @return string|null
-     */
-    public function getBillingCycleAnchor()
-    {
-        return $this->container['billingCycleAnchor'];
-    }
-
-    /**
-     * Sets billingCycleAnchor
-     *
-     * @param string|null $billingCycleAnchor Billing cycle anchor time.
-     *
-     * @return self
-     */
-    public function setBillingCycleAnchor($billingCycleAnchor)
-    {
-        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
 
         return $this;
     }
@@ -592,6 +568,30 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setDiscounts($discounts)
     {
         $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultPaymentMethod
+     *
+     * @return string|null
+     */
+    public function getDefaultPaymentMethod()
+    {
+        return $this->container['defaultPaymentMethod'];
+    }
+
+    /**
+     * Sets defaultPaymentMethod
+     *
+     * @param string|null $defaultPaymentMethod The default payment method for this subscription. It takes precedence over the customer-level default. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setDefaultPaymentMethod($defaultPaymentMethod)
+    {
+        $this->container['defaultPaymentMethod'] = $defaultPaymentMethod;
 
         return $this;
     }

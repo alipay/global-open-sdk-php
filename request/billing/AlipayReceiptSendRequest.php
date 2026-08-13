@@ -47,7 +47,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
       */
     protected static $openAPITypes = [
         'receiptId' => 'string',
-        'sendRequestId' => 'string'
+        'ccEmails' => 'string[]'
     ];
 
     /**
@@ -59,7 +59,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
       */
     protected static $openAPIFormats = [
         'receiptId' => null,
-        'sendRequestId' => null
+        'ccEmails' => null
     ];
 
     /**
@@ -69,7 +69,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
       */
     protected static $openAPINullables = [
         'receiptId' => false,
-        'sendRequestId' => false
+        'ccEmails' => false
     ];
 
     /**
@@ -159,7 +159,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
      */
     protected static $attributeMap = [
         'receiptId' => 'receiptId',
-        'sendRequestId' => 'sendRequestId'
+        'ccEmails' => 'ccEmails'
     ];
 
     /**
@@ -169,7 +169,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
      */
     protected static $setters = [
         'receiptId' => 'setReceiptId',
-        'sendRequestId' => 'setSendRequestId'
+        'ccEmails' => 'setCcEmails'
     ];
 
     /**
@@ -179,7 +179,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
      */
     protected static $getters = [
         'receiptId' => 'getReceiptId',
-        'sendRequestId' => 'getSendRequestId'
+        'ccEmails' => 'getCcEmails'
     ];
 
     /**
@@ -240,7 +240,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
     public function __construct(?array $data = null)
     {
         $this->setIfExists('receiptId', $data ?? [], null);
-        $this->setIfExists('sendRequestId', $data ?? [], null);
+        $this->setIfExists('ccEmails', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/receipt/send"); 
     }
@@ -303,7 +303,7 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets receiptId
      *
-     * @param string $receiptId The receipt ID. Maximum length: 64 characters.
+     * @param string $receiptId Receipt ID to send. Must belong to the merchant. Cannot be null.
      *
      * @return self
      */
@@ -315,25 +315,25 @@ class AlipayReceiptSendRequest   extends AlipayRequest  implements ModelInterfac
     }
 
     /**
-     * Gets sendRequestId
+     * Gets ccEmails
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getSendRequestId()
+    public function getCcEmails()
     {
-        return $this->container['sendRequestId'];
+        return $this->container['ccEmails'];
     }
 
     /**
-     * Sets sendRequestId
+     * Sets ccEmails
      *
-     * @param string|null $sendRequestId The send request id. Maximum length: 64 characters.
+     * @param string[]|null $ccEmails CC email addresses to receive a copy of the receipt email in addition to the customer's registered email. Can be null.
      *
      * @return self
      */
-    public function setSendRequestId($sendRequestId)
+    public function setCcEmails($ccEmails)
     {
-        $this->container['sendRequestId'] = $sendRequestId;
+        $this->container['ccEmails'] = $ccEmails;
 
         return $this;
     }

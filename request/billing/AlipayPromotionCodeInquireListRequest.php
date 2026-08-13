@@ -331,7 +331,7 @@ class AlipayPromotionCodeInquireListRequest   extends AlipayRequest  implements 
     /**
      * Sets couponId
      *
-     * @param string $couponId The coupon ID. Maximum length: 64 characters.
+     * @param string $couponId Parent coupon ID. Only promotion codes belonging to this coupon are returned. Cannot be empty.
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AlipayPromotionCodeInquireListRequest   extends AlipayRequest  implements 
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Filter by promotion code status. Allowed values: `ACTIVE`, `INACTIVE`. If not provided, returns all statuses.
      *
      * @return self
      */
@@ -379,7 +379,7 @@ class AlipayPromotionCodeInquireListRequest   extends AlipayRequest  implements 
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $startingAfter Forward pagination cursor. Returns promotion codes older than (created before) this promotionCodeId, in creation-time descending order (`gmt_create DESC`). Pass the `nextCursor` from the previous response. Mutually exclusive with `endingBefore`.
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class AlipayPromotionCodeInquireListRequest   extends AlipayRequest  implements 
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $endingBefore Backward pagination cursor. Returns promotion codes newer than (created after) this promotionCodeId. Mutually exclusive with `startingAfter`.
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class AlipayPromotionCodeInquireListRequest   extends AlipayRequest  implements 
     /**
      * Sets limit
      *
-     * @param int|null $limit The limit.
+     * @param int|null $limit Number of records per page. Value range: 1-100. Defaults to 20 if not provided.
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class AlipayPromotionCodeInquireListRequest   extends AlipayRequest  implements 
     /**
      * Sets includeTotal
      *
-     * @param bool|null $includeTotal The include total.
+     * @param bool|null $includeTotal When `true`, an additional COUNT query is executed to populate `total` in the response. Default: `false`.
      *
      * @return self
      */

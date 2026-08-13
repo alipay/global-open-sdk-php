@@ -47,7 +47,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
-        'voidRequestId' => 'string',
         'invoiceId' => 'string',
         'status' => 'string',
         'voidedAt' => 'string',
@@ -63,7 +62,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'result' => null,
-        'voidRequestId' => null,
         'invoiceId' => null,
         'status' => null,
         'voidedAt' => null,
@@ -77,7 +75,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPINullables = [
         'result' => false,
-        'voidRequestId' => false,
         'invoiceId' => false,
         'status' => false,
         'voidedAt' => false,
@@ -171,7 +168,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $attributeMap = [
         'result' => 'result',
-        'voidRequestId' => 'voidRequestId',
         'invoiceId' => 'invoiceId',
         'status' => 'status',
         'voidedAt' => 'voidedAt',
@@ -185,7 +181,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $setters = [
         'result' => 'setResult',
-        'voidRequestId' => 'setVoidRequestId',
         'invoiceId' => 'setInvoiceId',
         'status' => 'setStatus',
         'voidedAt' => 'setVoidedAt',
@@ -199,7 +194,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'result' => 'getResult',
-        'voidRequestId' => 'getVoidRequestId',
         'invoiceId' => 'getInvoiceId',
         'status' => 'getStatus',
         'voidedAt' => 'getVoidedAt',
@@ -264,7 +258,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(?array $data = null)
     {
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('voidRequestId', $data ?? [], null);
         $this->setIfExists('invoiceId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('voidedAt', $data ?? [], null);
@@ -301,18 +294,6 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['voidRequestId'] === null) {
-            $invalidProperties[] = "'voidRequestId' can't be null";
-        }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['voidedAt'] === null) {
-            $invalidProperties[] = "'voidedAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -354,33 +335,9 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets voidRequestId
-     *
-     * @return string
-     */
-    public function getVoidRequestId()
-    {
-        return $this->container['voidRequestId'];
-    }
-
-    /**
-     * Sets voidRequestId
-     *
-     * @param string $voidRequestId The void request id. Maximum length: 64 characters.
-     *
-     * @return self
-     */
-    public function setVoidRequestId($voidRequestId)
-    {
-        $this->container['voidRequestId'] = $voidRequestId;
-
-        return $this;
-    }
-
-    /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -390,7 +347,7 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Invoice ID that was voided (echo-back of request). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -404,7 +361,7 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -414,7 +371,7 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $status New invoice status after void: `VOID`. The invoice is now in a terminal cancelled state and cannot be modified or paid. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -428,7 +385,7 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets voidedAt
      *
-     * @return string
+     * @return string|null
      */
     public function getVoidedAt()
     {
@@ -438,7 +395,7 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets voidedAt
      *
-     * @param string $voidedAt The voided at. Maximum length: 24 characters.
+     * @param string|null $voidedAt ISO 8601 timestamp of when the invoice was voided (e.g., `2026-05-10T09:15:00+00:00`). This is the official time the invoice entered the VOID state. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -462,7 +419,7 @@ class AlipayInvoiceVoidResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Echo-back of the `invoiceNote` provided in the request, if any. The note is stored in the `invoiceNotes` array in the invoice metadata with `action=void`. Can be null (no note provided). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

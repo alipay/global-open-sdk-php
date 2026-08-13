@@ -296,7 +296,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string $customerId System-generated customer ID to delete. Cannot be empty. Maximum length: 64 characters.
      *
      * @return self
      */

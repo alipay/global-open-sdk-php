@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * CreditNoteInquireDetailsItems Class Doc Comment
+ * CreditNoteItem Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreditNoteInquireDetailsItems';
+    protected static $openAPIModelName = 'CreditNoteItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\request\model\LineItem[]',
-        'hasMore' => 'bool'
+        'creditNoteItemId' => 'string',
+        'type' => 'string',
+        'invoiceItemId' => 'string',
+        'description' => 'string',
+        'quantity' => 'int',
+        'unitAmount' => '\request\model\Amount',
+        'itemAmount' => '\request\model\Amount'
     ];
 
     /**
@@ -58,8 +63,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'hasMore' => null
+        'creditNoteItemId' => null,
+        'type' => null,
+        'invoiceItemId' => null,
+        'description' => null,
+        'quantity' => null,
+        'unitAmount' => null,
+        'itemAmount' => null
     ];
 
     /**
@@ -68,8 +78,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'data' => false,
-        'hasMore' => false
+        'creditNoteItemId' => false,
+        'type' => false,
+        'invoiceItemId' => false,
+        'description' => false,
+        'quantity' => true,
+        'unitAmount' => false,
+        'itemAmount' => false
     ];
 
     /**
@@ -158,8 +173,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'hasMore' => 'hasMore'
+        'creditNoteItemId' => 'creditNoteItemId',
+        'type' => 'type',
+        'invoiceItemId' => 'invoiceItemId',
+        'description' => 'description',
+        'quantity' => 'quantity',
+        'unitAmount' => 'unitAmount',
+        'itemAmount' => 'itemAmount'
     ];
 
     /**
@@ -168,8 +188,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'hasMore' => 'setHasMore'
+        'creditNoteItemId' => 'setCreditNoteItemId',
+        'type' => 'setType',
+        'invoiceItemId' => 'setInvoiceItemId',
+        'description' => 'setDescription',
+        'quantity' => 'setQuantity',
+        'unitAmount' => 'setUnitAmount',
+        'itemAmount' => 'setItemAmount'
     ];
 
     /**
@@ -178,8 +203,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'hasMore' => 'getHasMore'
+        'creditNoteItemId' => 'getCreditNoteItemId',
+        'type' => 'getType',
+        'invoiceItemId' => 'getInvoiceItemId',
+        'description' => 'getDescription',
+        'quantity' => 'getQuantity',
+        'unitAmount' => 'getUnitAmount',
+        'itemAmount' => 'getItemAmount'
     ];
 
     /**
@@ -239,8 +269,13 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('hasMore', $data ?? [], null);
+        $this->setIfExists('creditNoteItemId', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('invoiceItemId', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('unitAmount', $data ?? [], null);
+        $this->setIfExists('itemAmount', $data ?? [], null);
 
             }
 
@@ -271,12 +306,6 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
-        if ($this->container['hasMore'] === null) {
-            $invalidProperties[] = "'hasMore' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -293,49 +322,169 @@ class CreditNoteInquireDetailsItems  implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets data
+     * Gets creditNoteItemId
      *
-     * @return \model\LineItem[]
+     * @return string|null
      */
-    public function getData()
+    public function getCreditNoteItemId()
     {
-        return $this->container['data'];
+        return $this->container['creditNoteItemId'];
     }
 
     /**
-     * Sets data
+     * Sets creditNoteItemId
      *
-     * @param \model\LineItem[] $data The data. Maximum length: 100 characters.
+     * @param string|null $creditNoteItemId The credit note item ID. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setData($data)
+    public function setCreditNoteItemId($creditNoteItemId)
     {
-        $this->container['data'] = $data;
+        $this->container['creditNoteItemId'] = $creditNoteItemId;
 
         return $this;
     }
 
     /**
-     * Gets hasMore
+     * Gets type
      *
-     * @return bool
+     * @return string|null
      */
-    public function getHasMore()
+    public function getType()
     {
-        return $this->container['hasMore'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets hasMore
+     * Sets type
      *
-     * @param bool $hasMore The has more.
+     * @param string|null $type The credit note item type. Maximum length: 32 characters.
      *
      * @return self
      */
-    public function setHasMore($hasMore)
+    public function setType($type)
     {
-        $this->container['hasMore'] = $hasMore;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceItemId
+     *
+     * @return string|null
+     */
+    public function getInvoiceItemId()
+    {
+        return $this->container['invoiceItemId'];
+    }
+
+    /**
+     * Sets invoiceItemId
+     *
+     * @param string|null $invoiceItemId The related invoice item ID. Omitted for a custom line item. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setInvoiceItemId($invoiceItemId)
+    {
+        $this->container['invoiceItemId'] = $invoiceItemId;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description The credit note item description. Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return int|null
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param int|null $quantity The credited quantity.
+     *
+     * @return self
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets unitAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getUnitAmount()
+    {
+        return $this->container['unitAmount'];
+    }
+
+    /**
+     * Sets unitAmount
+     *
+     * @param \model\Amount|null $unitAmount unitAmount
+     *
+     * @return self
+     */
+    public function setUnitAmount($unitAmount)
+    {
+        $this->container['unitAmount'] = $unitAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets itemAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getItemAmount()
+    {
+        return $this->container['itemAmount'];
+    }
+
+    /**
+     * Sets itemAmount
+     *
+     * @param \model\Amount|null $itemAmount itemAmount
+     *
+     * @return self
+     */
+    public function setItemAmount($itemAmount)
+    {
+        $this->container['itemAmount'] = $itemAmount;
 
         return $this;
     }

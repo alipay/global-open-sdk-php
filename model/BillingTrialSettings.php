@@ -47,7 +47,8 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'trialPeriodDays' => 'int',
-        'trialEnd' => 'string'
+        'trialEnd' => 'string',
+        'trialEndBehavior' => 'string'
     ];
 
     /**
@@ -59,7 +60,8 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'trialPeriodDays' => null,
-        'trialEnd' => null
+        'trialEnd' => null,
+        'trialEndBehavior' => null
     ];
 
     /**
@@ -69,7 +71,8 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPINullables = [
         'trialPeriodDays' => true,
-        'trialEnd' => false
+        'trialEnd' => false,
+        'trialEndBehavior' => false
     ];
 
     /**
@@ -159,7 +162,8 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'trialPeriodDays' => 'trialPeriodDays',
-        'trialEnd' => 'trialEnd'
+        'trialEnd' => 'trialEnd',
+        'trialEndBehavior' => 'trialEndBehavior'
     ];
 
     /**
@@ -169,7 +173,8 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'trialPeriodDays' => 'setTrialPeriodDays',
-        'trialEnd' => 'setTrialEnd'
+        'trialEnd' => 'setTrialEnd',
+        'trialEndBehavior' => 'setTrialEndBehavior'
     ];
 
     /**
@@ -179,7 +184,8 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'trialPeriodDays' => 'getTrialPeriodDays',
-        'trialEnd' => 'getTrialEnd'
+        'trialEnd' => 'getTrialEnd',
+        'trialEndBehavior' => 'getTrialEndBehavior'
     ];
 
     /**
@@ -241,6 +247,7 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->setIfExists('trialPeriodDays', $data ?? [], null);
         $this->setIfExists('trialEnd', $data ?? [], null);
+        $this->setIfExists('trialEndBehavior', $data ?? [], null);
 
             }
 
@@ -299,7 +306,7 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets trialPeriodDays
      *
-     * @param int|null $trialPeriodDays Number of trial period days.
+     * @param int|null $trialPeriodDays Relative trial duration in days. Value range: 1-365. Exactly one of `trialPeriodDays` and `trialEnd` must be provided when trial settings are used.
      *
      * @return self
      */
@@ -323,13 +330,37 @@ class BillingTrialSettings  implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets trialEnd
      *
-     * @param string|null $trialEnd Trial end time.
+     * @param string|null $trialEnd Absolute trial end time in ISO 8601 format with a timezone offset. Exactly one of `trialPeriodDays` and `trialEnd` must be provided when trial settings are used.
      *
      * @return self
      */
     public function setTrialEnd($trialEnd)
     {
         $this->container['trialEnd'] = $trialEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets trialEndBehavior
+     *
+     * @return string|null
+     */
+    public function getTrialEndBehavior()
+    {
+        return $this->container['trialEndBehavior'];
+    }
+
+    /**
+     * Sets trialEndBehavior
+     *
+     * @param string|null $trialEndBehavior Behavior when the trial ends without an available payment method. Valid values are CANCEL and PAUSE.
+     *
+     * @return self
+     */
+    public function setTrialEndBehavior($trialEndBehavior)
+    {
+        $this->container['trialEndBehavior'] = $trialEndBehavior;
 
         return $this;
     }

@@ -51,12 +51,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         'total' => 'int',
         'hasMore' => 'bool',
         'nextCursor' => 'string',
-        'phoneNo' => 'string',
-        'countryCode' => 'string',
-        'billingEmail' => 'string',
-        'shippingFirstName' => 'string',
-        'shippingLastName' => 'string',
-        'shippingCountryCode' => 'string'
+        'previousCursor' => 'string'
     ];
 
     /**
@@ -72,12 +67,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         'total' => null,
         'hasMore' => null,
         'nextCursor' => null,
-        'phoneNo' => null,
-        'countryCode' => null,
-        'billingEmail' => null,
-        'shippingFirstName' => null,
-        'shippingLastName' => null,
-        'shippingCountryCode' => null
+        'previousCursor' => null
     ];
 
     /**
@@ -91,12 +81,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         'total' => true,
         'hasMore' => false,
         'nextCursor' => false,
-        'phoneNo' => false,
-        'countryCode' => false,
-        'billingEmail' => false,
-        'shippingFirstName' => false,
-        'shippingLastName' => false,
-        'shippingCountryCode' => false
+        'previousCursor' => false
     ];
 
     /**
@@ -190,12 +175,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         'total' => 'total',
         'hasMore' => 'hasMore',
         'nextCursor' => 'nextCursor',
-        'phoneNo' => 'phoneNo',
-        'countryCode' => 'countryCode',
-        'billingEmail' => 'billingEmail',
-        'shippingFirstName' => 'shippingFirstName',
-        'shippingLastName' => 'shippingLastName',
-        'shippingCountryCode' => 'shippingCountryCode'
+        'previousCursor' => 'previousCursor'
     ];
 
     /**
@@ -209,12 +189,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         'total' => 'setTotal',
         'hasMore' => 'setHasMore',
         'nextCursor' => 'setNextCursor',
-        'phoneNo' => 'setPhoneNo',
-        'countryCode' => 'setCountryCode',
-        'billingEmail' => 'setBillingEmail',
-        'shippingFirstName' => 'setShippingFirstName',
-        'shippingLastName' => 'setShippingLastName',
-        'shippingCountryCode' => 'setShippingCountryCode'
+        'previousCursor' => 'setPreviousCursor'
     ];
 
     /**
@@ -228,12 +203,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         'total' => 'getTotal',
         'hasMore' => 'getHasMore',
         'nextCursor' => 'getNextCursor',
-        'phoneNo' => 'getPhoneNo',
-        'countryCode' => 'getCountryCode',
-        'billingEmail' => 'getBillingEmail',
-        'shippingFirstName' => 'getShippingFirstName',
-        'shippingLastName' => 'getShippingLastName',
-        'shippingCountryCode' => 'getShippingCountryCode'
+        'previousCursor' => 'getPreviousCursor'
     ];
 
     /**
@@ -298,12 +268,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('nextCursor', $data ?? [], null);
-        $this->setIfExists('phoneNo', $data ?? [], null);
-        $this->setIfExists('countryCode', $data ?? [], null);
-        $this->setIfExists('billingEmail', $data ?? [], null);
-        $this->setIfExists('shippingFirstName', $data ?? [], null);
-        $this->setIfExists('shippingLastName', $data ?? [], null);
-        $this->setIfExists('shippingCountryCode', $data ?? [], null);
+        $this->setIfExists('previousCursor', $data ?? [], null);
 
             }
 
@@ -389,7 +354,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
     /**
      * Sets customers
      *
-     * @param \model\Customer[]|null $customers The customers. Note: See documentation for details.
+     * @param \model\Customer[]|null $customers List of customer summary items. Maximum size: 100 elements (bounded by `limit`). Empty array if no results. Returned when resultCode is `SUCCESS`. Each item is a slim 9-field projection (see below).
      *
      * @return self
      */
@@ -413,7 +378,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
     /**
      * Sets total
      *
-     * @param int|null $total The total. Note: See documentation for details.
+     * @param int|null $total Total count of matching customers. Only returned when request has `includeTotal=true`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -437,7 +402,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
     /**
      * Sets hasMore
      *
-     * @param bool|null $hasMore The has more. Note: See documentation for details.
+     * @param bool|null $hasMore Whether more results exist beyond the current page. `false` = last page. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -461,7 +426,7 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
     /**
      * Sets nextCursor
      *
-     * @param string|null $nextCursor The next cursor. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $nextCursor The `customerId` of the last element in the current page. Pass as `startingAfter` in the next request. Returned when `hasMore` is `true`. Absent when `hasMore` is `false`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -473,145 +438,25 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets phoneNo
+     * Gets previousCursor
      *
      * @return string|null
      */
-    public function getPhoneNo()
+    public function getPreviousCursor()
     {
-        return $this->container['phoneNo'];
+        return $this->container['previousCursor'];
     }
 
     /**
-     * Sets phoneNo
+     * Sets previousCursor
      *
-     * @param string|null $phoneNo The customer's phone number (digits only). Replaces deprecated mobileNo. Maximum length: 32 characters.
+     * @param string|null $previousCursor Returned only in BACKWARD (`endingBefore`) navigation. The `customerId` of the first item in the current page. Pass as `endingBefore` in the previous-page request. Absent in forward navigation. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
-    public function setPhoneNo($phoneNo)
+    public function setPreviousCursor($previousCursor)
     {
-        $this->container['phoneNo'] = $phoneNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets countryCode
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        return $this->container['countryCode'];
-    }
-
-    /**
-     * Sets countryCode
-     *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with phoneNo. Required when phoneNo is provided. Maximum length: 2 characters.
-     *
-     * @return self
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->container['countryCode'] = $countryCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingEmail
-     *
-     * @return string|null
-     */
-    public function getBillingEmail()
-    {
-        return $this->container['billingEmail'];
-    }
-
-    /**
-     * Sets billingEmail
-     *
-     * @param string|null $billingEmail Invoice recipient email address (independent of account email). Maximum length: 256 characters.
-     *
-     * @return self
-     */
-    public function setBillingEmail($billingEmail)
-    {
-        $this->container['billingEmail'] = $billingEmail;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingFirstName
-     *
-     * @return string|null
-     */
-    public function getShippingFirstName()
-    {
-        return $this->container['shippingFirstName'];
-    }
-
-    /**
-     * Sets shippingFirstName
-     *
-     * @param string|null $shippingFirstName Shipping recipient first name. Replaces deprecated shippingName. Maximum length: 256 characters.
-     *
-     * @return self
-     */
-    public function setShippingFirstName($shippingFirstName)
-    {
-        $this->container['shippingFirstName'] = $shippingFirstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingLastName
-     *
-     * @return string|null
-     */
-    public function getShippingLastName()
-    {
-        return $this->container['shippingLastName'];
-    }
-
-    /**
-     * Sets shippingLastName
-     *
-     * @param string|null $shippingLastName Shipping recipient last name. Replaces deprecated shippingName. Maximum length: 256 characters.
-     *
-     * @return self
-     */
-    public function setShippingLastName($shippingLastName)
-    {
-        $this->container['shippingLastName'] = $shippingLastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingCountryCode
-     *
-     * @return string|null
-     */
-    public function getShippingCountryCode()
-    {
-        return $this->container['shippingCountryCode'];
-    }
-
-    /**
-     * Sets shippingCountryCode
-     *
-     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with shippingPhone. Maximum length: 8 characters.
-     *
-     * @return self
-     */
-    public function setShippingCountryCode($shippingCountryCode)
-    {
-        $this->container['shippingCountryCode'] = $shippingCountryCode;
+        $this->container['previousCursor'] = $previousCursor;
 
         return $this;
     }

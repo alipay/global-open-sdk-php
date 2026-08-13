@@ -58,7 +58,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'startDate' => 'string',
         'endDate' => 'string',
         'minAmount' => '\request\model\Amount',
-        'maxAmount' => '\request\model\Amount'
+        'maxAmount' => '\request\model\Amount',
+        'excludeDraft' => 'bool'
     ];
 
     /**
@@ -81,7 +82,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'startDate' => null,
         'endDate' => null,
         'minAmount' => null,
-        'maxAmount' => null
+        'maxAmount' => null,
+        'excludeDraft' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'startDate' => false,
         'endDate' => false,
         'minAmount' => false,
-        'maxAmount' => false
+        'maxAmount' => false,
+        'excludeDraft' => false
     ];
 
     /**
@@ -203,7 +206,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'startDate' => 'startDate',
         'endDate' => 'endDate',
         'minAmount' => 'minAmount',
-        'maxAmount' => 'maxAmount'
+        'maxAmount' => 'maxAmount',
+        'excludeDraft' => 'excludeDraft'
     ];
 
     /**
@@ -224,7 +228,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'startDate' => 'setStartDate',
         'endDate' => 'setEndDate',
         'minAmount' => 'setMinAmount',
-        'maxAmount' => 'setMaxAmount'
+        'maxAmount' => 'setMaxAmount',
+        'excludeDraft' => 'setExcludeDraft'
     ];
 
     /**
@@ -245,7 +250,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'startDate' => 'getStartDate',
         'endDate' => 'getEndDate',
         'minAmount' => 'getMinAmount',
-        'maxAmount' => 'getMaxAmount'
+        'maxAmount' => 'getMaxAmount',
+        'excludeDraft' => 'getExcludeDraft'
     ];
 
     /**
@@ -318,6 +324,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('endDate', $data ?? [], null);
         $this->setIfExists('minAmount', $data ?? [], null);
         $this->setIfExists('maxAmount', $data ?? [], null);
+        $this->setIfExists('excludeDraft', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/invoice/inquireList"); 
     }
@@ -377,7 +384,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets startingAfter
      *
-     * @param string|null $startingAfter The starting after. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $startingAfter Cursor for forward pagination - return invoices after this `invoiceId`. Think of it as a bookmark: pass the `nextCursor` from the previous response to get the next batch of invoices. Mutually exclusive with `endingBefore` (both -> `INVALID_PARAMETER`). When omitted, returns the first page (newest invoices first). Always use the LAST invoice's ID from the current page - using the first ID will skip records. Can be null (first page).
      *
      * @return self
      */
@@ -401,7 +408,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets endingBefore
      *
-     * @param string|null $endingBefore The ending before. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $endingBefore Cursor for backward pagination - return invoices before this `invoiceId`. Pass the first invoice's `invoiceId` from the current page to go back to the previous page. Mutually exclusive with `startingAfter`. Can be null (not used).
      *
      * @return self
      */
@@ -425,7 +432,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets limit
      *
-     * @param int|null $limit The limit.
+     * @param int|null $limit Maximum number of invoices per page. Integer value; range 1-100. Internally, `limit + 1` rows are fetched to determine `hasMore` - the extra row is not returned. Can be null (defaults to 20).
      *
      * @return self
      */
@@ -449,7 +456,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets includeTotal
      *
-     * @param bool|null $includeTotal The include total.
+     * @param bool|null $includeTotal Whether to include the `total` count of matching records in the response. When `true`, an additional `COUNT` query is executed. Default `false` to avoid the performance cost of counting when not needed. Can be null (defaults to false).
      *
      * @return self
      */
@@ -473,7 +480,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string|null $subscriptionId Filter invoices by associated subscription ID. Returns only invoices linked to this subscription. Can be null (no filter).
      *
      * @return self
      */
@@ -497,7 +504,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId Filter invoices by customer ID. Returns only invoices belonging to this customer. Can be null (no filter).
      *
      * @return self
      */
@@ -521,7 +528,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Filter by exact invoice ID. Returns the single matching invoice if found. Format: `inv_` + 10-char alphanumeric. Unlike the planned `invoiceNumber` fuzzy search, this is an exact match. Can be null (no filter).
      *
      * @return self
      */
@@ -545,7 +552,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Filter by invoice status. Allowed values: `DRAFT`, `OPEN`, `PAID`, ``UNCOLLECTIBLE``, `VOID`. Can be null (no filter).
      *
      * @return self
      */
@@ -569,7 +576,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets reason
      *
-     * @param string|null $reason The reason for the status change. Maximum length: 32 characters.
+     * @param string|null $reason Filter by invoice reason. Allowed values: `SUBSCRIPTION_CREATION`, `SUBSCRIPTION_RECURRENCE`, `SUBSCRIPTION_UPDATE`. Can be null (no filter).
      *
      * @return self
      */
@@ -593,7 +600,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets startDate
      *
-     * @param string|null $startDate The start date. Maximum length: 24 characters.
+     * @param string|null $startDate Date range start for invoice creation time (ISO 8601 format, e.g., 2026-04-01T00:00:00+00:00). Can be null (no lower bound).
      *
      * @return self
      */
@@ -617,7 +624,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     /**
      * Sets endDate
      *
-     * @param string|null $endDate The end date. Maximum length: 24 characters.
+     * @param string|null $endDate Date range end for invoice creation time (ISO 8601 format, e.g., 2026-04-30T23:59:59+00:00). Can be null (no upper bound).
      *
      * @return self
      */
@@ -672,6 +679,30 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     public function setMaxAmount($maxAmount)
     {
         $this->container['maxAmount'] = $maxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludeDraft
+     *
+     * @return bool|null
+     */
+    public function getExcludeDraft()
+    {
+        return $this->container['excludeDraft'];
+    }
+
+    /**
+     * Sets excludeDraft
+     *
+     * @param bool|null $excludeDraft When `true`, excludes `DRAFT` invoices from results. Can be null (defaults to false).
+     *
+     * @return self
+     */
+    public function setExcludeDraft($excludeDraft)
+    {
+        $this->container['excludeDraft'] = $excludeDraft;
 
         return $this;
     }

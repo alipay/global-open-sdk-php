@@ -50,8 +50,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         'subscriptions' => '\request\model\Subscription[]',
         'hasMore' => 'bool',
         'nextCursor' => 'string',
-        'prevCursor' => 'string',
-        'total' => 'int'
+        'previousCursor' => 'string'
     ];
 
     /**
@@ -66,8 +65,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         'subscriptions' => null,
         'hasMore' => null,
         'nextCursor' => null,
-        'prevCursor' => null,
-        'total' => null
+        'previousCursor' => null
     ];
 
     /**
@@ -80,8 +78,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         'subscriptions' => false,
         'hasMore' => false,
         'nextCursor' => false,
-        'prevCursor' => false,
-        'total' => true
+        'previousCursor' => false
     ];
 
     /**
@@ -174,8 +171,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         'subscriptions' => 'subscriptions',
         'hasMore' => 'hasMore',
         'nextCursor' => 'nextCursor',
-        'prevCursor' => 'prevCursor',
-        'total' => 'total'
+        'previousCursor' => 'previousCursor'
     ];
 
     /**
@@ -188,8 +184,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         'subscriptions' => 'setSubscriptions',
         'hasMore' => 'setHasMore',
         'nextCursor' => 'setNextCursor',
-        'prevCursor' => 'setPrevCursor',
-        'total' => 'setTotal'
+        'previousCursor' => 'setPreviousCursor'
     ];
 
     /**
@@ -202,8 +197,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         'subscriptions' => 'getSubscriptions',
         'hasMore' => 'getHasMore',
         'nextCursor' => 'getNextCursor',
-        'prevCursor' => 'getPrevCursor',
-        'total' => 'getTotal'
+        'previousCursor' => 'getPreviousCursor'
     ];
 
     /**
@@ -267,8 +261,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
         $this->setIfExists('subscriptions', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('nextCursor', $data ?? [], null);
-        $this->setIfExists('prevCursor', $data ?? [], null);
-        $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('previousCursor', $data ?? [], null);
 
             }
 
@@ -360,7 +353,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
     /**
      * Sets subscriptions
      *
-     * @param \model\Subscription[] $subscriptions The subscriptions.
+     * @param \model\Subscription[] $subscriptions The subscription summaries returned when result.resultCode is SUCCESS. The array contains at most 100 items.
      *
      * @return self
      */
@@ -384,7 +377,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
     /**
      * Sets hasMore
      *
-     * @param bool $hasMore The has more.
+     * @param bool $hasMore Whether more results are available after the current page.
      *
      * @return self
      */
@@ -408,7 +401,7 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
     /**
      * Sets nextCursor
      *
-     * @param string|null $nextCursor The next cursor. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $nextCursor The ID of the last record on the current page. Pass it as `startingAfter` to retrieve the next page. Returned only when `hasMore` is true. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -420,49 +413,25 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
     }
 
     /**
-     * Gets prevCursor
+     * Gets previousCursor
      *
      * @return string|null
      */
-    public function getPrevCursor()
+    public function getPreviousCursor()
     {
-        return $this->container['prevCursor'];
+        return $this->container['previousCursor'];
     }
 
     /**
-     * Sets prevCursor
+     * Sets previousCursor
      *
-     * @param string|null $prevCursor The prev cursor. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $previousCursor The ID of the first record on the current page. Pass it as `endingBefore` to retrieve the previous page. Returned when the request used `endingBefore`. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setPrevCursor($prevCursor)
+    public function setPreviousCursor($previousCursor)
     {
-        $this->container['prevCursor'] = $prevCursor;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     *
-     * @return int|null
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param int|null $total The total. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
+        $this->container['previousCursor'] = $previousCursor;
 
         return $this;
     }

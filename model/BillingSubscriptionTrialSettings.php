@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * BillingSubscriptionInquireDetailsTrialSettingsEndBehavior Class Doc Comment
+ * BillingSubscriptionTrialSettings Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingSubscriptionTrialSettings  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
       *
       * @var string
       */
-    protected static $openAPIModelName = 'BillingSubscriptionInquireDetailsTrialSettingsEndBehavior';
+    protected static $openAPIModelName = 'BillingSubscriptionTrialSettings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,7 +46,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
       * @var string[]
       */
     protected static $openAPITypes = [
-        'missingPaymentMethod' => 'string'
+        'endBehavior' => '\request\model\BillingSubscriptionTrialSettingsEndBehavior'
     ];
 
     /**
@@ -57,7 +57,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'missingPaymentMethod' => null
+        'endBehavior' => null
     ];
 
     /**
@@ -66,7 +66,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'missingPaymentMethod' => false
+        'endBehavior' => false
     ];
 
     /**
@@ -155,7 +155,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
      * @var string[]
      */
     protected static $attributeMap = [
-        'missingPaymentMethod' => 'missingPaymentMethod'
+        'endBehavior' => 'endBehavior'
     ];
 
     /**
@@ -164,7 +164,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
      * @var string[]
      */
     protected static $setters = [
-        'missingPaymentMethod' => 'setMissingPaymentMethod'
+        'endBehavior' => 'setEndBehavior'
     ];
 
     /**
@@ -173,7 +173,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
      * @var string[]
      */
     protected static $getters = [
-        'missingPaymentMethod' => 'getMissingPaymentMethod'
+        'endBehavior' => 'getEndBehavior'
     ];
 
     /**
@@ -233,7 +233,7 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('missingPaymentMethod', $data ?? [], null);
+        $this->setIfExists('endBehavior', $data ?? [], null);
 
             }
 
@@ -280,25 +280,25 @@ class BillingSubscriptionInquireDetailsTrialSettingsEndBehavior  implements Mode
 
 
     /**
-     * Gets missingPaymentMethod
+     * Gets endBehavior
      *
-     * @return string|null
+     * @return \model\BillingSubscriptionTrialSettingsEndBehavior|null
      */
-    public function getMissingPaymentMethod()
+    public function getEndBehavior()
     {
-        return $this->container['missingPaymentMethod'];
+        return $this->container['endBehavior'];
     }
 
     /**
-     * Sets missingPaymentMethod
+     * Sets endBehavior
      *
-     * @param string|null $missingPaymentMethod The missing payment method. Maximum length: 14 characters.
+     * @param \model\BillingSubscriptionTrialSettingsEndBehavior|null $endBehavior endBehavior
      *
      * @return self
      */
-    public function setMissingPaymentMethod($missingPaymentMethod)
+    public function setEndBehavior($endBehavior)
     {
-        $this->container['missingPaymentMethod'] = $missingPaymentMethod;
+        $this->container['endBehavior'] = $endBehavior;
 
         return $this;
     }

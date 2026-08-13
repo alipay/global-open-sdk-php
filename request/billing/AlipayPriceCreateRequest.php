@@ -58,7 +58,8 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'includedQuantity' => 'int',
         'tiersMode' => 'string',
         'tiers' => '\request\model\Tier[]',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string',
+        'defaultPrice' => 'bool'
     ];
 
     /**
@@ -81,7 +82,8 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'includedQuantity' => 'int64',
         'tiersMode' => null,
         'tiers' => null,
-        'metadata' => null
+        'metadata' => null,
+        'defaultPrice' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'includedQuantity' => false,
         'tiersMode' => false,
         'tiers' => false,
-        'metadata' => false
+        'metadata' => false,
+        'defaultPrice' => false
     ];
 
     /**
@@ -203,7 +206,8 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'includedQuantity' => 'includedQuantity',
         'tiersMode' => 'tiersMode',
         'tiers' => 'tiers',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'defaultPrice' => 'defaultPrice'
     ];
 
     /**
@@ -224,7 +228,8 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'includedQuantity' => 'setIncludedQuantity',
         'tiersMode' => 'setTiersMode',
         'tiers' => 'setTiers',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'defaultPrice' => 'setDefaultPrice'
     ];
 
     /**
@@ -245,7 +250,8 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'includedQuantity' => 'getIncludedQuantity',
         'tiersMode' => 'getTiersMode',
         'tiers' => 'getTiers',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'defaultPrice' => 'getDefaultPrice'
     ];
 
     /**
@@ -318,6 +324,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         $this->setIfExists('tiersMode', $data ?? [], null);
         $this->setIfExists('tiers', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('defaultPrice', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/price/create"); 
     }
@@ -349,9 +356,6 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     {
         $invalidProperties = [];
 
-        if ($this->container['priceRequestId'] === null) {
-            $invalidProperties[] = "'priceRequestId' can't be null";
-        }
         if ($this->container['productId'] === null) {
             $invalidProperties[] = "'productId' can't be null";
         }
@@ -373,7 +377,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets priceRequestId
      *
-     * @return string
+     * @return string|null
      */
     public function getPriceRequestId()
     {
@@ -383,7 +387,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets priceRequestId
      *
-     * @param string $priceRequestId The price request id. Maximum length: 64 characters.
+     * @param string|null $priceRequestId Idempotent request key. O - Optional idempotent request key. When provided, prevents duplicate price creation from network retries. If a request with the same priceRequestId from the same merchant has been successfully processed within 24 hours, the original response is returned without re-processing. Max 64 characters, alphanumeric, hyphens and underscores allowed. This field serves as the idempotent key for this operation. Since priceId is system-generated and no natural business key exists for deduplication, priceRequestId is the sole dedup mechanism - omitting it risks duplicate price creation on network retries
      *
      * @return self
      */
@@ -407,7 +411,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string $productId Product ID to attach price to. Cannot be null. Format: prod_ prefix + alphanumeric suffix (e.g., prod_2xK8mN3pQ7)
      *
      * @return self
      */
@@ -431,7 +435,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets name
      *
-     * @param string|null $name The name. Maximum length: 128 characters.
+     * @param string|null $name Price name. O - Optional display name for the price; default null. Can be null. Characters & ' \" are not allowed. Max 128 characters
      *
      * @return self
      */
@@ -455,7 +459,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets pricingModel
      *
-     * @param string|null $pricingModel The pricing model. Maximum length: 24 characters.
+     * @param string|null $pricingModel Pricing model type. O - If absent, derived from other fields per Pricing Model Default Derivation rules. Enum: PER_UNIT(per-unit pricing aligned with Stripe billing_scheme=per_unit - charge is unitAmount x quantity; when includedQuantity is present, charge = ceil(quantity / includedQuantity) x unitAmount for package pricing), TIERED(tiered pricing aligned with Stripe billing_scheme=tiered - tier-based pricing with tiersMode GRADUATED or VOLUME; actual pricing comes from tier definitions). Can be null; derived when absent
      *
      * @return self
      */
@@ -479,7 +483,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets usageType
      *
-     * @param string|null $usageType The usage type. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $usageType Usage type. O - Optional. When provided, must be a valid enum value (LICENSED or METERED). Can be null; default null. Enum: LICENSED(fixed quantity billing - subscription item quantity is set at subscription creation and changed manually via update API; system bills unitAmount x quantity automatically each period), METERED(metered usage billing - quantity is tracked by external metering system iusage and reported via Usage Report API; system bills based on actual reported usage in arrears at end of billing period)
      *
      * @return self
      */
@@ -527,7 +531,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $unitLabel Price-level unit label. O - Optional. Price-level unitLabel overrides Product-level unitLabel when both are set; if Price-level is absent, Product-level is inherited. Can be null; default null. Characters & ' \" are not allowed
      *
      * @return self
      */
@@ -551,7 +555,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets meterId
      *
-     * @param string|null $meterId The meter ID. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $meterId External meter reference. C - Required when usageType=METERED; otherwise forbidden. References external metering system contract. Format: alphanumeric + underscore, max 32 chars. Validated at price creation: format check (regex: ^[a-zA-Z0-9_]{1,32}$) AND existence check against iusage meter registry. Returns METER_NOT_FOUND if meter definition does not exist in iusage. This ensures fail-fast validation - merchants are alerted to invalid meter references immediately rather than discovering the error at subscription creation time
      *
      * @return self
      */
@@ -599,7 +603,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets includedQuantity
      *
-     * @param int|null $includedQuantity The included quantity. Note: See documentation for details.
+     * @param int|null $includedQuantity Included quantity for package pricing. O - Number of units included in the base price. When present, indicates package pricing (aligned with Stripe's transform_quantity): the total charge = ceil(quantity / includedQuantity) x unitAmount. When absent (null), indicates flat-rate PER_UNIT pricing: charge = unitAmount x quantity. Forbidden when pricingModel=TIERED. Can be null; default null
      *
      * @return self
      */
@@ -623,7 +627,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets tiersMode
      *
-     * @param string|null $tiersMode The tiers mode. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $tiersMode Tiered pricing mode. C - Required when pricingModel=TIERED; forbidden otherwise. Enum: GRADUATED(graduated pricing - each tier is priced independently, customer may cross tiers with different unit rates), VOLUME(volume pricing - single tier rate applies to the entire quantity based on which tier the total volume falls into). Can be null; default null
      *
      * @return self
      */
@@ -647,7 +651,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets tiers
      *
-     * @param \model\Tier[]|null $tiers The tiers. Maximum length: 20 characters. Note: See documentation for details.
+     * @param \model\Tier[]|null $tiers Tier definitions. Required when `pricingModel` is `TIERED` and forbidden otherwise. Maximum size: 20 elements; exceeding the limit returns `TOO_MANY_TIERS`.
      *
      * @return self
      */
@@ -661,7 +665,7 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -671,13 +675,37 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Note: See documentation for details.
+     * @param string|null $metadata Optional metadata encoded as a JSON object string. The SDK must forward the string unchanged. Maximum size: 20 entries. Keys must use lowerCamelCase alphanumeric text and be at most 40 characters. Values are at most 500 characters and cannot contain `<`, `>`, `&`, `'`, or `\"`. PII must not be stored. Invalid keys, values, or entry counts return `INVALID_METADATA_KEY`, `INVALID_METADATA_VALUE`, or `INVALID_METADATA_SIZE`.
      *
      * @return self
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultPrice
+     *
+     * @return bool|null
+     */
+    public function getDefaultPrice()
+    {
+        return $this->container['defaultPrice'];
+    }
+
+    /**
+     * Sets defaultPrice
+     *
+     * @param bool|null $defaultPrice Whether this price is the default price for the product. O - Optional. Only `true` is accepted; `false` or absent means the price is not the default. Only one price per product can be the default price - creating a new default price automatically un-defaults any previous default price of that product. Can be null; default null
+     *
+     * @return self
+     */
+    public function setDefaultPrice($defaultPrice)
+    {
+        $this->container['defaultPrice'] = $defaultPrice;
 
         return $this;
     }

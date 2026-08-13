@@ -288,12 +288,6 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['receiptId'] === null) {
-            $invalidProperties[] = "'receiptId' can't be null";
-        }
-        if ($this->container['hostedReceiptUrl'] === null) {
-            $invalidProperties[] = "'hostedReceiptUrl' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -336,7 +330,7 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets receiptId
      *
-     * @return string
+     * @return string|null
      */
     public function getReceiptId()
     {
@@ -346,7 +340,7 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets receiptId
      *
-     * @param string $receiptId The receipt ID. Maximum length: 64 characters.
+     * @param string|null $receiptId Receipt ID (echo-back). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -370,7 +364,7 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus The email sending status. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $sendStatus Email delivery status. Returned when `result.resultCode=SUCCESS`. `SENT` - email successfully dispatched to the customer's registered email address; `FAILED` - email dispatch failed (e.g., email service unavailable). Merchant may retry. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -384,7 +378,7 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets hostedReceiptUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getHostedReceiptUrl()
     {
@@ -394,7 +388,7 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets hostedReceiptUrl
      *
-     * @param string $hostedReceiptUrl The hosted receipt url. Maximum length: 2048 characters.
+     * @param string|null $hostedReceiptUrl URL to the hosted receipt page where the customer can view and download the receipt online. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -47,6 +47,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
       */
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
+        'pageNum' => 'int',
+        'pageSize' => 'int',
+        'totalCount' => 'int',
         'creditGrants' => '\request\model\CreditGrant[]'
     ];
 
@@ -59,6 +62,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
       */
     protected static $openAPIFormats = [
         'result' => null,
+        'pageNum' => null,
+        'pageSize' => null,
+        'totalCount' => null,
         'creditGrants' => null
     ];
 
@@ -69,6 +75,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
       */
     protected static $openAPINullables = [
         'result' => false,
+        'pageNum' => true,
+        'pageSize' => true,
+        'totalCount' => true,
         'creditGrants' => false
     ];
 
@@ -159,6 +168,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
      */
     protected static $attributeMap = [
         'result' => 'result',
+        'pageNum' => 'pageNum',
+        'pageSize' => 'pageSize',
+        'totalCount' => 'totalCount',
         'creditGrants' => 'creditGrants'
     ];
 
@@ -169,6 +181,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
      */
     protected static $setters = [
         'result' => 'setResult',
+        'pageNum' => 'setPageNum',
+        'pageSize' => 'setPageSize',
+        'totalCount' => 'setTotalCount',
         'creditGrants' => 'setCreditGrants'
     ];
 
@@ -179,6 +194,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
      */
     protected static $getters = [
         'result' => 'getResult',
+        'pageNum' => 'getPageNum',
+        'pageSize' => 'getPageSize',
+        'totalCount' => 'getTotalCount',
         'creditGrants' => 'getCreditGrants'
     ];
 
@@ -240,6 +258,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     public function __construct(?array $data = null)
     {
         $this->setIfExists('result', $data ?? [], null);
+        $this->setIfExists('pageNum', $data ?? [], null);
+        $this->setIfExists('pageSize', $data ?? [], null);
+        $this->setIfExists('totalCount', $data ?? [], null);
         $this->setIfExists('creditGrants', $data ?? [], null);
 
             }
@@ -274,8 +295,14 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['creditGrants'] === null) {
-            $invalidProperties[] = "'creditGrants' can't be null";
+        if ($this->container['pageNum'] === null) {
+            $invalidProperties[] = "'pageNum' can't be null";
+        }
+        if ($this->container['pageSize'] === null) {
+            $invalidProperties[] = "'pageSize' can't be null";
+        }
+        if ($this->container['totalCount'] === null) {
+            $invalidProperties[] = "'totalCount' can't be null";
         }
         return $invalidProperties;
     }
@@ -317,9 +344,81 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     }
 
     /**
+     * Gets pageNum
+     *
+     * @return int
+     */
+    public function getPageNum()
+    {
+        return $this->container['pageNum'];
+    }
+
+    /**
+     * Sets pageNum
+     *
+     * @param int $pageNum The current page number.
+     *
+     * @return self
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->container['pageNum'] = $pageNum;
+
+        return $this;
+    }
+
+    /**
+     * Gets pageSize
+     *
+     * @return int
+     */
+    public function getPageSize()
+    {
+        return $this->container['pageSize'];
+    }
+
+    /**
+     * Sets pageSize
+     *
+     * @param int $pageSize The number of records on the current page.
+     *
+     * @return self
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->container['pageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalCount
+     *
+     * @return int
+     */
+    public function getTotalCount()
+    {
+        return $this->container['totalCount'];
+    }
+
+    /**
+     * Sets totalCount
+     *
+     * @param int $totalCount The total number of matching credit grants at query time.
+     *
+     * @return self
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->container['totalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
      * Gets creditGrants
      *
-     * @return \model\CreditGrant[]
+     * @return \model\CreditGrant[]|null
      */
     public function getCreditGrants()
     {
@@ -329,7 +428,7 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets creditGrants
      *
-     * @param \model\CreditGrant[] $creditGrants The credit grants. Note: See documentation for details.
+     * @param \model\CreditGrant[]|null $creditGrants The matching credit grants. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

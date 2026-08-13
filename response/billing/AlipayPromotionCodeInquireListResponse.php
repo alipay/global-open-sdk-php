@@ -50,8 +50,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         'promotionCodes' => '\request\model\PromotionCodeInfo[]',
         'hasMore' => 'bool',
         'nextCursor' => 'string',
-        'prevCursor' => 'string',
-        'total' => 'int'
+        'total' => 'int',
+        'previousCursor' => 'string'
     ];
 
     /**
@@ -66,8 +66,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         'promotionCodes' => null,
         'hasMore' => null,
         'nextCursor' => null,
-        'prevCursor' => null,
-        'total' => null
+        'total' => null,
+        'previousCursor' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         'promotionCodes' => false,
         'hasMore' => false,
         'nextCursor' => false,
-        'prevCursor' => false,
-        'total' => true
+        'total' => true,
+        'previousCursor' => false
     ];
 
     /**
@@ -174,8 +174,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         'promotionCodes' => 'promotionCodes',
         'hasMore' => 'hasMore',
         'nextCursor' => 'nextCursor',
-        'prevCursor' => 'prevCursor',
-        'total' => 'total'
+        'total' => 'total',
+        'previousCursor' => 'previousCursor'
     ];
 
     /**
@@ -188,8 +188,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         'promotionCodes' => 'setPromotionCodes',
         'hasMore' => 'setHasMore',
         'nextCursor' => 'setNextCursor',
-        'prevCursor' => 'setPrevCursor',
-        'total' => 'setTotal'
+        'total' => 'setTotal',
+        'previousCursor' => 'setPreviousCursor'
     ];
 
     /**
@@ -202,8 +202,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         'promotionCodes' => 'getPromotionCodes',
         'hasMore' => 'getHasMore',
         'nextCursor' => 'getNextCursor',
-        'prevCursor' => 'getPrevCursor',
-        'total' => 'getTotal'
+        'total' => 'getTotal',
+        'previousCursor' => 'getPreviousCursor'
     ];
 
     /**
@@ -267,8 +267,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
         $this->setIfExists('promotionCodes', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('nextCursor', $data ?? [], null);
-        $this->setIfExists('prevCursor', $data ?? [], null);
         $this->setIfExists('total', $data ?? [], null);
+        $this->setIfExists('previousCursor', $data ?? [], null);
 
             }
 
@@ -301,9 +301,6 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['hasMore'] === null) {
-            $invalidProperties[] = "'hasMore' can't be null";
         }
         return $invalidProperties;
     }
@@ -357,7 +354,7 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
     /**
      * Sets promotionCodes
      *
-     * @param \model\PromotionCodeInfo[]|null $promotionCodes The promotion codes. Note: See documentation for details.
+     * @param \model\PromotionCodeInfo[]|null $promotionCodes List of promotion code summary items. Maximum size: 100 elements per page (governed by request `limit` max value 100). Empty array if no results. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -371,7 +368,7 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
     /**
      * Gets hasMore
      *
-     * @return bool
+     * @return bool|null
      */
     public function getHasMore()
     {
@@ -381,7 +378,7 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
     /**
      * Sets hasMore
      *
-     * @param bool $hasMore The has more. Note: See documentation for details.
+     * @param bool|null $hasMore Whether more results exist beyond the current page. `false` = last page. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -405,37 +402,13 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
     /**
      * Sets nextCursor
      *
-     * @param string|null $nextCursor The next cursor. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $nextCursor Entity ID of the last element. Pass as `startingAfter` in the next request. Returned when `hasMore` is `true`. Absent when `hasMore` is `false`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setNextCursor($nextCursor)
     {
         $this->container['nextCursor'] = $nextCursor;
-
-        return $this;
-    }
-
-    /**
-     * Gets prevCursor
-     *
-     * @return string|null
-     */
-    public function getPrevCursor()
-    {
-        return $this->container['prevCursor'];
-    }
-
-    /**
-     * Sets prevCursor
-     *
-     * @param string|null $prevCursor The prev cursor. Maximum length: 64 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setPrevCursor($prevCursor)
-    {
-        $this->container['prevCursor'] = $prevCursor;
 
         return $this;
     }
@@ -453,13 +426,37 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
     /**
      * Sets total
      *
-     * @param int|null $total The total. Note: See documentation for details.
+     * @param int|null $total Total count of matching promotion codes. Only returned when request has `includeTotal=true`. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setTotal($total)
     {
         $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets previousCursor
+     *
+     * @return string|null
+     */
+    public function getPreviousCursor()
+    {
+        return $this->container['previousCursor'];
+    }
+
+    /**
+     * Sets previousCursor
+     *
+     * @param string|null $previousCursor Entity ID of the first element. Pass as `endingBefore` to navigate backward. Only returned when request used `endingBefore`. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setPreviousCursor($previousCursor)
+    {
+        $this->container['previousCursor'] = $previousCursor;
 
         return $this;
     }

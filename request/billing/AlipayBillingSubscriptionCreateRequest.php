@@ -50,17 +50,16 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'customerId' => 'string',
         'customerEmail' => 'string',
         'priceItems' => '\request\model\PriceItem[]',
-        'trialSettings' => '\request\model\BillingSubscriptionCreateTrialSettings',
-        'discounts' => '\request\model\BillingSubscriptionCreateDiscount[]',
+        'trialSettings' => '\request\model\BillingTrialSettings',
+        'discounts' => '\request\model\BillingDiscount[]',
         'paymentBehavior' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
-        'billingCycleAnchor' => 'string',
         'cancelAt' => 'string',
         'cancelAtPeriodEnd' => 'bool',
         'description' => 'string',
         'subscriptionNotifyUrl' => 'string',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'string'
     ];
 
     /**
@@ -80,7 +79,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'paymentBehavior' => null,
         'collectionMethod' => null,
         'daysUntilDue' => null,
-        'billingCycleAnchor' => null,
         'cancelAt' => null,
         'cancelAtPeriodEnd' => null,
         'description' => null,
@@ -103,7 +101,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'paymentBehavior' => false,
         'collectionMethod' => false,
         'daysUntilDue' => true,
-        'billingCycleAnchor' => false,
         'cancelAt' => false,
         'cancelAtPeriodEnd' => false,
         'description' => false,
@@ -206,7 +203,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'paymentBehavior' => 'paymentBehavior',
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
-        'billingCycleAnchor' => 'billingCycleAnchor',
         'cancelAt' => 'cancelAt',
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
         'description' => 'description',
@@ -229,7 +225,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'paymentBehavior' => 'setPaymentBehavior',
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
-        'billingCycleAnchor' => 'setBillingCycleAnchor',
         'cancelAt' => 'setCancelAt',
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
         'description' => 'setDescription',
@@ -252,7 +247,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'paymentBehavior' => 'getPaymentBehavior',
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
-        'billingCycleAnchor' => 'getBillingCycleAnchor',
         'cancelAt' => 'getCancelAt',
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
         'description' => 'getDescription',
@@ -326,7 +320,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         $this->setIfExists('paymentBehavior', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('daysUntilDue', $data ?? [], null);
-        $this->setIfExists('billingCycleAnchor', $data ?? [], null);
         $this->setIfExists('cancelAt', $data ?? [], null);
         $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -366,12 +359,6 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         if ($this->container['subscriptionRequestId'] === null) {
             $invalidProperties[] = "'subscriptionRequestId' can't be null";
         }
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
-        }
-        if ($this->container['customerEmail'] === null) {
-            $invalidProperties[] = "'customerEmail' can't be null";
-        }
         if ($this->container['priceItems'] === null) {
             $invalidProperties[] = "'priceItems' can't be null";
         }
@@ -403,7 +390,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets subscriptionRequestId
      *
-     * @param string $subscriptionRequestId The subscription request id. Maximum length: 64 characters.
+     * @param string $subscriptionRequestId Idempotency key. Unique per merchant. This field is an idempotent field. Not null. Idempotent replay (2026-08-06 code-verified): if a request is repeated with the same `subscriptionRequestId`, the API returns SUCCESS together with the previously created subscription and its latest invoice - no new subscription is created
      *
      * @return self
      */
@@ -417,7 +404,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Gets customerId
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerId()
     {
@@ -427,7 +414,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $customerId Existing customer ID. References a customer already created in your account. Mutually optional with `customerEmail` - you must provide at least one. If both are provided, `customerId` takes precedence. Can be null
      *
      * @return self
      */
@@ -441,7 +428,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Gets customerEmail
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerEmail()
     {
@@ -451,7 +438,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets customerEmail
      *
-     * @param string $customerEmail The email address of the customer. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $customerEmail Customer email address. Use this when you don't yet have a `customerId` - Antom will create a new customer with this email. If a customer with this email already exists under your merchant account, a `CUSTOMER_EMAIL_DUPLICATED` error is returned - use the existing customer's `customerId` instead. Mutually optional with `customerId`. Must be a valid email format. Can be null
      *
      * @return self
      */
@@ -475,7 +462,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets priceItems
      *
-     * @param \model\PriceItem[] $priceItems The price items.
+     * @param \model\PriceItem[] $priceItems List of price items. The list must contain 1 to 20 items.
      *
      * @return self
      */
@@ -489,7 +476,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Gets trialSettings
      *
-     * @return \model\BillingSubscriptionCreateTrialSettings|null
+     * @return \model\BillingTrialSettings|null
      */
     public function getTrialSettings()
     {
@@ -499,7 +486,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets trialSettings
      *
-     * @param \model\BillingSubscriptionCreateTrialSettings|null $trialSettings trialSettings
+     * @param \model\BillingTrialSettings|null $trialSettings trialSettings
      *
      * @return self
      */
@@ -513,7 +500,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Gets discounts
      *
-     * @return \model\BillingSubscriptionCreateDiscount[]|null
+     * @return \model\BillingDiscount[]|null
      */
     public function getDiscounts()
     {
@@ -523,7 +510,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets discounts
      *
-     * @param \model\BillingSubscriptionCreateDiscount[]|null $discounts The discounts applied. Note: See documentation for details.
+     * @param \model\BillingDiscount[]|null $discounts Pre-bound discounts. Currently limited to exactly 1 item (the previous maximum of 10 no longer applies) - sending more than one discount item returns PARAM_ILLEGAL. Can be null
      *
      * @return self
      */
@@ -547,7 +534,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets paymentBehavior
      *
-     * @param string|null $paymentBehavior The payment behavior.
+     * @param string|null $paymentBehavior Payment attempt behavior. See Enum Behavior Reference for detailed behavior per value. Default: ALLOW_INCOMPLETE. Not null
      *
      * @return self
      */
@@ -571,7 +558,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets collectionMethod
      *
-     * @param string|null $collectionMethod The collection method.
+     * @param string|null $collectionMethod Collection method. CHARGE_AUTOMATICALLY - charges automatically at each billing cycle. SEND_INVOICE - emails invoice; customer pays manually. Default: CHARGE_AUTOMATICALLY. Not null
      *
      * @return self
      */
@@ -595,37 +582,13 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets daysUntilDue
      *
-     * @param int|null $daysUntilDue The days until due. Note: See documentation for details.
+     * @param int|null $daysUntilDue Days to pay invoices. Range: 1-365, default: 30. Can be null
      *
      * @return self
      */
     public function setDaysUntilDue($daysUntilDue)
     {
         $this->container['daysUntilDue'] = $daysUntilDue;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingCycleAnchor
-     *
-     * @return string|null
-     */
-    public function getBillingCycleAnchor()
-    {
-        return $this->container['billingCycleAnchor'];
-    }
-
-    /**
-     * Sets billingCycleAnchor
-     *
-     * @param string|null $billingCycleAnchor The billing cycle anchor.
-     *
-     * @return self
-     */
-    public function setBillingCycleAnchor($billingCycleAnchor)
-    {
-        $this->container['billingCycleAnchor'] = $billingCycleAnchor;
 
         return $this;
     }
@@ -643,7 +606,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets cancelAt
      *
-     * @param string|null $cancelAt The cancel at.
+     * @param string|null $cancelAt Pre-schedule cancellation. ISO 8601 with timezone offset, must be future. Can be null
      *
      * @return self
      */
@@ -667,7 +630,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets cancelAtPeriodEnd
      *
-     * @param bool|null $cancelAtPeriodEnd The cancel at period end.
+     * @param bool|null $cancelAtPeriodEnd Whether to automatically cancel the subscription when the current billing period ends. If not specified, defaults to false. Can be null
      *
      * @return self
      */
@@ -691,7 +654,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 500 characters. Note: See documentation for details.
+     * @param string|null $description Subscription description, displayable to customer. PII caution: should not contain personal data (names, emails) - use structured fields for customer information. No HTML tags. Can be null. Server-side fallback (2026-07-29 SA): when blank, the WALLET payment paths send `Subscription {subscriptionId} payment` as the A+ APS `orderDescription` (mandatory downstream) - no contract change, field stays optional
      *
      * @return self
      */
@@ -715,7 +678,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets subscriptionNotifyUrl
      *
-     * @param string|null $subscriptionNotifyUrl The subscription notify url. Maximum length: 512 characters.
+     * @param string|null $subscriptionNotifyUrl Subscription status notification URL. Valid URL. Can be null
      *
      * @return self
      */
@@ -729,7 +692,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -739,7 +702,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases. Note: See documentation for details.
+     * @param string|null $metadata Key-value extension data as a JSON-encoded string. Keys max 64 chars, values max 512 chars. Maximum size: 20 pairs. PII prohibition applies - must not contain personal data (names, emails, IDs). Use structured fields for PII. Can be null The value must be a valid JSON object string.
      *
      * @return self
      */

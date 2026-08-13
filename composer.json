@@ -6,6 +6,7 @@
   "autoload": {
     "psr-4": {
       "Request\\": "request/",
+      "Response\\": "response/",
       "Model\\": "model/",
       "Client\\": "client/"
     }

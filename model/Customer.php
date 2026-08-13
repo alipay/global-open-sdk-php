@@ -52,12 +52,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'firstName' => 'string',
         'lastName' => 'string',
         'status' => 'string',
-        'phoneNo' => 'string',
-        'countryCode' => 'string',
         'billingEmail' => 'string',
-        'shippingFirstName' => 'string',
-        'shippingLastName' => 'string',
-        'shippingCountryCode' => 'string'
+        'country' => 'string',
+        'gmtCreate' => 'string'
     ];
 
     /**
@@ -74,12 +71,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'firstName' => null,
         'lastName' => null,
         'status' => null,
-        'phoneNo' => null,
-        'countryCode' => null,
         'billingEmail' => null,
-        'shippingFirstName' => null,
-        'shippingLastName' => null,
-        'shippingCountryCode' => null
+        'country' => null,
+        'gmtCreate' => null
     ];
 
     /**
@@ -94,12 +88,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'firstName' => false,
         'lastName' => false,
         'status' => false,
-        'phoneNo' => false,
-        'countryCode' => false,
         'billingEmail' => false,
-        'shippingFirstName' => false,
-        'shippingLastName' => false,
-        'shippingCountryCode' => false
+        'country' => false,
+        'gmtCreate' => false
     ];
 
     /**
@@ -194,12 +185,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'status' => 'status',
-        'phoneNo' => 'phoneNo',
-        'countryCode' => 'countryCode',
         'billingEmail' => 'billingEmail',
-        'shippingFirstName' => 'shippingFirstName',
-        'shippingLastName' => 'shippingLastName',
-        'shippingCountryCode' => 'shippingCountryCode'
+        'country' => 'country',
+        'gmtCreate' => 'gmtCreate'
     ];
 
     /**
@@ -214,12 +202,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'status' => 'setStatus',
-        'phoneNo' => 'setPhoneNo',
-        'countryCode' => 'setCountryCode',
         'billingEmail' => 'setBillingEmail',
-        'shippingFirstName' => 'setShippingFirstName',
-        'shippingLastName' => 'setShippingLastName',
-        'shippingCountryCode' => 'setShippingCountryCode'
+        'country' => 'setCountry',
+        'gmtCreate' => 'setGmtCreate'
     ];
 
     /**
@@ -234,12 +219,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'status' => 'getStatus',
-        'phoneNo' => 'getPhoneNo',
-        'countryCode' => 'getCountryCode',
         'billingEmail' => 'getBillingEmail',
-        'shippingFirstName' => 'getShippingFirstName',
-        'shippingLastName' => 'getShippingLastName',
-        'shippingCountryCode' => 'getShippingCountryCode'
+        'country' => 'getCountry',
+        'gmtCreate' => 'getGmtCreate'
     ];
 
     /**
@@ -305,12 +287,9 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('firstName', $data ?? [], null);
         $this->setIfExists('lastName', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('phoneNo', $data ?? [], null);
-        $this->setIfExists('countryCode', $data ?? [], null);
         $this->setIfExists('billingEmail', $data ?? [], null);
-        $this->setIfExists('shippingFirstName', $data ?? [], null);
-        $this->setIfExists('shippingLastName', $data ?? [], null);
-        $this->setIfExists('shippingCountryCode', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('gmtCreate', $data ?? [], null);
 
             }
 
@@ -369,7 +348,7 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId Filter by exact customer ID (single exact match).
      *
      * @return self
      */
@@ -393,7 +372,7 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerRequestId
      *
-     * @param string|null $customerRequestId The unique ID assigned by a merchant to identify a request. Maximum length: 64 characters.
+     * @param string|null $customerRequestId Merchant-supplied idempotency key.
      *
      * @return self
      */
@@ -417,7 +396,7 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets email
      *
-     * @param string|null $email The email address. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $email Filter by exact email address match. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -441,7 +420,7 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets firstName
      *
-     * @param string|null $firstName The first name. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $firstName Customer first name. Returned when the field was set.
      *
      * @return self
      */
@@ -465,7 +444,7 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lastName
      *
-     * @param string|null $lastName The last name. Maximum length: 256 characters. Note: See documentation for details.
+     * @param string|null $lastName Customer last name. Returned when the field was set.
      *
      * @return self
      */
@@ -489,61 +468,13 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters.
+     * @param string|null $status Filter by customer status. Allowed values: `ACTIVE`, `DELETED`. If not provided, returns customers of all statuses.
      *
      * @return self
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets phoneNo
-     *
-     * @return string|null
-     */
-    public function getPhoneNo()
-    {
-        return $this->container['phoneNo'];
-    }
-
-    /**
-     * Sets phoneNo
-     *
-     * @param string|null $phoneNo The customer's phone number (digits only). Replaces deprecated mobileNo. Maximum length: 32 characters.
-     *
-     * @return self
-     */
-    public function setPhoneNo($phoneNo)
-    {
-        $this->container['phoneNo'] = $phoneNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets countryCode
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        return $this->container['countryCode'];
-    }
-
-    /**
-     * Sets countryCode
-     *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with phoneNo. Required when phoneNo is provided. Maximum length: 2 characters.
-     *
-     * @return self
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->container['countryCode'] = $countryCode;
 
         return $this;
     }
@@ -561,7 +492,7 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets billingEmail
      *
-     * @param string|null $billingEmail Invoice recipient email address (independent of account email). Maximum length: 256 characters.
+     * @param string|null $billingEmail Invoice recipient email (independent of account email). Returned when the field was set.
      *
      * @return self
      */
@@ -573,73 +504,49 @@ class Customer  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets shippingFirstName
+     * Gets country
      *
      * @return string|null
      */
-    public function getShippingFirstName()
+    public function getCountry()
     {
-        return $this->container['shippingFirstName'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets shippingFirstName
+     * Sets country
      *
-     * @param string|null $shippingFirstName Shipping recipient first name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $country Filter by billing country codes (ISO 3166-1 alpha-2) using SQL `IN` clause. Maximum size: 50 elements.
      *
      * @return self
      */
-    public function setShippingFirstName($shippingFirstName)
+    public function setCountry($country)
     {
-        $this->container['shippingFirstName'] = $shippingFirstName;
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets shippingLastName
+     * Gets gmtCreate
      *
      * @return string|null
      */
-    public function getShippingLastName()
+    public function getGmtCreate()
     {
-        return $this->container['shippingLastName'];
+        return $this->container['gmtCreate'];
     }
 
     /**
-     * Sets shippingLastName
+     * Sets gmtCreate
      *
-     * @param string|null $shippingLastName Shipping recipient last name. Replaces deprecated shippingName. Maximum length: 256 characters.
+     * @param string|null $gmtCreate Customer creation timestamp.
      *
      * @return self
      */
-    public function setShippingLastName($shippingLastName)
+    public function setGmtCreate($gmtCreate)
     {
-        $this->container['shippingLastName'] = $shippingLastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingCountryCode
-     *
-     * @return string|null
-     */
-    public function getShippingCountryCode()
-    {
-        return $this->container['shippingCountryCode'];
-    }
-
-    /**
-     * Sets shippingCountryCode
-     *
-     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with shippingPhone. Maximum length: 8 characters.
-     *
-     * @return self
-     */
-    public function setShippingCountryCode($shippingCountryCode)
-    {
-        $this->container['shippingCountryCode'] = $shippingCountryCode;
+        $this->container['gmtCreate'] = $gmtCreate;
 
         return $this;
     }

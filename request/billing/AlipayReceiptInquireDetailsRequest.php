@@ -300,7 +300,7 @@ class AlipayReceiptInquireDetailsRequest   extends AlipayRequest  implements Mod
     /**
      * Sets receiptId
      *
-     * @param string|null $receiptId The receipt ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $receiptId Receipt ID. When provided, looks up the receipt directly. Can be null (when `invoiceId` is provided instead).
      *
      * @return self
      */
@@ -324,7 +324,7 @@ class AlipayReceiptInquireDetailsRequest   extends AlipayRequest  implements Mod
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId The invoice ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $invoiceId Alternative lookup by associated invoice ID. When provided, finds the receipt associated with this invoice. Can be null (when `receiptId` is provided instead).
      *
      * @return self
      */

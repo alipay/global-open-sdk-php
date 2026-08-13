@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * ReceiptItem Class Doc Comment
+ * InvoicePayment Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class InvoicePayment  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ReceiptItem';
+    protected static $openAPIModelName = 'InvoicePayment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,19 +46,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'itemId' => 'string',
-        'description' => 'string',
-        'quantity' => 'int',
-        'unitAmount' => '\request\model\Amount',
-        'amount' => '\request\model\Amount',
-        'usageAmount' => '\request\model\Amount',
-        'usageQuantity' => 'string',
-        'usageUnit' => 'string',
-        'discountAmount' => '\request\model\Amount',
-        'taxAmount' => '\request\model\Amount',
-        'periodStart' => 'string',
-        'periodEnd' => 'string',
-        'proration' => 'bool',
+        'invoicePaymentId' => 'string',
+        'attemptNo' => 'int',
+        'paymentRequestId' => 'string',
+        'paymentId' => 'string',
+        'payToRequestId' => 'string',
+        'payToId' => 'string',
+        'paymentAmount' => '\request\model\Amount',
+        'paymentOrderStatus' => 'string',
+        'paymentMethod' => 'string',
+        'errorCode' => 'string',
+        'errorMessage' => 'string',
+        'retryReason' => 'string',
+        'paymentTime' => 'string',
+        'nextRetryAt' => 'string',
         'gmtCreate' => 'string',
         'gmtUpdate' => 'string'
     ];
@@ -71,19 +72,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'itemId' => null,
-        'description' => null,
-        'quantity' => null,
-        'unitAmount' => null,
-        'amount' => null,
-        'usageAmount' => null,
-        'usageQuantity' => null,
-        'usageUnit' => null,
-        'discountAmount' => null,
-        'taxAmount' => null,
-        'periodStart' => null,
-        'periodEnd' => null,
-        'proration' => null,
+        'invoicePaymentId' => null,
+        'attemptNo' => null,
+        'paymentRequestId' => null,
+        'paymentId' => null,
+        'payToRequestId' => null,
+        'payToId' => null,
+        'paymentAmount' => null,
+        'paymentOrderStatus' => null,
+        'paymentMethod' => null,
+        'errorCode' => null,
+        'errorMessage' => null,
+        'retryReason' => null,
+        'paymentTime' => null,
+        'nextRetryAt' => null,
         'gmtCreate' => null,
         'gmtUpdate' => null
     ];
@@ -94,19 +96,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'itemId' => false,
-        'description' => false,
-        'quantity' => true,
-        'unitAmount' => false,
-        'amount' => false,
-        'usageAmount' => false,
-        'usageQuantity' => false,
-        'usageUnit' => false,
-        'discountAmount' => false,
-        'taxAmount' => false,
-        'periodStart' => false,
-        'periodEnd' => false,
-        'proration' => false,
+        'invoicePaymentId' => false,
+        'attemptNo' => true,
+        'paymentRequestId' => false,
+        'paymentId' => false,
+        'payToRequestId' => false,
+        'payToId' => false,
+        'paymentAmount' => false,
+        'paymentOrderStatus' => false,
+        'paymentMethod' => false,
+        'errorCode' => false,
+        'errorMessage' => false,
+        'retryReason' => false,
+        'paymentTime' => false,
+        'nextRetryAt' => false,
         'gmtCreate' => false,
         'gmtUpdate' => false
     ];
@@ -197,19 +200,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'itemId' => 'itemId',
-        'description' => 'description',
-        'quantity' => 'quantity',
-        'unitAmount' => 'unitAmount',
-        'amount' => 'amount',
-        'usageAmount' => 'usageAmount',
-        'usageQuantity' => 'usageQuantity',
-        'usageUnit' => 'usageUnit',
-        'discountAmount' => 'discountAmount',
-        'taxAmount' => 'taxAmount',
-        'periodStart' => 'periodStart',
-        'periodEnd' => 'periodEnd',
-        'proration' => 'proration',
+        'invoicePaymentId' => 'invoicePaymentId',
+        'attemptNo' => 'attemptNo',
+        'paymentRequestId' => 'paymentRequestId',
+        'paymentId' => 'paymentId',
+        'payToRequestId' => 'payToRequestId',
+        'payToId' => 'payToId',
+        'paymentAmount' => 'paymentAmount',
+        'paymentOrderStatus' => 'paymentOrderStatus',
+        'paymentMethod' => 'paymentMethod',
+        'errorCode' => 'errorCode',
+        'errorMessage' => 'errorMessage',
+        'retryReason' => 'retryReason',
+        'paymentTime' => 'paymentTime',
+        'nextRetryAt' => 'nextRetryAt',
         'gmtCreate' => 'gmtCreate',
         'gmtUpdate' => 'gmtUpdate'
     ];
@@ -220,19 +224,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'itemId' => 'setItemId',
-        'description' => 'setDescription',
-        'quantity' => 'setQuantity',
-        'unitAmount' => 'setUnitAmount',
-        'amount' => 'setAmount',
-        'usageAmount' => 'setUsageAmount',
-        'usageQuantity' => 'setUsageQuantity',
-        'usageUnit' => 'setUsageUnit',
-        'discountAmount' => 'setDiscountAmount',
-        'taxAmount' => 'setTaxAmount',
-        'periodStart' => 'setPeriodStart',
-        'periodEnd' => 'setPeriodEnd',
-        'proration' => 'setProration',
+        'invoicePaymentId' => 'setInvoicePaymentId',
+        'attemptNo' => 'setAttemptNo',
+        'paymentRequestId' => 'setPaymentRequestId',
+        'paymentId' => 'setPaymentId',
+        'payToRequestId' => 'setPayToRequestId',
+        'payToId' => 'setPayToId',
+        'paymentAmount' => 'setPaymentAmount',
+        'paymentOrderStatus' => 'setPaymentOrderStatus',
+        'paymentMethod' => 'setPaymentMethod',
+        'errorCode' => 'setErrorCode',
+        'errorMessage' => 'setErrorMessage',
+        'retryReason' => 'setRetryReason',
+        'paymentTime' => 'setPaymentTime',
+        'nextRetryAt' => 'setNextRetryAt',
         'gmtCreate' => 'setGmtCreate',
         'gmtUpdate' => 'setGmtUpdate'
     ];
@@ -243,19 +248,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'itemId' => 'getItemId',
-        'description' => 'getDescription',
-        'quantity' => 'getQuantity',
-        'unitAmount' => 'getUnitAmount',
-        'amount' => 'getAmount',
-        'usageAmount' => 'getUsageAmount',
-        'usageQuantity' => 'getUsageQuantity',
-        'usageUnit' => 'getUsageUnit',
-        'discountAmount' => 'getDiscountAmount',
-        'taxAmount' => 'getTaxAmount',
-        'periodStart' => 'getPeriodStart',
-        'periodEnd' => 'getPeriodEnd',
-        'proration' => 'getProration',
+        'invoicePaymentId' => 'getInvoicePaymentId',
+        'attemptNo' => 'getAttemptNo',
+        'paymentRequestId' => 'getPaymentRequestId',
+        'paymentId' => 'getPaymentId',
+        'payToRequestId' => 'getPayToRequestId',
+        'payToId' => 'getPayToId',
+        'paymentAmount' => 'getPaymentAmount',
+        'paymentOrderStatus' => 'getPaymentOrderStatus',
+        'paymentMethod' => 'getPaymentMethod',
+        'errorCode' => 'getErrorCode',
+        'errorMessage' => 'getErrorMessage',
+        'retryReason' => 'getRetryReason',
+        'paymentTime' => 'getPaymentTime',
+        'nextRetryAt' => 'getNextRetryAt',
         'gmtCreate' => 'getGmtCreate',
         'gmtUpdate' => 'getGmtUpdate'
     ];
@@ -317,19 +323,20 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('itemId', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('unitAmount', $data ?? [], null);
-        $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('usageAmount', $data ?? [], null);
-        $this->setIfExists('usageQuantity', $data ?? [], null);
-        $this->setIfExists('usageUnit', $data ?? [], null);
-        $this->setIfExists('discountAmount', $data ?? [], null);
-        $this->setIfExists('taxAmount', $data ?? [], null);
-        $this->setIfExists('periodStart', $data ?? [], null);
-        $this->setIfExists('periodEnd', $data ?? [], null);
-        $this->setIfExists('proration', $data ?? [], null);
+        $this->setIfExists('invoicePaymentId', $data ?? [], null);
+        $this->setIfExists('attemptNo', $data ?? [], null);
+        $this->setIfExists('paymentRequestId', $data ?? [], null);
+        $this->setIfExists('paymentId', $data ?? [], null);
+        $this->setIfExists('payToRequestId', $data ?? [], null);
+        $this->setIfExists('payToId', $data ?? [], null);
+        $this->setIfExists('paymentAmount', $data ?? [], null);
+        $this->setIfExists('paymentOrderStatus', $data ?? [], null);
+        $this->setIfExists('paymentMethod', $data ?? [], null);
+        $this->setIfExists('errorCode', $data ?? [], null);
+        $this->setIfExists('errorMessage', $data ?? [], null);
+        $this->setIfExists('retryReason', $data ?? [], null);
+        $this->setIfExists('paymentTime', $data ?? [], null);
+        $this->setIfExists('nextRetryAt', $data ?? [], null);
         $this->setIfExists('gmtCreate', $data ?? [], null);
         $this->setIfExists('gmtUpdate', $data ?? [], null);
 
@@ -362,14 +369,14 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['itemId'] === null) {
-            $invalidProperties[] = "'itemId' can't be null";
+        if ($this->container['invoicePaymentId'] === null) {
+            $invalidProperties[] = "'invoicePaymentId' can't be null";
         }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
+        if ($this->container['attemptNo'] === null) {
+            $invalidProperties[] = "'attemptNo' can't be null";
         }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
+        if ($this->container['paymentOrderStatus'] === null) {
+            $invalidProperties[] = "'paymentOrderStatus' can't be null";
         }
         if ($this->container['gmtCreate'] === null) {
             $invalidProperties[] = "'gmtCreate' can't be null";
@@ -393,313 +400,337 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets itemId
+     * Gets invoicePaymentId
      *
      * @return string
      */
-    public function getItemId()
+    public function getInvoicePaymentId()
     {
-        return $this->container['itemId'];
+        return $this->container['invoicePaymentId'];
     }
 
     /**
-     * Sets itemId
+     * Sets invoicePaymentId
      *
-     * @param string $itemId Line item ID. Unique identifier.
+     * @param string $invoicePaymentId Payment record ID. Unique identifier for this payment attempt. Cannot be null. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setItemId($itemId)
+    public function setInvoicePaymentId($invoicePaymentId)
     {
-        $this->container['itemId'] = $itemId;
+        $this->container['invoicePaymentId'] = $invoicePaymentId;
 
         return $this;
     }
 
     /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description Line item description (e.g., \"1 x Pro Plan (at $10.00/month)\").
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets quantity
+     * Gets attemptNo
      *
      * @return int
      */
-    public function getQuantity()
+    public function getAttemptNo()
     {
-        return $this->container['quantity'];
+        return $this->container['attemptNo'];
     }
 
     /**
-     * Sets quantity
+     * Sets attemptNo
      *
-     * @param int $quantity Quantity of the item. Default: 1.
+     * @param int $attemptNo Attempt number (1-based). Incremented for each retry. Minimum value: 1. Cannot be null.
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setAttemptNo($attemptNo)
     {
-        $this->container['quantity'] = $quantity;
+        $this->container['attemptNo'] = $attemptNo;
 
         return $this;
     }
 
     /**
-     * Gets unitAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getUnitAmount()
-    {
-        return $this->container['unitAmount'];
-    }
-
-    /**
-     * Sets unitAmount
-     *
-     * @param \model\Amount|null $unitAmount unitAmount
-     *
-     * @return self
-     */
-    public function setUnitAmount($unitAmount)
-    {
-        $this->container['unitAmount'] = $unitAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return \model\Amount|null
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param \model\Amount|null $amount amount
-     *
-     * @return self
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets usageAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getUsageAmount()
-    {
-        return $this->container['usageAmount'];
-    }
-
-    /**
-     * Sets usageAmount
-     *
-     * @param \model\Amount|null $usageAmount usageAmount
-     *
-     * @return self
-     */
-    public function setUsageAmount($usageAmount)
-    {
-        $this->container['usageAmount'] = $usageAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets usageQuantity
+     * Gets paymentRequestId
      *
      * @return string|null
      */
-    public function getUsageQuantity()
+    public function getPaymentRequestId()
     {
-        return $this->container['usageQuantity'];
+        return $this->container['paymentRequestId'];
     }
 
     /**
-     * Sets usageQuantity
+     * Sets paymentRequestId
      *
-     * @param string|null $usageQuantity Metered usage quantity. Null if not metered.
+     * @param string|null $paymentRequestId Outbound payment request ID (idempotency key). May be null or omitted for offline confirmations. Maximum length: 128 characters.
      *
      * @return self
      */
-    public function setUsageQuantity($usageQuantity)
+    public function setPaymentRequestId($paymentRequestId)
     {
-        $this->container['usageQuantity'] = $usageQuantity;
+        $this->container['paymentRequestId'] = $paymentRequestId;
 
         return $this;
     }
 
     /**
-     * Gets usageUnit
+     * Gets paymentId
      *
      * @return string|null
      */
-    public function getUsageUnit()
+    public function getPaymentId()
     {
-        return $this->container['usageUnit'];
+        return $this->container['paymentId'];
     }
 
     /**
-     * Sets usageUnit
+     * Sets paymentId
      *
-     * @param string|null $usageUnit Usage unit (e.g., `requests`, `gb`). Null if not metered.
+     * @param string|null $paymentId External payment transaction ID. May be null or omitted for failed or processing attempts. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setUsageUnit($usageUnit)
+    public function setPaymentId($paymentId)
     {
-        $this->container['usageUnit'] = $usageUnit;
+        $this->container['paymentId'] = $paymentId;
 
         return $this;
     }
 
     /**
-     * Gets discountAmount
+     * Gets payToRequestId
+     *
+     * @return string|null
+     */
+    public function getPayToRequestId()
+    {
+        return $this->container['payToRequestId'];
+    }
+
+    /**
+     * Sets payToRequestId
+     *
+     * @param string|null $payToRequestId Order request ID. May be null or omitted if not applicable. Maximum length: 128 characters.
+     *
+     * @return self
+     */
+    public function setPayToRequestId($payToRequestId)
+    {
+        $this->container['payToRequestId'] = $payToRequestId;
+
+        return $this;
+    }
+
+    /**
+     * Gets payToId
+     *
+     * @return string|null
+     */
+    public function getPayToId()
+    {
+        return $this->container['payToId'];
+    }
+
+    /**
+     * Sets payToId
+     *
+     * @param string|null $payToId Order ID. May be null or omitted if not applicable. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setPayToId($payToId)
+    {
+        $this->container['payToId'] = $payToId;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAmount
      *
      * @return \model\Amount|null
      */
-    public function getDiscountAmount()
+    public function getPaymentAmount()
     {
-        return $this->container['discountAmount'];
+        return $this->container['paymentAmount'];
     }
 
     /**
-     * Sets discountAmount
+     * Sets paymentAmount
      *
-     * @param \model\Amount|null $discountAmount discountAmount
+     * @param \model\Amount|null $paymentAmount paymentAmount
      *
      * @return self
      */
-    public function setDiscountAmount($discountAmount)
+    public function setPaymentAmount($paymentAmount)
     {
-        $this->container['discountAmount'] = $discountAmount;
+        $this->container['paymentAmount'] = $paymentAmount;
 
         return $this;
     }
 
     /**
-     * Gets taxAmount
+     * Gets paymentOrderStatus
      *
-     * @return \model\Amount|null
+     * @return string
      */
-    public function getTaxAmount()
+    public function getPaymentOrderStatus()
     {
-        return $this->container['taxAmount'];
+        return $this->container['paymentOrderStatus'];
     }
 
     /**
-     * Sets taxAmount
+     * Sets paymentOrderStatus
      *
-     * @param \model\Amount|null $taxAmount taxAmount
+     * @param string $paymentOrderStatus Payment status. Allowed values: `SUCCESS` - payment completed; `PROCESSING` - awaiting an asynchronous result; `FAILED` - payment failed; `CLOSED` - payment permanently closed or cancelled. Cannot be null. Maximum length: 32 characters.
      *
      * @return self
      */
-    public function setTaxAmount($taxAmount)
+    public function setPaymentOrderStatus($paymentOrderStatus)
     {
-        $this->container['taxAmount'] = $taxAmount;
+        $this->container['paymentOrderStatus'] = $paymentOrderStatus;
 
         return $this;
     }
 
     /**
-     * Gets periodStart
+     * Gets paymentMethod
      *
      * @return string|null
      */
-    public function getPeriodStart()
+    public function getPaymentMethod()
     {
-        return $this->container['periodStart'];
+        return $this->container['paymentMethod'];
     }
 
     /**
-     * Sets periodStart
+     * Sets paymentMethod
      *
-     * @param string|null $periodStart ISO 8601 timestamp of coverage period start. Null if not subscription-based.
+     * @param string|null $paymentMethod Payment method used for this attempt. Allowed values include `CARD`, `BANK_TRANSFER`, `WALLET`, and `OFFLINE`. May be null or omitted when no payment method was recorded. Maximum length: 32 characters.
      *
      * @return self
      */
-    public function setPeriodStart($periodStart)
+    public function setPaymentMethod($paymentMethod)
     {
-        $this->container['periodStart'] = $periodStart;
+        $this->container['paymentMethod'] = $paymentMethod;
 
         return $this;
     }
 
     /**
-     * Gets periodEnd
+     * Gets errorCode
      *
      * @return string|null
      */
-    public function getPeriodEnd()
+    public function getErrorCode()
     {
-        return $this->container['periodEnd'];
+        return $this->container['errorCode'];
     }
 
     /**
-     * Sets periodEnd
+     * Sets errorCode
      *
-     * @param string|null $periodEnd ISO 8601 timestamp of coverage period end. Null if not subscription-based.
+     * @param string|null $errorCode Error code from the payment gateway. May be null or omitted for successful payments. Maximum length: 64 characters.
      *
      * @return self
      */
-    public function setPeriodEnd($periodEnd)
+    public function setErrorCode($errorCode)
     {
-        $this->container['periodEnd'] = $periodEnd;
+        $this->container['errorCode'] = $errorCode;
 
         return $this;
     }
 
     /**
-     * Gets proration
+     * Gets errorMessage
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getProration()
+    public function getErrorMessage()
     {
-        return $this->container['proration'];
+        return $this->container['errorMessage'];
     }
 
     /**
-     * Sets proration
+     * Sets errorMessage
      *
-     * @param bool|null $proration Whether this is a proration adjustment. Default: false.
+     * @param string|null $errorMessage Error message from the payment gateway. May be null or omitted for successful payments. Maximum length: 256 characters.
      *
      * @return self
      */
-    public function setProration($proration)
+    public function setErrorMessage($errorMessage)
     {
-        $this->container['proration'] = $proration;
+        $this->container['errorMessage'] = $errorMessage;
+
+        return $this;
+    }
+
+    /**
+     * Gets retryReason
+     *
+     * @return string|null
+     */
+    public function getRetryReason()
+    {
+        return $this->container['retryReason'];
+    }
+
+    /**
+     * Sets retryReason
+     *
+     * @param string|null $retryReason Reason for retry. May be null or omitted if no retry is scheduled. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setRetryReason($retryReason)
+    {
+        $this->container['retryReason'] = $retryReason;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentTime
+     *
+     * @return string|null
+     */
+    public function getPaymentTime()
+    {
+        return $this->container['paymentTime'];
+    }
+
+    /**
+     * Sets paymentTime
+     *
+     * @param string|null $paymentTime ISO 8601 timestamp of successful payment. May be null or omitted for failed or processing attempts. Maximum length: 29 characters.
+     *
+     * @return self
+     */
+    public function setPaymentTime($paymentTime)
+    {
+        $this->container['paymentTime'] = $paymentTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets nextRetryAt
+     *
+     * @return string|null
+     */
+    public function getNextRetryAt()
+    {
+        return $this->container['nextRetryAt'];
+    }
+
+    /**
+     * Sets nextRetryAt
+     *
+     * @param string|null $nextRetryAt ISO 8601 timestamp of the next scheduled retry. May be null or omitted if no retry is scheduled. Maximum length: 29 characters.
+     *
+     * @return self
+     */
+    public function setNextRetryAt($nextRetryAt)
+    {
+        $this->container['nextRetryAt'] = $nextRetryAt;
 
         return $this;
     }
@@ -717,7 +748,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtCreate
      *
-     * @param string $gmtCreate ISO 8601 timestamp of line item creation. Maximum length: 29 characters.
+     * @param string $gmtCreate ISO 8601 timestamp of record creation. Cannot be null. Maximum length: 29 characters.
      *
      * @return self
      */
@@ -741,7 +772,7 @@ class ReceiptItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gmtUpdate
      *
-     * @param string $gmtUpdate ISO 8601 timestamp of last line item update. Maximum length: 29 characters.
+     * @param string $gmtUpdate ISO 8601 timestamp of the last record update. Cannot be null. Maximum length: 29 characters.
      *
      * @return self
      */

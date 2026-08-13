@@ -61,9 +61,10 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'includedQuantity' => 'int',
         'tiersMode' => 'string',
         'tiers' => '\request\model\Tier[]',
-        'metadata' => 'array<string,string>',
+        'metadata' => 'string',
         'createdAt' => 'string',
-        'updatedAt' => 'string'
+        'updatedAt' => 'string',
+        'defaultPrice' => 'bool'
     ];
 
     /**
@@ -91,7 +92,8 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'tiers' => null,
         'metadata' => null,
         'createdAt' => null,
-        'updatedAt' => null
+        'updatedAt' => null,
+        'defaultPrice' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'tiers' => false,
         'metadata' => false,
         'createdAt' => false,
-        'updatedAt' => false
+        'updatedAt' => false,
+        'defaultPrice' => false
     ];
 
     /**
@@ -223,7 +226,8 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'tiers' => 'tiers',
         'metadata' => 'metadata',
         'createdAt' => 'createdAt',
-        'updatedAt' => 'updatedAt'
+        'updatedAt' => 'updatedAt',
+        'defaultPrice' => 'defaultPrice'
     ];
 
     /**
@@ -249,7 +253,8 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'tiers' => 'setTiers',
         'metadata' => 'setMetadata',
         'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'updatedAt' => 'setUpdatedAt',
+        'defaultPrice' => 'setDefaultPrice'
     ];
 
     /**
@@ -275,7 +280,8 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'tiers' => 'getTiers',
         'metadata' => 'getMetadata',
         'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'updatedAt' => 'getUpdatedAt',
+        'defaultPrice' => 'getDefaultPrice'
     ];
 
     /**
@@ -353,6 +359,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
         $this->setIfExists('updatedAt', $data ?? [], null);
+        $this->setIfExists('defaultPrice', $data ?? [], null);
 
             }
 
@@ -385,21 +392,6 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['priceId'] === null) {
-            $invalidProperties[] = "'priceId' can't be null";
-        }
-        if ($this->container['productId'] === null) {
-            $invalidProperties[] = "'productId' can't be null";
-        }
-        if ($this->container['pricingModel'] === null) {
-            $invalidProperties[] = "'pricingModel' can't be null";
-        }
-        if ($this->container['active'] === null) {
-            $invalidProperties[] = "'active' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -443,7 +435,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets priceId
      *
-     * @return string
+     * @return string|null
      */
     public function getPriceId()
     {
@@ -453,7 +445,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets priceId
      *
-     * @param string $priceId The price ID. Maximum length: 32 characters.
+     * @param string|null $priceId System-generated price ID. Format: price_ prefix + alphanumeric suffix Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -477,7 +469,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets priceRequestId
      *
-     * @param string|null $priceRequestId The price request id. Maximum length: 64 characters.
+     * @param string|null $priceRequestId Echo of the idempotent request key from the request. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -491,7 +483,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets productId
      *
-     * @return string
+     * @return string|null
      */
     public function getProductId()
     {
@@ -501,7 +493,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets productId
      *
-     * @param string $productId The product ID. Maximum length: 32 characters.
+     * @param string|null $productId Associated product ID Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -525,7 +517,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets name
      *
-     * @param string|null $name The name. Maximum length: 128 characters.
+     * @param string|null $name Price name. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -539,7 +531,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets pricingModel
      *
-     * @return string
+     * @return string|null
      */
     public function getPricingModel()
     {
@@ -549,7 +541,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets pricingModel
      *
-     * @param string $pricingModel The pricing model. Maximum length: 24 characters.
+     * @param string|null $pricingModel Pricing model type. Always returned - either provided by merchant or derived per Default Derivation rules. Enum: PER_UNIT(per-unit pricing aligned with Stripe billing_scheme=per_unit), TIERED(tiered pricing aligned with Stripe billing_scheme=tiered). Forward compatibility: If a new value is added in the future, clients that do not recognize it should treat it as an unknown value and not break Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -573,7 +565,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets usageType
      *
-     * @param string|null $usageType The usage type. Maximum length: 16 characters.
+     * @param string|null $usageType Usage type. O - May be null in the response when the value is not set. Enum: LICENSED(fixed license/per-seat - describes quantity tracking method), METERED(metered usage - describes quantity tracking method). Forward compatibility: If a new value is added in the future, clients that do not recognize it should treat it as an unknown value and not break Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -597,7 +589,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets unitLabel
      *
-     * @param string|null $unitLabel The unit label. Maximum length: 64 characters.
+     * @param string|null $unitLabel Price-level unit label. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -621,7 +613,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets meterId
      *
-     * @param string|null $meterId The meter ID. Maximum length: 32 characters.
+     * @param string|null $meterId External meter reference. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -683,7 +675,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets active
      *
-     * @return bool
+     * @return bool|null
      */
     public function getActive()
     {
@@ -693,7 +685,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets active
      *
-     * @param bool $active The active.
+     * @param bool|null $active Price active status. true=price is active and can be used for new subscriptions, false=price is deactivated and cannot be used for new subscriptions. Default on creation: true. Cannot be null Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -717,7 +709,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets includedQuantity
      *
-     * @param int|null $includedQuantity The included quantity.
+     * @param int|null $includedQuantity Included quantity for package pricing. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -741,7 +733,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets tiersMode
      *
-     * @param string|null $tiersMode The tiers mode. Maximum length: 16 characters.
+     * @param string|null $tiersMode Tiered pricing mode. O - May be null in the response when the value is not set. Enum: GRADUATED(graduated pricing - each tier priced independently, customer may cross tiers), VOLUME(volume pricing - single tier rate applies to entire quantity). Forward compatibility: If a new value is added in the future, clients that do not recognize it should treat it as an unknown value and not break Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -765,7 +757,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets tiers
      *
-     * @param \model\Tier[]|null $tiers The tiers.
+     * @param \model\Tier[]|null $tiers Tier definitions. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -779,7 +771,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets metadata
      *
-     * @return array<string,string>|null
+     * @return string|null
      */
     public function getMetadata()
     {
@@ -789,7 +781,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets metadata
      *
-     * @param array<string,string>|null $metadata Custom metadata for special use cases.
+     * @param string|null $metadata Metadata encoded as a JSON object string. Returned only when `result.resultCode` is `SUCCESS` and metadata was set. The SDK must expose the stored string unchanged.
      *
      * @return self
      */
@@ -803,7 +795,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -813,7 +805,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets createdAt
      *
-     * @param string $createdAt The created at. Maximum length: 29 characters.
+     * @param string|null $createdAt ISO 8601 creation timestamp Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -837,13 +829,37 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets updatedAt
      *
-     * @param string|null $updatedAt The updated at. Maximum length: 29 characters.
+     * @param string|null $updatedAt ISO 8601 last update timestamp. O - May be null in the response when the value is not set Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setUpdatedAt($updatedAt)
     {
         $this->container['updatedAt'] = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultPrice
+     *
+     * @return bool|null
+     */
+    public function getDefaultPrice()
+    {
+        return $this->container['defaultPrice'];
+    }
+
+    /**
+     * Sets defaultPrice
+     *
+     * @param bool|null $defaultPrice Whether this price is the default price for the product. When true, this price is the primary price shown for the product Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setDefaultPrice($defaultPrice)
+    {
+        $this->container['defaultPrice'] = $defaultPrice;
 
         return $this;
     }

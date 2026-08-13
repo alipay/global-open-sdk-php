@@ -309,18 +309,6 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['invoiceId'] === null) {
-            $invalidProperties[] = "'invoiceId' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['receiptId'] === null) {
-            $invalidProperties[] = "'receiptId' can't be null";
-        }
-        if ($this->container['paidAt'] === null) {
-            $invalidProperties[] = "'paidAt' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -363,7 +351,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets invoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getInvoiceId()
     {
@@ -373,7 +361,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string|null $invoiceId Invoice ID for which payment was confirmed (echo-back of request). Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -387,7 +375,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -397,7 +385,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters.
+     * @param string|null $status New invoice status after confirmation: `PAID`. The invoice is now in a terminal paid state. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -411,7 +399,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets receiptId
      *
-     * @return string
+     * @return string|null
      */
     public function getReceiptId()
     {
@@ -421,7 +409,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets receiptId
      *
-     * @param string $receiptId The receipt ID. Maximum length: 64 characters.
+     * @param string|null $receiptId Auto-generated receipt ID for the payment. Format: `rcpt_` + 10-char alphanumeric. The receipt confirms the payment and can be used with the Receipt Details and Send Receipt APIs. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -445,7 +433,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets invoiceNote
      *
-     * @param string|null $invoiceNote The invoice note. Maximum length: 512 characters.
+     * @param string|null $invoiceNote Echo-back of the `invoiceNote` provided in the request, if any. The note is stored in the `invoiceNotes` array in the invoice metadata with `action=paid`. Can be null (no note provided). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -459,7 +447,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets paidAt
      *
-     * @return string
+     * @return string|null
      */
     public function getPaidAt()
     {
@@ -469,7 +457,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets paidAt
      *
-     * @param string $paidAt The paid at. Maximum length: 24 characters.
+     * @param string|null $paidAt Timestamp when the payment was confirmed (ISO 8601, e.g., `2026-05-10T14:30:00+00:00`). Sourced from the delegate result's `paidTime`, which is set during the 3-way atomic write. This ensures consistency with the actual payment confirmation time in the database. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -493,7 +481,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus The email sending status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $sendStatus Email send status for receipt email. Returned only when `autoSend=true` in the request. Enum values: `SENT` - email dispatched successfully; `FAILED` - email dispatch failed (retry allowed). Can be null (when `autoSend=false` or absent). Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

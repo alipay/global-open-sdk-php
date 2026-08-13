@@ -48,7 +48,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     protected static $openAPITypes = [
         'merchantAccountId' => 'string',
         'metadata' => 'string',
-        'allowedPaymentMethodRegions' => 'string',
+        'allowedPaymentMethodRegions' => 'string[]',
         'customizedInfo' => '\request\model\CustomizedInfo',
         'paymentQuote' => '\request\model\Quote',
         'processingAmount' => '\request\model\Amount',
@@ -77,8 +77,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'locale' => 'string',
         'availablePaymentMethod' => '\request\model\AvailablePaymentMethod',
         'paymentExpiryTime' => 'string',
-        'subscription' => '\request\model\BillingSubscription',
-        'automaticTax' => '\request\model\AutomaticTax'
+        'subscription' => '\request\model\BillingSubscription'
     ];
 
     /**
@@ -120,8 +119,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'locale' => null,
         'availablePaymentMethod' => null,
         'paymentExpiryTime' => null,
-        'subscription' => null,
-        'automaticTax' => null
+        'subscription' => null
     ];
 
     /**
@@ -161,8 +159,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'locale' => false,
         'availablePaymentMethod' => false,
         'paymentExpiryTime' => false,
-        'subscription' => false,
-        'automaticTax' => false
+        'subscription' => false
     ];
 
     /**
@@ -282,8 +279,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'locale' => 'locale',
         'availablePaymentMethod' => 'availablePaymentMethod',
         'paymentExpiryTime' => 'paymentExpiryTime',
-        'subscription' => 'subscription',
-        'automaticTax' => 'automaticTax'
+        'subscription' => 'subscription'
     ];
 
     /**
@@ -323,8 +319,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'locale' => 'setLocale',
         'availablePaymentMethod' => 'setAvailablePaymentMethod',
         'paymentExpiryTime' => 'setPaymentExpiryTime',
-        'subscription' => 'setSubscription',
-        'automaticTax' => 'setAutomaticTax'
+        'subscription' => 'setSubscription'
     ];
 
     /**
@@ -364,8 +359,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'locale' => 'getLocale',
         'availablePaymentMethod' => 'getAvailablePaymentMethod',
         'paymentExpiryTime' => 'getPaymentExpiryTime',
-        'subscription' => 'getSubscription',
-        'automaticTax' => 'getAutomaticTax'
+        'subscription' => 'getSubscription'
     ];
 
     /**
@@ -457,7 +451,6 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('availablePaymentMethod', $data ?? [], null);
         $this->setIfExists('paymentExpiryTime', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
-        $this->setIfExists('automaticTax', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/createPaymentSession"); 
     }
@@ -573,7 +566,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Gets allowedPaymentMethodRegions
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getAllowedPaymentMethodRegions()
     {
@@ -583,7 +576,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets allowedPaymentMethodRegions
      *
-     * @param string|null $allowedPaymentMethodRegions A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.   Note: Specify this parameter if you want available payment methods from specific regions to be returned. For example, if you pass in GLOBAL, global cards Visa and Mastercard are returned.
+     * @param string[]|null $allowedPaymentMethodRegions A list of region codes that represent the countries or regions of payment methods. The value of this parameter is a 2-letter ISO country code or GLOBAL.   Note: Specify this parameter if you want available payment methods from specific regions to be returned. For example, if you pass in GLOBAL, global cards Visa and Mastercard are returned.
      *
      * @return self
      */
@@ -1286,30 +1279,6 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     public function setSubscription($subscription)
     {
         $this->container['subscription'] = $subscription;
-
-        return $this;
-    }
-
-    /**
-     * Gets automaticTax
-     *
-     * @return \model\AutomaticTax|null
-     */
-    public function getAutomaticTax()
-    {
-        return $this->container['automaticTax'];
-    }
-
-    /**
-     * Sets automaticTax
-     *
-     * @param \model\AutomaticTax|null $automaticTax automaticTax
-     *
-     * @return self
-     */
-    public function setAutomaticTax($automaticTax)
-    {
-        $this->container['automaticTax'] = $automaticTax;
 
         return $this;
     }

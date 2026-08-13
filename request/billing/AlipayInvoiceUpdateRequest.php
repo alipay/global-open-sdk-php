@@ -52,6 +52,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'string',
         'paymentMethod' => '\request\model\PaymentMethod',
         'shipping' => '\request\model\InvoiceShipping',
+        'customerId' => 'string',
+        'footer' => 'string',
+        'includePaymentLink' => 'bool',
+        'memo' => 'string',
+        'customFields' => '\request\model\InvoiceCustomField[]',
         'invoiceNotifyUrl' => 'string'
     ];
 
@@ -69,6 +74,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => null,
         'paymentMethod' => null,
         'shipping' => null,
+        'customerId' => null,
+        'footer' => null,
+        'includePaymentLink' => null,
+        'memo' => null,
+        'customFields' => null,
         'invoiceNotifyUrl' => null
     ];
 
@@ -84,6 +94,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => false,
         'paymentMethod' => false,
         'shipping' => false,
+        'customerId' => false,
+        'footer' => false,
+        'includePaymentLink' => false,
+        'memo' => false,
+        'customFields' => false,
         'invoiceNotifyUrl' => false
     ];
 
@@ -179,6 +194,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'collectionMethod',
         'paymentMethod' => 'paymentMethod',
         'shipping' => 'shipping',
+        'customerId' => 'customerId',
+        'footer' => 'footer',
+        'includePaymentLink' => 'includePaymentLink',
+        'memo' => 'memo',
+        'customFields' => 'customFields',
         'invoiceNotifyUrl' => 'invoiceNotifyUrl'
     ];
 
@@ -194,6 +214,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'setCollectionMethod',
         'paymentMethod' => 'setPaymentMethod',
         'shipping' => 'setShipping',
+        'customerId' => 'setCustomerId',
+        'footer' => 'setFooter',
+        'includePaymentLink' => 'setIncludePaymentLink',
+        'memo' => 'setMemo',
+        'customFields' => 'setCustomFields',
         'invoiceNotifyUrl' => 'setInvoiceNotifyUrl'
     ];
 
@@ -209,6 +234,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'collectionMethod' => 'getCollectionMethod',
         'paymentMethod' => 'getPaymentMethod',
         'shipping' => 'getShipping',
+        'customerId' => 'getCustomerId',
+        'footer' => 'getFooter',
+        'includePaymentLink' => 'getIncludePaymentLink',
+        'memo' => 'getMemo',
+        'customFields' => 'getCustomFields',
         'invoiceNotifyUrl' => 'getInvoiceNotifyUrl'
     ];
 
@@ -275,6 +305,11 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('paymentMethod', $data ?? [], null);
         $this->setIfExists('shipping', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
+        $this->setIfExists('footer', $data ?? [], null);
+        $this->setIfExists('includePaymentLink', $data ?? [], null);
+        $this->setIfExists('memo', $data ?? [], null);
+        $this->setIfExists('customFields', $data ?? [], null);
         $this->setIfExists('invoiceNotifyUrl', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/invoice/update"); 
@@ -338,7 +373,7 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceId
      *
-     * @param string $invoiceId The invoice ID. Maximum length: 64 characters.
+     * @param string $invoiceId Invoice ID to edit. Must be DRAFT status and belong to the merchant. Cannot be null.
      *
      * @return self
      */
@@ -362,7 +397,7 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets description
      *
-     * @param string|null $description The description. Maximum length: 512 characters.
+     * @param string|null $description Updated invoice description. When omitted, the existing value is unchanged. Maximum length: 512 characters.
      *
      * @return self
      */
@@ -386,7 +421,7 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets dueDate
      *
-     * @param string|null $dueDate The due date. Maximum length: 24 characters.
+     * @param string|null $dueDate Updated payment due date in `yyyy-MM-dd` or ISO 8601 format. The date must be in the future. When omitted, the existing value is unchanged. Maximum length: 24 characters.
      *
      * @return self
      */
@@ -410,7 +445,7 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets collectionMethod
      *
-     * @param string|null $collectionMethod The collection method. Maximum length: 32 characters.
+     * @param string|null $collectionMethod Updated collection method. Allowed values: `CHARGE_AUTOMATICALLY` and `SEND_INVOICE`. When omitted, the existing value is unchanged. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -470,6 +505,126 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
     }
 
     /**
+     * Gets customerId
+     *
+     * @return string|null
+     */
+    public function getCustomerId()
+    {
+        return $this->container['customerId'];
+    }
+
+    /**
+     * Sets customerId
+     *
+     * @param string|null $customerId Customer ID to associate with this invoice. If the customer differs from the invoice's current customer, the invoice is soft-deleted and recreated with a new ID in the new customer's shard. The response includes `previousInvoiceId` with the old invoice ID. Can be null (unchanged).
+     *
+     * @return self
+     */
+    public function setCustomerId($customerId)
+    {
+        $this->container['customerId'] = $customerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets footer
+     *
+     * @return string|null
+     */
+    public function getFooter()
+    {
+        return $this->container['footer'];
+    }
+
+    /**
+     * Sets footer
+     *
+     * @param string|null $footer Footer text for PDF rendering (multi-line). PATCH semantics: null = unchanged, empty string = cleared.
+     *
+     * @return self
+     */
+    public function setFooter($footer)
+    {
+        $this->container['footer'] = $footer;
+
+        return $this;
+    }
+
+    /**
+     * Gets includePaymentLink
+     *
+     * @return bool|null
+     */
+    public function getIncludePaymentLink()
+    {
+        return $this->container['includePaymentLink'];
+    }
+
+    /**
+     * Sets includePaymentLink
+     *
+     * @param bool|null $includePaymentLink Whether to include payment link in email and PDF. Default: true. Stored in invoice metadata.
+     *
+     * @return self
+     */
+    public function setIncludePaymentLink($includePaymentLink)
+    {
+        $this->container['includePaymentLink'] = $includePaymentLink;
+
+        return $this;
+    }
+
+    /**
+     * Gets memo
+     *
+     * @return string|null
+     */
+    public function getMemo()
+    {
+        return $this->container['memo'];
+    }
+
+    /**
+     * Sets memo
+     *
+     * @param string|null $memo Free-text memo for PDF rendering (multi-line, `\\n` separated). PATCH semantics: null = unchanged, empty string = cleared.
+     *
+     * @return self
+     */
+    public function setMemo($memo)
+    {
+        $this->container['memo'] = $memo;
+
+        return $this;
+    }
+
+    /**
+     * Gets customFields
+     *
+     * @return \model\InvoiceCustomField[]|null
+     */
+    public function getCustomFields()
+    {
+        return $this->container['customFields'];
+    }
+
+    /**
+     * Sets customFields
+     *
+     * @param \model\InvoiceCustomField[]|null $customFields Custom fields for PDF rendering. Max 4 items. Each InvoiceCustomField has `label` (String, max 256, M) and `value` (String, max 512, M).
+     *
+     * @return self
+     */
+    public function setCustomFields($customFields)
+    {
+        $this->container['customFields'] = $customFields;
+
+        return $this;
+    }
+
+    /**
      * Gets invoiceNotifyUrl
      *
      * @return string|null
@@ -482,7 +637,7 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceNotifyUrl
      *
-     * @param string|null $invoiceNotifyUrl The URL that Antom uses to send the invoice payment status change notification to. Only HTTPS is supported. Maximum length: 2048 characters.
+     * @param string|null $invoiceNotifyUrl Updated HTTPS URL that receives invoice payment-status notifications. When omitted, the existing value is unchanged. Maximum length: 2048 characters.
      *
      * @return self
      */

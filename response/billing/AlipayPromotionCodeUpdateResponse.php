@@ -333,7 +333,7 @@ class AlipayPromotionCodeUpdateResponse  implements ModelInterface, ArrayAccess,
     /**
      * Sets promotionCodeId
      *
-     * @param string|null $promotionCodeId The promotion code ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $promotionCodeId Updated promotion code's ID. Returned when resultCode is `SUCCESS`.
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class AlipayPromotionCodeUpdateResponse  implements ModelInterface, ArrayAccess,
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status Promotion code status after update: `ACTIVE` / `INACTIVE`. Returned when resultCode is `SUCCESS`. Future status values may be added; merchants must handle unrecognized values gracefully (log and skip).
      *
      * @return self
      */

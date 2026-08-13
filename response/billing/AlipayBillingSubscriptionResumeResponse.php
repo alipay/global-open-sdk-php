@@ -49,9 +49,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         'result' => '\request\model\ResultInfo',
         'subscriptionId' => 'string',
         'status' => 'string',
-        'billingCycleAnchor' => 'string',
-        'prorationInvoiceId' => 'string',
-        'prorationDate' => 'string'
+        'billingCycleAnchor' => 'string'
     ];
 
     /**
@@ -65,9 +63,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         'result' => null,
         'subscriptionId' => null,
         'status' => null,
-        'billingCycleAnchor' => null,
-        'prorationInvoiceId' => null,
-        'prorationDate' => null
+        'billingCycleAnchor' => null
     ];
 
     /**
@@ -79,9 +75,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         'result' => false,
         'subscriptionId' => false,
         'status' => false,
-        'billingCycleAnchor' => false,
-        'prorationInvoiceId' => false,
-        'prorationDate' => false
+        'billingCycleAnchor' => false
     ];
 
     /**
@@ -173,9 +167,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         'result' => 'result',
         'subscriptionId' => 'subscriptionId',
         'status' => 'status',
-        'billingCycleAnchor' => 'billingCycleAnchor',
-        'prorationInvoiceId' => 'prorationInvoiceId',
-        'prorationDate' => 'prorationDate'
+        'billingCycleAnchor' => 'billingCycleAnchor'
     ];
 
     /**
@@ -187,9 +179,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         'result' => 'setResult',
         'subscriptionId' => 'setSubscriptionId',
         'status' => 'setStatus',
-        'billingCycleAnchor' => 'setBillingCycleAnchor',
-        'prorationInvoiceId' => 'setProrationInvoiceId',
-        'prorationDate' => 'setProrationDate'
+        'billingCycleAnchor' => 'setBillingCycleAnchor'
     ];
 
     /**
@@ -201,9 +191,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         'result' => 'getResult',
         'subscriptionId' => 'getSubscriptionId',
         'status' => 'getStatus',
-        'billingCycleAnchor' => 'getBillingCycleAnchor',
-        'prorationInvoiceId' => 'getProrationInvoiceId',
-        'prorationDate' => 'getProrationDate'
+        'billingCycleAnchor' => 'getBillingCycleAnchor'
     ];
 
     /**
@@ -267,8 +255,6 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('billingCycleAnchor', $data ?? [], null);
-        $this->setIfExists('prorationInvoiceId', $data ?? [], null);
-        $this->setIfExists('prorationDate', $data ?? [], null);
 
             }
 
@@ -360,7 +346,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
     /**
      * Sets subscriptionId
      *
-     * @param string $subscriptionId The subscription ID. Maximum length: 64 characters.
+     * @param string $subscriptionId The resumed subscription ID. Returned only when result.resultCode is SUCCESS or PAYMENT_IN_PROCESSING. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -384,7 +370,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 20 characters.
+     * @param string $status The subscription status after the resume attempt. ACTIVE indicates that payment succeeded; PAUSED indicates that payment is still processing or failed. Returned only when the operation produced a subscription result. Maximum length: 20 characters.
      *
      * @return self
      */
@@ -408,61 +394,13 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
     /**
      * Sets billingCycleAnchor
      *
-     * @param string|null $billingCycleAnchor The billing cycle anchor. Note: See documentation for details.
+     * @param string|null $billingCycleAnchor The effective billing cycle anchor after the subscription is resumed, represented as an ISO 8601 date-time string with a timezone offset. Returned when the billing cycle is reset.
      *
      * @return self
      */
     public function setBillingCycleAnchor($billingCycleAnchor)
     {
         $this->container['billingCycleAnchor'] = $billingCycleAnchor;
-
-        return $this;
-    }
-
-    /**
-     * Gets prorationInvoiceId
-     *
-     * @return string|null
-     */
-    public function getProrationInvoiceId()
-    {
-        return $this->container['prorationInvoiceId'];
-    }
-
-    /**
-     * Sets prorationInvoiceId
-     *
-     * @param string|null $prorationInvoiceId The proration invoice id. Maximum length: 64 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setProrationInvoiceId($prorationInvoiceId)
-    {
-        $this->container['prorationInvoiceId'] = $prorationInvoiceId;
-
-        return $this;
-    }
-
-    /**
-     * Gets prorationDate
-     *
-     * @return string|null
-     */
-    public function getProrationDate()
-    {
-        return $this->container['prorationDate'];
-    }
-
-    /**
-     * Sets prorationDate
-     *
-     * @param string|null $prorationDate The proration date. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setProrationDate($prorationDate)
-    {
-        $this->container['prorationDate'] = $prorationDate;
 
         return $this;
     }

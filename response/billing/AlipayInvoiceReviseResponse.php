@@ -281,9 +281,6 @@ class AlipayInvoiceReviseResponse  implements ModelInterface, ArrayAccess, \Json
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['newInvoiceId'] === null) {
-            $invalidProperties[] = "'newInvoiceId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +323,7 @@ class AlipayInvoiceReviseResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets newInvoiceId
      *
-     * @return string
+     * @return string|null
      */
     public function getNewInvoiceId()
     {
@@ -336,7 +333,7 @@ class AlipayInvoiceReviseResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets newInvoiceId
      *
-     * @param string $newInvoiceId The new invoice id. Maximum length: 64 characters.
+     * @param string|null $newInvoiceId System-generated ID of the newly created invoice. Format: `inv_` + 10-char alphanumeric. Used for subsequent operations. Cannot be null. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -360,7 +357,7 @@ class AlipayInvoiceReviseResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets voidedInvoiceId
      *
-     * @param string|null $voidedInvoiceId The voided invoice id. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $voidedInvoiceId ID of the original invoice that was voided. Only returned when `void=true`, providing explicit confirmation that the original invoice has been voided. When `void=false` (clone), this field is absent. Cannot be null when present. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

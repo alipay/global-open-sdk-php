@@ -74,6 +74,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'acquirerInfo' => '\request\model\AcquirerInfo',
         'promotionResult' => '\request\model\PromotionResult[]',
         'subscriptionId' => 'string',
+        'invoiceId' => 'string',
         'status' => 'string',
         'currentPeriodStart' => 'string',
         'currentPeriodEnd' => 'string'
@@ -115,6 +116,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'acquirerInfo' => null,
         'promotionResult' => null,
         'subscriptionId' => null,
+        'invoiceId' => null,
         'status' => null,
         'currentPeriodStart' => null,
         'currentPeriodEnd' => null
@@ -154,6 +156,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'acquirerInfo' => false,
         'promotionResult' => false,
         'subscriptionId' => false,
+        'invoiceId' => false,
         'status' => false,
         'currentPeriodStart' => false,
         'currentPeriodEnd' => false
@@ -273,6 +276,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'acquirerInfo' => 'acquirerInfo',
         'promotionResult' => 'promotionResult',
         'subscriptionId' => 'subscriptionId',
+        'invoiceId' => 'invoiceId',
         'status' => 'status',
         'currentPeriodStart' => 'currentPeriodStart',
         'currentPeriodEnd' => 'currentPeriodEnd'
@@ -312,6 +316,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'acquirerInfo' => 'setAcquirerInfo',
         'promotionResult' => 'setPromotionResult',
         'subscriptionId' => 'setSubscriptionId',
+        'invoiceId' => 'setInvoiceId',
         'status' => 'setStatus',
         'currentPeriodStart' => 'setCurrentPeriodStart',
         'currentPeriodEnd' => 'setCurrentPeriodEnd'
@@ -351,6 +356,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'acquirerInfo' => 'getAcquirerInfo',
         'promotionResult' => 'getPromotionResult',
         'subscriptionId' => 'getSubscriptionId',
+        'invoiceId' => 'getInvoiceId',
         'status' => 'getStatus',
         'currentPeriodStart' => 'getCurrentPeriodStart',
         'currentPeriodEnd' => 'getCurrentPeriodEnd'
@@ -441,6 +447,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('acquirerInfo', $data ?? [], null);
         $this->setIfExists('promotionResult', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('invoiceId', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('currentPeriodStart', $data ?? [], null);
         $this->setIfExists('currentPeriodEnd', $data ?? [], null);
@@ -1153,13 +1160,37 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets subscriptionId
      *
-     * @param string|null $subscriptionId The subscription ID echo.
+     * @param string|null $subscriptionId The subscription ID echo. Returned only when subscriptionId was provided in the request and result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setSubscriptionId($subscriptionId)
     {
         $this->container['subscriptionId'] = $subscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceId
+     *
+     * @return string|null
+     */
+    public function getInvoiceId()
+    {
+        return $this->container['invoiceId'];
+    }
+
+    /**
+     * Sets invoiceId
+     *
+     * @param string|null $invoiceId The invoice ID being paid. Returned only when subscriptionId was provided in the request and result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setInvoiceId($invoiceId)
+    {
+        $this->container['invoiceId'] = $invoiceId;
 
         return $this;
     }
@@ -1177,7 +1208,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets status
      *
-     * @param string|null $status The subscription status after payment/token binding.
+     * @param string|null $status The subscription status after payment or token binding. Expected values include INCOMPLETE, TRIALING, and ACTIVE. Handle unknown values without failing. Returned only when subscriptionId was provided in the request and result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1201,7 +1232,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets currentPeriodStart
      *
-     * @param string|null $currentPeriodStart The start time of the billing cycle.
+     * @param string|null $currentPeriodStart The billing period start in ISO 8601 format. Returned only when subscriptionId was provided in the request and result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -1225,7 +1256,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets currentPeriodEnd
      *
-     * @param string|null $currentPeriodEnd The end time of the billing cycle.
+     * @param string|null $currentPeriodEnd The billing period end in ISO 8601 format. Returned only when subscriptionId was provided in the request and result.resultCode is SUCCESS.
      *
      * @return self
      */
