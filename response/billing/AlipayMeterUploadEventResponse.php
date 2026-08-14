@@ -60,7 +60,7 @@ class AlipayMeterUploadEventResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'result' => null,
-        'retryAfter' => null,
+        'retryAfter' => 'int64',
         'errors' => null
     ];
 
@@ -71,7 +71,7 @@ class AlipayMeterUploadEventResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPINullables = [
         'result' => false,
-        'retryAfter' => true,
+        'retryAfter' => false,
         'errors' => false
     ];
 
