@@ -126,6 +126,10 @@ abstract class BaseAlipayClient
     public function executeWithHeaders($request, $extraHeaders = [])
     {
 
+        if (RequestTransportResolver::requiresSessionHttp2($request)) {
+            return SessionHttp2Executor::execute($this->gatewayUrl, $request, $extraHeaders);
+        }
+
         if ($request->getClientId() === null || trim($request->getClientId()) === "") {
             $request->setClientId($this->clientId);
         }
