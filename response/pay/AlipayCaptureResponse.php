@@ -52,7 +52,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'string',
         'captureAmount' => '\request\model\Amount',
         'captureTime' => 'string',
-        'acquirerReferenceNo' => 'string'
+        'acquirerReferenceNo' => 'string',
+        'yimutestopenapi' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => null,
         'captureAmount' => null,
         'captureTime' => null,
-        'acquirerReferenceNo' => null
+        'acquirerReferenceNo' => null,
+        'yimutestopenapi' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => false,
         'captureAmount' => false,
         'captureTime' => false,
-        'acquirerReferenceNo' => false
+        'acquirerReferenceNo' => false,
+        'yimutestopenapi' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'paymentId',
         'captureAmount' => 'captureAmount',
         'captureTime' => 'captureTime',
-        'acquirerReferenceNo' => 'acquirerReferenceNo'
+        'acquirerReferenceNo' => 'acquirerReferenceNo',
+        'yimutestopenapi' => 'yimutestopenapi'
     ];
 
     /**
@@ -194,7 +198,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'setPaymentId',
         'captureAmount' => 'setCaptureAmount',
         'captureTime' => 'setCaptureTime',
-        'acquirerReferenceNo' => 'setAcquirerReferenceNo'
+        'acquirerReferenceNo' => 'setAcquirerReferenceNo',
+        'yimutestopenapi' => 'setYimutestopenapi'
     ];
 
     /**
@@ -209,7 +214,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'getPaymentId',
         'captureAmount' => 'getCaptureAmount',
         'captureTime' => 'getCaptureTime',
-        'acquirerReferenceNo' => 'getAcquirerReferenceNo'
+        'acquirerReferenceNo' => 'getAcquirerReferenceNo',
+        'yimutestopenapi' => 'getYimutestopenapi'
     ];
 
     /**
@@ -276,6 +282,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('captureAmount', $data ?? [], null);
         $this->setIfExists('captureTime', $data ?? [], null);
         $this->setIfExists('acquirerReferenceNo', $data ?? [], null);
+        $this->setIfExists('yimutestopenapi', $data ?? [], null);
 
             }
 
@@ -488,6 +495,30 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAcquirerReferenceNo($acquirerReferenceNo)
     {
         $this->container['acquirerReferenceNo'] = $acquirerReferenceNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets yimutestopenapi
+     *
+     * @return string|null
+     */
+    public function getYimutestopenapi()
+    {
+        return $this->container['yimutestopenapi'];
+    }
+
+    /**
+     * Sets yimutestopenapi
+     *
+     * @param string|null $yimutestopenapi 5.11号测试
+     *
+     * @return self
+     */
+    public function setYimutestopenapi($yimutestopenapi)
+    {
+        $this->container['yimutestopenapi'] = $yimutestopenapi;
 
         return $this;
     }
