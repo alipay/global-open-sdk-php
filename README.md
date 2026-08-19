@@ -1,4 +1,18 @@
 ```
+
+### Exact amount conversion
+
+```php
+use Util\AmountUtil;
+
+$value = AmountUtil::toAmount('10.25', 'USD'); // '1025'
+$major = AmountUtil::fromAmount($value, 'USD'); // '10.25'
+AmountUtil::validate($value, 'USD');
+```
+
+The methods accept strings, convert with the ISO 4217 minor unit, and never
+round. Extra non-zero decimal places are rejected. Payment-method currency
+support and minimum amounts remain subject to the relevant Antom API docs.
 Language：PHP
 PHP version：7.1+
 Release ^1.5.5
