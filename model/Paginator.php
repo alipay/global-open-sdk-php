@@ -325,7 +325,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currentPage
      *
-     * @param int $currentPage The current page number, start from 1.
+     * @param int $currentPage The current page number, starting from 1. If currentPage exceeds totalPage, transactions is returned as an empty array.
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pageSize
      *
-     * @param int $pageSize The maximum records returned per page.
+     * @param int $pageSize The number of records returned per page. The value must be a positive integer; otherwise, PARAM_ILLEGAL is returned.
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets totalPage
      *
-     * @param int $totalPage Total number of pages.
+     * @param int $totalPage The total number of pages in the query result.
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class Paginator  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets totalCount
      *
-     * @param int $totalCount Total items that match the criteria.
+     * @param int $totalCount The total number of tax transactions that match the query criteria.
      *
      * @return self
      */
