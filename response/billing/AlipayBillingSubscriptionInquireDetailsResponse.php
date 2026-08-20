@@ -580,7 +580,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 20 characters.
+     * @param string|null $status The current subscription status. Valid values are INCOMPLETE, TRIALING, ACTIVE, PAST_DUE, PAUSED, CANCELLED, TERMINATED, and UNPAID. PAST_DUE means the latest renewal payment failed and collection retry is in progress. PAUSED means payment collection is suspended and the subscription can be resumed. CANCELLED remains reversible before the current billing period ends. TERMINATED is a permanent final state. UNPAID means all collection retries have been exhausted and collection remains suspended until the outstanding invoice is paid. Clients must tolerate future unknown status values and should log and alert on them instead of failing response parsing. Maximum length: 20 characters.
      *
      * @return self
      */
