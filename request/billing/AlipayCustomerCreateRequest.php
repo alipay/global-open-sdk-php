@@ -1126,7 +1126,7 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets billingEmail
      *
-     * @param string|null $billingEmail Invoice recipient email address (independent of account `email`). Maximum length: 256 characters.
+     * @param string|null $billingEmail Email address used to receive bills and invoices. It can differ from the account `email`. If omitted during customer creation, it defaults to `email`. Maximum length: 256 characters.
      *
      * @return self
      */
