@@ -47,7 +47,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'goodsReferenceId' => 'string',
-        'unitAmount' => 'string',
+        'amount' => 'string',
         'quantity' => 'int',
         'taxCode' => 'string',
         'productId' => 'string',
@@ -63,7 +63,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'goodsReferenceId' => null,
-        'unitAmount' => null,
+        'amount' => null,
         'quantity' => null,
         'taxCode' => null,
         'productId' => null,
@@ -77,7 +77,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPINullables = [
         'goodsReferenceId' => false,
-        'unitAmount' => false,
+        'amount' => false,
         'quantity' => true,
         'taxCode' => false,
         'productId' => false,
@@ -171,7 +171,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $attributeMap = [
         'goodsReferenceId' => 'goodsReferenceId',
-        'unitAmount' => 'unitAmount',
+        'amount' => 'amount',
         'quantity' => 'quantity',
         'taxCode' => 'taxCode',
         'productId' => 'productId',
@@ -185,7 +185,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'goodsReferenceId' => 'setGoodsReferenceId',
-        'unitAmount' => 'setUnitAmount',
+        'amount' => 'setAmount',
         'quantity' => 'setQuantity',
         'taxCode' => 'setTaxCode',
         'productId' => 'setProductId',
@@ -199,7 +199,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'goodsReferenceId' => 'getGoodsReferenceId',
-        'unitAmount' => 'getUnitAmount',
+        'amount' => 'getAmount',
         'quantity' => 'getQuantity',
         'taxCode' => 'getTaxCode',
         'productId' => 'getProductId',
@@ -264,7 +264,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(?array $data = null)
     {
         $this->setIfExists('goodsReferenceId', $data ?? [], null);
-        $this->setIfExists('unitAmount', $data ?? [], null);
+        $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('taxCode', $data ?? [], null);
         $this->setIfExists('productId', $data ?? [], null);
@@ -302,8 +302,8 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['goodsReferenceId'] === null) {
             $invalidProperties[] = "'goodsReferenceId' can't be null";
         }
-        if ($this->container['unitAmount'] === null) {
-            $invalidProperties[] = "'unitAmount' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
         }
         if ($this->container['quantity'] === null) {
             $invalidProperties[] = "'quantity' can't be null";
@@ -348,25 +348,25 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets unitAmount
+     * Gets amount
      *
      * @return string
      */
-    public function getUnitAmount()
+    public function getAmount()
     {
-        return $this->container['unitAmount'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets unitAmount
+     * Sets amount
      *
-     * @param string $unitAmount The unit amount. Maximum length: 19 characters.
+     * @param string $amount The total amount of the line item in the smallest currency unit. Maximum length: 19 characters.
      *
      * @return self
      */
-    public function setUnitAmount($unitAmount)
+    public function setAmount($amount)
     {
-        $this->container['unitAmount'] = $unitAmount;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -384,7 +384,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets quantity
      *
-     * @param int $quantity The quantity.
+     * @param int $quantity The quantity. Valid range: 1 to 10000.
      *
      * @return self
      */

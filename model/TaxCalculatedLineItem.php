@@ -47,7 +47,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'goodsReferenceId' => 'string',
-        'unitAmount' => 'string',
         'amount' => 'string',
         'quantity' => 'int',
         'taxCode' => 'string',
@@ -65,7 +64,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'goodsReferenceId' => null,
-        'unitAmount' => null,
         'amount' => null,
         'quantity' => null,
         'taxCode' => null,
@@ -81,7 +79,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPINullables = [
         'goodsReferenceId' => false,
-        'unitAmount' => false,
         'amount' => false,
         'quantity' => true,
         'taxCode' => false,
@@ -177,7 +174,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'goodsReferenceId' => 'goodsReferenceId',
-        'unitAmount' => 'unitAmount',
         'amount' => 'amount',
         'quantity' => 'quantity',
         'taxCode' => 'taxCode',
@@ -193,7 +189,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'goodsReferenceId' => 'setGoodsReferenceId',
-        'unitAmount' => 'setUnitAmount',
         'amount' => 'setAmount',
         'quantity' => 'setQuantity',
         'taxCode' => 'setTaxCode',
@@ -209,7 +204,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'goodsReferenceId' => 'getGoodsReferenceId',
-        'unitAmount' => 'getUnitAmount',
         'amount' => 'getAmount',
         'quantity' => 'getQuantity',
         'taxCode' => 'getTaxCode',
@@ -276,7 +270,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(?array $data = null)
     {
         $this->setIfExists('goodsReferenceId', $data ?? [], null);
-        $this->setIfExists('unitAmount', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('taxCode', $data ?? [], null);
@@ -315,9 +308,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
 
         if ($this->container['goodsReferenceId'] === null) {
             $invalidProperties[] = "'goodsReferenceId' can't be null";
-        }
-        if ($this->container['unitAmount'] === null) {
-            $invalidProperties[] = "'unitAmount' can't be null";
         }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
@@ -369,30 +359,6 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
     public function setGoodsReferenceId($goodsReferenceId)
     {
         $this->container['goodsReferenceId'] = $goodsReferenceId;
-
-        return $this;
-    }
-
-    /**
-     * Gets unitAmount
-     *
-     * @return string
-     */
-    public function getUnitAmount()
-    {
-        return $this->container['unitAmount'];
-    }
-
-    /**
-     * Sets unitAmount
-     *
-     * @param string $unitAmount The unit amount. Maximum length: 19 characters.
-     *
-     * @return self
-     */
-    public function setUnitAmount($unitAmount)
-    {
-        $this->container['unitAmount'] = $unitAmount;
 
         return $this;
     }

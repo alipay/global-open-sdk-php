@@ -413,7 +413,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 20 characters.
+     * @param string|null $status The subscription status after the update. PAST_DUE means the latest renewal payment failed and collection retry is in progress. PAUSED means payment collection is suspended and can be entered by setting statusChange.action to PAUSE. CANCELLED means the subscription remains active until the current period ends and can be reverted before then by setting cancelAtPeriodEnd to false. TERMINATED is a permanent final state. Maximum length: 20 characters.
      *
      * @return self
      */
