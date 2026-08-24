@@ -431,7 +431,7 @@ class AlipayTaxUpdateSettingsResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string $status The tax settings status. Valid values are ACTIVE and PENDING. A valid update to ACTIVE settings keeps the status ACTIVE; do not treat an unknown value as ACTIVE. Maximum length: 16 characters.
      *
      * @return self
      */
