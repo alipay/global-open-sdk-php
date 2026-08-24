@@ -307,7 +307,7 @@ class AlipayTaxInquireCalculationRequest   extends AlipayRequest  implements Mod
     /**
      * Sets taxCalculationId
      *
-     * @param string|null $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $taxCalculationId The tax calculation ID returned by a successful calculate request. Specify exactly one of taxCalculationId, taxCalculationRequestId, and paymentRequestId. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class AlipayTaxInquireCalculationRequest   extends AlipayRequest  implements Mod
     /**
      * Sets taxCalculationRequestId
      *
-     * @param string|null $taxCalculationRequestId The unique ID assigned by a merchant to identify a tax calculation request. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $taxCalculationRequestId The original tax calculation request ID. Use this field to recover an unknown, timed-out, or lost calculate response. Specify exactly one query key. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AlipayTaxInquireCalculationRequest   extends AlipayRequest  implements Mod
     /**
      * Sets paymentRequestId
      *
-     * @param string|null $paymentRequestId The unique ID assigned by a merchant to identify a payment request. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $paymentRequestId The payment request ID associated with the tax calculation. Use this field only when the payment references the calculation. Specify exactly one query key. Maximum length: 64 characters.
      *
      * @return self
      */
