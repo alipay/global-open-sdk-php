@@ -321,7 +321,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets customerId
      *
-     * @param string|null $customerId Customer ID to target. When both `customerId` and `email` are supplied, `customerId` takes precedence.
+     * @param string|null $customerId Customer ID to target. Either `customerId` or `email` must be provided. When both are provided, `email` must match the registered account email of this customer; otherwise, the API returns `PARAM_ILLEGAL`. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets email
      *
-     * @param string|null $email Customer email for lookup. When multiple customers share the email, the most recently created (by `gmtCreate DESC`) is selected. Maximum length: 254 characters (RFC 5322).
+     * @param string|null $email Customer email for lookup. Either `customerId` or `email` must be provided. When multiple customers share the email, the most recently created customer by `gmtCreate` descending is selected. When both fields are provided, this value must match the registered account email of the specified customer; otherwise, the API returns `PARAM_ILLEGAL`. Maximum length: 254 characters (RFC 5322).
      *
      * @return self
      */
@@ -369,7 +369,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets features
      *
-     * @param string[]|null $features Feature set enabled for this portal session. Allowed values: `SUBSCRIPTION`, `INVOICE`, `PAYMENT_METHOD`. Empty/absent list -> ALL features enabled by default (NOT an intersection with settingId features, as previously documented). The portal settings referenced by `settingId` may further restrict which features are shown at render time.
+     * @param string[]|null $features Feature set enabled for this portal session. Allowed values: `SUBSCRIPTION`, `INVOICE`, `PAYMENT_METHOD`. An empty or absent list enables all features by default. The portal settings referenced by `settingId` may further restrict which features are shown at render time. Maximum size: 3 elements.
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     /**
      * Sets settingId
      *
-     * @param string|null $settingId Portal setting configuration ID. Passed through token payload, parsed by iexpfront.
+     * @param string|null $settingId Portal setting configuration ID passed through the token payload. Maximum length: 64 characters.
      *
      * @return self
      */

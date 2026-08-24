@@ -352,7 +352,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxType
      *
-     * @param string $taxType The tax type. Maximum length: 32 characters.
+     * @param string $taxType The tax type. Supported values include CUIT, GST, VAT, CBS, IBS, HST, PST, RST, QST, JCT, SERVICE_TAX, IGV, SALES_TAX, and PERSONAL_PROPERTY_LEASE_TRANSACTION_TAX.
      *
      * @return self
      */
