@@ -571,7 +571,7 @@ class AlipayCustomerUpdateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets email
      *
-     * @param string|null $email Updated email address. Optional - `null`/omitted means no change (PATCH semantics). No email-format validation is applied. Maximum length: 256 characters.
+     * @param string|null $email Updated account email address. Optional - `null` or omitted means no change (PATCH semantics). Updating this field does not change `billingEmail`, including when `billingEmail` originally defaulted from `email` during customer creation. No email-format validation is applied. Maximum length: 256 characters.
      *
      * @return self
      */
@@ -1123,7 +1123,7 @@ class AlipayCustomerUpdateRequest   extends AlipayRequest  implements ModelInter
     /**
      * Sets billingEmail
      *
-     * @param string|null $billingEmail Updated invoice recipient email. Maximum length: 256 characters.
+     * @param string|null $billingEmail Updated email address used to receive bills and invoices. Send this field explicitly when the invoice-recipient email must change; updating `email` alone does not change it. Maximum length: 256 characters.
      *
      * @return self
      */
