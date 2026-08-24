@@ -349,7 +349,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 20 characters.
+     * @param string|null $status Filters subscriptions by status. To provide multiple values, use a comma-separated string such as ACTIVE,PAUSED. Up to eight values are supported. Valid values are INCOMPLETE, TRIALING, ACTIVE, PAST_DUE, PAUSED, CANCELLED, TERMINATED, and UNPAID. Each status value has a maximum length of 20 characters.
      *
      * @return self
      */
