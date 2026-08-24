@@ -51,6 +51,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'string[]',
         'allowedAuthTimes' => 'int',
         'allowedCurrencies' => 'string[]',
+        'paymentPreferenceCurrencies' => 'string[]',
         'cardLimitDetail' => '\request\model\CardLimitDetail',
         'cardLimitInfo' => '\request\model\CardLimitInfo',
         'refundPreference' => '\request\model\RefundPreference'
@@ -69,6 +70,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => null,
         'allowedAuthTimes' => null,
         'allowedCurrencies' => null,
+        'paymentPreferenceCurrencies' => null,
         'cardLimitDetail' => null,
         'cardLimitInfo' => null,
         'refundPreference' => null
@@ -85,6 +87,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => false,
         'allowedAuthTimes' => true,
         'allowedCurrencies' => false,
+        'paymentPreferenceCurrencies' => false,
         'cardLimitDetail' => false,
         'cardLimitInfo' => false,
         'refundPreference' => false
@@ -181,6 +184,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'allowedMerchantCategoryList',
         'allowedAuthTimes' => 'allowedAuthTimes',
         'allowedCurrencies' => 'allowedCurrencies',
+        'paymentPreferenceCurrencies' => 'paymentPreferenceCurrencies',
         'cardLimitDetail' => 'cardLimitDetail',
         'cardLimitInfo' => 'cardLimitInfo',
         'refundPreference' => 'refundPreference'
@@ -197,6 +201,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'setAllowedMerchantCategoryList',
         'allowedAuthTimes' => 'setAllowedAuthTimes',
         'allowedCurrencies' => 'setAllowedCurrencies',
+        'paymentPreferenceCurrencies' => 'setPaymentPreferenceCurrencies',
         'cardLimitDetail' => 'setCardLimitDetail',
         'cardLimitInfo' => 'setCardLimitInfo',
         'refundPreference' => 'setRefundPreference'
@@ -213,6 +218,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'getAllowedMerchantCategoryList',
         'allowedAuthTimes' => 'getAllowedAuthTimes',
         'allowedCurrencies' => 'getAllowedCurrencies',
+        'paymentPreferenceCurrencies' => 'getPaymentPreferenceCurrencies',
         'cardLimitDetail' => 'getCardLimitDetail',
         'cardLimitInfo' => 'getCardLimitInfo',
         'refundPreference' => 'getRefundPreference'
@@ -280,6 +286,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('allowedMerchantCategoryList', $data ?? [], null);
         $this->setIfExists('allowedAuthTimes', $data ?? [], null);
         $this->setIfExists('allowedCurrencies', $data ?? [], null);
+        $this->setIfExists('paymentPreferenceCurrencies', $data ?? [], null);
         $this->setIfExists('cardLimitDetail', $data ?? [], null);
         $this->setIfExists('cardLimitInfo', $data ?? [], null);
         $this->setIfExists('refundPreference', $data ?? [], null);
@@ -447,6 +454,30 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAllowedCurrencies($allowedCurrencies)
     {
         $this->container['allowedCurrencies'] = $allowedCurrencies;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentPreferenceCurrencies
+     *
+     * @return string[]|null
+     */
+    public function getPaymentPreferenceCurrencies()
+    {
+        return $this->container['paymentPreferenceCurrencies'];
+    }
+
+    /**
+     * Sets paymentPreferenceCurrencies
+     *
+     * @param string[]|null $paymentPreferenceCurrencies An ordered list of ISO 4217 currency codes that defines the card-level balance-consumption priority. Only applyCard accepts this field in a request; do not send it to updateCard. For applyCard, the list must not contain duplicates and every currency must be supported by Antom. Omission, null, or an empty list configures no card-level preference. The field participates in requestId idempotency, and invalid values, more than 9 entries, duplicates, or capability-disabled use return PARAM_ILLEGAL. For inquireCardDetail, a configured list is returned in stored order; an enabled merchant without a card-level preference receives null, and a disabled merchant does not receive the field. For inquireCardSensitiveInfo, a whitelisted merchant receives the configured list, the child field is omitted when no card-level preference exists, and a non-whitelisted merchant does not receive the parent cardDetail object. The initially supported currencies are USD, EUR, GBP, HKD, AUD, CAD, CNH, JPY, and NZD; the supported set is configuration-driven and can change without an API contract change.
+     *
+     * @return self
+     */
+    public function setPaymentPreferenceCurrencies($paymentPreferenceCurrencies)
+    {
+        $this->container['paymentPreferenceCurrencies'] = $paymentPreferenceCurrencies;
 
         return $this;
     }

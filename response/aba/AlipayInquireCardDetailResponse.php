@@ -476,7 +476,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets assetId
      *
-     * @param string $assetId 卡资产ID。 Card asset Id.
+     * @param string $assetId Card asset Id.
      *
      * @return self
      */
@@ -500,7 +500,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets cardNickName
      *
-     * @param string|null $cardNickName 由用户定义的卡昵称，可以帮助用户更方便地管理多张卡。 User-defined card nickname, designed to help users manage multiple cards more conveniently.
+     * @param string|null $cardNickName User-defined card nickname, designed to help users manage multiple cards more conveniently.
      *
      * @return self
      */
@@ -524,7 +524,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets cardStatus
      *
-     * @param string $cardStatus 卡状态。可取值范围： ACTIVE：可正常使用 FROZEN：已冻结 CANCEL：已注销  Card Status: Represents the current state of the card. Possible values include:   ACTIVE: The card is active and can be used normally.   FROZEN: The card has been frozen and cannot be used temporarily.   CANCEL: The card has been canceled and is no longer valid.
+     * @param string $cardStatus Card Status: Represents the current state of the card. Possible values include: ACTIVE: The card is active and can be used normally. FROZEN: The card has been frozen and cannot be used temporarily. CANCEL: The card has been canceled and is no longer valid.
      *
      * @return self
      */
@@ -558,7 +558,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets maskedCardNo
      *
-     * @param string $maskedCardNo 脱敏卡号。 Masked card number.
+     * @param string $maskedCardNo Masked card number.
      *
      * @return self
      */
@@ -582,7 +582,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets cardBrand
      *
-     * @param string $cardBrand 卡品牌。 可取值范围： MASTERCARD  Card Brand: Indicates the brand or network of the card. Possible value:   MASTERCARD: The card is part of the Mastercard network.
+     * @param string $cardBrand Card Brand: Indicates the brand or network of the card. Possible value: MASTERCARD: The card is part of the Mastercard network.
      *
      * @return self
      */
