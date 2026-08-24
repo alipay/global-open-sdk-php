@@ -48,7 +48,8 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'value' => 'string',
         'country' => 'string',
-        'region' => 'string'
+        'region' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'value' => null,
         'country' => null,
-        'region' => null
+        'region' => null,
+        'name' => null
     ];
 
     /**
@@ -72,7 +74,8 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPINullables = [
         'value' => false,
         'country' => false,
-        'region' => false
+        'region' => false,
+        'name' => false
     ];
 
     /**
@@ -163,7 +166,8 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'value' => 'value',
         'country' => 'country',
-        'region' => 'region'
+        'region' => 'region',
+        'name' => 'name'
     ];
 
     /**
@@ -174,7 +178,8 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'value' => 'setValue',
         'country' => 'setCountry',
-        'region' => 'setRegion'
+        'region' => 'setRegion',
+        'name' => 'setName'
     ];
 
     /**
@@ -185,7 +190,8 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'value' => 'getValue',
         'country' => 'getCountry',
-        'region' => 'getRegion'
+        'region' => 'getRegion',
+        'name' => 'getName'
     ];
 
     /**
@@ -248,6 +254,7 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
 
             }
 
@@ -367,6 +374,30 @@ class TaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRegion($region)
     {
         $this->container['region'] = $region;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name The customer name recorded for tax purposes. Maximum length: 128 characters.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
