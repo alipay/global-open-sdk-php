@@ -49,6 +49,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         'result' => '\request\model\Result',
         'taxCalculationId' => 'string',
         'currency' => 'string',
+        'customerDetails' => '\request\model\TaxCalculatedCustomerDetails',
+        'shipFromDetails' => '\request\model\TaxCalculatedShipFromDetails',
         'totalAmount' => 'string',
         'exclusiveTaxAmount' => 'string',
         'inclusiveTaxAmount' => 'string',
@@ -70,6 +72,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         'result' => null,
         'taxCalculationId' => null,
         'currency' => null,
+        'customerDetails' => null,
+        'shipFromDetails' => null,
         'totalAmount' => null,
         'exclusiveTaxAmount' => null,
         'inclusiveTaxAmount' => null,
@@ -89,6 +93,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         'result' => false,
         'taxCalculationId' => false,
         'currency' => false,
+        'customerDetails' => false,
+        'shipFromDetails' => false,
         'totalAmount' => false,
         'exclusiveTaxAmount' => false,
         'inclusiveTaxAmount' => false,
@@ -188,6 +194,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         'result' => 'result',
         'taxCalculationId' => 'taxCalculationId',
         'currency' => 'currency',
+        'customerDetails' => 'customerDetails',
+        'shipFromDetails' => 'shipFromDetails',
         'totalAmount' => 'totalAmount',
         'exclusiveTaxAmount' => 'exclusiveTaxAmount',
         'inclusiveTaxAmount' => 'inclusiveTaxAmount',
@@ -207,6 +215,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         'result' => 'setResult',
         'taxCalculationId' => 'setTaxCalculationId',
         'currency' => 'setCurrency',
+        'customerDetails' => 'setCustomerDetails',
+        'shipFromDetails' => 'setShipFromDetails',
         'totalAmount' => 'setTotalAmount',
         'exclusiveTaxAmount' => 'setExclusiveTaxAmount',
         'inclusiveTaxAmount' => 'setInclusiveTaxAmount',
@@ -226,6 +236,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         'result' => 'getResult',
         'taxCalculationId' => 'getTaxCalculationId',
         'currency' => 'getCurrency',
+        'customerDetails' => 'getCustomerDetails',
+        'shipFromDetails' => 'getShipFromDetails',
         'totalAmount' => 'getTotalAmount',
         'exclusiveTaxAmount' => 'getExclusiveTaxAmount',
         'inclusiveTaxAmount' => 'getInclusiveTaxAmount',
@@ -296,6 +308,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('taxCalculationId', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
+        $this->setIfExists('customerDetails', $data ?? [], null);
+        $this->setIfExists('shipFromDetails', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('exclusiveTaxAmount', $data ?? [], null);
         $this->setIfExists('inclusiveTaxAmount', $data ?? [], null);
@@ -441,6 +455,54 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerDetails
+     *
+     * @return \model\TaxCalculatedCustomerDetails|null
+     */
+    public function getCustomerDetails()
+    {
+        return $this->container['customerDetails'];
+    }
+
+    /**
+     * Sets customerDetails
+     *
+     * @param \model\TaxCalculatedCustomerDetails|null $customerDetails customerDetails
+     *
+     * @return self
+     */
+    public function setCustomerDetails($customerDetails)
+    {
+        $this->container['customerDetails'] = $customerDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipFromDetails
+     *
+     * @return \model\TaxCalculatedShipFromDetails|null
+     */
+    public function getShipFromDetails()
+    {
+        return $this->container['shipFromDetails'];
+    }
+
+    /**
+     * Sets shipFromDetails
+     *
+     * @param \model\TaxCalculatedShipFromDetails|null $shipFromDetails shipFromDetails
+     *
+     * @return self
+     */
+    public function setShipFromDetails($shipFromDetails)
+    {
+        $this->container['shipFromDetails'] = $shipFromDetails;
 
         return $this;
     }
