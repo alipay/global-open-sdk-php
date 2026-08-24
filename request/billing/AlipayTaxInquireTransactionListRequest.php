@@ -321,7 +321,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
     /**
      * Sets taxCalculationId
      *
-     * @param string|null $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Exactly one of taxCalculationId, paymentId, and refundId must be provided. Omit the unused query keys; do not send them with null values. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
     /**
      * Sets paymentId
      *
-     * @param string|null $paymentId The unique ID assigned by Antom to identify a payment. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $paymentId The unique ID assigned by Antom to identify a payment. Exactly one of taxCalculationId, paymentId, and refundId must be provided. Omit the unused query keys; do not send them with null values. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -369,7 +369,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
     /**
      * Sets refundId
      *
-     * @param string|null $refundId The refund ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $refundId The unique ID assigned by Antom to identify a refund. Exactly one of taxCalculationId, paymentId, and refundId must be provided. Omit the unused query keys; do not send them with null values. Maximum length: 64 characters.
      *
      * @return self
      */
