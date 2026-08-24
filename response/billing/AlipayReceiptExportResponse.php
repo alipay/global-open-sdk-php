@@ -51,7 +51,8 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'string',
         'fileUrl' => 'string',
         'fileSize' => 'int',
-        'fileName' => 'string'
+        'fileName' => 'string',
+        'mode' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => null,
         'fileUrl' => null,
         'fileSize' => 'int64',
-        'fileName' => null
+        'fileName' => null,
+        'mode' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => false,
         'fileUrl' => false,
         'fileSize' => false,
-        'fileName' => false
+        'fileName' => false,
+        'mode' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'expiresAt',
         'fileUrl' => 'fileUrl',
         'fileSize' => 'fileSize',
-        'fileName' => 'fileName'
+        'fileName' => 'fileName',
+        'mode' => 'mode'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'setExpiresAt',
         'fileUrl' => 'setFileUrl',
         'fileSize' => 'setFileSize',
-        'fileName' => 'setFileName'
+        'fileName' => 'setFileName',
+        'mode' => 'setMode'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'getExpiresAt',
         'fileUrl' => 'getFileUrl',
         'fileSize' => 'getFileSize',
-        'fileName' => 'getFileName'
+        'fileName' => 'getFileName',
+        'mode' => 'getMode'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('fileUrl', $data ?? [], null);
         $this->setIfExists('fileSize', $data ?? [], null);
         $this->setIfExists('fileName', $data ?? [], null);
+        $this->setIfExists('mode', $data ?? [], null);
 
             }
 
@@ -354,7 +361,7 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets fileFormat
      *
-     * @param string|null $fileFormat MIME type of the generated file. The response returns the MIME type corresponding to the requested format: `csv` -> `text/csv`, `xlsx` -> `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`. Note: the response `fileFormat` returns the MIME type, not the request format code. The request accepts `csv`/`xlsx`. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $fileFormat MIME type of the generated file. The response returns the MIME type corresponding to the requested format: `csv` -> `text/csv`, `xlsx` -> `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`. Note: the response `fileFormat` returns the MIME type, not the request format code. The request accepts `csv`/`xlsx`. Maximum length: 128 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -402,7 +409,7 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets fileUrl
      *
-     * @param string|null $fileUrl Signed OSS URL for file download. URL is time-limited; see `expiresAt`. After expiry, accessing the URL returns HTTP 403. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $fileUrl Signed OSS URL for file download. URL is time-limited; see `expiresAt`. After expiry, accessing the URL returns HTTP 403. Maximum length: 2048 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -450,13 +457,37 @@ class AlipayReceiptExportResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets fileName
      *
-     * @param string|null $fileName Generated file name (e.g., `receipts_20260401_20260430_1685000000.csv`). Returned only when result.resultCode is SUCCESS.
+     * @param string|null $fileName Generated file name (e.g., `receipts_20260401_20260430_1685000000.csv`). Maximum length: 256 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
     public function setFileName($fileName)
     {
         $this->container['fileName'] = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * Gets mode
+     *
+     * @return string|null
+     */
+    public function getMode()
+    {
+        return $this->container['mode'];
+    }
+
+    /**
+     * Sets mode
+     *
+     * @param string|null $mode Execution mode of the export request. The returned value is `SYNC`, indicating synchronous export. Maximum length: 8 characters. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setMode($mode)
+    {
+        $this->container['mode'] = $mode;
 
         return $this;
     }
