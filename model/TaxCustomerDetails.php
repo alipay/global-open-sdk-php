@@ -47,6 +47,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'businessDetails' => '\request\model\TaxBusinessDetails',
+        'name' => 'string',
         'shippingAddress' => '\request\model\TaxAddress',
         'billingAddress' => '\request\model\TaxAddress',
         'taxIds' => '\request\model\TaxId[]',
@@ -62,6 +63,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'businessDetails' => null,
+        'name' => null,
         'shippingAddress' => null,
         'billingAddress' => null,
         'taxIds' => null,
@@ -75,6 +77,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPINullables = [
         'businessDetails' => false,
+        'name' => false,
         'shippingAddress' => false,
         'billingAddress' => false,
         'taxIds' => false,
@@ -168,6 +171,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'businessDetails' => 'businessDetails',
+        'name' => 'name',
         'shippingAddress' => 'shippingAddress',
         'billingAddress' => 'billingAddress',
         'taxIds' => 'taxIds',
@@ -181,6 +185,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'businessDetails' => 'setBusinessDetails',
+        'name' => 'setName',
         'shippingAddress' => 'setShippingAddress',
         'billingAddress' => 'setBillingAddress',
         'taxIds' => 'setTaxIds',
@@ -194,6 +199,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'businessDetails' => 'getBusinessDetails',
+        'name' => 'getName',
         'shippingAddress' => 'getShippingAddress',
         'billingAddress' => 'getBillingAddress',
         'taxIds' => 'getTaxIds',
@@ -258,6 +264,7 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('businessDetails', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('shippingAddress', $data ?? [], null);
         $this->setIfExists('billingAddress', $data ?? [], null);
         $this->setIfExists('taxIds', $data ?? [], null);
@@ -327,6 +334,30 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setBusinessDetails($businessDetails)
     {
         $this->container['businessDetails'] = $businessDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name The customer name recorded for tax purposes. Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

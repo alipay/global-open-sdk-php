@@ -48,8 +48,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'country' => 'string',
         'region' => 'string',
-        'city' => 'string',
-        'effectiveFrom' => 'string'
+        'city' => 'string'
     ];
 
     /**
@@ -62,8 +61,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'country' => null,
         'region' => null,
-        'city' => null,
-        'effectiveFrom' => null
+        'city' => null
     ];
 
     /**
@@ -74,8 +72,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     protected static $openAPINullables = [
         'country' => false,
         'region' => false,
-        'city' => false,
-        'effectiveFrom' => false
+        'city' => false
     ];
 
     /**
@@ -166,8 +163,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'country' => 'country',
         'region' => 'region',
-        'city' => 'city',
-        'effectiveFrom' => 'effectiveFrom'
+        'city' => 'city'
     ];
 
     /**
@@ -178,8 +174,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     protected static $setters = [
         'country' => 'setCountry',
         'region' => 'setRegion',
-        'city' => 'setCity',
-        'effectiveFrom' => 'setEffectiveFrom'
+        'city' => 'setCity'
     ];
 
     /**
@@ -190,8 +185,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     protected static $getters = [
         'country' => 'getCountry',
         'region' => 'getRegion',
-        'city' => 'getCity',
-        'effectiveFrom' => 'getEffectiveFrom'
+        'city' => 'getCity'
     ];
 
     /**
@@ -254,7 +248,6 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
-        $this->setIfExists('effectiveFrom', $data ?? [], null);
 
             }
 
@@ -368,30 +361,6 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     public function setCity($city)
     {
         $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets effectiveFrom
-     *
-     * @return string|null
-     */
-    public function getEffectiveFrom()
-    {
-        return $this->container['effectiveFrom'];
-    }
-
-    /**
-     * Sets effectiveFrom
-     *
-     * @param string|null $effectiveFrom The time when the tax exemption becomes effective. Maximum length: 32 characters.
-     *
-     * @return self
-     */
-    public function setEffectiveFrom($effectiveFrom)
-    {
-        $this->container['effectiveFrom'] = $effectiveFrom;
 
         return $this;
     }

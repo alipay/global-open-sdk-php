@@ -49,8 +49,7 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxTransactionId' => 'string',
         'taxCalculationId' => 'string',
         'type' => 'string',
-        'taxAmount' => 'string',
-        'currency' => 'string',
+        'taxAmount' => '\request\model\Amount',
         'status' => 'string',
         'failureReason' => 'string',
         'taxDate' => 'string',
@@ -71,7 +70,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxCalculationId' => null,
         'type' => null,
         'taxAmount' => null,
-        'currency' => null,
         'status' => null,
         'failureReason' => null,
         'taxDate' => null,
@@ -90,7 +88,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxCalculationId' => false,
         'type' => false,
         'taxAmount' => false,
-        'currency' => false,
         'status' => false,
         'failureReason' => false,
         'taxDate' => false,
@@ -189,7 +186,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxCalculationId' => 'taxCalculationId',
         'type' => 'type',
         'taxAmount' => 'taxAmount',
-        'currency' => 'currency',
         'status' => 'status',
         'failureReason' => 'failureReason',
         'taxDate' => 'taxDate',
@@ -208,7 +204,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxCalculationId' => 'setTaxCalculationId',
         'type' => 'setType',
         'taxAmount' => 'setTaxAmount',
-        'currency' => 'setCurrency',
         'status' => 'setStatus',
         'failureReason' => 'setFailureReason',
         'taxDate' => 'setTaxDate',
@@ -227,7 +222,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxCalculationId' => 'getTaxCalculationId',
         'type' => 'getType',
         'taxAmount' => 'getTaxAmount',
-        'currency' => 'getCurrency',
         'status' => 'getStatus',
         'failureReason' => 'getFailureReason',
         'taxDate' => 'getTaxDate',
@@ -297,7 +291,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('taxCalculationId', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('taxAmount', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('failureReason', $data ?? [], null);
         $this->setIfExists('taxDate', $data ?? [], null);
@@ -345,9 +338,6 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['taxAmount'] === null) {
             $invalidProperties[] = "'taxAmount' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
         }
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
@@ -445,7 +435,7 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets taxAmount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getTaxAmount()
     {
@@ -455,37 +445,13 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxAmount
      *
-     * @param string $taxAmount The non-negative tax amount in the smallest currency unit, without leading zeros. For TRANSACTION and REVERSAL records, this value is always a positive absolute amount. Reconcile a business scope by subtracting the sum of REVERSAL amounts from the sum of TRANSACTION amounts. Maximum length: 19 characters.
+     * @param \model\Amount $taxAmount taxAmount
      *
      * @return self
      */
     public function setTaxAmount($taxAmount)
     {
         $this->container['taxAmount'] = $taxAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. This field is returned together with taxAmount. Maximum length: 3 characters.
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
 
         return $this;
     }
