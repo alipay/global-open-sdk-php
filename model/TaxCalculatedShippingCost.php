@@ -46,8 +46,8 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'string',
-        'taxAmount' => 'string',
+        'amount' => '\request\model\Amount',
+        'taxAmount' => '\request\model\Amount',
         'taxBreakdown' => '\request\model\TaxBreakdown[]'
     ];
 
@@ -305,7 +305,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets amount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getAmount()
     {
@@ -315,7 +315,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets amount
      *
-     * @param string $amount The amount. Maximum length: 19 characters.
+     * @param \model\Amount $amount amount
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets taxAmount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getTaxAmount()
     {
@@ -339,7 +339,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets taxAmount
      *
-     * @param string $taxAmount The tax amount. Maximum length: 19 characters.
+     * @param \model\Amount $taxAmount taxAmount
      *
      * @return self
      */

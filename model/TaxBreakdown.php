@@ -49,8 +49,8 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxType' => 'string',
         'authorityName' => 'string',
         'taxRate' => 'string',
-        'taxAmount' => 'string',
-        'taxableAmount' => 'string',
+        'taxAmount' => '\request\model\Amount',
+        'taxableAmount' => '\request\model\Amount',
         'taxabilityReason' => 'string',
         'inclusive' => 'bool'
     ];
@@ -352,7 +352,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxType
      *
-     * @param string $taxType The tax type. Supported values include CUIT, GST, VAT, CBS, IBS, HST, PST, RST, QST, JCT, SERVICE_TAX, IGV, SALES_TAX, and PERSONAL_PROPERTY_LEASE_TRANSACTION_TAX.
+     * @param string $taxType The tax type. Supported values are SALES_TAX, VAT, GST, and OTHER.
      *
      * @return self
      */
@@ -414,7 +414,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets taxAmount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getTaxAmount()
     {
@@ -424,7 +424,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxAmount
      *
-     * @param string $taxAmount The tax amount. Maximum length: 19 characters.
+     * @param \model\Amount $taxAmount taxAmount
      *
      * @return self
      */
@@ -438,7 +438,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets taxableAmount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getTaxableAmount()
     {
@@ -448,7 +448,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxableAmount
      *
-     * @param string $taxableAmount The taxable amount. Maximum length: 19 characters.
+     * @param \model\Amount $taxableAmount taxableAmount
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxabilityReason
      *
-     * @param string $taxabilityReason The taxability reason. Maximum length: 32 characters.
+     * @param string $taxabilityReason The taxability reason. Supported values are NOT_COLLECTING, PRODUCT_EXEMPT, REVERSE_CHARGE, CUSTOMER_EXEMPT, NOT_SUPPORTED, NOT_SUBJECT_TO_TAX, PRODUCT_EXEMPT_HOLIDAY, PORTION_PRODUCT_EXEMPT, ZERO_RATED, STANDARD_RATED, and UNKNOWN_ZERO_TAX.
      *
      * @return self
      */

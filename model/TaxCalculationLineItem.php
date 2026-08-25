@@ -47,7 +47,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'goodsReferenceId' => 'string',
-        'amount' => 'string',
+        'amount' => '\request\model\Amount',
         'quantity' => 'int',
         'taxCode' => 'string',
         'productId' => 'string',
@@ -350,7 +350,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets amount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getAmount()
     {
@@ -360,7 +360,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets amount
      *
-     * @param string $amount The total amount of the line item in the smallest currency unit. Maximum length: 19 characters.
+     * @param \model\Amount $amount amount
      *
      * @return self
      */

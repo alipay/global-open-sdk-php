@@ -48,7 +48,8 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'certificateNumber' => 'string',
         'exemptionType' => 'string',
-        'jurisdiction' => '\request\model\TaxCalculatedExemptionJurisdiction'
+        'jurisdiction' => '\request\model\TaxCalculatedExemptionJurisdiction',
+        'effectiveFrom' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'certificateNumber' => null,
         'exemptionType' => null,
-        'jurisdiction' => null
+        'jurisdiction' => null,
+        'effectiveFrom' => null
     ];
 
     /**
@@ -72,7 +74,8 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPINullables = [
         'certificateNumber' => false,
         'exemptionType' => false,
-        'jurisdiction' => false
+        'jurisdiction' => false,
+        'effectiveFrom' => false
     ];
 
     /**
@@ -163,7 +166,8 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'certificateNumber' => 'certificateNumber',
         'exemptionType' => 'exemptionType',
-        'jurisdiction' => 'jurisdiction'
+        'jurisdiction' => 'jurisdiction',
+        'effectiveFrom' => 'effectiveFrom'
     ];
 
     /**
@@ -174,7 +178,8 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'certificateNumber' => 'setCertificateNumber',
         'exemptionType' => 'setExemptionType',
-        'jurisdiction' => 'setJurisdiction'
+        'jurisdiction' => 'setJurisdiction',
+        'effectiveFrom' => 'setEffectiveFrom'
     ];
 
     /**
@@ -185,7 +190,8 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'certificateNumber' => 'getCertificateNumber',
         'exemptionType' => 'getExemptionType',
-        'jurisdiction' => 'getJurisdiction'
+        'jurisdiction' => 'getJurisdiction',
+        'effectiveFrom' => 'getEffectiveFrom'
     ];
 
     /**
@@ -248,6 +254,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('certificateNumber', $data ?? [], null);
         $this->setIfExists('exemptionType', $data ?? [], null);
         $this->setIfExists('jurisdiction', $data ?? [], null);
+        $this->setIfExists('effectiveFrom', $data ?? [], null);
 
             }
 
@@ -361,6 +368,30 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     public function setJurisdiction($jurisdiction)
     {
         $this->container['jurisdiction'] = $jurisdiction;
+
+        return $this;
+    }
+
+    /**
+     * Gets effectiveFrom
+     *
+     * @return string|null
+     */
+    public function getEffectiveFrom()
+    {
+        return $this->container['effectiveFrom'];
+    }
+
+    /**
+     * Sets effectiveFrom
+     *
+     * @param string|null $effectiveFrom The ISO 8601 time with a timezone when the tax exemption becomes effective. Maximum length: 32 characters.
+     *
+     * @return self
+     */
+    public function setEffectiveFrom($effectiveFrom)
+    {
+        $this->container['effectiveFrom'] = $effectiveFrom;
 
         return $this;
     }

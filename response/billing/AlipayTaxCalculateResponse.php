@@ -48,10 +48,9 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
         'taxCalculationId' => 'string',
-        'currency' => 'string',
-        'totalAmount' => 'string',
-        'exclusiveTaxAmount' => 'string',
-        'inclusiveTaxAmount' => 'string',
+        'totalAmount' => '\request\model\Amount',
+        'exclusiveTaxAmount' => '\request\model\Amount',
+        'inclusiveTaxAmount' => '\request\model\Amount',
         'lineItems' => '\request\model\TaxCalculatedLineItem[]',
         'taxBreakdown' => '\request\model\TaxBreakdown[]',
         'expireAt' => 'string',
@@ -70,7 +69,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'result' => null,
         'taxCalculationId' => null,
-        'currency' => null,
         'totalAmount' => null,
         'exclusiveTaxAmount' => null,
         'inclusiveTaxAmount' => null,
@@ -90,7 +88,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPINullables = [
         'result' => false,
         'taxCalculationId' => false,
-        'currency' => false,
         'totalAmount' => false,
         'exclusiveTaxAmount' => false,
         'inclusiveTaxAmount' => false,
@@ -190,7 +187,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'result' => 'result',
         'taxCalculationId' => 'taxCalculationId',
-        'currency' => 'currency',
         'totalAmount' => 'totalAmount',
         'exclusiveTaxAmount' => 'exclusiveTaxAmount',
         'inclusiveTaxAmount' => 'inclusiveTaxAmount',
@@ -210,7 +206,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'result' => 'setResult',
         'taxCalculationId' => 'setTaxCalculationId',
-        'currency' => 'setCurrency',
         'totalAmount' => 'setTotalAmount',
         'exclusiveTaxAmount' => 'setExclusiveTaxAmount',
         'inclusiveTaxAmount' => 'setInclusiveTaxAmount',
@@ -230,7 +225,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'result' => 'getResult',
         'taxCalculationId' => 'getTaxCalculationId',
-        'currency' => 'getCurrency',
         'totalAmount' => 'getTotalAmount',
         'exclusiveTaxAmount' => 'getExclusiveTaxAmount',
         'inclusiveTaxAmount' => 'getInclusiveTaxAmount',
@@ -301,7 +295,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('taxCalculationId', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('exclusiveTaxAmount', $data ?? [], null);
         $this->setIfExists('inclusiveTaxAmount', $data ?? [], null);
@@ -343,18 +336,6 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['taxBreakdown'] === null) {
-            $invalidProperties[] = "'taxBreakdown' can't be null";
-        }
-        if ($this->container['expireAt'] === null) {
-            $invalidProperties[] = "'expireAt' can't be null";
-        }
-        if ($this->container['taxDate'] === null) {
-            $invalidProperties[] = "'taxDate' can't be null";
         }
         return $invalidProperties;
     }
@@ -420,33 +401,9 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets currency
-     *
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
      * Gets totalAmount
      *
-     * @return string|null
+     * @return \model\Amount|null
      */
     public function getTotalAmount()
     {
@@ -456,7 +413,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets totalAmount
      *
-     * @param string|null $totalAmount The total amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param \model\Amount|null $totalAmount totalAmount
      *
      * @return self
      */
@@ -470,7 +427,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets exclusiveTaxAmount
      *
-     * @return string|null
+     * @return \model\Amount|null
      */
     public function getExclusiveTaxAmount()
     {
@@ -480,7 +437,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets exclusiveTaxAmount
      *
-     * @param string|null $exclusiveTaxAmount The exclusive tax amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param \model\Amount|null $exclusiveTaxAmount exclusiveTaxAmount
      *
      * @return self
      */
@@ -494,7 +451,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets inclusiveTaxAmount
      *
-     * @return string|null
+     * @return \model\Amount|null
      */
     public function getInclusiveTaxAmount()
     {
@@ -504,7 +461,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets inclusiveTaxAmount
      *
-     * @param string|null $inclusiveTaxAmount The inclusive tax amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param \model\Amount|null $inclusiveTaxAmount inclusiveTaxAmount
      *
      * @return self
      */
@@ -542,7 +499,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets taxBreakdown
      *
-     * @return \model\TaxBreakdown[]
+     * @return \model\TaxBreakdown[]|null
      */
     public function getTaxBreakdown()
     {
@@ -552,7 +509,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets taxBreakdown
      *
-     * @param \model\TaxBreakdown[] $taxBreakdown The tax breakdown. Note: See documentation for details.
+     * @param \model\TaxBreakdown[]|null $taxBreakdown The tax breakdown. Note: See documentation for details.
      *
      * @return self
      */
@@ -566,7 +523,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets expireAt
      *
-     * @return string
+     * @return string|null
      */
     public function getExpireAt()
     {
@@ -576,7 +533,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets expireAt
      *
-     * @param string $expireAt The expiration time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $expireAt The expiration time. Maximum length: 32 characters. Note: See documentation for details.
      *
      * @return self
      */
@@ -590,7 +547,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets taxDate
      *
-     * @return string
+     * @return string|null
      */
     public function getTaxDate()
     {
@@ -600,7 +557,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets taxDate
      *
-     * @param string $taxDate The tax date. Maximum length: 32 characters.
+     * @param string|null $taxDate The tax date. Maximum length: 32 characters.
      *
      * @return self
      */
