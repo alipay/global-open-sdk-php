@@ -333,7 +333,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     /**
      * Sets transactions
      *
-     * @param \model\TaxTransaction[]|null $transactions The transactions. Note: See documentation for details.
+     * @param \model\TaxTransaction[]|null $transactions The tax transaction list returned for a successful query. The list is empty or omitted when no matching transaction exists. Maximum size: 100.
      *
      * @return self
      */

@@ -52,8 +52,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'includeTotal' => 'bool',
         'status' => 'string',
         'email' => 'string',
-        'phoneNo' => 'string',
-        'countryCode' => 'string',
         'gmtCreateEnd' => 'string',
         'customerId' => 'string',
         'country' => 'string[]',
@@ -75,8 +73,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'includeTotal' => null,
         'status' => null,
         'email' => null,
-        'phoneNo' => null,
-        'countryCode' => null,
         'gmtCreateEnd' => null,
         'customerId' => null,
         'country' => null,
@@ -96,8 +92,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'includeTotal' => false,
         'status' => false,
         'email' => false,
-        'phoneNo' => false,
-        'countryCode' => false,
         'gmtCreateEnd' => false,
         'customerId' => false,
         'country' => false,
@@ -197,8 +191,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'includeTotal' => 'includeTotal',
         'status' => 'status',
         'email' => 'email',
-        'phoneNo' => 'phoneNo',
-        'countryCode' => 'countryCode',
         'gmtCreateEnd' => 'gmtCreateEnd',
         'customerId' => 'customerId',
         'country' => 'country',
@@ -218,8 +210,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'includeTotal' => 'setIncludeTotal',
         'status' => 'setStatus',
         'email' => 'setEmail',
-        'phoneNo' => 'setPhoneNo',
-        'countryCode' => 'setCountryCode',
         'gmtCreateEnd' => 'setGmtCreateEnd',
         'customerId' => 'setCustomerId',
         'country' => 'setCountry',
@@ -239,8 +229,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         'includeTotal' => 'getIncludeTotal',
         'status' => 'getStatus',
         'email' => 'getEmail',
-        'phoneNo' => 'getPhoneNo',
-        'countryCode' => 'getCountryCode',
         'gmtCreateEnd' => 'getGmtCreateEnd',
         'customerId' => 'getCustomerId',
         'country' => 'getCountry',
@@ -311,8 +299,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
         $this->setIfExists('includeTotal', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('phoneNo', $data ?? [], null);
-        $this->setIfExists('countryCode', $data ?? [], null);
         $this->setIfExists('gmtCreateEnd', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
@@ -504,54 +490,6 @@ class AlipayCustomerInquireListRequest   extends AlipayRequest  implements Model
     public function setEmail($email)
     {
         $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phoneNo
-     *
-     * @return string|null
-     */
-    public function getPhoneNo()
-    {
-        return $this->container['phoneNo'];
-    }
-
-    /**
-     * Sets phoneNo
-     *
-     * @param string|null $phoneNo Filter by phone number (canonical). Cross-field constraint: when `phoneNo` is provided, `countryCode` is REQUIRED - omitting it returns `PARAM_ILLEGAL`.
-     *
-     * @return self
-     */
-    public function setPhoneNo($phoneNo)
-    {
-        $this->container['phoneNo'] = $phoneNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets countryCode
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        return $this->container['countryCode'];
-    }
-
-    /**
-     * Sets countryCode
-     *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with `phoneNo`. Required when `phoneNo` is provided.
-     *
-     * @return self
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->container['countryCode'] = $countryCode;
 
         return $this;
     }

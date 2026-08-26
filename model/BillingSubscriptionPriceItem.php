@@ -54,13 +54,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'priceId' => 'string',
         'priceType' => 'string',
         'pricingModel' => 'string',
+        'tiersMode' => 'string',
+        'tiers' => '\request\model\Tier[]',
         'productId' => 'string',
         'productName' => 'string',
+        'productDescription' => 'string',
         'quantity' => 'int',
         'recurringInterval' => 'string',
         'recurringIntervalCount' => 'int',
         'unitAmount' => '\request\model\Amount',
-        'usageType' => 'string'
+        'usageType' => 'string',
+        'meterId' => 'string'
     ];
 
     /**
@@ -79,13 +83,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'priceId' => null,
         'priceType' => null,
         'pricingModel' => null,
+        'tiersMode' => null,
+        'tiers' => null,
         'productId' => null,
         'productName' => null,
+        'productDescription' => null,
         'quantity' => null,
         'recurringInterval' => null,
         'recurringIntervalCount' => null,
         'unitAmount' => null,
-        'usageType' => null
+        'usageType' => null,
+        'meterId' => null
     ];
 
     /**
@@ -102,13 +110,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'priceId' => false,
         'priceType' => false,
         'pricingModel' => false,
+        'tiersMode' => false,
+        'tiers' => false,
         'productId' => false,
         'productName' => false,
+        'productDescription' => false,
         'quantity' => true,
         'recurringInterval' => false,
         'recurringIntervalCount' => true,
         'unitAmount' => false,
-        'usageType' => false
+        'usageType' => false,
+        'meterId' => false
     ];
 
     /**
@@ -205,13 +217,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'priceId' => 'priceId',
         'priceType' => 'priceType',
         'pricingModel' => 'pricingModel',
+        'tiersMode' => 'tiersMode',
+        'tiers' => 'tiers',
         'productId' => 'productId',
         'productName' => 'productName',
+        'productDescription' => 'productDescription',
         'quantity' => 'quantity',
         'recurringInterval' => 'recurringInterval',
         'recurringIntervalCount' => 'recurringIntervalCount',
         'unitAmount' => 'unitAmount',
-        'usageType' => 'usageType'
+        'usageType' => 'usageType',
+        'meterId' => 'meterId'
     ];
 
     /**
@@ -228,13 +244,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'priceId' => 'setPriceId',
         'priceType' => 'setPriceType',
         'pricingModel' => 'setPricingModel',
+        'tiersMode' => 'setTiersMode',
+        'tiers' => 'setTiers',
         'productId' => 'setProductId',
         'productName' => 'setProductName',
+        'productDescription' => 'setProductDescription',
         'quantity' => 'setQuantity',
         'recurringInterval' => 'setRecurringInterval',
         'recurringIntervalCount' => 'setRecurringIntervalCount',
         'unitAmount' => 'setUnitAmount',
-        'usageType' => 'setUsageType'
+        'usageType' => 'setUsageType',
+        'meterId' => 'setMeterId'
     ];
 
     /**
@@ -251,13 +271,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'priceId' => 'getPriceId',
         'priceType' => 'getPriceType',
         'pricingModel' => 'getPricingModel',
+        'tiersMode' => 'getTiersMode',
+        'tiers' => 'getTiers',
         'productId' => 'getProductId',
         'productName' => 'getProductName',
+        'productDescription' => 'getProductDescription',
         'quantity' => 'getQuantity',
         'recurringInterval' => 'getRecurringInterval',
         'recurringIntervalCount' => 'getRecurringIntervalCount',
         'unitAmount' => 'getUnitAmount',
-        'usageType' => 'getUsageType'
+        'usageType' => 'getUsageType',
+        'meterId' => 'getMeterId'
     ];
 
     /**
@@ -325,13 +349,17 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('priceId', $data ?? [], null);
         $this->setIfExists('priceType', $data ?? [], null);
         $this->setIfExists('pricingModel', $data ?? [], null);
+        $this->setIfExists('tiersMode', $data ?? [], null);
+        $this->setIfExists('tiers', $data ?? [], null);
         $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('productName', $data ?? [], null);
+        $this->setIfExists('productDescription', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('recurringInterval', $data ?? [], null);
         $this->setIfExists('recurringIntervalCount', $data ?? [], null);
         $this->setIfExists('unitAmount', $data ?? [], null);
         $this->setIfExists('usageType', $data ?? [], null);
+        $this->setIfExists('meterId', $data ?? [], null);
 
             }
 
@@ -570,6 +598,54 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets tiersMode
+     *
+     * @return string|null
+     */
+    public function getTiersMode()
+    {
+        return $this->container['tiersMode'];
+    }
+
+    /**
+     * Sets tiersMode
+     *
+     * @param string|null $tiersMode The tiered pricing mode. Valid values are GRADUATED and VOLUME.
+     *
+     * @return self
+     */
+    public function setTiersMode($tiersMode)
+    {
+        $this->container['tiersMode'] = $tiersMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets tiers
+     *
+     * @return \model\Tier[]|null
+     */
+    public function getTiers()
+    {
+        return $this->container['tiers'];
+    }
+
+    /**
+     * Sets tiers
+     *
+     * @param \model\Tier[]|null $tiers The tiered pricing details.
+     *
+     * @return self
+     */
+    public function setTiers($tiers)
+    {
+        $this->container['tiers'] = $tiers;
+
+        return $this;
+    }
+
+    /**
      * Gets productId
      *
      * @return string|null
@@ -613,6 +689,30 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
     public function setProductName($productName)
     {
         $this->container['productName'] = $productName;
+
+        return $this;
+    }
+
+    /**
+     * Gets productDescription
+     *
+     * @return string|null
+     */
+    public function getProductDescription()
+    {
+        return $this->container['productDescription'];
+    }
+
+    /**
+     * Sets productDescription
+     *
+     * @param string|null $productDescription The product description resolved from the product ID of this price item.
+     *
+     * @return self
+     */
+    public function setProductDescription($productDescription)
+    {
+        $this->container['productDescription'] = $productDescription;
 
         return $this;
     }
@@ -733,6 +833,30 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
     public function setUsageType($usageType)
     {
         $this->container['usageType'] = $usageType;
+
+        return $this;
+    }
+
+    /**
+     * Gets meterId
+     *
+     * @return string|null
+     */
+    public function getMeterId()
+    {
+        return $this->container['meterId'];
+    }
+
+    /**
+     * Sets meterId
+     *
+     * @param string|null $meterId The external meter reference ID.
+     *
+     * @return self
+     */
+    public function setMeterId($meterId)
+    {
+        $this->container['meterId'] = $meterId;
 
         return $this;
     }
