@@ -58,7 +58,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'address' => 'string',
         'addressDetail' => 'string',
         'zipcode' => 'string',
-        'shippingPhone' => 'string',
         'shippingCountry' => 'string',
         'shippingState' => 'string',
         'shippingCity' => 'string',
@@ -70,12 +69,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'preferredLocales' => 'string[]',
         'defaultPaymentMethod' => 'string',
         'metadata' => 'string',
-        'phoneNo' => 'string',
-        'countryCode' => 'string',
         'billingEmail' => 'string',
         'shippingFirstName' => 'string',
-        'shippingLastName' => 'string',
-        'shippingCountryCode' => 'string'
+        'shippingLastName' => 'string'
     ];
 
     /**
@@ -98,7 +94,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'address' => null,
         'addressDetail' => null,
         'zipcode' => null,
-        'shippingPhone' => null,
         'shippingCountry' => null,
         'shippingState' => null,
         'shippingCity' => null,
@@ -110,12 +105,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'preferredLocales' => null,
         'defaultPaymentMethod' => null,
         'metadata' => null,
-        'phoneNo' => null,
-        'countryCode' => null,
         'billingEmail' => null,
         'shippingFirstName' => null,
-        'shippingLastName' => null,
-        'shippingCountryCode' => null
+        'shippingLastName' => null
     ];
 
     /**
@@ -136,7 +128,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'address' => false,
         'addressDetail' => false,
         'zipcode' => false,
-        'shippingPhone' => false,
         'shippingCountry' => false,
         'shippingState' => false,
         'shippingCity' => false,
@@ -148,12 +139,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'preferredLocales' => false,
         'defaultPaymentMethod' => false,
         'metadata' => false,
-        'phoneNo' => false,
-        'countryCode' => false,
         'billingEmail' => false,
         'shippingFirstName' => false,
-        'shippingLastName' => false,
-        'shippingCountryCode' => false
+        'shippingLastName' => false
     ];
 
     /**
@@ -254,7 +242,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'address' => 'address',
         'addressDetail' => 'addressDetail',
         'zipcode' => 'zipcode',
-        'shippingPhone' => 'shippingPhone',
         'shippingCountry' => 'shippingCountry',
         'shippingState' => 'shippingState',
         'shippingCity' => 'shippingCity',
@@ -266,12 +253,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'preferredLocales' => 'preferredLocales',
         'defaultPaymentMethod' => 'defaultPaymentMethod',
         'metadata' => 'metadata',
-        'phoneNo' => 'phoneNo',
-        'countryCode' => 'countryCode',
         'billingEmail' => 'billingEmail',
         'shippingFirstName' => 'shippingFirstName',
-        'shippingLastName' => 'shippingLastName',
-        'shippingCountryCode' => 'shippingCountryCode'
+        'shippingLastName' => 'shippingLastName'
     ];
 
     /**
@@ -292,7 +276,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'address' => 'setAddress',
         'addressDetail' => 'setAddressDetail',
         'zipcode' => 'setZipcode',
-        'shippingPhone' => 'setShippingPhone',
         'shippingCountry' => 'setShippingCountry',
         'shippingState' => 'setShippingState',
         'shippingCity' => 'setShippingCity',
@@ -304,12 +287,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'preferredLocales' => 'setPreferredLocales',
         'defaultPaymentMethod' => 'setDefaultPaymentMethod',
         'metadata' => 'setMetadata',
-        'phoneNo' => 'setPhoneNo',
-        'countryCode' => 'setCountryCode',
         'billingEmail' => 'setBillingEmail',
         'shippingFirstName' => 'setShippingFirstName',
-        'shippingLastName' => 'setShippingLastName',
-        'shippingCountryCode' => 'setShippingCountryCode'
+        'shippingLastName' => 'setShippingLastName'
     ];
 
     /**
@@ -330,7 +310,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'address' => 'getAddress',
         'addressDetail' => 'getAddressDetail',
         'zipcode' => 'getZipcode',
-        'shippingPhone' => 'getShippingPhone',
         'shippingCountry' => 'getShippingCountry',
         'shippingState' => 'getShippingState',
         'shippingCity' => 'getShippingCity',
@@ -342,12 +321,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         'preferredLocales' => 'getPreferredLocales',
         'defaultPaymentMethod' => 'getDefaultPaymentMethod',
         'metadata' => 'getMetadata',
-        'phoneNo' => 'getPhoneNo',
-        'countryCode' => 'getCountryCode',
         'billingEmail' => 'getBillingEmail',
         'shippingFirstName' => 'getShippingFirstName',
-        'shippingLastName' => 'getShippingLastName',
-        'shippingCountryCode' => 'getShippingCountryCode'
+        'shippingLastName' => 'getShippingLastName'
     ];
 
     /**
@@ -419,7 +395,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('addressDetail', $data ?? [], null);
         $this->setIfExists('zipcode', $data ?? [], null);
-        $this->setIfExists('shippingPhone', $data ?? [], null);
         $this->setIfExists('shippingCountry', $data ?? [], null);
         $this->setIfExists('shippingState', $data ?? [], null);
         $this->setIfExists('shippingCity', $data ?? [], null);
@@ -431,12 +406,9 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('preferredLocales', $data ?? [], null);
         $this->setIfExists('defaultPaymentMethod', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('phoneNo', $data ?? [], null);
-        $this->setIfExists('countryCode', $data ?? [], null);
         $this->setIfExists('billingEmail', $data ?? [], null);
         $this->setIfExists('shippingFirstName', $data ?? [], null);
         $this->setIfExists('shippingLastName', $data ?? [], null);
-        $this->setIfExists('shippingCountryCode', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/billing/customer/create"); 
     }
@@ -778,30 +750,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     }
 
     /**
-     * Gets shippingPhone
-     *
-     * @return string|null
-     */
-    public function getShippingPhone()
-    {
-        return $this->container['shippingPhone'];
-    }
-
-    /**
-     * Sets shippingPhone
-     *
-     * @param string|null $shippingPhone Recipient phone number for shipping. Maximum length: 32 characters.
-     *
-     * @return self
-     */
-    public function setShippingPhone($shippingPhone)
-    {
-        $this->container['shippingPhone'] = $shippingPhone;
-
-        return $this;
-    }
-
-    /**
      * Gets shippingCountry
      *
      * @return string|null
@@ -1066,54 +1014,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     }
 
     /**
-     * Gets phoneNo
-     *
-     * @return string|null
-     */
-    public function getPhoneNo()
-    {
-        return $this->container['phoneNo'];
-    }
-
-    /**
-     * Sets phoneNo
-     *
-     * @param string|null $phoneNo Customer's phone number (digits only). Maximum length: 32 characters. Cross-field constraint: when `phoneNo` is provided, `countryCode` is required; omitting it returns `PARAM_ILLEGAL`.
-     *
-     * @return self
-     */
-    public function setPhoneNo($phoneNo)
-    {
-        $this->container['phoneNo'] = $phoneNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets countryCode
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        return $this->container['countryCode'];
-    }
-
-    /**
-     * Sets countryCode
-     *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with `phoneNo` (NOT a numeric dial prefix). Required when `phoneNo` is provided. Maximum length: 2 characters.
-     *
-     * @return self
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->container['countryCode'] = $countryCode;
-
-        return $this;
-    }
-
-    /**
      * Gets billingEmail
      *
      * @return string|null
@@ -1181,30 +1081,6 @@ class AlipayCustomerCreateRequest   extends AlipayRequest  implements ModelInter
     public function setShippingLastName($shippingLastName)
     {
         $this->container['shippingLastName'] = $shippingLastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingCountryCode
-     *
-     * @return string|null
-     */
-    public function getShippingCountryCode()
-    {
-        return $this->container['shippingCountryCode'];
-    }
-
-    /**
-     * Sets shippingCountryCode
-     *
-     * @param string|null $shippingCountryCode ISO 3166-1 alpha-2 country code paired with `phoneNo`. Required when `shippingPhone` is provided. Maximum length: 2 characters.
-     *
-     * @return self
-     */
-    public function setShippingCountryCode($shippingCountryCode)
-    {
-        $this->container['shippingCountryCode'] = $shippingCountryCode;
 
         return $this;
     }

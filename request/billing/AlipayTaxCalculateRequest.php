@@ -47,7 +47,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
       */
     protected static $openAPITypes = [
         'taxCalculationRequestId' => 'string',
-        'currency' => 'string',
         'lineItems' => '\request\model\TaxCalculationLineItem[]',
         'customerId' => 'string',
         'customerDetails' => '\request\model\TaxCustomerDetails',
@@ -65,7 +64,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
       */
     protected static $openAPIFormats = [
         'taxCalculationRequestId' => null,
-        'currency' => null,
         'lineItems' => null,
         'customerId' => null,
         'customerDetails' => null,
@@ -81,7 +79,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
       */
     protected static $openAPINullables = [
         'taxCalculationRequestId' => false,
-        'currency' => false,
         'lineItems' => false,
         'customerId' => false,
         'customerDetails' => false,
@@ -177,7 +174,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
      */
     protected static $attributeMap = [
         'taxCalculationRequestId' => 'taxCalculationRequestId',
-        'currency' => 'currency',
         'lineItems' => 'lineItems',
         'customerId' => 'customerId',
         'customerDetails' => 'customerDetails',
@@ -193,7 +189,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
      */
     protected static $setters = [
         'taxCalculationRequestId' => 'setTaxCalculationRequestId',
-        'currency' => 'setCurrency',
         'lineItems' => 'setLineItems',
         'customerId' => 'setCustomerId',
         'customerDetails' => 'setCustomerDetails',
@@ -209,7 +204,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
      */
     protected static $getters = [
         'taxCalculationRequestId' => 'getTaxCalculationRequestId',
-        'currency' => 'getCurrency',
         'lineItems' => 'getLineItems',
         'customerId' => 'getCustomerId',
         'customerDetails' => 'getCustomerDetails',
@@ -276,7 +270,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('taxCalculationRequestId', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('lineItems', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('customerDetails', $data ?? [], null);
@@ -317,9 +310,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         if ($this->container['taxCalculationRequestId'] === null) {
             $invalidProperties[] = "'taxCalculationRequestId' can't be null";
         }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         if ($this->container['lineItems'] === null) {
             $invalidProperties[] = "'lineItems' can't be null";
         }
@@ -358,30 +348,6 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
     public function setTaxCalculationRequestId($taxCalculationRequestId)
     {
         $this->container['taxCalculationRequestId'] = $taxCalculationRequestId;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
 
         return $this;
     }

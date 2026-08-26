@@ -47,11 +47,11 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'goodsReferenceId' => 'string',
-        'amount' => 'string',
+        'amount' => '\request\model\Amount',
         'quantity' => 'int',
         'taxCode' => 'string',
         'taxBehavior' => 'string',
-        'taxAmount' => 'string',
+        'taxAmount' => '\request\model\Amount',
         'taxBreakdown' => '\request\model\TaxBreakdown[]'
     ];
 
@@ -366,7 +366,7 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets amount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getAmount()
     {
@@ -376,7 +376,7 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets amount
      *
-     * @param string $amount The amount. Maximum length: 19 characters.
+     * @param \model\Amount $amount amount
      *
      * @return self
      */
@@ -462,7 +462,7 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets taxAmount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getTaxAmount()
     {
@@ -472,7 +472,7 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets taxAmount
      *
-     * @param string $taxAmount The tax amount. Maximum length: 19 characters.
+     * @param \model\Amount $taxAmount taxAmount
      *
      * @return self
      */

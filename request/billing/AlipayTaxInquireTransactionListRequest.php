@@ -393,7 +393,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
     /**
      * Sets currentPage
      *
-     * @param int|null $currentPage The current page number.
+     * @param int|null $currentPage The current page number, starting from 1. The default value is 1.
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
     /**
      * Sets pageSize
      *
-     * @param int|null $pageSize The number of records per page.
+     * @param int|null $pageSize The number of records returned per page. The default value is 20.
      *
      * @return self
      */
