@@ -60,7 +60,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => 'string',
         'trialStart' => 'string',
         'trialEnd' => 'string',
-        'trialSettings' => '\request\model\BillingSubscriptionTrialSettings',
         'cancelAt' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
@@ -98,7 +97,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => null,
         'trialStart' => null,
         'trialEnd' => null,
-        'trialSettings' => null,
         'cancelAt' => null,
         'collectionMethod' => null,
         'daysUntilDue' => null,
@@ -134,7 +132,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => false,
         'trialStart' => false,
         'trialEnd' => false,
-        'trialSettings' => false,
         'cancelAt' => false,
         'collectionMethod' => false,
         'daysUntilDue' => true,
@@ -250,7 +247,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => 'canceledAt',
         'trialStart' => 'trialStart',
         'trialEnd' => 'trialEnd',
-        'trialSettings' => 'trialSettings',
         'cancelAt' => 'cancelAt',
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
@@ -286,7 +282,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => 'setCanceledAt',
         'trialStart' => 'setTrialStart',
         'trialEnd' => 'setTrialEnd',
-        'trialSettings' => 'setTrialSettings',
         'cancelAt' => 'setCancelAt',
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
@@ -322,7 +317,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'canceledAt' => 'getCanceledAt',
         'trialStart' => 'getTrialStart',
         'trialEnd' => 'getTrialEnd',
-        'trialSettings' => 'getTrialSettings',
         'cancelAt' => 'getCancelAt',
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
@@ -409,7 +403,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         $this->setIfExists('canceledAt', $data ?? [], null);
         $this->setIfExists('trialStart', $data ?? [], null);
         $this->setIfExists('trialEnd', $data ?? [], null);
-        $this->setIfExists('trialSettings', $data ?? [], null);
         $this->setIfExists('cancelAt', $data ?? [], null);
         $this->setIfExists('collectionMethod', $data ?? [], null);
         $this->setIfExists('daysUntilDue', $data ?? [], null);
@@ -803,30 +796,6 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
     public function setTrialEnd($trialEnd)
     {
         $this->container['trialEnd'] = $trialEnd;
-
-        return $this;
-    }
-
-    /**
-     * Gets trialSettings
-     *
-     * @return \model\BillingSubscriptionTrialSettings|null
-     */
-    public function getTrialSettings()
-    {
-        return $this->container['trialSettings'];
-    }
-
-    /**
-     * Sets trialSettings
-     *
-     * @param \model\BillingSubscriptionTrialSettings|null $trialSettings trialSettings
-     *
-     * @return self
-     */
-    public function setTrialSettings($trialSettings)
-    {
-        $this->container['trialSettings'] = $trialSettings;
 
         return $this;
     }
