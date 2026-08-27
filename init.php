@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/model/ModelInterface.php';
+
 //request
 require __DIR__ . '/request/AlipayRequest.php';
 
