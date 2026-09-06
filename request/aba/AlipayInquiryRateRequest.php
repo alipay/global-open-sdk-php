@@ -46,7 +46,8 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rateConditionList' => '\request\model\InquiryRateCondition[]'
+        'rateConditionList' => '\request\model\InquiryRateCondition[]',
+        'testRequestId' => 'string'
     ];
 
     /**
@@ -57,7 +58,8 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'rateConditionList' => null
+        'rateConditionList' => null,
+        'testRequestId' => null
     ];
 
     /**
@@ -66,7 +68,8 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'rateConditionList' => false
+        'rateConditionList' => false,
+        'testRequestId' => false
     ];
 
     /**
@@ -155,7 +158,8 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'rateConditionList' => 'rateConditionList'
+        'rateConditionList' => 'rateConditionList',
+        'testRequestId' => 'testRequestId'
     ];
 
     /**
@@ -164,7 +168,8 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'rateConditionList' => 'setRateConditionList'
+        'rateConditionList' => 'setRateConditionList',
+        'testRequestId' => 'setTestRequestId'
     ];
 
     /**
@@ -173,7 +178,8 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'rateConditionList' => 'getRateConditionList'
+        'rateConditionList' => 'getRateConditionList',
+        'testRequestId' => 'getTestRequestId'
     ];
 
     /**
@@ -234,6 +240,7 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
     public function __construct(?array $data = null)
     {
         $this->setIfExists('rateConditionList', $data ?? [], null);
+        $this->setIfExists('testRequestId', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/aba/funds/inquireRate"); 
     }
@@ -303,6 +310,30 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
     public function setRateConditionList($rateConditionList)
     {
         $this->container['rateConditionList'] = $rateConditionList;
+
+        return $this;
+    }
+
+    /**
+     * Gets testRequestId
+     *
+     * @return string|null
+     */
+    public function getTestRequestId()
+    {
+        return $this->container['testRequestId'];
+    }
+
+    /**
+     * Sets testRequestId
+     *
+     * @param string|null $testRequestId 5.14测试
+     *
+     * @return self
+     */
+    public function setTestRequestId($testRequestId)
+    {
+        $this->container['testRequestId'] = $testRequestId;
 
         return $this;
     }
