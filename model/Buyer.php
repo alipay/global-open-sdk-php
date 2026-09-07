@@ -53,7 +53,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerRegistrationTime' => 'string',
         'isAccountVerified' => 'bool',
         'successfulOrderCount' => 'int',
-        'buyerPhoneNoContryCode' => 'string'
+        'buyerPhoneNoContryCode' => 'string',
+        'successfulOrderAmount' => '\request\model\Amount',
+        'dateOfLastPaidPurchase' => 'string',
+        'dateOfFirstPaidPurchase' => 'string'
     ];
 
     /**
@@ -71,7 +74,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerRegistrationTime' => null,
         'isAccountVerified' => null,
         'successfulOrderCount' => null,
-        'buyerPhoneNoContryCode' => null
+        'buyerPhoneNoContryCode' => null,
+        'successfulOrderAmount' => null,
+        'dateOfLastPaidPurchase' => null,
+        'dateOfFirstPaidPurchase' => null
     ];
 
     /**
@@ -87,7 +93,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerRegistrationTime' => false,
         'isAccountVerified' => false,
         'successfulOrderCount' => true,
-        'buyerPhoneNoContryCode' => false
+        'buyerPhoneNoContryCode' => false,
+        'successfulOrderAmount' => false,
+        'dateOfLastPaidPurchase' => false,
+        'dateOfFirstPaidPurchase' => false
     ];
 
     /**
@@ -183,7 +192,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerRegistrationTime' => 'buyerRegistrationTime',
         'isAccountVerified' => 'isAccountVerified',
         'successfulOrderCount' => 'successfulOrderCount',
-        'buyerPhoneNoContryCode' => 'buyerPhoneNoContryCode'
+        'buyerPhoneNoContryCode' => 'buyerPhoneNoContryCode',
+        'successfulOrderAmount' => 'successfulOrderAmount',
+        'dateOfLastPaidPurchase' => 'dateOfLastPaidPurchase',
+        'dateOfFirstPaidPurchase' => 'dateOfFirstPaidPurchase'
     ];
 
     /**
@@ -199,7 +211,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerRegistrationTime' => 'setBuyerRegistrationTime',
         'isAccountVerified' => 'setIsAccountVerified',
         'successfulOrderCount' => 'setSuccessfulOrderCount',
-        'buyerPhoneNoContryCode' => 'setBuyerPhoneNoContryCode'
+        'buyerPhoneNoContryCode' => 'setBuyerPhoneNoContryCode',
+        'successfulOrderAmount' => 'setSuccessfulOrderAmount',
+        'dateOfLastPaidPurchase' => 'setDateOfLastPaidPurchase',
+        'dateOfFirstPaidPurchase' => 'setDateOfFirstPaidPurchase'
     ];
 
     /**
@@ -215,7 +230,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyerRegistrationTime' => 'getBuyerRegistrationTime',
         'isAccountVerified' => 'getIsAccountVerified',
         'successfulOrderCount' => 'getSuccessfulOrderCount',
-        'buyerPhoneNoContryCode' => 'getBuyerPhoneNoContryCode'
+        'buyerPhoneNoContryCode' => 'getBuyerPhoneNoContryCode',
+        'successfulOrderAmount' => 'getSuccessfulOrderAmount',
+        'dateOfLastPaidPurchase' => 'getDateOfLastPaidPurchase',
+        'dateOfFirstPaidPurchase' => 'getDateOfFirstPaidPurchase'
     ];
 
     /**
@@ -283,6 +301,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('isAccountVerified', $data ?? [], null);
         $this->setIfExists('successfulOrderCount', $data ?? [], null);
         $this->setIfExists('buyerPhoneNoContryCode', $data ?? [], null);
+        $this->setIfExists('successfulOrderAmount', $data ?? [], null);
+        $this->setIfExists('dateOfLastPaidPurchase', $data ?? [], null);
+        $this->setIfExists('dateOfFirstPaidPurchase', $data ?? [], null);
 
             }
 
@@ -516,6 +537,78 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBuyerPhoneNoContryCode($buyerPhoneNoContryCode)
     {
         $this->container['buyerPhoneNoContryCode'] = $buyerPhoneNoContryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets successfulOrderAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getSuccessfulOrderAmount()
+    {
+        return $this->container['successfulOrderAmount'];
+    }
+
+    /**
+     * Sets successfulOrderAmount
+     *
+     * @param \model\Amount|null $successfulOrderAmount successfulOrderAmount
+     *
+     * @return self
+     */
+    public function setSuccessfulOrderAmount($successfulOrderAmount)
+    {
+        $this->container['successfulOrderAmount'] = $successfulOrderAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateOfLastPaidPurchase
+     *
+     * @return string|null
+     */
+    public function getDateOfLastPaidPurchase()
+    {
+        return $this->container['dateOfLastPaidPurchase'];
+    }
+
+    /**
+     * Sets dateOfLastPaidPurchase
+     *
+     * @param string|null $dateOfLastPaidPurchase The date and time of the buyer's last paid purchase. When using KLARNA for an e-commerce merchant, this field is required. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     *
+     * @return self
+     */
+    public function setDateOfLastPaidPurchase($dateOfLastPaidPurchase)
+    {
+        $this->container['dateOfLastPaidPurchase'] = $dateOfLastPaidPurchase;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateOfFirstPaidPurchase
+     *
+     * @return string|null
+     */
+    public function getDateOfFirstPaidPurchase()
+    {
+        return $this->container['dateOfFirstPaidPurchase'];
+    }
+
+    /**
+     * Sets dateOfFirstPaidPurchase
+     *
+     * @param string|null $dateOfFirstPaidPurchase The date and time of the buyer's first paid purchase. When using KLARNA for an e-commerce merchant, this field is required. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     *
+     * @return self
+     */
+    public function setDateOfFirstPaidPurchase($dateOfFirstPaidPurchase)
+    {
+        $this->container['dateOfFirstPaidPurchase'] = $dateOfFirstPaidPurchase;
 
         return $this;
     }

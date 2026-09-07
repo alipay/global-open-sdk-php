@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * Lodging Class Doc Comment
+ * AccountLastModified Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountLastModified  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Lodging';
+    protected static $openAPIModelName = 'AccountLastModified';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,16 +46,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'hotelName' => 'string',
-        'hotelAddress' => '\request\model\Address',
-        'checkInDate' => 'string',
-        'checkOutDate' => 'string',
-        'numberOfNights' => 'int',
-        'numberOfRooms' => 'int',
-        'guestNames' => '\request\model\UserName[]',
-        'roomClass' => 'string',
-        'ticketDeliveryMethod' => 'string',
-        'ticketDeliveryRecipient' => 'string'
+        'passwordChangeDate' => 'string',
+        'emailChangeDate' => 'string',
+        'listingChangeDate' => 'string',
+        'loginDate' => 'string',
+        'addressChangeDate' => 'string'
     ];
 
     /**
@@ -66,16 +61,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'hotelName' => null,
-        'hotelAddress' => null,
-        'checkInDate' => null,
-        'checkOutDate' => null,
-        'numberOfNights' => null,
-        'numberOfRooms' => null,
-        'guestNames' => null,
-        'roomClass' => null,
-        'ticketDeliveryMethod' => null,
-        'ticketDeliveryRecipient' => null
+        'passwordChangeDate' => null,
+        'emailChangeDate' => null,
+        'listingChangeDate' => null,
+        'loginDate' => null,
+        'addressChangeDate' => null
     ];
 
     /**
@@ -84,16 +74,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'hotelName' => false,
-        'hotelAddress' => false,
-        'checkInDate' => false,
-        'checkOutDate' => false,
-        'numberOfNights' => true,
-        'numberOfRooms' => true,
-        'guestNames' => false,
-        'roomClass' => false,
-        'ticketDeliveryMethod' => false,
-        'ticketDeliveryRecipient' => false
+        'passwordChangeDate' => false,
+        'emailChangeDate' => false,
+        'listingChangeDate' => false,
+        'loginDate' => false,
+        'addressChangeDate' => false
     ];
 
     /**
@@ -182,16 +167,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'hotelName' => 'hotelName',
-        'hotelAddress' => 'hotelAddress',
-        'checkInDate' => 'checkInDate',
-        'checkOutDate' => 'checkOutDate',
-        'numberOfNights' => 'numberOfNights',
-        'numberOfRooms' => 'numberOfRooms',
-        'guestNames' => 'guestNames',
-        'roomClass' => 'roomClass',
-        'ticketDeliveryMethod' => 'ticketDeliveryMethod',
-        'ticketDeliveryRecipient' => 'ticketDeliveryRecipient'
+        'passwordChangeDate' => 'passwordChangeDate',
+        'emailChangeDate' => 'emailChangeDate',
+        'listingChangeDate' => 'listingChangeDate',
+        'loginDate' => 'loginDate',
+        'addressChangeDate' => 'addressChangeDate'
     ];
 
     /**
@@ -200,16 +180,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'hotelName' => 'setHotelName',
-        'hotelAddress' => 'setHotelAddress',
-        'checkInDate' => 'setCheckInDate',
-        'checkOutDate' => 'setCheckOutDate',
-        'numberOfNights' => 'setNumberOfNights',
-        'numberOfRooms' => 'setNumberOfRooms',
-        'guestNames' => 'setGuestNames',
-        'roomClass' => 'setRoomClass',
-        'ticketDeliveryMethod' => 'setTicketDeliveryMethod',
-        'ticketDeliveryRecipient' => 'setTicketDeliveryRecipient'
+        'passwordChangeDate' => 'setPasswordChangeDate',
+        'emailChangeDate' => 'setEmailChangeDate',
+        'listingChangeDate' => 'setListingChangeDate',
+        'loginDate' => 'setLoginDate',
+        'addressChangeDate' => 'setAddressChangeDate'
     ];
 
     /**
@@ -218,16 +193,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'hotelName' => 'getHotelName',
-        'hotelAddress' => 'getHotelAddress',
-        'checkInDate' => 'getCheckInDate',
-        'checkOutDate' => 'getCheckOutDate',
-        'numberOfNights' => 'getNumberOfNights',
-        'numberOfRooms' => 'getNumberOfRooms',
-        'guestNames' => 'getGuestNames',
-        'roomClass' => 'getRoomClass',
-        'ticketDeliveryMethod' => 'getTicketDeliveryMethod',
-        'ticketDeliveryRecipient' => 'getTicketDeliveryRecipient'
+        'passwordChangeDate' => 'getPasswordChangeDate',
+        'emailChangeDate' => 'getEmailChangeDate',
+        'listingChangeDate' => 'getListingChangeDate',
+        'loginDate' => 'getLoginDate',
+        'addressChangeDate' => 'getAddressChangeDate'
     ];
 
     /**
@@ -287,16 +257,11 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('hotelName', $data ?? [], null);
-        $this->setIfExists('hotelAddress', $data ?? [], null);
-        $this->setIfExists('checkInDate', $data ?? [], null);
-        $this->setIfExists('checkOutDate', $data ?? [], null);
-        $this->setIfExists('numberOfNights', $data ?? [], null);
-        $this->setIfExists('numberOfRooms', $data ?? [], null);
-        $this->setIfExists('guestNames', $data ?? [], null);
-        $this->setIfExists('roomClass', $data ?? [], null);
-        $this->setIfExists('ticketDeliveryMethod', $data ?? [], null);
-        $this->setIfExists('ticketDeliveryRecipient', $data ?? [], null);
+        $this->setIfExists('passwordChangeDate', $data ?? [], null);
+        $this->setIfExists('emailChangeDate', $data ?? [], null);
+        $this->setIfExists('listingChangeDate', $data ?? [], null);
+        $this->setIfExists('loginDate', $data ?? [], null);
+        $this->setIfExists('addressChangeDate', $data ?? [], null);
 
             }
 
@@ -343,241 +308,121 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets hotelName
+     * Gets passwordChangeDate
      *
      * @return string|null
      */
-    public function getHotelName()
+    public function getPasswordChangeDate()
     {
-        return $this->container['hotelName'];
+        return $this->container['passwordChangeDate'];
     }
 
     /**
-     * Sets hotelName
+     * Sets passwordChangeDate
      *
-     * @param string|null $hotelName Hotel name.  More information:  Maximum length: 128 characters
+     * @param string|null $passwordChangeDate The date and time when the merchant last changed the account password. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
-    public function setHotelName($hotelName)
+    public function setPasswordChangeDate($passwordChangeDate)
     {
-        $this->container['hotelName'] = $hotelName;
+        $this->container['passwordChangeDate'] = $passwordChangeDate;
 
         return $this;
     }
 
     /**
-     * Gets hotelAddress
-     *
-     * @return \model\Address|null
-     */
-    public function getHotelAddress()
-    {
-        return $this->container['hotelAddress'];
-    }
-
-    /**
-     * Sets hotelAddress
-     *
-     * @param \model\Address|null $hotelAddress hotelAddress
-     *
-     * @return self
-     */
-    public function setHotelAddress($hotelAddress)
-    {
-        $this->container['hotelAddress'] = $hotelAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets checkInDate
+     * Gets emailChangeDate
      *
      * @return string|null
      */
-    public function getCheckInDate()
+    public function getEmailChangeDate()
     {
-        return $this->container['checkInDate'];
+        return $this->container['emailChangeDate'];
     }
 
     /**
-     * Sets checkInDate
+     * Sets emailChangeDate
      *
-     * @param string|null $checkInDate Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $emailChangeDate The date and time when the merchant last changed the account email address. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
-    public function setCheckInDate($checkInDate)
+    public function setEmailChangeDate($emailChangeDate)
     {
-        $this->container['checkInDate'] = $checkInDate;
+        $this->container['emailChangeDate'] = $emailChangeDate;
 
         return $this;
     }
 
     /**
-     * Gets checkOutDate
+     * Gets listingChangeDate
      *
      * @return string|null
      */
-    public function getCheckOutDate()
+    public function getListingChangeDate()
     {
-        return $this->container['checkOutDate'];
+        return $this->container['listingChangeDate'];
     }
 
     /**
-     * Sets checkOutDate
+     * Sets listingChangeDate
      *
-     * @param string|null $checkOutDate Date on which the guest checked out.  More information:  The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
+     * @param string|null $listingChangeDate The date and time when the merchant last changed the account listing information. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
-    public function setCheckOutDate($checkOutDate)
+    public function setListingChangeDate($listingChangeDate)
     {
-        $this->container['checkOutDate'] = $checkOutDate;
+        $this->container['listingChangeDate'] = $listingChangeDate;
 
         return $this;
     }
 
     /**
-     * Gets numberOfNights
-     *
-     * @return int|null
-     */
-    public function getNumberOfNights()
-    {
-        return $this->container['numberOfNights'];
-    }
-
-    /**
-     * Sets numberOfNights
-     *
-     * @param int|null $numberOfNights Number of rooms booked by the payer.  More information:  Value range: 1 - unlimited
-     *
-     * @return self
-     */
-    public function setNumberOfNights($numberOfNights)
-    {
-        $this->container['numberOfNights'] = $numberOfNights;
-
-        return $this;
-    }
-
-    /**
-     * Gets numberOfRooms
-     *
-     * @return int|null
-     */
-    public function getNumberOfRooms()
-    {
-        return $this->container['numberOfRooms'];
-    }
-
-    /**
-     * Sets numberOfRooms
-     *
-     * @param int|null $numberOfRooms Number of nights booked by the payer.  More information:  Value range: 1 - unlimited
-     *
-     * @return self
-     */
-    public function setNumberOfRooms($numberOfRooms)
-    {
-        $this->container['numberOfRooms'] = $numberOfRooms;
-
-        return $this;
-    }
-
-    /**
-     * Gets guestNames
-     *
-     * @return \model\UserName[]|null
-     */
-    public function getGuestNames()
-    {
-        return $this->container['guestNames'];
-    }
-
-    /**
-     * Sets guestNames
-     *
-     * @param \model\UserName[]|null $guestNames Name of the guest under which the room is reserved.  More information:  Maximum size: 100 elements
-     *
-     * @return self
-     */
-    public function setGuestNames($guestNames)
-    {
-        $this->container['guestNames'] = $guestNames;
-
-        return $this;
-    }
-
-    /**
-     * Gets roomClass
+     * Gets loginDate
      *
      * @return string|null
      */
-    public function getRoomClass()
+    public function getLoginDate()
     {
-        return $this->container['roomClass'];
+        return $this->container['loginDate'];
     }
 
     /**
-     * Sets roomClass
+     * Sets loginDate
      *
-     * @param string|null $roomClass The hotel room type, for example, Presidential suite.
+     * @param string|null $loginDate The date and time when the merchant last logged in to the account. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
-    public function setRoomClass($roomClass)
+    public function setLoginDate($loginDate)
     {
-        $this->container['roomClass'] = $roomClass;
+        $this->container['loginDate'] = $loginDate;
 
         return $this;
     }
 
     /**
-     * Gets ticketDeliveryMethod
+     * Gets addressChangeDate
      *
      * @return string|null
      */
-    public function getTicketDeliveryMethod()
+    public function getAddressChangeDate()
     {
-        return $this->container['ticketDeliveryMethod'];
+        return $this->container['addressChangeDate'];
     }
 
     /**
-     * Sets ticketDeliveryMethod
+     * Sets addressChangeDate
      *
-     * @param string|null $ticketDeliveryMethod The ticket delivery method. Valid values are: pick_up (the ticket is picked up in person), email (the ticket is sent by email), post (the ticket is sent by post), and phone (the ticket is sent to a phone number).
+     * @param string|null $addressChangeDate The date and time when the merchant last changed the account address. The value follows the ISO 8601 standard format. For example, \"2019-11-27T12:01:01+08:00\".
      *
      * @return self
      */
-    public function setTicketDeliveryMethod($ticketDeliveryMethod)
+    public function setAddressChangeDate($addressChangeDate)
     {
-        $this->container['ticketDeliveryMethod'] = $ticketDeliveryMethod;
-
-        return $this;
-    }
-
-    /**
-     * Gets ticketDeliveryRecipient
-     *
-     * @return string|null
-     */
-    public function getTicketDeliveryRecipient()
-    {
-        return $this->container['ticketDeliveryRecipient'];
-    }
-
-    /**
-     * Sets ticketDeliveryRecipient
-     *
-     * @param string|null $ticketDeliveryRecipient The ticket recipient. For email, specify the recipient's email address. For phone, specify the recipient's phone number. For pick_up and post, specify the recipient's first and last name, for example, John Doe.
-     *
-     * @return self
-     */
-    public function setTicketDeliveryRecipient($ticketDeliveryRecipient)
-    {
-        $this->container['ticketDeliveryRecipient'] = $ticketDeliveryRecipient;
+        $this->container['addressChangeDate'] = $addressChangeDate;
 
         return $this;
     }

@@ -56,7 +56,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'string',
         'deliveryEstimate' => '\request\model\DeliveryEstimate',
         'shippingNumber' => 'string',
-        'notes' => 'string'
+        'notes' => 'string',
+        'trackingUrl' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => null,
         'deliveryEstimate' => null,
         'shippingNumber' => null,
-        'notes' => null
+        'notes' => null,
+        'trackingUrl' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => false,
         'deliveryEstimate' => false,
         'shippingNumber' => false,
-        'notes' => false
+        'notes' => false,
+        'trackingUrl' => false
     ];
 
     /**
@@ -195,7 +198,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'shippingDescription',
         'deliveryEstimate' => 'deliveryEstimate',
         'shippingNumber' => 'shippingNumber',
-        'notes' => 'notes'
+        'notes' => 'notes',
+        'trackingUrl' => 'trackingUrl'
     ];
 
     /**
@@ -214,7 +218,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'setShippingDescription',
         'deliveryEstimate' => 'setDeliveryEstimate',
         'shippingNumber' => 'setShippingNumber',
-        'notes' => 'setNotes'
+        'notes' => 'setNotes',
+        'trackingUrl' => 'setTrackingUrl'
     ];
 
     /**
@@ -233,7 +238,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'getShippingDescription',
         'deliveryEstimate' => 'getDeliveryEstimate',
         'shippingNumber' => 'getShippingNumber',
-        'notes' => 'getNotes'
+        'notes' => 'getNotes',
+        'trackingUrl' => 'getTrackingUrl'
     ];
 
     /**
@@ -304,6 +310,7 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('deliveryEstimate', $data ?? [], null);
         $this->setIfExists('shippingNumber', $data ?? [], null);
         $this->setIfExists('notes', $data ?? [], null);
+        $this->setIfExists('trackingUrl', $data ?? [], null);
 
             }
 
@@ -609,6 +616,30 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNotes($notes)
     {
         $this->container['notes'] = $notes;
+
+        return $this;
+    }
+
+    /**
+     * Gets trackingUrl
+     *
+     * @return string|null
+     */
+    public function getTrackingUrl()
+    {
+        return $this->container['trackingUrl'];
+    }
+
+    /**
+     * Sets trackingUrl
+     *
+     * @param string|null $trackingUrl The URL where the customer can track the shipment.
+     *
+     * @return self
+     */
+    public function setTrackingUrl($trackingUrl)
+    {
+        $this->container['trackingUrl'] = $trackingUrl;
 
         return $this;
     }
