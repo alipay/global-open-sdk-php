@@ -58,7 +58,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'fareBasis' => 'string',
         'couponNumber' => 'string',
         'flightNumber' => 'string',
-        'passengerNameRecord' => 'string'
+        'passengerNameRecord' => 'string',
+        'ticketDeliveryMethod' => 'string',
+        'ticketDeliveryRecipient' => 'string'
     ];
 
     /**
@@ -81,7 +83,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'fareBasis' => null,
         'couponNumber' => null,
         'flightNumber' => null,
-        'passengerNameRecord' => null
+        'passengerNameRecord' => null,
+        'ticketDeliveryMethod' => null,
+        'ticketDeliveryRecipient' => null
     ];
 
     /**
@@ -102,7 +106,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'fareBasis' => false,
         'couponNumber' => false,
         'flightNumber' => false,
-        'passengerNameRecord' => false
+        'passengerNameRecord' => false,
+        'ticketDeliveryMethod' => false,
+        'ticketDeliveryRecipient' => false
     ];
 
     /**
@@ -203,7 +209,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'fareBasis' => 'fareBasis',
         'couponNumber' => 'couponNumber',
         'flightNumber' => 'flightNumber',
-        'passengerNameRecord' => 'passengerNameRecord'
+        'passengerNameRecord' => 'passengerNameRecord',
+        'ticketDeliveryMethod' => 'ticketDeliveryMethod',
+        'ticketDeliveryRecipient' => 'ticketDeliveryRecipient'
     ];
 
     /**
@@ -224,7 +232,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'fareBasis' => 'setFareBasis',
         'couponNumber' => 'setCouponNumber',
         'flightNumber' => 'setFlightNumber',
-        'passengerNameRecord' => 'setPassengerNameRecord'
+        'passengerNameRecord' => 'setPassengerNameRecord',
+        'ticketDeliveryMethod' => 'setTicketDeliveryMethod',
+        'ticketDeliveryRecipient' => 'setTicketDeliveryRecipient'
     ];
 
     /**
@@ -245,7 +255,9 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'fareBasis' => 'getFareBasis',
         'couponNumber' => 'getCouponNumber',
         'flightNumber' => 'getFlightNumber',
-        'passengerNameRecord' => 'getPassengerNameRecord'
+        'passengerNameRecord' => 'getPassengerNameRecord',
+        'ticketDeliveryMethod' => 'getTicketDeliveryMethod',
+        'ticketDeliveryRecipient' => 'getTicketDeliveryRecipient'
     ];
 
     /**
@@ -318,6 +330,8 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('couponNumber', $data ?? [], null);
         $this->setIfExists('flightNumber', $data ?? [], null);
         $this->setIfExists('passengerNameRecord', $data ?? [], null);
+        $this->setIfExists('ticketDeliveryMethod', $data ?? [], null);
+        $this->setIfExists('ticketDeliveryRecipient', $data ?? [], null);
 
             }
 
@@ -674,6 +688,54 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPassengerNameRecord($passengerNameRecord)
     {
         $this->container['passengerNameRecord'] = $passengerNameRecord;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketDeliveryMethod
+     *
+     * @return string|null
+     */
+    public function getTicketDeliveryMethod()
+    {
+        return $this->container['ticketDeliveryMethod'];
+    }
+
+    /**
+     * Sets ticketDeliveryMethod
+     *
+     * @param string|null $ticketDeliveryMethod The ticket delivery method. Valid values are: pick_up (the ticket is picked up in person), email (the ticket is sent by email), post (the ticket is sent by post), and phone (the ticket is sent to a phone number).
+     *
+     * @return self
+     */
+    public function setTicketDeliveryMethod($ticketDeliveryMethod)
+    {
+        $this->container['ticketDeliveryMethod'] = $ticketDeliveryMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketDeliveryRecipient
+     *
+     * @return string|null
+     */
+    public function getTicketDeliveryRecipient()
+    {
+        return $this->container['ticketDeliveryRecipient'];
+    }
+
+    /**
+     * Sets ticketDeliveryRecipient
+     *
+     * @param string|null $ticketDeliveryRecipient The ticket recipient. For email, specify the recipient's email address. For phone, specify the recipient's phone number. For pick_up and post, specify the recipient's first and last name, for example, John Doe.
+     *
+     * @return self
+     */
+    public function setTicketDeliveryRecipient($ticketDeliveryRecipient)
+    {
+        $this->container['ticketDeliveryRecipient'] = $ticketDeliveryRecipient;
 
         return $this;
     }

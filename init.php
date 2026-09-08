@@ -98,6 +98,7 @@ require __DIR__ . '/request/aba/AlipayInquiryStatementListRequest.php';
 
 
 //model
+require __DIR__ . '/model/AccountLastModified.php';
 require __DIR__ . '/model/Address.php';
 require __DIR__ . '/model/Amount.php';
 require __DIR__ . '/model/AmountLimit.php';

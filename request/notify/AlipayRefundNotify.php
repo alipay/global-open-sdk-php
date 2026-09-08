@@ -27,6 +27,14 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     public $metadata;
 
     /**
+     * The authorization code returned by the payment channel for a successful refund. This field is
+     * returned only when the merchant is enabled for this capability.
+     *
+     * @var string|null
+     */
+    public $authorizationCode;
+
+    /**
      * @return mixed
      */
     public function getMetadata()
@@ -40,6 +48,22 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     public function setMetadata($metadata): void
     {
         $this->metadata = $metadata;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAuthorizationCode()
+    {
+        return $this->authorizationCode;
+    }
+
+    /**
+     * @param string|null $authorizationCode
+     */
+    public function setAuthorizationCode($authorizationCode): void
+    {
+        $this->authorizationCode = $authorizationCode;
     }
 
 
