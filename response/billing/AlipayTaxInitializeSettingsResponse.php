@@ -295,18 +295,6 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['defaultTaxCode'] === null) {
-            $invalidProperties[] = "'defaultTaxCode' can't be null";
-        }
-        if ($this->container['defaultTaxBehavior'] === null) {
-            $invalidProperties[] = "'defaultTaxBehavior' can't be null";
-        }
-        if ($this->container['headOffice'] === null) {
-            $invalidProperties[] = "'headOffice' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -349,7 +337,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets defaultTaxCode
      *
-     * @return string
+     * @return string|null
      */
     public function getDefaultTaxCode()
     {
@@ -359,7 +347,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets defaultTaxCode
      *
-     * @param string $defaultTaxCode The default tax code. Maximum length: 32 characters.
+     * @param string|null $defaultTaxCode The default tax code. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -373,7 +361,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets defaultTaxBehavior
      *
-     * @return string
+     * @return string|null
      */
     public function getDefaultTaxBehavior()
     {
@@ -383,7 +371,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets defaultTaxBehavior
      *
-     * @param string $defaultTaxBehavior The default tax behavior. Maximum length: 16 characters.
+     * @param string|null $defaultTaxBehavior The default tax behavior. Maximum length: 16 characters.
      *
      * @return self
      */
@@ -397,7 +385,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets headOffice
      *
-     * @return \model\TaxHeadOffice
+     * @return \model\TaxHeadOffice|null
      */
     public function getHeadOffice()
     {
@@ -407,7 +395,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets headOffice
      *
-     * @param \model\TaxHeadOffice $headOffice headOffice
+     * @param \model\TaxHeadOffice|null $headOffice headOffice
      *
      * @return self
      */
@@ -421,7 +409,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets status
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -431,7 +419,7 @@ class AlipayTaxInitializeSettingsResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets status
      *
-     * @param string $status The tax settings status. Valid values are ACTIVE and PENDING. Do not treat an unknown value as ACTIVE. Maximum length: 16 characters.
+     * @param string|null $status The tax settings status. Valid values are ACTIVE and PENDING. Do not treat an unknown value as ACTIVE. Maximum length: 16 characters.
      *
      * @return self
      */

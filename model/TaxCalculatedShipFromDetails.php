@@ -264,6 +264,9 @@ class TaxCalculatedShipFromDetails  implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -282,7 +285,7 @@ class TaxCalculatedShipFromDetails  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets address
      *
-     * @return \model\TaxCalculatedAddress|null
+     * @return \model\TaxCalculatedAddress
      */
     public function getAddress()
     {
@@ -292,7 +295,7 @@ class TaxCalculatedShipFromDetails  implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets address
      *
-     * @param \model\TaxCalculatedAddress|null $address address
+     * @param \model\TaxCalculatedAddress $address address
      *
      * @return self
      */
