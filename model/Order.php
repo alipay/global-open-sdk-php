@@ -62,7 +62,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gaming' => '\request\model\Gaming',
         'needDeclaration' => 'bool',
         'declaration' => '\request\model\Declaration',
-        'orderType' => 'string'
+        'orderType' => 'string',
+        'taxCalculationId' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gaming' => null,
         'needDeclaration' => null,
         'declaration' => null,
-        'orderType' => null
+        'orderType' => null,
+        'taxCalculationId' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gaming' => false,
         'needDeclaration' => false,
         'declaration' => false,
-        'orderType' => false
+        'orderType' => false,
+        'taxCalculationId' => false
     ];
 
     /**
@@ -219,7 +222,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gaming' => 'gaming',
         'needDeclaration' => 'needDeclaration',
         'declaration' => 'declaration',
-        'orderType' => 'orderType'
+        'orderType' => 'orderType',
+        'taxCalculationId' => 'taxCalculationId'
     ];
 
     /**
@@ -244,7 +248,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gaming' => 'setGaming',
         'needDeclaration' => 'setNeedDeclaration',
         'declaration' => 'setDeclaration',
-        'orderType' => 'setOrderType'
+        'orderType' => 'setOrderType',
+        'taxCalculationId' => 'setTaxCalculationId'
     ];
 
     /**
@@ -269,7 +274,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gaming' => 'getGaming',
         'needDeclaration' => 'getNeedDeclaration',
         'declaration' => 'getDeclaration',
-        'orderType' => 'getOrderType'
+        'orderType' => 'getOrderType',
+        'taxCalculationId' => 'getTaxCalculationId'
     ];
 
     /**
@@ -346,6 +352,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('needDeclaration', $data ?? [], null);
         $this->setIfExists('declaration', $data ?? [], null);
         $this->setIfExists('orderType', $data ?? [], null);
+        $this->setIfExists('taxCalculationId', $data ?? [], null);
 
             }
 
@@ -804,6 +811,30 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOrderType($orderType)
     {
         $this->container['orderType'] = $orderType;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxCalculationId
+     *
+     * @return string|null
+     */
+    public function getTaxCalculationId()
+    {
+        return $this->container['taxCalculationId'];
+    }
+
+    /**
+     * Sets taxCalculationId
+     *
+     * @param string|null $taxCalculationId For the pay API, this is the tax calculation ID returned by the Tax calculate API. It associates the order with a valid, unexpired tax calculation; omit it for the existing non-tax flow. Because Order is a shared SDK model, omit this field in APIs that do not explicitly document support. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setTaxCalculationId($taxCalculationId)
+    {
+        $this->container['taxCalculationId'] = $taxCalculationId;
 
         return $this;
     }

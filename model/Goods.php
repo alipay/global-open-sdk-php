@@ -59,7 +59,9 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'priceId' => 'string',
         'goodsDiscountAmount' => '\request\model\Amount',
         'goodsEndsOnTime' => 'string',
-        'crossSell' => '\request\model\Goods'
+        'crossSell' => '\request\model\Goods',
+        'taxCode' => 'string',
+        'taxBehavior' => 'string'
     ];
 
     /**
@@ -83,7 +85,9 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'priceId' => null,
         'goodsDiscountAmount' => null,
         'goodsEndsOnTime' => null,
-        'crossSell' => null
+        'crossSell' => null,
+        'taxCode' => null,
+        'taxBehavior' => null
     ];
 
     /**
@@ -105,7 +109,9 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'priceId' => false,
         'goodsDiscountAmount' => false,
         'goodsEndsOnTime' => false,
-        'crossSell' => false
+        'crossSell' => false,
+        'taxCode' => false,
+        'taxBehavior' => false
     ];
 
     /**
@@ -207,7 +213,9 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'priceId' => 'priceId',
         'goodsDiscountAmount' => 'goodsDiscountAmount',
         'goodsEndsOnTime' => 'goodsEndsOnTime',
-        'crossSell' => 'crossSell'
+        'crossSell' => 'crossSell',
+        'taxCode' => 'taxCode',
+        'taxBehavior' => 'taxBehavior'
     ];
 
     /**
@@ -229,7 +237,9 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'priceId' => 'setPriceId',
         'goodsDiscountAmount' => 'setGoodsDiscountAmount',
         'goodsEndsOnTime' => 'setGoodsEndsOnTime',
-        'crossSell' => 'setCrossSell'
+        'crossSell' => 'setCrossSell',
+        'taxCode' => 'setTaxCode',
+        'taxBehavior' => 'setTaxBehavior'
     ];
 
     /**
@@ -251,7 +261,9 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         'priceId' => 'getPriceId',
         'goodsDiscountAmount' => 'getGoodsDiscountAmount',
         'goodsEndsOnTime' => 'getGoodsEndsOnTime',
-        'crossSell' => 'getCrossSell'
+        'crossSell' => 'getCrossSell',
+        'taxCode' => 'getTaxCode',
+        'taxBehavior' => 'getTaxBehavior'
     ];
 
     /**
@@ -325,6 +337,8 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('goodsDiscountAmount', $data ?? [], null);
         $this->setIfExists('goodsEndsOnTime', $data ?? [], null);
         $this->setIfExists('crossSell', $data ?? [], null);
+        $this->setIfExists('taxCode', $data ?? [], null);
+        $this->setIfExists('taxBehavior', $data ?? [], null);
 
             }
 
@@ -708,6 +722,54 @@ class Goods  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCrossSell($crossSell)
     {
         $this->container['crossSell'] = $crossSell;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxCode
+     *
+     * @return string|null
+     */
+    public function getTaxCode()
+    {
+        return $this->container['taxCode'];
+    }
+
+    /**
+     * Sets taxCode
+     *
+     * @param string|null $taxCode For createPaymentSession, this is the product tax code used by Antom GlobalTax to classify the goods line. When automatic tax is active, omit it to use the merchant default tax code. Because Goods is a shared SDK model, omit this field in APIs that do not explicitly document support. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setTaxCode($taxCode)
+    {
+        $this->container['taxCode'] = $taxCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxBehavior
+     *
+     * @return string|null
+     */
+    public function getTaxBehavior()
+    {
+        return $this->container['taxBehavior'];
+    }
+
+    /**
+     * Sets taxBehavior
+     *
+     * @param string|null $taxBehavior For createPaymentSession, this value indicates whether the goods-line price excludes or includes tax. Supported values are EXCLUSIVE and INCLUSIVE. When automatic tax is active, omit it to use the merchant tax behavior settings. Because Goods is a shared SDK model, omit this field in APIs that do not explicitly document support. Maximum length: 16 characters.
+     *
+     * @return self
+     */
+    public function setTaxBehavior($taxBehavior)
+    {
+        $this->container['taxBehavior'] = $taxBehavior;
 
         return $this;
     }
