@@ -26,6 +26,7 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 
     public $paymentResultInfo;
 
+    /** @var \Model\AcquirerInfo|null */
     public $acquirerInfo;
 
     public $promotionResult;
@@ -311,7 +312,7 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     }
 
     /**
-     * @return mixed
+     * @return \Model\AcquirerInfo|null
      */
     public function getAcquirerInfo()
     {
@@ -319,7 +320,7 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     }
 
     /**
-     * @param mixed $acquirerInfo
+     * @param \Model\AcquirerInfo|null $acquirerInfo
      */
     public function setAcquirerInfo($acquirerInfo)
     {
