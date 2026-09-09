@@ -278,6 +278,9 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['country'] === null) {
+            $invalidProperties[] = "'country' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -296,7 +299,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     /**
      * Gets country
      *
-     * @return string|null
+     * @return string
      */
     public function getCountry()
     {
@@ -306,7 +309,7 @@ class TaxCalculatedExemptionJurisdiction  implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string|null $country The country or region code. Maximum length: 2 characters.
+     * @param string $country The country or region code. Maximum length: 2 characters.
      *
      * @return self
      */

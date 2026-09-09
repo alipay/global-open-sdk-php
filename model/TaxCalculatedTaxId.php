@@ -278,6 +278,12 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
+        if ($this->container['country'] === null) {
+            $invalidProperties[] = "'country' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -296,7 +302,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets value
      *
-     * @return string|null
+     * @return string
      */
     public function getValue()
     {
@@ -306,7 +312,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets value
      *
-     * @param string|null $value The customer tax ID value. Maximum length: 64 characters.
+     * @param string $value The customer tax ID value. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -320,7 +326,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets country
      *
-     * @return string|null
+     * @return string
      */
     public function getCountry()
     {
@@ -330,7 +336,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets country
      *
-     * @param string|null $country The country or region code. Maximum length: 2 characters.
+     * @param string $country The country or region code. Maximum length: 2 characters.
      *
      * @return self
      */

@@ -57,7 +57,9 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deliveryEstimate' => '\request\model\DeliveryEstimate',
         'shippingNumber' => 'string',
         'notes' => 'string',
-        'trackingUrl' => 'string'
+        'trackingUrl' => 'string',
+        'taxCode' => 'string',
+        'taxBehavior' => 'string'
     ];
 
     /**
@@ -79,7 +81,9 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deliveryEstimate' => null,
         'shippingNumber' => null,
         'notes' => null,
-        'trackingUrl' => null
+        'trackingUrl' => null,
+        'taxCode' => null,
+        'taxBehavior' => null
     ];
 
     /**
@@ -99,7 +103,9 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deliveryEstimate' => false,
         'shippingNumber' => false,
         'notes' => false,
-        'trackingUrl' => false
+        'trackingUrl' => false,
+        'taxCode' => false,
+        'taxBehavior' => false
     ];
 
     /**
@@ -199,7 +205,9 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deliveryEstimate' => 'deliveryEstimate',
         'shippingNumber' => 'shippingNumber',
         'notes' => 'notes',
-        'trackingUrl' => 'trackingUrl'
+        'trackingUrl' => 'trackingUrl',
+        'taxCode' => 'taxCode',
+        'taxBehavior' => 'taxBehavior'
     ];
 
     /**
@@ -219,7 +227,9 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deliveryEstimate' => 'setDeliveryEstimate',
         'shippingNumber' => 'setShippingNumber',
         'notes' => 'setNotes',
-        'trackingUrl' => 'setTrackingUrl'
+        'trackingUrl' => 'setTrackingUrl',
+        'taxCode' => 'setTaxCode',
+        'taxBehavior' => 'setTaxBehavior'
     ];
 
     /**
@@ -239,7 +249,9 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deliveryEstimate' => 'getDeliveryEstimate',
         'shippingNumber' => 'getShippingNumber',
         'notes' => 'getNotes',
-        'trackingUrl' => 'getTrackingUrl'
+        'trackingUrl' => 'getTrackingUrl',
+        'taxCode' => 'getTaxCode',
+        'taxBehavior' => 'getTaxBehavior'
     ];
 
     /**
@@ -311,6 +323,8 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shippingNumber', $data ?? [], null);
         $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('trackingUrl', $data ?? [], null);
+        $this->setIfExists('taxCode', $data ?? [], null);
+        $this->setIfExists('taxBehavior', $data ?? [], null);
 
             }
 
@@ -640,6 +654,54 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTrackingUrl($trackingUrl)
     {
         $this->container['trackingUrl'] = $trackingUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxCode
+     *
+     * @return string|null
+     */
+    public function getTaxCode()
+    {
+        return $this->container['taxCode'];
+    }
+
+    /**
+     * Sets taxCode
+     *
+     * @param string|null $taxCode For createPaymentSession, this is the tax code used by Antom GlobalTax to classify shipping. When automatic tax is active, omit it to use the default shipping tax code. Because Shipping is a shared SDK model, omit this field in APIs that do not explicitly document support. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setTaxCode($taxCode)
+    {
+        $this->container['taxCode'] = $taxCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxBehavior
+     *
+     * @return string|null
+     */
+    public function getTaxBehavior()
+    {
+        return $this->container['taxBehavior'];
+    }
+
+    /**
+     * Sets taxBehavior
+     *
+     * @param string|null $taxBehavior For createPaymentSession, this value indicates whether the shipping fee excludes or includes tax. Supported values are EXCLUSIVE and INCLUSIVE. When automatic tax is active, omit it to use the merchant tax behavior settings. Because Shipping is a shared SDK model, omit this field in APIs that do not explicitly document support. Maximum length: 16 characters.
+     *
+     * @return self
+     */
+    public function setTaxBehavior($taxBehavior)
+    {
+        $this->container['taxBehavior'] = $taxBehavior;
 
         return $this;
     }

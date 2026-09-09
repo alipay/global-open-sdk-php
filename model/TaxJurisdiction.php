@@ -48,9 +48,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'country' => 'string',
         'region' => 'string',
-        'county' => 'string',
-        'city' => 'string',
-        'district' => 'string'
+        'city' => 'string'
     ];
 
     /**
@@ -63,9 +61,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'country' => null,
         'region' => null,
-        'county' => null,
-        'city' => null,
-        'district' => null
+        'city' => null
     ];
 
     /**
@@ -76,9 +72,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPINullables = [
         'country' => false,
         'region' => false,
-        'county' => false,
-        'city' => false,
-        'district' => false
+        'city' => false
     ];
 
     /**
@@ -169,9 +163,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'country' => 'country',
         'region' => 'region',
-        'county' => 'county',
-        'city' => 'city',
-        'district' => 'district'
+        'city' => 'city'
     ];
 
     /**
@@ -182,9 +174,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'country' => 'setCountry',
         'region' => 'setRegion',
-        'county' => 'setCounty',
-        'city' => 'setCity',
-        'district' => 'setDistrict'
+        'city' => 'setCity'
     ];
 
     /**
@@ -195,9 +185,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'country' => 'getCountry',
         'region' => 'getRegion',
-        'county' => 'getCounty',
-        'city' => 'getCity',
-        'district' => 'getDistrict'
+        'city' => 'getCity'
     ];
 
     /**
@@ -259,9 +247,7 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
-        $this->setIfExists('county', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
-        $this->setIfExists('district', $data ?? [], null);
 
             }
 
@@ -359,30 +345,6 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets county
-     *
-     * @return string|null
-     */
-    public function getCounty()
-    {
-        return $this->container['county'];
-    }
-
-    /**
-     * Sets county
-     *
-     * @param string|null $county The county. Maximum length: 64 characters.
-     *
-     * @return self
-     */
-    public function setCounty($county)
-    {
-        $this->container['county'] = $county;
-
-        return $this;
-    }
-
-    /**
      * Gets city
      *
      * @return string|null
@@ -402,30 +364,6 @@ class TaxJurisdiction  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCity($city)
     {
         $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets district
-     *
-     * @return string|null
-     */
-    public function getDistrict()
-    {
-        return $this->container['district'];
-    }
-
-    /**
-     * Sets district
-     *
-     * @param string|null $district The district. Maximum length: 64 characters.
-     *
-     * @return self
-     */
-    public function setDistrict($district)
-    {
-        $this->container['district'] = $district;
 
         return $this;
     }

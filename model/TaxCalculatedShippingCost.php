@@ -281,12 +281,6 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if ($this->container['taxAmount'] === null) {
-            $invalidProperties[] = "'taxAmount' can't be null";
-        }
-        if ($this->container['taxBreakdown'] === null) {
-            $invalidProperties[] = "'taxBreakdown' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -329,7 +323,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets taxAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getTaxAmount()
     {
@@ -339,7 +333,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets taxAmount
      *
-     * @param \model\Amount $taxAmount taxAmount
+     * @param \model\Amount|null $taxAmount taxAmount
      *
      * @return self
      */
@@ -353,7 +347,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets taxBreakdown
      *
-     * @return \model\TaxBreakdown[]
+     * @return \model\TaxBreakdown[]|null
      */
     public function getTaxBreakdown()
     {
@@ -363,7 +357,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets taxBreakdown
      *
-     * @param \model\TaxBreakdown[] $taxBreakdown The tax breakdown.
+     * @param \model\TaxBreakdown[]|null $taxBreakdown The tax breakdown.
      *
      * @return self
      */
