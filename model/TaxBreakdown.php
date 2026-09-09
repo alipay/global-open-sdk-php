@@ -47,7 +47,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'taxType' => 'string',
-        'authorityName' => 'string',
         'taxRate' => 'string',
         'taxAmount' => '\request\model\Amount',
         'taxableAmount' => '\request\model\Amount',
@@ -64,7 +63,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'taxType' => null,
-        'authorityName' => null,
         'taxRate' => null,
         'taxAmount' => null,
         'taxableAmount' => null,
@@ -79,7 +77,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'taxType' => false,
-        'authorityName' => false,
         'taxRate' => false,
         'taxAmount' => false,
         'taxableAmount' => false,
@@ -174,7 +171,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'taxType' => 'taxType',
-        'authorityName' => 'authorityName',
         'taxRate' => 'taxRate',
         'taxAmount' => 'taxAmount',
         'taxableAmount' => 'taxableAmount',
@@ -189,7 +185,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'taxType' => 'setTaxType',
-        'authorityName' => 'setAuthorityName',
         'taxRate' => 'setTaxRate',
         'taxAmount' => 'setTaxAmount',
         'taxableAmount' => 'setTaxableAmount',
@@ -204,7 +199,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'taxType' => 'getTaxType',
-        'authorityName' => 'getAuthorityName',
         'taxRate' => 'getTaxRate',
         'taxAmount' => 'getTaxAmount',
         'taxableAmount' => 'getTaxableAmount',
@@ -270,7 +264,6 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('taxType', $data ?? [], null);
-        $this->setIfExists('authorityName', $data ?? [], null);
         $this->setIfExists('taxRate', $data ?? [], null);
         $this->setIfExists('taxAmount', $data ?? [], null);
         $this->setIfExists('taxableAmount', $data ?? [], null);
@@ -352,37 +345,13 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxType
      *
-     * @param string $taxType The tax type. Supported values are SALES_TAX, VAT, GST, and OTHER.
+     * @param string $taxType The tax type. Supported values are CUIT, GST, VAT, CBS, IBS, HST, PST, RST, QST, JCT, SERVICE_TAX, IGV, SALES_TAX, and PERSONAL_PROPERTY_LEASE_TRANSACTION_TAX. This response field is extensible; accept unknown values without failing deserialization.
      *
      * @return self
      */
     public function setTaxType($taxType)
     {
         $this->container['taxType'] = $taxType;
-
-        return $this;
-    }
-
-    /**
-     * Gets authorityName
-     *
-     * @return string|null
-     */
-    public function getAuthorityName()
-    {
-        return $this->container['authorityName'];
-    }
-
-    /**
-     * Sets authorityName
-     *
-     * @param string|null $authorityName The tax authority name. Maximum length: 128 characters.
-     *
-     * @return self
-     */
-    public function setAuthorityName($authorityName)
-    {
-        $this->container['authorityName'] = $authorityName;
 
         return $this;
     }

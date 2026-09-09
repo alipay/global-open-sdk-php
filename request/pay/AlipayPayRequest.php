@@ -75,7 +75,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'string',
         'dualOfflinePayment' => 'bool',
         'subscriptionId' => 'string',
-        'taxCalculationId' => 'string',
         'locale' => 'string'
     ];
 
@@ -116,7 +115,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => null,
         'dualOfflinePayment' => null,
         'subscriptionId' => null,
-        'taxCalculationId' => null,
         'locale' => null
     ];
 
@@ -155,7 +153,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => false,
         'dualOfflinePayment' => false,
         'subscriptionId' => false,
-        'taxCalculationId' => false,
         'locale' => false
     ];
 
@@ -274,7 +271,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'merchantAccountId',
         'dualOfflinePayment' => 'dualOfflinePayment',
         'subscriptionId' => 'subscriptionId',
-        'taxCalculationId' => 'taxCalculationId',
         'locale' => 'locale'
     ];
 
@@ -313,7 +309,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'setMerchantAccountId',
         'dualOfflinePayment' => 'setDualOfflinePayment',
         'subscriptionId' => 'setSubscriptionId',
-        'taxCalculationId' => 'setTaxCalculationId',
         'locale' => 'setLocale'
     ];
 
@@ -352,7 +347,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'getMerchantAccountId',
         'dualOfflinePayment' => 'getDualOfflinePayment',
         'subscriptionId' => 'getSubscriptionId',
-        'taxCalculationId' => 'getTaxCalculationId',
         'locale' => 'getLocale'
     ];
 
@@ -442,7 +436,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
-        $this->setIfExists('taxCalculationId', $data ?? [], null);
         $this->setIfExists('locale', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/pay"); 
@@ -1206,30 +1199,6 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     public function setSubscriptionId($subscriptionId)
     {
         $this->container['subscriptionId'] = $subscriptionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets taxCalculationId
-     *
-     * @return string|null
-     */
-    public function getTaxCalculationId()
-    {
-        return $this->container['taxCalculationId'];
-    }
-
-    /**
-     * Sets taxCalculationId
-     *
-     * @param string|null $taxCalculationId The tax calculation ID. This ID is obtained from the calculate API and used for subsequent payment posting verification and tax records.
-     *
-     * @return self
-     */
-    public function setTaxCalculationId($taxCalculationId)
-    {
-        $this->container['taxCalculationId'] = $taxCalculationId;
 
         return $this;
     }

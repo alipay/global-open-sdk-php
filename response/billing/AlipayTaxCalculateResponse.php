@@ -56,7 +56,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'expireAt' => 'string',
         'taxDate' => 'string',
         'shippingCost' => '\request\model\TaxCalculatedShippingCost',
-        'customerDetails' => '\request\model\TaxCalculatedCustomerDetails'
+        'customerDetails' => '\request\model\TaxCalculatedCustomerDetails',
+        'shipFromDetails' => '\request\model\TaxCalculatedShipFromDetails'
     ];
 
     /**
@@ -77,7 +78,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'expireAt' => null,
         'taxDate' => null,
         'shippingCost' => null,
-        'customerDetails' => null
+        'customerDetails' => null,
+        'shipFromDetails' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'expireAt' => false,
         'taxDate' => false,
         'shippingCost' => false,
-        'customerDetails' => false
+        'customerDetails' => false,
+        'shipFromDetails' => false
     ];
 
     /**
@@ -195,7 +198,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'expireAt' => 'expireAt',
         'taxDate' => 'taxDate',
         'shippingCost' => 'shippingCost',
-        'customerDetails' => 'customerDetails'
+        'customerDetails' => 'customerDetails',
+        'shipFromDetails' => 'shipFromDetails'
     ];
 
     /**
@@ -214,7 +218,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'expireAt' => 'setExpireAt',
         'taxDate' => 'setTaxDate',
         'shippingCost' => 'setShippingCost',
-        'customerDetails' => 'setCustomerDetails'
+        'customerDetails' => 'setCustomerDetails',
+        'shipFromDetails' => 'setShipFromDetails'
     ];
 
     /**
@@ -233,7 +238,8 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'expireAt' => 'getExpireAt',
         'taxDate' => 'getTaxDate',
         'shippingCost' => 'getShippingCost',
-        'customerDetails' => 'getCustomerDetails'
+        'customerDetails' => 'getCustomerDetails',
+        'shipFromDetails' => 'getShipFromDetails'
     ];
 
     /**
@@ -304,6 +310,7 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('taxDate', $data ?? [], null);
         $this->setIfExists('shippingCost', $data ?? [], null);
         $this->setIfExists('customerDetails', $data ?? [], null);
+        $this->setIfExists('shipFromDetails', $data ?? [], null);
 
             }
 
@@ -612,6 +619,30 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
     public function setCustomerDetails($customerDetails)
     {
         $this->container['customerDetails'] = $customerDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipFromDetails
+     *
+     * @return \model\TaxCalculatedShipFromDetails|null
+     */
+    public function getShipFromDetails()
+    {
+        return $this->container['shipFromDetails'];
+    }
+
+    /**
+     * Sets shipFromDetails
+     *
+     * @param \model\TaxCalculatedShipFromDetails|null $shipFromDetails shipFromDetails
+     *
+     * @return self
+     */
+    public function setShipFromDetails($shipFromDetails)
+    {
+        $this->container['shipFromDetails'] = $shipFromDetails;
 
         return $this;
     }

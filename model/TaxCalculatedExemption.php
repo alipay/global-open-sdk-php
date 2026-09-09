@@ -285,6 +285,15 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
+        if ($this->container['certificateNumber'] === null) {
+            $invalidProperties[] = "'certificateNumber' can't be null";
+        }
+        if ($this->container['exemptionType'] === null) {
+            $invalidProperties[] = "'exemptionType' can't be null";
+        }
+        if ($this->container['jurisdiction'] === null) {
+            $invalidProperties[] = "'jurisdiction' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -303,7 +312,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets certificateNumber
      *
-     * @return string|null
+     * @return string
      */
     public function getCertificateNumber()
     {
@@ -313,7 +322,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets certificateNumber
      *
-     * @param string|null $certificateNumber The tax exemption certificate number. Maximum length: 64 characters.
+     * @param string $certificateNumber The tax exemption certificate number. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -327,7 +336,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets exemptionType
      *
-     * @return string|null
+     * @return string
      */
     public function getExemptionType()
     {
@@ -337,7 +346,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets exemptionType
      *
-     * @param string|null $exemptionType The tax exemption type. Maximum length: 32 characters.
+     * @param string $exemptionType The tax exemption type. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -351,7 +360,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets jurisdiction
      *
-     * @return \model\TaxCalculatedExemptionJurisdiction|null
+     * @return \model\TaxCalculatedExemptionJurisdiction
      */
     public function getJurisdiction()
     {
@@ -361,7 +370,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets jurisdiction
      *
-     * @param \model\TaxCalculatedExemptionJurisdiction|null $jurisdiction jurisdiction
+     * @param \model\TaxCalculatedExemptionJurisdiction $jurisdiction jurisdiction
      *
      * @return self
      */

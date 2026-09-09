@@ -51,7 +51,8 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
         'normalUrl' => 'string',
         'schemeUrl' => 'string',
-        'applinkUrl' => 'string'
+        'applinkUrl' => 'string',
+        'acquirerInfo' => '\request\model\AcquirerInfo'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'paymentMethodDetail' => null,
         'normalUrl' => null,
         'schemeUrl' => null,
-        'applinkUrl' => null
+        'applinkUrl' => null,
+        'acquirerInfo' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'paymentMethodDetail' => false,
         'normalUrl' => false,
         'schemeUrl' => false,
-        'applinkUrl' => false
+        'applinkUrl' => false,
+        'acquirerInfo' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'paymentMethodDetail' => 'paymentMethodDetail',
         'normalUrl' => 'normalUrl',
         'schemeUrl' => 'schemeUrl',
-        'applinkUrl' => 'applinkUrl'
+        'applinkUrl' => 'applinkUrl',
+        'acquirerInfo' => 'acquirerInfo'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'paymentMethodDetail' => 'setPaymentMethodDetail',
         'normalUrl' => 'setNormalUrl',
         'schemeUrl' => 'setSchemeUrl',
-        'applinkUrl' => 'setApplinkUrl'
+        'applinkUrl' => 'setApplinkUrl',
+        'acquirerInfo' => 'setAcquirerInfo'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'paymentMethodDetail' => 'getPaymentMethodDetail',
         'normalUrl' => 'getNormalUrl',
         'schemeUrl' => 'getSchemeUrl',
-        'applinkUrl' => 'getApplinkUrl'
+        'applinkUrl' => 'getApplinkUrl',
+        'acquirerInfo' => 'getAcquirerInfo'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('normalUrl', $data ?? [], null);
         $this->setIfExists('schemeUrl', $data ?? [], null);
         $this->setIfExists('applinkUrl', $data ?? [], null);
+        $this->setIfExists('acquirerInfo', $data ?? [], null);
 
             }
 
@@ -460,6 +467,30 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     public function setApplinkUrl($applinkUrl)
     {
         $this->container['applinkUrl'] = $applinkUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerInfo
+     *
+     * @return \model\AcquirerInfo|null
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->container['acquirerInfo'];
+    }
+
+    /**
+     * Sets acquirerInfo
+     *
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     *
+     * @return self
+     */
+    public function setAcquirerInfo($acquirerInfo)
+    {
+        $this->container['acquirerInfo'] = $acquirerInfo;
 
         return $this;
     }
