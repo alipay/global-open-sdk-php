@@ -46,8 +46,8 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'string',
-        'taxAmount' => 'string',
+        'amount' => '\request\model\Amount',
+        'taxAmount' => '\request\model\Amount',
         'taxBreakdown' => '\request\model\TaxBreakdown[]'
     ];
 
@@ -281,12 +281,6 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if ($this->container['taxAmount'] === null) {
-            $invalidProperties[] = "'taxAmount' can't be null";
-        }
-        if ($this->container['taxBreakdown'] === null) {
-            $invalidProperties[] = "'taxBreakdown' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -305,7 +299,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets amount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getAmount()
     {
@@ -315,7 +309,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets amount
      *
-     * @param string $amount The amount. Maximum length: 19 characters.
+     * @param \model\Amount $amount amount
      *
      * @return self
      */
@@ -329,7 +323,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets taxAmount
      *
-     * @return string
+     * @return \model\Amount|null
      */
     public function getTaxAmount()
     {
@@ -339,7 +333,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets taxAmount
      *
-     * @param string $taxAmount The tax amount. Maximum length: 19 characters.
+     * @param \model\Amount|null $taxAmount taxAmount
      *
      * @return self
      */
@@ -353,7 +347,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets taxBreakdown
      *
-     * @return \model\TaxBreakdown[]
+     * @return \model\TaxBreakdown[]|null
      */
     public function getTaxBreakdown()
     {
@@ -363,7 +357,7 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets taxBreakdown
      *
-     * @param \model\TaxBreakdown[] $taxBreakdown The tax breakdown.
+     * @param \model\TaxBreakdown[]|null $taxBreakdown The tax breakdown.
      *
      * @return self
      */

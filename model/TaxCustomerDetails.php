@@ -46,11 +46,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
         'businessDetails' => '\request\model\TaxBusinessDetails',
+        'name' => 'string',
         'shippingAddress' => '\request\model\TaxAddress',
         'billingAddress' => '\request\model\TaxAddress',
-        'taxIds' => '\request\model\TaxId[]'
+        'taxIds' => '\request\model\TaxId[]',
+        'taxExemptions' => '\request\model\TaxExemption[]'
     ];
 
     /**
@@ -61,11 +62,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
         'businessDetails' => null,
+        'name' => null,
         'shippingAddress' => null,
         'billingAddress' => null,
-        'taxIds' => null
+        'taxIds' => null,
+        'taxExemptions' => null
     ];
 
     /**
@@ -74,11 +76,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'name' => false,
         'businessDetails' => false,
+        'name' => false,
         'shippingAddress' => false,
         'billingAddress' => false,
-        'taxIds' => false
+        'taxIds' => false,
+        'taxExemptions' => false
     ];
 
     /**
@@ -167,11 +170,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'businessDetails' => 'businessDetails',
+        'name' => 'name',
         'shippingAddress' => 'shippingAddress',
         'billingAddress' => 'billingAddress',
-        'taxIds' => 'taxIds'
+        'taxIds' => 'taxIds',
+        'taxExemptions' => 'taxExemptions'
     ];
 
     /**
@@ -180,11 +184,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'businessDetails' => 'setBusinessDetails',
+        'name' => 'setName',
         'shippingAddress' => 'setShippingAddress',
         'billingAddress' => 'setBillingAddress',
-        'taxIds' => 'setTaxIds'
+        'taxIds' => 'setTaxIds',
+        'taxExemptions' => 'setTaxExemptions'
     ];
 
     /**
@@ -193,11 +198,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'businessDetails' => 'getBusinessDetails',
+        'name' => 'getName',
         'shippingAddress' => 'getShippingAddress',
         'billingAddress' => 'getBillingAddress',
-        'taxIds' => 'getTaxIds'
+        'taxIds' => 'getTaxIds',
+        'taxExemptions' => 'getTaxExemptions'
     ];
 
     /**
@@ -257,11 +263,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('businessDetails', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('shippingAddress', $data ?? [], null);
         $this->setIfExists('billingAddress', $data ?? [], null);
         $this->setIfExists('taxIds', $data ?? [], null);
+        $this->setIfExists('taxExemptions', $data ?? [], null);
 
             }
 
@@ -308,30 +315,6 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name The name. Maximum length: 128 characters. Note: See documentation for details.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets businessDetails
      *
      * @return \model\TaxBusinessDetails|null
@@ -351,6 +334,30 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setBusinessDetails($businessDetails)
     {
         $this->container['businessDetails'] = $businessDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name The customer name recorded for tax purposes. Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -416,13 +423,37 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets taxIds
      *
-     * @param \model\TaxId[]|null $taxIds The tax ID list. Note: See documentation for details.
+     * @param \model\TaxId[]|null $taxIds The customer tax ID list. Maximum size: 10.
      *
      * @return self
      */
     public function setTaxIds($taxIds)
     {
         $this->container['taxIds'] = $taxIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxExemptions
+     *
+     * @return \model\TaxExemption[]|null
+     */
+    public function getTaxExemptions()
+    {
+        return $this->container['taxExemptions'];
+    }
+
+    /**
+     * Sets taxExemptions
+     *
+     * @param \model\TaxExemption[]|null $taxExemptions The customer tax exemption list. Maximum size: 10.
+     *
+     * @return self
+     */
+    public function setTaxExemptions($taxExemptions)
+    {
+        $this->container['taxExemptions'] = $taxExemptions;
 
         return $this;
     }

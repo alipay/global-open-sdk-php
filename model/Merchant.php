@@ -53,7 +53,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantAddress' => '\request\model\Address',
         'merchantRegisterDate' => 'string',
         'store' => '\request\model\Store',
-        'merchantType' => '\request\model\MerchantType'
+        'merchantType' => '\request\model\MerchantType',
+        'numberOfTrades' => 'int',
+        'accountLastModified' => '\request\model\AccountLastModified'
     ];
 
     /**
@@ -71,7 +73,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantAddress' => null,
         'merchantRegisterDate' => null,
         'store' => null,
-        'merchantType' => null
+        'merchantType' => null,
+        'numberOfTrades' => null,
+        'accountLastModified' => null
     ];
 
     /**
@@ -87,7 +91,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantAddress' => false,
         'merchantRegisterDate' => false,
         'store' => false,
-        'merchantType' => false
+        'merchantType' => false,
+        'numberOfTrades' => true,
+        'accountLastModified' => false
     ];
 
     /**
@@ -183,7 +189,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantAddress' => 'merchantAddress',
         'merchantRegisterDate' => 'merchantRegisterDate',
         'store' => 'store',
-        'merchantType' => 'merchantType'
+        'merchantType' => 'merchantType',
+        'numberOfTrades' => 'numberOfTrades',
+        'accountLastModified' => 'accountLastModified'
     ];
 
     /**
@@ -199,7 +207,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantAddress' => 'setMerchantAddress',
         'merchantRegisterDate' => 'setMerchantRegisterDate',
         'store' => 'setStore',
-        'merchantType' => 'setMerchantType'
+        'merchantType' => 'setMerchantType',
+        'numberOfTrades' => 'setNumberOfTrades',
+        'accountLastModified' => 'setAccountLastModified'
     ];
 
     /**
@@ -215,7 +225,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantAddress' => 'getMerchantAddress',
         'merchantRegisterDate' => 'getMerchantRegisterDate',
         'store' => 'getStore',
-        'merchantType' => 'getMerchantType'
+        'merchantType' => 'getMerchantType',
+        'numberOfTrades' => 'getNumberOfTrades',
+        'accountLastModified' => 'getAccountLastModified'
     ];
 
     /**
@@ -283,6 +295,8 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('merchantRegisterDate', $data ?? [], null);
         $this->setIfExists('store', $data ?? [], null);
         $this->setIfExists('merchantType', $data ?? [], null);
+        $this->setIfExists('numberOfTrades', $data ?? [], null);
+        $this->setIfExists('accountLastModified', $data ?? [], null);
 
             }
 
@@ -540,6 +554,54 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMerchantType($merchantType)
     {
         $this->container['merchantType'] = $merchantType;
+
+        return $this;
+    }
+
+    /**
+     * Gets numberOfTrades
+     *
+     * @return int|null
+     */
+    public function getNumberOfTrades()
+    {
+        return $this->container['numberOfTrades'];
+    }
+
+    /**
+     * Sets numberOfTrades
+     *
+     * @param int|null $numberOfTrades The number of orders completed by the merchant in the past 12 months. When using KLARNA for an e-commerce merchant, this field is required. Value range: 0 to unlimited.
+     *
+     * @return self
+     */
+    public function setNumberOfTrades($numberOfTrades)
+    {
+        $this->container['numberOfTrades'] = $numberOfTrades;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountLastModified
+     *
+     * @return \model\AccountLastModified|null
+     */
+    public function getAccountLastModified()
+    {
+        return $this->container['accountLastModified'];
+    }
+
+    /**
+     * Sets accountLastModified
+     *
+     * @param \model\AccountLastModified|null $accountLastModified accountLastModified
+     *
+     * @return self
+     */
+    public function setAccountLastModified($accountLastModified)
+    {
+        $this->container['accountLastModified'] = $accountLastModified;
 
         return $this;
     }

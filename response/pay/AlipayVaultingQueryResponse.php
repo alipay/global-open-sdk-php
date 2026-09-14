@@ -55,7 +55,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
         'metadata' => 'string',
         'vaultingResultCode' => 'string',
-        'vaultingResultMessage' => 'string'
+        'vaultingResultMessage' => 'string',
+        'acquirerInfo' => '\request\model\AcquirerInfo'
     ];
 
     /**
@@ -75,7 +76,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'paymentMethodDetail' => null,
         'metadata' => null,
         'vaultingResultCode' => null,
-        'vaultingResultMessage' => null
+        'vaultingResultMessage' => null,
+        'acquirerInfo' => null
     ];
 
     /**
@@ -93,7 +95,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'paymentMethodDetail' => false,
         'metadata' => false,
         'vaultingResultCode' => false,
-        'vaultingResultMessage' => false
+        'vaultingResultMessage' => false,
+        'acquirerInfo' => false
     ];
 
     /**
@@ -191,7 +194,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'paymentMethodDetail' => 'paymentMethodDetail',
         'metadata' => 'metadata',
         'vaultingResultCode' => 'vaultingResultCode',
-        'vaultingResultMessage' => 'vaultingResultMessage'
+        'vaultingResultMessage' => 'vaultingResultMessage',
+        'acquirerInfo' => 'acquirerInfo'
     ];
 
     /**
@@ -209,7 +213,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'paymentMethodDetail' => 'setPaymentMethodDetail',
         'metadata' => 'setMetadata',
         'vaultingResultCode' => 'setVaultingResultCode',
-        'vaultingResultMessage' => 'setVaultingResultMessage'
+        'vaultingResultMessage' => 'setVaultingResultMessage',
+        'acquirerInfo' => 'setAcquirerInfo'
     ];
 
     /**
@@ -227,7 +232,8 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         'paymentMethodDetail' => 'getPaymentMethodDetail',
         'metadata' => 'getMetadata',
         'vaultingResultCode' => 'getVaultingResultCode',
-        'vaultingResultMessage' => 'getVaultingResultMessage'
+        'vaultingResultMessage' => 'getVaultingResultMessage',
+        'acquirerInfo' => 'getAcquirerInfo'
     ];
 
     /**
@@ -297,6 +303,7 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('vaultingResultCode', $data ?? [], null);
         $this->setIfExists('vaultingResultMessage', $data ?? [], null);
+        $this->setIfExists('acquirerInfo', $data ?? [], null);
 
             }
 
@@ -584,6 +591,30 @@ class AlipayVaultingQueryResponse  implements ModelInterface, ArrayAccess, \Json
     public function setVaultingResultMessage($vaultingResultMessage)
     {
         $this->container['vaultingResultMessage'] = $vaultingResultMessage;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerInfo
+     *
+     * @return \model\AcquirerInfo|null
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->container['acquirerInfo'];
+    }
+
+    /**
+     * Sets acquirerInfo
+     *
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     *
+     * @return self
+     */
+    public function setAcquirerInfo($acquirerInfo)
+    {
+        $this->container['acquirerInfo'] = $acquirerInfo;
 
         return $this;
     }

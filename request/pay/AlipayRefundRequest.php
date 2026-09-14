@@ -60,7 +60,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'extendInfo' => 'string',
         'refundDetails' => '\request\model\RefundDetail[]',
         'refundSourceAccountNo' => 'string',
-        'actualRefundAmount' => '\request\model\Amount'
+        'actualRefundAmount' => '\request\model\Amount',
+        'goods' => '\request\model\Goods[]'
     ];
 
     /**
@@ -85,7 +86,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'extendInfo' => null,
         'refundDetails' => null,
         'refundSourceAccountNo' => null,
-        'actualRefundAmount' => null
+        'actualRefundAmount' => null,
+        'goods' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'extendInfo' => false,
         'refundDetails' => false,
         'refundSourceAccountNo' => false,
-        'actualRefundAmount' => false
+        'actualRefundAmount' => false,
+        'goods' => false
     ];
 
     /**
@@ -211,7 +214,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'extendInfo' => 'extendInfo',
         'refundDetails' => 'refundDetails',
         'refundSourceAccountNo' => 'refundSourceAccountNo',
-        'actualRefundAmount' => 'actualRefundAmount'
+        'actualRefundAmount' => 'actualRefundAmount',
+        'goods' => 'goods'
     ];
 
     /**
@@ -234,7 +238,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'extendInfo' => 'setExtendInfo',
         'refundDetails' => 'setRefundDetails',
         'refundSourceAccountNo' => 'setRefundSourceAccountNo',
-        'actualRefundAmount' => 'setActualRefundAmount'
+        'actualRefundAmount' => 'setActualRefundAmount',
+        'goods' => 'setGoods'
     ];
 
     /**
@@ -257,7 +262,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'extendInfo' => 'getExtendInfo',
         'refundDetails' => 'getRefundDetails',
         'refundSourceAccountNo' => 'getRefundSourceAccountNo',
-        'actualRefundAmount' => 'getActualRefundAmount'
+        'actualRefundAmount' => 'getActualRefundAmount',
+        'goods' => 'getGoods'
     ];
 
     /**
@@ -332,6 +338,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         $this->setIfExists('refundDetails', $data ?? [], null);
         $this->setIfExists('refundSourceAccountNo', $data ?? [], null);
         $this->setIfExists('actualRefundAmount', $data ?? [], null);
+        $this->setIfExists('goods', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/refund"); 
     }
@@ -743,6 +750,30 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     public function setActualRefundAmount($actualRefundAmount)
     {
         $this->container['actualRefundAmount'] = $actualRefundAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets goods
+     *
+     * @return \model\Goods[]|null
+     */
+    public function getGoods()
+    {
+        return $this->container['goods'];
+    }
+
+    /**
+     * Sets goods
+     *
+     * @param \model\Goods[]|null $goods The goods included in this refund. When using KLARNA, this field is required for a partial refund.
+     *
+     * @return self
+     */
+    public function setGoods($goods)
+    {
+        $this->container['goods'] = $goods;
 
         return $this;
     }

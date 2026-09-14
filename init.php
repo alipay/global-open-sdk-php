@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/model/ModelInterface.php';
+
 //request
 require __DIR__ . '/request/AlipayRequest.php';
 
@@ -96,6 +98,7 @@ require __DIR__ . '/request/aba/AlipayInquiryStatementListRequest.php';
 
 
 //model
+require __DIR__ . '/model/AccountLastModified.php';
 require __DIR__ . '/model/Address.php';
 require __DIR__ . '/model/Amount.php';
 require __DIR__ . '/model/AmountLimit.php';
@@ -218,6 +221,7 @@ require __DIR__ . '/model/DisputeEvidenceFormatType.php';
 require __DIR__ . '/model/Discount.php';
 require __DIR__ . '/model/DisputeJudgedResult.php';
 require __DIR__ . '/model/DisputeType.php';
+require __DIR__ . '/model/IssuerComments.php';
 require __DIR__ . '/model/PaymentMethodType.php';
 require __DIR__ . '/model/SubscriptionInfo.php';
 require __DIR__ . '/model/Declaration.php';

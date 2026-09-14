@@ -51,6 +51,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'prorationBehavior' => 'string',
         'resetBillingCycleAnchor' => 'bool',
         'trialSettings' => '\request\model\BillingTrialSettings',
+        'statusChange' => '\request\model\BillingSubscriptionStatusChange',
         'cancelAtPeriodEnd' => 'bool',
         'cancelAt' => 'string',
         'cancellationDetails' => '\request\model\BillingSubscriptionCancellationDetails',
@@ -73,6 +74,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'prorationBehavior' => null,
         'resetBillingCycleAnchor' => null,
         'trialSettings' => null,
+        'statusChange' => null,
         'cancelAtPeriodEnd' => null,
         'cancelAt' => null,
         'cancellationDetails' => null,
@@ -93,6 +95,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'prorationBehavior' => false,
         'resetBillingCycleAnchor' => false,
         'trialSettings' => false,
+        'statusChange' => false,
         'cancelAtPeriodEnd' => false,
         'cancelAt' => false,
         'cancellationDetails' => false,
@@ -193,6 +196,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'prorationBehavior' => 'prorationBehavior',
         'resetBillingCycleAnchor' => 'resetBillingCycleAnchor',
         'trialSettings' => 'trialSettings',
+        'statusChange' => 'statusChange',
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
         'cancelAt' => 'cancelAt',
         'cancellationDetails' => 'cancellationDetails',
@@ -213,6 +217,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'prorationBehavior' => 'setProrationBehavior',
         'resetBillingCycleAnchor' => 'setResetBillingCycleAnchor',
         'trialSettings' => 'setTrialSettings',
+        'statusChange' => 'setStatusChange',
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
         'cancelAt' => 'setCancelAt',
         'cancellationDetails' => 'setCancellationDetails',
@@ -233,6 +238,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'prorationBehavior' => 'getProrationBehavior',
         'resetBillingCycleAnchor' => 'getResetBillingCycleAnchor',
         'trialSettings' => 'getTrialSettings',
+        'statusChange' => 'getStatusChange',
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
         'cancelAt' => 'getCancelAt',
         'cancellationDetails' => 'getCancellationDetails',
@@ -304,6 +310,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         $this->setIfExists('prorationBehavior', $data ?? [], null);
         $this->setIfExists('resetBillingCycleAnchor', $data ?? [], null);
         $this->setIfExists('trialSettings', $data ?? [], null);
+        $this->setIfExists('statusChange', $data ?? [], null);
         $this->setIfExists('cancelAtPeriodEnd', $data ?? [], null);
         $this->setIfExists('cancelAt', $data ?? [], null);
         $this->setIfExists('cancellationDetails', $data ?? [], null);
@@ -476,6 +483,30 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     public function setTrialSettings($trialSettings)
     {
         $this->container['trialSettings'] = $trialSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusChange
+     *
+     * @return \model\BillingSubscriptionStatusChange|null
+     */
+    public function getStatusChange()
+    {
+        return $this->container['statusChange'];
+    }
+
+    /**
+     * Sets statusChange
+     *
+     * @param \model\BillingSubscriptionStatusChange|null $statusChange statusChange
+     *
+     * @return self
+     */
+    public function setStatusChange($statusChange)
+    {
+        $this->container['statusChange'] = $statusChange;
 
         return $this;
     }

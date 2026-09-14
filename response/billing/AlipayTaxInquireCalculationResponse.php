@@ -48,10 +48,11 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'result' => '\request\model\Result',
         'taxCalculationId' => 'string',
-        'currency' => 'string',
-        'totalAmount' => 'string',
-        'exclusiveTaxAmount' => 'string',
-        'inclusiveTaxAmount' => 'string',
+        'customerDetails' => '\request\model\TaxCalculatedCustomerDetails',
+        'shipFromDetails' => '\request\model\TaxCalculatedShipFromDetails',
+        'totalAmount' => '\request\model\Amount',
+        'exclusiveTaxAmount' => '\request\model\Amount',
+        'inclusiveTaxAmount' => '\request\model\Amount',
         'lineItems' => '\request\model\TaxCalculatedLineItem[]',
         'taxBreakdown' => '\request\model\TaxBreakdown[]',
         'expireAt' => 'string',
@@ -69,7 +70,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'result' => null,
         'taxCalculationId' => null,
-        'currency' => null,
+        'customerDetails' => null,
+        'shipFromDetails' => null,
         'totalAmount' => null,
         'exclusiveTaxAmount' => null,
         'inclusiveTaxAmount' => null,
@@ -88,7 +90,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     protected static $openAPINullables = [
         'result' => false,
         'taxCalculationId' => false,
-        'currency' => false,
+        'customerDetails' => false,
+        'shipFromDetails' => false,
         'totalAmount' => false,
         'exclusiveTaxAmount' => false,
         'inclusiveTaxAmount' => false,
@@ -187,7 +190,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'result' => 'result',
         'taxCalculationId' => 'taxCalculationId',
-        'currency' => 'currency',
+        'customerDetails' => 'customerDetails',
+        'shipFromDetails' => 'shipFromDetails',
         'totalAmount' => 'totalAmount',
         'exclusiveTaxAmount' => 'exclusiveTaxAmount',
         'inclusiveTaxAmount' => 'inclusiveTaxAmount',
@@ -206,7 +210,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     protected static $setters = [
         'result' => 'setResult',
         'taxCalculationId' => 'setTaxCalculationId',
-        'currency' => 'setCurrency',
+        'customerDetails' => 'setCustomerDetails',
+        'shipFromDetails' => 'setShipFromDetails',
         'totalAmount' => 'setTotalAmount',
         'exclusiveTaxAmount' => 'setExclusiveTaxAmount',
         'inclusiveTaxAmount' => 'setInclusiveTaxAmount',
@@ -225,7 +230,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     protected static $getters = [
         'result' => 'getResult',
         'taxCalculationId' => 'getTaxCalculationId',
-        'currency' => 'getCurrency',
+        'customerDetails' => 'getCustomerDetails',
+        'shipFromDetails' => 'getShipFromDetails',
         'totalAmount' => 'getTotalAmount',
         'exclusiveTaxAmount' => 'getExclusiveTaxAmount',
         'inclusiveTaxAmount' => 'getInclusiveTaxAmount',
@@ -295,7 +301,8 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     {
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('taxCalculationId', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
+        $this->setIfExists('customerDetails', $data ?? [], null);
+        $this->setIfExists('shipFromDetails', $data ?? [], null);
         $this->setIfExists('totalAmount', $data ?? [], null);
         $this->setIfExists('exclusiveTaxAmount', $data ?? [], null);
         $this->setIfExists('inclusiveTaxAmount', $data ?? [], null);
@@ -336,27 +343,6 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
 
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
-        }
-        if ($this->container['taxCalculationId'] === null) {
-            $invalidProperties[] = "'taxCalculationId' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['totalAmount'] === null) {
-            $invalidProperties[] = "'totalAmount' can't be null";
-        }
-        if ($this->container['lineItems'] === null) {
-            $invalidProperties[] = "'lineItems' can't be null";
-        }
-        if ($this->container['taxBreakdown'] === null) {
-            $invalidProperties[] = "'taxBreakdown' can't be null";
-        }
-        if ($this->container['expireAt'] === null) {
-            $invalidProperties[] = "'expireAt' can't be null";
-        }
-        if ($this->container['taxDate'] === null) {
-            $invalidProperties[] = "'taxDate' can't be null";
         }
         return $invalidProperties;
     }
@@ -400,7 +386,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets taxCalculationId
      *
-     * @return string
+     * @return string|null
      */
     public function getTaxCalculationId()
     {
@@ -410,7 +396,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets taxCalculationId
      *
-     * @param string $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters.
+     * @param string|null $taxCalculationId The unique ID assigned by Antom to identify a tax calculation. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -422,25 +408,49 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets currency
+     * Gets customerDetails
      *
-     * @return string
+     * @return \model\TaxCalculatedCustomerDetails|null
      */
-    public function getCurrency()
+    public function getCustomerDetails()
     {
-        return $this->container['currency'];
+        return $this->container['customerDetails'];
     }
 
     /**
-     * Sets currency
+     * Sets customerDetails
      *
-     * @param string $currency The 3-letter currency code that follows the ISO 4217 standard. Maximum length: 3 characters.
+     * @param \model\TaxCalculatedCustomerDetails|null $customerDetails customerDetails
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setCustomerDetails($customerDetails)
     {
-        $this->container['currency'] = $currency;
+        $this->container['customerDetails'] = $customerDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipFromDetails
+     *
+     * @return \model\TaxCalculatedShipFromDetails|null
+     */
+    public function getShipFromDetails()
+    {
+        return $this->container['shipFromDetails'];
+    }
+
+    /**
+     * Sets shipFromDetails
+     *
+     * @param \model\TaxCalculatedShipFromDetails|null $shipFromDetails shipFromDetails
+     *
+     * @return self
+     */
+    public function setShipFromDetails($shipFromDetails)
+    {
+        $this->container['shipFromDetails'] = $shipFromDetails;
 
         return $this;
     }
@@ -448,7 +458,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets totalAmount
      *
-     * @return string
+     * @return \model\Amount|null
      */
     public function getTotalAmount()
     {
@@ -458,7 +468,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets totalAmount
      *
-     * @param string $totalAmount The total amount. Maximum length: 19 characters.
+     * @param \model\Amount|null $totalAmount totalAmount
      *
      * @return self
      */
@@ -472,7 +482,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets exclusiveTaxAmount
      *
-     * @return string|null
+     * @return \model\Amount|null
      */
     public function getExclusiveTaxAmount()
     {
@@ -482,7 +492,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets exclusiveTaxAmount
      *
-     * @param string|null $exclusiveTaxAmount The exclusive tax amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param \model\Amount|null $exclusiveTaxAmount exclusiveTaxAmount
      *
      * @return self
      */
@@ -496,7 +506,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets inclusiveTaxAmount
      *
-     * @return string|null
+     * @return \model\Amount|null
      */
     public function getInclusiveTaxAmount()
     {
@@ -506,7 +516,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets inclusiveTaxAmount
      *
-     * @param string|null $inclusiveTaxAmount The inclusive tax amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param \model\Amount|null $inclusiveTaxAmount inclusiveTaxAmount
      *
      * @return self
      */
@@ -520,7 +530,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets lineItems
      *
-     * @return \model\TaxCalculatedLineItem[]
+     * @return \model\TaxCalculatedLineItem[]|null
      */
     public function getLineItems()
     {
@@ -530,7 +540,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets lineItems
      *
-     * @param \model\TaxCalculatedLineItem[] $lineItems The line item list.
+     * @param \model\TaxCalculatedLineItem[]|null $lineItems The line item list.
      *
      * @return self
      */
@@ -544,7 +554,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets taxBreakdown
      *
-     * @return \model\TaxBreakdown[]
+     * @return \model\TaxBreakdown[]|null
      */
     public function getTaxBreakdown()
     {
@@ -554,7 +564,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets taxBreakdown
      *
-     * @param \model\TaxBreakdown[] $taxBreakdown The tax breakdown.
+     * @param \model\TaxBreakdown[]|null $taxBreakdown The tax breakdown.
      *
      * @return self
      */
@@ -568,7 +578,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets expireAt
      *
-     * @return string
+     * @return string|null
      */
     public function getExpireAt()
     {
@@ -578,7 +588,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets expireAt
      *
-     * @param string $expireAt The expiration time. Maximum length: 32 characters.
+     * @param string|null $expireAt The expiration time. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -592,7 +602,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Gets taxDate
      *
-     * @return string
+     * @return string|null
      */
     public function getTaxDate()
     {
@@ -602,7 +612,7 @@ class AlipayTaxInquireCalculationResponse  implements ModelInterface, ArrayAcces
     /**
      * Sets taxDate
      *
-     * @param string $taxDate The tax date. Maximum length: 32 characters.
+     * @param string|null $taxDate The tax date. Maximum length: 32 characters.
      *
      * @return self
      */

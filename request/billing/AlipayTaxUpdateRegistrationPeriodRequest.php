@@ -368,7 +368,7 @@ class AlipayTaxUpdateRegistrationPeriodRequest   extends AlipayRequest  implemen
     /**
      * Sets activeFrom
      *
-     * @param string|null $activeFrom The time from which the tax registration is active. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $activeFrom The new activation time for a SCHEDULED registration. The value must be later than the current time. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class AlipayTaxUpdateRegistrationPeriodRequest   extends AlipayRequest  implemen
     /**
      * Sets expireAt
      *
-     * @param string|null $expireAt The expiration time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $expireAt The new expiration time for an ACTIVE or SCHEDULED registration. The value must be later than the current time and, for a scheduled registration, later than the effective activeFrom. Maximum length: 32 characters.
      *
      * @return self
      */

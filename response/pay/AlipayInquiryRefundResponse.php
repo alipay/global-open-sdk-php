@@ -59,7 +59,8 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'grossSettlementAmount' => '\request\model\Amount',
         'settlementQuote' => '\request\model\Quote',
         'acquirerInfo' => '\request\model\AcquirerInfo',
-        'rrn' => 'string'
+        'rrn' => 'string',
+        'authorizationCode' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'grossSettlementAmount' => null,
         'settlementQuote' => null,
         'acquirerInfo' => null,
-        'rrn' => null
+        'rrn' => null,
+        'authorizationCode' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'grossSettlementAmount' => false,
         'settlementQuote' => false,
         'acquirerInfo' => false,
-        'rrn' => false
+        'rrn' => false,
+        'authorizationCode' => false
     ];
 
     /**
@@ -207,7 +210,8 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'grossSettlementAmount' => 'grossSettlementAmount',
         'settlementQuote' => 'settlementQuote',
         'acquirerInfo' => 'acquirerInfo',
-        'rrn' => 'rrn'
+        'rrn' => 'rrn',
+        'authorizationCode' => 'authorizationCode'
     ];
 
     /**
@@ -229,7 +233,8 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'grossSettlementAmount' => 'setGrossSettlementAmount',
         'settlementQuote' => 'setSettlementQuote',
         'acquirerInfo' => 'setAcquirerInfo',
-        'rrn' => 'setRrn'
+        'rrn' => 'setRrn',
+        'authorizationCode' => 'setAuthorizationCode'
     ];
 
     /**
@@ -251,7 +256,8 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'grossSettlementAmount' => 'getGrossSettlementAmount',
         'settlementQuote' => 'getSettlementQuote',
         'acquirerInfo' => 'getAcquirerInfo',
-        'rrn' => 'getRrn'
+        'rrn' => 'getRrn',
+        'authorizationCode' => 'getAuthorizationCode'
     ];
 
     /**
@@ -325,6 +331,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('settlementQuote', $data ?? [], null);
         $this->setIfExists('acquirerInfo', $data ?? [], null);
         $this->setIfExists('rrn', $data ?? [], null);
+        $this->setIfExists('authorizationCode', $data ?? [], null);
 
             }
 
@@ -705,6 +712,30 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     public function setRrn($rrn)
     {
         $this->container['rrn'] = $rrn;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationCode
+     *
+     * @return string|null
+     */
+    public function getAuthorizationCode()
+    {
+        return $this->container['authorizationCode'];
+    }
+
+    /**
+     * Sets authorizationCode
+     *
+     * @param string|null $authorizationCode The authorization code returned by the payment channel for a successful refund. This field is returned only when refundStatus is SUCCESS, the payment method or channel supplies a non-empty value, and the merchant is enabled for this capability. Otherwise, the property is omitted and is never returned as JSON null. The exact channel-provided string is returned without trimming, padding, case conversion, substitution, or truncation. Its absence does not change the refund result or produce a field-specific error.
+     *
+     * @return self
+     */
+    public function setAuthorizationCode($authorizationCode)
+    {
+        $this->container['authorizationCode'] = $authorizationCode;
 
         return $this;
     }

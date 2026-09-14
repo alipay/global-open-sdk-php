@@ -55,7 +55,9 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'challengeCancel' => 'string',
         'challenged' => 'bool',
         'exemptionType' => 'string',
-        'threeDSOffered' => 'bool'
+        'threeDSOffered' => 'bool',
+        'paResStatus' => 'string',
+        'liabilityShift' => 'int'
     ];
 
     /**
@@ -75,7 +77,9 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'challengeCancel' => null,
         'challenged' => null,
         'exemptionType' => null,
-        'threeDSOffered' => null
+        'threeDSOffered' => null,
+        'paResStatus' => null,
+        'liabilityShift' => null
     ];
 
     /**
@@ -93,7 +97,9 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'challengeCancel' => false,
         'challenged' => false,
         'exemptionType' => false,
-        'threeDSOffered' => false
+        'threeDSOffered' => false,
+        'paResStatus' => false,
+        'liabilityShift' => true
     ];
 
     /**
@@ -191,7 +197,9 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'challengeCancel' => 'challengeCancel',
         'challenged' => 'challenged',
         'exemptionType' => 'exemptionType',
-        'threeDSOffered' => 'threeDSOffered'
+        'threeDSOffered' => 'threeDSOffered',
+        'paResStatus' => 'paResStatus',
+        'liabilityShift' => 'liabilityShift'
     ];
 
     /**
@@ -209,7 +217,9 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'challengeCancel' => 'setChallengeCancel',
         'challenged' => 'setChallenged',
         'exemptionType' => 'setExemptionType',
-        'threeDSOffered' => 'setThreeDSOffered'
+        'threeDSOffered' => 'setThreeDSOffered',
+        'paResStatus' => 'setPaResStatus',
+        'liabilityShift' => 'setLiabilityShift'
     ];
 
     /**
@@ -227,7 +237,9 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'challengeCancel' => 'getChallengeCancel',
         'challenged' => 'getChallenged',
         'exemptionType' => 'getExemptionType',
-        'threeDSOffered' => 'getThreeDSOffered'
+        'threeDSOffered' => 'getThreeDSOffered',
+        'paResStatus' => 'getPaResStatus',
+        'liabilityShift' => 'getLiabilityShift'
     ];
 
     /**
@@ -297,6 +309,8 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('challenged', $data ?? [], null);
         $this->setIfExists('exemptionType', $data ?? [], null);
         $this->setIfExists('threeDSOffered', $data ?? [], null);
+        $this->setIfExists('paResStatus', $data ?? [], null);
+        $this->setIfExists('liabilityShift', $data ?? [], null);
 
             }
 
@@ -587,6 +601,54 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setThreeDSOffered($threeDSOffered)
     {
         $this->container['threeDSOffered'] = $threeDSOffered;
+
+        return $this;
+    }
+
+    /**
+     * Gets paResStatus
+     *
+     * @return string|null
+     */
+    public function getPaResStatus()
+    {
+        return $this->container['paResStatus'];
+    }
+
+    /**
+     * Sets paResStatus
+     *
+     * @param string|null $paResStatus Payer Authentication Response Status returned by the issuer or authentication system during 3D Secure authentication. Valid values are: Y (successful authentication), N (failed authentication or transaction denied), U (unable to complete authentication), A (successful attempts transaction), C (challenge required), R (authentication rejected; authorization must not be attempted), D (decoupled authentication challenge confirmed), and I (informational only). D and I are intermediate authentication states and require no merchant action; use paymentStatus and resultCode as the authoritative payment outcome. This field is returned only when paymentMethodType is CARD, threeDSOffered is true, and threeDSResult is returned. If these conditions are met but the channel does not provide a value, the JSON value can be null; otherwise the property is omitted.
+     *
+     * @return self
+     */
+    public function setPaResStatus($paResStatus)
+    {
+        $this->container['paResStatus'] = $paResStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets liabilityShift
+     *
+     * @return int|null
+     */
+    public function getLiabilityShift()
+    {
+        return $this->container['liabilityShift'];
+    }
+
+    /**
+     * Sets liabilityShift
+     *
+     * @param int|null $liabilityShift Indicates whether liability has shifted for the transaction. Valid values are: 1 (yes), 0 (no), and -1 (unknown). The upstream channel value is passed through when available; otherwise Antom calculates the value from CAVV and ECI according to card-network rules, and returns -1 only when the value cannot be determined. Treat -1 as liability not shifted for chargeback decisions. This field does not determine the payment outcome and is returned only when paymentMethodType is CARD, threeDSOffered is true, and threeDSResult is returned; otherwise the property is omitted.
+     *
+     * @return self
+     */
+    public function setLiabilityShift($liabilityShift)
+    {
+        $this->container['liabilityShift'] = $liabilityShift;
 
         return $this;
     }

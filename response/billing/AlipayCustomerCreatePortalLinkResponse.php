@@ -347,7 +347,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets token
      *
-     * @param string|null $token Opaque URL-safe bearer token. Treat it as a credential: do not log, parse, or store its internal structure - the format may change without notice. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $token Opaque URL-safe bearer token. Treat it as a credential: do not log, parse, or store its internal structure because the format may change without notice. Maximum length: 4096 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -371,7 +371,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets portalUrl
      *
-     * @param string|null $portalUrl Fully-qualified portal URL. Null when the portal base URL is not configured for the merchant - in that case build the URL from `token`. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $portalUrl Fully-qualified portal URL. Null when the portal base URL is not configured for the merchant; in that case, build the URL from `token`. Maximum length: 2048 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets expiresAt
      *
-     * @param string|null $expiresAt Token expiration timestamp. Format: `yyyy-MM-dd HH:mm:ss` (NOT ISO 8601). Returned only when result.resultCode is SUCCESS.
+     * @param string|null $expiresAt Expiration time of the portal link, returned as a string. Maximum length: 32 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */
@@ -419,7 +419,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     /**
      * Sets sendStatus
      *
-     * @param string|null $sendStatus `SENT` / `FAILED`. Populated only when request `autoSend=true`. Best-effort: failure never blocks link creation. Null when `autoSend=false`. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $sendStatus Email send status. Valid values are `SENT` and `FAILED`. Populated only when request `autoSend=true`; a send failure never blocks link creation. Null when `autoSend=false`. Maximum length: 16 characters. Returned only when result.resultCode is SUCCESS.
      *
      * @return self
      */

@@ -307,7 +307,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 16 characters. Note: See documentation for details.
+     * @param string|null $status The registration status filter. Supported values are ACTIVE, SCHEDULED, EXPIRED, CANCELLED, and ALL. The default is ALL; omitted or null values are treated as ALL.
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     /**
      * Sets currentPage
      *
-     * @param int|null $currentPage The current page number.
+     * @param int|null $currentPage The current page number. The default is 1.
      *
      * @return self
      */
@@ -355,7 +355,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     /**
      * Sets pageSize
      *
-     * @param int|null $pageSize The number of records per page.
+     * @param int|null $pageSize The number of registrations per page. The default is 20. Valid values are from 1 to 100.
      *
      * @return self
      */

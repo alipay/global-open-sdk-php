@@ -55,7 +55,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerMerchantName' => 'string',
         'acquirerReasonDescription' => 'string',
         'ptspTransactionId' => 'string',
-        'acquirerCardToken' => 'string'
+        'acquirerCardToken' => 'string',
+        'acquirerFingerprint' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerMerchantName' => null,
         'acquirerReasonDescription' => null,
         'ptspTransactionId' => null,
-        'acquirerCardToken' => null
+        'acquirerCardToken' => null,
+        'acquirerFingerprint' => null
     ];
 
     /**
@@ -93,7 +95,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerMerchantName' => false,
         'acquirerReasonDescription' => false,
         'ptspTransactionId' => false,
-        'acquirerCardToken' => false
+        'acquirerCardToken' => false,
+        'acquirerFingerprint' => false
     ];
 
     /**
@@ -191,7 +194,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerMerchantName' => 'acquirerMerchantName',
         'acquirerReasonDescription' => 'acquirerReasonDescription',
         'ptspTransactionId' => 'ptspTransactionId',
-        'acquirerCardToken' => 'acquirerCardToken'
+        'acquirerCardToken' => 'acquirerCardToken',
+        'acquirerFingerprint' => 'acquirerFingerprint'
     ];
 
     /**
@@ -209,7 +213,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerMerchantName' => 'setAcquirerMerchantName',
         'acquirerReasonDescription' => 'setAcquirerReasonDescription',
         'ptspTransactionId' => 'setPtspTransactionId',
-        'acquirerCardToken' => 'setAcquirerCardToken'
+        'acquirerCardToken' => 'setAcquirerCardToken',
+        'acquirerFingerprint' => 'setAcquirerFingerprint'
     ];
 
     /**
@@ -227,7 +232,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerMerchantName' => 'getAcquirerMerchantName',
         'acquirerReasonDescription' => 'getAcquirerReasonDescription',
         'ptspTransactionId' => 'getPtspTransactionId',
-        'acquirerCardToken' => 'getAcquirerCardToken'
+        'acquirerCardToken' => 'getAcquirerCardToken',
+        'acquirerFingerprint' => 'getAcquirerFingerprint'
     ];
 
     /**
@@ -297,6 +303,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('acquirerReasonDescription', $data ?? [], null);
         $this->setIfExists('ptspTransactionId', $data ?? [], null);
         $this->setIfExists('acquirerCardToken', $data ?? [], null);
+        $this->setIfExists('acquirerFingerprint', $data ?? [], null);
 
             }
 
@@ -578,6 +585,30 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcquirerCardToken($acquirerCardToken)
     {
         $this->container['acquirerCardToken'] = $acquirerCardToken;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerFingerprint
+     *
+     * @return string|null
+     */
+    public function getAcquirerFingerprint()
+    {
+        return $this->container['acquirerFingerprint'];
+    }
+
+    /**
+     * Sets acquirerFingerprint
+     *
+     * @param string|null $acquirerFingerprint An acquirer-generated, irreversible card fingerprint passed through for card identification, reconciliation, and risk deduplication. It is returned only for APO merchants enrolled in fingerprint passthrough when Checkout.com is the acquirer and the original scenario is card vaulting or payment with vaulting. It is not returned in other scenarios and may be empty. Maximum length: 64 characters.
+     *
+     * @return self
+     */
+    public function setAcquirerFingerprint($acquirerFingerprint)
+    {
+        $this->container['acquirerFingerprint'] = $acquirerFingerprint;
 
         return $this;
     }

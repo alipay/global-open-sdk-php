@@ -51,7 +51,9 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureAmount' => '\request\model\Amount',
         'isLastCapture' => 'bool',
         'captureType' => 'string',
-        'transit' => '\request\model\Transit'
+        'transit' => '\request\model\Transit',
+        'goods' => '\request\model\Goods[]',
+        'shippings' => '\request\model\Shipping[]'
     ];
 
     /**
@@ -67,7 +69,9 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureAmount' => null,
         'isLastCapture' => null,
         'captureType' => null,
-        'transit' => null
+        'transit' => null,
+        'goods' => null,
+        'shippings' => null
     ];
 
     /**
@@ -81,7 +85,9 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureAmount' => false,
         'isLastCapture' => false,
         'captureType' => false,
-        'transit' => false
+        'transit' => false,
+        'goods' => false,
+        'shippings' => false
     ];
 
     /**
@@ -175,7 +181,9 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureAmount' => 'captureAmount',
         'isLastCapture' => 'isLastCapture',
         'captureType' => 'captureType',
-        'transit' => 'transit'
+        'transit' => 'transit',
+        'goods' => 'goods',
+        'shippings' => 'shippings'
     ];
 
     /**
@@ -189,7 +197,9 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureAmount' => 'setCaptureAmount',
         'isLastCapture' => 'setIsLastCapture',
         'captureType' => 'setCaptureType',
-        'transit' => 'setTransit'
+        'transit' => 'setTransit',
+        'goods' => 'setGoods',
+        'shippings' => 'setShippings'
     ];
 
     /**
@@ -203,7 +213,9 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureAmount' => 'getCaptureAmount',
         'isLastCapture' => 'getIsLastCapture',
         'captureType' => 'getCaptureType',
-        'transit' => 'getTransit'
+        'transit' => 'getTransit',
+        'goods' => 'getGoods',
+        'shippings' => 'getShippings'
     ];
 
     /**
@@ -269,6 +281,8 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         $this->setIfExists('isLastCapture', $data ?? [], null);
         $this->setIfExists('captureType', $data ?? [], null);
         $this->setIfExists('transit', $data ?? [], null);
+        $this->setIfExists('goods', $data ?? [], null);
+        $this->setIfExists('shippings', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/capture"); 
     }
@@ -433,7 +447,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     /**
      * Sets captureType
      *
-     * @param string|null $captureType The type of capture operation
+     * @param string|null $captureType The type of capture operation. Valid values are FINAL (the final capture) and NON_FINAL (a non-final capture). The default value is FINAL.
      *
      * @return self
      */
@@ -464,6 +478,54 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     public function setTransit($transit)
     {
         $this->container['transit'] = $transit;
+
+        return $this;
+    }
+
+    /**
+     * Gets goods
+     *
+     * @return \model\Goods[]|null
+     */
+    public function getGoods()
+    {
+        return $this->container['goods'];
+    }
+
+    /**
+     * Sets goods
+     *
+     * @param \model\Goods[]|null $goods The goods included in this capture. When using KLARNA, provide the goods information required for the capture.
+     *
+     * @return self
+     */
+    public function setGoods($goods)
+    {
+        $this->container['goods'] = $goods;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippings
+     *
+     * @return \model\Shipping[]|null
+     */
+    public function getShippings()
+    {
+        return $this->container['shippings'];
+    }
+
+    /**
+     * Sets shippings
+     *
+     * @param \model\Shipping[]|null $shippings The shipment information for this capture. When using KLARNA, this field can be provided to display shipment tracking information in the payment method app.
+     *
+     * @return self
+     */
+    public function setShippings($shippings)
+    {
+        $this->container['shippings'] = $shippings;
 
         return $this;
     }

@@ -50,7 +50,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         'receipts' => '\request\model\Receipt[]',
         'total' => 'int',
         'hasMore' => 'bool',
-        'nextCursor' => 'string'
+        'nextCursor' => 'string',
+        'previousCursor' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         'receipts' => null,
         'total' => null,
         'hasMore' => null,
-        'nextCursor' => null
+        'nextCursor' => null,
+        'previousCursor' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         'receipts' => false,
         'total' => true,
         'hasMore' => false,
-        'nextCursor' => false
+        'nextCursor' => false,
+        'previousCursor' => false
     ];
 
     /**
@@ -171,7 +174,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         'receipts' => 'receipts',
         'total' => 'total',
         'hasMore' => 'hasMore',
-        'nextCursor' => 'nextCursor'
+        'nextCursor' => 'nextCursor',
+        'previousCursor' => 'previousCursor'
     ];
 
     /**
@@ -184,7 +188,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         'receipts' => 'setReceipts',
         'total' => 'setTotal',
         'hasMore' => 'setHasMore',
-        'nextCursor' => 'setNextCursor'
+        'nextCursor' => 'setNextCursor',
+        'previousCursor' => 'setPreviousCursor'
     ];
 
     /**
@@ -197,7 +202,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         'receipts' => 'getReceipts',
         'total' => 'getTotal',
         'hasMore' => 'getHasMore',
-        'nextCursor' => 'getNextCursor'
+        'nextCursor' => 'getNextCursor',
+        'previousCursor' => 'getPreviousCursor'
     ];
 
     /**
@@ -262,6 +268,7 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
         $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('nextCursor', $data ?? [], null);
+        $this->setIfExists('previousCursor', $data ?? [], null);
 
             }
 
@@ -426,6 +433,30 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
     public function setNextCursor($nextCursor)
     {
         $this->container['nextCursor'] = $nextCursor;
+
+        return $this;
+    }
+
+    /**
+     * Gets previousCursor
+     *
+     * @return string|null
+     */
+    public function getPreviousCursor()
+    {
+        return $this->container['previousCursor'];
+    }
+
+    /**
+     * Sets previousCursor
+     *
+     * @param string|null $previousCursor The `receiptId` of the first receipt in the current page. Use this value as `endingBefore` in the next request to continue paging backward to earlier data. Returned only when `endingBefore` is used. Maximum length: 64 characters. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setPreviousCursor($previousCursor)
+    {
+        $this->container['previousCursor'] = $previousCursor;
 
         return $this;
     }

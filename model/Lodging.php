@@ -52,7 +52,10 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkOutDate' => 'string',
         'numberOfNights' => 'int',
         'numberOfRooms' => 'int',
-        'guestNames' => '\request\model\UserName[]'
+        'guestNames' => '\request\model\UserName[]',
+        'roomClass' => 'string',
+        'ticketDeliveryMethod' => 'string',
+        'ticketDeliveryRecipient' => 'string'
     ];
 
     /**
@@ -69,7 +72,10 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkOutDate' => null,
         'numberOfNights' => null,
         'numberOfRooms' => null,
-        'guestNames' => null
+        'guestNames' => null,
+        'roomClass' => null,
+        'ticketDeliveryMethod' => null,
+        'ticketDeliveryRecipient' => null
     ];
 
     /**
@@ -84,7 +90,10 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkOutDate' => false,
         'numberOfNights' => true,
         'numberOfRooms' => true,
-        'guestNames' => false
+        'guestNames' => false,
+        'roomClass' => false,
+        'ticketDeliveryMethod' => false,
+        'ticketDeliveryRecipient' => false
     ];
 
     /**
@@ -179,7 +188,10 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkOutDate' => 'checkOutDate',
         'numberOfNights' => 'numberOfNights',
         'numberOfRooms' => 'numberOfRooms',
-        'guestNames' => 'guestNames'
+        'guestNames' => 'guestNames',
+        'roomClass' => 'roomClass',
+        'ticketDeliveryMethod' => 'ticketDeliveryMethod',
+        'ticketDeliveryRecipient' => 'ticketDeliveryRecipient'
     ];
 
     /**
@@ -194,7 +206,10 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkOutDate' => 'setCheckOutDate',
         'numberOfNights' => 'setNumberOfNights',
         'numberOfRooms' => 'setNumberOfRooms',
-        'guestNames' => 'setGuestNames'
+        'guestNames' => 'setGuestNames',
+        'roomClass' => 'setRoomClass',
+        'ticketDeliveryMethod' => 'setTicketDeliveryMethod',
+        'ticketDeliveryRecipient' => 'setTicketDeliveryRecipient'
     ];
 
     /**
@@ -209,7 +224,10 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         'checkOutDate' => 'getCheckOutDate',
         'numberOfNights' => 'getNumberOfNights',
         'numberOfRooms' => 'getNumberOfRooms',
-        'guestNames' => 'getGuestNames'
+        'guestNames' => 'getGuestNames',
+        'roomClass' => 'getRoomClass',
+        'ticketDeliveryMethod' => 'getTicketDeliveryMethod',
+        'ticketDeliveryRecipient' => 'getTicketDeliveryRecipient'
     ];
 
     /**
@@ -276,6 +294,9 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('numberOfNights', $data ?? [], null);
         $this->setIfExists('numberOfRooms', $data ?? [], null);
         $this->setIfExists('guestNames', $data ?? [], null);
+        $this->setIfExists('roomClass', $data ?? [], null);
+        $this->setIfExists('ticketDeliveryMethod', $data ?? [], null);
+        $this->setIfExists('ticketDeliveryRecipient', $data ?? [], null);
 
             }
 
@@ -485,6 +506,78 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGuestNames($guestNames)
     {
         $this->container['guestNames'] = $guestNames;
+
+        return $this;
+    }
+
+    /**
+     * Gets roomClass
+     *
+     * @return string|null
+     */
+    public function getRoomClass()
+    {
+        return $this->container['roomClass'];
+    }
+
+    /**
+     * Sets roomClass
+     *
+     * @param string|null $roomClass The hotel room type, for example, Presidential suite.
+     *
+     * @return self
+     */
+    public function setRoomClass($roomClass)
+    {
+        $this->container['roomClass'] = $roomClass;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketDeliveryMethod
+     *
+     * @return string|null
+     */
+    public function getTicketDeliveryMethod()
+    {
+        return $this->container['ticketDeliveryMethod'];
+    }
+
+    /**
+     * Sets ticketDeliveryMethod
+     *
+     * @param string|null $ticketDeliveryMethod The ticket delivery method. Valid values are: pick_up (the ticket is picked up in person), email (the ticket is sent by email), post (the ticket is sent by post), and phone (the ticket is sent to a phone number).
+     *
+     * @return self
+     */
+    public function setTicketDeliveryMethod($ticketDeliveryMethod)
+    {
+        $this->container['ticketDeliveryMethod'] = $ticketDeliveryMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketDeliveryRecipient
+     *
+     * @return string|null
+     */
+    public function getTicketDeliveryRecipient()
+    {
+        return $this->container['ticketDeliveryRecipient'];
+    }
+
+    /**
+     * Sets ticketDeliveryRecipient
+     *
+     * @param string|null $ticketDeliveryRecipient The ticket recipient. For email, specify the recipient's email address. For phone, specify the recipient's phone number. For pick_up and post, specify the recipient's first and last name, for example, John Doe.
+     *
+     * @return self
+     */
+    public function setTicketDeliveryRecipient($ticketDeliveryRecipient)
+    {
+        $this->container['ticketDeliveryRecipient'] = $ticketDeliveryRecipient;
 
         return $this;
     }

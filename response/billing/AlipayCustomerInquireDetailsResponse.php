@@ -59,7 +59,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'address' => 'string',
         'addressDetail' => 'string',
         'zipcode' => 'string',
-        'shippingPhone' => 'string',
         'shippingCountry' => 'string',
         'shippingState' => 'string',
         'shippingCity' => 'string',
@@ -72,12 +71,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'status' => 'string',
         'referenceCustomerId' => 'string',
         'metadata' => 'string',
-        'phoneNo' => 'string',
-        'countryCode' => 'string',
         'billingEmail' => 'string',
         'shippingFirstName' => 'string',
         'shippingLastName' => 'string',
-        'shippingCountryCode' => 'string',
         'shippingZipcode' => 'string',
         'gmtCreate' => 'string'
     ];
@@ -103,7 +99,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'address' => null,
         'addressDetail' => null,
         'zipcode' => null,
-        'shippingPhone' => null,
         'shippingCountry' => null,
         'shippingState' => null,
         'shippingCity' => null,
@@ -116,12 +111,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'status' => null,
         'referenceCustomerId' => null,
         'metadata' => null,
-        'phoneNo' => null,
-        'countryCode' => null,
         'billingEmail' => null,
         'shippingFirstName' => null,
         'shippingLastName' => null,
-        'shippingCountryCode' => null,
         'shippingZipcode' => null,
         'gmtCreate' => null
     ];
@@ -145,7 +137,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'address' => false,
         'addressDetail' => false,
         'zipcode' => false,
-        'shippingPhone' => false,
         'shippingCountry' => false,
         'shippingState' => false,
         'shippingCity' => false,
@@ -158,12 +149,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'status' => false,
         'referenceCustomerId' => false,
         'metadata' => false,
-        'phoneNo' => false,
-        'countryCode' => false,
         'billingEmail' => false,
         'shippingFirstName' => false,
         'shippingLastName' => false,
-        'shippingCountryCode' => false,
         'shippingZipcode' => false,
         'gmtCreate' => false
     ];
@@ -267,7 +255,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'address' => 'address',
         'addressDetail' => 'addressDetail',
         'zipcode' => 'zipcode',
-        'shippingPhone' => 'shippingPhone',
         'shippingCountry' => 'shippingCountry',
         'shippingState' => 'shippingState',
         'shippingCity' => 'shippingCity',
@@ -280,12 +267,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'status' => 'status',
         'referenceCustomerId' => 'referenceCustomerId',
         'metadata' => 'metadata',
-        'phoneNo' => 'phoneNo',
-        'countryCode' => 'countryCode',
         'billingEmail' => 'billingEmail',
         'shippingFirstName' => 'shippingFirstName',
         'shippingLastName' => 'shippingLastName',
-        'shippingCountryCode' => 'shippingCountryCode',
         'shippingZipcode' => 'shippingZipcode',
         'gmtCreate' => 'gmtCreate'
     ];
@@ -309,7 +293,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'address' => 'setAddress',
         'addressDetail' => 'setAddressDetail',
         'zipcode' => 'setZipcode',
-        'shippingPhone' => 'setShippingPhone',
         'shippingCountry' => 'setShippingCountry',
         'shippingState' => 'setShippingState',
         'shippingCity' => 'setShippingCity',
@@ -322,12 +305,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'status' => 'setStatus',
         'referenceCustomerId' => 'setReferenceCustomerId',
         'metadata' => 'setMetadata',
-        'phoneNo' => 'setPhoneNo',
-        'countryCode' => 'setCountryCode',
         'billingEmail' => 'setBillingEmail',
         'shippingFirstName' => 'setShippingFirstName',
         'shippingLastName' => 'setShippingLastName',
-        'shippingCountryCode' => 'setShippingCountryCode',
         'shippingZipcode' => 'setShippingZipcode',
         'gmtCreate' => 'setGmtCreate'
     ];
@@ -351,7 +331,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'address' => 'getAddress',
         'addressDetail' => 'getAddressDetail',
         'zipcode' => 'getZipcode',
-        'shippingPhone' => 'getShippingPhone',
         'shippingCountry' => 'getShippingCountry',
         'shippingState' => 'getShippingState',
         'shippingCity' => 'getShippingCity',
@@ -364,12 +343,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         'status' => 'getStatus',
         'referenceCustomerId' => 'getReferenceCustomerId',
         'metadata' => 'getMetadata',
-        'phoneNo' => 'getPhoneNo',
-        'countryCode' => 'getCountryCode',
         'billingEmail' => 'getBillingEmail',
         'shippingFirstName' => 'getShippingFirstName',
         'shippingLastName' => 'getShippingLastName',
-        'shippingCountryCode' => 'getShippingCountryCode',
         'shippingZipcode' => 'getShippingZipcode',
         'gmtCreate' => 'getGmtCreate'
     ];
@@ -444,7 +420,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('addressDetail', $data ?? [], null);
         $this->setIfExists('zipcode', $data ?? [], null);
-        $this->setIfExists('shippingPhone', $data ?? [], null);
         $this->setIfExists('shippingCountry', $data ?? [], null);
         $this->setIfExists('shippingState', $data ?? [], null);
         $this->setIfExists('shippingCity', $data ?? [], null);
@@ -457,12 +432,9 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('referenceCustomerId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('phoneNo', $data ?? [], null);
-        $this->setIfExists('countryCode', $data ?? [], null);
         $this->setIfExists('billingEmail', $data ?? [], null);
         $this->setIfExists('shippingFirstName', $data ?? [], null);
         $this->setIfExists('shippingLastName', $data ?? [], null);
-        $this->setIfExists('shippingCountryCode', $data ?? [], null);
         $this->setIfExists('shippingZipcode', $data ?? [], null);
         $this->setIfExists('gmtCreate', $data ?? [], null);
 
@@ -826,30 +798,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets shippingPhone
-     *
-     * @return string|null
-     */
-    public function getShippingPhone()
-    {
-        return $this->container['shippingPhone'];
-    }
-
-    /**
-     * Sets shippingPhone
-     *
-     * @param string|null $shippingPhone Shipping phone. Returned when resultCode is `SUCCESS` and the field was set.
-     *
-     * @return self
-     */
-    public function setShippingPhone($shippingPhone)
-    {
-        $this->container['shippingPhone'] = $shippingPhone;
-
-        return $this;
-    }
-
-    /**
      * Gets shippingCountry
      *
      * @return string|null
@@ -1138,54 +1086,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     }
 
     /**
-     * Gets phoneNo
-     *
-     * @return string|null
-     */
-    public function getPhoneNo()
-    {
-        return $this->container['phoneNo'];
-    }
-
-    /**
-     * Sets phoneNo
-     *
-     * @param string|null $phoneNo Customer phone number (digits only). Returned when resultCode is `SUCCESS` and the field was set.
-     *
-     * @return self
-     */
-    public function setPhoneNo($phoneNo)
-    {
-        $this->container['phoneNo'] = $phoneNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets countryCode
-     *
-     * @return string|null
-     */
-    public function getCountryCode()
-    {
-        return $this->container['countryCode'];
-    }
-
-    /**
-     * Sets countryCode
-     *
-     * @param string|null $countryCode ISO 3166-1 alpha-2 country code paired with `phoneNo`. Returned when resultCode is `SUCCESS` and the field was set.
-     *
-     * @return self
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->container['countryCode'] = $countryCode;
-
-        return $this;
-    }
-
-    /**
      * Gets billingEmail
      *
      * @return string|null
@@ -1253,30 +1153,6 @@ class AlipayCustomerInquireDetailsResponse  implements ModelInterface, ArrayAcce
     public function setShippingLastName($shippingLastName)
     {
         $this->container['shippingLastName'] = $shippingLastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingCountryCode
-     *
-     * @return string|null
-     */
-    public function getShippingCountryCode()
-    {
-        return $this->container['shippingCountryCode'];
-    }
-
-    /**
-     * Sets shippingCountryCode
-     *
-     * @param string|null $shippingCountryCode Shipping address numeric calling code. Returned when resultCode is `SUCCESS` and the field was set.
-     *
-     * @return self
-     */
-    public function setShippingCountryCode($shippingCountryCode)
-    {
-        $this->container['shippingCountryCode'] = $shippingCountryCode;
 
         return $this;
     }

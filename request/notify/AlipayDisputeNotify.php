@@ -25,7 +25,30 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
 
     public $defendable;
 
+    public $captureId;
+
+    public $autoDefendReason;
+
     public $acquirerInfo;
+
+    /** @var \Model\IssuerComments|null */
+    public $issuerComments;
+
+    /**
+     * @return \Model\IssuerComments|null
+     */
+    public function getIssuerComments()
+    {
+        return $this->issuerComments;
+    }
+
+    /**
+     * @param \Model\IssuerComments|null $issuerComments
+     */
+    public function setIssuerComments($issuerComments)
+    {
+        $this->issuerComments = $issuerComments;
+    }
 
     /**
      * @return mixed
@@ -58,6 +81,38 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     public function setDefendable($defendable)
     {
         $this->defendable = $defendable;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCaptureId()
+    {
+        return $this->captureId;
+    }
+
+    /**
+     * @param mixed $captureId
+     */
+    public function setCaptureId($captureId)
+    {
+        $this->captureId = $captureId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAutoDefendReason()
+    {
+        return $this->autoDefendReason;
+    }
+
+    /**
+     * @param mixed $autoDefendReason
+     */
+    public function setAutoDefendReason($autoDefendReason)
+    {
+        $this->autoDefendReason = $autoDefendReason;
     }
 
 

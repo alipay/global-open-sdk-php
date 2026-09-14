@@ -49,7 +49,10 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         'captureRequestId' => 'string',
         'paymentId' => 'string',
         'captureAmount' => '\request\model\Amount',
-        'isLastCapture' => 'bool'
+        'isLastCapture' => 'bool',
+        'captureType' => 'string',
+        'goods' => '\request\model\Goods[]',
+        'shippings' => '\request\model\Shipping[]'
     ];
 
     /**
@@ -63,7 +66,10 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         'captureRequestId' => null,
         'paymentId' => null,
         'captureAmount' => null,
-        'isLastCapture' => null
+        'isLastCapture' => null,
+        'captureType' => null,
+        'goods' => null,
+        'shippings' => null
     ];
 
     /**
@@ -75,7 +81,10 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         'captureRequestId' => false,
         'paymentId' => false,
         'captureAmount' => false,
-        'isLastCapture' => false
+        'isLastCapture' => false,
+        'captureType' => false,
+        'goods' => false,
+        'shippings' => false
     ];
 
     /**
@@ -167,7 +176,10 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         'captureRequestId' => 'captureRequestId',
         'paymentId' => 'paymentId',
         'captureAmount' => 'captureAmount',
-        'isLastCapture' => 'isLastCapture'
+        'isLastCapture' => 'isLastCapture',
+        'captureType' => 'captureType',
+        'goods' => 'goods',
+        'shippings' => 'shippings'
     ];
 
     /**
@@ -179,7 +191,10 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         'captureRequestId' => 'setCaptureRequestId',
         'paymentId' => 'setPaymentId',
         'captureAmount' => 'setCaptureAmount',
-        'isLastCapture' => 'setIsLastCapture'
+        'isLastCapture' => 'setIsLastCapture',
+        'captureType' => 'setCaptureType',
+        'goods' => 'setGoods',
+        'shippings' => 'setShippings'
     ];
 
     /**
@@ -191,7 +206,10 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         'captureRequestId' => 'getCaptureRequestId',
         'paymentId' => 'getPaymentId',
         'captureAmount' => 'getCaptureAmount',
-        'isLastCapture' => 'getIsLastCapture'
+        'isLastCapture' => 'getIsLastCapture',
+        'captureType' => 'getCaptureType',
+        'goods' => 'getGoods',
+        'shippings' => 'getShippings'
     ];
 
     /**
@@ -255,6 +273,9 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('paymentId', $data ?? [], null);
         $this->setIfExists('captureAmount', $data ?? [], null);
         $this->setIfExists('isLastCapture', $data ?? [], null);
+        $this->setIfExists('captureType', $data ?? [], null);
+        $this->setIfExists('goods', $data ?? [], null);
+        $this->setIfExists('shippings', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/capture"); 
     }
@@ -402,6 +423,78 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
     public function setIsLastCapture($isLastCapture)
     {
         $this->container['isLastCapture'] = $isLastCapture;
+
+        return $this;
+    }
+
+    /**
+     * Gets captureType
+     *
+     * @return string|null
+     */
+    public function getCaptureType()
+    {
+        return $this->container['captureType'];
+    }
+
+    /**
+     * Sets captureType
+     *
+     * @param string|null $captureType The type of capture operation. Valid values are FINAL (the final capture) and NON_FINAL (a non-final capture). The default value is FINAL.
+     *
+     * @return self
+     */
+    public function setCaptureType($captureType)
+    {
+        $this->container['captureType'] = $captureType;
+
+        return $this;
+    }
+
+    /**
+     * Gets goods
+     *
+     * @return \model\Goods[]|null
+     */
+    public function getGoods()
+    {
+        return $this->container['goods'];
+    }
+
+    /**
+     * Sets goods
+     *
+     * @param \model\Goods[]|null $goods The goods included in this capture. When using KLARNA, provide the goods information required for the capture.
+     *
+     * @return self
+     */
+    public function setGoods($goods)
+    {
+        $this->container['goods'] = $goods;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippings
+     *
+     * @return \model\Shipping[]|null
+     */
+    public function getShippings()
+    {
+        return $this->container['shippings'];
+    }
+
+    /**
+     * Sets shippings
+     *
+     * @param \model\Shipping[]|null $shippings The shipment information for this capture. When using KLARNA, this field can be provided to display shipment tracking information in the payment method app.
+     *
+     * @return self
+     */
+    public function setShippings($shippings)
+    {
+        $this->container['shippings'] = $shippings;
 
         return $this;
     }

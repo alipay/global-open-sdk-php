@@ -15,7 +15,7 @@ round. Extra non-zero decimal places are rejected. Payment-method currency
 support and minimum amounts remain subject to the relevant Antom API docs.
 Language：PHP
 PHP version：7.1+
-Release ^1.5.5
+Release ^1.5.8
 Copyright：Ant financial services group
 ```
 

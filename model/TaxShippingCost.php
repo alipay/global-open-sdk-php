@@ -46,7 +46,7 @@ class TaxShippingCost  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => 'string'
+        'amount' => '\request\model\Amount'
     ];
 
     /**
@@ -285,7 +285,7 @@ class TaxShippingCost  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets amount
      *
-     * @return string
+     * @return \model\Amount
      */
     public function getAmount()
     {
@@ -295,7 +295,7 @@ class TaxShippingCost  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amount
      *
-     * @param string $amount The amount. Maximum length: 19 characters. Note: See documentation for details.
+     * @param \model\Amount $amount amount
      *
      * @return self
      */

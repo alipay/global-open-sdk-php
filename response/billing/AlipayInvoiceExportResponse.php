@@ -51,7 +51,8 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'string',
         'fileUrl' => 'string',
         'fileSize' => 'int',
-        'fileName' => 'string'
+        'fileName' => 'string',
+        'mode' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => null,
         'fileUrl' => null,
         'fileSize' => 'int64',
-        'fileName' => null
+        'fileName' => null,
+        'mode' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => false,
         'fileUrl' => false,
         'fileSize' => false,
-        'fileName' => false
+        'fileName' => false,
+        'mode' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'expiresAt',
         'fileUrl' => 'fileUrl',
         'fileSize' => 'fileSize',
-        'fileName' => 'fileName'
+        'fileName' => 'fileName',
+        'mode' => 'mode'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'setExpiresAt',
         'fileUrl' => 'setFileUrl',
         'fileSize' => 'setFileSize',
-        'fileName' => 'setFileName'
+        'fileName' => 'setFileName',
+        'mode' => 'setMode'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         'expiresAt' => 'getExpiresAt',
         'fileUrl' => 'getFileUrl',
         'fileSize' => 'getFileSize',
-        'fileName' => 'getFileName'
+        'fileName' => 'getFileName',
+        'mode' => 'getMode'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('fileUrl', $data ?? [], null);
         $this->setIfExists('fileSize', $data ?? [], null);
         $this->setIfExists('fileName', $data ?? [], null);
+        $this->setIfExists('mode', $data ?? [], null);
 
             }
 
@@ -457,6 +464,30 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
     public function setFileName($fileName)
     {
         $this->container['fileName'] = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * Gets mode
+     *
+     * @return string|null
+     */
+    public function getMode()
+    {
+        return $this->container['mode'];
+    }
+
+    /**
+     * Sets mode
+     *
+     * @param string|null $mode Execution mode of the export request. The returned value is `SYNC`, indicating synchronous export. Maximum length: 8 characters. Returned only when result.resultCode is SUCCESS.
+     *
+     * @return self
+     */
+    public function setMode($mode)
+    {
+        $this->container['mode'] = $mode;
 
         return $this;
     }

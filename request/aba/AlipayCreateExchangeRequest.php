@@ -263,7 +263,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('exchangeRequestId', $data ?? [], null);
         $this->setIfExists('exchangeMode', $data ?? [], null);
 
-         $this->setPath("/ams/v1/aba/funds/createExchange"); 
+         $this->setPath("/ams/api/v1/aba/funds/createExchange"); 
     }
 
     /**

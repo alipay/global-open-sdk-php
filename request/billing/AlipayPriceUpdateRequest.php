@@ -420,7 +420,7 @@ class AlipayPriceUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets defaultPrice
      *
-     * @param bool|null $defaultPrice Whether this price is the default price for the product. O - Only `true` is accepted; `false` or absent means no change. When set to true, this price becomes the default price of the product and any previous default price of that product is automatically un-defaulted. Cannot be combined with active=false in the same request - a default price must remain active
+     * @param bool|null $defaultPrice Whether to set this price as the default price for the product. When provided, only `true` is accepted; `false` is rejected with `DEFAULT_PRICE_REMOVAL_FORBIDDEN`, while omission means no change. When set to `true`, this price becomes the product default and the previous default price is automatically unset. `defaultPrice=true` cannot be combined with `active=false` in the same request because the default price must remain active. A product must always retain a default price.
      *
      * @return self
      */

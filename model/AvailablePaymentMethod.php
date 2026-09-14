@@ -299,7 +299,7 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paymentMethodMetaData
      *
-     * @param array<string,object>|null $paymentMethodMetaData Additional information required for some specific payment methods.
+     * @param array<string,object>|null $paymentMethodMetaData Additional information required for some specific payment methods. This object remains free-form. For merchants with the billing-address collection capability enabled, billingAddressCollectionMode controls whether the billing address is collected. Supported values are ALWAYS, DYNAMIC, and NEVER. If this field is omitted, the service uses NEVER.
      *
      * @return self
      */

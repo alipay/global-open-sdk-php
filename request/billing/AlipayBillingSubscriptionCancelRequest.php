@@ -420,7 +420,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
     /**
      * Sets prorationBehavior
      *
-     * @param string|null $prorationBehavior The proration behavior for immediate termination. Valid values are CREATE_PRORATIONS, NONE, and ALWAYS_INVOICE. Maximum length: 18 characters.
+     * @param string|null $prorationBehavior The proration behavior for immediate termination. Valid values are ALWAYS_INVOICE and NONE. The default value is NONE. Maximum length: 18 characters.
      *
      * @return self
      */

@@ -306,7 +306,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
     /**
      * Sets registrationCancelRequestId
      *
-     * @param string $registrationCancelRequestId The unique ID assigned by a merchant to identify a tax registration cancellation request. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string $registrationCancelRequestId The unique ID assigned by a merchant to identify a tax registration cancellation request. Any repeated request using an accepted ID returns REPEATED_SUBMIT. Maximum length: 64 characters.
      *
      * @return self
      */

@@ -75,7 +75,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'string',
         'dualOfflinePayment' => 'bool',
         'subscriptionId' => 'string',
-        'taxCalculationId' => 'string'
+        'locale' => 'string'
     ];
 
     /**
@@ -115,7 +115,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => null,
         'dualOfflinePayment' => null,
         'subscriptionId' => null,
-        'taxCalculationId' => null
+        'locale' => null
     ];
 
     /**
@@ -153,7 +153,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => false,
         'dualOfflinePayment' => false,
         'subscriptionId' => false,
-        'taxCalculationId' => false
+        'locale' => false
     ];
 
     /**
@@ -271,7 +271,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'merchantAccountId',
         'dualOfflinePayment' => 'dualOfflinePayment',
         'subscriptionId' => 'subscriptionId',
-        'taxCalculationId' => 'taxCalculationId'
+        'locale' => 'locale'
     ];
 
     /**
@@ -309,7 +309,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'setMerchantAccountId',
         'dualOfflinePayment' => 'setDualOfflinePayment',
         'subscriptionId' => 'setSubscriptionId',
-        'taxCalculationId' => 'setTaxCalculationId'
+        'locale' => 'setLocale'
     ];
 
     /**
@@ -347,7 +347,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'getMerchantAccountId',
         'dualOfflinePayment' => 'getDualOfflinePayment',
         'subscriptionId' => 'getSubscriptionId',
-        'taxCalculationId' => 'getTaxCalculationId'
+        'locale' => 'getLocale'
     ];
 
     /**
@@ -436,7 +436,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
-        $this->setIfExists('taxCalculationId', $data ?? [], null);
+        $this->setIfExists('locale', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/pay"); 
     }
@@ -1204,25 +1204,25 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     }
 
     /**
-     * Gets taxCalculationId
+     * Gets locale
      *
      * @return string|null
      */
-    public function getTaxCalculationId()
+    public function getLocale()
     {
-        return $this->container['taxCalculationId'];
+        return $this->container['locale'];
     }
 
     /**
-     * Sets taxCalculationId
+     * Sets locale
      *
-     * @param string|null $taxCalculationId The tax calculation ID. This ID is obtained from the calculate API and used for subsequent payment posting verification and tax records.
+     * @param string|null $locale The language code used by Antom Hosted Checkout Page. This field applies only to non-POP Hosted Checkout Page requests. Supported values are en_US, pt_BR, pt_PT, es_ES, ko_KR, zh_CN, zh_HK, ms_MY, in_ID, th_TH, vi_VN, tl_PH, it_IT, de_DE, fr_FR, nl_NL, ja_JP, ro, pl_PL, ar_SA, tr_TR, hi_IN, and mn. Values are case-sensitive and are not trimmed or converted. When the field is omitted, null, empty, or contains only whitespace, the page selects a language from the region resolved from env.clientIp and falls back to en_US when no supported language can be resolved. Any other unsupported non-empty string that passes type and length validation falls back directly to en_US. A non-string value or a string longer than 8 characters is rejected with PARAM_ILLEGAL. The value automatic is unsupported and exceeds the maximum length.
      *
      * @return self
      */
-    public function setTaxCalculationId($taxCalculationId)
+    public function setLocale($locale)
     {
-        $this->container['taxCalculationId'] = $taxCalculationId;
+        $this->container['locale'] = $locale;
 
         return $this;
     }
