@@ -55,5 +55,11 @@ foreach ([1, 1.0, true, null, ['1']] as $invalid) {
         if (strpos($exception->getMessage(), 'INVALID_ARGUMENT_TYPE:') !== 0) throw $exception;
     }
 }
+try {
+    AmountUtil::validate('1', 840);
+    throw new RuntimeException('non-string currency was accepted');
+} catch (InvalidArgumentException $exception) {
+    if (strpos($exception->getMessage(), 'INVALID_ARGUMENT_TYPE:') !== 0) throw $exception;
+}
 
 echo "AmountUtil shared vectors passed\n";

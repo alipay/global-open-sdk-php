@@ -4,6 +4,8 @@ namespace Util;
 
 final class AmountUtil
 {
+    private const MAX_VALUE_LENGTH = 16;
+
     public static function toAmount($amount, $currency): string
     {
         $minorUnit = self::minorUnit($currency);
@@ -56,11 +58,11 @@ final class AmountUtil
         }
         $rules = AmountRuleLoader::rules();
         if (!array_key_exists($currency, $rules['currencies'])) {
-            self::fail('UNKNOWN_CURRENCY', 'currency is not present in the ISO snapshot');
+            self::fail('UNSUPPORTED_CURRENCY', 'currency is not supported by AmountUtil');
         }
         $minorUnit = $rules['currencies'][$currency]['minorUnit'];
         if ($minorUnit === null) {
-            self::fail('UNSUPPORTED_MINOR_UNIT', 'currency has no numeric minor unit');
+            throw new \RuntimeException('RULE_DATA_ERROR: supported currency has no numeric minor unit');
         }
         if (!is_int($minorUnit) || $minorUnit < 0 || $minorUnit > 4) {
             throw new \RuntimeException('RULE_DATA_ERROR: invalid minor unit');
@@ -74,8 +76,8 @@ final class AmountUtil
         if (!preg_match('/^[0-9]+$/D', $value)) {
             self::fail('INVALID_VALUE_FORMAT', 'value must contain ASCII digits only');
         }
-        if (strlen($value) > 16) {
-            self::fail('VALUE_TOO_LONG', 'value exceeds 16 digits');
+        if (strlen($value) > self::MAX_VALUE_LENGTH) {
+            self::fail('VALUE_TOO_LONG', 'value must contain at most 16 digits');
         }
     }
 
@@ -84,8 +86,8 @@ final class AmountUtil
         if (strspn($value, '0') === strlen($value)) {
             self::fail('AMOUNT_NOT_POSITIVE', 'value must be greater than zero');
         }
-        if (strlen($value) > 16) {
-            self::fail('VALUE_TOO_LONG', 'value exceeds 16 digits');
+        if (strlen($value) > self::MAX_VALUE_LENGTH) {
+            self::fail('VALUE_TOO_LONG', 'value must contain at most 16 digits');
         }
         $rules = AmountRuleLoader::rules();
         if (isset($rules['antomConstraints'][$currency])) {
