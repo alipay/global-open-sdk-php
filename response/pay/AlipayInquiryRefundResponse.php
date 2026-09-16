@@ -729,7 +729,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets authorizationCode
      *
-     * @param string|null $authorizationCode The authorization code returned by the payment channel for a successful refund. This field is returned only when refundStatus is SUCCESS, the payment method or channel supplies a non-empty value, and the merchant is enabled for this capability. Otherwise, the property is omitted and is never returned as JSON null. The exact channel-provided string is returned without trimming, padding, case conversion, substitution, or truncation. Its absence does not change the refund result or produce a field-specific error.
+     * @param string|null $authorizationCode The authorization code returned by the payment channel upon a successful refund.
      *
      * @return self
      */
