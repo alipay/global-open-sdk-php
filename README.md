@@ -5,6 +5,25 @@ Release ^1.5.8
 Copyright：Ant financial services group
 ```
 
+## API Key client (current branch, not yet released)
+
+Use `ApiKeyAlipayClient` with a regional HTTPS gateway and API Key. Existing request
+models are shared with the RSA client; ClientId and RSA keys are not required.
+
+```php
+require_once 'vendor/autoload.php';
+
+$client = new \Client\ApiKeyAlipayClient([
+    'gatewayUrl' => getenv('ANTOM_GATEWAY_URL'),
+    'apiKey' => getenv('ANTOM_API_KEY'),
+]);
+```
+
+Start with the [sandbox createPaymentSession example](example/ApiKeyPaymentSession.php) and its
+[configuration and run instructions](docs/api-key-client.md). Existing RSA usage below remains supported.
+
+
+
 ### Composer
 
 You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
