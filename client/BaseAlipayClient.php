@@ -14,6 +14,23 @@ abstract class BaseAlipayClient
 
     private $isSandboxMode;
 
+    private $apiKeyAuth;
+
+    protected function configureApiKey($gatewayUrl, $apiKey, $clientId = null)
+    {
+        if ($this->apiKeyAuth !== null) {
+            throw new \LogicException('API Key authentication is already configured');
+        }
+        $auth = new ApiKeyAuth($gatewayUrl, $apiKey);
+        if ($clientId !== null && $clientId !== $auth->clientId()) {
+            throw new \InvalidArgumentException('clientId does not match API Key');
+        }
+        $this->apiKeyAuth = $auth;
+        $this->gatewayUrl = rtrim($gatewayUrl, '/');
+    }
+
+    protected function isApiKeyAuthentication() { return $this->apiKeyAuth !== null; }
+
     public function __construct()
     {
         $a = func_get_args();
@@ -60,6 +77,8 @@ abstract class BaseAlipayClient
 
     public function execute($request)
     {
+
+        if ($this->apiKeyAuth !== null) { return $this->executeApiKey($request, []); }
 
         if ($request->getClientId() === null || trim($request->getClientId()) === "") {
             $request->setClientId($this->clientId);
@@ -129,6 +148,8 @@ abstract class BaseAlipayClient
         if (RequestTransportResolver::requiresSessionHttp2($request)) {
             return SessionHttp2Executor::execute($this->gatewayUrl, $request, $extraHeaders);
         }
+
+        if ($this->apiKeyAuth !== null) { return $this->executeApiKey($request, $extraHeaders); }
 
         if ($request->getClientId() === null || trim($request->getClientId()) === "") {
             $request->setClientId($this->clientId);
@@ -208,6 +229,44 @@ abstract class BaseAlipayClient
         }
 
         return $alipayRsp;
+    }
+
+    private function executeApiKey($request, $extraHeaders)
+    {
+        if ($request === null) { throw new \InvalidArgumentException('request must not be null'); }
+        $clientId = $request->getClientId();
+        if ($clientId !== null && $clientId !== $this->apiKeyAuth->clientId()) {
+            throw new \InvalidArgumentException('Request clientId does not match API Key');
+        }
+        $path = $this->apiKeyAuth->path($request->getPath());
+        $headers = [];
+        $custom = $this->buildCustomHeader();
+        foreach ($custom ?: [] as $line) {
+            $parts = explode(':', $line, 2);
+            if (count($parts) === 2) { $this->addApiKeyHeader($headers, trim($parts[0]), $parts[1]); }
+        }
+        foreach ($extraHeaders ?: [] as $key => $value) { $this->addApiKeyHeader($headers, $key, $value); }
+        $headers[] = 'Content-Type: application/json; charset=UTF-8';
+        $headers[] = 'User-Agent: ' . SdkVersion::userAgent();
+        $headers[] = 'Authorization: ' . $this->apiKeyAuth->authorization();
+        $body = json_encode($request);
+        if ($body === false) { throw new \RuntimeException('Request JSON serialization failed'); }
+        $rsp = $this->sendRequest($this->gatewayUrl . $path, $request->getHttpMethod(), $headers, $body);
+        if ($rsp === null) { throw new \RuntimeException('HttpRpcResult is null'); }
+        $result = json_decode($rsp->getRspBody());
+        if (json_last_error() !== JSON_ERROR_NONE) { throw new \RuntimeException('API Key response is not valid JSON'); }
+        if (!is_object($result) || !isset($result->result)) { throw new \RuntimeException('API Key response result field is null'); }
+        return $result;
+    }
+
+    private function addApiKeyHeader(&$headers, $key, $value)
+    {
+        if ($key === null || trim($key) === '') { return; }
+        $lower = strtolower(trim($key));
+        if (in_array($lower, self::$RESERVED_HEADERS, true)
+            || in_array($lower, ['authorization', 'key-version', 'keyversion', 'host'], true)) { return; }
+        if (strpbrk($key . $value, "\r\n") !== false) { throw new \InvalidArgumentException('Invalid HTTP header'); }
+        $headers[] = $key . ': ' . $value;
     }
 
     private function checkRequestParam($request)

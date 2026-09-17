@@ -11,6 +11,25 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
     private $fileAlipayPublicKey;
     private $fileAgentToken;
 
+    public static function fromConfig(array $config)
+    {
+        if (array_key_exists('apiKey', $config)) {
+            foreach (['merchantPrivateKey', 'alipayPublicKey', 'agentToken'] as $name) {
+                if (isset($config[$name])) { throw new \InvalidArgumentException('API Key cannot be combined with RSA credentials or agentToken'); }
+            }
+            $gatewayUrl = isset($config['gatewayUrl']) ? $config['gatewayUrl'] : null;
+            $client = new static($gatewayUrl, null, null);
+            $client->configureApiKey($gatewayUrl,
+                $config['apiKey'], isset($config['clientId']) ? $config['clientId'] : null);
+            return $client;
+        }
+        foreach (['gatewayUrl', 'clientId', 'merchantPrivateKey', 'alipayPublicKey'] as $name) {
+            if (!isset($config[$name]) || $config[$name] === '') { throw new \InvalidArgumentException('Provide API Key or complete RSA configuration'); }
+        }
+        return new static($config['gatewayUrl'], $config['merchantPrivateKey'], $config['alipayPublicKey'],
+            $config['clientId'], isset($config['agentToken']) ? $config['agentToken'] : null);
+    }
+
     public function __construct()
     {
         $a = func_get_args();
@@ -57,6 +76,9 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
      */
     public function uploadFile($request)
     {
+        if ($this->isApiKeyAuthentication()) {
+            throw new \RuntimeException('File upload does not support API Key authentication');
+        }
         if (!$request instanceof \Request\AlipayFileRequest) {
             throw new \InvalidArgumentException('request must be an SDK-provided AlipayFileRequest');
         }
@@ -85,6 +107,7 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
 
     protected function sendRequest($requestUrl, $httpMethod, $headers, $reqBody)
     {
+        if ($this->isApiKeyAuthentication()) { return ApiKeyHttpRPC::post($requestUrl, $headers, $reqBody); }
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $requestUrl);
         curl_setopt($curl, CURLOPT_FAILONERROR, false);

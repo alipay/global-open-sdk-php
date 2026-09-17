@@ -1,7 +1,7 @@
 ```
 Language：PHP
 PHP version：7.1+
-Release ^1.5.8
+Release ^1.6.0
 Copyright：Ant financial services group
 ```
 
@@ -191,3 +191,79 @@ $signReqValue  = SignatureTool::sign($httpMethod, $path, $clientId, $reqTime, $r
 $isVerifyPass  = SignatureTool::verify($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue, $alipayPublicKey);
 
 ```
+
+## API Key authentication
+
+See the [complete API Key example](example/ApiKeyExample.php). After installing Composer dependencies, run `php example/ApiKeyExample.php`.
+
+Initialize the client with your gateway URL and API Key; existing RSA usage remains supported.
+This feature is available in the current source branch and has not been published yet.
+
+Set `ANTOM_GATEWAY_URL` to your regional HTTPS gateway (for example,
+`https://open-sea-global.alipay.com` for Asia), `ANTOM_API_KEY` to your key,
+`ANTOM_REDIRECT_URL` to your checkout return URL, and `ANTOM_NOTIFY_URL` to your
+notification endpoint. The application reads these variables; the SDK does not load them automatically.
+
+The example creates a CARD payment session for USD 1.00 (`100` minor units),
+with USD settlement. Use a merchant configured for this combination and a key
+with createPaymentSession permission. Replace the example client IP with the
+buyer's IP in your application. Exceptions propagate to the caller; a normal
+response must still be checked for business success.
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+use Client\DefaultAlipayClient;
+use Model\Amount;
+use Model\Order;
+use Model\PaymentMethod;
+use Model\PaymentFactor;
+use Model\SettlementStrategy;
+use Model\Env;
+use Model\TerminalType;
+use Model\ProductCodeType;
+use Request\pay\AlipayPaymentSessionRequest;
+
+$client = DefaultAlipayClient::fromConfig([
+    'gatewayUrl' => getenv('ANTOM_GATEWAY_URL'),
+    'apiKey' => getenv('ANTOM_API_KEY'),
+]);
+$amount = new Amount(['currency' => 'USD', 'value' => '100']);
+$request = new AlipayPaymentSessionRequest();
+$request->setProductCode(ProductCodeType::CASHIER_PAYMENT);
+$request->setProductScene('CHECKOUT_PAYMENT');
+$request->setPaymentRequestId(bin2hex(random_bytes(16)));
+$request->setOrder(new Order([
+    'referenceOrderId' => bin2hex(random_bytes(16)),
+    'orderDescription' => 'API Key example',
+    'orderAmount' => $amount,
+]));
+$request->setPaymentAmount($amount);
+$request->setPaymentMethod(new PaymentMethod(['paymentMethodType' => 'CARD']));
+$request->setPaymentFactor(new PaymentFactor(['isAuthorization' => false]));
+$request->setSettlementStrategy(new SettlementStrategy(['settlementCurrency' => 'USD']));
+$request->setEnv(new Env(['terminalType' => TerminalType::WEB, 'clientIp' => '127.0.0.1']));
+$request->setPaymentRedirectUrl(getenv('ANTOM_REDIRECT_URL'));
+$request->setPaymentNotifyUrl(getenv('ANTOM_NOTIFY_URL'));
+
+// Transport errors propagate as exceptions; also check the business result.
+$response = $client->execute($request);
+$result = $response->result ?? null;
+if ($result === null || ($result->resultStatus ?? '') !== 'S'
+    || ($result->resultCode ?? '') !== 'SUCCESS') {
+    throw new RuntimeException('Session creation was not successful: ' .
+        ($result->resultCode ?? 'missing result'));
+}
+if (empty($response->paymentSessionId)) {
+    throw new RuntimeException('Missing paymentSessionId');
+}
+// Use $response->paymentSessionData or the returned URL with your checkout.
+echo "Payment session created\n";
+```
+
+- Standard and Restricted keys use the same client. TEST/PROD in the key selects
+  the request environment; do not add a sandbox path to the gateway URL.
+- Creating a session does not mean payment is complete. Notifications still use
+  the existing signature verification mechanism.
+- File upload is not supported with API Key authentication.
