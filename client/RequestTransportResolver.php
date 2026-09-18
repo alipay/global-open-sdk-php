@@ -25,4 +25,10 @@ final class RequestTransportResolver
         }
         return false;
     }
+
+    public static function allowsUnsignedResponse($request)
+    {
+        // Routes designed to return unsigned responses are currently the same set as the HTTP/2 session routes.
+        return self::requiresSessionHttp2($request);
+    }
 }
