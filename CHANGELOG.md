@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.0 (planned; unreleased)
+
+- Add an independent API Key client using a gateway and API Key, with existing business request/response models.
+- Keep existing RSA APIs compatible; retain Session HTTP/2 and notification verification behavior.
+- Add a runnable Restricted TEST createPaymentSession example and configuration documentation.
+
 ## 1.4.21 - 2025-12-01
 - update 2025-12-01
 

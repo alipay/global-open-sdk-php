@@ -1,9 +1,32 @@
 ```
 Language：PHP
 PHP version：7.1+
-Release ^1.5.8
+Release ^1.6.0
 Copyright：Ant financial services group
 ```
+
+
+Planned release: **1.6.0**. This version is not published yet; package/tag references
+below describe the target release. Build this branch to try it before publication.
+
+## API Key client (planned for 1.6.0)
+
+Use `ApiKeyAlipayClient` with a regional HTTPS gateway and API Key. Existing request
+models are shared with the RSA client; ClientId and RSA keys are not required.
+
+```php
+require_once 'vendor/autoload.php';
+
+$client = new \Client\ApiKeyAlipayClient([
+    'gatewayUrl' => getenv('ANTOM_GATEWAY_URL'),
+    'apiKey' => getenv('ANTOM_API_KEY'),
+]);
+```
+
+Start with the [sandbox createPaymentSession example](example/ApiKeyPaymentSession.php) and its
+[configuration and run instructions](docs/api-key-client.md). Existing RSA usage below remains supported.
+
+
 
 ### Composer
 
