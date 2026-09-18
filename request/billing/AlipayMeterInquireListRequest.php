@@ -335,7 +335,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets pageNum
      *
-     * @param int|null $pageNum The page number. The value must be at least 1. The default value is 1. A page beyond the last page returns SUCCESS with an empty `meters` array.
+     * @param int|null $pageNum The page number. Omit to use 1. When present, it must be an integer at least 1; a page beyond the current last page returns success with an empty meters array.
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets pageSize
      *
-     * @param int|null $pageSize The number of records per page. Value range: 1-100. The default value is 10.
+     * @param int|null $pageSize The number of records per page. Omit to use 10. When present, it must be an integer from 1 to 100.
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets meterName
      *
-     * @param string|null $meterName The meter name. Maximum length: 255 characters.
+     * @param string|null $meterName The meter name filter. Omit for no name filter. Maximum length: 255 characters.
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets eventName
      *
-     * @param string|null $eventName The event name. Maximum length: 100 characters.
+     * @param string|null $eventName The event routing name filter. Omit for no event filter. Maximum length: 100 characters.
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 8 characters.
+     * @param string|null $status The meter status filter. Valid values are ACTIVE and INACTIVE; omit to include both states. Maximum length: 8 characters.
      *
      * @return self
      */
@@ -455,7 +455,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets startDateTime
      *
-     * @param string|null $startDateTime The start date time. Maximum length: 32 characters.
+     * @param string|null $startDateTime The inclusive lower bound of the creation time filter in ISO 8601 UTC format, encoded as a JSON string. Omit for no lower bound. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -479,7 +479,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets endDateTime
      *
-     * @param string|null $endDateTime The end date time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $endDateTime The inclusive upper bound of the creation time filter in ISO 8601 UTC format, encoded as a JSON string. Omit for no upper bound; when both bounds exist, it must not be earlier than startDateTime. Maximum length: 32 characters.
      *
      * @return self
      */

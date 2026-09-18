@@ -51,7 +51,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => 'string',
         'status' => 'string',
         'amount' => '\request\model\Amount',
-        'availableAmount' => '\request\model\AvailableAmount',
+        'availableAmount' => '\request\model\Amount',
         'applicability' => '\request\model\Applicability',
         'priority' => 'int',
         'category' => 'string',
@@ -369,6 +369,9 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['applicability'] === null) {
             $invalidProperties[] = "'applicability' can't be null";
         }
+        if ($this->container['priority'] === null) {
+            $invalidProperties[] = "'priority' can't be null";
+        }
         if ($this->container['category'] === null) {
             $invalidProperties[] = "'category' can't be null";
         }
@@ -406,7 +409,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets creditGrantId
      *
-     * @param string $creditGrantId The credit grant ID. Maximum length: 64 characters.
+     * @param string $creditGrantId The unique identifier of the Credit Grant. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -430,7 +433,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets creditGrantName
      *
-     * @param string $creditGrantName The credit grant name. Maximum length: 255 characters.
+     * @param string $creditGrantName The merchant-facing name of the Credit Grant. Maximum length: 255 characters.
      *
      * @return self
      */
@@ -454,7 +457,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string $customerId The Customer that receives the credit. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -478,7 +481,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string $status The current status. Maximum length: 8 characters.
+     * @param string $status The Credit Grant status. Valid values are PENDING, ACTIVE, EXPIRED, and VOIDED. VOIDED is the only irreversible terminal state. Maximum length: 8 characters.
      *
      * @return self
      */
@@ -516,7 +519,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets availableAmount
      *
-     * @return \model\AvailableAmount
+     * @return \model\Amount
      */
     public function getAvailableAmount()
     {
@@ -526,7 +529,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets availableAmount
      *
-     * @param \model\AvailableAmount $availableAmount availableAmount
+     * @param \model\Amount $availableAmount availableAmount
      *
      * @return self
      */
@@ -564,7 +567,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets priority
      *
-     * @return int|null
+     * @return int
      */
     public function getPriority()
     {
@@ -574,7 +577,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priority
      *
-     * @param int|null $priority The priority.
+     * @param int $priority The application priority from 0 to 100. A lower value has a higher priority.
      *
      * @return self
      */
@@ -598,7 +601,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param string $category The category. Maximum length: 16 characters.
+     * @param string $category The Credit Grant category. Valid values are PREPAID and PROMOTIONAL. Maximum length: 16 characters.
      *
      * @return self
      */
@@ -622,7 +625,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets effectiveDateTime
      *
-     * @param string|null $effectiveDateTime The effective date time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $effectiveDateTime The effective time in ISO 8601 UTC format, encoded as a JSON string. Omitted when the Grant is effective immediately. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -646,7 +649,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiryDateTime
      *
-     * @param string|null $expiryDateTime The expiry date time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $expiryDateTime The expiration time in ISO 8601 UTC format, encoded as a JSON string. Omitted when the Grant does not expire automatically. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -670,7 +673,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets createdDateTime
      *
-     * @param string $createdDateTime The created date time. Maximum length: 32 characters.
+     * @param string $createdDateTime The creation time in ISO 8601 UTC format, encoded as a JSON string. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -694,7 +697,7 @@ class CreditGrant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets updatedDateTime
      *
-     * @param string $updatedDateTime The updated date time. Maximum length: 32 characters.
+     * @param string $updatedDateTime The last update time in ISO 8601 UTC format, encoded as a JSON string. Maximum length: 32 characters.
      *
      * @return self
      */

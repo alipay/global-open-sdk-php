@@ -357,7 +357,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets customerId
      *
-     * @param string $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string $customerId The Customer receiving the credit. The service validates ownership and status. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets creditGrantName
      *
-     * @param string $creditGrantName The credit grant name. Maximum length: 255 characters.
+     * @param string $creditGrantName The merchant-facing name of the Credit Grant. It must not be null, empty, blank, or longer than 255 characters. Maximum length: 255 characters.
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets priority
      *
-     * @param int|null $priority The priority.
+     * @param int|null $priority The application priority from 0 to 100. Omit to use 0. A lower value has a higher priority.
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets category
      *
-     * @param string $category The category. Maximum length: 16 characters.
+     * @param string $category The category. Valid values are PREPAID and PROMOTIONAL. Maximum length: 16 characters.
      *
      * @return self
      */
@@ -501,7 +501,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets effectiveDateTime
      *
-     * @param string|null $effectiveDateTime The effective date time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $effectiveDateTime The effective time in ISO 8601 UTC format, encoded as a JSON string. Omit for immediate activation; a provided value earlier than server time is accepted only within the clock-skew tolerance. Maximum length: 32 characters.
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     /**
      * Sets expiryDateTime
      *
-     * @param string|null $expiryDateTime The expiry date time. Maximum length: 32 characters. Note: See documentation for details.
+     * @param string|null $expiryDateTime The expiration time in ISO 8601 UTC format, encoded as a JSON string. Omit for no automatic expiration; otherwise the value must be later than the current and effective times. Maximum length: 32 characters.
      *
      * @return self
      */

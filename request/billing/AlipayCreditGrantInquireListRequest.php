@@ -314,7 +314,7 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
     /**
      * Sets pageNum
      *
-     * @param int|null $pageNum The page number. The value must be at least 1. The default value is 1. A page beyond the last page returns SUCCESS with an empty `creditGrants` array.
+     * @param int|null $pageNum The page number. Omit to use 1. When present, it must be an integer at least 1; a page beyond the current last page returns success with an empty creditGrants array.
      *
      * @return self
      */
@@ -338,7 +338,7 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
     /**
      * Sets pageSize
      *
-     * @param int|null $pageSize The number of records per page. Value range: 1-100. The default value is 10.
+     * @param int|null $pageSize The number of records per page. Omit to use 10. When present, it must be an integer from 1 to 100.
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The unique ID assigned by Antom to identify a customer. Maximum length: 64 characters.
+     * @param string|null $customerId The Customer filter. Omit to include all Customers. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class AlipayCreditGrantInquireListRequest   extends AlipayRequest  implements Mo
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 8 characters.
+     * @param string|null $status The Credit Grant status filter. Valid values are PENDING, ACTIVE, EXPIRED, and VOIDED; omit to include all states. Maximum length: 8 characters.
      *
      * @return self
      */

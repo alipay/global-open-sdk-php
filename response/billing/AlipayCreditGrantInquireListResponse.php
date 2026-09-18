@@ -304,6 +304,9 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
         if ($this->container['totalCount'] === null) {
             $invalidProperties[] = "'totalCount' can't be null";
         }
+        if ($this->container['creditGrants'] === null) {
+            $invalidProperties[] = "'creditGrants' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -380,7 +383,7 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets pageSize
      *
-     * @param int $pageSize The number of records on the current page.
+     * @param int $pageSize The current page size.
      *
      * @return self
      */
@@ -404,7 +407,7 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets totalCount
      *
-     * @param int $totalCount The total number of matching credit grants at query time.
+     * @param int $totalCount The real-time number of matching Credit Grant resources at query time.
      *
      * @return self
      */
@@ -418,7 +421,7 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     /**
      * Gets creditGrants
      *
-     * @return \model\CreditGrant[]|null
+     * @return \model\CreditGrant[]
      */
     public function getCreditGrants()
     {
@@ -428,7 +431,7 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
     /**
      * Sets creditGrants
      *
-     * @param \model\CreditGrant[]|null $creditGrants The matching credit grants. Returned only when result.resultCode is SUCCESS.
+     * @param \model\CreditGrant[] $creditGrants The Credit Grant list. Maximum size: 100 elements, bounded by pageSize.
      *
      * @return self
      */

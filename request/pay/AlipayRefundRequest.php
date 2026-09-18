@@ -61,7 +61,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundDetails' => '\request\model\RefundDetail[]',
         'refundSourceAccountNo' => 'string',
         'actualRefundAmount' => '\request\model\Amount',
-        'goods' => '\request\model\Goods[]'
+        'goods' => '\request\model\Goods[]',
+        'splitDetails' => '\request\model\SplitDetail[]'
     ];
 
     /**
@@ -87,7 +88,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundDetails' => null,
         'refundSourceAccountNo' => null,
         'actualRefundAmount' => null,
-        'goods' => null
+        'goods' => null,
+        'splitDetails' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundDetails' => false,
         'refundSourceAccountNo' => false,
         'actualRefundAmount' => false,
-        'goods' => false
+        'goods' => false,
+        'splitDetails' => false
     ];
 
     /**
@@ -215,7 +218,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundDetails' => 'refundDetails',
         'refundSourceAccountNo' => 'refundSourceAccountNo',
         'actualRefundAmount' => 'actualRefundAmount',
-        'goods' => 'goods'
+        'goods' => 'goods',
+        'splitDetails' => 'splitDetails'
     ];
 
     /**
@@ -239,7 +243,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundDetails' => 'setRefundDetails',
         'refundSourceAccountNo' => 'setRefundSourceAccountNo',
         'actualRefundAmount' => 'setActualRefundAmount',
-        'goods' => 'setGoods'
+        'goods' => 'setGoods',
+        'splitDetails' => 'setSplitDetails'
     ];
 
     /**
@@ -263,7 +268,8 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundDetails' => 'getRefundDetails',
         'refundSourceAccountNo' => 'getRefundSourceAccountNo',
         'actualRefundAmount' => 'getActualRefundAmount',
-        'goods' => 'getGoods'
+        'goods' => 'getGoods',
+        'splitDetails' => 'getSplitDetails'
     ];
 
     /**
@@ -339,6 +345,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         $this->setIfExists('refundSourceAccountNo', $data ?? [], null);
         $this->setIfExists('actualRefundAmount', $data ?? [], null);
         $this->setIfExists('goods', $data ?? [], null);
+        $this->setIfExists('splitDetails', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/refund"); 
     }
@@ -774,6 +781,30 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     public function setGoods($goods)
     {
         $this->container['goods'] = $goods;
+
+        return $this;
+    }
+
+    /**
+     * Gets splitDetails
+     *
+     * @return \model\SplitDetail[]|null
+     */
+    public function getSplitDetails()
+    {
+        return $this->container['splitDetails'];
+    }
+
+    /**
+     * Sets splitDetails
+     *
+     * @param \model\SplitDetail[]|null $splitDetails The split details to reverse for a refund. Provide this field when you override the existing Shopify ISV funding rule and specify the original split recipients that bear this refund, with 1 to 20 non-null items. This field is available to the Shopify ISV product only. It is not an idempotency key, but its complete value participates in the consistency check of refundRequestId. If this field is omitted, no explicit split-reversal instruction is created and the existing funding rule applies. No default value.  More information:  Maximum size: 20 elements
+     *
+     * @return self
+     */
+    public function setSplitDetails($splitDetails)
+    {
+        $this->container['splitDetails'] = $splitDetails;
 
         return $this;
     }
