@@ -56,6 +56,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'paymentRequestId' => 'string',
         'paymentId' => 'string',
         'authPaymentId' => 'string',
+        'authReviewStatus' => 'string',
+        'authReviewSource' => 'string',
         'paymentAmount' => '\request\model\Amount',
         'actualPaymentAmount' => '\request\model\Amount',
         'paymentQuote' => '\request\model\Quote',
@@ -78,7 +80,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'promotionResults' => '\request\model\PromotionResult[]',
         'earliestSettlementTime' => 'string',
         'paymentMethodType' => 'string',
-        'retryInfo' => '\request\model\RetryInfo'
+        'retryInfo' => '\request\model\RetryInfo',
+        'popRiskDecisionResultInfo' => '\request\model\PopRiskDecisionResultInfo'
     ];
 
     /**
@@ -99,6 +102,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'paymentRequestId' => null,
         'paymentId' => null,
         'authPaymentId' => null,
+        'authReviewStatus' => null,
+        'authReviewSource' => null,
         'paymentAmount' => null,
         'actualPaymentAmount' => null,
         'paymentQuote' => null,
@@ -121,7 +126,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'promotionResults' => null,
         'earliestSettlementTime' => null,
         'paymentMethodType' => null,
-        'retryInfo' => null
+        'retryInfo' => null,
+        'popRiskDecisionResultInfo' => null
     ];
 
     /**
@@ -140,6 +146,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'paymentRequestId' => false,
         'paymentId' => false,
         'authPaymentId' => false,
+        'authReviewStatus' => false,
+        'authReviewSource' => false,
         'paymentAmount' => false,
         'actualPaymentAmount' => false,
         'paymentQuote' => false,
@@ -162,7 +170,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'promotionResults' => false,
         'earliestSettlementTime' => false,
         'paymentMethodType' => false,
-        'retryInfo' => false
+        'retryInfo' => false,
+        'popRiskDecisionResultInfo' => false
     ];
 
     /**
@@ -261,6 +270,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'paymentRequestId' => 'paymentRequestId',
         'paymentId' => 'paymentId',
         'authPaymentId' => 'authPaymentId',
+        'authReviewStatus' => 'authReviewStatus',
+        'authReviewSource' => 'authReviewSource',
         'paymentAmount' => 'paymentAmount',
         'actualPaymentAmount' => 'actualPaymentAmount',
         'paymentQuote' => 'paymentQuote',
@@ -283,7 +294,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'promotionResults' => 'promotionResults',
         'earliestSettlementTime' => 'earliestSettlementTime',
         'paymentMethodType' => 'paymentMethodType',
-        'retryInfo' => 'retryInfo'
+        'retryInfo' => 'retryInfo',
+        'popRiskDecisionResultInfo' => 'popRiskDecisionResultInfo'
     ];
 
     /**
@@ -302,6 +314,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'paymentRequestId' => 'setPaymentRequestId',
         'paymentId' => 'setPaymentId',
         'authPaymentId' => 'setAuthPaymentId',
+        'authReviewStatus' => 'setAuthReviewStatus',
+        'authReviewSource' => 'setAuthReviewSource',
         'paymentAmount' => 'setPaymentAmount',
         'actualPaymentAmount' => 'setActualPaymentAmount',
         'paymentQuote' => 'setPaymentQuote',
@@ -324,7 +338,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'promotionResults' => 'setPromotionResults',
         'earliestSettlementTime' => 'setEarliestSettlementTime',
         'paymentMethodType' => 'setPaymentMethodType',
-        'retryInfo' => 'setRetryInfo'
+        'retryInfo' => 'setRetryInfo',
+        'popRiskDecisionResultInfo' => 'setPopRiskDecisionResultInfo'
     ];
 
     /**
@@ -343,6 +358,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'paymentRequestId' => 'getPaymentRequestId',
         'paymentId' => 'getPaymentId',
         'authPaymentId' => 'getAuthPaymentId',
+        'authReviewStatus' => 'getAuthReviewStatus',
+        'authReviewSource' => 'getAuthReviewSource',
         'paymentAmount' => 'getPaymentAmount',
         'actualPaymentAmount' => 'getActualPaymentAmount',
         'paymentQuote' => 'getPaymentQuote',
@@ -365,7 +382,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         'promotionResults' => 'getPromotionResults',
         'earliestSettlementTime' => 'getEarliestSettlementTime',
         'paymentMethodType' => 'getPaymentMethodType',
-        'retryInfo' => 'getRetryInfo'
+        'retryInfo' => 'getRetryInfo',
+        'popRiskDecisionResultInfo' => 'getPopRiskDecisionResultInfo'
     ];
 
     /**
@@ -435,6 +453,8 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('paymentRequestId', $data ?? [], null);
         $this->setIfExists('paymentId', $data ?? [], null);
         $this->setIfExists('authPaymentId', $data ?? [], null);
+        $this->setIfExists('authReviewStatus', $data ?? [], null);
+        $this->setIfExists('authReviewSource', $data ?? [], null);
         $this->setIfExists('paymentAmount', $data ?? [], null);
         $this->setIfExists('actualPaymentAmount', $data ?? [], null);
         $this->setIfExists('paymentQuote', $data ?? [], null);
@@ -458,6 +478,7 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('earliestSettlementTime', $data ?? [], null);
         $this->setIfExists('paymentMethodType', $data ?? [], null);
         $this->setIfExists('retryInfo', $data ?? [], null);
+        $this->setIfExists('popRiskDecisionResultInfo', $data ?? [], null);
 
             }
 
@@ -742,6 +763,54 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     public function setAuthPaymentId($authPaymentId)
     {
         $this->container['authPaymentId'] = $authPaymentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets authReviewStatus
+     *
+     * @return string|null
+     */
+    public function getAuthReviewStatus()
+    {
+        return $this->container['authReviewStatus'];
+    }
+
+    /**
+     * Sets authReviewStatus
+     *
+     * @param string|null $authReviewStatus The status of the post-authorization manual review. Valid values are:  PROCESSING: The manual review is not completed. Do not capture the payment or fulfill the order before the review reaches a final state. ACCEPT: The manual review is passed. REJECT: The manual review is rejected.  Note: This field is returned when the channel authorization requires manual review, or when the value of popRiskDecisionResultInfo.postRiskDecision is REVIEW. When this field is returned, authReviewSource is returned at the same time.  More information:  Maximum length: 16 characters
+     *
+     * @return self
+     */
+    public function setAuthReviewStatus($authReviewStatus)
+    {
+        $this->container['authReviewStatus'] = $authReviewStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets authReviewSource
+     *
+     * @return string|null
+     */
+    public function getAuthReviewSource()
+    {
+        return $this->container['authReviewSource'];
+    }
+
+    /**
+     * Sets authReviewSource
+     *
+     * @param string|null $authReviewSource The source of the post-authorization risk review. Valid values are:  ANTOM_SHIELD: The review is initiated by the Antom internal risk engine (Antom Shield). PSP: The review is initiated by the acquirer-side risk control.  Note: This field is returned only when authReviewStatus is returned. When both the channel manual review and the Antom Shield review are required, the channel manual review takes precedence and this field returns PSP.  More information:  Maximum length: 16 characters
+     *
+     * @return self
+     */
+    public function setAuthReviewSource($authReviewSource)
+    {
+        $this->container['authReviewSource'] = $authReviewSource;
 
         return $this;
     }
@@ -1294,6 +1363,30 @@ class AlipayPayQueryResponse  implements ModelInterface, ArrayAccess, \JsonSeria
     public function setRetryInfo($retryInfo)
     {
         $this->container['retryInfo'] = $retryInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets popRiskDecisionResultInfo
+     *
+     * @return \model\PopRiskDecisionResultInfo|null
+     */
+    public function getPopRiskDecisionResultInfo()
+    {
+        return $this->container['popRiskDecisionResultInfo'];
+    }
+
+    /**
+     * Sets popRiskDecisionResultInfo
+     *
+     * @param \model\PopRiskDecisionResultInfo|null $popRiskDecisionResultInfo popRiskDecisionResultInfo
+     *
+     * @return self
+     */
+    public function setPopRiskDecisionResultInfo($popRiskDecisionResultInfo)
+    {
+        $this->container['popRiskDecisionResultInfo'] = $popRiskDecisionResultInfo;
 
         return $this;
     }

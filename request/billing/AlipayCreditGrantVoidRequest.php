@@ -303,7 +303,7 @@ class AlipayCreditGrantVoidRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets creditGrantId
      *
-     * @param string $creditGrantId The credit grant ID. Maximum length: 64 characters.
+     * @param string $creditGrantId The unique identifier of the Credit Grant. The resource must belong to the authenticated merchant. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class AlipayCreditGrantVoidRequest   extends AlipayRequest  implements ModelInte
     /**
      * Sets voidReason
      *
-     * @param string|null $voidReason The void reason. Maximum length: 1024 characters.
+     * @param string|null $voidReason The business reason for voiding. Send a non-blank reason only when the business workflow requires the reason to be retained; omit when no audit reason exists. Maximum length: 1024 characters.
      *
      * @return self
      */

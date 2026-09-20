@@ -330,7 +330,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets meterName
      *
-     * @param string $meterName The meter name. Maximum length: 255 characters.
+     * @param string $meterName The merchant-facing name of the Meter. It must not be null, empty, blank, or longer than 255 characters. Maximum length: 255 characters.
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets eventName
      *
-     * @param string $eventName The event name. Maximum length: 100 characters.
+     * @param string $eventName The event routing name. It is unique within a merchant and cannot be changed after creation. Maximum length: 100 characters.
      *
      * @return self
      */
@@ -378,7 +378,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets aggregationMethod
      *
-     * @param string $aggregationMethod The aggregation method. Maximum length: 8 characters.
+     * @param string $aggregationMethod The aggregation method. Valid values are SUM, COUNT, and LAST. SUM adds the metered values from all eligible Events within the aggregation period; COUNT counts the number of eligible Events within the aggregation period; LAST uses the metered value from the most recent eligible Event. Maximum length: 8 characters.
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets eventTimeWindow
      *
-     * @param string|null $eventTimeWindow The event time window. Maximum length: 4 characters. Note: See documentation for details.
+     * @param string|null $eventTimeWindow The upstream pre-aggregation window. Valid values are HOUR and DAY. Send this field only for a SUM Meter that consumes pre-aggregated Events; when omitted, null, empty, or blank, the request is processed as a RAW Event Meter. Maximum length: 4 characters.
      *
      * @return self
      */
@@ -426,7 +426,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets valueKeyOverride
      *
-     * @param string|null $valueKeyOverride The value key override. Maximum length: 256 characters.
+     * @param string|null $valueKeyOverride The field name in the Event payload that contains the metered value. Send this field only when the metered value is stored outside the default value field; when omitted, the value defaults to value. The value must be 1 to 100 characters matching ^[A-Za-z0-9_]{1,100}$ and cannot be changed after creation. Maximum length: 100 characters.
      *
      * @return self
      */

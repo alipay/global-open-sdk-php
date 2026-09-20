@@ -56,6 +56,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'refundAmount' => '\request\model\Amount',
         'refundStatus' => '\request\model\TransactionStatusType',
         'refundTime' => 'string',
+        'splitDetails' => '\request\model\SplitDetail[]',
         'grossSettlementAmount' => '\request\model\Amount',
         'settlementQuote' => '\request\model\Quote',
         'acquirerInfo' => '\request\model\AcquirerInfo',
@@ -81,6 +82,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'refundAmount' => null,
         'refundStatus' => null,
         'refundTime' => null,
+        'splitDetails' => null,
         'grossSettlementAmount' => null,
         'settlementQuote' => null,
         'acquirerInfo' => null,
@@ -104,6 +106,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'refundAmount' => false,
         'refundStatus' => false,
         'refundTime' => false,
+        'splitDetails' => false,
         'grossSettlementAmount' => false,
         'settlementQuote' => false,
         'acquirerInfo' => false,
@@ -207,6 +210,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'refundAmount' => 'refundAmount',
         'refundStatus' => 'refundStatus',
         'refundTime' => 'refundTime',
+        'splitDetails' => 'splitDetails',
         'grossSettlementAmount' => 'grossSettlementAmount',
         'settlementQuote' => 'settlementQuote',
         'acquirerInfo' => 'acquirerInfo',
@@ -230,6 +234,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'refundAmount' => 'setRefundAmount',
         'refundStatus' => 'setRefundStatus',
         'refundTime' => 'setRefundTime',
+        'splitDetails' => 'setSplitDetails',
         'grossSettlementAmount' => 'setGrossSettlementAmount',
         'settlementQuote' => 'setSettlementQuote',
         'acquirerInfo' => 'setAcquirerInfo',
@@ -253,6 +258,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         'refundAmount' => 'getRefundAmount',
         'refundStatus' => 'getRefundStatus',
         'refundTime' => 'getRefundTime',
+        'splitDetails' => 'getSplitDetails',
         'grossSettlementAmount' => 'getGrossSettlementAmount',
         'settlementQuote' => 'getSettlementQuote',
         'acquirerInfo' => 'getAcquirerInfo',
@@ -327,6 +333,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('refundAmount', $data ?? [], null);
         $this->setIfExists('refundStatus', $data ?? [], null);
         $this->setIfExists('refundTime', $data ?? [], null);
+        $this->setIfExists('splitDetails', $data ?? [], null);
         $this->setIfExists('grossSettlementAmount', $data ?? [], null);
         $this->setIfExists('settlementQuote', $data ?? [], null);
         $this->setIfExists('acquirerInfo', $data ?? [], null);
@@ -621,6 +628,30 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
+     * Gets splitDetails
+     *
+     * @return \model\SplitDetail[]|null
+     */
+    public function getSplitDetails()
+    {
+        return $this->container['splitDetails'];
+    }
+
+    /**
+     * Sets splitDetails
+     *
+     * @param \model\SplitDetail[]|null $splitDetails The actual split reversal details for a refund. This field is guaranteed when the value of result.resultStatus is S, the value of refundStatus is SUCCESS, and the original refund request contains splitDetails, in which case it contains 1 to 20 items. This field is absent when the original refund request does not contain an explicit split-reversal instruction. When the value of refundStatus is PROCESSING, this field can be absent, and each returned item contains only the original-request fields splitTo, splitAmount, and description; in this case actualSplitAmount is absent and the data is non-final and must not be used for reconciliation.  More information:  Maximum size: 20 elements
+     *
+     * @return self
+     */
+    public function setSplitDetails($splitDetails)
+    {
+        $this->container['splitDetails'] = $splitDetails;
+
+        return $this;
+    }
+
+    /**
      * Gets grossSettlementAmount
      *
      * @return \model\Amount|null
@@ -729,7 +760,7 @@ class AlipayInquiryRefundResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets authorizationCode
      *
-     * @param string|null $authorizationCode The authorization code returned by the payment channel for a successful refund. This field is returned only when refundStatus is SUCCESS, the payment method or channel supplies a non-empty value, and the merchant is enabled for this capability. Otherwise, the property is omitted and is never returned as JSON null. The exact channel-provided string is returned without trimming, padding, case conversion, substitution, or truncation. Its absence does not change the refund result or produce a field-specific error.
+     * @param string|null $authorizationCode The authorization code returned by the payment channel upon a successful refund.
      *
      * @return self
      */
