@@ -1,7 +1,7 @@
 ```
 Language：PHP
 PHP version：7.1+
-Release ^1.6.0
+Release ^1.6.1
 Copyright：Ant financial services group
 ```
 
