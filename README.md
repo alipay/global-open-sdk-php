@@ -12,27 +12,12 @@ Requires the JSON, OpenSSL, and cURL extensions.
 
 ## Quick start
 
-- **API Key:** follow the [setup guide](docs/api-key-client.md) and run the [sandbox example](example/ApiKeyPaymentSession.php).
 - **RSA:** follow the [configuration](#rsa-configuration) and [inline example](#payment) below.
+- **API Key (limited availability):** follow the [setup guide](docs/api-key-client.md) and run the [sandbox example](example/ApiKeyPaymentSession.php).
 - Browse [more examples](example) and the [API documentation](https://global.alipay.com/docs/).
 
-API Key and RSA clients share request/response models. File uploads and notification
+RSA and API Key clients share request/response models. File uploads and notification
 verification still require RSA credentials.
-
-### API Key client
-
-Set `ANTOM_GATEWAY_URL` and `ANTOM_API_KEY` in your server environment.
-This initializes the client; see the [setup guide](docs/api-key-client.md) for a
-complete sandbox request and its additional configuration.
-
-```php
-require_once 'vendor/autoload.php';
-
-$client = new \Client\ApiKeyAlipayClient([
-    'gatewayUrl' => getenv('ANTOM_GATEWAY_URL'),
-    'apiKey' => getenv('ANTOM_API_KEY'),
-]);
-```
 
 ### RSA configuration
 
@@ -139,6 +124,24 @@ $request->setSettlementStrategy($settlementStrategy);
 
 $alipayClient = new DefaultAlipayClient($gatewayUrl, $merchantPrivateKey, $alipayPublicKey, $clientId);
 $alipayResponse = $alipayClient->execute($request);
+```
+
+### API Key client (limited availability)
+
+> API Key access is not yet available to all merchants. Use this client only if
+> API Key access has been enabled for your account; otherwise, use RSA.
+
+Set `ANTOM_GATEWAY_URL` and `ANTOM_API_KEY` in your server environment.
+This initializes the client; see the [setup guide](docs/api-key-client.md) for a
+complete sandbox request and its additional configuration.
+
+```php
+require_once 'vendor/autoload.php';
+
+$client = new \Client\ApiKeyAlipayClient([
+    'gatewayUrl' => getenv('ANTOM_GATEWAY_URL'),
+    'apiKey' => getenv('ANTOM_API_KEY'),
+]);
 ```
 
 ## Upgrade notes
