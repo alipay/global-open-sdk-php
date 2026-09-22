@@ -46,6 +46,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fingerprint' => 'string',
         'issuerName' => 'string',
         'refusalCodeRaw' => 'string',
         'refusalReasonRaw' => 'string',
@@ -87,6 +88,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fingerprint' => null,
         'issuerName' => null,
         'refusalCodeRaw' => null,
         'refusalReasonRaw' => null,
@@ -126,6 +128,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'fingerprint' => false,
         'issuerName' => false,
         'refusalCodeRaw' => false,
         'refusalReasonRaw' => false,
@@ -245,6 +248,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
+        'fingerprint' => 'fingerprint',
         'issuerName' => 'issuerName',
         'refusalCodeRaw' => 'refusalCodeRaw',
         'refusalReasonRaw' => 'refusalReasonRaw',
@@ -284,6 +288,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
+        'fingerprint' => 'setFingerprint',
         'issuerName' => 'setIssuerName',
         'refusalCodeRaw' => 'setRefusalCodeRaw',
         'refusalReasonRaw' => 'setRefusalReasonRaw',
@@ -323,6 +328,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
+        'fingerprint' => 'getFingerprint',
         'issuerName' => 'getIssuerName',
         'refusalCodeRaw' => 'getRefusalCodeRaw',
         'refusalReasonRaw' => 'getRefusalReasonRaw',
@@ -413,6 +419,7 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('fingerprint', $data ?? [], null);
         $this->setIfExists('issuerName', $data ?? [], null);
         $this->setIfExists('refusalCodeRaw', $data ?? [], null);
         $this->setIfExists('refusalReasonRaw', $data ?? [], null);
@@ -488,6 +495,30 @@ class PaymentResultInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fingerprint
+     *
+     * @return string|null
+     */
+    public function getFingerprint()
+    {
+        return $this->container['fingerprint'];
+    }
+
+    /**
+     * Sets fingerprint
+     *
+     * @param string|null $fingerprint Uniquely identifies a card number and can be used to determine whether different customers are using the same card number. Maximum length: 256 characters.
+     *
+     * @return self
+     */
+    public function setFingerprint($fingerprint)
+    {
+        $this->container['fingerprint'] = $fingerprint;
+
+        return $this;
+    }
 
     /**
      * Gets issuerName
