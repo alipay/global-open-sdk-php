@@ -2,6 +2,11 @@
 
 ### Exact amount conversion
 
+All three AmountUtil operations accept zero, including IDR. Zero converts to
+`"0"` in minor units; conversion back uses the currency's fixed decimal precision.
+The 16-digit value limit still applies. Callers must check whether their target
+API accepts a zero amount.
+
 ```php
 use Util\AmountUtil;
 

@@ -83,11 +83,11 @@ final class AmountUtil
 
     private static function validateCanonical(string $value, string $currency): void
     {
-        if (strspn($value, '0') === strlen($value)) {
-            self::fail('AMOUNT_NOT_POSITIVE', 'value must be greater than zero');
-        }
         if (strlen($value) > self::MAX_VALUE_LENGTH) {
             self::fail('VALUE_TOO_LONG', 'value must contain at most 16 digits');
+        }
+        if (strspn($value, '0') === strlen($value)) {
+            return;
         }
         $rules = AmountRuleLoader::rules();
         if (isset($rules['antomConstraints'][$currency])) {
