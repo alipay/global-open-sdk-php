@@ -1,6 +1,6 @@
 # Antom SDK for PHP
 
-Latest release: **1.6.1**
+Latest release: **1.6.2**
 
 ## Installation
 
