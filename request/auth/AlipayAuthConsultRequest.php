@@ -46,6 +46,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
+        'amount' => '\request\model\Amount',
+        'directDebitInfo' => '\request\model\AuthorizationConsultDirectDebitInfo',
         'merchantAccountId' => 'string',
         'authNotifyUrl' => 'string',
         'customerBelongsTo' => '\request\model\CustomerBelongsTo',
@@ -71,6 +73,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'amount' => null,
+        'directDebitInfo' => null,
         'merchantAccountId' => null,
         'authNotifyUrl' => null,
         'customerBelongsTo' => null,
@@ -94,6 +98,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'amount' => false,
+        'directDebitInfo' => false,
         'merchantAccountId' => false,
         'authNotifyUrl' => false,
         'customerBelongsTo' => false,
@@ -197,6 +203,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
+        'amount' => 'amount',
+        'directDebitInfo' => 'directDebitInfo',
         'merchantAccountId' => 'merchantAccountId',
         'authNotifyUrl' => 'authNotifyUrl',
         'customerBelongsTo' => 'customerBelongsTo',
@@ -220,6 +228,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
+        'amount' => 'setAmount',
+        'directDebitInfo' => 'setDirectDebitInfo',
         'merchantAccountId' => 'setMerchantAccountId',
         'authNotifyUrl' => 'setAuthNotifyUrl',
         'customerBelongsTo' => 'setCustomerBelongsTo',
@@ -243,6 +253,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
+        'amount' => 'getAmount',
+        'directDebitInfo' => 'getDirectDebitInfo',
         'merchantAccountId' => 'getMerchantAccountId',
         'authNotifyUrl' => 'getAuthNotifyUrl',
         'customerBelongsTo' => 'getCustomerBelongsTo',
@@ -317,6 +329,8 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('directDebitInfo', $data ?? [], null);
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('authNotifyUrl', $data ?? [], null);
         $this->setIfExists('customerBelongsTo', $data ?? [], null);
@@ -392,6 +406,54 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets amount
+     *
+     * @return \model\Amount|null
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param \model\Amount|null $amount amount
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets directDebitInfo
+     *
+     * @return \model\AuthorizationConsultDirectDebitInfo|null
+     */
+    public function getDirectDebitInfo()
+    {
+        return $this->container['directDebitInfo'];
+    }
+
+    /**
+     * Sets directDebitInfo
+     *
+     * @param \model\AuthorizationConsultDirectDebitInfo|null $directDebitInfo directDebitInfo
+     *
+     * @return self
+     */
+    public function setDirectDebitInfo($directDebitInfo)
+    {
+        $this->container['directDebitInfo'] = $directDebitInfo;
+
+        return $this;
+    }
 
     /**
      * Gets merchantAccountId
