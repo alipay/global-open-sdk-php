@@ -46,6 +46,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'country' => 'string',
         'region' => 'string',
         'state' => 'string',
         'city' => 'string',
@@ -64,6 +65,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'country' => null,
         'region' => null,
         'state' => null,
         'city' => null,
@@ -80,6 +82,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'country' => false,
         'region' => false,
         'state' => false,
         'city' => false,
@@ -176,6 +179,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'country' => 'country',
         'region' => 'region',
         'state' => 'state',
         'city' => 'city',
@@ -192,6 +196,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'country' => 'setCountry',
         'region' => 'setRegion',
         'state' => 'setState',
         'city' => 'setCity',
@@ -208,6 +213,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'country' => 'getCountry',
         'region' => 'getRegion',
         'state' => 'getState',
         'city' => 'getCity',
@@ -275,6 +281,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
@@ -330,6 +337,30 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country Country code for createPaymentSession buyer.businessAddress. Required in the DingTalk integration; use region for other address contexts. ISO 3166-1 alpha-2.
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
 
     /**
      * Gets region
