@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * InvoiceCreateItem Class Doc Comment
+ * InvoiceCustomerDetails Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'InvoiceCreateItem';
+    protected static $openAPIModelName = 'InvoiceCustomerDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,18 +46,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'discountAmount' => '\request\model\Amount',
-        'taxBehavior' => 'string',
-        'taxCode' => 'string',
-        'description' => 'string',
-        'itemAmount' => '\request\model\Amount',
-        'unitAmount' => '\request\model\Amount',
-        'priceId' => 'string',
-        'productId' => 'string',
-        'quantity' => 'int',
-        'itemId' => 'string',
-        'supplyStart' => 'string',
-        'supplyEnd' => 'string'
+        'email' => 'string',
+        'customerType' => 'string',
+        'businessName' => 'string',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'businessAddress' => '\request\model\CustomerBusinessAddress',
+        'preferredLocales' => 'string',
+        'taxIds' => '\request\model\BuyerTaxId[]'
     ];
 
     /**
@@ -68,18 +64,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'discountAmount' => null,
-        'taxBehavior' => null,
-        'taxCode' => null,
-        'description' => null,
-        'itemAmount' => null,
-        'unitAmount' => null,
-        'priceId' => null,
-        'productId' => null,
-        'quantity' => null,
-        'itemId' => null,
-        'supplyStart' => null,
-        'supplyEnd' => null
+        'email' => null,
+        'customerType' => null,
+        'businessName' => null,
+        'firstName' => null,
+        'lastName' => null,
+        'businessAddress' => null,
+        'preferredLocales' => null,
+        'taxIds' => null
     ];
 
     /**
@@ -88,18 +80,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'discountAmount' => false,
-        'taxBehavior' => false,
-        'taxCode' => false,
-        'description' => false,
-        'itemAmount' => false,
-        'unitAmount' => false,
-        'priceId' => false,
-        'productId' => false,
-        'quantity' => true,
-        'itemId' => false,
-        'supplyStart' => false,
-        'supplyEnd' => false
+        'email' => false,
+        'customerType' => false,
+        'businessName' => false,
+        'firstName' => false,
+        'lastName' => false,
+        'businessAddress' => false,
+        'preferredLocales' => false,
+        'taxIds' => false
     ];
 
     /**
@@ -188,18 +176,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'discountAmount' => 'discountAmount',
-        'taxBehavior' => 'taxBehavior',
-        'taxCode' => 'taxCode',
-        'description' => 'description',
-        'itemAmount' => 'itemAmount',
-        'unitAmount' => 'unitAmount',
-        'priceId' => 'priceId',
-        'productId' => 'productId',
-        'quantity' => 'quantity',
-        'itemId' => 'itemId',
-        'supplyStart' => 'supplyStart',
-        'supplyEnd' => 'supplyEnd'
+        'email' => 'email',
+        'customerType' => 'customerType',
+        'businessName' => 'businessName',
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'businessAddress' => 'businessAddress',
+        'preferredLocales' => 'preferredLocales',
+        'taxIds' => 'taxIds'
     ];
 
     /**
@@ -208,18 +192,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'discountAmount' => 'setDiscountAmount',
-        'taxBehavior' => 'setTaxBehavior',
-        'taxCode' => 'setTaxCode',
-        'description' => 'setDescription',
-        'itemAmount' => 'setItemAmount',
-        'unitAmount' => 'setUnitAmount',
-        'priceId' => 'setPriceId',
-        'productId' => 'setProductId',
-        'quantity' => 'setQuantity',
-        'itemId' => 'setItemId',
-        'supplyStart' => 'setSupplyStart',
-        'supplyEnd' => 'setSupplyEnd'
+        'email' => 'setEmail',
+        'customerType' => 'setCustomerType',
+        'businessName' => 'setBusinessName',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'businessAddress' => 'setBusinessAddress',
+        'preferredLocales' => 'setPreferredLocales',
+        'taxIds' => 'setTaxIds'
     ];
 
     /**
@@ -228,18 +208,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'discountAmount' => 'getDiscountAmount',
-        'taxBehavior' => 'getTaxBehavior',
-        'taxCode' => 'getTaxCode',
-        'description' => 'getDescription',
-        'itemAmount' => 'getItemAmount',
-        'unitAmount' => 'getUnitAmount',
-        'priceId' => 'getPriceId',
-        'productId' => 'getProductId',
-        'quantity' => 'getQuantity',
-        'itemId' => 'getItemId',
-        'supplyStart' => 'getSupplyStart',
-        'supplyEnd' => 'getSupplyEnd'
+        'email' => 'getEmail',
+        'customerType' => 'getCustomerType',
+        'businessName' => 'getBusinessName',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'businessAddress' => 'getBusinessAddress',
+        'preferredLocales' => 'getPreferredLocales',
+        'taxIds' => 'getTaxIds'
     ];
 
     /**
@@ -299,18 +275,14 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('discountAmount', $data ?? [], null);
-        $this->setIfExists('taxBehavior', $data ?? [], null);
-        $this->setIfExists('taxCode', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('itemAmount', $data ?? [], null);
-        $this->setIfExists('unitAmount', $data ?? [], null);
-        $this->setIfExists('priceId', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('itemId', $data ?? [], null);
-        $this->setIfExists('supplyStart', $data ?? [], null);
-        $this->setIfExists('supplyEnd', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('customerType', $data ?? [], null);
+        $this->setIfExists('businessName', $data ?? [], null);
+        $this->setIfExists('firstName', $data ?? [], null);
+        $this->setIfExists('lastName', $data ?? [], null);
+        $this->setIfExists('businessAddress', $data ?? [], null);
+        $this->setIfExists('preferredLocales', $data ?? [], null);
+        $this->setIfExists('taxIds', $data ?? [], null);
 
             }
 
@@ -341,6 +313,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -357,289 +332,193 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets discountAmount
+     * Gets email
      *
-     * @return \model\Amount|null
+     * @return string
      */
-    public function getDiscountAmount()
+    public function getEmail()
     {
-        return $this->container['discountAmount'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets discountAmount
+     * Sets email
      *
-     * @param \model\Amount|null $discountAmount discountAmount
+     * @param string $email Customer email for merchant/email lookup and invoice contact. Delivery uses the current billing email, otherwise account email.
      *
      * @return self
      */
-    public function setDiscountAmount($discountAmount)
+    public function setEmail($email)
     {
-        $this->container['discountAmount'] = $discountAmount;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets taxBehavior
+     * Gets customerType
      *
      * @return string|null
      */
-    public function getTaxBehavior()
+    public function getCustomerType()
     {
-        return $this->container['taxBehavior'];
+        return $this->container['customerType'];
     }
 
     /**
-     * Sets taxBehavior
+     * Sets customerType
      *
-     * @param string|null $taxBehavior Tax inclusion behavior: EXCLUSIVE (tax added) or INCLUSIVE (tax included). Used for automatic tax calculation.
+     * @param string|null $customerType B (business) or C (consumer). If omitted, uses the matched customer type, otherwise C.
      *
      * @return self
      */
-    public function setTaxBehavior($taxBehavior)
+    public function setCustomerType($customerType)
     {
-        $this->container['taxBehavior'] = $taxBehavior;
+        $this->container['customerType'] = $customerType;
 
         return $this;
     }
 
     /**
-     * Gets taxCode
+     * Gets businessName
      *
      * @return string|null
      */
-    public function getTaxCode()
+    public function getBusinessName()
     {
-        return $this->container['taxCode'];
+        return $this->container['businessName'];
     }
 
     /**
-     * Sets taxCode
+     * Sets businessName
      *
-     * @param string|null $taxCode Line-item tax classification code for automatic tax calculation, such as txcd_37071002.
+     * @param string|null $businessName Effective business name required for type B. Omitted values may come from the matched customer; its profile is not overwritten.
      *
      * @return self
      */
-    public function setTaxCode($taxCode)
+    public function setBusinessName($businessName)
     {
-        $this->container['taxCode'] = $taxCode;
+        $this->container['businessName'] = $businessName;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets firstName
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getFirstName()
     {
-        return $this->container['description'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets description
+     * Sets firstName
      *
-     * @param string|null $description Human-readable description of the invoice. Appears on the invoice PDF and hosted page. HTML tags are stripped for XSS prevention. Can be null.
+     * @param string|null $firstName Effective first name required for type C; may use the matched customer value when omitted. Optional contact name for type B.
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setFirstName($firstName)
     {
-        $this->container['description'] = $description;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets itemAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getItemAmount()
-    {
-        return $this->container['itemAmount'];
-    }
-
-    /**
-     * Sets itemAmount
-     *
-     * @param \model\Amount|null $itemAmount itemAmount
-     *
-     * @return self
-     */
-    public function setItemAmount($itemAmount)
-    {
-        $this->container['itemAmount'] = $itemAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets unitAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getUnitAmount()
-    {
-        return $this->container['unitAmount'];
-    }
-
-    /**
-     * Sets unitAmount
-     *
-     * @param \model\Amount|null $unitAmount unitAmount
-     *
-     * @return self
-     */
-    public function setUnitAmount($unitAmount)
-    {
-        $this->container['unitAmount'] = $unitAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets priceId
+     * Gets lastName
      *
      * @return string|null
      */
-    public function getPriceId()
+    public function getLastName()
     {
-        return $this->container['priceId'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets priceId
+     * Sets lastName
      *
-     * @param string|null $priceId Price identifier from the Antom price catalog. The unit amount and currency are resolved from the price catalog entry. Use this for items linked to the product/price catalog. Can be null when using `itemAmount` or `unitAmount` pricing models.
+     * @param string|null $lastName Effective last name required for type C; may use the matched customer value when omitted. Optional contact name for type B.
      *
      * @return self
      */
-    public function setPriceId($priceId)
+    public function setLastName($lastName)
     {
-        $this->container['priceId'] = $priceId;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets productId
+     * Gets businessAddress
+     *
+     * @return \model\CustomerBusinessAddress|null
+     */
+    public function getBusinessAddress()
+    {
+        return $this->container['businessAddress'];
+    }
+
+    /**
+     * Sets businessAddress
+     *
+     * @param \model\CustomerBusinessAddress|null $businessAddress businessAddress
+     *
+     * @return self
+     */
+    public function setBusinessAddress($businessAddress)
+    {
+        $this->container['businessAddress'] = $businessAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferredLocales
      *
      * @return string|null
      */
-    public function getProductId()
+    public function getPreferredLocales()
     {
-        return $this->container['productId'];
+        return $this->container['preferredLocales'];
     }
 
     /**
-     * Sets productId
+     * Sets preferredLocales
      *
-     * @param string|null $productId External product identifier associated with this line item. Stored in item metadata; used for reconciliation and reporting. Can be null.
+     * @param string|null $preferredLocales Comma-separated invoice and offline receipt PDF locales, such as ja-JP,en-US. First supported locale wins, with English fallback. Does not select email language.
      *
      * @return self
      */
-    public function setProductId($productId)
+    public function setPreferredLocales($preferredLocales)
     {
-        $this->container['productId'] = $productId;
+        $this->container['preferredLocales'] = $preferredLocales;
 
         return $this;
     }
 
     /**
-     * Gets quantity
+     * Gets taxIds
      *
-     * @return int|null
+     * @return \model\BuyerTaxId[]|null
      */
-    public function getQuantity()
+    public function getTaxIds()
     {
-        return $this->container['quantity'];
+        return $this->container['taxIds'];
     }
 
     /**
-     * Sets quantity
+     * Sets taxIds
      *
-     * @param int|null $quantity Quantity of units, from 1 to 999. Defaults to 1 on the server. Multiplies unitAmount or catalog pricing; does not multiply fixed itemAmount.
+     * @param \model\BuyerTaxId[]|null $taxIds Tax IDs saved for invoice and offline receipt PDF display. Omit to use stored customer IDs; an empty array suppresses display. Does not change tax calculation.
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setTaxIds($taxIds)
     {
-        $this->container['quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemId
-     *
-     * @return string|null
-     */
-    public function getItemId()
-    {
-        return $this->container['itemId'];
-    }
-
-    /**
-     * Sets itemId
-     *
-     * @param string|null $itemId Item identifier for upsert during update operations. When provided in an update request, the system queries by itemId + merchantId to determine whether to update an existing item or create a new one. Omit for create operations. Can be null.
-     *
-     * @return self
-     */
-    public function setItemId($itemId)
-    {
-        $this->container['itemId'] = $itemId;
-
-        return $this;
-    }
-
-    /**
-     * Gets supplyStart
-     *
-     * @return string|null
-     */
-    public function getSupplyStart()
-    {
-        return $this->container['supplyStart'];
-    }
-
-    /**
-     * Sets supplyStart
-     *
-     * @param string|null $supplyStart Service/goods supply period start date (ISO 8601 format, e.g. `\"2026-01-15T00:00:00Z\"`). NULL if not applicable. Complements billing period coverage fields. Can be null.
-     *
-     * @return self
-     */
-    public function setSupplyStart($supplyStart)
-    {
-        $this->container['supplyStart'] = $supplyStart;
-
-        return $this;
-    }
-
-    /**
-     * Gets supplyEnd
-     *
-     * @return string|null
-     */
-    public function getSupplyEnd()
-    {
-        return $this->container['supplyEnd'];
-    }
-
-    /**
-     * Sets supplyEnd
-     *
-     * @param string|null $supplyEnd Service/goods supply period end date (ISO 8601 format, e.g. `\"2026-01-31T23:59:59Z\"`). NULL if not applicable. If both `supplyStart` and `supplyEnd` are provided, `supplyStart` must be before `supplyEnd`. Can be null.
-     *
-     * @return self
-     */
-    public function setSupplyEnd($supplyEnd)
-    {
-        $this->container['supplyEnd'] = $supplyEnd;
+        $this->container['taxIds'] = $taxIds;
 
         return $this;
     }

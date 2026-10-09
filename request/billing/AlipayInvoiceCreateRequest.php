@@ -46,6 +46,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
       * @var string[]
       */
     protected static $openAPITypes = [
+        'includePaymentLink' => 'bool',
+        'automaticTax' => '\request\model\AutomaticTax',
+        'customerDetails' => '\request\model\InvoiceCustomerDetails',
         'invoiceRequestId' => 'string',
         'customerId' => 'string',
         'subscriptionId' => 'string',
@@ -71,6 +74,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'includePaymentLink' => null,
+        'automaticTax' => null,
+        'customerDetails' => null,
         'invoiceRequestId' => null,
         'customerId' => null,
         'subscriptionId' => null,
@@ -94,6 +100,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'includePaymentLink' => false,
+        'automaticTax' => false,
+        'customerDetails' => false,
         'invoiceRequestId' => false,
         'customerId' => false,
         'subscriptionId' => false,
@@ -197,6 +206,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $attributeMap = [
+        'includePaymentLink' => 'includePaymentLink',
+        'automaticTax' => 'automaticTax',
+        'customerDetails' => 'customerDetails',
         'invoiceRequestId' => 'invoiceRequestId',
         'customerId' => 'customerId',
         'subscriptionId' => 'subscriptionId',
@@ -220,6 +232,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
+        'includePaymentLink' => 'setIncludePaymentLink',
+        'automaticTax' => 'setAutomaticTax',
+        'customerDetails' => 'setCustomerDetails',
         'invoiceRequestId' => 'setInvoiceRequestId',
         'customerId' => 'setCustomerId',
         'subscriptionId' => 'setSubscriptionId',
@@ -243,6 +258,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
      * @var string[]
      */
     protected static $getters = [
+        'includePaymentLink' => 'getIncludePaymentLink',
+        'automaticTax' => 'getAutomaticTax',
+        'customerDetails' => 'getCustomerDetails',
         'invoiceRequestId' => 'getInvoiceRequestId',
         'customerId' => 'getCustomerId',
         'subscriptionId' => 'getSubscriptionId',
@@ -317,6 +335,9 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('includePaymentLink', $data ?? [], null);
+        $this->setIfExists('automaticTax', $data ?? [], null);
+        $this->setIfExists('customerDetails', $data ?? [], null);
         $this->setIfExists('invoiceRequestId', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
@@ -366,9 +387,6 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
         if ($this->container['invoiceRequestId'] === null) {
             $invalidProperties[] = "'invoiceRequestId' can't be null";
         }
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
-        }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
         }
@@ -391,6 +409,78 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
 
 
     /**
+     * Gets includePaymentLink
+     *
+     * @return bool|null
+     */
+    public function getIncludePaymentLink()
+    {
+        return $this->container['includePaymentLink'];
+    }
+
+    /**
+     * Sets includePaymentLink
+     *
+     * @param bool|null $includePaymentLink Whether invoice emails and PDFs display payment links. Defaults to true on the server; false hides links without suppressing email or hostedInvoiceUrl. Saved for later delivery unless overridden.
+     *
+     * @return self
+     */
+    public function setIncludePaymentLink($includePaymentLink)
+    {
+        $this->container['includePaymentLink'] = $includePaymentLink;
+
+        return $this;
+    }
+
+    /**
+     * Gets automaticTax
+     *
+     * @return \model\AutomaticTax|null
+     */
+    public function getAutomaticTax()
+    {
+        return $this->container['automaticTax'];
+    }
+
+    /**
+     * Sets automaticTax
+     *
+     * @param \model\AutomaticTax|null $automaticTax automaticTax
+     *
+     * @return self
+     */
+    public function setAutomaticTax($automaticTax)
+    {
+        $this->container['automaticTax'] = $automaticTax;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerDetails
+     *
+     * @return \model\InvoiceCustomerDetails|null
+     */
+    public function getCustomerDetails()
+    {
+        return $this->container['customerDetails'];
+    }
+
+    /**
+     * Sets customerDetails
+     *
+     * @param \model\InvoiceCustomerDetails|null $customerDetails customerDetails
+     *
+     * @return self
+     */
+    public function setCustomerDetails($customerDetails)
+    {
+        $this->container['customerDetails'] = $customerDetails;
+
+        return $this;
+    }
+
+    /**
      * Gets invoiceRequestId
      *
      * @return string
@@ -403,7 +493,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets invoiceRequestId
      *
-     * @param string $invoiceRequestId Merchant-supplied idempotency key. Repeating the same `invoiceRequestId` returns the originally created invoice (true idempotency - same key, same result). Must be unique per merchant. Backed by a unique constraint `UK(merchant_id, invoice_request_id)` on `ibilling_invoice`. Accepts alphanumeric characters, and underscores. Cannot be null.
+     * @param string $invoiceRequestId Merchant-scoped idempotency key. A duplicate returns BIZ_REPEATED_SUBMIT (F) with the persisted invoice ID and status before customer resolution, without comparing replay payloads. Reconcile and retry unknown outcomes with the same ID.
      *
      * @return self
      */
@@ -417,7 +507,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Gets customerId
      *
-     * @return string
+     * @return string|null
      */
     public function getCustomerId()
     {
@@ -427,7 +517,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets customerId
      *
-     * @param string $customerId Customer ID this invoice belongs to. The customer must exist and belong to the requesting merchant. Cannot be null.
+     * @param string|null $customerId Existing customer ID belonging to the merchant. Supply exactly one of customerId and customerDetails.
      *
      * @return self
      */
@@ -547,7 +637,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets autoSend
      *
-     * @param bool|null $autoSend Whether to email the invoice to the customer when created as `OPEN`. When `true`, the email is sent idempotently - sending the same invoice twice won't produce duplicate emails. Can be null (defaults to false).
+     * @param bool|null $autoSend Request invoice email delivery when created as OPEN. Defaults to false on the server. Independent of includePaymentLink; delivery failure does not undo issuance.
      *
      * @return self
      */
@@ -571,7 +661,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets ccEmails
      *
-     * @param string[]|null $ccEmails CC email addresses for invoice notification. When `autoSend` is `true`, the invoice email is also sent to these addresses. Can be null.
+     * @param string[]|null $ccEmails Valid CC email addresses. The current invoice auto-send flow does not guarantee CC forwarding.
      *
      * @return self
      */
@@ -715,7 +805,7 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
     /**
      * Sets discounts
      *
-     * @param \model\BillingDiscount[]|null $discounts Invoice-level discount items. Each item carries either a `couponId` or `promotionCodeId` (at least one must be provided per element). Multiple discounts are applied sequentially to the invoice subtotal in the order they appear. The system resolves each discount reference to its actual discount value (percentage or fixed amount) at creation time and computes the resulting `discountAmount` internally. Can be null. See DiscountItem Object below for field details.
+     * @param \model\BillingDiscount[]|null $discounts Invoice-level discount items. Each item carries either a `couponId` or `promotionCodeId` (at least one must be provided per element). Multiple discounts are applied sequentially to the invoice subtotal in the order they appear. The system resolves each discount reference to its actual discount value (percentage or fixed amount) at creation time and computes the resulting `discountAmount` internally. Can be null. See DiscountItem Object below for field details. Invoice-level discounts are not supported when automaticTax.enabled is true.
      *
      * @return self
      */
