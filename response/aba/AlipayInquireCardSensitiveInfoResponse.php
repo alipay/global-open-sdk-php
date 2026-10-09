@@ -52,6 +52,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         'cardNo' => 'string',
         'expiredMonth' => 'string',
         'expiredYear' => 'string',
+        'authorizationControl' => '\request\model\AuthorizationControl',
         'cardDetail' => '\request\model\CardDetail'
     ];
 
@@ -69,6 +70,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         'cardNo' => null,
         'expiredMonth' => null,
         'expiredYear' => null,
+        'authorizationControl' => null,
         'cardDetail' => null
     ];
 
@@ -84,6 +86,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         'cardNo' => false,
         'expiredMonth' => false,
         'expiredYear' => false,
+        'authorizationControl' => false,
         'cardDetail' => false
     ];
 
@@ -179,6 +182,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         'cardNo' => 'cardNo',
         'expiredMonth' => 'expiredMonth',
         'expiredYear' => 'expiredYear',
+        'authorizationControl' => 'authorizationControl',
         'cardDetail' => 'cardDetail'
     ];
 
@@ -194,6 +198,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         'cardNo' => 'setCardNo',
         'expiredMonth' => 'setExpiredMonth',
         'expiredYear' => 'setExpiredYear',
+        'authorizationControl' => 'setAuthorizationControl',
         'cardDetail' => 'setCardDetail'
     ];
 
@@ -209,6 +214,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         'cardNo' => 'getCardNo',
         'expiredMonth' => 'getExpiredMonth',
         'expiredYear' => 'getExpiredYear',
+        'authorizationControl' => 'getAuthorizationControl',
         'cardDetail' => 'getCardDetail'
     ];
 
@@ -275,6 +281,7 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
         $this->setIfExists('cardNo', $data ?? [], null);
         $this->setIfExists('expiredMonth', $data ?? [], null);
         $this->setIfExists('expiredYear', $data ?? [], null);
+        $this->setIfExists('authorizationControl', $data ?? [], null);
         $this->setIfExists('cardDetail', $data ?? [], null);
 
             }
@@ -464,6 +471,30 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
     public function setExpiredYear($expiredYear)
     {
         $this->container['expiredYear'] = $expiredYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationControl
+     *
+     * @return \model\AuthorizationControl|null
+     */
+    public function getAuthorizationControl()
+    {
+        return $this->container['authorizationControl'];
+    }
+
+    /**
+     * Sets authorizationControl
+     *
+     * @param \model\AuthorizationControl|null $authorizationControl authorizationControl
+     *
+     * @return self
+     */
+    public function setAuthorizationControl($authorizationControl)
+    {
+        $this->container['authorizationControl'] = $authorizationControl;
 
         return $this;
     }

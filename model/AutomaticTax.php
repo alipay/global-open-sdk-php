@@ -264,9 +264,6 @@ class AutomaticTax  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['enabled'] === null) {
-            $invalidProperties[] = "'enabled' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -285,7 +282,7 @@ class AutomaticTax  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets enabled
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnabled()
     {
@@ -295,7 +292,7 @@ class AutomaticTax  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets enabled
      *
-     * @param bool $enabled Indicates whether automatic tax is enabled for this payment session. This field is required when automaticTax is provided. true enables automatic tax and false disables it for this session when merchant tax settings exist.
+     * @param bool|null $enabled Whether automatic tax is enabled. createPaymentSession requires an explicit value when automaticTax is supplied. For invoice/create, omission defaults to false; tax is calculated at OPEN issuance or DRAFT finalization, not DRAFT creation.
      *
      * @return self
      */
