@@ -21,7 +21,7 @@ use Model\ModelInterface;
 use Model\ObjectSerializer;
 
 /**
- * InvoiceCreateItem Class Doc Comment
+ * CustomerBusinessAddress Class Doc Comment
  *
  * @category Class
  * @package  request
@@ -29,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -38,7 +38,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'InvoiceCreateItem';
+    protected static $openAPIModelName = 'CustomerBusinessAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,18 +46,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'discountAmount' => '\request\model\Amount',
-        'taxBehavior' => 'string',
-        'taxCode' => 'string',
-        'description' => 'string',
-        'itemAmount' => '\request\model\Amount',
-        'unitAmount' => '\request\model\Amount',
-        'priceId' => 'string',
-        'productId' => 'string',
-        'quantity' => 'int',
-        'itemId' => 'string',
-        'supplyStart' => 'string',
-        'supplyEnd' => 'string'
+        'country' => 'string',
+        'state' => 'string',
+        'city' => 'string',
+        'address' => 'string',
+        'zipcode' => 'string'
     ];
 
     /**
@@ -68,18 +61,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'discountAmount' => null,
-        'taxBehavior' => null,
-        'taxCode' => null,
-        'description' => null,
-        'itemAmount' => null,
-        'unitAmount' => null,
-        'priceId' => null,
-        'productId' => null,
-        'quantity' => null,
-        'itemId' => null,
-        'supplyStart' => null,
-        'supplyEnd' => null
+        'country' => null,
+        'state' => null,
+        'city' => null,
+        'address' => null,
+        'zipcode' => null
     ];
 
     /**
@@ -88,18 +74,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'discountAmount' => false,
-        'taxBehavior' => false,
-        'taxCode' => false,
-        'description' => false,
-        'itemAmount' => false,
-        'unitAmount' => false,
-        'priceId' => false,
-        'productId' => false,
-        'quantity' => true,
-        'itemId' => false,
-        'supplyStart' => false,
-        'supplyEnd' => false
+        'country' => false,
+        'state' => false,
+        'city' => false,
+        'address' => false,
+        'zipcode' => false
     ];
 
     /**
@@ -188,18 +167,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'discountAmount' => 'discountAmount',
-        'taxBehavior' => 'taxBehavior',
-        'taxCode' => 'taxCode',
-        'description' => 'description',
-        'itemAmount' => 'itemAmount',
-        'unitAmount' => 'unitAmount',
-        'priceId' => 'priceId',
-        'productId' => 'productId',
-        'quantity' => 'quantity',
-        'itemId' => 'itemId',
-        'supplyStart' => 'supplyStart',
-        'supplyEnd' => 'supplyEnd'
+        'country' => 'country',
+        'state' => 'state',
+        'city' => 'city',
+        'address' => 'address',
+        'zipcode' => 'zipcode'
     ];
 
     /**
@@ -208,18 +180,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'discountAmount' => 'setDiscountAmount',
-        'taxBehavior' => 'setTaxBehavior',
-        'taxCode' => 'setTaxCode',
-        'description' => 'setDescription',
-        'itemAmount' => 'setItemAmount',
-        'unitAmount' => 'setUnitAmount',
-        'priceId' => 'setPriceId',
-        'productId' => 'setProductId',
-        'quantity' => 'setQuantity',
-        'itemId' => 'setItemId',
-        'supplyStart' => 'setSupplyStart',
-        'supplyEnd' => 'setSupplyEnd'
+        'country' => 'setCountry',
+        'state' => 'setState',
+        'city' => 'setCity',
+        'address' => 'setAddress',
+        'zipcode' => 'setZipcode'
     ];
 
     /**
@@ -228,18 +193,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'discountAmount' => 'getDiscountAmount',
-        'taxBehavior' => 'getTaxBehavior',
-        'taxCode' => 'getTaxCode',
-        'description' => 'getDescription',
-        'itemAmount' => 'getItemAmount',
-        'unitAmount' => 'getUnitAmount',
-        'priceId' => 'getPriceId',
-        'productId' => 'getProductId',
-        'quantity' => 'getQuantity',
-        'itemId' => 'getItemId',
-        'supplyStart' => 'getSupplyStart',
-        'supplyEnd' => 'getSupplyEnd'
+        'country' => 'getCountry',
+        'state' => 'getState',
+        'city' => 'getCity',
+        'address' => 'getAddress',
+        'zipcode' => 'getZipcode'
     ];
 
     /**
@@ -299,18 +257,11 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('discountAmount', $data ?? [], null);
-        $this->setIfExists('taxBehavior', $data ?? [], null);
-        $this->setIfExists('taxCode', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('itemAmount', $data ?? [], null);
-        $this->setIfExists('unitAmount', $data ?? [], null);
-        $this->setIfExists('priceId', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('itemId', $data ?? [], null);
-        $this->setIfExists('supplyStart', $data ?? [], null);
-        $this->setIfExists('supplyEnd', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('city', $data ?? [], null);
+        $this->setIfExists('address', $data ?? [], null);
+        $this->setIfExists('zipcode', $data ?? [], null);
 
             }
 
@@ -341,6 +292,12 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['country'] === null) {
+            $invalidProperties[] = "'country' can't be null";
+        }
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -357,289 +314,121 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets discountAmount
+     * Gets country
      *
-     * @return \model\Amount|null
+     * @return string
      */
-    public function getDiscountAmount()
+    public function getCountry()
     {
-        return $this->container['discountAmount'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets discountAmount
+     * Sets country
      *
-     * @param \model\Amount|null $discountAmount discountAmount
+     * @param string $country ISO 3166-1 alpha-2 country code.
      *
      * @return self
      */
-    public function setDiscountAmount($discountAmount)
+    public function setCountry($country)
     {
-        $this->container['discountAmount'] = $discountAmount;
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets taxBehavior
+     * Gets state
      *
      * @return string|null
      */
-    public function getTaxBehavior()
+    public function getState()
     {
-        return $this->container['taxBehavior'];
+        return $this->container['state'];
     }
 
     /**
-     * Sets taxBehavior
+     * Sets state
      *
-     * @param string|null $taxBehavior Tax inclusion behavior: EXCLUSIVE (tax added) or INCLUSIVE (tax included). Used for automatic tax calculation.
+     * @param string|null $state State or province code.
      *
      * @return self
      */
-    public function setTaxBehavior($taxBehavior)
+    public function setState($state)
     {
-        $this->container['taxBehavior'] = $taxBehavior;
+        $this->container['state'] = $state;
 
         return $this;
     }
 
     /**
-     * Gets taxCode
+     * Gets city
      *
      * @return string|null
      */
-    public function getTaxCode()
+    public function getCity()
     {
-        return $this->container['taxCode'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets taxCode
+     * Sets city
      *
-     * @param string|null $taxCode Line-item tax classification code for automatic tax calculation, such as txcd_37071002.
+     * @param string|null $city City name.
      *
      * @return self
      */
-    public function setTaxCode($taxCode)
+    public function setCity($city)
     {
-        $this->container['taxCode'] = $taxCode;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string $address Street address.
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets zipcode
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getZipcode()
     {
-        return $this->container['description'];
+        return $this->container['zipcode'];
     }
 
     /**
-     * Sets description
+     * Sets zipcode
      *
-     * @param string|null $description Human-readable description of the invoice. Appears on the invoice PDF and hosted page. HTML tags are stripped for XSS prevention. Can be null.
+     * @param string|null $zipcode Postal or ZIP code.
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setZipcode($zipcode)
     {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getItemAmount()
-    {
-        return $this->container['itemAmount'];
-    }
-
-    /**
-     * Sets itemAmount
-     *
-     * @param \model\Amount|null $itemAmount itemAmount
-     *
-     * @return self
-     */
-    public function setItemAmount($itemAmount)
-    {
-        $this->container['itemAmount'] = $itemAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets unitAmount
-     *
-     * @return \model\Amount|null
-     */
-    public function getUnitAmount()
-    {
-        return $this->container['unitAmount'];
-    }
-
-    /**
-     * Sets unitAmount
-     *
-     * @param \model\Amount|null $unitAmount unitAmount
-     *
-     * @return self
-     */
-    public function setUnitAmount($unitAmount)
-    {
-        $this->container['unitAmount'] = $unitAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets priceId
-     *
-     * @return string|null
-     */
-    public function getPriceId()
-    {
-        return $this->container['priceId'];
-    }
-
-    /**
-     * Sets priceId
-     *
-     * @param string|null $priceId Price identifier from the Antom price catalog. The unit amount and currency are resolved from the price catalog entry. Use this for items linked to the product/price catalog. Can be null when using `itemAmount` or `unitAmount` pricing models.
-     *
-     * @return self
-     */
-    public function setPriceId($priceId)
-    {
-        $this->container['priceId'] = $priceId;
-
-        return $this;
-    }
-
-    /**
-     * Gets productId
-     *
-     * @return string|null
-     */
-    public function getProductId()
-    {
-        return $this->container['productId'];
-    }
-
-    /**
-     * Sets productId
-     *
-     * @param string|null $productId External product identifier associated with this line item. Stored in item metadata; used for reconciliation and reporting. Can be null.
-     *
-     * @return self
-     */
-    public function setProductId($productId)
-    {
-        $this->container['productId'] = $productId;
-
-        return $this;
-    }
-
-    /**
-     * Gets quantity
-     *
-     * @return int|null
-     */
-    public function getQuantity()
-    {
-        return $this->container['quantity'];
-    }
-
-    /**
-     * Sets quantity
-     *
-     * @param int|null $quantity Quantity of units, from 1 to 999. Defaults to 1 on the server. Multiplies unitAmount or catalog pricing; does not multiply fixed itemAmount.
-     *
-     * @return self
-     */
-    public function setQuantity($quantity)
-    {
-        $this->container['quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemId
-     *
-     * @return string|null
-     */
-    public function getItemId()
-    {
-        return $this->container['itemId'];
-    }
-
-    /**
-     * Sets itemId
-     *
-     * @param string|null $itemId Item identifier for upsert during update operations. When provided in an update request, the system queries by itemId + merchantId to determine whether to update an existing item or create a new one. Omit for create operations. Can be null.
-     *
-     * @return self
-     */
-    public function setItemId($itemId)
-    {
-        $this->container['itemId'] = $itemId;
-
-        return $this;
-    }
-
-    /**
-     * Gets supplyStart
-     *
-     * @return string|null
-     */
-    public function getSupplyStart()
-    {
-        return $this->container['supplyStart'];
-    }
-
-    /**
-     * Sets supplyStart
-     *
-     * @param string|null $supplyStart Service/goods supply period start date (ISO 8601 format, e.g. `\"2026-01-15T00:00:00Z\"`). NULL if not applicable. Complements billing period coverage fields. Can be null.
-     *
-     * @return self
-     */
-    public function setSupplyStart($supplyStart)
-    {
-        $this->container['supplyStart'] = $supplyStart;
-
-        return $this;
-    }
-
-    /**
-     * Gets supplyEnd
-     *
-     * @return string|null
-     */
-    public function getSupplyEnd()
-    {
-        return $this->container['supplyEnd'];
-    }
-
-    /**
-     * Sets supplyEnd
-     *
-     * @param string|null $supplyEnd Service/goods supply period end date (ISO 8601 format, e.g. `\"2026-01-31T23:59:59Z\"`). NULL if not applicable. If both `supplyStart` and `supplyEnd` are provided, `supplyStart` must be before `supplyEnd`. Can be null.
-     *
-     * @return self
-     */
-    public function setSupplyEnd($supplyEnd)
-    {
-        $this->container['supplyEnd'] = $supplyEnd;
+        $this->container['zipcode'] = $zipcode;
 
         return $this;
     }

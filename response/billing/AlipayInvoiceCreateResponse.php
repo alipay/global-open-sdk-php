@@ -354,7 +354,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId System-generated unique invoice ID. Used as the primary identifier for subsequent API calls (query, update, void). Cannot be null. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $invoiceId System-generated invoice ID. Also returned for a persisted invoice on BIZ_REPEATED_SUBMIT; use it to reconcile the existing invoice.
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets status
      *
-     * @param string|null $status Current invoice status: `DRAFT` or `OPEN`. Determines which subsequent operations are available (edit for DRAFT, pay for OPEN). Cannot be null. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $status Invoice status: DRAFT, OPEN for a positive issued total, or PAID for zero-total issuance. Also returned with the persisted invoice on BIZ_REPEATED_SUBMIT.
      *
      * @return self
      */
@@ -426,7 +426,7 @@ class AlipayInvoiceCreateResponse  implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets hostedInvoiceUrl
      *
-     * @param string|null $hostedInvoiceUrl URL to the customer-facing hosted invoice page. Auto-generated for OPEN invoices. When `status=DRAFT`, this field is not returned - use the [Create View Link API](createViewLink.md) to generate a view URL for DRAFT invoices. Cannot be null when present. Returned only when result.resultCode is SUCCESS.
+     * @param string|null $hostedInvoiceUrl Hosted invoice URL returned for OPEN and zero-total PAID issuance, even when includePaymentLink is false. Absent for DRAFT creation.
      *
      * @return self
      */

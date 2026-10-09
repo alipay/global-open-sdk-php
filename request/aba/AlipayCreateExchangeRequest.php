@@ -46,6 +46,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
+        'quote' => '\request\model\Quote',
         'buyAmount' => '\request\model\Amount',
         'sellAmount' => '\request\model\Amount',
         'exchangeTradeType' => 'string',
@@ -61,6 +62,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'quote' => null,
         'buyAmount' => null,
         'sellAmount' => null,
         'exchangeTradeType' => null,
@@ -74,6 +76,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'quote' => false,
         'buyAmount' => false,
         'sellAmount' => false,
         'exchangeTradeType' => false,
@@ -167,6 +170,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
+        'quote' => 'quote',
         'buyAmount' => 'buyAmount',
         'sellAmount' => 'sellAmount',
         'exchangeTradeType' => 'exchangeTradeType',
@@ -180,6 +184,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
+        'quote' => 'setQuote',
         'buyAmount' => 'setBuyAmount',
         'sellAmount' => 'setSellAmount',
         'exchangeTradeType' => 'setExchangeTradeType',
@@ -193,6 +198,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
+        'quote' => 'getQuote',
         'buyAmount' => 'getBuyAmount',
         'sellAmount' => 'getSellAmount',
         'exchangeTradeType' => 'getExchangeTradeType',
@@ -257,6 +263,7 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('quote', $data ?? [], null);
         $this->setIfExists('buyAmount', $data ?? [], null);
         $this->setIfExists('sellAmount', $data ?? [], null);
         $this->setIfExists('exchangeTradeType', $data ?? [], null);
@@ -307,6 +314,30 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets quote
+     *
+     * @return \model\Quote|null
+     */
+    public function getQuote()
+    {
+        return $this->container['quote'];
+    }
+
+    /**
+     * Sets quote
+     *
+     * @param \model\Quote|null $quote quote
+     *
+     * @return self
+     */
+    public function setQuote($quote)
+    {
+        $this->container['quote'] = $quote;
+
+        return $this;
+    }
 
     /**
      * Gets buyAmount
