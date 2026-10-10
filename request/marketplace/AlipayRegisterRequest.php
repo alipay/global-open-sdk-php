@@ -47,9 +47,9 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
       */
     protected static $openAPITypes = [
         'registrationRequestId' => 'string',
-        'settlementInfos' => '\request\model\SettlementInfo[]',
-        'merchantInfo' => '\request\model\MerchantInfo',
-        'paymentMethods' => '\request\model\PaymentMethod[]'
+        'settlementInfos' => '\Model\SettlementInfo[]',
+        'merchantInfo' => '\Model\MerchantInfo',
+        'paymentMethods' => '\Model\PaymentMethod[]'
     ];
 
     /**

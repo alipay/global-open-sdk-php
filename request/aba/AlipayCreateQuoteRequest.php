@@ -46,8 +46,8 @@ class AlipayCreateQuoteRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'buyAmount' => '\request\model\Amount',
-        'sellAmount' => '\request\model\Amount',
+        'buyAmount' => '\Model\Amount',
+        'sellAmount' => '\Model\Amount',
         'exchangeTradeType' => 'string'
     ];
 

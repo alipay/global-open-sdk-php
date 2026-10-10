@@ -46,9 +46,9 @@ class AmountLimit  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'maxAmount' => '\request\model\Amount',
-        'minAmount' => '\request\model\Amount',
-        'remainAmount' => '\request\model\Amount'
+        'maxAmount' => '\Model\Amount',
+        'minAmount' => '\Model\Amount',
+        'remainAmount' => '\Model\Amount'
     ];
 
     /**

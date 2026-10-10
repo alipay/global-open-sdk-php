@@ -57,8 +57,8 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\request\model\AuthorizationControl',
-        'cardholderinfo' => '\request\model\CardholderInfo'
+        'authorizationControl' => '\Model\AuthorizationControl',
+        'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
     /**

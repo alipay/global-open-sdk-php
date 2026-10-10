@@ -46,21 +46,22 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'preferredLocales' => 'string',
         'businessName' => 'string',
         'buyerType' => 'string',
         'referenceBuyerId' => 'string',
-        'buyerName' => '\request\model\UserName',
+        'buyerName' => '\Model\UserName',
         'buyerPhoneNo' => 'string',
         'buyerEmail' => 'string',
         'buyerRegistrationTime' => 'string',
         'isAccountVerified' => 'bool',
         'successfulOrderCount' => 'int',
         'buyerPhoneNoContryCode' => 'string',
-        'successfulOrderAmount' => '\request\model\Amount',
+        'successfulOrderAmount' => '\Model\Amount',
         'dateOfLastPaidPurchase' => 'string',
         'dateOfFirstPaidPurchase' => 'string',
-        'taxIds' => '\request\model\BuyerTaxId[]',
-        'businessAddress' => '\request\model\Address'
+        'taxIds' => '\Model\BuyerTaxId[]',
+        'businessAddress' => '\Model\Address'
     ];
 
     /**
@@ -71,6 +72,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'preferredLocales' => null,
         'businessName' => null,
         'buyerType' => null,
         'referenceBuyerId' => null,
@@ -94,6 +96,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'preferredLocales' => false,
         'businessName' => false,
         'buyerType' => false,
         'referenceBuyerId' => false,
@@ -197,6 +200,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'preferredLocales' => 'preferredLocales',
         'businessName' => 'businessName',
         'buyerType' => 'buyerType',
         'referenceBuyerId' => 'referenceBuyerId',
@@ -220,6 +224,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'preferredLocales' => 'setPreferredLocales',
         'businessName' => 'setBusinessName',
         'buyerType' => 'setBuyerType',
         'referenceBuyerId' => 'setReferenceBuyerId',
@@ -243,6 +248,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'preferredLocales' => 'getPreferredLocales',
         'businessName' => 'getBusinessName',
         'buyerType' => 'getBuyerType',
         'referenceBuyerId' => 'getReferenceBuyerId',
@@ -317,6 +323,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('preferredLocales', $data ?? [], null);
         $this->setIfExists('businessName', $data ?? [], null);
         $this->setIfExists('buyerType', $data ?? [], null);
         $this->setIfExists('referenceBuyerId', $data ?? [], null);
@@ -376,6 +383,30 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets preferredLocales
+     *
+     * @return string|null
+     */
+    public function getPreferredLocales()
+    {
+        return $this->container['preferredLocales'];
+    }
+
+    /**
+     * Sets preferredLocales
+     *
+     * @param string|null $preferredLocales Comma-separated invoice and offline receipt PDF locales for createPaymentSession, such as ja-JP,en-US. First supported locale wins, with English fallback. Does not select email language. Omit in APIs that do not document support.
+     *
+     * @return self
+     */
+    public function setPreferredLocales($preferredLocales)
+    {
+        $this->container['preferredLocales'] = $preferredLocales;
+
+        return $this;
+    }
 
     /**
      * Gets businessName

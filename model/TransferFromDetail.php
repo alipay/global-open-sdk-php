@@ -46,8 +46,8 @@ class TransferFromDetail  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transferFromMethod' => '\request\model\PaymentMethod',
-        'transferFromAmount' => '\request\model\Amount'
+        'transferFromMethod' => '\Model\PaymentMethod',
+        'transferFromAmount' => '\Model\Amount'
     ];
 
     /**

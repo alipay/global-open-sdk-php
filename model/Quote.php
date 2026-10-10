@@ -52,7 +52,7 @@ class Quote  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quoteStartTime' => 'string',
         'quoteExpiryTime' => 'string',
         'guaranteed' => 'bool',
-        'exchangeAmount' => '\request\model\Amount'
+        'exchangeAmount' => '\Model\Amount'
     ];
 
     /**

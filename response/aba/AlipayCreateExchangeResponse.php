@@ -49,12 +49,12 @@ class AlipayCreateExchangeResponse  implements ModelInterface, ArrayAccess, \Jso
         'exchangeRequestId' => 'string',
         'exchangeTradeType' => 'string',
         'exchangeMode' => 'string',
-        'quote' => '\request\model\Quote',
-        'buyAmount' => '\request\model\Amount',
-        'sellAmount' => '\request\model\Amount',
+        'quote' => '\Model\Quote',
+        'buyAmount' => '\Model\Amount',
+        'sellAmount' => '\Model\Amount',
         'exchangeStartTime' => 'string',
         'exchangeEndTime' => 'string',
-        'result' => '\request\model\Result'
+        'result' => '\Model\Result'
     ];
 
     /**

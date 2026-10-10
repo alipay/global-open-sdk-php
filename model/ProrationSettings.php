@@ -47,7 +47,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'prorationMode' => 'string',
-        'customAmount' => '\request\model\Amount'
+        'customAmount' => '\Model\Amount'
     ];
 
     /**

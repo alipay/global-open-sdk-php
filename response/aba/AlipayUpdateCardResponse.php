@@ -48,7 +48,7 @@ class AlipayUpdateCardResponse  implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'status' => 'string',
         'requestId' => 'string',
-        'result' => '\request\model\Result'
+        'result' => '\Model\Result'
     ];
 
     /**

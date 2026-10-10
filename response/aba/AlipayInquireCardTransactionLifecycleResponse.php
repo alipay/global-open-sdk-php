@@ -46,8 +46,8 @@ class AlipayInquireCardTransactionLifecycleResponse  implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'lifecycles' => '\request\model\CardTransactionLifecycle[]',
+        'result' => '\Model\Result',
+        'lifecycles' => '\Model\CardTransactionLifecycle[]',
         'totalCount' => 'int',
         'totalPageNumber' => 'int',
         'currentPageNumber' => 'int'

@@ -50,12 +50,12 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'merchantMCC' => 'string',
         'merchantName' => 'string',
         'merchantDisplayName' => 'string',
-        'merchantAddress' => '\request\model\Address',
+        'merchantAddress' => '\Model\Address',
         'merchantRegisterDate' => 'string',
-        'store' => '\request\model\Store',
-        'merchantType' => '\request\model\MerchantType',
+        'store' => '\Model\Store',
+        'merchantType' => '\Model\MerchantType',
         'numberOfTrades' => 'int',
-        'accountLastModified' => '\request\model\AccountLastModified'
+        'accountLastModified' => '\Model\AccountLastModified'
     ];
 
     /**

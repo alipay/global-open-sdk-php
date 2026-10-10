@@ -46,11 +46,11 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fundsType' => '\request\model\FundsType',
-        'takeType' => '\request\model\TakeType',
-        'paymentMethodScope' => '\request\model\PaymentMethodScope',
+        'fundsType' => '\Model\FundsType',
+        'takeType' => '\Model\TakeType',
+        'paymentMethodScope' => '\Model\PaymentMethodScope',
         'ratio' => 'int',
-        'releaseType' => '\request\model\ReleaseType',
+        'releaseType' => '\Model\ReleaseType',
         'releaseTime' => 'string',
         'retentionTime' => 'int'
     ];

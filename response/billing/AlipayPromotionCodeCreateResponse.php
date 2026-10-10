@@ -46,7 +46,7 @@ class AlipayPromotionCodeCreateResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'promotionCodeId' => 'string',
         'code' => 'string',
         'status' => 'string'

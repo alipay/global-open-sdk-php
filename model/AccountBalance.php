@@ -47,9 +47,9 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'currency' => 'string',
-        'availableBalance' => '\request\model\Amount',
-        'frozenBalance' => '\request\model\Amount',
-        'totalBalance' => '\request\model\Amount'
+        'availableBalance' => '\Model\Amount',
+        'frozenBalance' => '\Model\Amount',
+        'totalBalance' => '\Model\Amount'
     ];
 
     /**

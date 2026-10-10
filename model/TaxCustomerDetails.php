@@ -46,12 +46,12 @@ class TaxCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'businessDetails' => '\request\model\TaxBusinessDetails',
+        'businessDetails' => '\Model\TaxBusinessDetails',
         'name' => 'string',
-        'shippingAddress' => '\request\model\TaxAddress',
-        'billingAddress' => '\request\model\TaxAddress',
-        'taxIds' => '\request\model\TaxId[]',
-        'taxExemptions' => '\request\model\TaxExemption[]'
+        'shippingAddress' => '\Model\TaxAddress',
+        'billingAddress' => '\Model\TaxAddress',
+        'taxIds' => '\Model\TaxId[]',
+        'taxExemptions' => '\Model\TaxExemption[]'
     ];
 
     /**

@@ -47,7 +47,7 @@ class CouponPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'couponId' => 'string',
-        'availableAmount' => '\request\model\Amount',
+        'availableAmount' => '\Model\Amount',
         'couponName' => 'string',
         'couponDescription' => 'string',
         'couponExpireTime' => 'string',

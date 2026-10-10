@@ -46,8 +46,8 @@ class AlipayInquireAvailableQuotaResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'availableQuota' => '\request\model\Amount',
-        'result' => '\request\model\Result'
+        'availableQuota' => '\Model\Amount',
+        'result' => '\Model\Result'
     ];
 
     /**

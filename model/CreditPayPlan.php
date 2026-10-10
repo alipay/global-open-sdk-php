@@ -48,7 +48,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'installmentNum' => 'int',
         'interval' => 'string',
-        'creditPayFeeType' => '\request\model\CreditPayFeeType',
+        'creditPayFeeType' => '\Model\CreditPayFeeType',
         'feePercentage' => 'int',
         'interestRate' => 'string'
     ];

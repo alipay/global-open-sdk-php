@@ -46,8 +46,8 @@ class AlipayMeterInquireDetailsResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'meter' => '\request\model\Meter'
+        'result' => '\Model\Result',
+        'meter' => '\Model\Meter'
     ];
 
     /**

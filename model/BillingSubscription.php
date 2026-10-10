@@ -47,14 +47,14 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'customerId' => 'string',
-        'trialSettings' => '\request\model\BillingTrialSettings',
+        'trialSettings' => '\Model\BillingTrialSettings',
         'paymentBehavior' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
         'cancelAt' => 'string',
         'cancelAtPeriodEnd' => 'bool',
         'description' => 'string',
-        'discounts' => '\request\model\BillingDiscount[]',
+        'discounts' => '\Model\BillingDiscount[]',
         'defaultPaymentMethod' => 'string',
         'allowPromotionCode' => 'bool',
         'subscriptionNotifyUrl' => 'string'

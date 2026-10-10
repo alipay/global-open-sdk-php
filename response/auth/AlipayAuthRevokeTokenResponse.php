@@ -46,7 +46,7 @@ class AlipayAuthRevokeTokenResponse  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'extendInfo' => 'string'
     ];
 
