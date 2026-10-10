@@ -46,8 +46,8 @@ class AlipayInquiryRateResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rateResultList' => '\request\model\RateResult[]',
-        'result' => '\request\model\Result'
+        'rateResultList' => '\Model\RateResult[]',
+        'result' => '\Model\Result'
     ];
 
     /**

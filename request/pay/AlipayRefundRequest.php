@@ -47,22 +47,22 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
       */
     protected static $openAPITypes = [
         'metadata' => 'string',
-        'customizedInfo' => '\request\model\CustomizedInfo',
+        'customizedInfo' => '\Model\CustomizedInfo',
         'captureId' => 'string',
-        'refundToBankInfo' => '\request\model\RefundToBankInfo',
+        'refundToBankInfo' => '\Model\RefundToBankInfo',
         'refundRequestId' => 'string',
         'paymentId' => 'string',
         'referenceRefundId' => 'string',
-        'refundAmount' => '\request\model\Amount',
+        'refundAmount' => '\Model\Amount',
         'refundReason' => 'string',
         'refundNotifyUrl' => 'string',
         'isAsyncRefund' => 'bool',
         'extendInfo' => 'string',
-        'refundDetails' => '\request\model\RefundDetail[]',
+        'refundDetails' => '\Model\RefundDetail[]',
         'refundSourceAccountNo' => 'string',
-        'actualRefundAmount' => '\request\model\Amount',
-        'goods' => '\request\model\Goods[]',
-        'splitDetails' => '\request\model\SplitDetail[]'
+        'actualRefundAmount' => '\Model\Amount',
+        'goods' => '\Model\Goods[]',
+        'splitDetails' => '\Model\SplitDetail[]'
     ];
 
     /**

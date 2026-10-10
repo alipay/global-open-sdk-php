@@ -57,8 +57,8 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'reason' => 'string',
         'startDate' => 'string',
         'endDate' => 'string',
-        'minAmount' => '\request\model\Amount',
-        'maxAmount' => '\request\model\Amount',
+        'minAmount' => '\Model\Amount',
+        'maxAmount' => '\Model\Amount',
         'excludeDraft' => 'bool'
     ];
 

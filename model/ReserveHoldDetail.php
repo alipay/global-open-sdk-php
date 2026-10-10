@@ -48,8 +48,8 @@ class ReserveHoldDetail  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'holdRequestId' => 'string',
         'holdId' => 'string',
-        'holdAmount' => '\request\model\Amount',
-        'releasableAmount' => '\request\model\Amount',
+        'holdAmount' => '\Model\Amount',
+        'releasableAmount' => '\Model\Amount',
         'releaseTime' => 'string',
         'holdStatus' => 'string',
         'releaseStatus' => 'string'

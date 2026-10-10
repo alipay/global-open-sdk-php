@@ -46,28 +46,28 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'customizedInfo' => '\request\model\CustomizedInfo',
+        'customizedInfo' => '\Model\CustomizedInfo',
         'merchantAccountId' => 'string',
         'allowAccumulate' => 'bool',
-        'maxAccumulateAmount' => '\request\model\Amount',
+        'maxAccumulateAmount' => '\Model\Amount',
         'allowRetry' => 'bool',
-        'maxAmountFloor' => '\request\model\Amount',
+        'maxAmountFloor' => '\Model\Amount',
         'subscriptionRequestId' => 'string',
         'subscriptionDescription' => 'string',
         'subscriptionRedirectUrl' => 'string',
         'subscriptionStartTime' => 'string',
         'subscriptionEndTime' => 'string',
-        'periodRule' => '\request\model\PeriodRule',
+        'periodRule' => '\Model\PeriodRule',
         'subscriptionExpiryTime' => 'string',
-        'paymentMethod' => '\request\model\PaymentMethod',
+        'paymentMethod' => '\Model\PaymentMethod',
         'subscriptionNotificationUrl' => 'string',
         'paymentNotificationUrl' => 'string',
-        'orderInfo' => '\request\model\OrderInfo',
-        'paymentAmount' => '\request\model\Amount',
-        'settlementStrategy' => '\request\model\SettlementStrategy',
-        'env' => '\request\model\Env',
-        'trials' => '\request\model\Trial[]',
-        'subscriptionInfo' => '\request\model\CreateSubscriptionInfo'
+        'orderInfo' => '\Model\OrderInfo',
+        'paymentAmount' => '\Model\Amount',
+        'settlementStrategy' => '\Model\SettlementStrategy',
+        'env' => '\Model\Env',
+        'trials' => '\Model\Trial[]',
+        'subscriptionInfo' => '\Model\CreateSubscriptionInfo'
     ];
 
     /**

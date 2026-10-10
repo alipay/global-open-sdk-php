@@ -51,8 +51,8 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => 'string',
         'description' => 'string',
         'quantity' => 'string',
-        'unitAmount' => '\request\model\Amount',
-        'itemAmount' => '\request\model\Amount',
+        'unitAmount' => '\Model\Amount',
+        'itemAmount' => '\Model\Amount',
         'metadata' => 'array<string,string>'
     ];
 

@@ -15,7 +15,7 @@ class {{classname}} {{#lambdas.phpParent}}{{classname}} 1 {{/lambdas.phpParent}}
       * @var string[]
       */
     protected static $openAPITypes = [
-        {{#vars}}'{{name}}' => '{{{dataType}}}'{{^-last}},
+        {{#vars}}'{{name}}' => '{{#lambdas.PHPRuntimeType}}{{{dataType}}}{{/lambdas.PHPRuntimeType}}'{{^-last}},
         {{/-last}}{{/vars}}
     ];
 

@@ -46,16 +46,16 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paymentStatus' => '\request\model\TransactionStatusType',
+        'paymentStatus' => '\Model\TransactionStatusType',
         'paymentResultMessage' => 'string',
         'paymentResultCode' => 'string',
         'paymentId' => 'string',
         'paymentRequestId' => 'string',
-        'payToMethod' => '\request\model\PaymentMethod',
-        'paymentAmount' => '\request\model\Amount',
-        'payToAmount' => '\request\model\Amount',
+        'payToMethod' => '\Model\PaymentMethod',
+        'paymentAmount' => '\Model\Amount',
+        'payToAmount' => '\Model\Amount',
         'paymentTime' => 'string',
-        'result' => '\request\model\Result'
+        'result' => '\Model\Result'
     ];
 
     /**

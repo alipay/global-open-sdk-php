@@ -46,7 +46,7 @@ class AlipaySettlementInfoUpdateResponse  implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'updateStatus' => 'string'
     ];
 

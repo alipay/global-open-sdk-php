@@ -47,7 +47,7 @@ class MeterEventBatch  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'eventName' => 'string',
-        'events' => '\request\model\Event[]'
+        'events' => '\Model\Event[]'
     ];
 
     /**

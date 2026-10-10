@@ -1,0 +1,15 @@
+# PHP type metadata regression tests
+
+Run `php tests/deserialization.php` from the SDK root. No network or test framework is required.
+
+The test covers generated model/request/response JSON roundtrips, runtime type resolution, enum wrappers and unknown values, legacy type names, object arrays/maps, and absent/null/false/zero/empty values. Handwritten requests with mandatory constructor arguments are excluded from automatic discovery.
+
+To compare request serialization against a previous checkout:
+
+```sh
+php tests/deserialization.php /path/to/old-sdk --snapshot > before.json
+php tests/deserialization.php . --snapshot > after.json
+cmp before.json after.json
+```
+
+Generation requires automation with the `PHPRuntimeType` helper. Merge the accompanying automation PR before merging these templates or running remote generation.

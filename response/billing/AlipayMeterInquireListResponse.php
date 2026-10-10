@@ -46,11 +46,11 @@ class AlipayMeterInquireListResponse  implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'pageNum' => 'int',
         'pageSize' => 'int',
         'totalCount' => 'int',
-        'meters' => '\request\model\Meter[]'
+        'meters' => '\Model\Meter[]'
     ];
 
     /**

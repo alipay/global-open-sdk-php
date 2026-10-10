@@ -46,10 +46,10 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'taxRegistrationId' => 'string',
         'taxType' => 'string',
-        'jurisdiction' => '\request\model\TaxJurisdiction',
+        'jurisdiction' => '\Model\TaxJurisdiction',
         'registrationType' => 'string',
         'taxId' => 'string',
         'status' => 'string',

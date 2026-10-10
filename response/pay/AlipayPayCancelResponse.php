@@ -46,7 +46,7 @@ class AlipayPayCancelResponse  implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'paymentId' => 'string',
         'paymentRequestId' => 'string',
         'cancelTime' => 'string'

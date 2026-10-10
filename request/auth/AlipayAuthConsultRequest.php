@@ -46,23 +46,23 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => '\request\model\Amount',
-        'directDebitInfo' => '\request\model\AuthorizationConsultDirectDebitInfo',
+        'amount' => '\Model\Amount',
+        'directDebitInfo' => '\Model\AuthorizationConsultDirectDebitInfo',
         'merchantAccountId' => 'string',
         'authNotifyUrl' => 'string',
-        'customerBelongsTo' => '\request\model\CustomerBelongsTo',
+        'customerBelongsTo' => '\Model\CustomerBelongsTo',
         'authClientId' => 'string',
         'authRedirectUrl' => 'string',
-        'scopes' => '\request\model\ScopeType[]',
+        'scopes' => '\Model\ScopeType[]',
         'authState' => 'string',
-        'terminalType' => '\request\model\TerminalType',
-        'osType' => '\request\model\OsType',
+        'terminalType' => '\Model\TerminalType',
+        'osType' => '\Model\OsType',
         'osVersion' => 'string',
         'extendInfo' => 'string',
         'merchantRegion' => 'string',
         'recurringPayment' => 'bool',
-        'authMetaData' => '\request\model\AuthMetaData',
-        'env' => '\request\model\Env'
+        'authMetaData' => '\Model\AuthMetaData',
+        'env' => '\Model\Env'
     ];
 
     /**

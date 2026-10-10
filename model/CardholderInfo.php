@@ -46,8 +46,8 @@ class CardholderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cardHolderName' => '\request\model\UserName',
-        'billAddress' => '\request\model\Address',
+        'cardHolderName' => '\Model\UserName',
+        'billAddress' => '\Model\Address',
         'displayName' => 'string'
     ];
 

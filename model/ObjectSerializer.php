@@ -174,6 +174,9 @@ class ObjectSerializer
             return null;
         }
 
+        // Accept type names emitted by older SDK generators, including containers.
+        $class = str_replace('\\request\\model\\', '\\Model\\', $class);
+
         if (strcasecmp(substr($class, -2), '[]') === 0) {
             $data = is_string($data) ? json_decode($data) : $data;
 
@@ -265,6 +268,12 @@ class ObjectSerializer
         }
 
 
+        // SDK enum wrappers represent wire strings, not ModelInterface objects.
+        // Keep unknown values so a server-side enum addition does not break clients.
+        if (self::isSdkEnum($class)) {
+            return $data;
+        }
+
         if (method_exists($class, 'getAllowableEnumValues')) {
             if (!in_array($data, $class::getAllowableEnumValues(), true)) {
                 $imploded = implode("', '", $class::getAllowableEnumValues());
@@ -279,9 +288,9 @@ class ObjectSerializer
             }
 
             // If a discriminator is defined and points to a valid subclass, use it.
-            $discriminator = $class::DISCRIMINATOR;
+            $discriminator = defined($class . '::DISCRIMINATOR') ? $class::DISCRIMINATOR : null;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\request\Model\\' . $data->{$discriminator};
+                $subclass = '\\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }
@@ -312,4 +321,18 @@ class ObjectSerializer
             return $instance;
         }
     }
+    /** Recognize the existing generated enum wrapper without changing its public API. */
+    private static function isSdkEnum($class)
+    {
+        if (strpos(ltrim($class, '\\'), 'Model\\') !== 0
+            || !class_exists($class)
+            || is_subclass_of($class, ModelInterface::class)
+            || !method_exists($class, 'getValue')
+            || !method_exists($class, '__toString')) {
+            return false;
+        }
+        $constructor = (new \ReflectionClass($class))->getConstructor();
+        return $constructor !== null && $constructor->isPrivate();
+    }
+
 }

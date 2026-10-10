@@ -48,7 +48,7 @@ class Event  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'idempotencyKey' => 'string',
         'eventTimestamp' => 'int',
-        'payload' => '\request\model\EventPayload'
+        'payload' => '\Model\EventPayload'
     ];
 
     /**

@@ -46,14 +46,14 @@ class AlipayAuthApplyTokenResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'accessToken' => 'string',
         'accessTokenExpiryTime' => 'string',
         'refreshToken' => 'string',
         'refreshTokenExpiryTime' => 'string',
         'extendInfo' => 'string',
         'userLoginId' => 'string',
-        'pspCustomerInfo' => '\request\model\PspCustomerInfo'
+        'pspCustomerInfo' => '\Model\PspCustomerInfo'
     ];
 
     /**

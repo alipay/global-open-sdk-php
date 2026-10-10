@@ -48,11 +48,11 @@ class AlipayUpdateRuleRequest   extends AlipayRequest  implements ModelInterface
       */
     protected static $openAPITypes = [
         'ruleId' => 'string',
-        'paymentMethodScope' => '\request\model\PaymentMethodScope',
+        'paymentMethodScope' => '\Model\PaymentMethodScope',
         'ratio' => 'int',
         'releaseTime' => 'string',
         'retentionTime' => 'int',
-        'ruleStatus' => '\request\model\RuleStatus'
+        'ruleStatus' => '\Model\RuleStatus'
     ];
 
     /**

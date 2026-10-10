@@ -46,7 +46,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'invoiceId' => 'string',
         'status' => 'string',
         'markedUncollectibleAt' => 'string',

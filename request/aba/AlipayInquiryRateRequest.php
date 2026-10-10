@@ -46,7 +46,7 @@ class AlipayInquiryRateRequest   extends AlipayRequest  implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rateConditionList' => '\request\model\InquiryRateCondition[]'
+        'rateConditionList' => '\Model\InquiryRateCondition[]'
     ];
 
     /**

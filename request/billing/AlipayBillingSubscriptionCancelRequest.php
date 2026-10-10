@@ -49,7 +49,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'subscriptionId' => 'string',
         'cancellationType' => 'string',
         'cancellationReason' => 'string',
-        'cancellationDetails' => '\request\model\BillingSubscriptionCancelCancellationDetails',
+        'cancellationDetails' => '\Model\BillingSubscriptionCancelCancellationDetails',
         'prorationBehavior' => 'string'
     ];
 

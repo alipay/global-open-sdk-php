@@ -46,9 +46,9 @@ class AlipayInquireSubscriptionListResponse  implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'subscriptions' => '\request\model\SubscriptionInfo[]',
-        'paginator' => '\request\model\Paginator'
+        'result' => '\Model\Result',
+        'subscriptions' => '\Model\SubscriptionInfo[]',
+        'paginator' => '\Model\Paginator'
     ];
 
     /**

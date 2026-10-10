@@ -47,7 +47,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'mandateRequestId' => 'string',
         'mandateId' => 'string',
         'validFrom' => 'string',

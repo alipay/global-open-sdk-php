@@ -46,8 +46,8 @@ class AlipayReceiptInquireListResponse  implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'receipts' => '\request\model\Receipt[]',
+        'result' => '\Model\Result',
+        'receipts' => '\Model\Receipt[]',
         'total' => 'int',
         'hasMore' => 'bool',
         'nextCursor' => 'string',

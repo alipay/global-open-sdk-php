@@ -46,17 +46,17 @@ class AlipayInquireDirectRefundResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'refundStatus' => '\request\model\TransactionStatusType',
+        'refundStatus' => '\Model\TransactionStatusType',
         'refundResultMessage' => 'string',
         'refundResultCode' => 'string',
         'refundId' => 'string',
         'paymentId' => 'string',
         'refundRequestId' => 'string',
         'refundTime' => 'string',
-        'refundFromMethod' => '\request\model\RefundFromMethod',
-        'refundToAmount' => '\request\model\Amount',
-        'refundFromAmount' => '\request\model\Amount',
-        'result' => '\request\model\Result'
+        'refundFromMethod' => '\Model\RefundFromMethod',
+        'refundToAmount' => '\Model\Amount',
+        'refundFromAmount' => '\Model\Amount',
+        'result' => '\Model\Result'
     ];
 
     /**

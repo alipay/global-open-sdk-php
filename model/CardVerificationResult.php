@@ -51,7 +51,7 @@ class CardVerificationResult  implements ModelInterface, ArrayAccess, \JsonSeria
         'cvvResult' => 'string',
         'avsResult' => 'string',
         'authorizationCode' => 'string',
-        'threeDSResult' => '\request\model\RiskThreeDSResult'
+        'threeDSResult' => '\Model\RiskThreeDSResult'
     ];
 
     /**

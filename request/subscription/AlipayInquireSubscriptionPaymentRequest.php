@@ -48,7 +48,7 @@ class AlipayInquireSubscriptionPaymentRequest   extends AlipayRequest  implement
     protected static $openAPITypes = [
         'merchantAccountId' => 'string',
         'subscriptionId' => 'string',
-        'paymentStatuses' => '\request\model\PaymentStatus[]',
+        'paymentStatuses' => '\Model\PaymentStatus[]',
         'currentPage' => 'int',
         'pageSize' => 'int'
     ];

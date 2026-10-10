@@ -46,7 +46,7 @@ class AlipayProductCreateResponse  implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'productId' => 'string',
         'productRequestId' => 'string',
         'name' => 'string',

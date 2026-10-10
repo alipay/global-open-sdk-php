@@ -46,9 +46,9 @@ class AlipayInquireExchangeRateResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'quotes' => '\request\model\Quote[]',
-        'result' => '\request\model\Result',
-        'paymentQuotes' => '\request\model\PaymentQuote[]'
+        'quotes' => '\Model\Quote[]',
+        'result' => '\Model\Result',
+        'paymentQuotes' => '\Model\PaymentQuote[]'
     ];
 
     /**
