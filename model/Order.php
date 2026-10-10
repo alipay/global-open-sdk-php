@@ -427,7 +427,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sendReceipt
      *
-     * @param bool|null $sendReceipt For createPaymentSession, request a receipt email after successful payment. Defaults to false on the server. Locale follows customer preferredLocales, or en-US. Omit in APIs that do not document support.
+     * @param bool|null $sendReceipt For createPaymentSession, request a receipt email after successful payment. Defaults to false on the server. Omit in APIs that do not document support.
      *
      * @return self
      */
