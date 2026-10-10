@@ -13,3 +13,5 @@ cmp before.json after.json
 ```
 
 Generation requires automation with the `PHPRuntimeType` helper. Merge the accompanying automation PR before merging these templates or running remote generation.
+
+The suite also runs `serializer_boundaries.php`: legitimate discriminator subclasses, absent/unknown/non-subclass fallback, ordinary models with enum-like methods, external/private and incomplete/public wrappers, and missing-discriminator failures. Enum recognition remains structural; a future non-model class with exactly the same generated-enum shape would require a new explicit distinction.

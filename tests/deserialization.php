@@ -96,3 +96,5 @@ check($b->getIsAccountVerified() === false && $b->getSuccessfulOrderCount() === 
 check(!array_key_exists('businessName', json_decode(json_encode(new Model\Buyer()), true)), 'Omitted field');
 $enumCount = count($enums);
 echo "PASS: $count model/request/response roundtrips, $enumCount enum classes; legacy names, nested objects, arrays/maps, enums, unknown values, null/false/zero/empty.\n";
+
+require __DIR__ . '/serializer_boundaries.php';
