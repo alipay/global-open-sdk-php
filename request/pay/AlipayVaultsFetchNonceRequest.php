@@ -46,7 +46,7 @@ class AlipayVaultsFetchNonceRequest   extends AlipayRequest  implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'card' => '\Model\Card'
+        'card' => '\request\model\Card'
     ];
 
     /**

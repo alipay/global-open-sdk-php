@@ -46,17 +46,17 @@ class AlipayCreateRuleResponse  implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'ruleId' => 'string',
         'merchantId' => 'string',
-        'fundsType' => '\Model\FundsType',
-        'takeType' => '\Model\TakeType',
-        'paymentMethodScope' => '\Model\PaymentMethodScope',
+        'fundsType' => '\request\model\FundsType',
+        'takeType' => '\request\model\TakeType',
+        'paymentMethodScope' => '\request\model\PaymentMethodScope',
         'ratio' => 'int',
-        'releaseType' => '\Model\ReleaseType',
+        'releaseType' => '\request\model\ReleaseType',
         'releaseTime' => 'string',
         'retentionTime' => 'int',
-        'ruleStatus' => '\Model\RuleStatus',
+        'ruleStatus' => '\request\model\RuleStatus',
         'createTime' => 'string',
         'updateTime' => 'string'
     ];

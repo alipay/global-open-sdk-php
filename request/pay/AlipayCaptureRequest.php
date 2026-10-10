@@ -48,12 +48,12 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     protected static $openAPITypes = [
         'captureRequestId' => 'string',
         'paymentId' => 'string',
-        'captureAmount' => '\Model\Amount',
+        'captureAmount' => '\request\model\Amount',
         'isLastCapture' => 'bool',
         'captureType' => 'string',
-        'transit' => '\Model\Transit',
-        'goods' => '\Model\Goods[]',
-        'shippings' => '\Model\Shipping[]'
+        'transit' => '\request\model\Transit',
+        'goods' => '\request\model\Goods[]',
+        'shippings' => '\request\model\Shipping[]'
     ];
 
     /**

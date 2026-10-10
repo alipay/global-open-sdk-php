@@ -46,7 +46,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orderAmount' => '\Model\Amount'
+        'orderAmount' => '\request\model\Amount'
     ];
 
     /**

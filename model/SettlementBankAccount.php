@@ -50,13 +50,13 @@ class SettlementBankAccount  implements ModelInterface, ArrayAccess, \JsonSerial
         'accountHolderName' => 'string',
         'swiftCode' => 'string',
         'bankRegion' => 'string',
-        'accountHolderType' => '\Model\AccountHolderType',
+        'accountHolderType' => '\request\model\AccountHolderType',
         'routingNumber' => 'string',
         'branchCode' => 'string',
         'accountHolderTIN' => 'string',
-        'accountType' => '\Model\AccountType',
+        'accountType' => '\request\model\AccountType',
         'bankName' => 'string',
-        'accountHolderAddress' => '\Model\Address',
+        'accountHolderAddress' => '\request\model\Address',
         'iban' => 'string'
     ];
 

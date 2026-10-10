@@ -48,11 +48,11 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'paymentId' => 'string',
         'paymentRequestId' => 'string',
-        'payToMethod' => '\Model\PaymentMethod',
-        'payFromAmount' => '\Model\Amount',
-        'payToAmount' => '\Model\Amount',
+        'payToMethod' => '\request\model\PaymentMethod',
+        'payFromAmount' => '\request\model\Amount',
+        'payToAmount' => '\request\model\Amount',
         'paymentTime' => 'string',
-        'result' => '\Model\Result'
+        'result' => '\request\model\Result'
     ];
 
     /**

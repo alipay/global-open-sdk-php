@@ -46,10 +46,10 @@ class TransferToDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transferToMethod' => '\Model\PaymentMethod',
+        'transferToMethod' => '\request\model\PaymentMethod',
         'transferToCurrency' => 'string',
-        'feeAmount' => '\Model\Amount',
-        'actualTransferToAmount' => '\Model\Amount',
+        'feeAmount' => '\request\model\Amount',
+        'actualTransferToAmount' => '\request\model\Amount',
         'purposeCode' => 'string',
         'transferNotifyUrl' => 'string',
         'transferRemark' => 'string'

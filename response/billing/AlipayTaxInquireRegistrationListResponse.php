@@ -46,9 +46,9 @@ class AlipayTaxInquireRegistrationListResponse  implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'registrations' => '\Model\TaxRegistration[]',
-        'paginator' => '\Model\Paginator'
+        'result' => '\request\model\Result',
+        'registrations' => '\request\model\TaxRegistration[]',
+        'paginator' => '\request\model\Paginator'
     ];
 
     /**

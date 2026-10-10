@@ -46,7 +46,7 @@ class TaxShippingCost  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => '\Model\Amount'
+        'amount' => '\request\model\Amount'
     ];
 
     /**

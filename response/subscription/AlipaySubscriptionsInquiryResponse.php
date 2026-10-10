@@ -47,14 +47,14 @@ class AlipaySubscriptionsInquiryResponse  implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'allowRetry' => 'string',
-        'maxAmountFloor' => '\Model\Amount',
-        'paymentAmount' => '\Model\Amount',
-        'periodRule' => '\Model\PeriodRule',
+        'maxAmountFloor' => '\request\model\Amount',
+        'paymentAmount' => '\request\model\Amount',
+        'periodRule' => '\request\model\PeriodRule',
         'subscriptionEndTime' => 'string',
         'subscriptionRequestId' => 'string',
         'subscriptionStartTime' => 'string',
         'subscriptionStatus' => 'string',
-        'result' => '\Model\Result'
+        'result' => '\request\model\Result'
     ];
 
     /**

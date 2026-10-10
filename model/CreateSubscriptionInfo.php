@@ -48,8 +48,8 @@ class CreateSubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'allowRetry' => 'bool',
         'retryMode' => 'string',
-        'maxAmountFloor' => '\Model\Amount',
-        'fixedAmount' => '\Model\Amount'
+        'maxAmountFloor' => '\request\model\Amount',
+        'fixedAmount' => '\request\model\Amount'
     ];
 
     /**

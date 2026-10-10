@@ -49,14 +49,14 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'supportedBrands' => 'string[]',
         'cardToken' => 'string',
         'cardNo' => 'string',
-        'brand' => '\Model\CardBrand',
-        'selectedCardBrand' => '\Model\CardBrand',
+        'brand' => '\request\model\CardBrand',
+        'selectedCardBrand' => '\request\model\CardBrand',
         'cardIssuer' => 'string',
         'countryIssue' => 'string',
-        'instUserName' => '\Model\UserName',
+        'instUserName' => '\request\model\UserName',
         'expiryYear' => 'string',
         'expiryMonth' => 'string',
-        'billingAddress' => '\Model\Address',
+        'billingAddress' => '\request\model\Address',
         'mask' => 'string',
         'last4' => 'string',
         'paymentMethodDetailMetadata' => 'string',
@@ -70,7 +70,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'issuerName' => 'string',
         'issuingCountry' => 'string',
         'lastFour' => 'string',
-        'cardholderName' => '\Model\UserName',
+        'cardholderName' => '\request\model\UserName',
         'cvv' => 'string',
         'dateOfBirth' => 'string',
         'businessNo' => 'string',
@@ -82,7 +82,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => 'string',
         'scaExemptionIndicator' => 'string',
         'enableAuthenticationUpgrade' => 'string',
-        'mpiData' => '\Model\MpiData'
+        'mpiData' => '\request\model\MpiData'
     ];
 
     /**

@@ -51,14 +51,14 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'latestEventStatus' => 'string',
         'lastUpdateTime' => 'string',
         'transactionTime' => 'string',
-        'totalBillingAmount' => '\Model\Amount',
-        'totalAuthAmount' => '\Model\Amount',
-        'totalCancelAmount' => '\Model\Amount',
-        'totalRefundAmount' => '\Model\Amount',
-        'totalChargebackAmount' => '\Model\Amount',
+        'totalBillingAmount' => '\request\model\Amount',
+        'totalAuthAmount' => '\request\model\Amount',
+        'totalCancelAmount' => '\request\model\Amount',
+        'totalRefundAmount' => '\request\model\Amount',
+        'totalChargebackAmount' => '\request\model\Amount',
         'assetId' => 'string',
         'maskedCardNo' => 'string',
-        'events' => '\Model\CardTransactionEvent[]'
+        'events' => '\request\model\CardTransactionEvent[]'
     ];
 
     /**

@@ -46,8 +46,8 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'supportCardBrands' => '\Model\SupportCardBrand[]',
-        'plans' => '\Model\Plan[]'
+        'supportCardBrands' => '\request\model\SupportCardBrand[]',
+        'plans' => '\request\model\Plan[]'
     ];
 
     /**

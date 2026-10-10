@@ -46,10 +46,10 @@ class EntityAssociations  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'associationType' => '\Model\AssociationType',
-        'legalEntityType' => '\Model\LegalEntityType',
-        'company' => '\Model\Company',
-        'individual' => '\Model\Individual',
+        'associationType' => '\request\model\AssociationType',
+        'legalEntityType' => '\request\model\LegalEntityType',
+        'company' => '\request\model\Company',
+        'individual' => '\request\model\Individual',
         'shareholdingRatio' => 'string'
     ];
 

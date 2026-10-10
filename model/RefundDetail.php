@@ -46,8 +46,8 @@ class RefundDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'refundAmount' => '\Model\Amount',
-        'refundFrom' => '\Model\RefundFromType'
+        'refundAmount' => '\request\model\Amount',
+        'refundFrom' => '\request\model\RefundFromType'
     ];
 
     /**

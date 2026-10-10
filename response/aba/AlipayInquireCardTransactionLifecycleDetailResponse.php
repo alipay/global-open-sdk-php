@@ -46,8 +46,8 @@ class AlipayInquireCardTransactionLifecycleDetailResponse  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'lifecycle' => '\Model\CardTransactionLifecycleDetail'
+        'result' => '\request\model\Result',
+        'lifecycle' => '\request\model\CardTransactionLifecycleDetail'
     ];
 
     /**

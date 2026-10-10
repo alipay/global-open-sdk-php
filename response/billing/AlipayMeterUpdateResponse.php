@@ -46,8 +46,8 @@ class AlipayMeterUpdateResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'meter' => '\Model\Meter'
+        'result' => '\request\model\Result',
+        'meter' => '\request\model\Meter'
     ];
 
     /**

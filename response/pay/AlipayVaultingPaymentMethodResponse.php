@@ -46,13 +46,13 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'vaultingRequestId' => 'string',
-        'paymentMethodDetail' => '\Model\PaymentMethodDetail',
+        'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
         'normalUrl' => 'string',
         'schemeUrl' => 'string',
         'applinkUrl' => 'string',
-        'acquirerInfo' => '\Model\AcquirerInfo'
+        'acquirerInfo' => '\request\model\AcquirerInfo'
     ];
 
     /**

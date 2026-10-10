@@ -48,7 +48,7 @@ class AmsApiV1PaymentsUpdateAmountPostRequest   extends AlipayRequest  implement
     protected static $openAPITypes = [
         'updateRequestId' => 'string',
         'paymentId' => 'string',
-        'amount' => '\Model\Amount'
+        'amount' => '\request\model\Amount'
     ];
 
     /**

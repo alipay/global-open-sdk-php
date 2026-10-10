@@ -47,8 +47,8 @@ class AlipayCreateTransferRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPITypes = [
         'transferRequestId' => 'string',
-        'transferFromDetail' => '\Model\TransferFromDetail',
-        'transferToDetail' => '\Model\TransferToDetail'
+        'transferFromDetail' => '\request\model\TransferFromDetail',
+        'transferToDetail' => '\request\model\TransferToDetail'
     ];
 
     /**

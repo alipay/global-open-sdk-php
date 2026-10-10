@@ -46,7 +46,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'token' => 'string',
         'portalUrl' => 'string',
         'expiresAt' => 'string',

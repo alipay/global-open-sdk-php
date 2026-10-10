@@ -46,7 +46,7 @@ class Contact  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => '\Model\ContactType',
+        'type' => '\request\model\ContactType',
         'info' => 'string',
         'home' => 'string',
         'work' => 'string',

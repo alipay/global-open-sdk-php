@@ -46,7 +46,7 @@ class AlipayVaultingSessionResponse  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'vaultingSessionData' => 'string',
         'vaultingSessionId' => 'string',
         'vaultingSessionExpiryTime' => 'string',

@@ -46,7 +46,7 @@ class BillingSubscriptionTrialSettings  implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'endBehavior' => '\Model\BillingSubscriptionTrialSettingsEndBehavior'
+        'endBehavior' => '\request\model\BillingSubscriptionTrialSettingsEndBehavior'
     ];
 
     /**

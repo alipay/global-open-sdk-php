@@ -46,9 +46,9 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'codeValueType' => '\Model\CodeValueType',
+        'codeValueType' => '\request\model\CodeValueType',
         'codeValue' => 'string',
-        'displayType' => '\Model\DisplayType'
+        'displayType' => '\request\model\DisplayType'
     ];
 
     /**

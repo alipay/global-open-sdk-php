@@ -52,7 +52,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => 'string',
         'purpose' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl'
+        'authorizationControl' => '\request\model\AuthorizationControl'
     ];
 
     /**

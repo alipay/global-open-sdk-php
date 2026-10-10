@@ -46,11 +46,11 @@ class AlipayCreatePayoutResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'transferId' => 'string',
         'transferRequestId' => 'string',
-        'transferFromDetail' => '\Model\TransferFromDetail',
-        'transferToDetail' => '\Model\TransferToDetail'
+        'transferFromDetail' => '\request\model\TransferFromDetail',
+        'transferToDetail' => '\request\model\TransferToDetail'
     ];
 
     /**

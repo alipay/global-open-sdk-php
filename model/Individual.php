@@ -46,13 +46,13 @@ class Individual  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => '\Model\UserName',
-        'englishName' => '\Model\UserName',
+        'name' => '\request\model\UserName',
+        'englishName' => '\request\model\UserName',
         'dateOfBirth' => 'string',
-        'placeOfBirth' => '\Model\Address',
-        'certificates' => '\Model\Certificate',
+        'placeOfBirth' => '\request\model\Address',
+        'certificates' => '\request\model\Certificate',
         'nationality' => 'string',
-        'contacts' => '\Model\Contact[]'
+        'contacts' => '\request\model\Contact[]'
     ];
 
     /**

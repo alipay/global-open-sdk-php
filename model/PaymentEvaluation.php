@@ -46,7 +46,7 @@ class PaymentEvaluation  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paymentMethods' => '\Model\PaymentMethod[]'
+        'paymentMethods' => '\request\model\PaymentMethod[]'
     ];
 
     /**

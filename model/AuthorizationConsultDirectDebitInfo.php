@@ -50,11 +50,11 @@ class AuthorizationConsultDirectDebitInfo  implements ModelInterface, ArrayAcces
         'channelProductCode' => 'string',
         'personalProductCode' => 'string',
         'signScene' => 'string',
-        'accessParams' => '\Model\AuthorizationAccessParams',
-        'periodRuleParams' => '\Model\PeriodRuleParams',
-        'passBackParams' => '\Model\AuthorizationConsultPassBackParams',
-        'subscriptionParams' => '\Model\AuthorizationConsultSubscriptionParams',
-        'subMerchant' => '\Model\AuthorizationConsultSubMerchant',
+        'accessParams' => '\request\model\AuthorizationAccessParams',
+        'periodRuleParams' => '\request\model\PeriodRuleParams',
+        'passBackParams' => '\request\model\AuthorizationConsultPassBackParams',
+        'subscriptionParams' => '\request\model\AuthorizationConsultSubscriptionParams',
+        'subMerchant' => '\request\model\AuthorizationConsultSubMerchant',
         'subscribeType' => 'string',
         'oriAgreementNo' => 'string'
     ];

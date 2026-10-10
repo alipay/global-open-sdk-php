@@ -51,9 +51,9 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
         'businessName' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
-        'businessAddress' => '\Model\CustomerBusinessAddress',
+        'businessAddress' => '\request\model\CustomerBusinessAddress',
         'preferredLocales' => 'string',
-        'taxIds' => '\Model\BuyerTaxId[]'
+        'taxIds' => '\request\model\BuyerTaxId[]'
     ];
 
     /**

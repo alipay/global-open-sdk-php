@@ -46,8 +46,8 @@ class AlipayCustomerInquireListResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'customers' => '\Model\Customer[]',
+        'result' => '\request\model\Result',
+        'customers' => '\request\model\Customer[]',
         'total' => 'int',
         'hasMore' => 'bool',
         'nextCursor' => 'string',

@@ -47,15 +47,15 @@ class Company  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'legalName' => 'string',
-        'companyType' => '\Model\CompanyType',
-        'registeredAddress' => '\Model\Address',
-        'operatingAddress' => '\Model\Address',
+        'companyType' => '\request\model\CompanyType',
+        'registeredAddress' => '\request\model\Address',
+        'operatingAddress' => '\request\model\Address',
         'incorporationDate' => 'string',
-        'stockInfo' => '\Model\StockInfo',
-        'certificates' => '\Model\Certificate',
-        'attachments' => '\Model\Attachment[]',
-        'companyUnit' => '\Model\CompanyUnitType',
-        'contacts' => '\Model\Contact[]',
+        'stockInfo' => '\request\model\StockInfo',
+        'certificates' => '\request\model\Certificate',
+        'attachments' => '\request\model\Attachment[]',
+        'companyUnit' => '\request\model\CompanyUnitType',
+        'contacts' => '\request\model\Contact[]',
         'vatNo' => 'string'
     ];
 

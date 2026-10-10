@@ -46,9 +46,9 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'statementList' => '\Model\Statement[]',
-        'result' => '\Model\Result',
-        'totalCount' => '\Model\TotalCount'
+        'statementList' => '\request\model\Statement[]',
+        'result' => '\request\model\Result',
+        'totalCount' => '\request\model\TotalCount'
     ];
 
     /**

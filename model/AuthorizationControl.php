@@ -56,9 +56,9 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'threeDSMode' => 'string',
         'phoneNo' => 'string',
         'email' => 'string',
-        'cardLimitDetail' => '\Model\CardLimitDetail',
-        'cardLimitInfo' => '\Model\CardLimitInfo',
-        'refundPreference' => '\Model\RefundPreference'
+        'cardLimitDetail' => '\request\model\CardLimitDetail',
+        'cardLimitInfo' => '\request\model\CardLimitInfo',
+        'refundPreference' => '\request\model\RefundPreference'
     ];
 
     /**

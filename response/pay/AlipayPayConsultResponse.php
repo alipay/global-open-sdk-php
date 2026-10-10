@@ -46,9 +46,9 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'paymentOptions' => '\Model\PaymentOption[]',
-        'paymentMethodInfos' => '\Model\PaymentMethodInfo[]',
+        'result' => '\request\model\Result',
+        'paymentOptions' => '\request\model\PaymentOption[]',
+        'paymentMethodInfos' => '\request\model\PaymentMethodInfo[]',
         'extendInfo' => 'string'
     ];
 

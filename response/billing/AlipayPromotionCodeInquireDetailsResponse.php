@@ -46,7 +46,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'promotionCodeId' => 'string',
         'promotionCodeRequestId' => 'string',
         'code' => 'string',
@@ -55,7 +55,7 @@ class AlipayPromotionCodeInquireDetailsResponse  implements ModelInterface, Arra
         'maxRedemptions' => 'int',
         'redeemedCount' => 'int',
         'expiryTime' => 'string',
-        'minAmount' => '\Model\PromotionCodeInquireDetailsMinAmount',
+        'minAmount' => '\request\model\PromotionCodeInquireDetailsMinAmount',
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
         'metadata' => 'string',

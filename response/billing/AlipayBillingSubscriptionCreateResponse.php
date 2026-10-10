@@ -46,7 +46,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'subscriptionRequestId' => 'string',
         'subscriptionId' => 'string',
         'customerId' => 'string',
@@ -61,8 +61,8 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'description' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
-        'subscriptionItems' => '\Model\SubscriptionItem[]',
-        'discounts' => '\Model\BillingDiscount[]',
+        'subscriptionItems' => '\request\model\SubscriptionItem[]',
+        'discounts' => '\request\model\BillingDiscount[]',
         'subscriptionNotifyUrl' => 'string'
     ];
 

@@ -46,11 +46,11 @@ class AlipayCreditGrantInquireListResponse  implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'pageNum' => 'int',
         'pageSize' => 'int',
         'totalCount' => 'int',
-        'creditGrants' => '\Model\CreditGrant[]'
+        'creditGrants' => '\request\model\CreditGrant[]'
     ];
 
     /**

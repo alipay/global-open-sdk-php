@@ -47,7 +47,7 @@ class DiscountPaymentMethodDetail  implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'discountId' => 'string',
-        'availableAmount' => '\Model\Amount',
+        'availableAmount' => '\request\model\Amount',
         'discountName' => 'string',
         'discountDescription' => 'string',
         'paymentMethodDetailMetadata' => 'string'

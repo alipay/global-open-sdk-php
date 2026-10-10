@@ -46,7 +46,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'settlementRequestId' => 'string',
         'settlementId' => 'string'
     ];

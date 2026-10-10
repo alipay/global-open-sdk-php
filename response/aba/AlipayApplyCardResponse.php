@@ -46,7 +46,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'requestId' => 'string',
         'status' => 'string',
         'assetId' => 'string',

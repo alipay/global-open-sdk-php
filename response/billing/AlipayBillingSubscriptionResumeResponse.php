@@ -46,7 +46,7 @@ class AlipayBillingSubscriptionResumeResponse  implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\ResultInfo',
+        'result' => '\request\model\ResultInfo',
         'subscriptionId' => 'string',
         'status' => 'string',
         'billingCycleAnchor' => 'string'

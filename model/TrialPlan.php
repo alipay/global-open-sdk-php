@@ -48,7 +48,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'trialEndTime' => 'string',
         'freeTrialDays' => 'int',
-        'phases' => '\Model\TrialPhase[]'
+        'phases' => '\request\model\TrialPhase[]'
     ];
 
     /**

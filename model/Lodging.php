@@ -47,12 +47,12 @@ class Lodging  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'hotelName' => 'string',
-        'hotelAddress' => '\Model\Address',
+        'hotelAddress' => '\request\model\Address',
         'checkInDate' => 'string',
         'checkOutDate' => 'string',
         'numberOfNights' => 'int',
         'numberOfRooms' => 'int',
-        'guestNames' => '\Model\UserName[]',
+        'guestNames' => '\request\model\UserName[]',
         'roomClass' => 'string',
         'ticketDeliveryMethod' => 'string',
         'ticketDeliveryRecipient' => 'string'

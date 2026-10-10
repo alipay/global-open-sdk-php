@@ -51,13 +51,13 @@ class AlipayPriceCreateRequest   extends AlipayRequest  implements ModelInterfac
         'name' => 'string',
         'pricingModel' => 'string',
         'usageType' => 'string',
-        'unitAmount' => '\Model\Amount',
+        'unitAmount' => '\request\model\Amount',
         'unitLabel' => 'string',
         'meterId' => 'string',
-        'recurring' => '\Model\RecurringSettings',
+        'recurring' => '\request\model\RecurringSettings',
         'includedQuantity' => 'int',
         'tiersMode' => 'string',
-        'tiers' => '\Model\Tier[]',
+        'tiers' => '\request\model\Tier[]',
         'metadata' => 'string',
         'defaultPrice' => 'bool'
     ];

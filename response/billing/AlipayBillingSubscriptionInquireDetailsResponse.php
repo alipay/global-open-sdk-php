@@ -46,7 +46,7 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\ResultInfo',
+        'result' => '\request\model\ResultInfo',
         'subscriptionId' => 'string',
         'subscriptionRequestId' => 'string',
         'createTime' => 'string',
@@ -63,15 +63,15 @@ class AlipayBillingSubscriptionInquireDetailsResponse  implements ModelInterface
         'cancelAt' => 'string',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
-        'cancellationDetails' => '\Model\BillingSubscriptionInquireDetailsCancellationDetails',
+        'cancellationDetails' => '\request\model\BillingSubscriptionInquireDetailsCancellationDetails',
         'terminationReason' => 'string',
         'description' => 'string',
         'defaultPaymentMethod' => 'string',
-        'subtotal' => '\Model\Amount',
-        'discountAmount' => '\Model\Amount',
-        'totalAmount' => '\Model\Amount',
-        'priceItems' => '\Model\BillingSubscriptionPriceItem[]',
-        'discounts' => '\Model\BillingSubscriptionDiscountInfo[]',
+        'subtotal' => '\request\model\Amount',
+        'discountAmount' => '\request\model\Amount',
+        'totalAmount' => '\request\model\Amount',
+        'priceItems' => '\request\model\BillingSubscriptionPriceItem[]',
+        'discounts' => '\request\model\BillingSubscriptionDiscountInfo[]',
         'metadata' => 'string'
     ];
 

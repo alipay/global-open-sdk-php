@@ -57,14 +57,14 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'balanceType' => 'string',
         'transactionTime' => 'string',
         'billType' => 'string',
-        'outAmount' => '\Model\Amount',
-        'inAmount' => '\Model\Amount',
+        'outAmount' => '\request\model\Amount',
+        'inAmount' => '\request\model\Amount',
         'exchangeCurrencyPair' => 'string',
         'exchangeRate' => 'string',
-        'transactionAmount' => '\Model\Amount',
+        'transactionAmount' => '\request\model\Amount',
         'assetId' => 'string',
         'maskedCardNo' => 'string',
-        'merchantInfo' => '\Model\EventMerchantInfo',
+        'merchantInfo' => '\request\model\EventMerchantInfo',
         'metadata' => 'array<string,string>'
     ];
 

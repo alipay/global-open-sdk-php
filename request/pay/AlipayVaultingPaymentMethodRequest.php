@@ -52,10 +52,10 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
         'vaultingNotificationUrl' => 'string',
         'redirectUrl' => 'string',
         'merchantRegion' => 'string',
-        'paymentMethodDetail' => '\Model\PaymentMethodDetail',
-        'env' => '\Model\Env',
+        'paymentMethodDetail' => '\request\model\PaymentMethodDetail',
+        'env' => '\request\model\Env',
         'vaultingCurrency' => 'string',
-        'customizedInfo' => '\Model\CustomizedInfo'
+        'customizedInfo' => '\request\model\CustomizedInfo'
     ];
 
     /**

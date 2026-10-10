@@ -49,11 +49,11 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentRequestId' => 'string',
         'memo' => 'string',
         'remark' => 'string',
-        'order' => '\Model\Order',
+        'order' => '\request\model\Order',
         'paymentNotifyUrl' => 'string',
-        'payToMethod' => '\Model\PaymentMethod',
-        'payToAmount' => '\Model\Amount',
-        'payFromAmount' => '\Model\Amount'
+        'payToMethod' => '\request\model\PaymentMethod',
+        'payToAmount' => '\request\model\Amount',
+        'payFromAmount' => '\request\model\Amount'
     ];
 
     /**

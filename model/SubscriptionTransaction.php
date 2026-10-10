@@ -49,8 +49,8 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentId' => 'string',
         'status' => 'string',
         'phaseNo' => 'int',
-        'paymentMethod' => '\Model\PaymentMethod',
-        'paymentAmount' => '\Model\Amount',
+        'paymentMethod' => '\request\model\PaymentMethod',
+        'paymentAmount' => '\request\model\Amount',
         'paymentTime' => 'string',
         'disputeId' => 'string'
     ];

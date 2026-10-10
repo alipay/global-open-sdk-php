@@ -48,8 +48,8 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     protected static $openAPITypes = [
         'customerId' => 'string',
         'creditGrantName' => 'string',
-        'amount' => '\Model\Amount',
-        'applicability' => '\Model\Applicability',
+        'amount' => '\request\model\Amount',
+        'applicability' => '\request\model\Applicability',
         'priority' => 'int',
         'category' => 'string',
         'effectiveDateTime' => 'string',

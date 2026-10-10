@@ -46,10 +46,10 @@ class AlipayTaxUpdateSettingsResponse  implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'defaultTaxCode' => 'string',
         'defaultTaxBehavior' => 'string',
-        'headOffice' => '\Model\TaxHeadOffice',
+        'headOffice' => '\request\model\TaxHeadOffice',
         'status' => 'string'
     ];
 

@@ -46,9 +46,9 @@ class AlipayCreateExchangeRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'quote' => '\Model\Quote',
-        'buyAmount' => '\Model\Amount',
-        'sellAmount' => '\Model\Amount',
+        'quote' => '\request\model\Quote',
+        'buyAmount' => '\request\model\Amount',
+        'sellAmount' => '\request\model\Amount',
         'exchangeTradeType' => 'string',
         'exchangeRequestId' => 'string',
         'exchangeMode' => 'string'

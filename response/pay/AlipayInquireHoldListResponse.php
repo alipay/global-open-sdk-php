@@ -46,8 +46,8 @@ class AlipayInquireHoldListResponse  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'holdDetails' => '\Model\ReserveHoldDetail[]',
+        'result' => '\request\model\Result',
+        'holdDetails' => '\request\model\ReserveHoldDetail[]',
         'hasMore' => 'bool'
     ];
 

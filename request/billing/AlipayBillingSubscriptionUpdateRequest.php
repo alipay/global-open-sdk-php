@@ -47,14 +47,14 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
       */
     protected static $openAPITypes = [
         'subscriptionId' => 'string',
-        'priceItemChanges' => '\Model\PriceItemChange[]',
+        'priceItemChanges' => '\request\model\PriceItemChange[]',
         'prorationBehavior' => 'string',
         'resetBillingCycleAnchor' => 'bool',
-        'trialSettings' => '\Model\BillingTrialSettings',
-        'statusChange' => '\Model\BillingSubscriptionStatusChange',
+        'trialSettings' => '\request\model\BillingTrialSettings',
+        'statusChange' => '\request\model\BillingSubscriptionStatusChange',
         'cancelAtPeriodEnd' => 'bool',
         'cancelAt' => 'string',
-        'cancellationDetails' => '\Model\BillingSubscriptionCancellationDetails',
+        'cancellationDetails' => '\request\model\BillingSubscriptionCancellationDetails',
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
         'description' => 'string',

@@ -46,7 +46,7 @@ class CouponInquireDetailsAppliesTo  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'products' => '\Model\CouponApplicableProduct[]'
+        'products' => '\request\model\CouponApplicableProduct[]'
     ];
 
     /**

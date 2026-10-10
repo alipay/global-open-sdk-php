@@ -46,9 +46,9 @@ class TaxCalculatedShippingCost  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => '\Model\Amount',
-        'taxAmount' => '\Model\Amount',
-        'taxBreakdown' => '\Model\TaxBreakdown[]'
+        'amount' => '\request\model\Amount',
+        'taxAmount' => '\request\model\Amount',
+        'taxBreakdown' => '\request\model\TaxBreakdown[]'
     ];
 
     /**

@@ -47,22 +47,22 @@ class AlipayInvoiceCreateRequest   extends AlipayRequest  implements ModelInterf
       */
     protected static $openAPITypes = [
         'includePaymentLink' => 'bool',
-        'automaticTax' => '\Model\AutomaticTax',
-        'customerDetails' => '\Model\InvoiceCustomerDetails',
+        'automaticTax' => '\request\model\AutomaticTax',
+        'customerDetails' => '\request\model\InvoiceCustomerDetails',
         'invoiceRequestId' => 'string',
         'customerId' => 'string',
         'subscriptionId' => 'string',
         'currency' => 'string',
-        'items' => '\Model\InvoiceCreateItem[]',
+        'items' => '\request\model\InvoiceCreateItem[]',
         'status' => 'string',
         'autoSend' => 'bool',
         'ccEmails' => 'string[]',
         'description' => 'string',
         'dueDate' => 'string',
         'collectionMethod' => 'string',
-        'paymentMethod' => '\Model\PaymentMethod',
-        'shipping' => '\Model\InvoiceShipping',
-        'discounts' => '\Model\BillingDiscount[]',
+        'paymentMethod' => '\request\model\PaymentMethod',
+        'shipping' => '\request\model\InvoiceShipping',
+        'discounts' => '\request\model\BillingDiscount[]',
         'invoiceNotifyUrl' => 'string'
     ];
 

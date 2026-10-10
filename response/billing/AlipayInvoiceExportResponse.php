@@ -46,7 +46,7 @@ class AlipayInvoiceExportResponse  implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'fileFormat' => 'string',
         'expiresAt' => 'string',
         'fileUrl' => 'string',

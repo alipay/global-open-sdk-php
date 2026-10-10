@@ -48,8 +48,8 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'discountTag' => 'string',
         'discountName' => 'string',
-        'savingsAmount' => '\Model\Amount',
-        'estimateSavingsAmount' => '\Model\Amount'
+        'savingsAmount' => '\request\model\Amount',
+        'estimateSavingsAmount' => '\request\model\Amount'
     ];
 
     /**

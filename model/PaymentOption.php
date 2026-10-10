@@ -47,21 +47,21 @@ class PaymentOption  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'paymentMethodType' => 'string',
-        'paymentMethodCategory' => '\Model\PaymentMethodCategoryType',
+        'paymentMethodCategory' => '\request\model\PaymentMethodCategoryType',
         'paymentMethodRegion' => 'string[]',
         'enabled' => 'bool',
         'preferred' => 'bool',
         'disableReason' => 'string',
         'supportedCurrencies' => 'string[]',
-        'paymentOptionDetail' => '\Model\PaymentOptionDetail',
+        'paymentOptionDetail' => '\request\model\PaymentOptionDetail',
         'extendInfo' => 'string',
-        'logo' => '\Model\Logo',
+        'logo' => '\request\model\Logo',
         'promoNames' => 'string[]',
-        'installment' => '\Model\Installment',
-        'promotionInfos' => '\Model\PromotionInfo[]',
-        'interactionType' => '\Model\InteractionType',
+        'installment' => '\request\model\Installment',
+        'promotionInfos' => '\request\model\PromotionInfo[]',
+        'interactionType' => '\request\model\InteractionType',
         'bankIdentifierCode' => 'string',
-        'amountLimitInfoMap' => 'array<string,\Model\AmountLimitInfo>'
+        'amountLimitInfoMap' => 'array<string,\request\model\AmountLimitInfo>'
     ];
 
     /**

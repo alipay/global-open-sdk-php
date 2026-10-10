@@ -46,7 +46,7 @@ class AlipayCouponUpdateResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\ResultInfo',
+        'result' => '\request\model\ResultInfo',
         'couponId' => 'string',
         'status' => 'string'
     ];

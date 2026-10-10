@@ -46,9 +46,9 @@ class ChallengeActionForm  implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'challengeType' => '\Model\ChallengeType',
+        'challengeType' => '\request\model\ChallengeType',
         'challengeRenderValue' => 'string',
-        'triggerSource' => '\Model\ChallengeTriggerSourceType',
+        'triggerSource' => '\request\model\ChallengeTriggerSourceType',
         'extendInfo' => 'string'
     ];
 

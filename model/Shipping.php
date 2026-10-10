@@ -46,15 +46,15 @@ class Shipping  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shippingName' => '\Model\UserName',
-        'shippingAddress' => '\Model\Address',
+        'shippingName' => '\request\model\UserName',
+        'shippingAddress' => '\request\model\Address',
         'shippingCarrier' => 'string',
         'shippingPhoneNo' => 'string',
         'shipToEmail' => 'string',
         'shippingFeeId' => 'string',
-        'shippingFee' => '\Model\Amount',
+        'shippingFee' => '\request\model\Amount',
         'shippingDescription' => 'string',
-        'deliveryEstimate' => '\Model\DeliveryEstimate',
+        'deliveryEstimate' => '\request\model\DeliveryEstimate',
         'shippingNumber' => 'string',
         'notes' => 'string',
         'trackingUrl' => 'string',

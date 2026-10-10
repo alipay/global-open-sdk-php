@@ -46,7 +46,7 @@ class AuthCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'codeDetails' => '\Model\CodeDetail[]'
+        'codeDetails' => '\request\model\CodeDetail[]'
     ];
 
     /**

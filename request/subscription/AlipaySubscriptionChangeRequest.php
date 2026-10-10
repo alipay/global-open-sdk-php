@@ -47,17 +47,17 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
       */
     protected static $openAPITypes = [
         'allowAccumulate' => 'bool',
-        'maxAccumulateAmount' => '\Model\Amount',
+        'maxAccumulateAmount' => '\request\model\Amount',
         'subscriptionChangeRequestId' => 'string',
         'subscriptionId' => 'string',
         'subscriptionDescription' => 'string',
         'subscriptionStartTime' => 'string',
         'subscriptionEndTime' => 'string',
-        'periodRule' => '\Model\PeriodRule',
+        'periodRule' => '\request\model\PeriodRule',
         'subscriptionExpiryTime' => 'string',
-        'orderInfo' => '\Model\OrderInfo',
-        'paymentAmount' => '\Model\Amount',
-        'paymentAmountDifference' => '\Model\Amount'
+        'orderInfo' => '\request\model\OrderInfo',
+        'paymentAmount' => '\request\model\Amount',
+        'paymentAmountDifference' => '\request\model\Amount'
     ];
 
     /**

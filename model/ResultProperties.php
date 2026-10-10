@@ -46,9 +46,9 @@ class ResultProperties  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'resultCode' => '\Model\ResultPropertiesResultCode',
-        'resultStatus' => '\Model\ResultPropertiesResultStatus',
-        'resultMessage' => '\Model\ResultPropertiesResultCode'
+        'resultCode' => '\request\model\ResultPropertiesResultCode',
+        'resultStatus' => '\request\model\ResultPropertiesResultStatus',
+        'resultMessage' => '\request\model\ResultPropertiesResultCode'
     ];
 
     /**

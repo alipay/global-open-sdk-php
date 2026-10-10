@@ -49,8 +49,8 @@ class InterestFree  implements ModelInterface, ArrayAccess, \JsonSerializable
         'provider' => 'string',
         'expireTime' => 'string',
         'installmentFreeNums' => 'int[]',
-        'minPaymentAmount' => '\Model\Amount',
-        'maxPaymentAmount' => '\Model\Amount',
+        'minPaymentAmount' => '\request\model\Amount',
+        'maxPaymentAmount' => '\request\model\Amount',
         'freePercentage' => 'int'
     ];
 

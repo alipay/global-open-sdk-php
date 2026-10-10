@@ -46,14 +46,14 @@ class AlipayInquireCardSensitiveInfoResponse  implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'assetId' => 'string',
         'cvv' => 'string',
         'cardNo' => 'string',
         'expiredMonth' => 'string',
         'expiredYear' => 'string',
-        'authorizationControl' => '\Model\AuthorizationControl',
-        'cardDetail' => '\Model\CardDetail'
+        'authorizationControl' => '\request\model\AuthorizationControl',
+        'cardDetail' => '\request\model\CardDetail'
     ];
 
     /**

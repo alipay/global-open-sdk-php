@@ -52,7 +52,7 @@ class CardInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'issuingCountry' => 'string',
         'funding' => 'string',
         'paymentMethodRegion' => 'string',
-        'threeDSResult' => '\Model\ThreeDSResult'
+        'threeDSResult' => '\request\model\ThreeDSResult'
     ];
 
     /**

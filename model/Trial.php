@@ -47,7 +47,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'trialPeriod' => 'int',
-        'trialAmount' => '\Model\Amount',
+        'trialAmount' => '\request\model\Amount',
         'trialStartPeriod' => 'int',
         'trialEndPeriod' => 'int'
     ];

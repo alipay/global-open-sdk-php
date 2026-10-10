@@ -46,8 +46,8 @@ class DeliveryEstimate  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'minimum' => '\Model\DeliveryEstimateInfo',
-        'maximum' => '\Model\DeliveryEstimateInfo'
+        'minimum' => '\request\model\DeliveryEstimateInfo',
+        'maximum' => '\request\model\DeliveryEstimateInfo'
     ];
 
     /**

@@ -46,12 +46,12 @@ class RiskData  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'order' => '\Model\RiskOrder',
-        'buyer' => '\Model\RiskBuyer',
-        'env' => '\Model\RiskEnv',
-        'riskSignal' => '\Model\RiskSignal',
-        'address' => '\Model\RiskAddress',
-        'cardVerificationResult' => '\Model\CardVerificationResult'
+        'order' => '\request\model\RiskOrder',
+        'buyer' => '\request\model\RiskBuyer',
+        'env' => '\request\model\RiskEnv',
+        'riskSignal' => '\request\model\RiskSignal',
+        'address' => '\request\model\RiskAddress',
+        'cardVerificationResult' => '\request\model\CardVerificationResult'
     ];
 
     /**

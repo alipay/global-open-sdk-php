@@ -49,7 +49,7 @@ class TaxTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
         'taxTransactionId' => 'string',
         'taxCalculationId' => 'string',
         'type' => 'string',
-        'taxAmount' => '\Model\Amount',
+        'taxAmount' => '\request\model\Amount',
         'status' => 'string',
         'failureReason' => 'string',
         'taxDate' => 'string',

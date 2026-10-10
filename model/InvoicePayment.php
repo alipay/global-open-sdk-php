@@ -52,7 +52,7 @@ class InvoicePayment  implements ModelInterface, ArrayAccess, \JsonSerializable
         'paymentId' => 'string',
         'payToRequestId' => 'string',
         'payToId' => 'string',
-        'paymentAmount' => '\Model\Amount',
+        'paymentAmount' => '\request\model\Amount',
         'paymentOrderStatus' => 'string',
         'paymentMethod' => 'string',
         'errorCode' => 'string',

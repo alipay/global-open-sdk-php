@@ -47,7 +47,7 @@ class BusinessInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'mcc' => 'string',
-        'websites' => '\Model\WebSite[]',
+        'websites' => '\request\model\WebSite[]',
         'englishName' => 'string',
         'doingBusinessAs' => 'string',
         'mainSalesCountry' => 'string',

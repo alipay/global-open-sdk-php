@@ -47,8 +47,8 @@ class SplitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'splitTo' => 'string',
-        'splitAmount' => '\Model\Amount',
-        'actualSplitAmount' => '\Model\Amount',
+        'splitAmount' => '\request\model\Amount',
+        'actualSplitAmount' => '\request\model\Amount',
         'description' => 'string'
     ];
 

@@ -46,9 +46,9 @@ class AlipayMeterUploadEventResponse  implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'retryAfter' => 'int',
-        'errors' => '\Model\Error[]'
+        'errors' => '\request\model\Error[]'
     ];
 
     /**

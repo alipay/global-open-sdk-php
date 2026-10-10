@@ -46,7 +46,7 @@ class AlipayCustomerCreateResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'customerId' => 'string',
         'customerRequestId' => 'string',
         'email' => 'string',

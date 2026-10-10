@@ -46,8 +46,8 @@ class AlipayCouponInquireListResponse  implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\ResultInfo',
-        'coupons' => '\Model\Coupon[]',
+        'result' => '\request\model\ResultInfo',
+        'coupons' => '\request\model\Coupon[]',
         'hasMore' => 'bool',
         'nextCursor' => 'string',
         'total' => 'int',

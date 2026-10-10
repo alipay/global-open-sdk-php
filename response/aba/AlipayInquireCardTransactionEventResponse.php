@@ -46,8 +46,8 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'events' => '\Model\CardTransactionEvent[]',
+        'result' => '\request\model\Result',
+        'events' => '\request\model\CardTransactionEvent[]',
         'totalCount' => 'int',
         'totalPageNumber' => 'int',
         'currentPageNumber' => 'int'

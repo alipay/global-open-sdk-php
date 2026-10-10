@@ -46,15 +46,15 @@ class Transit  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transitType' => '\Model\TransitType',
-        'legs' => '\Model\Leg[]',
-        'passengers' => '\Model\Passenger[]',
+        'transitType' => '\request\model\TransitType',
+        'legs' => '\request\model\Leg[]',
+        'passengers' => '\request\model\Passenger[]',
         'agentCode' => 'string',
         'agentName' => 'string',
         'ticketNumber' => 'string',
         'ticketIssuerCode' => 'string',
         'restrictedTicketIndicator' => 'string',
-        'ancillaryData' => '\Model\AncillaryData'
+        'ancillaryData' => '\request\model\AncillaryData'
     ];
 
     /**

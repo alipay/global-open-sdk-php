@@ -48,7 +48,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'periodType' => 'string',
         'period' => 'int',
-        'price' => '\Model\Amount',
+        'price' => '\request\model\Amount',
         'periodCount' => 'int'
     ];
 

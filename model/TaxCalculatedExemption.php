@@ -48,7 +48,7 @@ class TaxCalculatedExemption  implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'certificateNumber' => 'string',
         'exemptionType' => 'string',
-        'jurisdiction' => '\Model\TaxCalculatedExemptionJurisdiction',
+        'jurisdiction' => '\request\model\TaxCalculatedExemptionJurisdiction',
         'effectiveFrom' => 'string'
     ];
 

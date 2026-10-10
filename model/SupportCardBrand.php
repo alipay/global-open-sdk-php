@@ -47,7 +47,7 @@ class SupportCardBrand  implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'cardBrand' => 'string',
-        'logo' => '\Model\Logo'
+        'logo' => '\request\model\Logo'
     ];
 
     /**

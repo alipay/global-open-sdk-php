@@ -52,7 +52,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeDisplayName' => 'string',
         'storeTerminalId' => 'string',
         'storeOperatorId' => 'string',
-        'storeAddress' => '\Model\Address',
+        'storeAddress' => '\request\model\Address',
         'storePhoneNo' => 'string'
     ];
 

@@ -52,8 +52,8 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventIdList' => 'string[]',
         'lifecycleIdList' => 'string[]',
         'transactionCurrencyList' => 'string[]',
-        'eventTypeList' => '\Model\CardTransactionEventFilterType[]',
-        'statusList' => '\Model\CardTransactionStatusFilterType[]',
+        'eventTypeList' => '\request\model\CardTransactionEventFilterType[]',
+        'statusList' => '\request\model\CardTransactionStatusFilterType[]',
         'pageSize' => 'int',
         'pageNumber' => 'int'
     ];

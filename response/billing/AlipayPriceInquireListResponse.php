@@ -46,8 +46,8 @@ class AlipayPriceInquireListResponse  implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'prices' => '\Model\Price[]',
+        'result' => '\request\model\Result',
+        'prices' => '\request\model\Price[]',
         'hasMore' => 'bool',
         'total' => 'int'
     ];

@@ -48,11 +48,11 @@ class AmsApiV1PaymentsCapturePostRequest   extends AlipayRequest  implements Mod
     protected static $openAPITypes = [
         'captureRequestId' => 'string',
         'paymentId' => 'string',
-        'captureAmount' => '\Model\Amount',
+        'captureAmount' => '\request\model\Amount',
         'isLastCapture' => 'bool',
         'captureType' => 'string',
-        'goods' => '\Model\Goods[]',
-        'shippings' => '\Model\Shipping[]'
+        'goods' => '\request\model\Goods[]',
+        'shippings' => '\request\model\Shipping[]'
     ];
 
     /**

@@ -48,8 +48,8 @@ class TaxBreakdown  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'taxType' => 'string',
         'taxRate' => 'string',
-        'taxAmount' => '\Model\Amount',
-        'taxableAmount' => '\Model\Amount',
+        'taxAmount' => '\request\model\Amount',
+        'taxableAmount' => '\request\model\Amount',
         'taxabilityReason' => 'string',
         'inclusive' => 'bool'
     ];

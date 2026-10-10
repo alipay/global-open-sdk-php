@@ -46,7 +46,7 @@ class AlipayMeterUploadEventRequest   extends AlipayRequest  implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meters' => '\Model\MeterEventBatch[]'
+        'meters' => '\request\model\MeterEventBatch[]'
     ];
 
     /**

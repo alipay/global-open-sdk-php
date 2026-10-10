@@ -46,7 +46,7 @@ class AlipaySubscriptionCreateResponse  implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'schemeUrl' => 'string',
         'applinkUrl' => 'string',
         'normalUrl' => 'string',

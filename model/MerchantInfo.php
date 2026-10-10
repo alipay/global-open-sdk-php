@@ -48,10 +48,10 @@ class MerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'referenceMerchantId' => 'string',
         'loginId' => 'string',
-        'legalEntityType' => '\Model\LegalEntityType',
-        'company' => '\Model\Company',
-        'businessInfo' => '\Model\BusinessInfo',
-        'entityAssociations' => '\Model\EntityAssociations[]'
+        'legalEntityType' => '\request\model\LegalEntityType',
+        'company' => '\request\model\Company',
+        'businessInfo' => '\request\model\BusinessInfo',
+        'entityAssociations' => '\request\model\EntityAssociations[]'
     ];
 
     /**

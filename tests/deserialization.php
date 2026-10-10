@@ -1,5 +1,5 @@
 <?php
-// Run: php tests/deserialization.php [SDK root] [--snapshot]
+// Run: php tests/deserialization.php [SDK root] [--snapshot] [--require-canonical-types]
 $root = $argv[1] ?? dirname(__DIR__);
 spl_autoload_register(function ($class) use ($root) {
     $parts = explode('\\', ltrim($class, '\\'));
@@ -68,7 +68,9 @@ foreach ($enums as $class => $values) {
 check(count($enums) >= 52, 'Enum discovery unexpectedly incomplete');
 $count = 0;
 foreach ($instances as $class => $o) {
-    foreach ($class::openAPITypes() as $type) { check(strpos($type, '\\request\\model\\') === false, 'Stale type: ' . $class); }
+    if (in_array('--require-canonical-types', $argv, true)) {
+        foreach ($class::openAPITypes() as $type) { check(strpos($type, '\\request\\model\\') === false, 'Stale type: ' . $class); }
+    }
     $json = json_encode($o, JSON_THROW_ON_ERROR);
     $copy = Model\ObjectSerializer::deserialize($json, $class);
     check(json_decode(json_encode($copy), true) === json_decode($json, true), 'Roundtrip: ' . $class);

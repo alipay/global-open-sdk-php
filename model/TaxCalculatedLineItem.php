@@ -47,12 +47,12 @@ class TaxCalculatedLineItem  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'goodsReferenceId' => 'string',
-        'amount' => '\Model\Amount',
+        'amount' => '\request\model\Amount',
         'quantity' => 'int',
         'taxCode' => 'string',
         'taxBehavior' => 'string',
-        'taxAmount' => '\Model\Amount',
-        'taxBreakdown' => '\Model\TaxBreakdown[]'
+        'taxAmount' => '\request\model\Amount',
+        'taxBreakdown' => '\request\model\TaxBreakdown[]'
     ];
 
     /**

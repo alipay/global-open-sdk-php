@@ -46,14 +46,14 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
-        'exchangeResult' => '\Model\Result',
+        'result' => '\request\model\Result',
+        'exchangeResult' => '\request\model\Result',
         'exchangeTradeType' => 'string',
         'exchangeMode' => 'string',
         'exchangeRequestId' => 'string',
-        'quote' => '\Model\Quote',
-        'sellAmount' => '\Model\Amount',
-        'buyAmount' => '\Model\Amount',
+        'quote' => '\request\model\Quote',
+        'sellAmount' => '\request\model\Amount',
+        'buyAmount' => '\request\model\Amount',
         'exchangeId' => 'string',
         'exchangeStartTime' => 'string',
         'exchangeEndTime' => 'string'

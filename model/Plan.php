@@ -47,8 +47,8 @@ class Plan  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'interestRate' => 'string',
-        'minInstallmentAmount' => '\Model\Amount',
-        'maxInstallmentAmount' => '\Model\Amount',
+        'minInstallmentAmount' => '\request\model\Amount',
+        'maxInstallmentAmount' => '\request\model\Amount',
         'installmentNum' => 'string',
         'interval' => 'string',
         'enabled' => 'bool',

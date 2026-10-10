@@ -50,7 +50,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'couponId' => 'string',
         'code' => 'string',
         'expiryTime' => 'string',
-        'minAmount' => '\Model\PromotionCodeCreateMinAmount',
+        'minAmount' => '\request\model\PromotionCodeCreateMinAmount',
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
         'metadata' => 'string',

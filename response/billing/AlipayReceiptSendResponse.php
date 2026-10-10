@@ -46,7 +46,7 @@ class AlipayReceiptSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'receiptId' => 'string',
         'sendStatus' => 'string',
         'hostedReceiptUrl' => 'string'

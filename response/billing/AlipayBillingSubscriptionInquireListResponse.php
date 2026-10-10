@@ -46,8 +46,8 @@ class AlipayBillingSubscriptionInquireListResponse  implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\ResultInfo',
-        'subscriptions' => '\Model\Subscription[]',
+        'result' => '\request\model\ResultInfo',
+        'subscriptions' => '\request\model\Subscription[]',
         'hasMore' => 'bool',
         'nextCursor' => 'string',
         'previousCursor' => 'string'

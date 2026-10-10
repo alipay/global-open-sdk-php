@@ -46,7 +46,7 @@ class AncillaryData  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'services' => '\Model\Service[]',
+        'services' => '\request\model\Service[]',
         'connectedTicketNumber' => 'string'
     ];
 

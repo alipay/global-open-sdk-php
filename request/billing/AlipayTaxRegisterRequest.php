@@ -48,7 +48,7 @@ class AlipayTaxRegisterRequest   extends AlipayRequest  implements ModelInterfac
     protected static $openAPITypes = [
         'registrationRequestId' => 'string',
         'taxType' => 'string',
-        'jurisdiction' => '\Model\TaxJurisdiction',
+        'jurisdiction' => '\request\model\TaxJurisdiction',
         'registrationType' => 'string',
         'taxId' => 'string',
         'activeFrom' => 'string',

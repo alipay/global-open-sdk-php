@@ -46,9 +46,9 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paymentEvaluation' => '\Model\PaymentEvaluation',
-        'productCode' => '\Model\ProductCodeType',
-        'paymentAmount' => '\Model\Amount',
+        'paymentEvaluation' => '\request\model\PaymentEvaluation',
+        'productCode' => '\request\model\ProductCodeType',
+        'paymentAmount' => '\request\model\Amount',
         'merchantRegion' => 'string',
         'allowedPaymentMethodRegions' => 'string[]',
         'allowedPaymentMethods' => 'string[]',
@@ -56,14 +56,14 @@ class AlipayPayConsultRequest   extends AlipayRequest  implements ModelInterface
         'region' => 'string',
         'customerId' => 'string',
         'referenceUserId' => 'string',
-        'env' => '\Model\Env',
+        'env' => '\request\model\Env',
         'extendInfo' => 'string',
         'userRegion' => 'string',
-        'paymentFactor' => '\Model\PaymentFactor',
-        'settlementStrategy' => '\Model\SettlementStrategy',
-        'merchant' => '\Model\Merchant',
+        'paymentFactor' => '\request\model\PaymentFactor',
+        'settlementStrategy' => '\request\model\SettlementStrategy',
+        'merchant' => '\request\model\Merchant',
         'allowedPspRegions' => 'string[]',
-        'buyer' => '\Model\Buyer',
+        'buyer' => '\request\model\Buyer',
         'merchantAccountId' => 'string'
     ];
 

@@ -49,18 +49,18 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'businessName' => 'string',
         'buyerType' => 'string',
         'referenceBuyerId' => 'string',
-        'buyerName' => '\Model\UserName',
+        'buyerName' => '\request\model\UserName',
         'buyerPhoneNo' => 'string',
         'buyerEmail' => 'string',
         'buyerRegistrationTime' => 'string',
         'isAccountVerified' => 'bool',
         'successfulOrderCount' => 'int',
         'buyerPhoneNoContryCode' => 'string',
-        'successfulOrderAmount' => '\Model\Amount',
+        'successfulOrderAmount' => '\request\model\Amount',
         'dateOfLastPaidPurchase' => 'string',
         'dateOfFirstPaidPurchase' => 'string',
-        'taxIds' => '\Model\BuyerTaxId[]',
-        'businessAddress' => '\Model\Address'
+        'taxIds' => '\request\model\BuyerTaxId[]',
+        'businessAddress' => '\request\model\Address'
     ];
 
     /**

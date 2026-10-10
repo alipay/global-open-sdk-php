@@ -48,7 +48,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $openAPITypes = [
         'settlementRequestId' => 'string',
         'paymentId' => 'string',
-        'settlementDetails' => '\Model\SettlementDetail[]'
+        'settlementDetails' => '\request\model\SettlementDetail[]'
     ];
 
     /**

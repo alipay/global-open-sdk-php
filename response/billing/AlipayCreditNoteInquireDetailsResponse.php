@@ -46,15 +46,15 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'creditNoteId' => 'string',
         'creditNoteRequestId' => 'string',
         'invoiceId' => 'string',
         'customerId' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'totalAmount' => '\Model\Amount',
-        'refundAmount' => '\Model\Amount',
+        'totalAmount' => '\request\model\Amount',
+        'refundAmount' => '\request\model\Amount',
         'refundStatus' => 'string',
         'refundId' => 'string',
         'reason' => 'string',
@@ -62,7 +62,7 @@ class AlipayCreditNoteInquireDetailsResponse  implements ModelInterface, ArrayAc
         'refundDestination' => 'string',
         'effectiveDate' => 'string',
         'memo' => 'string',
-        'items' => '\Model\CreditNoteItem[]',
+        'items' => '\request\model\CreditNoteItem[]',
         'issuedAt' => 'string',
         'refundedAt' => 'string',
         'voidedAt' => 'string',

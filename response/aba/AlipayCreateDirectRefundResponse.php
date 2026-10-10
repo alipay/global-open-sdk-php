@@ -50,10 +50,10 @@ class AlipayCreateDirectRefundResponse  implements ModelInterface, ArrayAccess, 
         'refundId' => 'string',
         'refundRequestId' => 'string',
         'refundTime' => 'string',
-        'refundFromMethod' => '\Model\RefundFromMethod',
-        'refundFromAmount' => '\Model\Amount',
-        'refundToAmount' => '\Model\Amount',
-        'result' => '\Model\Result'
+        'refundFromMethod' => '\request\model\RefundFromMethod',
+        'refundFromAmount' => '\request\model\Amount',
+        'refundToAmount' => '\request\model\Amount',
+        'result' => '\request\model\Result'
     ];
 
     /**

@@ -52,7 +52,7 @@ class AlipayUpdateCardRequest   extends AlipayRequest  implements ModelInterface
         'note' => 'string',
         'purpose' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl'
+        'authorizationControl' => '\request\model\AuthorizationControl'
     ];
 
     /**

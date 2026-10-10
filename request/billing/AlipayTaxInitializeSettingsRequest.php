@@ -49,7 +49,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => 'string',
         'defaultTaxCode' => 'string',
         'defaultTaxBehavior' => 'string',
-        'headOffice' => '\Model\TaxHeadOffice'
+        'headOffice' => '\request\model\TaxHeadOffice'
     ];
 
     /**

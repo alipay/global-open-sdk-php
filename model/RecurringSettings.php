@@ -46,7 +46,7 @@ class RecurringSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'periodRule' => '\Model\PeriodRule'
+        'periodRule' => '\request\model\PeriodRule'
     ];
 
     /**

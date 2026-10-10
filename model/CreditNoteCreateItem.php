@@ -50,8 +50,8 @@ class CreditNoteCreateItem  implements ModelInterface, ArrayAccess, \JsonSeriali
         'invoiceItemId' => 'string',
         'description' => 'string',
         'quantity' => 'int',
-        'unitAmount' => '\Model\Amount',
-        'itemAmount' => '\Model\Amount'
+        'unitAmount' => '\request\model\Amount',
+        'itemAmount' => '\request\model\Amount'
     ];
 
     /**

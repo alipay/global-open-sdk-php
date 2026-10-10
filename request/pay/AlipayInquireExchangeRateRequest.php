@@ -48,11 +48,11 @@ class AlipayInquireExchangeRateRequest   extends AlipayRequest  implements Model
     protected static $openAPITypes = [
         'merchantAccountId' => 'string',
         'paymentCurrency' => 'string',
-        'currencyPairs' => '\Model\CurrencyPair[]',
+        'currencyPairs' => '\request\model\CurrencyPair[]',
         'sellCurrency' => 'string',
         'buyCurrency' => 'string',
-        'productCode' => '\Model\ProductCodeType',
-        'rateType' => '\Model\RateType'
+        'productCode' => '\request\model\ProductCodeType',
+        'rateType' => '\request\model\RateType'
     ];
 
     /**

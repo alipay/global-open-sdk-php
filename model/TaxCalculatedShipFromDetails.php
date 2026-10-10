@@ -46,7 +46,7 @@ class TaxCalculatedShipFromDetails  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => '\Model\TaxCalculatedAddress'
+        'address' => '\request\model\TaxCalculatedAddress'
     ];
 
     /**

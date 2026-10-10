@@ -47,7 +47,7 @@ class AvailablePaymentMethod  implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'paymentMethodMetaData' => 'array<string,object>',
-        'paymentMethodTypeList' => '\Model\PaymentMethodTypeItem[]'
+        'paymentMethodTypeList' => '\request\model\PaymentMethodTypeItem[]'
     ];
 
     /**

@@ -46,9 +46,9 @@ class AlipayInquireRuleListRequest   extends AlipayRequest  implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fundsType' => '\Model\FundsType',
-        'takeType' => '\Model\TakeType',
-        'releaseType' => '\Model\ReleaseType',
+        'fundsType' => '\request\model\FundsType',
+        'takeType' => '\request\model\TakeType',
+        'releaseType' => '\request\model\ReleaseType',
         'limit' => 'int',
         'startingAfter' => 'string',
         'endingBefore' => 'string'

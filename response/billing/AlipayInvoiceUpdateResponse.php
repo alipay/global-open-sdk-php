@@ -46,7 +46,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\Model\Result',
+        'result' => '\request\model\Result',
         'invoiceId' => 'string',
         'status' => 'string',
         'previousInvoiceId' => 'string'
