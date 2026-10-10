@@ -49,7 +49,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPITypes = [
         'mandateRequestId' => 'string',
         'accessToken' => 'string',
-        'paymentAmount' => '\request\model\Amount'
+        'paymentAmount' => '\Model\Amount'
     ];
 
     /**

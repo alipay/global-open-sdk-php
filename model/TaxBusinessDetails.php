@@ -46,7 +46,7 @@ class TaxBusinessDetails  implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => '\request\model\TaxAddress'
+        'address' => '\Model\TaxAddress'
     ];
 
     /**

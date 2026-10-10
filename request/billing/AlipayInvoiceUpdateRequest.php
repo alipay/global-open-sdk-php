@@ -50,13 +50,13 @@ class AlipayInvoiceUpdateRequest   extends AlipayRequest  implements ModelInterf
         'description' => 'string',
         'dueDate' => 'string',
         'collectionMethod' => 'string',
-        'paymentMethod' => '\request\model\PaymentMethod',
-        'shipping' => '\request\model\InvoiceShipping',
+        'paymentMethod' => '\Model\PaymentMethod',
+        'shipping' => '\Model\InvoiceShipping',
         'customerId' => 'string',
         'footer' => 'string',
         'includePaymentLink' => 'bool',
         'memo' => 'string',
-        'customFields' => '\request\model\InvoiceCustomField[]',
+        'customFields' => '\Model\InvoiceCustomField[]',
         'invoiceNotifyUrl' => 'string'
     ];
 

@@ -46,9 +46,9 @@ class PromotionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'promotionType' => '\request\model\PromotionType',
-        'discount' => '\request\model\Discount',
-        'interestFree' => '\request\model\InterestFree'
+        'promotionType' => '\Model\PromotionType',
+        'discount' => '\Model\Discount',
+        'interestFree' => '\Model\InterestFree'
     ];
 
     /**

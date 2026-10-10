@@ -49,11 +49,11 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionUpdateRequestId' => 'string',
         'subscriptionId' => 'string',
         'subscriptionDescription' => 'string',
-        'periodRule' => '\request\model\PeriodRule',
-        'paymentAmount' => '\request\model\Amount',
+        'periodRule' => '\Model\PeriodRule',
+        'paymentAmount' => '\Model\Amount',
         'subscriptionEndTime' => 'string',
-        'orderInfo' => '\request\model\OrderInfo',
-        'prorationSettings' => '\request\model\ProrationSettings',
+        'orderInfo' => '\Model\OrderInfo',
+        'prorationSettings' => '\Model\ProrationSettings',
         'nextSubscriptionDate' => 'string'
     ];
 

@@ -46,16 +46,16 @@ class Transaction  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transactionResult' => '\request\model\Result',
+        'transactionResult' => '\Model\Result',
         'transactionId' => 'string',
-        'transactionType' => '\request\model\TransactionType',
-        'transactionStatus' => '\request\model\TransactionStatusType',
-        'transactionAmount' => '\request\model\Amount',
+        'transactionType' => '\Model\TransactionType',
+        'transactionStatus' => '\Model\TransactionStatusType',
+        'transactionAmount' => '\Model\Amount',
         'transactionRequestId' => 'string',
         'transactionTime' => 'string',
-        'acquirerInfo' => '\request\model\AcquirerInfo',
-        'grossSettlementAmount' => '\request\model\Amount',
-        'settlementQuote' => '\request\model\Quote'
+        'acquirerInfo' => '\Model\AcquirerInfo',
+        'grossSettlementAmount' => '\Model\Amount',
+        'settlementQuote' => '\Model\Quote'
     ];
 
     /**

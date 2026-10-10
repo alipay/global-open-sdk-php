@@ -46,11 +46,11 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'captureRequestId' => 'string',
         'captureId' => 'string',
         'paymentId' => 'string',
-        'captureAmount' => '\request\model\Amount',
+        'captureAmount' => '\Model\Amount',
         'captureTime' => 'string',
         'acquirerReferenceNo' => 'string'
     ];

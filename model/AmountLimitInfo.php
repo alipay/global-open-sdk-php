@@ -46,9 +46,9 @@ class AmountLimitInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'singleLimit' => '\request\model\AmountLimit',
-        'dayLimit' => '\request\model\AmountLimit',
-        'monthLimit' => '\request\model\AmountLimit'
+        'singleLimit' => '\Model\AmountLimit',
+        'dayLimit' => '\Model\AmountLimit',
+        'monthLimit' => '\Model\AmountLimit'
     ];
 
     /**

@@ -46,17 +46,17 @@ class AlipayRefundResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'actualRefundAmount' => '\request\model\Amount',
+        'result' => '\Model\Result',
+        'actualRefundAmount' => '\Model\Amount',
         'refundRequestId' => 'string',
         'refundId' => 'string',
         'paymentId' => 'string',
-        'refundAmount' => '\request\model\Amount',
+        'refundAmount' => '\Model\Amount',
         'refundTime' => 'string',
-        'refundNonGuaranteeCouponAmount' => '\request\model\Amount',
-        'grossSettlementAmount' => '\request\model\Amount',
-        'settlementQuote' => '\request\model\Quote',
-        'acquirerInfo' => '\request\model\AcquirerInfo',
+        'refundNonGuaranteeCouponAmount' => '\Model\Amount',
+        'grossSettlementAmount' => '\Model\Amount',
+        'settlementQuote' => '\Model\Quote',
+        'acquirerInfo' => '\Model\AcquirerInfo',
         'acquirerReferenceNo' => 'string'
     ];
 

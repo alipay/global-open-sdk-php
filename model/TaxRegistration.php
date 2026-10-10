@@ -48,7 +48,7 @@ class TaxRegistration  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'taxRegistrationId' => 'string',
         'taxType' => 'string',
-        'jurisdiction' => '\request\model\TaxJurisdiction',
+        'jurisdiction' => '\Model\TaxJurisdiction',
         'registrationType' => 'string',
         'taxId' => 'string',
         'status' => 'string',

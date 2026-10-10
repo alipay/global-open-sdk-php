@@ -46,10 +46,10 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'holdRequestId' => 'string',
         'holdId' => 'string',
-        'holdAmount' => '\request\model\Amount',
+        'holdAmount' => '\Model\Amount',
         'releaseTime' => 'string',
         'holdStatus' => 'string'
     ];

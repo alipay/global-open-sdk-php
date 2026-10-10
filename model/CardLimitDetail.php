@@ -46,10 +46,10 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'perTransactionLimit' => '\request\model\Amount',
-        'dailyLimit' => '\request\model\Limit',
-        'monthlyLimit' => '\request\model\Limit',
-        'perCardLimit' => '\request\model\Limit',
+        'perTransactionLimit' => '\Model\Amount',
+        'dailyLimit' => '\Model\Limit',
+        'monthlyLimit' => '\Model\Limit',
+        'perCardLimit' => '\Model\Limit',
         'dailyLimitMax' => 'string',
         'monthlyLimitMax' => 'string',
         'perTransactionLimitMax' => 'string',

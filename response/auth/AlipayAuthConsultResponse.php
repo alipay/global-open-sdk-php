@@ -46,14 +46,14 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'authUrl' => 'string',
         'extendInfo' => 'string',
         'normalUrl' => 'string',
         'schemeUrl' => 'string',
         'applinkUrl' => 'string',
         'appIdentifier' => 'string',
-        'authCodeForm' => '\request\model\AuthCodeForm'
+        'authCodeForm' => '\Model\AuthCodeForm'
     ];
 
     /**

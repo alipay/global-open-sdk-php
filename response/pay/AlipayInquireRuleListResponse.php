@@ -46,9 +46,9 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'hasMore' => 'bool',
-        'rules' => '\request\model\ReserveRule[]'
+        'rules' => '\Model\ReserveRule[]'
     ];
 
     /**

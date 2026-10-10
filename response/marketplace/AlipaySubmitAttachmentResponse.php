@@ -46,9 +46,9 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'submitAttachmentRequestId' => 'string',
-        'attachmentType' => '\request\model\AttachmentType',
+        'attachmentType' => '\Model\AttachmentType',
         'attachmentKey' => 'string'
     ];
 

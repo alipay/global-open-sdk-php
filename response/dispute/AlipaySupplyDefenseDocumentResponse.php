@@ -46,7 +46,7 @@ class AlipaySupplyDefenseDocumentResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'disputeId' => 'string',
         'disputeResolutionTime' => 'string'
     ];

@@ -46,10 +46,10 @@ class AlipayCreditNoteInquireListResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'hasMore' => 'bool',
         'totalCount' => 'int',
-        'list' => '\request\model\CreditNoteSummary[]'
+        'list' => '\Model\CreditNoteSummary[]'
     ];
 
     /**

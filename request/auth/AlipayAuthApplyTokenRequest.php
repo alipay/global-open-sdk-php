@@ -47,8 +47,8 @@ class AlipayAuthApplyTokenRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPITypes = [
         'merchantAccountId' => 'string',
-        'grantType' => '\request\model\GrantType',
-        'customerBelongsTo' => '\request\model\CustomerBelongsTo',
+        'grantType' => '\Model\GrantType',
+        'customerBelongsTo' => '\Model\CustomerBelongsTo',
         'authCode' => 'string',
         'refreshToken' => 'string',
         'extendInfo' => 'string',

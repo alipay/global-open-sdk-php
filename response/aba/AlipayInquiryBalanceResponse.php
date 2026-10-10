@@ -46,8 +46,8 @@ class AlipayInquiryBalanceResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'accountBalances' => '\request\model\AccountBalance[]',
-        'result' => '\request\model\Result'
+        'accountBalances' => '\Model\AccountBalance[]',
+        'result' => '\Model\Result'
     ];
 
     /**

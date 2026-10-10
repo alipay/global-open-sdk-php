@@ -46,12 +46,12 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'discountAmount' => '\request\model\Amount',
+        'discountAmount' => '\Model\Amount',
         'taxBehavior' => 'string',
         'taxCode' => 'string',
         'description' => 'string',
-        'itemAmount' => '\request\model\Amount',
-        'unitAmount' => '\request\model\Amount',
+        'itemAmount' => '\Model\Amount',
+        'unitAmount' => '\Model\Amount',
         'priceId' => 'string',
         'productId' => 'string',
         'quantity' => 'int',

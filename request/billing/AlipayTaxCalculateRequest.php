@@ -47,11 +47,11 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
       */
     protected static $openAPITypes = [
         'taxCalculationRequestId' => 'string',
-        'lineItems' => '\request\model\TaxCalculationLineItem[]',
+        'lineItems' => '\Model\TaxCalculationLineItem[]',
         'customerId' => 'string',
-        'customerDetails' => '\request\model\TaxCustomerDetails',
-        'shipFromDetails' => '\request\model\TaxShipFromDetails',
-        'shippingCost' => '\request\model\TaxShippingCost',
+        'customerDetails' => '\Model\TaxCustomerDetails',
+        'shipFromDetails' => '\Model\TaxShipFromDetails',
+        'shippingCost' => '\Model\TaxShippingCost',
         'taxDate' => 'string'
     ];
 

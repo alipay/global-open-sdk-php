@@ -46,16 +46,16 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fundMoveDetail' => '\request\model\FundMoveDetail',
-        'foreignExchangeQuote' => '\request\model\ForeignExchangeQuote',
+        'fundMoveDetail' => '\Model\FundMoveDetail',
+        'foreignExchangeQuote' => '\Model\ForeignExchangeQuote',
         'statementId' => 'string',
         'transactionTime' => 'string',
         'transactionType' => 'string',
-        'originalTransactionAmount' => '\request\model\Amount',
-        'transactionAmount' => '\request\model\Amount',
-        'feeAmount' => '\request\model\Amount',
-        'netAmount' => '\request\model\Amount',
-        'accountBalance' => '\request\model\Amount',
+        'originalTransactionAmount' => '\Model\Amount',
+        'transactionAmount' => '\Model\Amount',
+        'feeAmount' => '\Model\Amount',
+        'netAmount' => '\Model\Amount',
+        'accountBalance' => '\Model\Amount',
         'transactionId' => 'string',
         'extTransactionId' => 'string',
         'transactionStatus' => 'string',

@@ -46,8 +46,8 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'terminalType' => '\request\model\TerminalType',
-        'osType' => '\request\model\OsType',
+        'terminalType' => '\Model\TerminalType',
+        'osType' => '\Model\OsType',
         'userAgent' => 'string',
         'deviceTokenId' => 'string',
         'clientIp' => 'string',
@@ -55,7 +55,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'extendInfo' => 'string',
         'storeTerminalId' => 'string',
         'storeTerminalRequestTime' => 'string',
-        'browserInfo' => '\request\model\BrowserInfo',
+        'browserInfo' => '\Model\BrowserInfo',
         'colorDepth' => 'string',
         'screenHeight' => 'string',
         'screenWidth' => 'string',

@@ -47,10 +47,10 @@ class AlipayCreateQuoteResponse  implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'exchangeTradeType' => 'string',
-        'quote' => '\request\model\Quote',
-        'sellAmount' => '\request\model\Amount',
-        'buyAmount' => '\request\model\Amount',
-        'result' => '\request\model\Result'
+        'quote' => '\Model\Quote',
+        'sellAmount' => '\Model\Amount',
+        'buyAmount' => '\Model\Amount',
+        'result' => '\Model\Result'
     ];
 
     /**

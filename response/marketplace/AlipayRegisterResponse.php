@@ -46,7 +46,7 @@ class AlipayRegisterResponse  implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'registrationStatus' => 'string'
     ];
 

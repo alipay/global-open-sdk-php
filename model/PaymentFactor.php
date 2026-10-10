@@ -48,8 +48,8 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'storePaymentMethodForBuyer' => 'bool',
         'isPaymentEvaluation' => 'bool',
-        'inStorePaymentScenario' => '\request\model\InStorePaymentScenario',
-        'presentmentMode' => '\request\model\PresentmentMode',
+        'inStorePaymentScenario' => '\Model\InStorePaymentScenario',
+        'presentmentMode' => '\Model\PresentmentMode',
         'captureMode' => 'string',
         'isAuthorization' => 'bool'
     ];

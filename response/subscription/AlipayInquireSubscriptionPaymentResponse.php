@@ -46,9 +46,9 @@ class AlipayInquireSubscriptionPaymentResponse  implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'payments' => '\request\model\SubscriptionTransaction[]',
-        'paginator' => '\request\model\Paginator'
+        'result' => '\Model\Result',
+        'payments' => '\Model\SubscriptionTransaction[]',
+        'paginator' => '\Model\Paginator'
     ];
 
     /**

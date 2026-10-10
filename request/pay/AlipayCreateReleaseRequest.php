@@ -48,7 +48,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPITypes = [
         'releaseRequestId' => 'string',
         'holdId' => 'string',
-        'releaseAmount' => '\request\model\Amount'
+        'releaseAmount' => '\Model\Amount'
     ];
 
     /**
