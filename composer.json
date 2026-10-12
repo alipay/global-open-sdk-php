@@ -8,7 +8,8 @@
       "Request\\": "request/",
       "Response\\": "response/",
       "Model\\": "model/",
-      "Client\\": "client/"
+      "Client\\": "client/",
+      "Util\\": "util/"
     }
   },
   "homepage": "https://dashboard.alipay.com/global-payments/",
