@@ -46,7 +46,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'assetId' => 'string',
         'cardNickName' => 'string',
         'cardStatus' => 'string',
@@ -57,8 +57,8 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\request\model\AuthorizationControl',
-        'cardholderinfo' => '\request\model\CardholderInfo'
+        'authorizationControl' => '\Model\AuthorizationControl',
+        'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
     /**

@@ -47,7 +47,7 @@ class TrialPhase  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'phaseNo' => 'int',
-        'trialAmount' => '\request\model\Amount'
+        'trialAmount' => '\Model\Amount'
     ];
 
     /**

@@ -46,12 +46,12 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'businessDetails' => '\request\model\TaxCalculatedBusinessDetails',
+        'businessDetails' => '\Model\TaxCalculatedBusinessDetails',
         'name' => 'string',
-        'shippingAddress' => '\request\model\TaxCalculatedAddress',
-        'billingAddress' => '\request\model\TaxCalculatedAddress',
-        'taxIds' => '\request\model\TaxCalculatedTaxId[]',
-        'taxExemptions' => '\request\model\TaxCalculatedExemption[]'
+        'shippingAddress' => '\Model\TaxCalculatedAddress',
+        'billingAddress' => '\Model\TaxCalculatedAddress',
+        'taxIds' => '\Model\TaxCalculatedTaxId[]',
+        'taxExemptions' => '\Model\TaxCalculatedExemption[]'
     ];
 
     /**

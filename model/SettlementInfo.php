@@ -47,7 +47,7 @@ class SettlementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'settlementCurrency' => 'string',
-        'settlementBankAccount' => '\request\model\SettlementBankAccount'
+        'settlementBankAccount' => '\Model\SettlementBankAccount'
     ];
 
     /**

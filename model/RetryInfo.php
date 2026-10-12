@@ -48,7 +48,7 @@ class RetryInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'availableRetries' => 'int',
         'orderId' => 'string',
-        'paymentAttempts' => '\request\model\PaymentAttempt[]'
+        'paymentAttempts' => '\Model\PaymentAttempt[]'
     ];
 
     /**

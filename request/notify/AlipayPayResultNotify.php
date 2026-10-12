@@ -47,6 +47,23 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
     public  $taxCalculationId;
 
     /**
+     * The status of the post-authorization manual review. Valid values are PROCESSING, ACCEPT, and
+     * REJECT. Returned when the channel authorization requires manual review, or when the value of
+     * popRiskDecisionResultInfo.postRiskDecision is REVIEW; when returned, authReviewSource is
+     * returned at the same time.
+     */
+    public  $authReviewStatus;
+
+    /**
+     * The source of the post-authorization risk review. Valid values are ANTOM_SHIELD and PSP.
+     * Returned only when authReviewStatus is returned.
+     */
+    public  $authReviewSource;
+
+    /** @var \Model\PopRiskDecisionResultInfo|null */
+    public  $popRiskDecisionResultInfo;
+
+    /**
      * @return mixed
      */
     public function getRetryInfo()
@@ -375,7 +392,51 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
         $this->taxCalculationId = $taxCalculationId;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAuthReviewStatus()
+    {
+        return $this->authReviewStatus;
+    }
 
+    /**
+     * @param mixed $authReviewStatus
+     */
+    public function setAuthReviewStatus($authReviewStatus): void
+    {
+        $this->authReviewStatus = $authReviewStatus;
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getAuthReviewSource()
+    {
+        return $this->authReviewSource;
+    }
 
+    /**
+     * @param mixed $authReviewSource
+     */
+    public function setAuthReviewSource($authReviewSource): void
+    {
+        $this->authReviewSource = $authReviewSource;
+    }
+
+    /**
+     * @return \Model\PopRiskDecisionResultInfo|null
+     */
+    public function getPopRiskDecisionResultInfo()
+    {
+        return $this->popRiskDecisionResultInfo;
+    }
+
+    /**
+     * @param \Model\PopRiskDecisionResultInfo|null $popRiskDecisionResultInfo
+     */
+    public function setPopRiskDecisionResultInfo($popRiskDecisionResultInfo): void
+    {
+        $this->popRiskDecisionResultInfo = $popRiskDecisionResultInfo;
+    }
 }

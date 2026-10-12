@@ -310,7 +310,7 @@ class AlipayMeterUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets meterId
      *
-     * @param string $meterId The meter ID. Maximum length: 64 characters.
+     * @param string $meterId The unique identifier of the Meter. The resource must belong to the authenticated merchant. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class AlipayMeterUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets meterName
      *
-     * @param string|null $meterName The meter name. Maximum length: 255 characters. Note: See documentation for details.
+     * @param string|null $meterName The merchant-facing name of the Meter. Send this field to rename the Meter; omit to keep the current name. At least one of meterName and status must be provided. Maximum length: 255 characters.
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class AlipayMeterUpdateRequest   extends AlipayRequest  implements ModelInterfac
     /**
      * Sets status
      *
-     * @param string|null $status The current status. Maximum length: 8 characters. Note: See documentation for details.
+     * @param string|null $status The Meter status. Valid values are ACTIVE and INACTIVE. Send this field to activate or deactivate the Meter; omit to keep the current state. At least one of meterName and status must be provided. Maximum length: 8 characters.
      *
      * @return self
      */

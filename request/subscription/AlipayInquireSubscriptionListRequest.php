@@ -49,10 +49,10 @@ class AlipayInquireSubscriptionListRequest   extends AlipayRequest  implements M
         'merchantAccountId' => 'string',
         'startTimeFrom' => 'string',
         'startTimeTo' => 'string',
-        'statuses' => '\request\model\SubscriptionStatus[]',
+        'statuses' => '\Model\SubscriptionStatus[]',
         'paymentMethodTypes' => 'string[]',
         'currencies' => 'string[]',
-        'periodTypes' => '\request\model\PeriodType[]',
+        'periodTypes' => '\Model\PeriodType[]',
         'currentPage' => 'int',
         'pageSize' => 'int'
     ];

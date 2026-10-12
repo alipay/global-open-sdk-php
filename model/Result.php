@@ -47,7 +47,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'resultCode' => 'string',
-        'resultStatus' => '\request\model\ResultStatusType',
+        'resultStatus' => '\Model\ResultStatusType',
         'resultMessage' => 'string'
     ];
 

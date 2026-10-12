@@ -48,7 +48,7 @@ class SupportBank  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'bankIdentifierCode' => 'string',
         'bankShortName' => 'string',
-        'bankLogo' => '\request\model\Logo'
+        'bankLogo' => '\Model\Logo'
     ];
 
     /**

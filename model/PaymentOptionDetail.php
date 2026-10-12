@@ -46,9 +46,9 @@ class PaymentOptionDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'supportCardBrands' => '\request\model\SupportCardBrand[]',
+        'supportCardBrands' => '\Model\SupportCardBrand[]',
         'funding' => 'string[]',
-        'supportBanks' => '\request\model\SupportBank[]',
+        'supportBanks' => '\Model\SupportBank[]',
         'interactionTypes' => 'string[]'
     ];
 

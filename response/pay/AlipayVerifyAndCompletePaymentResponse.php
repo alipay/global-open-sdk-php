@@ -46,13 +46,13 @@ class AlipayVerifyAndCompletePaymentResponse  implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'paymentRequestId' => 'string',
         'verifyRequestId' => 'string',
         'paymentId' => 'string',
-        'paymentAmount' => '\request\model\Amount',
+        'paymentAmount' => '\Model\Amount',
         'paymentCreateTime' => 'string',
-        'acquirerInfo' => '\request\model\AcquirerInfo'
+        'acquirerInfo' => '\Model\AcquirerInfo'
     ];
 
     /**

@@ -46,11 +46,11 @@ class Passenger  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'passengerName' => '\request\model\UserName',
+        'passengerName' => '\Model\UserName',
         'passengerEmail' => 'string',
         'passengerPhoneNo' => 'string',
         'passengerId' => 'string',
-        'passengerIdType' => '\request\model\PassengerIdType',
+        'passengerIdType' => '\Model\PassengerIdType',
         'passengerCode' => 'string'
     ];
 

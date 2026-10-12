@@ -46,18 +46,18 @@ class AlipayCouponInquireDetailsResponse  implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\ResultInfo',
+        'result' => '\Model\ResultInfo',
         'couponId' => 'string',
         'couponRequestId' => 'string',
         'couponName' => 'string',
         'discountType' => 'string',
         'percentOff' => 'string',
-        'amountOff' => '\request\model\Amount',
+        'amountOff' => '\Model\Amount',
         'durationType' => 'string',
         'durationValue' => 'int',
         'durationUnit' => 'string',
         'redeemBy' => 'string',
-        'appliesTo' => '\request\model\CouponInquireDetailsAppliesTo',
+        'appliesTo' => '\Model\CouponInquireDetailsAppliesTo',
         'status' => 'string',
         'metadata' => 'string',
         'gmtCreate' => 'string',

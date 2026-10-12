@@ -46,7 +46,7 @@ class AlipayUpdateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'holdId' => 'string',
         'releaseTime' => 'string'
     ];

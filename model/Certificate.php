@@ -46,9 +46,9 @@ class Certificate  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'certificateType' => '\request\model\CertificateType',
+        'certificateType' => '\Model\CertificateType',
         'certificateNo' => 'string',
-        'holderName' => '\request\model\UserName',
+        'holderName' => '\Model\UserName',
         'fileKeys' => 'string[]',
         'certificateAuthority' => 'string'
     ];

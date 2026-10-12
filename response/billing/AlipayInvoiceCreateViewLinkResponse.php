@@ -46,7 +46,7 @@ class AlipayInvoiceCreateViewLinkResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'token' => 'string',
         'viewUrl' => 'string',
         'expiresAt' => 'string'

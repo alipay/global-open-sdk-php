@@ -47,7 +47,7 @@ class RefundToBankInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'bankCode' => 'string',
-        'accountHolderName' => '\request\model\UserName',
+        'accountHolderName' => '\Model\UserName',
         'accountNo' => 'string'
     ];
 

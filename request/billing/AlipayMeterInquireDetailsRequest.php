@@ -296,7 +296,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
     /**
      * Sets meterId
      *
-     * @param string $meterId The meter ID. Maximum length: 64 characters.
+     * @param string $meterId The unique identifier of the Meter. The resource must belong to the authenticated merchant. Maximum length: 64 characters.
      *
      * @return self
      */

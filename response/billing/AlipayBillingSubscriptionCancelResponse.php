@@ -46,7 +46,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\ResultInfo',
+        'result' => '\Model\ResultInfo',
         'subscriptionId' => 'string',
         'status' => 'string',
         'canceledAt' => 'string',

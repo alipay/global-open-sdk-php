@@ -46,22 +46,23 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'sendReceipt' => 'bool',
         'referenceOrderId' => 'string',
         'orderDescription' => 'string',
-        'orderAmount' => '\request\model\Amount',
-        'orderDiscountAmount' => '\request\model\Amount',
-        'subTotalOrderAmount' => '\request\model\Amount',
-        'merchant' => '\request\model\Merchant',
-        'goods' => '\request\model\Goods[]',
-        'shipping' => '\request\model\Shipping',
-        'buyer' => '\request\model\Buyer',
-        'env' => '\request\model\Env',
+        'orderAmount' => '\Model\Amount',
+        'orderDiscountAmount' => '\Model\Amount',
+        'subTotalOrderAmount' => '\Model\Amount',
+        'merchant' => '\Model\Merchant',
+        'goods' => '\Model\Goods[]',
+        'shipping' => '\Model\Shipping',
+        'buyer' => '\Model\Buyer',
+        'env' => '\Model\Env',
         'extendInfo' => 'string',
-        'transit' => '\request\model\Transit',
-        'lodging' => '\request\model\Lodging',
-        'gaming' => '\request\model\Gaming',
+        'transit' => '\Model\Transit',
+        'lodging' => '\Model\Lodging',
+        'gaming' => '\Model\Gaming',
         'needDeclaration' => 'bool',
-        'declaration' => '\request\model\Declaration',
+        'declaration' => '\Model\Declaration',
         'orderType' => 'string',
         'taxCalculationId' => 'string'
     ];
@@ -74,6 +75,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'sendReceipt' => null,
         'referenceOrderId' => null,
         'orderDescription' => null,
         'orderAmount' => null,
@@ -100,6 +102,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'sendReceipt' => false,
         'referenceOrderId' => false,
         'orderDescription' => false,
         'orderAmount' => false,
@@ -206,6 +209,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'sendReceipt' => 'sendReceipt',
         'referenceOrderId' => 'referenceOrderId',
         'orderDescription' => 'orderDescription',
         'orderAmount' => 'orderAmount',
@@ -232,6 +236,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'sendReceipt' => 'setSendReceipt',
         'referenceOrderId' => 'setReferenceOrderId',
         'orderDescription' => 'setOrderDescription',
         'orderAmount' => 'setOrderAmount',
@@ -258,6 +263,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'sendReceipt' => 'getSendReceipt',
         'referenceOrderId' => 'getReferenceOrderId',
         'orderDescription' => 'getOrderDescription',
         'orderAmount' => 'getOrderAmount',
@@ -335,6 +341,7 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('sendReceipt', $data ?? [], null);
         $this->setIfExists('referenceOrderId', $data ?? [], null);
         $this->setIfExists('orderDescription', $data ?? [], null);
         $this->setIfExists('orderAmount', $data ?? [], null);
@@ -406,6 +413,30 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets sendReceipt
+     *
+     * @return bool|null
+     */
+    public function getSendReceipt()
+    {
+        return $this->container['sendReceipt'];
+    }
+
+    /**
+     * Sets sendReceipt
+     *
+     * @param bool|null $sendReceipt For createPaymentSession, request a receipt email after successful payment. Defaults to false on the server. Omit in APIs that do not document support.
+     *
+     * @return self
+     */
+    public function setSendReceipt($sendReceipt)
+    {
+        $this->container['sendReceipt'] = $sendReceipt;
+
+        return $this;
+    }
 
     /**
      * Gets referenceOrderId

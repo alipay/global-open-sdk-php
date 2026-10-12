@@ -46,10 +46,10 @@ class AlipayTaxRegisterResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'taxRegistrationId' => 'string',
         'taxType' => 'string',
-        'jurisdiction' => '\request\model\TaxJurisdiction',
+        'jurisdiction' => '\Model\TaxJurisdiction',
         'registrationType' => 'string',
         'taxId' => 'string',
         'status' => 'string',

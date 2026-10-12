@@ -46,11 +46,11 @@ class AlipayInquireCardResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'totalCount' => 'int',
         'totalPageNumber' => 'int',
         'currentPageNumber' => 'int',
-        'cardList' => '\request\model\AbaCard[]'
+        'cardList' => '\Model\AbaCard[]'
     ];
 
     /**

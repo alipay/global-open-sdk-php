@@ -46,8 +46,8 @@ class AlipayCreditGrantInquireDetailsResponse  implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'creditGrant' => '\request\model\CreditGrant'
+        'result' => '\Model\Result',
+        'creditGrant' => '\Model\CreditGrant'
     ];
 
     /**

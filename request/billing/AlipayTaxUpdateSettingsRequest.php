@@ -49,7 +49,7 @@ class AlipayTaxUpdateSettingsRequest   extends AlipayRequest  implements ModelIn
         'settingsUpdateRequestId' => 'string',
         'defaultTaxCode' => 'string',
         'defaultTaxBehavior' => 'string',
-        'headOffice' => '\request\model\TaxHeadOffice'
+        'headOffice' => '\Model\TaxHeadOffice'
     ];
 
     /**

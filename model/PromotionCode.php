@@ -49,7 +49,7 @@ class PromotionCode  implements ModelInterface, ArrayAccess, \JsonSerializable
         'promotionCodeRequestId' => 'string',
         'code' => 'string',
         'expiryTime' => 'string',
-        'minAmount' => '\request\model\Amount',
+        'minAmount' => '\Model\Amount',
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
         'metadata' => 'string',

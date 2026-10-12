@@ -46,17 +46,17 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shippingName' => '\request\model\UserName',
-        'shippingAddress' => '\request\model\InvoiceAddress',
+        'shippingName' => '\Model\UserName',
+        'shippingAddress' => '\Model\InvoiceAddress',
         'shippingCarrier' => 'string',
         'shippingNumber' => 'string',
         'shippingPhoneNo' => 'string',
         'shipToEmail' => 'string',
         'notes' => 'string',
         'shippingFeeId' => 'string',
-        'shippingFee' => '\request\model\Amount',
+        'shippingFee' => '\Model\Amount',
         'shippingDescription' => 'string',
-        'deliveryEstimate' => '\request\model\DeliveryEstimate',
+        'deliveryEstimate' => '\Model\DeliveryEstimate',
         'trackingUrl' => 'string',
         'shippingMethodIndicator' => 'string'
     ];

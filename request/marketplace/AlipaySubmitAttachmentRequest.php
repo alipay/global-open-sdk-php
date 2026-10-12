@@ -47,7 +47,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
       */
     protected static $openAPITypes = [
         'submitAttachmentRequestId' => 'string',
-        'attachmentType' => '\request\model\AttachmentType',
+        'attachmentType' => '\Model\AttachmentType',
         'fileSha256' => 'string'
     ];
 

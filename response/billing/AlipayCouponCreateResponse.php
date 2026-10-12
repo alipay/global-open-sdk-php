@@ -46,12 +46,12 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\ResultInfo',
+        'result' => '\Model\ResultInfo',
         'couponId' => 'string',
         'couponName' => 'string',
         'discountType' => 'string',
         'status' => 'string',
-        'promotionCodes' => '\request\model\CouponPromotionCode[]'
+        'promotionCodes' => '\Model\CouponPromotionCode[]'
     ];
 
     /**

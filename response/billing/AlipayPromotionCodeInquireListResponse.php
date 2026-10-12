@@ -46,8 +46,8 @@ class AlipayPromotionCodeInquireListResponse  implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'promotionCodes' => '\request\model\PromotionCodeInfo[]',
+        'result' => '\Model\Result',
+        'promotionCodes' => '\Model\PromotionCodeInfo[]',
         'hasMore' => 'bool',
         'nextCursor' => 'string',
         'total' => 'int',

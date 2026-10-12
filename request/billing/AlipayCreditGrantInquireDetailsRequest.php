@@ -296,7 +296,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
     /**
      * Sets creditGrantId
      *
-     * @param string $creditGrantId The credit grant ID. Maximum length: 64 characters.
+     * @param string $creditGrantId The unique identifier of the Credit Grant. The resource must belong to the authenticated merchant. Maximum length: 64 characters.
      *
      * @return self
      */

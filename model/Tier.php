@@ -47,8 +47,8 @@ class Tier  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'upTo' => 'int',
-        'unitAmount' => '\request\model\Amount',
-        'flatAmount' => '\request\model\Amount'
+        'unitAmount' => '\Model\Amount',
+        'flatAmount' => '\Model\Amount'
     ];
 
     /**

@@ -46,7 +46,7 @@ class AlipayVerifyAndCompletePaymentRequest   extends AlipayRequest  implements 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'verifyMethod' => '\request\model\VerifyMethod',
+        'verifyMethod' => '\Model\VerifyMethod',
         'verifyRequestId' => 'string',
         'paymentId' => 'string'
     ];

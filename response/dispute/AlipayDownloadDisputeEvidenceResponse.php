@@ -46,9 +46,9 @@ class AlipayDownloadDisputeEvidenceResponse  implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'disputeEvidence' => 'string',
-        'disputeEvidenceFormat' => '\request\model\DisputeEvidenceFormatType'
+        'disputeEvidenceFormat' => '\Model\DisputeEvidenceFormatType'
     ];
 
     /**

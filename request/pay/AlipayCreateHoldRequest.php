@@ -47,7 +47,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
       */
     protected static $openAPITypes = [
         'holdRequestId' => 'string',
-        'holdAmount' => '\request\model\Amount',
+        'holdAmount' => '\Model\Amount',
         'releaseTime' => 'string'
     ];
 

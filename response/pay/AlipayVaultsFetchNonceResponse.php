@@ -47,7 +47,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'cardToken' => 'string',
-        'result' => '\request\model\Result'
+        'result' => '\Model\Result'
     ];
 
     /**

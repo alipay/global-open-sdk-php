@@ -46,14 +46,14 @@ class PaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paymentMethodDetailType' => '\request\model\PaymentMethodDetailType',
-        'card' => '\request\model\CardPaymentMethodDetail',
-        'externalAccount' => '\request\model\ExternalPaymentMethodDetail',
-        'discount' => '\request\model\DiscountPaymentMethodDetail',
-        'coupon' => '\request\model\CouponPaymentMethodDetail',
+        'paymentMethodDetailType' => '\Model\PaymentMethodDetailType',
+        'card' => '\Model\CardPaymentMethodDetail',
+        'externalAccount' => '\Model\ExternalPaymentMethodDetail',
+        'discount' => '\Model\DiscountPaymentMethodDetail',
+        'coupon' => '\Model\CouponPaymentMethodDetail',
         'paymentMethodType' => 'string',
         'extendInfo' => 'string',
-        'wallet' => '\request\model\Wallet',
+        'wallet' => '\Model\Wallet',
         'interactionType' => 'string'
     ];
 

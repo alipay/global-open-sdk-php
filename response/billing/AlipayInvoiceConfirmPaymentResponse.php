@@ -46,7 +46,7 @@ class AlipayInvoiceConfirmPaymentResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'invoiceId' => 'string',
         'status' => 'string',
         'receiptId' => 'string',

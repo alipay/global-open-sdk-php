@@ -47,8 +47,8 @@ class SubscriptionPlan  implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'allowAccumulate' => 'bool',
-        'maxAccumulateAmount' => '\request\model\Amount',
-        'periodRule' => '\request\model\PeriodRule',
+        'maxAccumulateAmount' => '\Model\Amount',
+        'periodRule' => '\Model\PeriodRule',
         'subscriptionStartTime' => 'string',
         'subscriptionNotificationUrl' => 'string'
     ];

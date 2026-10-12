@@ -48,7 +48,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'paymentMethodType' => 'string',
         'paymentMethodId' => 'string',
-        'funding' => '\request\model\FundingType',
+        'funding' => '\Model\FundingType',
         'customerId' => 'string',
         'extendInfo' => 'string',
         'requireIssuerAuthentication' => 'bool',

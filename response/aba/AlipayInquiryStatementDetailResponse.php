@@ -46,8 +46,8 @@ class AlipayInquiryStatementDetailResponse  implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'statement' => '\request\model\Statement',
+        'result' => '\Model\Result',
+        'statement' => '\Model\Statement',
         'metadata' => 'array<string,string>'
     ];
 

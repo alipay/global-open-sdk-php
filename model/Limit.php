@@ -46,9 +46,9 @@ class Limit  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'remainingLimit' => '\request\model\Amount',
-        'rangeLimit' => '\request\model\Amount',
-        'usedLimit' => '\request\model\Amount'
+        'remainingLimit' => '\Model\Amount',
+        'rangeLimit' => '\Model\Amount',
+        'usedLimit' => '\Model\Amount'
     ];
 
     /**

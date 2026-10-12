@@ -48,7 +48,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $openAPITypes = [
         'updateRequestId' => 'string',
         'paymentId' => 'string',
-        'amount' => '\request\model\Amount'
+        'amount' => '\Model\Amount'
     ];
 
     /**

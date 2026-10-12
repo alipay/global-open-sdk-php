@@ -71,6 +71,8 @@ abstract class BaseAlipayClient
         if (strpos($clientId, "SANDBOX_") === 0) {
             $this->isSandboxMode = true;
         }
+        // evaluate before adjustSandboxUrl rewrites the path, so the original route is matched
+        $allowUnsignedResponse = RequestTransportResolver::allowsUnsignedResponse($request);
         $this->adjustSandboxUrl($request);
         $httpMethod = $request->getHttpMethod();
         $path = $request->getPath();
@@ -105,15 +107,7 @@ abstract class BaseAlipayClient
             throw new \Exception("Response data error,result field is null,rspBody:" . $rspBody);
         }
 
-        if (!isset($rspSignValue) || trim($rspSignValue) === "" || !isset($rspTime) || trim($rspTime) === "") {
-            return $alipayRsp;
-        }
-
-        $isVerifyPass = $this->checkRspSign($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue);
-
-        if (!$isVerifyPass) {
-            throw new \Exception("Response signature verify fail.");
-        }
+        $this->assertResponseVerified($allowUnsignedResponse, $httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue, $result);
 
         return $alipayRsp;
     }
@@ -140,6 +134,8 @@ abstract class BaseAlipayClient
         if (strpos($clientId, "SANDBOX_") === 0) {
             $this->isSandboxMode = true;
         }
+        // evaluate before adjustSandboxUrl rewrites the path, so the original route is matched
+        $allowUnsignedResponse = RequestTransportResolver::allowsUnsignedResponse($request);
         $this->adjustSandboxUrl($request);
         $httpMethod = $request->getHttpMethod();
         $path = $request->getPath();
@@ -197,15 +193,7 @@ abstract class BaseAlipayClient
             throw new \Exception("Response data error,result field is null,rspBody:" . $rspBody);
         }
 
-        if (!isset($rspSignValue) || trim($rspSignValue) === "" || !isset($rspTime) || trim($rspTime) === "") {
-            return $alipayRsp;
-        }
-
-        $isVerifyPass = $this->checkRspSign($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue);
-
-        if (!$isVerifyPass) {
-            throw new \Exception("Response signature verify fail.");
-        }
+        $this->assertResponseVerified($allowUnsignedResponse, $httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue, $result);
 
         return $alipayRsp;
     }
@@ -266,6 +254,31 @@ abstract class BaseAlipayClient
             throw new \Exception($e);
         }
         return $isVerify;
+    }
+
+    private function assertResponseVerified($allowUnsignedResponse, $httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue, $result)
+    {
+        if ($allowUnsignedResponse) {
+            return;
+        }
+
+        $signatureMissing = !isset($rspSignValue) || trim($rspSignValue) === "";
+        $responseTimeMissing = !isset($rspTime) || trim($rspTime) === "";
+        if ($signatureMissing && $responseTimeMissing) {
+            $resultStatus = isset($result->resultStatus) ? $result->resultStatus : null;
+            if ($resultStatus === "F" || $resultStatus === "U") {
+                return;
+            }
+            throw new \Exception("Response data error, unsigned response with resultStatus=" . $resultStatus . " is not accepted.");
+        }
+        if ($signatureMissing || $responseTimeMissing) {
+            throw new \Exception("Response data error, incomplete signature headers.");
+        }
+
+        $isVerifyPass = $this->checkRspSign($httpMethod, $path, $clientId, $rspTime, $rspBody, $rspSignValue);
+        if (!$isVerifyPass) {
+            throw new \Exception("Response signature verify fail.");
+        }
     }
 
     private function buildBaseHeader($requestTime, $clientId, $keyVersion, $signValue)

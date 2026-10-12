@@ -46,7 +46,7 @@ class AlipayInvoiceSendResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'invoiceId' => 'string',
         'sendStatus' => 'string',
         'hostedInvoiceUrl' => 'string'

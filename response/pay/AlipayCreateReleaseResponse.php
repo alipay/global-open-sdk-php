@@ -46,11 +46,11 @@ class AlipayCreateReleaseResponse  implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'releaseRequestId' => 'string',
         'releaseId' => 'string',
         'holdId' => 'string',
-        'releaseAmount' => '\request\model\Amount',
+        'releaseAmount' => '\Model\Amount',
         'releaseStatus' => 'string'
     ];
 

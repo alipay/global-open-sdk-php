@@ -49,14 +49,14 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'supportedBrands' => 'string[]',
         'cardToken' => 'string',
         'cardNo' => 'string',
-        'brand' => '\request\model\CardBrand',
-        'selectedCardBrand' => '\request\model\CardBrand',
+        'brand' => '\Model\CardBrand',
+        'selectedCardBrand' => '\Model\CardBrand',
         'cardIssuer' => 'string',
         'countryIssue' => 'string',
-        'instUserName' => '\request\model\UserName',
+        'instUserName' => '\Model\UserName',
         'expiryYear' => 'string',
         'expiryMonth' => 'string',
-        'billingAddress' => '\request\model\Address',
+        'billingAddress' => '\Model\Address',
         'mask' => 'string',
         'last4' => 'string',
         'paymentMethodDetailMetadata' => 'string',
@@ -70,7 +70,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'issuerName' => 'string',
         'issuingCountry' => 'string',
         'lastFour' => 'string',
-        'cardholderName' => '\request\model\UserName',
+        'cardholderName' => '\Model\UserName',
         'cvv' => 'string',
         'dateOfBirth' => 'string',
         'businessNo' => 'string',
@@ -82,7 +82,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => 'string',
         'scaExemptionIndicator' => 'string',
         'enableAuthenticationUpgrade' => 'string',
-        'mpiData' => '\request\model\MpiData'
+        'mpiData' => '\Model\MpiData'
     ];
 
     /**
@@ -942,7 +942,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets fingerprint
      *
-     * @param string|null $fingerprint fingerprint
+     * @param string|null $fingerprint System-generated card identifier for deduplication. In AMS vaulting, it is a stable 64-character lowercase hexadecimal string, independent of cardToken. Returned when result.resultStatus is S and card information is available; inquireVaulting also requires vaultingStatus SUCCESS. Otherwise omitted, never null. Do not include in merchant requests.
      *
      * @return self
      */

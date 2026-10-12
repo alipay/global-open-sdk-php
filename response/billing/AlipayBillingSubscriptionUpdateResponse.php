@@ -46,10 +46,10 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\ResultInfo',
+        'result' => '\Model\ResultInfo',
         'subscriptionId' => 'string',
         'status' => 'string',
-        'subscriptionItems' => '\request\model\SubscriptionItem[]',
+        'subscriptionItems' => '\Model\SubscriptionItem[]',
         'prorationInvoiceId' => 'string',
         'prorationInvoiceAmount' => 'int',
         'prorationInvoiceCurrency' => 'string',

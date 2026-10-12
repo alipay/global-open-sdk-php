@@ -60,10 +60,10 @@ class Subscription  implements ModelInterface, ArrayAccess, \JsonSerializable
         'billingCycleAnchor' => 'string',
         'trialStart' => 'string',
         'trialEnd' => 'string',
-        'subtotal' => '\request\model\Amount',
-        'discountAmount' => '\request\model\Amount',
-        'totalAmount' => '\request\model\Amount',
-        'priceItems' => '\request\model\BillingSubscriptionPriceItem[]',
+        'subtotal' => '\Model\Amount',
+        'discountAmount' => '\Model\Amount',
+        'totalAmount' => '\Model\Amount',
+        'priceItems' => '\Model\BillingSubscriptionPriceItem[]',
         'terminationReason' => 'string',
         'createTime' => 'string'
     ];

@@ -47,7 +47,7 @@ class TaxCalculationLineItem  implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'goodsReferenceId' => 'string',
-        'amount' => '\request\model\Amount',
+        'amount' => '\Model\Amount',
         'quantity' => 'int',
         'taxCode' => 'string',
         'productId' => 'string',

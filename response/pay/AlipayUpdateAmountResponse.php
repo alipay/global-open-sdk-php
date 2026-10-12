@@ -46,10 +46,10 @@ class AlipayUpdateAmountResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'updateRequestId' => 'string',
         'paymentId' => 'string',
-        'amount' => '\request\model\Amount'
+        'amount' => '\Model\Amount'
     ];
 
     /**

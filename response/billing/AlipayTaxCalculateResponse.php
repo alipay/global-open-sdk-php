@@ -46,18 +46,18 @@ class AlipayTaxCalculateResponse  implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'taxCalculationId' => 'string',
-        'totalAmount' => '\request\model\Amount',
-        'exclusiveTaxAmount' => '\request\model\Amount',
-        'inclusiveTaxAmount' => '\request\model\Amount',
-        'lineItems' => '\request\model\TaxCalculatedLineItem[]',
-        'taxBreakdown' => '\request\model\TaxBreakdown[]',
+        'totalAmount' => '\Model\Amount',
+        'exclusiveTaxAmount' => '\Model\Amount',
+        'inclusiveTaxAmount' => '\Model\Amount',
+        'lineItems' => '\Model\TaxCalculatedLineItem[]',
+        'taxBreakdown' => '\Model\TaxBreakdown[]',
         'expireAt' => 'string',
         'taxDate' => 'string',
-        'shippingCost' => '\request\model\TaxCalculatedShippingCost',
-        'customerDetails' => '\request\model\TaxCalculatedCustomerDetails',
-        'shipFromDetails' => '\request\model\TaxCalculatedShipFromDetails'
+        'shippingCost' => '\Model\TaxCalculatedShippingCost',
+        'customerDetails' => '\Model\TaxCalculatedCustomerDetails',
+        'shipFromDetails' => '\Model\TaxCalculatedShipFromDetails'
     ];
 
     /**

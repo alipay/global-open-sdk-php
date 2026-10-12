@@ -46,8 +46,8 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'subscription' => '\request\model\SubscriptionInfo'
+        'result' => '\Model\Result',
+        'subscription' => '\Model\SubscriptionInfo'
     ];
 
     /**

@@ -46,19 +46,22 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'preferredLocales' => 'string',
+        'businessName' => 'string',
+        'buyerType' => 'string',
         'referenceBuyerId' => 'string',
-        'buyerName' => '\request\model\UserName',
+        'buyerName' => '\Model\UserName',
         'buyerPhoneNo' => 'string',
         'buyerEmail' => 'string',
         'buyerRegistrationTime' => 'string',
         'isAccountVerified' => 'bool',
         'successfulOrderCount' => 'int',
         'buyerPhoneNoContryCode' => 'string',
-        'successfulOrderAmount' => '\request\model\Amount',
+        'successfulOrderAmount' => '\Model\Amount',
         'dateOfLastPaidPurchase' => 'string',
         'dateOfFirstPaidPurchase' => 'string',
-        'taxIds' => '\request\model\BuyerTaxId[]',
-        'businessAddress' => '\request\model\Address'
+        'taxIds' => '\Model\BuyerTaxId[]',
+        'businessAddress' => '\Model\Address'
     ];
 
     /**
@@ -69,6 +72,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'preferredLocales' => null,
+        'businessName' => null,
+        'buyerType' => null,
         'referenceBuyerId' => null,
         'buyerName' => null,
         'buyerPhoneNo' => null,
@@ -90,6 +96,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'preferredLocales' => false,
+        'businessName' => false,
+        'buyerType' => false,
         'referenceBuyerId' => false,
         'buyerName' => false,
         'buyerPhoneNo' => false,
@@ -191,6 +200,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'preferredLocales' => 'preferredLocales',
+        'businessName' => 'businessName',
+        'buyerType' => 'buyerType',
         'referenceBuyerId' => 'referenceBuyerId',
         'buyerName' => 'buyerName',
         'buyerPhoneNo' => 'buyerPhoneNo',
@@ -212,6 +224,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'preferredLocales' => 'setPreferredLocales',
+        'businessName' => 'setBusinessName',
+        'buyerType' => 'setBuyerType',
         'referenceBuyerId' => 'setReferenceBuyerId',
         'buyerName' => 'setBuyerName',
         'buyerPhoneNo' => 'setBuyerPhoneNo',
@@ -233,6 +248,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'preferredLocales' => 'getPreferredLocales',
+        'businessName' => 'getBusinessName',
+        'buyerType' => 'getBuyerType',
         'referenceBuyerId' => 'getReferenceBuyerId',
         'buyerName' => 'getBuyerName',
         'buyerPhoneNo' => 'getBuyerPhoneNo',
@@ -305,6 +323,9 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('preferredLocales', $data ?? [], null);
+        $this->setIfExists('businessName', $data ?? [], null);
+        $this->setIfExists('buyerType', $data ?? [], null);
         $this->setIfExists('referenceBuyerId', $data ?? [], null);
         $this->setIfExists('buyerName', $data ?? [], null);
         $this->setIfExists('buyerPhoneNo', $data ?? [], null);
@@ -362,6 +383,78 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets preferredLocales
+     *
+     * @return string|null
+     */
+    public function getPreferredLocales()
+    {
+        return $this->container['preferredLocales'];
+    }
+
+    /**
+     * Sets preferredLocales
+     *
+     * @param string|null $preferredLocales Comma-separated invoice and offline receipt PDF locales for createPaymentSession, such as ja-JP,en-US. First supported locale wins, with English fallback. Does not select email language. Omit in APIs that do not document support.
+     *
+     * @return self
+     */
+    public function setPreferredLocales($preferredLocales)
+    {
+        $this->container['preferredLocales'] = $preferredLocales;
+
+        return $this;
+    }
+
+    /**
+     * Gets businessName
+     *
+     * @return string|null
+     */
+    public function getBusinessName()
+    {
+        return $this->container['businessName'];
+    }
+
+    /**
+     * Sets businessName
+     *
+     * @param string|null $businessName Business name for createPaymentSession. Required when buyerType is B. Not persisted by asynchronous Billing customer resolution. Omit in APIs that do not document support.
+     *
+     * @return self
+     */
+    public function setBusinessName($businessName)
+    {
+        $this->container['businessName'] = $businessName;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerType
+     *
+     * @return string|null
+     */
+    public function getBuyerType()
+    {
+        return $this->container['buyerType'];
+    }
+
+    /**
+     * Sets buyerType
+     *
+     * @param string|null $buyerType Optional buyer type for createPaymentSession: B (business) or C (consumer). No default. Omit in APIs that do not document support.
+     *
+     * @return self
+     */
+    public function setBuyerType($buyerType)
+    {
+        $this->container['buyerType'] = $buyerType;
+
+        return $this;
+    }
 
     /**
      * Gets referenceBuyerId
@@ -448,7 +541,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerEmail
      *
-     * @param string|null $buyerEmail The email of the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
+     * @param string|null $buyerEmail The email of the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters For the DingTalk createPaymentSession integration, a valid buyer email is required and the maximum length is 128 characters.
      *
      * @return self
      */
@@ -640,7 +733,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taxIds
      *
-     * @param \model\BuyerTaxId[]|null $taxIds For createPaymentSession, these buyer tax IDs are used for B2B or reverse-charge determination when automatic tax is active. If omitted, null, invalid, or unusable, Antom calculates tax as B2C instead of rejecting the payment session. Because Buyer is a shared SDK model, omit this field in APIs that do not explicitly document support. Maximum size: 10.
+     * @param \model\BuyerTaxId[]|null $taxIds Tax IDs for createPaymentSession tax handling; at most 10 entries with country/value and optional region. The asynchronous Billing customer resolution does not persist these IDs. Other session flows retain their documented B2C fallback for missing or unusable IDs. Omit in APIs that do not document support.
      *
      * @return self
      */

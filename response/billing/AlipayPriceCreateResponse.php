@@ -46,7 +46,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'priceId' => 'string',
         'priceRequestId' => 'string',
         'productId' => 'string',
@@ -55,12 +55,12 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'usageType' => 'string',
         'unitLabel' => 'string',
         'meterId' => 'string',
-        'unitAmount' => '\request\model\Amount',
-        'recurring' => '\request\model\RecurringSettings',
+        'unitAmount' => '\Model\Amount',
+        'recurring' => '\Model\RecurringSettings',
         'active' => 'bool',
         'includedQuantity' => 'int',
         'tiersMode' => 'string',
-        'tiers' => '\request\model\Tier[]',
+        'tiers' => '\Model\Tier[]',
         'metadata' => 'string',
         'createdAt' => 'string',
         'updatedAt' => 'string',

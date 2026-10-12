@@ -46,7 +46,7 @@ class Declaration  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'declarationBizScene' => '\request\model\DeclarationBizSceneType',
+        'declarationBizScene' => '\Model\DeclarationBizSceneType',
         'declarationBeneficiaryId' => 'string'
     ];
 

@@ -46,9 +46,10 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'storePaymentMethodForBuyer' => 'bool',
         'isPaymentEvaluation' => 'bool',
-        'inStorePaymentScenario' => '\request\model\InStorePaymentScenario',
-        'presentmentMode' => '\request\model\PresentmentMode',
+        'inStorePaymentScenario' => '\Model\InStorePaymentScenario',
+        'presentmentMode' => '\Model\PresentmentMode',
         'captureMode' => 'string',
         'isAuthorization' => 'bool'
     ];
@@ -61,6 +62,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'storePaymentMethodForBuyer' => null,
         'isPaymentEvaluation' => null,
         'inStorePaymentScenario' => null,
         'presentmentMode' => null,
@@ -74,6 +76,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'storePaymentMethodForBuyer' => false,
         'isPaymentEvaluation' => false,
         'inStorePaymentScenario' => false,
         'presentmentMode' => false,
@@ -167,6 +170,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'storePaymentMethodForBuyer' => 'storePaymentMethodForBuyer',
         'isPaymentEvaluation' => 'isPaymentEvaluation',
         'inStorePaymentScenario' => 'inStorePaymentScenario',
         'presentmentMode' => 'presentmentMode',
@@ -180,6 +184,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'storePaymentMethodForBuyer' => 'setStorePaymentMethodForBuyer',
         'isPaymentEvaluation' => 'setIsPaymentEvaluation',
         'inStorePaymentScenario' => 'setInStorePaymentScenario',
         'presentmentMode' => 'setPresentmentMode',
@@ -193,6 +198,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'storePaymentMethodForBuyer' => 'getStorePaymentMethodForBuyer',
         'isPaymentEvaluation' => 'getIsPaymentEvaluation',
         'inStorePaymentScenario' => 'getInStorePaymentScenario',
         'presentmentMode' => 'getPresentmentMode',
@@ -257,6 +263,7 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('storePaymentMethodForBuyer', $data ?? [], null);
         $this->setIfExists('isPaymentEvaluation', $data ?? [], null);
         $this->setIfExists('inStorePaymentScenario', $data ?? [], null);
         $this->setIfExists('presentmentMode', $data ?? [], null);
@@ -306,6 +313,30 @@ class PaymentFactor  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets storePaymentMethodForBuyer
+     *
+     * @return bool|null
+     */
+    public function getStorePaymentMethodForBuyer()
+    {
+        return $this->container['storePaymentMethodForBuyer'];
+    }
+
+    /**
+     * Sets storePaymentMethodForBuyer
+     *
+     * @param bool|null $storePaymentMethodForBuyer For the enabled pay (Checkout Payment) card-payment scenario, indicates whether Antom stores the buyer-card relationship for future payments. When true, order.buyer.referenceBuyerId must be non-empty; otherwise, the request is rejected as an invalid parameter. After a successful payment, Antom associates the card information with the buyer. This optional field is exposed only to merchants enabled for this scenario. PaymentFactor is a shared SDK model; omit this field in consult and createPaymentSession unless support is separately documented for the API. No default value is specified.
+     *
+     * @return self
+     */
+    public function setStorePaymentMethodForBuyer($storePaymentMethodForBuyer)
+    {
+        $this->container['storePaymentMethodForBuyer'] = $storePaymentMethodForBuyer;
+
+        return $this;
+    }
 
     /**
      * Gets isPaymentEvaluation

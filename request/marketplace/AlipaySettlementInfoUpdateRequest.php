@@ -49,7 +49,7 @@ class AlipaySettlementInfoUpdateRequest   extends AlipayRequest  implements Mode
         'updateRequestId' => 'string',
         'referenceMerchantId' => 'string',
         'settlementCurrency' => 'string',
-        'settlementBankAccount' => '\request\model\SettlementBankAccount'
+        'settlementBankAccount' => '\Model\SettlementBankAccount'
     ];
 
     /**

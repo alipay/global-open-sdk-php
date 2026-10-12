@@ -48,7 +48,7 @@ class OrderCodeForm  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'paymentMethodType' => 'string',
         'expireTime' => 'string',
-        'codeDetails' => '\request\model\CodeDetail[]',
+        'codeDetails' => '\Model\CodeDetail[]',
         'extendInfo' => 'string'
     ];
 

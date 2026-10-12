@@ -46,7 +46,7 @@ class TaxHeadOffice  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => '\request\model\TaxAddress'
+        'address' => '\Model\TaxAddress'
     ];
 
     /**

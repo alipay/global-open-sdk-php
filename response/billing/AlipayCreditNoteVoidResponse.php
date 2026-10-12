@@ -46,7 +46,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'creditNoteId' => 'string',
         'status' => 'string',
         'voidedAt' => 'string'

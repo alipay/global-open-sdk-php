@@ -50,7 +50,7 @@ class Card  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cvv' => 'string',
         'expiryYear' => 'string',
         'expiryMonth' => 'string',
-        'cardholderName' => '\request\model\UserName'
+        'cardholderName' => '\Model\UserName'
     ];
 
     /**

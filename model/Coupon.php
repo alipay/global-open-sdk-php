@@ -50,7 +50,7 @@ class Coupon  implements ModelInterface, ArrayAccess, \JsonSerializable
         'couponName' => 'string',
         'discountType' => 'string',
         'percentOff' => 'string',
-        'amountOff' => '\request\model\Amount',
+        'amountOff' => '\Model\Amount',
         'redeemBy' => 'string',
         'status' => 'string',
         'maxRedemptions' => 'int',

@@ -46,8 +46,8 @@ class AlipayCreditGrantVoidResponse  implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
-        'creditGrant' => '\request\model\CreditGrant'
+        'result' => '\Model\Result',
+        'creditGrant' => '\Model\CreditGrant'
     ];
 
     /**

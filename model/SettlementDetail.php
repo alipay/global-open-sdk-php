@@ -46,8 +46,8 @@ class SettlementDetail  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'settleTo' => '\request\model\SettleToType',
-        'settlementAmount' => '\request\model\Amount'
+        'settleTo' => '\Model\SettleToType',
+        'settlementAmount' => '\Model\Amount'
     ];
 
     /**

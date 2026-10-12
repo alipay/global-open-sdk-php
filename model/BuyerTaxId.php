@@ -336,7 +336,7 @@ class BuyerTaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets region
      *
-     * @param string|null $region The two-character country-specific subdivision code. Required only when the applicable tax authority or country or region rule requires subdivision-level identification. Maximum length: 2 characters.
+     * @param string|null $region Optional ISO 3166-2 issuing state or province subdivision code. Maximum length: 10 characters.
      *
      * @return self
      */

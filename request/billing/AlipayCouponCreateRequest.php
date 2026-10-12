@@ -50,14 +50,14 @@ class AlipayCouponCreateRequest   extends AlipayRequest  implements ModelInterfa
         'couponName' => 'string',
         'discountType' => 'string',
         'percentOff' => 'string',
-        'amountOff' => '\request\model\Amount',
+        'amountOff' => '\Model\Amount',
         'durationType' => 'string',
         'durationValue' => 'int',
         'durationUnit' => 'string',
         'redeemBy' => 'string',
-        'appliesTo' => '\request\model\CouponCreateAppliesTo',
+        'appliesTo' => '\Model\CouponCreateAppliesTo',
         'metadata' => 'string',
-        'promotionCodes' => '\request\model\PromotionCode[]',
+        'promotionCodes' => '\Model\PromotionCode[]',
         'maxRedemptions' => 'int'
     ];
 

@@ -47,7 +47,7 @@ class AlipayDownloadDisputeEvidenceRequest   extends AlipayRequest  implements M
       */
     protected static $openAPITypes = [
         'disputeId' => 'string',
-        'disputeEvidenceType' => '\request\model\DisputeEvidenceType'
+        'disputeEvidenceType' => '\Model\DisputeEvidenceType'
     ];
 
     /**

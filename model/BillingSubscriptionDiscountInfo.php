@@ -50,7 +50,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'couponId' => 'string',
         'type' => 'string',
         'percentOff' => 'string',
-        'amountOff' => '\request\model\Amount',
+        'amountOff' => '\Model\Amount',
         'duration' => 'string',
         'times' => 'int',
         'status' => 'string'

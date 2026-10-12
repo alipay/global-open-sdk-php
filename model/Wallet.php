@@ -47,10 +47,10 @@ class Wallet  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'accountNo' => 'string',
-        'accountHolderName' => '\request\model\UserName',
+        'accountHolderName' => '\Model\UserName',
         'phoneNo' => 'string',
         'email' => 'string',
-        'billingAddress' => '\request\model\Address',
+        'billingAddress' => '\Model\Address',
         'token' => 'string',
         'tokenExpiryTime' => 'string'
     ];

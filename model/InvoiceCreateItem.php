@@ -46,9 +46,12 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
+        'discountAmount' => '\Model\Amount',
+        'taxBehavior' => 'string',
+        'taxCode' => 'string',
         'description' => 'string',
-        'itemAmount' => '\request\model\Amount',
-        'unitAmount' => '\request\model\Amount',
+        'itemAmount' => '\Model\Amount',
+        'unitAmount' => '\Model\Amount',
         'priceId' => 'string',
         'productId' => 'string',
         'quantity' => 'int',
@@ -65,6 +68,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'discountAmount' => null,
+        'taxBehavior' => null,
+        'taxCode' => null,
         'description' => null,
         'itemAmount' => null,
         'unitAmount' => null,
@@ -82,6 +88,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'discountAmount' => false,
+        'taxBehavior' => false,
+        'taxCode' => false,
         'description' => false,
         'itemAmount' => false,
         'unitAmount' => false,
@@ -179,6 +188,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
+        'discountAmount' => 'discountAmount',
+        'taxBehavior' => 'taxBehavior',
+        'taxCode' => 'taxCode',
         'description' => 'description',
         'itemAmount' => 'itemAmount',
         'unitAmount' => 'unitAmount',
@@ -196,6 +208,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
+        'discountAmount' => 'setDiscountAmount',
+        'taxBehavior' => 'setTaxBehavior',
+        'taxCode' => 'setTaxCode',
         'description' => 'setDescription',
         'itemAmount' => 'setItemAmount',
         'unitAmount' => 'setUnitAmount',
@@ -213,6 +228,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
+        'discountAmount' => 'getDiscountAmount',
+        'taxBehavior' => 'getTaxBehavior',
+        'taxCode' => 'getTaxCode',
         'description' => 'getDescription',
         'itemAmount' => 'getItemAmount',
         'unitAmount' => 'getUnitAmount',
@@ -281,6 +299,9 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('discountAmount', $data ?? [], null);
+        $this->setIfExists('taxBehavior', $data ?? [], null);
+        $this->setIfExists('taxCode', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('itemAmount', $data ?? [], null);
         $this->setIfExists('unitAmount', $data ?? [], null);
@@ -334,6 +355,78 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets discountAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     *
+     * @param \model\Amount|null $discountAmount discountAmount
+     *
+     * @return self
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->container['discountAmount'] = $discountAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxBehavior
+     *
+     * @return string|null
+     */
+    public function getTaxBehavior()
+    {
+        return $this->container['taxBehavior'];
+    }
+
+    /**
+     * Sets taxBehavior
+     *
+     * @param string|null $taxBehavior Tax inclusion behavior: EXCLUSIVE (tax added) or INCLUSIVE (tax included). Used for automatic tax calculation.
+     *
+     * @return self
+     */
+    public function setTaxBehavior($taxBehavior)
+    {
+        $this->container['taxBehavior'] = $taxBehavior;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxCode
+     *
+     * @return string|null
+     */
+    public function getTaxCode()
+    {
+        return $this->container['taxCode'];
+    }
+
+    /**
+     * Sets taxCode
+     *
+     * @param string|null $taxCode Line-item tax classification code for automatic tax calculation, such as txcd_37071002.
+     *
+     * @return self
+     */
+    public function setTaxCode($taxCode)
+    {
+        $this->container['taxCode'] = $taxCode;
+
+        return $this;
+    }
 
     /**
      * Gets description
@@ -468,7 +561,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets quantity
      *
-     * @param int|null $quantity Quantity of units. Integer only; decimal quantities are not supported in v1. Defaults to 1 if omitted. Required for unit-amount and price-object pricing models, and ignored for fixed-amount pricing. Value range: 1 to 999999.
+     * @param int|null $quantity Quantity of units, from 1 to 999. Defaults to 1 on the server. Multiplies unitAmount or catalog pricing; does not multiply fixed itemAmount.
      *
      * @return self
      */

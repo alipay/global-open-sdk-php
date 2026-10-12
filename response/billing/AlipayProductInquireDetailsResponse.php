@@ -46,7 +46,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'productId' => 'string',
         'name' => 'string',
         'type' => 'string',
@@ -58,7 +58,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'createdAt' => 'string',
         'deactivatedAt' => 'string',
         'updatedAt' => 'string',
-        'prices' => '\request\model\Price[]',
+        'prices' => '\Model\Price[]',
         'productRequestId' => 'string'
     ];
 

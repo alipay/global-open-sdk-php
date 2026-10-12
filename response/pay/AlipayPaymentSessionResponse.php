@@ -46,7 +46,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\request\model\Result',
+        'result' => '\Model\Result',
         'paymentSessionData' => 'string',
         'paymentSessionExpiryTime' => 'string',
         'paymentSessionId' => 'string',
