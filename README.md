@@ -228,23 +228,3 @@ $verified = \Client\SignatureTool::verify(
 ## Support
 
 For integration questions, contact overseas_support@service.alibaba.com.
-
-## Exact amount conversion
-
-All three AmountUtil operations accept zero, including IDR. Zero converts to
-`"0"` in minor units; conversion back uses the currency's fixed decimal precision.
-The 16-digit value limit still applies. Callers must check whether their target
-API accepts a zero amount.
-
-```php
-use Util\AmountUtil;
-
-$value = AmountUtil::toAmount('10.25', 'USD'); // '1025'
-$major = AmountUtil::fromAmount($value, 'USD'); // '10.25'
-AmountUtil::validate($value, 'USD');
-```
-
-The methods accept strings, use Antom's supported-currency rules, and never
-round. Extra non-zero decimal places are rejected. ISO 4217 is reference
-evidence only. Payment-method currency support and minimum amounts remain
-subject to the relevant Antom API docs.
