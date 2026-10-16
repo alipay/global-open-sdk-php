@@ -8,6 +8,10 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
     public $disputeId;
     public $paymentId;
     public $disputeTime;
+    /** @var string|null ISO 8601 cancellation time with timezone, returned for DISPUTE_CANCELLED. */
+    public $disputeCancelledTime;
+    /** @var string|null ISO 8601 defense acceptance time with timezone, returned for DEFENSE_SUPPLIED. */
+    public $defenseSuppliedTime;
     public $disputeAmount;
     public $disputeNotificationType;
     public $disputeReasonMsg;
@@ -389,5 +393,29 @@ class AlipayDisputeNotify extends \Request\notify\AlipayNotify
         $this->disputeAcceptTime = $disputeAcceptTime;
     }
 
+
+    /** @return string|null */
+    public function getDisputeCancelledTime()
+    {
+        return $this->disputeCancelledTime;
+    }
+
+    /** @param string|null $disputeCancelledTime */
+    public function setDisputeCancelledTime($disputeCancelledTime)
+    {
+        $this->disputeCancelledTime = $disputeCancelledTime;
+    }
+
+    /** @return string|null */
+    public function getDefenseSuppliedTime()
+    {
+        return $this->defenseSuppliedTime;
+    }
+
+    /** @param string|null $defenseSuppliedTime */
+    public function setDefenseSuppliedTime($defenseSuppliedTime)
+    {
+        $this->defenseSuppliedTime = $defenseSuppliedTime;
+    }
 
 }
