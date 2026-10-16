@@ -64,7 +64,9 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'needDeclaration' => 'bool',
         'declaration' => '\Model\Declaration',
         'orderType' => 'string',
-        'taxCalculationId' => 'string'
+        'taxCalculationId' => 'string',
+        'paymentAmount' => '\Model\Amount',
+        'checkoutJwt' => 'string'
     ];
 
     /**
@@ -93,7 +95,9 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'needDeclaration' => null,
         'declaration' => null,
         'orderType' => null,
-        'taxCalculationId' => null
+        'taxCalculationId' => null,
+        'paymentAmount' => null,
+        'checkoutJwt' => null
     ];
 
     /**
@@ -120,7 +124,9 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'needDeclaration' => false,
         'declaration' => false,
         'orderType' => false,
-        'taxCalculationId' => false
+        'taxCalculationId' => false,
+        'paymentAmount' => false,
+        'checkoutJwt' => false
     ];
 
     /**
@@ -227,7 +233,9 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'needDeclaration' => 'needDeclaration',
         'declaration' => 'declaration',
         'orderType' => 'orderType',
-        'taxCalculationId' => 'taxCalculationId'
+        'taxCalculationId' => 'taxCalculationId',
+        'paymentAmount' => 'paymentAmount',
+        'checkoutJwt' => 'checkoutJwt'
     ];
 
     /**
@@ -254,7 +262,9 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'needDeclaration' => 'setNeedDeclaration',
         'declaration' => 'setDeclaration',
         'orderType' => 'setOrderType',
-        'taxCalculationId' => 'setTaxCalculationId'
+        'taxCalculationId' => 'setTaxCalculationId',
+        'paymentAmount' => 'setPaymentAmount',
+        'checkoutJwt' => 'setCheckoutJwt'
     ];
 
     /**
@@ -281,7 +291,9 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         'needDeclaration' => 'getNeedDeclaration',
         'declaration' => 'getDeclaration',
         'orderType' => 'getOrderType',
-        'taxCalculationId' => 'getTaxCalculationId'
+        'taxCalculationId' => 'getTaxCalculationId',
+        'paymentAmount' => 'getPaymentAmount',
+        'checkoutJwt' => 'getCheckoutJwt'
     ];
 
     /**
@@ -360,6 +372,8 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('declaration', $data ?? [], null);
         $this->setIfExists('orderType', $data ?? [], null);
         $this->setIfExists('taxCalculationId', $data ?? [], null);
+        $this->setIfExists('paymentAmount', $data ?? [], null);
+        $this->setIfExists('checkoutJwt', $data ?? [], null);
 
             }
 
@@ -866,6 +880,54 @@ class Order  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTaxCalculationId($taxCalculationId)
     {
         $this->container['taxCalculationId'] = $taxCalculationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAmount
+     *
+     * @return \model\Amount|null
+     */
+    public function getPaymentAmount()
+    {
+        return $this->container['paymentAmount'];
+    }
+
+    /**
+     * Sets paymentAmount
+     *
+     * @param \model\Amount|null $paymentAmount paymentAmount
+     *
+     * @return self
+     */
+    public function setPaymentAmount($paymentAmount)
+    {
+        $this->container['paymentAmount'] = $paymentAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets checkoutJwt
+     *
+     * @return string|null
+     */
+    public function getCheckoutJwt()
+    {
+        return $this->container['checkoutJwt'];
+    }
+
+    /**
+     * Sets checkoutJwt
+     *
+     * @param string|null $checkoutJwt Checkout JWT for Agentic Payment binding or authentication sessions.
+     *
+     * @return self
+     */
+    public function setCheckoutJwt($checkoutJwt)
+    {
+        $this->container['checkoutJwt'] = $checkoutJwt;
 
         return $this;
     }

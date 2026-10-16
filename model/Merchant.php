@@ -55,7 +55,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'store' => '\Model\Store',
         'merchantType' => '\Model\MerchantType',
         'numberOfTrades' => 'int',
-        'accountLastModified' => '\Model\AccountLastModified'
+        'accountLastModified' => '\Model\AccountLastModified',
+        'merchantUrl' => 'string',
+        'merchantCountryCode' => 'string'
     ];
 
     /**
@@ -75,7 +77,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'store' => null,
         'merchantType' => null,
         'numberOfTrades' => null,
-        'accountLastModified' => null
+        'accountLastModified' => null,
+        'merchantUrl' => null,
+        'merchantCountryCode' => null
     ];
 
     /**
@@ -93,7 +97,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'store' => false,
         'merchantType' => false,
         'numberOfTrades' => true,
-        'accountLastModified' => false
+        'accountLastModified' => false,
+        'merchantUrl' => false,
+        'merchantCountryCode' => false
     ];
 
     /**
@@ -191,7 +197,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'store' => 'store',
         'merchantType' => 'merchantType',
         'numberOfTrades' => 'numberOfTrades',
-        'accountLastModified' => 'accountLastModified'
+        'accountLastModified' => 'accountLastModified',
+        'merchantUrl' => 'merchantUrl',
+        'merchantCountryCode' => 'merchantCountryCode'
     ];
 
     /**
@@ -209,7 +217,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'store' => 'setStore',
         'merchantType' => 'setMerchantType',
         'numberOfTrades' => 'setNumberOfTrades',
-        'accountLastModified' => 'setAccountLastModified'
+        'accountLastModified' => 'setAccountLastModified',
+        'merchantUrl' => 'setMerchantUrl',
+        'merchantCountryCode' => 'setMerchantCountryCode'
     ];
 
     /**
@@ -227,7 +237,9 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'store' => 'getStore',
         'merchantType' => 'getMerchantType',
         'numberOfTrades' => 'getNumberOfTrades',
-        'accountLastModified' => 'getAccountLastModified'
+        'accountLastModified' => 'getAccountLastModified',
+        'merchantUrl' => 'getMerchantUrl',
+        'merchantCountryCode' => 'getMerchantCountryCode'
     ];
 
     /**
@@ -297,6 +309,8 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('merchantType', $data ?? [], null);
         $this->setIfExists('numberOfTrades', $data ?? [], null);
         $this->setIfExists('accountLastModified', $data ?? [], null);
+        $this->setIfExists('merchantUrl', $data ?? [], null);
+        $this->setIfExists('merchantCountryCode', $data ?? [], null);
 
             }
 
@@ -602,6 +616,54 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAccountLastModified($accountLastModified)
     {
         $this->container['accountLastModified'] = $accountLastModified;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantUrl
+     *
+     * @return string|null
+     */
+    public function getMerchantUrl()
+    {
+        return $this->container['merchantUrl'];
+    }
+
+    /**
+     * Sets merchantUrl
+     *
+     * @param string|null $merchantUrl Merchant website URL.
+     *
+     * @return self
+     */
+    public function setMerchantUrl($merchantUrl)
+    {
+        $this->container['merchantUrl'] = $merchantUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantCountryCode
+     *
+     * @return string|null
+     */
+    public function getMerchantCountryCode()
+    {
+        return $this->container['merchantCountryCode'];
+    }
+
+    /**
+     * Sets merchantCountryCode
+     *
+     * @param string|null $merchantCountryCode ISO 3166-1 alpha-2 merchant country or region code.
+     *
+     * @return self
+     */
+    public function setMerchantCountryCode($merchantCountryCode)
+    {
+        $this->container['merchantCountryCode'] = $merchantCountryCode;
 
         return $this;
     }
