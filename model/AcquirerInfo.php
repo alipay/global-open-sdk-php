@@ -56,7 +56,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'string',
         'ptspTransactionId' => 'string',
         'acquirerCardToken' => 'string',
-        'acquirerFingerprint' => 'string'
+        'acquirerFingerprint' => 'string',
+        'acquirerAccountName' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => null,
         'ptspTransactionId' => null,
         'acquirerCardToken' => null,
-        'acquirerFingerprint' => null
+        'acquirerFingerprint' => null,
+        'acquirerAccountName' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => false,
         'ptspTransactionId' => false,
         'acquirerCardToken' => false,
-        'acquirerFingerprint' => false
+        'acquirerFingerprint' => false,
+        'acquirerAccountName' => false
     ];
 
     /**
@@ -195,7 +198,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'acquirerReasonDescription',
         'ptspTransactionId' => 'ptspTransactionId',
         'acquirerCardToken' => 'acquirerCardToken',
-        'acquirerFingerprint' => 'acquirerFingerprint'
+        'acquirerFingerprint' => 'acquirerFingerprint',
+        'acquirerAccountName' => 'acquirerAccountName'
     ];
 
     /**
@@ -214,7 +218,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'setAcquirerReasonDescription',
         'ptspTransactionId' => 'setPtspTransactionId',
         'acquirerCardToken' => 'setAcquirerCardToken',
-        'acquirerFingerprint' => 'setAcquirerFingerprint'
+        'acquirerFingerprint' => 'setAcquirerFingerprint',
+        'acquirerAccountName' => 'setAcquirerAccountName'
     ];
 
     /**
@@ -233,7 +238,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'getAcquirerReasonDescription',
         'ptspTransactionId' => 'getPtspTransactionId',
         'acquirerCardToken' => 'getAcquirerCardToken',
-        'acquirerFingerprint' => 'getAcquirerFingerprint'
+        'acquirerFingerprint' => 'getAcquirerFingerprint',
+        'acquirerAccountName' => 'getAcquirerAccountName'
     ];
 
     /**
@@ -304,6 +310,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ptspTransactionId', $data ?? [], null);
         $this->setIfExists('acquirerCardToken', $data ?? [], null);
         $this->setIfExists('acquirerFingerprint', $data ?? [], null);
+        $this->setIfExists('acquirerAccountName', $data ?? [], null);
 
             }
 
@@ -434,7 +441,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquirerMerchantId
      *
-     * @param string|null $acquirerMerchantId The unique ID that is assigned by the acquirer to identify a merchant.   Note: This parameter is returned if you integrate the APO product.    More information:  Maximum length: 64 characters
+     * @param string|null $acquirerMerchantId The unique ID that is assigned by the acquirer to identify a merchant. Existing APO return conditions remain unchanged. For the applicable RP gateway-to-Antom-self-acquiring payment flow, this identifies the original Antom acquiring merchant account selected to execute the payment, not the request-side gateway account or a downstream processor account. In that RP flow, this field is mandatory within a returned root-level acquirerInfo object; if the original execution MID is unavailable, the entire object is omitted without changing the payment or capture outcome. This conditional requirement does not make the field mandatory for other consumers of this shared model. Maximum length: 64 characters.
      *
      * @return self
      */
@@ -609,6 +616,30 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcquirerFingerprint($acquirerFingerprint)
     {
         $this->container['acquirerFingerprint'] = $acquirerFingerprint;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerAccountName
+     *
+     * @return string|null
+     */
+    public function getAcquirerAccountName()
+    {
+        return $this->container['acquirerAccountName'];
+    }
+
+    /**
+     * Sets acquirerAccountName
+     *
+     * @param string|null $acquirerAccountName The saved name of the merchant account with the acquirer. For the applicable RP gateway-to-Antom-self-acquiring payment flow, this is the Antom portal account-name snapshot saved with the original payment. It is optional and is omitted when no usable original snapshot was saved. Subsequent payment inquiry, capture and notifications reuse the saved name without a new lookup or backfill; later account renames do not change it. It is not acquirerName or acquirerMerchantName. This field does not introduce a return requirement for other operations or flows. Maximum length: 255 characters.
+     *
+     * @return self
+     */
+    public function setAcquirerAccountName($acquirerAccountName)
+    {
+        $this->container['acquirerAccountName'] = $acquirerAccountName;
 
         return $this;
     }
