@@ -191,6 +191,19 @@ be checked separately; this utility does not validate payment-method context.
 
 ## Upgrade notes
 
+### Pending security update
+
+The default RSA transport now validates server certificates and hostnames.
+Normal connections to Antom gateways with an up-to-date system trust store need
+no additional configuration; client APIs and merchant signing keys are unchanged.
+Environments that intercept HTTPS or lack root certificates must correct their
+trust configuration rather than disable verification.
+
+The entry-code example now requires your own environment configuration; see
+[example configuration](example/README.md). PHP interpreter security updates
+must be installed separately from the SDK.
+
+
 Gateway responses with `resultStatus S` must be signed; responses with only one
 of the signature and response-time headers are rejected.
 
