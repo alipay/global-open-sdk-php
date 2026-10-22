@@ -13,6 +13,7 @@ class EntryCodePaymentRequest extends AlipayPayRequest
 {
     public function __construct($paymentRequestId, $order, $currency, $amountInCents, $paymentNotifyUrl, $paymentExpiryTime)
     {
+        parent::__construct();
         $this->setPath('/ams/api/v1/payments/pay');
         $this->setProductCode(ProductCodeType::IN_STORE_PAYMENT);
 
@@ -26,7 +27,7 @@ class EntryCodePaymentRequest extends AlipayPayRequest
         $this->setPaymentMethod($paymentMethod);
 
         $paymentFactor = new PaymentFactor();
-        $paymentFactor->setInStorePaymentScenario(InStorePaymentScenario::EntryCode);
+        $paymentFactor->setInStorePaymentScenario(InStorePaymentScenario::ENTRY_CODE);
         $this->setPaymentFactor($paymentFactor);
 
         $this->setPaymentRequestId($paymentRequestId);
@@ -37,26 +38,30 @@ class EntryCodePaymentRequest extends AlipayPayRequest
         }
 
         if (isset($paymentExpiryTime)) {
-            $this->setPaymentExpireTime($paymentExpiryTime);
+            $this->setPaymentExpiryTime($paymentExpiryTime);
         }
 
     }
 
     public function validate()
     {
-        $this->assertTrue(isset($this->order), "order required.");
-        $this->assertTrue(isset($this->order->merchant), "order.merchant required.");
-        $this->assertTrue(isset($this->order->orderAmount), "order.orderAmount required.");
-        $this->assertTrue(isset($this->order->orderDescription), "order.orderDescription required.");
-        $this->assertTrue(isset($this->order->merchant->referenceMerchantId), "order.merchant.referenceMerchantId required.");
-        $this->assertTrue(isset($this->order->merchant->merchantMCC), "order.merchant.merchantMcc required.");
-        $this->assertTrue(isset($this->order->merchant->merchantName), "order.merchant.merchantName required.");
-        $this->assertTrue(isset($this->order->merchant->store), "order.merchant.store required.");
-        $this->assertTrue(isset($this->order->merchant->store->referenceStoreId), "order.merchant.store.referenceStoreId required.");
-        $this->assertTrue(isset($this->order->merchant->store->storeName), "order.merchant.store.storeName required.");
-        $this->assertTrue(isset($this->order->merchant->store->storeMCC), "order.merchant.store.storeMcc required.");
-        $this->assertTrue(isset($this->order->env), "order.env required.");
-        $this->assertTrue(isset($this->order->env->userAgent), "order.env.userAgent required.");
+        $order = $this->getOrder();
+        $this->assertTrue($order !== null, "order required.");
+        $merchant = $order->getMerchant();
+        $this->assertTrue($merchant !== null, "order.merchant required.");
+        $this->assertTrue($order->getOrderAmount() !== null, "order.orderAmount required.");
+        $this->assertTrue($order->getOrderDescription() !== null, "order.orderDescription required.");
+        $this->assertTrue($merchant->getReferenceMerchantId() !== null, "order.merchant.referenceMerchantId required.");
+        $this->assertTrue($merchant->getMerchantMCC() !== null, "order.merchant.merchantMcc required.");
+        $this->assertTrue($merchant->getMerchantName() !== null, "order.merchant.merchantName required.");
+        $store = $merchant->getStore();
+        $this->assertTrue($store !== null, "order.merchant.store required.");
+        $this->assertTrue($store->getReferenceStoreId() !== null, "order.merchant.store.referenceStoreId required.");
+        $this->assertTrue($store->getStoreName() !== null, "order.merchant.store.storeName required.");
+        $this->assertTrue($store->getStoreMCC() !== null, "order.merchant.store.storeMcc required.");
+        $env = $order->getEnv();
+        $this->assertTrue($env !== null, "order.env required.");
+        $this->assertTrue($env->getUserAgent() !== null, "order.env.userAgent required.");
 
     }
 
