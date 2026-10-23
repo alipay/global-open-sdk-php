@@ -57,6 +57,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         'totalRefundAmount' => '\Model\Amount',
         'totalChargebackAmount' => '\Model\Amount',
         'assetId' => 'string',
+        'cardProduct' => 'string',
         'maskedCardNo' => 'string'
     ];
 
@@ -79,6 +80,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         'totalRefundAmount' => null,
         'totalChargebackAmount' => null,
         'assetId' => null,
+        'cardProduct' => null,
         'maskedCardNo' => null
     ];
 
@@ -99,6 +101,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         'totalRefundAmount' => false,
         'totalChargebackAmount' => false,
         'assetId' => false,
+        'cardProduct' => false,
         'maskedCardNo' => false
     ];
 
@@ -199,6 +202,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         'totalRefundAmount' => 'totalRefundAmount',
         'totalChargebackAmount' => 'totalChargebackAmount',
         'assetId' => 'assetId',
+        'cardProduct' => 'cardProduct',
         'maskedCardNo' => 'maskedCardNo'
     ];
 
@@ -219,6 +223,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         'totalRefundAmount' => 'setTotalRefundAmount',
         'totalChargebackAmount' => 'setTotalChargebackAmount',
         'assetId' => 'setAssetId',
+        'cardProduct' => 'setCardProduct',
         'maskedCardNo' => 'setMaskedCardNo'
     ];
 
@@ -239,6 +244,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         'totalRefundAmount' => 'getTotalRefundAmount',
         'totalChargebackAmount' => 'getTotalChargebackAmount',
         'assetId' => 'getAssetId',
+        'cardProduct' => 'getCardProduct',
         'maskedCardNo' => 'getMaskedCardNo'
     ];
 
@@ -310,6 +316,7 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('totalRefundAmount', $data ?? [], null);
         $this->setIfExists('totalChargebackAmount', $data ?? [], null);
         $this->setIfExists('assetId', $data ?? [], null);
+        $this->setIfExists('cardProduct', $data ?? [], null);
         $this->setIfExists('maskedCardNo', $data ?? [], null);
 
             }
@@ -628,6 +635,30 @@ class CardTransactionLifecycle  implements ModelInterface, ArrayAccess, \JsonSer
     public function setAssetId($assetId)
     {
         $this->container['assetId'] = $assetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardProduct
+     *
+     * @return string|null
+     */
+    public function getCardProduct()
+    {
+        return $this->container['cardProduct'];
+    }
+
+    /**
+     * Sets cardProduct
+     *
+     * @param string|null $cardProduct The product category of the card used for the transaction, such as Mastercard MTA or MTB. Returned when available; the value is passed through as provided and has no fixed code pattern.
+     *
+     * @return self
+     */
+    public function setCardProduct($cardProduct)
+    {
+        $this->container['cardProduct'] = $cardProduct;
 
         return $this;
     }
