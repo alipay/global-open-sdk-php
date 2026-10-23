@@ -330,7 +330,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
     /**
      * Sets disputeEvidence
      *
-     * @param string $disputeEvidence The dispute defense document that you prepare for defending the dispute, which is encoded in the Base64 format.  More information:  Maximum length: 1000000 characters
+     * @param string $disputeEvidence The dispute defense document that you prepare for defending the dispute, which is encoded in the Base64 format.  More information:  Maximum length: 4000000 characters
      *
      * @return self
      */
