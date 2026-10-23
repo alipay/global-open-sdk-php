@@ -28,6 +28,8 @@ class DisputeEvidenceFormatType
 {
     public const PDF = 'PDF';
     public const WORD = 'WORD';
+    public const ZIP = 'ZIP';
+    public const JPG = 'JPG';
 
     public $value;
 
@@ -43,6 +45,14 @@ class DisputeEvidenceFormatType
     public static function WORD(): self
     {
         return new self(self::WORD);
+    }
+    public static function ZIP(): self
+    {
+        return new self(self::ZIP);
+    }
+    public static function JPG(): self
+    {
+        return new self(self::JPG);
     }
 
     public function getValue(): string
