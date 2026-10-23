@@ -52,7 +52,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'string',
         'captureAmount' => '\Model\Amount',
         'captureTime' => 'string',
-        'acquirerReferenceNo' => 'string'
+        'acquirerReferenceNo' => 'string',
+        'acquirerInfo' => '\Model\AcquirerInfo'
     ];
 
     /**
@@ -69,7 +70,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => null,
         'captureAmount' => null,
         'captureTime' => null,
-        'acquirerReferenceNo' => null
+        'acquirerReferenceNo' => null,
+        'acquirerInfo' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => false,
         'captureAmount' => false,
         'captureTime' => false,
-        'acquirerReferenceNo' => false
+        'acquirerReferenceNo' => false,
+        'acquirerInfo' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'paymentId',
         'captureAmount' => 'captureAmount',
         'captureTime' => 'captureTime',
-        'acquirerReferenceNo' => 'acquirerReferenceNo'
+        'acquirerReferenceNo' => 'acquirerReferenceNo',
+        'acquirerInfo' => 'acquirerInfo'
     ];
 
     /**
@@ -194,7 +198,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'setPaymentId',
         'captureAmount' => 'setCaptureAmount',
         'captureTime' => 'setCaptureTime',
-        'acquirerReferenceNo' => 'setAcquirerReferenceNo'
+        'acquirerReferenceNo' => 'setAcquirerReferenceNo',
+        'acquirerInfo' => 'setAcquirerInfo'
     ];
 
     /**
@@ -209,7 +214,8 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         'paymentId' => 'getPaymentId',
         'captureAmount' => 'getCaptureAmount',
         'captureTime' => 'getCaptureTime',
-        'acquirerReferenceNo' => 'getAcquirerReferenceNo'
+        'acquirerReferenceNo' => 'getAcquirerReferenceNo',
+        'acquirerInfo' => 'getAcquirerInfo'
     ];
 
     /**
@@ -276,6 +282,7 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('captureAmount', $data ?? [], null);
         $this->setIfExists('captureTime', $data ?? [], null);
         $this->setIfExists('acquirerReferenceNo', $data ?? [], null);
+        $this->setIfExists('acquirerInfo', $data ?? [], null);
 
             }
 
@@ -488,6 +495,30 @@ class AlipayCaptureResponse  implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAcquirerReferenceNo($acquirerReferenceNo)
     {
         $this->container['acquirerReferenceNo'] = $acquirerReferenceNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerInfo
+     *
+     * @return \model\AcquirerInfo|null
+     */
+    public function getAcquirerInfo()
+    {
+        return $this->container['acquirerInfo'];
+    }
+
+    /**
+     * Sets acquirerInfo
+     *
+     * @param \model\AcquirerInfo|null $acquirerInfo acquirerInfo
+     *
+     * @return self
+     */
+    public function setAcquirerInfo($acquirerInfo)
+    {
+        $this->container['acquirerInfo'] = $acquirerInfo;
 
         return $this;
     }
