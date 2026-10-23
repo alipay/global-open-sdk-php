@@ -50,6 +50,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'lifecycleId' => 'string',
         'eventType' => 'string',
         'authExpireTime' => 'string',
+        'authTime' => 'string',
         'authType' => 'string',
         'authCode' => 'string',
         'failureReason' => 'string',
@@ -63,6 +64,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'exchangeRate' => 'string',
         'transactionAmount' => '\Model\Amount',
         'assetId' => 'string',
+        'cardProduct' => 'string',
         'maskedCardNo' => 'string',
         'merchantInfo' => '\Model\EventMerchantInfo',
         'metadata' => 'array<string,string>'
@@ -80,6 +82,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'lifecycleId' => null,
         'eventType' => null,
         'authExpireTime' => null,
+        'authTime' => null,
         'authType' => null,
         'authCode' => null,
         'failureReason' => null,
@@ -93,6 +96,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'exchangeRate' => null,
         'transactionAmount' => null,
         'assetId' => null,
+        'cardProduct' => null,
         'maskedCardNo' => null,
         'merchantInfo' => null,
         'metadata' => null
@@ -108,6 +112,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'lifecycleId' => false,
         'eventType' => false,
         'authExpireTime' => false,
+        'authTime' => false,
         'authType' => false,
         'authCode' => false,
         'failureReason' => false,
@@ -121,6 +126,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'exchangeRate' => false,
         'transactionAmount' => false,
         'assetId' => false,
+        'cardProduct' => false,
         'maskedCardNo' => false,
         'merchantInfo' => false,
         'metadata' => false
@@ -216,6 +222,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'lifecycleId' => 'lifecycleId',
         'eventType' => 'eventType',
         'authExpireTime' => 'authExpireTime',
+        'authTime' => 'authTime',
         'authType' => 'authType',
         'authCode' => 'authCode',
         'failureReason' => 'failureReason',
@@ -229,6 +236,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'exchangeRate' => 'exchangeRate',
         'transactionAmount' => 'transactionAmount',
         'assetId' => 'assetId',
+        'cardProduct' => 'cardProduct',
         'maskedCardNo' => 'maskedCardNo',
         'merchantInfo' => 'merchantInfo',
         'metadata' => 'metadata'
@@ -244,6 +252,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'lifecycleId' => 'setLifecycleId',
         'eventType' => 'setEventType',
         'authExpireTime' => 'setAuthExpireTime',
+        'authTime' => 'setAuthTime',
         'authType' => 'setAuthType',
         'authCode' => 'setAuthCode',
         'failureReason' => 'setFailureReason',
@@ -257,6 +266,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'exchangeRate' => 'setExchangeRate',
         'transactionAmount' => 'setTransactionAmount',
         'assetId' => 'setAssetId',
+        'cardProduct' => 'setCardProduct',
         'maskedCardNo' => 'setMaskedCardNo',
         'merchantInfo' => 'setMerchantInfo',
         'metadata' => 'setMetadata'
@@ -272,6 +282,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'lifecycleId' => 'getLifecycleId',
         'eventType' => 'getEventType',
         'authExpireTime' => 'getAuthExpireTime',
+        'authTime' => 'getAuthTime',
         'authType' => 'getAuthType',
         'authCode' => 'getAuthCode',
         'failureReason' => 'getFailureReason',
@@ -285,6 +296,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'exchangeRate' => 'getExchangeRate',
         'transactionAmount' => 'getTransactionAmount',
         'assetId' => 'getAssetId',
+        'cardProduct' => 'getCardProduct',
         'maskedCardNo' => 'getMaskedCardNo',
         'merchantInfo' => 'getMerchantInfo',
         'metadata' => 'getMetadata'
@@ -351,6 +363,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('lifecycleId', $data ?? [], null);
         $this->setIfExists('eventType', $data ?? [], null);
         $this->setIfExists('authExpireTime', $data ?? [], null);
+        $this->setIfExists('authTime', $data ?? [], null);
         $this->setIfExists('authType', $data ?? [], null);
         $this->setIfExists('authCode', $data ?? [], null);
         $this->setIfExists('failureReason', $data ?? [], null);
@@ -364,6 +377,7 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('exchangeRate', $data ?? [], null);
         $this->setIfExists('transactionAmount', $data ?? [], null);
         $this->setIfExists('assetId', $data ?? [], null);
+        $this->setIfExists('cardProduct', $data ?? [], null);
         $this->setIfExists('maskedCardNo', $data ?? [], null);
         $this->setIfExists('merchantInfo', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -528,6 +542,30 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAuthExpireTime($authExpireTime)
     {
         $this->container['authExpireTime'] = $authExpireTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets authTime
+     *
+     * @return string|null
+     */
+    public function getAuthTime()
+    {
+        return $this->container['authTime'];
+    }
+
+    /**
+     * Sets authTime
+     *
+     * @param string|null $authTime The time of the channel-designated authorization associated with this event, in ISO 8601 format. Returned for eligible non-AUTH events when available.
+     *
+     * @return self
+     */
+    public function setAuthTime($authTime)
+    {
+        $this->container['authTime'] = $authTime;
 
         return $this;
     }
@@ -840,6 +878,30 @@ class CardTransactionEvent  implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAssetId($assetId)
     {
         $this->container['assetId'] = $assetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardProduct
+     *
+     * @return string|null
+     */
+    public function getCardProduct()
+    {
+        return $this->container['cardProduct'];
+    }
+
+    /**
+     * Sets cardProduct
+     *
+     * @param string|null $cardProduct The product category of the card used for the transaction, such as Mastercard MTA or MTB. Returned when available; the value is passed through as provided and has no fixed code pattern.
+     *
+     * @return self
+     */
+    public function setCardProduct($cardProduct)
+    {
+        $this->container['cardProduct'] = $cardProduct;
 
         return $this;
     }

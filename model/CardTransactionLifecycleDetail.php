@@ -57,6 +57,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'totalRefundAmount' => '\Model\Amount',
         'totalChargebackAmount' => '\Model\Amount',
         'assetId' => 'string',
+        'cardProduct' => 'string',
         'maskedCardNo' => 'string',
         'events' => '\Model\CardTransactionEvent[]'
     ];
@@ -80,6 +81,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'totalRefundAmount' => null,
         'totalChargebackAmount' => null,
         'assetId' => null,
+        'cardProduct' => null,
         'maskedCardNo' => null,
         'events' => null
     ];
@@ -101,6 +103,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'totalRefundAmount' => false,
         'totalChargebackAmount' => false,
         'assetId' => false,
+        'cardProduct' => false,
         'maskedCardNo' => false,
         'events' => false
     ];
@@ -202,6 +205,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'totalRefundAmount' => 'totalRefundAmount',
         'totalChargebackAmount' => 'totalChargebackAmount',
         'assetId' => 'assetId',
+        'cardProduct' => 'cardProduct',
         'maskedCardNo' => 'maskedCardNo',
         'events' => 'events'
     ];
@@ -223,6 +227,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'totalRefundAmount' => 'setTotalRefundAmount',
         'totalChargebackAmount' => 'setTotalChargebackAmount',
         'assetId' => 'setAssetId',
+        'cardProduct' => 'setCardProduct',
         'maskedCardNo' => 'setMaskedCardNo',
         'events' => 'setEvents'
     ];
@@ -244,6 +249,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         'totalRefundAmount' => 'getTotalRefundAmount',
         'totalChargebackAmount' => 'getTotalChargebackAmount',
         'assetId' => 'getAssetId',
+        'cardProduct' => 'getCardProduct',
         'maskedCardNo' => 'getMaskedCardNo',
         'events' => 'getEvents'
     ];
@@ -316,6 +322,7 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('totalRefundAmount', $data ?? [], null);
         $this->setIfExists('totalChargebackAmount', $data ?? [], null);
         $this->setIfExists('assetId', $data ?? [], null);
+        $this->setIfExists('cardProduct', $data ?? [], null);
         $this->setIfExists('maskedCardNo', $data ?? [], null);
         $this->setIfExists('events', $data ?? [], null);
 
@@ -635,6 +642,30 @@ class CardTransactionLifecycleDetail  implements ModelInterface, ArrayAccess, \J
     public function setAssetId($assetId)
     {
         $this->container['assetId'] = $assetId;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardProduct
+     *
+     * @return string|null
+     */
+    public function getCardProduct()
+    {
+        return $this->container['cardProduct'];
+    }
+
+    /**
+     * Sets cardProduct
+     *
+     * @param string|null $cardProduct The product category of the card used for the transaction, such as Mastercard MTA or MTB. Returned when available; the value is passed through as provided and has no fixed code pattern.
+     *
+     * @return self
+     */
+    public function setCardProduct($cardProduct)
+    {
+        $this->container['cardProduct'] = $cardProduct;
 
         return $this;
     }

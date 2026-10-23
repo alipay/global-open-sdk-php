@@ -56,7 +56,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'string',
         'ptspTransactionId' => 'string',
         'acquirerCardToken' => 'string',
-        'acquirerFingerprint' => 'string'
+        'acquirerFingerprint' => 'string',
+        'acquirerAccountName' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => null,
         'ptspTransactionId' => null,
         'acquirerCardToken' => null,
-        'acquirerFingerprint' => null
+        'acquirerFingerprint' => null,
+        'acquirerAccountName' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => false,
         'ptspTransactionId' => false,
         'acquirerCardToken' => false,
-        'acquirerFingerprint' => false
+        'acquirerFingerprint' => false,
+        'acquirerAccountName' => false
     ];
 
     /**
@@ -195,7 +198,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'acquirerReasonDescription',
         'ptspTransactionId' => 'ptspTransactionId',
         'acquirerCardToken' => 'acquirerCardToken',
-        'acquirerFingerprint' => 'acquirerFingerprint'
+        'acquirerFingerprint' => 'acquirerFingerprint',
+        'acquirerAccountName' => 'acquirerAccountName'
     ];
 
     /**
@@ -214,7 +218,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'setAcquirerReasonDescription',
         'ptspTransactionId' => 'setPtspTransactionId',
         'acquirerCardToken' => 'setAcquirerCardToken',
-        'acquirerFingerprint' => 'setAcquirerFingerprint'
+        'acquirerFingerprint' => 'setAcquirerFingerprint',
+        'acquirerAccountName' => 'setAcquirerAccountName'
     ];
 
     /**
@@ -233,7 +238,8 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'acquirerReasonDescription' => 'getAcquirerReasonDescription',
         'ptspTransactionId' => 'getPtspTransactionId',
         'acquirerCardToken' => 'getAcquirerCardToken',
-        'acquirerFingerprint' => 'getAcquirerFingerprint'
+        'acquirerFingerprint' => 'getAcquirerFingerprint',
+        'acquirerAccountName' => 'getAcquirerAccountName'
     ];
 
     /**
@@ -304,6 +310,7 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ptspTransactionId', $data ?? [], null);
         $this->setIfExists('acquirerCardToken', $data ?? [], null);
         $this->setIfExists('acquirerFingerprint', $data ?? [], null);
+        $this->setIfExists('acquirerAccountName', $data ?? [], null);
 
             }
 
@@ -609,6 +616,30 @@ class AcquirerInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcquirerFingerprint($acquirerFingerprint)
     {
         $this->container['acquirerFingerprint'] = $acquirerFingerprint;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerAccountName
+     *
+     * @return string|null
+     */
+    public function getAcquirerAccountName()
+    {
+        return $this->container['acquirerAccountName'];
+    }
+
+    /**
+     * Sets acquirerAccountName
+     *
+     * @param string|null $acquirerAccountName The name of the acquiring merchant account configured in the Antom portal.  More information:  Maximum length: 255 characters
+     *
+     * @return self
+     */
+    public function setAcquirerAccountName($acquirerAccountName)
+    {
+        $this->container['acquirerAccountName'] = $acquirerAccountName;
 
         return $this;
     }
