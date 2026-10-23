@@ -28,6 +28,7 @@ class DisputeEvidenceType
 {
     public const TEMPLATE = 'DISPUTE_EVIDENCE_TEMPLATE';
     public const FILE = 'DISPUTE_EVIDENCE_FILE';
+    public const AI = 'DISPUTE_EVIDENCE_AI';
 
     public $value;
 
@@ -43,6 +44,10 @@ class DisputeEvidenceType
     public static function FILE(): self
     {
         return new self(self::FILE);
+    }
+    public static function AI(): self
+    {
+        return new self(self::AI);
     }
 
     public function getValue(): string
