@@ -46,7 +46,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'preferredLocales' => 'string',
+        'preferredLocales' => 'string[]',
         'businessName' => 'string',
         'buyerType' => 'string',
         'referenceBuyerId' => 'string',
@@ -387,7 +387,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets preferredLocales
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getPreferredLocales()
     {
@@ -397,7 +397,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets preferredLocales
      *
-     * @param string|null $preferredLocales Comma-separated invoice and offline receipt PDF locales for createPaymentSession, such as ja-JP,en-US. First supported locale wins, with English fallback. Does not select email language. Omit in APIs that do not document support.
+     * @param string[]|null $preferredLocales Ordered PDF-language preferences for createPaymentSession. Omitted, null, empty or unsupported preferences use English. Does not read or update customer preferences or select Checkout UI or email language. Omit in APIs that do not document support.
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerEmail
      *
-     * @param string|null $buyerEmail The email of the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters For the DingTalk createPaymentSession integration, a valid buyer email is required and the maximum length is 128 characters.
+     * @param string|null $buyerEmail The email of the buyer.  Specify this parameter:  When you require risk control. When the value of paymentMethodType is CARD. Providing this information helps to increase the accuracy of anti-money laundering and fraud detection, and increase payment success rates.   More information:  Maximum length: 64 characters
      *
      * @return self
      */
