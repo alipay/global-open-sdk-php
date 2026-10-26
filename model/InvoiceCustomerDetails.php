@@ -52,7 +52,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
         'firstName' => 'string',
         'lastName' => 'string',
         'businessAddress' => '\Model\CustomerBusinessAddress',
-        'preferredLocales' => 'string',
+        'preferredLocales' => 'string[]',
         'taxIds' => '\Model\BuyerTaxId[]'
     ];
 
@@ -368,7 +368,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets customerType
      *
-     * @param string|null $customerType B (business) or C (consumer). If omitted, uses the matched customer type, otherwise C.
+     * @param string|null $customerType B (business) or C (consumer). Omitted or null values default to C on the server, regardless of an existing customer profile.
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets businessName
      *
-     * @param string|null $businessName Effective business name required for type B. Omitted values may come from the matched customer; its profile is not overwritten.
+     * @param string|null $businessName Business name supplied for this invoice. For type B, provide a nonblank value in the request; an existing customer profile does not supply it.
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets firstName
      *
-     * @param string|null $firstName Effective first name required for type C; may use the matched customer value when omitted. Optional contact name for type B.
+     * @param string|null $firstName First name supplied for this invoice. For type C, provide a nonblank value in the request; an existing customer profile does not supply it. Optional contact name for type B.
      *
      * @return self
      */
@@ -440,7 +440,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets lastName
      *
-     * @param string|null $lastName Effective last name required for type C; may use the matched customer value when omitted. Optional contact name for type B.
+     * @param string|null $lastName Last name supplied for this invoice. For type C, provide a nonblank value in the request; an existing customer profile does not supply it. Optional contact name for type B.
      *
      * @return self
      */
@@ -478,7 +478,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets preferredLocales
      *
-     * @return string|null
+     * @return string[]|null
      */
     public function getPreferredLocales()
     {
@@ -488,7 +488,7 @@ class InvoiceCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets preferredLocales
      *
-     * @param string|null $preferredLocales Comma-separated invoice and offline receipt PDF locales, such as ja-JP,en-US. First supported locale wins, with English fallback. Does not select email language.
+     * @param string[]|null $preferredLocales Ordered invoice and offline receipt PDF-language preferences. Omit or use null to retain stored customer preferences; an empty array uses English. Does not select email language.
      *
      * @return self
      */
