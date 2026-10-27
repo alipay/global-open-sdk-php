@@ -46,6 +46,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fundTransferInfo' => '\Model\FundTransferInfo',
         'merchantAccountId' => 'string',
         'metadata' => 'string',
         'allowedPaymentMethodRegions' => 'string[]',
@@ -89,6 +90,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fundTransferInfo' => null,
         'merchantAccountId' => null,
         'metadata' => null,
         'allowedPaymentMethodRegions' => null,
@@ -130,6 +132,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'fundTransferInfo' => false,
         'merchantAccountId' => false,
         'metadata' => false,
         'allowedPaymentMethodRegions' => false,
@@ -251,6 +254,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
+        'fundTransferInfo' => 'fundTransferInfo',
         'merchantAccountId' => 'merchantAccountId',
         'metadata' => 'metadata',
         'allowedPaymentMethodRegions' => 'allowedPaymentMethodRegions',
@@ -292,6 +296,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
+        'fundTransferInfo' => 'setFundTransferInfo',
         'merchantAccountId' => 'setMerchantAccountId',
         'metadata' => 'setMetadata',
         'allowedPaymentMethodRegions' => 'setAllowedPaymentMethodRegions',
@@ -333,6 +338,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
+        'fundTransferInfo' => 'getFundTransferInfo',
         'merchantAccountId' => 'getMerchantAccountId',
         'metadata' => 'getMetadata',
         'allowedPaymentMethodRegions' => 'getAllowedPaymentMethodRegions',
@@ -425,6 +431,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('fundTransferInfo', $data ?? [], null);
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('allowedPaymentMethodRegions', $data ?? [], null);
@@ -521,6 +528,30 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fundTransferInfo
+     *
+     * @return \model\FundTransferInfo|null
+     */
+    public function getFundTransferInfo()
+    {
+        return $this->container['fundTransferInfo'];
+    }
+
+    /**
+     * Sets fundTransferInfo
+     *
+     * @param \model\FundTransferInfo|null $fundTransferInfo fundTransferInfo
+     *
+     * @return self
+     */
+    public function setFundTransferInfo($fundTransferInfo)
+    {
+        $this->container['fundTransferInfo'] = $fundTransferInfo;
+
+        return $this;
+    }
 
     /**
      * Gets merchantAccountId
