@@ -75,6 +75,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'string',
         'dualOfflinePayment' => 'bool',
         'subscriptionId' => 'string',
+        'fundTransferInfo' => '\Model\FundTransferInfo',
         'locale' => 'string'
     ];
 
@@ -115,6 +116,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => null,
         'dualOfflinePayment' => null,
         'subscriptionId' => null,
+        'fundTransferInfo' => null,
         'locale' => null
     ];
 
@@ -153,6 +155,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => false,
         'dualOfflinePayment' => false,
         'subscriptionId' => false,
+        'fundTransferInfo' => false,
         'locale' => false
     ];
 
@@ -271,6 +274,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'merchantAccountId',
         'dualOfflinePayment' => 'dualOfflinePayment',
         'subscriptionId' => 'subscriptionId',
+        'fundTransferInfo' => 'fundTransferInfo',
         'locale' => 'locale'
     ];
 
@@ -309,6 +313,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'setMerchantAccountId',
         'dualOfflinePayment' => 'setDualOfflinePayment',
         'subscriptionId' => 'setSubscriptionId',
+        'fundTransferInfo' => 'setFundTransferInfo',
         'locale' => 'setLocale'
     ];
 
@@ -347,6 +352,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'getMerchantAccountId',
         'dualOfflinePayment' => 'getDualOfflinePayment',
         'subscriptionId' => 'getSubscriptionId',
+        'fundTransferInfo' => 'getFundTransferInfo',
         'locale' => 'getLocale'
     ];
 
@@ -436,6 +442,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
+        $this->setIfExists('fundTransferInfo', $data ?? [], null);
         $this->setIfExists('locale', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/pay"); 
@@ -1199,6 +1206,30 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     public function setSubscriptionId($subscriptionId)
     {
         $this->container['subscriptionId'] = $subscriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets fundTransferInfo
+     *
+     * @return \model\FundTransferInfo|null
+     */
+    public function getFundTransferInfo()
+    {
+        return $this->container['fundTransferInfo'];
+    }
+
+    /**
+     * Sets fundTransferInfo
+     *
+     * @param \model\FundTransferInfo|null $fundTransferInfo fundTransferInfo
+     *
+     * @return self
+     */
+    public function setFundTransferInfo($fundTransferInfo)
+    {
+        $this->container['fundTransferInfo'] = $fundTransferInfo;
 
         return $this;
     }

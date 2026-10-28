@@ -78,6 +78,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => '\Model\AvailablePaymentMethod',
         'paymentExpiryTime' => 'string',
         'subscription' => '\Model\BillingSubscription',
+        'fundTransferInfo' => '\Model\FundTransferInfo',
         'automaticTax' => '\Model\AutomaticTax'
     ];
 
@@ -121,6 +122,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => null,
         'paymentExpiryTime' => null,
         'subscription' => null,
+        'fundTransferInfo' => null,
         'automaticTax' => null
     ];
 
@@ -162,6 +164,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => false,
         'paymentExpiryTime' => false,
         'subscription' => false,
+        'fundTransferInfo' => false,
         'automaticTax' => false
     ];
 
@@ -283,6 +286,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'availablePaymentMethod',
         'paymentExpiryTime' => 'paymentExpiryTime',
         'subscription' => 'subscription',
+        'fundTransferInfo' => 'fundTransferInfo',
         'automaticTax' => 'automaticTax'
     ];
 
@@ -324,6 +328,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'setAvailablePaymentMethod',
         'paymentExpiryTime' => 'setPaymentExpiryTime',
         'subscription' => 'setSubscription',
+        'fundTransferInfo' => 'setFundTransferInfo',
         'automaticTax' => 'setAutomaticTax'
     ];
 
@@ -365,6 +370,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'getAvailablePaymentMethod',
         'paymentExpiryTime' => 'getPaymentExpiryTime',
         'subscription' => 'getSubscription',
+        'fundTransferInfo' => 'getFundTransferInfo',
         'automaticTax' => 'getAutomaticTax'
     ];
 
@@ -457,6 +463,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('availablePaymentMethod', $data ?? [], null);
         $this->setIfExists('paymentExpiryTime', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
+        $this->setIfExists('fundTransferInfo', $data ?? [], null);
         $this->setIfExists('automaticTax', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/createPaymentSession"); 
@@ -1286,6 +1293,30 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     public function setSubscription($subscription)
     {
         $this->container['subscription'] = $subscription;
+
+        return $this;
+    }
+
+    /**
+     * Gets fundTransferInfo
+     *
+     * @return \model\FundTransferInfo|null
+     */
+    public function getFundTransferInfo()
+    {
+        return $this->container['fundTransferInfo'];
+    }
+
+    /**
+     * Sets fundTransferInfo
+     *
+     * @param \model\FundTransferInfo|null $fundTransferInfo fundTransferInfo
+     *
+     * @return self
+     */
+    public function setFundTransferInfo($fundTransferInfo)
+    {
+        $this->container['fundTransferInfo'] = $fundTransferInfo;
 
         return $this;
     }
