@@ -46,6 +46,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fundTransferInfo' => '\Model\FundTransferInfo',
         'metadata' => 'string',
         'customizedInfo' => '\Model\CustomizedInfo',
         'paymentQuote' => '\Model\Quote',
@@ -86,6 +87,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fundTransferInfo' => null,
         'metadata' => null,
         'customizedInfo' => null,
         'paymentQuote' => null,
@@ -124,6 +126,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'fundTransferInfo' => false,
         'metadata' => false,
         'customizedInfo' => false,
         'paymentQuote' => false,
@@ -242,6 +245,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
+        'fundTransferInfo' => 'fundTransferInfo',
         'metadata' => 'metadata',
         'customizedInfo' => 'customizedInfo',
         'paymentQuote' => 'paymentQuote',
@@ -280,6 +284,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
+        'fundTransferInfo' => 'setFundTransferInfo',
         'metadata' => 'setMetadata',
         'customizedInfo' => 'setCustomizedInfo',
         'paymentQuote' => 'setPaymentQuote',
@@ -318,6 +323,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
+        'fundTransferInfo' => 'getFundTransferInfo',
         'metadata' => 'getMetadata',
         'customizedInfo' => 'getCustomizedInfo',
         'paymentQuote' => 'getPaymentQuote',
@@ -407,6 +413,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('fundTransferInfo', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('customizedInfo', $data ?? [], null);
         $this->setIfExists('paymentQuote', $data ?? [], null);
@@ -506,6 +513,30 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fundTransferInfo
+     *
+     * @return \model\FundTransferInfo|null
+     */
+    public function getFundTransferInfo()
+    {
+        return $this->container['fundTransferInfo'];
+    }
+
+    /**
+     * Sets fundTransferInfo
+     *
+     * @param \model\FundTransferInfo|null $fundTransferInfo fundTransferInfo
+     *
+     * @return self
+     */
+    public function setFundTransferInfo($fundTransferInfo)
+    {
+        $this->container['fundTransferInfo'] = $fundTransferInfo;
+
+        return $this;
+    }
 
     /**
      * Gets metadata
