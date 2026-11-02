@@ -52,7 +52,8 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => 'string',
         'extendInfo' => 'string',
         'requireIssuerAuthentication' => 'bool',
-        'paymentMethodMetaData' => 'array<string,object>'
+        'paymentMethodMetaData' => 'array<string,object>',
+        'cardBrand' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => null,
         'extendInfo' => null,
         'requireIssuerAuthentication' => null,
-        'paymentMethodMetaData' => null
+        'paymentMethodMetaData' => null,
+        'cardBrand' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => false,
         'extendInfo' => false,
         'requireIssuerAuthentication' => false,
-        'paymentMethodMetaData' => false
+        'paymentMethodMetaData' => false,
+        'cardBrand' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => 'customerId',
         'extendInfo' => 'extendInfo',
         'requireIssuerAuthentication' => 'requireIssuerAuthentication',
-        'paymentMethodMetaData' => 'paymentMethodMetaData'
+        'paymentMethodMetaData' => 'paymentMethodMetaData',
+        'cardBrand' => 'cardBrand'
     ];
 
     /**
@@ -194,7 +198,8 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => 'setCustomerId',
         'extendInfo' => 'setExtendInfo',
         'requireIssuerAuthentication' => 'setRequireIssuerAuthentication',
-        'paymentMethodMetaData' => 'setPaymentMethodMetaData'
+        'paymentMethodMetaData' => 'setPaymentMethodMetaData',
+        'cardBrand' => 'setCardBrand'
     ];
 
     /**
@@ -209,7 +214,8 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customerId' => 'getCustomerId',
         'extendInfo' => 'getExtendInfo',
         'requireIssuerAuthentication' => 'getRequireIssuerAuthentication',
-        'paymentMethodMetaData' => 'getPaymentMethodMetaData'
+        'paymentMethodMetaData' => 'getPaymentMethodMetaData',
+        'cardBrand' => 'getCardBrand'
     ];
 
     /**
@@ -276,6 +282,7 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('extendInfo', $data ?? [], null);
         $this->setIfExists('requireIssuerAuthentication', $data ?? [], null);
         $this->setIfExists('paymentMethodMetaData', $data ?? [], null);
+        $this->setIfExists('cardBrand', $data ?? [], null);
 
             }
 
@@ -488,6 +495,30 @@ class PaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPaymentMethodMetaData($paymentMethodMetaData)
     {
         $this->container['paymentMethodMetaData'] = $paymentMethodMetaData;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardBrand
+     *
+     * @return string|null
+     */
+    public function getCardBrand()
+    {
+        return $this->container['cardBrand'];
+    }
+
+    /**
+     * Sets cardBrand
+     *
+     * @param string|null $cardBrand The card brand returned for card subscription payments, or UNKNOWN if it cannot be determined.
+     *
+     * @return self
+     */
+    public function setCardBrand($cardBrand)
+    {
+        $this->container['cardBrand'] = $cardBrand;
 
         return $this;
     }
