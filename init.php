@@ -85,6 +85,7 @@ require __DIR__ . '/request/notify/AlipayNotify.php';
 require __DIR__ . '/request/notify/AlipayAuthNotify.php';
 require __DIR__ . '/request/notify/AlipayCaptureResultNotify.php';
 require __DIR__ . '/request/notify/AlipayDisputeNotify.php';
+require __DIR__ . '/request/notify/AlipayCardTransactionEventNotify.php';
 require __DIR__ . '/request/notify/AlipayPayResultNotify.php';
 require __DIR__ . '/request/notify/AlipayRefundNotify.php';
 require __DIR__ . '/request/notify/AlipaySubscriptionNotify.php';
