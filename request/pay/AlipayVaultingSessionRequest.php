@@ -51,7 +51,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'string',
         'redirectUrl' => 'string',
         'merchantRegion' => 'string',
-        'is3DSAuthentication' => 'bool'
+        'is3DSAuthentication' => 'bool',
+        'paymentMethodMetaData' => '\Model\PaymentMethodMetaData'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => null,
         'redirectUrl' => null,
         'merchantRegion' => null,
-        'is3DSAuthentication' => null
+        'is3DSAuthentication' => null,
+        'paymentMethodMetaData' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => false,
         'redirectUrl' => false,
         'merchantRegion' => false,
-        'is3DSAuthentication' => false
+        'is3DSAuthentication' => false,
+        'paymentMethodMetaData' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'vaultingNotificationUrl',
         'redirectUrl' => 'redirectUrl',
         'merchantRegion' => 'merchantRegion',
-        'is3DSAuthentication' => 'is3DSAuthentication'
+        'is3DSAuthentication' => 'is3DSAuthentication',
+        'paymentMethodMetaData' => 'paymentMethodMetaData'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'setVaultingNotificationUrl',
         'redirectUrl' => 'setRedirectUrl',
         'merchantRegion' => 'setMerchantRegion',
-        'is3DSAuthentication' => 'setIs3DSAuthentication'
+        'is3DSAuthentication' => 'setIs3DSAuthentication',
+        'paymentMethodMetaData' => 'setPaymentMethodMetaData'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'getVaultingNotificationUrl',
         'redirectUrl' => 'getRedirectUrl',
         'merchantRegion' => 'getMerchantRegion',
-        'is3DSAuthentication' => 'getIs3DSAuthentication'
+        'is3DSAuthentication' => 'getIs3DSAuthentication',
+        'paymentMethodMetaData' => 'getPaymentMethodMetaData'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         $this->setIfExists('redirectUrl', $data ?? [], null);
         $this->setIfExists('merchantRegion', $data ?? [], null);
         $this->setIfExists('is3DSAuthentication', $data ?? [], null);
+        $this->setIfExists('paymentMethodMetaData', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/vaults/createVaultingSession"); 
     }
@@ -464,6 +471,30 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     public function setIs3DSAuthentication($is3DSAuthentication)
     {
         $this->container['is3DSAuthentication'] = $is3DSAuthentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentMethodMetaData
+     *
+     * @return \model\PaymentMethodMetaData|null
+     */
+    public function getPaymentMethodMetaData()
+    {
+        return $this->container['paymentMethodMetaData'];
+    }
+
+    /**
+     * Sets paymentMethodMetaData
+     *
+     * @param \model\PaymentMethodMetaData|null $paymentMethodMetaData paymentMethodMetaData
+     *
+     * @return self
+     */
+    public function setPaymentMethodMetaData($paymentMethodMetaData)
+    {
+        $this->container['paymentMethodMetaData'] = $paymentMethodMetaData;
 
         return $this;
     }
