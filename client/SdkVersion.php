@@ -4,7 +4,7 @@ namespace Client;
 
 final class SdkVersion
 {
-    public const VERSION = '1.7.2';
+    public const VERSION = '1.7.3';
 
     public static function userAgent()
     {
