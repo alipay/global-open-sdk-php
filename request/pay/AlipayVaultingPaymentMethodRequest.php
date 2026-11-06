@@ -52,7 +52,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
         'vaultingNotificationUrl' => 'string',
         'redirectUrl' => 'string',
         'merchantRegion' => 'string',
-        'paymentMethodDetail' => '\Model\VaultingPaymentMethodDetailPayload',
+        'paymentMethodDetail' => '\Model\PaymentMethodDetail',
         'env' => '\Model\Env',
         'vaultingCurrency' => 'string',
         'customizedInfo' => '\Model\CustomizedInfo'
@@ -505,7 +505,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Gets paymentMethodDetail
      *
-     * @return \model\VaultingPaymentMethodDetailPayload
+     * @return \model\PaymentMethodDetail
      */
     public function getPaymentMethodDetail()
     {
@@ -515,7 +515,7 @@ class AlipayVaultingPaymentMethodRequest   extends AlipayRequest  implements Mod
     /**
      * Sets paymentMethodDetail
      *
-     * @param \model\VaultingPaymentMethodDetailPayload $paymentMethodDetail paymentMethodDetail
+     * @param \model\PaymentMethodDetail $paymentMethodDetail paymentMethodDetail
      *
      * @return self
      */

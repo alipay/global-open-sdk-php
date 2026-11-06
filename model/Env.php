@@ -390,6 +390,9 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['terminalType'] === null) {
+            $invalidProperties[] = "'terminalType' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -408,7 +411,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets terminalType
      *
-     * @return string|null
+     * @return string
      */
     public function getTerminalType()
     {
@@ -418,7 +421,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets terminalType
      *
-     * @param string|null $terminalType terminalType
+     * @param string $terminalType terminalType
      *
      * @return self
      */
