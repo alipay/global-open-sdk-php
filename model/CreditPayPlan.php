@@ -50,6 +50,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'string',
         'creditPayFeeType' => '\Model\CreditPayFeeType',
         'feePercentage' => 'int',
+        'filteredInstallmentPeriods' => 'int[]',
         'interestRate' => 'string'
     ];
 
@@ -65,6 +66,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => null,
         'creditPayFeeType' => null,
         'feePercentage' => null,
+        'filteredInstallmentPeriods' => null,
         'interestRate' => null
     ];
 
@@ -78,6 +80,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => false,
         'creditPayFeeType' => false,
         'feePercentage' => true,
+        'filteredInstallmentPeriods' => false,
         'interestRate' => false
     ];
 
@@ -171,6 +174,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'interval',
         'creditPayFeeType' => 'creditPayFeeType',
         'feePercentage' => 'feePercentage',
+        'filteredInstallmentPeriods' => 'filteredInstallmentPeriods',
         'interestRate' => 'interestRate'
     ];
 
@@ -184,6 +188,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'setInterval',
         'creditPayFeeType' => 'setCreditPayFeeType',
         'feePercentage' => 'setFeePercentage',
+        'filteredInstallmentPeriods' => 'setFilteredInstallmentPeriods',
         'interestRate' => 'setInterestRate'
     ];
 
@@ -197,6 +202,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'getInterval',
         'creditPayFeeType' => 'getCreditPayFeeType',
         'feePercentage' => 'getFeePercentage',
+        'filteredInstallmentPeriods' => 'getFilteredInstallmentPeriods',
         'interestRate' => 'getInterestRate'
     ];
 
@@ -261,6 +267,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('interval', $data ?? [], null);
         $this->setIfExists('creditPayFeeType', $data ?? [], null);
         $this->setIfExists('feePercentage', $data ?? [], null);
+        $this->setIfExists('filteredInstallmentPeriods', $data ?? [], null);
         $this->setIfExists('interestRate', $data ?? [], null);
 
             }
@@ -399,6 +406,30 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFeePercentage($feePercentage)
     {
         $this->container['feePercentage'] = $feePercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets filteredInstallmentPeriods
+     *
+     * @return int[]|null
+     */
+    public function getFilteredInstallmentPeriods()
+    {
+        return $this->container['filteredInstallmentPeriods'];
+    }
+
+    /**
+     * Sets filteredInstallmentPeriods
+     *
+     * @param int[]|null $filteredInstallmentPeriods Select Installment Payment Plan Period that the merchant wants to offer.  Example: Available periods are 3,6,12,24 months, but if the merchant wants to restrict to 3 & 6 months only, enter the value as [3,6]  Note: This field is mutually exclusive with installmentNum. When both fields are provided, installmentNum takes priority.  More information:  Maximum length: 100 elements Value range: 2 - 36
+     *
+     * @return self
+     */
+    public function setFilteredInstallmentPeriods($filteredInstallmentPeriods)
+    {
+        $this->container['filteredInstallmentPeriods'] = $filteredInstallmentPeriods;
 
         return $this;
     }

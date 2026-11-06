@@ -285,12 +285,6 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['firstName'] === null) {
-            $invalidProperties[] = "'firstName' can't be null";
-        }
-        if ($this->container['lastName'] === null) {
-            $invalidProperties[] = "'lastName' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -309,7 +303,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets firstName
      *
-     * @return string
+     * @return string|null
      */
     public function getFirstName()
     {
@@ -319,7 +313,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets firstName
      *
-     * @param string $firstName The cardholder's first name.  More information:  Maximum length: 32 characters
+     * @param string|null $firstName The cardholder's first name.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -357,7 +351,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets lastName
      *
-     * @return string
+     * @return string|null
      */
     public function getLastName()
     {
@@ -367,7 +361,7 @@ class UserName  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lastName
      *
-     * @param string $lastName The cardholder's last name.  More information:  Maximum length: 32 characters
+     * @param string|null $lastName The cardholder's last name.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
