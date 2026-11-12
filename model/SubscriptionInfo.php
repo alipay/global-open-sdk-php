@@ -432,17 +432,8 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['subscriptionDescription'] === null) {
-            $invalidProperties[] = "'subscriptionDescription' can't be null";
-        }
         if ($this->container['subscriptionStartTime'] === null) {
             $invalidProperties[] = "'subscriptionStartTime' can't be null";
-        }
-        if ($this->container['periodRule'] === null) {
-            $invalidProperties[] = "'periodRule' can't be null";
-        }
-        if ($this->container['subscriptionNotifyUrl'] === null) {
-            $invalidProperties[] = "'subscriptionNotifyUrl' can't be null";
         }
         return $invalidProperties;
     }
@@ -510,7 +501,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets subscriptionDescription
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionDescription()
     {
@@ -520,7 +511,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subscriptionDescription
      *
-     * @param string $subscriptionDescription Description of the subscription plan
+     * @param string|null $subscriptionDescription Description of the subscription plan
      *
      * @return self
      */
@@ -654,7 +645,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets periodRule
      *
-     * @return \model\PeriodRule
+     * @return \model\PeriodRule|null
      */
     public function getPeriodRule()
     {
@@ -664,7 +655,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets periodRule
      *
-     * @param \model\PeriodRule $periodRule periodRule
+     * @param \model\PeriodRule|null $periodRule periodRule
      *
      * @return self
      */
@@ -894,7 +885,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets subscriptionNotifyUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionNotifyUrl()
     {
@@ -904,7 +895,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subscriptionNotifyUrl
      *
-     * @param string $subscriptionNotifyUrl URL for subscription notifications
+     * @param string|null $subscriptionNotifyUrl URL for subscription notifications
      *
      * @return self
      */
