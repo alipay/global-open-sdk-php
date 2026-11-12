@@ -281,9 +281,6 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['resultCode'] === null) {
             $invalidProperties[] = "'resultCode' can't be null";
         }
-        if ($this->container['resultStatus'] === null) {
-            $invalidProperties[] = "'resultStatus' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +323,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets resultStatus
      *
-     * @return string
+     * @return string|null
      */
     public function getResultStatus()
     {
@@ -336,7 +333,7 @@ class Result  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resultStatus
      *
-     * @param string $resultStatus resultStatus
+     * @param string|null $resultStatus resultStatus
      *
      * @return self
      */

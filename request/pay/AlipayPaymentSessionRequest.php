@@ -66,6 +66,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'string',
         'paymentNotifyUrl' => 'string',
         'paymentFactor' => '\Model\PaymentFactor',
+        'excludedPaymentMethod' => '\Model\ExcludedPaymentMethod',
         'settlementStrategy' => '\Model\SettlementStrategy',
         'enableInstallmentCollection' => 'bool',
         'creditPayPlan' => '\Model\CreditPayPlan',
@@ -110,6 +111,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => null,
         'paymentNotifyUrl' => null,
         'paymentFactor' => null,
+        'excludedPaymentMethod' => null,
         'settlementStrategy' => null,
         'enableInstallmentCollection' => null,
         'creditPayPlan' => null,
@@ -152,6 +154,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => false,
         'paymentNotifyUrl' => false,
         'paymentFactor' => false,
+        'excludedPaymentMethod' => false,
         'settlementStrategy' => false,
         'enableInstallmentCollection' => false,
         'creditPayPlan' => false,
@@ -274,6 +277,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'paymentRedirectUrl',
         'paymentNotifyUrl' => 'paymentNotifyUrl',
         'paymentFactor' => 'paymentFactor',
+        'excludedPaymentMethod' => 'excludedPaymentMethod',
         'settlementStrategy' => 'settlementStrategy',
         'enableInstallmentCollection' => 'enableInstallmentCollection',
         'creditPayPlan' => 'creditPayPlan',
@@ -316,6 +320,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'setPaymentRedirectUrl',
         'paymentNotifyUrl' => 'setPaymentNotifyUrl',
         'paymentFactor' => 'setPaymentFactor',
+        'excludedPaymentMethod' => 'setExcludedPaymentMethod',
         'settlementStrategy' => 'setSettlementStrategy',
         'enableInstallmentCollection' => 'setEnableInstallmentCollection',
         'creditPayPlan' => 'setCreditPayPlan',
@@ -358,6 +363,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'getPaymentRedirectUrl',
         'paymentNotifyUrl' => 'getPaymentNotifyUrl',
         'paymentFactor' => 'getPaymentFactor',
+        'excludedPaymentMethod' => 'getExcludedPaymentMethod',
         'settlementStrategy' => 'getSettlementStrategy',
         'enableInstallmentCollection' => 'getEnableInstallmentCollection',
         'creditPayPlan' => 'getCreditPayPlan',
@@ -451,6 +457,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('paymentRedirectUrl', $data ?? [], null);
         $this->setIfExists('paymentNotifyUrl', $data ?? [], null);
         $this->setIfExists('paymentFactor', $data ?? [], null);
+        $this->setIfExists('excludedPaymentMethod', $data ?? [], null);
         $this->setIfExists('settlementStrategy', $data ?? [], null);
         $this->setIfExists('enableInstallmentCollection', $data ?? [], null);
         $this->setIfExists('creditPayPlan', $data ?? [], null);
@@ -1005,6 +1012,30 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     public function setPaymentFactor($paymentFactor)
     {
         $this->container['paymentFactor'] = $paymentFactor;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludedPaymentMethod
+     *
+     * @return \model\ExcludedPaymentMethod|null
+     */
+    public function getExcludedPaymentMethod()
+    {
+        return $this->container['excludedPaymentMethod'];
+    }
+
+    /**
+     * Sets excludedPaymentMethod
+     *
+     * @param \model\ExcludedPaymentMethod|null $excludedPaymentMethod excludedPaymentMethod
+     *
+     * @return self
+     */
+    public function setExcludedPaymentMethod($excludedPaymentMethod)
+    {
+        $this->container['excludedPaymentMethod'] = $excludedPaymentMethod;
 
         return $this;
     }
