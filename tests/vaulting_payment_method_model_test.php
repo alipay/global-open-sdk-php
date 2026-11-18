@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__ . '/../vendor/autoload.php';
 
 $metadata = ['recurringType' => 'UNSCHEDULED', 'enabled' => false, 'count' => 0, 'items' => []];
