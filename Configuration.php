@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Configuration
  * PHP version 7.4

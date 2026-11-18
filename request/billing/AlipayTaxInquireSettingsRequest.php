@@ -12,9 +12,10 @@
  * Do not edit the class manually.
  */
 
+
 namespace Request\billing;
 
-use ArrayAccess;
+use \ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -28,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxInquireSettingsRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInquireSettingsRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -226,7 +227,7 @@ class AlipayTaxInquireSettingsRequest extends AlipayRequest implements ModelInte
      */
     public function __construct(?array $data = null)
     {
-        $this->setPath("/ams/api/v1/tax/inquireSettings");
+         $this->setPath("/ams/api/v1/tax/inquireSettings"); 
     }
 
     /**
