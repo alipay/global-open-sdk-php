@@ -73,6 +73,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchant' => '\Model\Merchant',
         'paymentVerificationData' => '\Model\PaymentVerificationData',
         'extendInfo' => 'string',
+        'ordertestrequest' => 'string',
         'merchantAccountId' => 'string',
         'dualOfflinePayment' => 'bool',
         'subscriptionId' => 'string',
@@ -114,6 +115,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchant' => null,
         'paymentVerificationData' => null,
         'extendInfo' => null,
+        'ordertestrequest' => null,
         'merchantAccountId' => null,
         'dualOfflinePayment' => null,
         'subscriptionId' => null,
@@ -153,6 +155,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchant' => false,
         'paymentVerificationData' => false,
         'extendInfo' => false,
+        'ordertestrequest' => false,
         'merchantAccountId' => false,
         'dualOfflinePayment' => false,
         'subscriptionId' => false,
@@ -272,6 +275,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchant' => 'merchant',
         'paymentVerificationData' => 'paymentVerificationData',
         'extendInfo' => 'extendInfo',
+        'ordertestrequest' => 'ordertestrequest',
         'merchantAccountId' => 'merchantAccountId',
         'dualOfflinePayment' => 'dualOfflinePayment',
         'subscriptionId' => 'subscriptionId',
@@ -311,6 +315,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchant' => 'setMerchant',
         'paymentVerificationData' => 'setPaymentVerificationData',
         'extendInfo' => 'setExtendInfo',
+        'ordertestrequest' => 'setOrdertestrequest',
         'merchantAccountId' => 'setMerchantAccountId',
         'dualOfflinePayment' => 'setDualOfflinePayment',
         'subscriptionId' => 'setSubscriptionId',
@@ -350,6 +355,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchant' => 'getMerchant',
         'paymentVerificationData' => 'getPaymentVerificationData',
         'extendInfo' => 'getExtendInfo',
+        'ordertestrequest' => 'getOrdertestrequest',
         'merchantAccountId' => 'getMerchantAccountId',
         'dualOfflinePayment' => 'getDualOfflinePayment',
         'subscriptionId' => 'getSubscriptionId',
@@ -440,6 +446,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('merchant', $data ?? [], null);
         $this->setIfExists('paymentVerificationData', $data ?? [], null);
         $this->setIfExists('extendInfo', $data ?? [], null);
+        $this->setIfExists('ordertestrequest', $data ?? [], null);
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
@@ -1158,6 +1165,30 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     public function setExtendInfo($extendInfo)
     {
         $this->container['extendInfo'] = $extendInfo;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordertestrequest
+     *
+     * @return string|null
+     */
+    public function getOrdertestrequest()
+    {
+        return $this->container['ordertestrequest'];
+    }
+
+    /**
+     * Sets ordertestrequest
+     *
+     * @param string|null $ordertestrequest 5.6号测试
+     *
+     * @return self
+     */
+    public function setOrdertestrequest($ordertestrequest)
+    {
+        $this->container['ordertestrequest'] = $ordertestrequest;
 
         return $this;
     }
