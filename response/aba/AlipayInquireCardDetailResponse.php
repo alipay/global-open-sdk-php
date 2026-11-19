@@ -57,7 +57,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl',
+        'authorizationControl' => '\Model\InquireCardDetailAuthorizationControl',
         'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
@@ -726,7 +726,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl
+     * @return \model\InquireCardDetailAuthorizationControl
      */
     public function getAuthorizationControl()
     {
@@ -736,7 +736,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl $authorizationControl authorizationControl
+     * @param \model\InquireCardDetailAuthorizationControl $authorizationControl authorizationControl
      *
      * @return self
      */

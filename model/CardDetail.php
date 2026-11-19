@@ -57,7 +57,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl',
+        'authorizationControl' => '\Model\InquireCardSensitiveInfoAuthorizationControl',
         'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
@@ -693,7 +693,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl
+     * @return \model\InquireCardSensitiveInfoAuthorizationControl
      */
     public function getAuthorizationControl()
     {
@@ -703,7 +703,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl $authorizationControl authorizationControl
+     * @param \model\InquireCardSensitiveInfoAuthorizationControl $authorizationControl authorizationControl
      *
      * @return self
      */
