@@ -51,7 +51,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'string',
         'redirectUrl' => 'string',
         'merchantRegion' => 'string',
-        'is3DSAuthentication' => 'bool'
+        'is3DSAuthentication' => 'bool',
+        'paymentMethodMetaData' => 'array<string,mixed>'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => null,
         'redirectUrl' => null,
         'merchantRegion' => null,
-        'is3DSAuthentication' => null
+        'is3DSAuthentication' => null,
+        'paymentMethodMetaData' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => false,
         'redirectUrl' => false,
         'merchantRegion' => false,
-        'is3DSAuthentication' => false
+        'is3DSAuthentication' => false,
+        'paymentMethodMetaData' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'vaultingNotificationUrl',
         'redirectUrl' => 'redirectUrl',
         'merchantRegion' => 'merchantRegion',
-        'is3DSAuthentication' => 'is3DSAuthentication'
+        'is3DSAuthentication' => 'is3DSAuthentication',
+        'paymentMethodMetaData' => 'paymentMethodMetaData'
     ];
 
     /**
@@ -189,7 +193,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'setVaultingNotificationUrl',
         'redirectUrl' => 'setRedirectUrl',
         'merchantRegion' => 'setMerchantRegion',
-        'is3DSAuthentication' => 'setIs3DSAuthentication'
+        'is3DSAuthentication' => 'setIs3DSAuthentication',
+        'paymentMethodMetaData' => 'setPaymentMethodMetaData'
     ];
 
     /**
@@ -203,7 +208,8 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'vaultingNotificationUrl' => 'getVaultingNotificationUrl',
         'redirectUrl' => 'getRedirectUrl',
         'merchantRegion' => 'getMerchantRegion',
-        'is3DSAuthentication' => 'getIs3DSAuthentication'
+        'is3DSAuthentication' => 'getIs3DSAuthentication',
+        'paymentMethodMetaData' => 'getPaymentMethodMetaData'
     ];
 
     /**
@@ -269,6 +275,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         $this->setIfExists('redirectUrl', $data ?? [], null);
         $this->setIfExists('merchantRegion', $data ?? [], null);
         $this->setIfExists('is3DSAuthentication', $data ?? [], null);
+        $this->setIfExists('paymentMethodMetaData', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/vaults/createVaultingSession"); 
     }
@@ -464,6 +471,30 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     public function setIs3DSAuthentication($is3DSAuthentication)
     {
         $this->container['is3DSAuthentication'] = $is3DSAuthentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentMethodMetaData
+     *
+     * @return array<string,mixed>|null
+     */
+    public function getPaymentMethodMetaData()
+    {
+        return $this->container['paymentMethodMetaData'];
+    }
+
+    /**
+     * Sets paymentMethodMetaData
+     *
+     * @param array<string,mixed>|null $paymentMethodMetaData Card payment metadata declared when the vaulting session is created and passed through when the SDK submits the vaulting request. This object remains free-form. Applicable only when paymentMethodType is CARD. Only recurringType is merchant-facing: SCHEDULED for fixed-schedule deductions or UNSCHEDULED for on-demand deductions; if omitted, no recurring type is declared, and any other value returns PARAM_ILLEGAL. The transaction-initiated-type flag (merchantInitiated) is derived internally by Antom and must not be provided.  More information:  Maximum length: 2048 characters after serialization
+     *
+     * @return self
+     */
+    public function setPaymentMethodMetaData($paymentMethodMetaData)
+    {
+        $this->container['paymentMethodMetaData'] = $paymentMethodMetaData;
 
         return $this;
     }
