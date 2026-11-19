@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateReleaseRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPITypes = [
         'releaseRequestId' => 'string',
         'holdId' => 'string',
-        'releaseAmount' => '\Model\Amount'
+        'releaseAmount' => '\Model\Amount',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPIFormats = [
         'releaseRequestId' => null,
         'holdId' => null,
-        'releaseAmount' => null
+        'releaseAmount' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPINullables = [
         'releaseRequestId' => false,
         'holdId' => false,
-        'releaseAmount' => false
+        'releaseAmount' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $attributeMap = [
         'releaseRequestId' => 'releaseRequestId',
         'holdId' => 'holdId',
-        'releaseAmount' => 'releaseAmount'
+        'releaseAmount' => 'releaseAmount',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $setters = [
         'releaseRequestId' => 'setReleaseRequestId',
         'holdId' => 'setHoldId',
-        'releaseAmount' => 'setReleaseAmount'
+        'releaseAmount' => 'setReleaseAmount',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     protected static $getters = [
         'releaseRequestId' => 'getReleaseRequestId',
         'holdId' => 'getHoldId',
-        'releaseAmount' => 'getReleaseAmount'
+        'releaseAmount' => 'getReleaseAmount',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
         $this->setIfExists('holdId', $data ?? [], null);
         $this->setIfExists('releaseAmount', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/reserve/createRelease"); 
+        $this->setPath("/ams/api/v1/payments/reserve/createRelease");
     }
 
     /**
@@ -450,10 +449,10 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -476,7 +475,7 @@ class AlipayCreateReleaseRequest   extends AlipayRequest  implements ModelInterf
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

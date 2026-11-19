@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubscriptionTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentMethod' => '\Model\PaymentMethod',
         'paymentAmount' => '\Model\Amount',
         'paymentTime' => 'string',
-        'disputeId' => 'string'
+        'disputeId' => 'string',
     ];
 
     /**
@@ -69,7 +68,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentMethod' => null,
         'paymentAmount' => null,
         'paymentTime' => null,
-        'disputeId' => null
+        'disputeId' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentMethod' => false,
         'paymentAmount' => false,
         'paymentTime' => false,
-        'disputeId' => false
+        'disputeId' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentMethod' => 'paymentMethod',
         'paymentAmount' => 'paymentAmount',
         'paymentTime' => 'paymentTime',
-        'disputeId' => 'disputeId'
+        'disputeId' => 'disputeId',
     ];
 
     /**
@@ -194,7 +193,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentMethod' => 'setPaymentMethod',
         'paymentAmount' => 'setPaymentAmount',
         'paymentTime' => 'setPaymentTime',
-        'disputeId' => 'setDisputeId'
+        'disputeId' => 'setDisputeId',
     ];
 
     /**
@@ -209,7 +208,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentMethod' => 'getPaymentMethod',
         'paymentAmount' => 'getPaymentAmount',
         'paymentTime' => 'getPaymentTime',
-        'disputeId' => 'getDisputeId'
+        'disputeId' => 'getDisputeId',
     ];
 
     /**
@@ -277,7 +276,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('paymentTime', $data ?? [], null);
         $this->setIfExists('disputeId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -579,10 +578,10 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -605,7 +604,7 @@ class SubscriptionTransaction  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

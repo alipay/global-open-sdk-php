@@ -114,7 +114,5 @@ final class AmountUtil
         throw new \InvalidArgumentException($category . ': ' . $detail);
     }
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Env implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -64,7 +63,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deviceModel' => 'string',
         'deviceLanguage' => 'string',
         'deviceId' => 'string',
-        'osVersion' => 'string'
+        'osVersion' => 'string',
     ];
 
     /**
@@ -93,7 +92,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deviceModel' => null,
         'deviceLanguage' => null,
         'deviceId' => null,
-        'osVersion' => null
+        'osVersion' => null,
     ];
 
     /**
@@ -120,7 +119,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deviceModel' => false,
         'deviceLanguage' => false,
         'deviceId' => false,
-        'osVersion' => false
+        'osVersion' => false,
     ];
 
     /**
@@ -227,7 +226,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deviceModel' => 'deviceModel',
         'deviceLanguage' => 'deviceLanguage',
         'deviceId' => 'deviceId',
-        'osVersion' => 'osVersion'
+        'osVersion' => 'osVersion',
     ];
 
     /**
@@ -254,7 +253,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deviceModel' => 'setDeviceModel',
         'deviceLanguage' => 'setDeviceLanguage',
         'deviceId' => 'setDeviceId',
-        'osVersion' => 'setOsVersion'
+        'osVersion' => 'setOsVersion',
     ];
 
     /**
@@ -281,7 +280,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         'deviceModel' => 'getDeviceModel',
         'deviceLanguage' => 'getDeviceLanguage',
         'deviceId' => 'getDeviceId',
-        'osVersion' => 'getOsVersion'
+        'osVersion' => 'getOsVersion',
     ];
 
     /**
@@ -361,7 +360,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('deviceId', $data ?? [], null);
         $this->setIfExists('osVersion', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -939,10 +938,10 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -965,7 +964,7 @@ class Env  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

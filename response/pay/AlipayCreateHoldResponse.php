@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateHoldResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'holdId' => 'string',
         'holdAmount' => '\Model\Amount',
         'releaseTime' => 'string',
-        'holdStatus' => 'string'
+        'holdStatus' => 'string',
     ];
 
     /**
@@ -67,7 +66,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'holdId' => null,
         'holdAmount' => null,
         'releaseTime' => null,
-        'holdStatus' => null
+        'holdStatus' => null,
     ];
 
     /**
@@ -81,7 +80,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'holdId' => false,
         'holdAmount' => false,
         'releaseTime' => false,
-        'holdStatus' => false
+        'holdStatus' => false,
     ];
 
     /**
@@ -175,7 +174,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'holdId' => 'holdId',
         'holdAmount' => 'holdAmount',
         'releaseTime' => 'releaseTime',
-        'holdStatus' => 'holdStatus'
+        'holdStatus' => 'holdStatus',
     ];
 
     /**
@@ -189,7 +188,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'holdId' => 'setHoldId',
         'holdAmount' => 'setHoldAmount',
         'releaseTime' => 'setReleaseTime',
-        'holdStatus' => 'setHoldStatus'
+        'holdStatus' => 'setHoldStatus',
     ];
 
     /**
@@ -203,7 +202,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'holdId' => 'getHoldId',
         'holdAmount' => 'getHoldAmount',
         'releaseTime' => 'getReleaseTime',
-        'holdStatus' => 'getHoldStatus'
+        'holdStatus' => 'getHoldStatus',
     ];
 
     /**
@@ -270,7 +269,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('releaseTime', $data ?? [], null);
         $this->setIfExists('holdStatus', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -536,10 +535,10 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -562,7 +561,7 @@ class AlipayCreateHoldResponse  implements ModelInterface, ArrayAccess, \JsonSer
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

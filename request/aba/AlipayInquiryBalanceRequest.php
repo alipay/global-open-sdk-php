@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquiryBalanceRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     protected static $openAPITypes = [
         'currencyList' => 'string[]',
         'accesstoken' => 'string',
-        'customerId' => 'string'
+        'customerId' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     protected static $openAPIFormats = [
         'currencyList' => null,
         'accesstoken' => null,
-        'customerId' => null
+        'customerId' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     protected static $openAPINullables = [
         'currencyList' => false,
         'accesstoken' => false,
-        'customerId' => false
+        'customerId' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     protected static $attributeMap = [
         'currencyList' => 'currencyList',
         'accesstoken' => 'accesstoken',
-        'customerId' => 'customerId'
+        'customerId' => 'customerId',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     protected static $setters = [
         'currencyList' => 'setCurrencyList',
         'accesstoken' => 'setAccesstoken',
-        'customerId' => 'setCustomerId'
+        'customerId' => 'setCustomerId',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     protected static $getters = [
         'currencyList' => 'getCurrencyList',
         'accesstoken' => 'getAccesstoken',
-        'customerId' => 'getCustomerId'
+        'customerId' => 'getCustomerId',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('accesstoken', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/accounts/inquiryBalance"); 
+        $this->setPath("/ams/api/v1/aba/accounts/inquiryBalance");
     }
 
     /**
@@ -447,10 +446,10 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -473,7 +472,7 @@ class AlipayInquiryBalanceRequest   extends AlipayRequest  implements ModelInter
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

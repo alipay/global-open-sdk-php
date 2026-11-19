@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayPayConsultResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'result' => '\Model\Result',
         'paymentOptions' => '\Model\PaymentOption[]',
         'paymentMethodInfos' => '\Model\PaymentMethodInfo[]',
-        'extendInfo' => 'string'
+        'extendInfo' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'result' => null,
         'paymentOptions' => null,
         'paymentMethodInfos' => null,
-        'extendInfo' => null
+        'extendInfo' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'result' => false,
         'paymentOptions' => false,
         'paymentMethodInfos' => false,
-        'extendInfo' => false
+        'extendInfo' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'result' => 'result',
         'paymentOptions' => 'paymentOptions',
         'paymentMethodInfos' => 'paymentMethodInfos',
-        'extendInfo' => 'extendInfo'
+        'extendInfo' => 'extendInfo',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'result' => 'setResult',
         'paymentOptions' => 'setPaymentOptions',
         'paymentMethodInfos' => 'setPaymentMethodInfos',
-        'extendInfo' => 'setExtendInfo'
+        'extendInfo' => 'setExtendInfo',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         'result' => 'getResult',
         'paymentOptions' => 'getPaymentOptions',
         'paymentMethodInfos' => 'getPaymentMethodInfos',
-        'extendInfo' => 'getExtendInfo'
+        'extendInfo' => 'getExtendInfo',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('paymentMethodInfos', $data ?? [], null);
         $this->setIfExists('extendInfo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AlipayPayConsultResponse  implements ModelInterface, ArrayAccess, \JsonSer
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymentVerificationData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'verifyRequestId' => 'string',
-        'authenticationCode' => 'string'
+        'authenticationCode' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'verifyRequestId' => null,
-        'authenticationCode' => null
+        'authenticationCode' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPINullables = [
         'verifyRequestId' => false,
-        'authenticationCode' => false
+        'authenticationCode' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'verifyRequestId' => 'verifyRequestId',
-        'authenticationCode' => 'authenticationCode'
+        'authenticationCode' => 'authenticationCode',
     ];
 
     /**
@@ -169,7 +168,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'verifyRequestId' => 'setVerifyRequestId',
-        'authenticationCode' => 'setAuthenticationCode'
+        'authenticationCode' => 'setAuthenticationCode',
     ];
 
     /**
@@ -179,7 +178,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'verifyRequestId' => 'getVerifyRequestId',
-        'authenticationCode' => 'getAuthenticationCode'
+        'authenticationCode' => 'getAuthenticationCode',
     ];
 
     /**
@@ -242,7 +241,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('verifyRequestId', $data ?? [], null);
         $this->setIfExists('authenticationCode', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -409,10 +408,10 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -435,7 +434,7 @@ class PaymentVerificationData  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -30,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateMandateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         'mandateRequestId' => 'string',
         'mandateId' => 'string',
         'validFrom' => 'string',
-        'validUntil' => 'string'
+        'validUntil' => 'string',
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         'mandateRequestId' => null,
         'mandateId' => null,
         'validFrom' => null,
-        'validUntil' => null
+        'validUntil' => null,
     ];
 
     /**
@@ -79,7 +78,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         'mandateRequestId' => false,
         'mandateId' => false,
         'validFrom' => false,
-        'validUntil' => false
+        'validUntil' => false,
     ];
 
     /**
@@ -172,7 +171,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         'mandateRequestId' => 'mandateRequestId',
         'mandateId' => 'mandateId',
         'validFrom' => 'validFrom',
-        'validUntil' => 'validUntil'
+        'validUntil' => 'validUntil',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         'mandateRequestId' => 'setMandateRequestId',
         'mandateId' => 'setMandateId',
         'validFrom' => 'setValidFrom',
-        'validUntil' => 'setValidUntil'
+        'validUntil' => 'setValidUntil',
     ];
 
     /**
@@ -198,7 +197,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         'mandateRequestId' => 'getMandateRequestId',
         'mandateId' => 'getMandateId',
         'validFrom' => 'getValidFrom',
-        'validUntil' => 'getValidUntil'
+        'validUntil' => 'getValidUntil',
     ];
 
     /**
@@ -264,7 +263,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('validFrom', $data ?? [], null);
         $this->setIfExists('validUntil', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -506,10 +505,10 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -532,7 +531,7 @@ class AlipayCreateMandateResponse  implements ModelInterface, ArrayAccess, \Json
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreditPayPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'string',
         'creditPayFeeType' => '\Model\CreditPayFeeType',
         'feePercentage' => 'int',
-        'interestRate' => 'string'
+        'interestRate' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => null,
         'creditPayFeeType' => null,
         'feePercentage' => null,
-        'interestRate' => null
+        'interestRate' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => false,
         'creditPayFeeType' => false,
         'feePercentage' => true,
-        'interestRate' => false
+        'interestRate' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'interval',
         'creditPayFeeType' => 'creditPayFeeType',
         'feePercentage' => 'feePercentage',
-        'interestRate' => 'interestRate'
+        'interestRate' => 'interestRate',
     ];
 
     /**
@@ -184,7 +183,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'setInterval',
         'creditPayFeeType' => 'setCreditPayFeeType',
         'feePercentage' => 'setFeePercentage',
-        'interestRate' => 'setInterestRate'
+        'interestRate' => 'setInterestRate',
     ];
 
     /**
@@ -197,7 +196,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         'interval' => 'getInterval',
         'creditPayFeeType' => 'getCreditPayFeeType',
         'feePercentage' => 'getFeePercentage',
-        'interestRate' => 'getInterestRate'
+        'interestRate' => 'getInterestRate',
     ];
 
     /**
@@ -263,7 +262,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('feePercentage', $data ?? [], null);
         $this->setIfExists('interestRate', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -502,10 +501,10 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -528,7 +527,7 @@ class CreditPayPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

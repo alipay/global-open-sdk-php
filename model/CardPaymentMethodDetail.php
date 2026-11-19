@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CardPaymentMethodDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -82,7 +81,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => 'string',
         'scaExemptionIndicator' => 'string',
         'enableAuthenticationUpgrade' => 'string',
-        'mpiData' => '\Model\MpiData'
+        'mpiData' => '\Model\MpiData',
     ];
 
     /**
@@ -129,7 +128,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => null,
         'scaExemptionIndicator' => null,
         'enableAuthenticationUpgrade' => null,
-        'mpiData' => null
+        'mpiData' => null,
     ];
 
     /**
@@ -174,7 +173,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => false,
         'scaExemptionIndicator' => false,
         'enableAuthenticationUpgrade' => false,
-        'mpiData' => false
+        'mpiData' => false,
     ];
 
     /**
@@ -299,7 +298,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => 'request3DS',
         'scaExemptionIndicator' => 'scaExemptionIndicator',
         'enableAuthenticationUpgrade' => 'enableAuthenticationUpgrade',
-        'mpiData' => 'mpiData'
+        'mpiData' => 'mpiData',
     ];
 
     /**
@@ -344,7 +343,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => 'setRequest3DS',
         'scaExemptionIndicator' => 'setScaExemptionIndicator',
         'enableAuthenticationUpgrade' => 'setEnableAuthenticationUpgrade',
-        'mpiData' => 'setMpiData'
+        'mpiData' => 'setMpiData',
     ];
 
     /**
@@ -389,7 +388,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         'request3DS' => 'getRequest3DS',
         'scaExemptionIndicator' => 'getScaExemptionIndicator',
         'enableAuthenticationUpgrade' => 'getEnableAuthenticationUpgrade',
-        'mpiData' => 'getMpiData'
+        'mpiData' => 'getMpiData',
     ];
 
     /**
@@ -507,7 +506,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('enableAuthenticationUpgrade', $data ?? [], null);
         $this->setIfExists('mpiData', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -550,7 +549,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'funding', must be one of '%s'",
                 $this->container['funding'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -1002,8 +1001,8 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
                 sprintf(
                     "Invalid value '%s' for 'funding', must be one of '%s'",
                     $funding,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['funding'] = $funding;
@@ -1542,10 +1541,10 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1568,7 +1567,7 @@ class CardPaymentMethodDetail  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

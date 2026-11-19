@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AbaCard implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardStatus' => 'string',
         'cardBrand' => 'string',
         'createdTime' => 'string',
-        'updatedTime' => 'string'
+        'updatedTime' => 'string',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardStatus' => null,
         'cardBrand' => null,
         'createdTime' => null,
-        'updatedTime' => null
+        'updatedTime' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardStatus' => false,
         'cardBrand' => false,
         'createdTime' => false,
-        'updatedTime' => false
+        'updatedTime' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardStatus' => 'cardStatus',
         'cardBrand' => 'cardBrand',
         'createdTime' => 'createdTime',
-        'updatedTime' => 'updatedTime'
+        'updatedTime' => 'updatedTime',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardStatus' => 'setCardStatus',
         'cardBrand' => 'setCardBrand',
         'createdTime' => 'setCreatedTime',
-        'updatedTime' => 'setUpdatedTime'
+        'updatedTime' => 'setUpdatedTime',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         'cardStatus' => 'getCardStatus',
         'cardBrand' => 'getCardBrand',
         'createdTime' => 'getCreatedTime',
-        'updatedTime' => 'getUpdatedTime'
+        'updatedTime' => 'getUpdatedTime',
     ];
 
     /**
@@ -305,7 +304,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('createdTime', $data ?? [], null);
         $this->setIfExists('updatedTime', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -348,7 +347,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cardStatus', must be one of '%s'",
                 $this->container['cardStatus'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -360,7 +359,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cardBrand', must be one of '%s'",
                 $this->container['cardBrand'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -482,8 +481,8 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
                 sprintf(
                     "Invalid value '%s' for 'cardStatus', must be one of '%s'",
                     $cardStatus,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['cardStatus'] = $cardStatus;
@@ -516,8 +515,8 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
                 sprintf(
                     "Invalid value '%s' for 'cardBrand', must be one of '%s'",
                     $cardBrand,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['cardBrand'] = $cardBrand;
@@ -648,10 +647,10 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -674,7 +673,7 @@ class AbaCard  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

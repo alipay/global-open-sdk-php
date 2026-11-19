@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Buyer implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -61,7 +60,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dateOfLastPaidPurchase' => 'string',
         'dateOfFirstPaidPurchase' => 'string',
         'taxIds' => '\Model\BuyerTaxId[]',
-        'businessAddress' => '\Model\Address'
+        'businessAddress' => '\Model\Address',
     ];
 
     /**
@@ -87,7 +86,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dateOfLastPaidPurchase' => null,
         'dateOfFirstPaidPurchase' => null,
         'taxIds' => null,
-        'businessAddress' => null
+        'businessAddress' => null,
     ];
 
     /**
@@ -111,7 +110,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dateOfLastPaidPurchase' => false,
         'dateOfFirstPaidPurchase' => false,
         'taxIds' => false,
-        'businessAddress' => false
+        'businessAddress' => false,
     ];
 
     /**
@@ -215,7 +214,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dateOfLastPaidPurchase' => 'dateOfLastPaidPurchase',
         'dateOfFirstPaidPurchase' => 'dateOfFirstPaidPurchase',
         'taxIds' => 'taxIds',
-        'businessAddress' => 'businessAddress'
+        'businessAddress' => 'businessAddress',
     ];
 
     /**
@@ -239,7 +238,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dateOfLastPaidPurchase' => 'setDateOfLastPaidPurchase',
         'dateOfFirstPaidPurchase' => 'setDateOfFirstPaidPurchase',
         'taxIds' => 'setTaxIds',
-        'businessAddress' => 'setBusinessAddress'
+        'businessAddress' => 'setBusinessAddress',
     ];
 
     /**
@@ -263,7 +262,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dateOfLastPaidPurchase' => 'getDateOfLastPaidPurchase',
         'dateOfFirstPaidPurchase' => 'getDateOfFirstPaidPurchase',
         'taxIds' => 'getTaxIds',
-        'businessAddress' => 'getBusinessAddress'
+        'businessAddress' => 'getBusinessAddress',
     ];
 
     /**
@@ -340,7 +339,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('taxIds', $data ?? [], null);
         $this->setIfExists('businessAddress', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -843,10 +842,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -869,7 +868,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

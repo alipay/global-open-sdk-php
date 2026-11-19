@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProrationSettings implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'prorationMode' => 'string',
-        'customAmount' => '\Model\Amount'
+        'customAmount' => '\Model\Amount',
     ];
 
     /**
@@ -59,7 +58,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'prorationMode' => null,
-        'customAmount' => null
+        'customAmount' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPINullables = [
         'prorationMode' => false,
-        'customAmount' => false
+        'customAmount' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'prorationMode' => 'prorationMode',
-        'customAmount' => 'customAmount'
+        'customAmount' => 'customAmount',
     ];
 
     /**
@@ -169,7 +168,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'prorationMode' => 'setProrationMode',
-        'customAmount' => 'setCustomAmount'
+        'customAmount' => 'setCustomAmount',
     ];
 
     /**
@@ -179,7 +178,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'prorationMode' => 'getProrationMode',
-        'customAmount' => 'getCustomAmount'
+        'customAmount' => 'getCustomAmount',
     ];
 
     /**
@@ -256,7 +255,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('prorationMode', $data ?? [], null);
         $this->setIfExists('customAmount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -290,7 +289,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'prorationMode', must be one of '%s'",
                 $this->container['prorationMode'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -334,8 +333,8 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
                 sprintf(
                     "Invalid value '%s' for 'prorationMode', must be one of '%s'",
                     $prorationMode,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['prorationMode'] = $prorationMode;
@@ -442,10 +441,10 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -468,7 +467,7 @@ class ProrationSettings  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

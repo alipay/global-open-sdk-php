@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AgenticAgentInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'agentId' => 'string',
         'agentName' => 'string',
         'agentUrl' => 'string',
-        'agentJwk' => 'string'
+        'agentJwk' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'agentId' => null,
         'agentName' => null,
         'agentUrl' => null,
-        'agentJwk' => null
+        'agentJwk' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'agentId' => false,
         'agentName' => false,
         'agentUrl' => false,
-        'agentJwk' => false
+        'agentJwk' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'agentId' => 'agentId',
         'agentName' => 'agentName',
         'agentUrl' => 'agentUrl',
-        'agentJwk' => 'agentJwk'
+        'agentJwk' => 'agentJwk',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'agentId' => 'setAgentId',
         'agentName' => 'setAgentName',
         'agentUrl' => 'setAgentUrl',
-        'agentJwk' => 'setAgentJwk'
+        'agentJwk' => 'setAgentJwk',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'agentId' => 'getAgentId',
         'agentName' => 'getAgentName',
         'agentUrl' => 'getAgentUrl',
-        'agentJwk' => 'getAgentJwk'
+        'agentJwk' => 'getAgentJwk',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('agentUrl', $data ?? [], null);
         $this->setIfExists('agentJwk', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AgenticAgentInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

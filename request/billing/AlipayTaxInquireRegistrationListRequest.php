@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInquireRegistrationListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     protected static $openAPITypes = [
         'status' => 'string',
         'currentPage' => 'int',
-        'pageSize' => 'int'
+        'pageSize' => 'int',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     protected static $openAPIFormats = [
         'status' => null,
         'currentPage' => null,
-        'pageSize' => null
+        'pageSize' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     protected static $openAPINullables = [
         'status' => false,
         'currentPage' => true,
-        'pageSize' => true
+        'pageSize' => true,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     protected static $attributeMap = [
         'status' => 'status',
         'currentPage' => 'currentPage',
-        'pageSize' => 'pageSize'
+        'pageSize' => 'pageSize',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     protected static $setters = [
         'status' => 'setStatus',
         'currentPage' => 'setCurrentPage',
-        'pageSize' => 'setPageSize'
+        'pageSize' => 'setPageSize',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     protected static $getters = [
         'status' => 'getStatus',
         'currentPage' => 'getCurrentPage',
-        'pageSize' => 'getPageSize'
+        'pageSize' => 'getPageSize',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
         $this->setIfExists('currentPage', $data ?? [], null);
         $this->setIfExists('pageSize', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/tax/inquireRegistrationList"); 
+        $this->setPath("/ams/api/v1/tax/inquireRegistrationList");
     }
 
     /**
@@ -441,10 +440,10 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -467,7 +466,7 @@ class AlipayTaxInquireRegistrationListRequest   extends AlipayRequest  implement
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

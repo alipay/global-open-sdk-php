@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'string',
         'availableBalance' => '\Model\Amount',
         'frozenBalance' => '\Model\Amount',
-        'totalBalance' => '\Model\Amount'
+        'totalBalance' => '\Model\Amount',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => null,
         'availableBalance' => null,
         'frozenBalance' => null,
-        'totalBalance' => null
+        'totalBalance' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => false,
         'availableBalance' => false,
         'frozenBalance' => false,
-        'totalBalance' => false
+        'totalBalance' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'currency',
         'availableBalance' => 'availableBalance',
         'frozenBalance' => 'frozenBalance',
-        'totalBalance' => 'totalBalance'
+        'totalBalance' => 'totalBalance',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'setCurrency',
         'availableBalance' => 'setAvailableBalance',
         'frozenBalance' => 'setFrozenBalance',
-        'totalBalance' => 'setTotalBalance'
+        'totalBalance' => 'setTotalBalance',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'getCurrency',
         'availableBalance' => 'getAvailableBalance',
         'frozenBalance' => 'getFrozenBalance',
-        'totalBalance' => 'getTotalBalance'
+        'totalBalance' => 'getTotalBalance',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('frozenBalance', $data ?? [], null);
         $this->setIfExists('totalBalance', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -483,10 +482,10 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -509,7 +508,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

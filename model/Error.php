@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         'eventName' => 'string',
         'idempotencyKey' => 'string',
         'customerId' => 'string',
-        'errorCode' => 'string'
+        'errorCode' => 'string',
     ];
 
     /**
@@ -67,7 +66,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         'eventName' => null,
         'idempotencyKey' => null,
         'customerId' => null,
-        'errorCode' => null
+        'errorCode' => null,
     ];
 
     /**
@@ -81,7 +80,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         'eventName' => false,
         'idempotencyKey' => false,
         'customerId' => false,
-        'errorCode' => false
+        'errorCode' => false,
     ];
 
     /**
@@ -175,7 +174,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         'eventName' => 'eventName',
         'idempotencyKey' => 'idempotencyKey',
         'customerId' => 'customerId',
-        'errorCode' => 'errorCode'
+        'errorCode' => 'errorCode',
     ];
 
     /**
@@ -189,7 +188,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         'eventName' => 'setEventName',
         'idempotencyKey' => 'setIdempotencyKey',
         'customerId' => 'setCustomerId',
-        'errorCode' => 'setErrorCode'
+        'errorCode' => 'setErrorCode',
     ];
 
     /**
@@ -203,7 +202,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         'eventName' => 'getEventName',
         'idempotencyKey' => 'getIdempotencyKey',
         'customerId' => 'getCustomerId',
-        'errorCode' => 'getErrorCode'
+        'errorCode' => 'getErrorCode',
     ];
 
     /**
@@ -270,7 +269,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('customerId', $data ?? [], null);
         $this->setIfExists('errorCode', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -536,10 +535,10 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -562,7 +561,7 @@ class Error  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

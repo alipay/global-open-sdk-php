@@ -44,7 +44,5 @@ final class AmountRuleLoader
         return self::$rules;
     }
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 }

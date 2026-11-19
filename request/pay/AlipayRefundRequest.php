@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayRefundRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -62,7 +61,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundSourceAccountNo' => 'string',
         'actualRefundAmount' => '\Model\Amount',
         'goods' => '\Model\Goods[]',
-        'splitDetails' => '\Model\SplitDetail[]'
+        'splitDetails' => '\Model\SplitDetail[]',
     ];
 
     /**
@@ -89,7 +88,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundSourceAccountNo' => null,
         'actualRefundAmount' => null,
         'goods' => null,
-        'splitDetails' => null
+        'splitDetails' => null,
     ];
 
     /**
@@ -114,7 +113,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundSourceAccountNo' => false,
         'actualRefundAmount' => false,
         'goods' => false,
-        'splitDetails' => false
+        'splitDetails' => false,
     ];
 
     /**
@@ -219,7 +218,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundSourceAccountNo' => 'refundSourceAccountNo',
         'actualRefundAmount' => 'actualRefundAmount',
         'goods' => 'goods',
-        'splitDetails' => 'splitDetails'
+        'splitDetails' => 'splitDetails',
     ];
 
     /**
@@ -244,7 +243,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundSourceAccountNo' => 'setRefundSourceAccountNo',
         'actualRefundAmount' => 'setActualRefundAmount',
         'goods' => 'setGoods',
-        'splitDetails' => 'setSplitDetails'
+        'splitDetails' => 'setSplitDetails',
     ];
 
     /**
@@ -269,7 +268,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         'refundSourceAccountNo' => 'getRefundSourceAccountNo',
         'actualRefundAmount' => 'getActualRefundAmount',
         'goods' => 'getGoods',
-        'splitDetails' => 'getSplitDetails'
+        'splitDetails' => 'getSplitDetails',
     ];
 
     /**
@@ -347,7 +346,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
         $this->setIfExists('goods', $data ?? [], null);
         $this->setIfExists('splitDetails', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/refund"); 
+        $this->setPath("/ams/api/v1/payments/refund");
     }
 
     /**
@@ -884,10 +883,10 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -910,7 +909,7 @@ class AlipayRefundRequest   extends AlipayRequest  implements ModelInterface, Ar
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

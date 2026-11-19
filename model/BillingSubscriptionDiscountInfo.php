@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingSubscriptionDiscountInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'amountOff' => '\Model\Amount',
         'duration' => 'string',
         'times' => 'int',
-        'status' => 'string'
+        'status' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'amountOff' => null,
         'duration' => null,
         'times' => null,
-        'status' => null
+        'status' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'amountOff' => false,
         'duration' => false,
         'times' => true,
-        'status' => false
+        'status' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'amountOff' => 'amountOff',
         'duration' => 'duration',
         'times' => 'times',
-        'status' => 'status'
+        'status' => 'status',
     ];
 
     /**
@@ -199,7 +198,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'amountOff' => 'setAmountOff',
         'duration' => 'setDuration',
         'times' => 'setTimes',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
     ];
 
     /**
@@ -215,7 +214,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         'amountOff' => 'getAmountOff',
         'duration' => 'getDuration',
         'times' => 'getTimes',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
     ];
 
     /**
@@ -284,7 +283,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
         $this->setIfExists('times', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -598,10 +597,10 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -624,7 +623,7 @@ class BillingSubscriptionDiscountInfo  implements ModelInterface, ArrayAccess, \
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

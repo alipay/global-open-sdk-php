@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireCardDetailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,8 +56,8 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl',
-        'cardholderinfo' => '\Model\CardholderInfo'
+        'authorizationControl' => '\Model\InquireCardDetailAuthorizationControl',
+        'cardholderinfo' => '\Model\CardholderInfo',
     ];
 
     /**
@@ -81,7 +80,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'note' => null,
         'metadata' => null,
         'authorizationControl' => null,
-        'cardholderinfo' => null
+        'cardholderinfo' => null,
     ];
 
     /**
@@ -102,7 +101,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'note' => false,
         'metadata' => false,
         'authorizationControl' => false,
-        'cardholderinfo' => false
+        'cardholderinfo' => false,
     ];
 
     /**
@@ -203,7 +202,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'note' => 'note',
         'metadata' => 'metadata',
         'authorizationControl' => 'authorizationControl',
-        'cardholderinfo' => 'cardholderinfo'
+        'cardholderinfo' => 'cardholderinfo',
     ];
 
     /**
@@ -224,7 +223,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'note' => 'setNote',
         'metadata' => 'setMetadata',
         'authorizationControl' => 'setAuthorizationControl',
-        'cardholderinfo' => 'setCardholderinfo'
+        'cardholderinfo' => 'setCardholderinfo',
     ];
 
     /**
@@ -245,7 +244,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'note' => 'getNote',
         'metadata' => 'getMetadata',
         'authorizationControl' => 'getAuthorizationControl',
-        'cardholderinfo' => 'getCardholderinfo'
+        'cardholderinfo' => 'getCardholderinfo',
     ];
 
     /**
@@ -347,7 +346,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         $this->setIfExists('authorizationControl', $data ?? [], null);
         $this->setIfExists('cardholderinfo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -390,7 +389,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cardStatus', must be one of '%s'",
                 $this->container['cardStatus'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -405,7 +404,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cardBrand', must be one of '%s'",
                 $this->container['cardBrand'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -417,9 +416,6 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         }
         if ($this->container['purpose'] === null) {
             $invalidProperties[] = "'purpose' can't be null";
-        }
-        if ($this->container['authorizationControl'] === null) {
-            $invalidProperties[] = "'authorizationControl' can't be null";
         }
         if ($this->container['cardholderinfo'] === null) {
             $invalidProperties[] = "'cardholderinfo' can't be null";
@@ -536,8 +532,8 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
                 sprintf(
                     "Invalid value '%s' for 'cardStatus', must be one of '%s'",
                     $cardStatus,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['cardStatus'] = $cardStatus;
@@ -594,8 +590,8 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
                 sprintf(
                     "Invalid value '%s' for 'cardBrand', must be one of '%s'",
                     $cardBrand,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['cardBrand'] = $cardBrand;
@@ -726,7 +722,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl
+     * @return \model\InquireCardDetailAuthorizationControl|null
      */
     public function getAuthorizationControl()
     {
@@ -736,7 +732,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl $authorizationControl authorizationControl
+     * @param \model\InquireCardDetailAuthorizationControl|null $authorizationControl authorizationControl
      *
      * @return self
      */
@@ -846,10 +842,10 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -872,7 +868,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

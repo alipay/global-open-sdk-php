@@ -44,7 +44,9 @@ foreach ($vectors['validate'] as $vector) {
 foreach ($vectors['toAmount'] as $vector) {
     if (isset($vector['result'])) {
         $roundTrip = AmountUtil::toAmount(AmountUtil::fromAmount($vector['result'], $vector['currency']), $vector['currency']);
-        if ($roundTrip !== $vector['result']) throw new RuntimeException($vector['name'] . ' round-trip mismatch');
+        if ($roundTrip !== $vector['result']) {
+            throw new RuntimeException($vector['name'] . ' round-trip mismatch');
+        }
     }
 }
 foreach ([1, 1.0, true, null, ['1']] as $invalid) {
@@ -52,14 +54,18 @@ foreach ([1, 1.0, true, null, ['1']] as $invalid) {
         AmountUtil::toAmount($invalid, 'USD');
         throw new RuntimeException('non-string amount was accepted');
     } catch (InvalidArgumentException $exception) {
-        if (strpos($exception->getMessage(), 'INVALID_ARGUMENT_TYPE:') !== 0) throw $exception;
+        if (strpos($exception->getMessage(), 'INVALID_ARGUMENT_TYPE:') !== 0) {
+            throw $exception;
+        }
     }
 }
 try {
     AmountUtil::validate('1', 840);
     throw new RuntimeException('non-string currency was accepted');
 } catch (InvalidArgumentException $exception) {
-    if (strpos($exception->getMessage(), 'INVALID_ARGUMENT_TYPE:') !== 0) throw $exception;
+    if (strpos($exception->getMessage(), 'INVALID_ARGUMENT_TYPE:') !== 0) {
+        throw $exception;
+    }
 }
 
 echo "AmountUtil shared vectors passed\n";

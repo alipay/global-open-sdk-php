@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class LineItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => 'string',
         'unitAmount' => '\request\model\Amount',
         'itemAmount' => '\request\model\Amount',
-        'metadata' => 'array<string,string>'
+        'metadata' => 'array<string,string>',
     ];
 
     /**
@@ -71,7 +70,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => null,
         'unitAmount' => null,
         'itemAmount' => null,
-        'metadata' => null
+        'metadata' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => false,
         'unitAmount' => false,
         'itemAmount' => false,
-        'metadata' => false
+        'metadata' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => 'quantity',
         'unitAmount' => 'unitAmount',
         'itemAmount' => 'itemAmount',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
     ];
 
     /**
@@ -199,7 +198,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => 'setQuantity',
         'unitAmount' => 'setUnitAmount',
         'itemAmount' => 'setItemAmount',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
     ];
 
     /**
@@ -215,7 +214,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => 'getQuantity',
         'unitAmount' => 'getUnitAmount',
         'itemAmount' => 'getItemAmount',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
     ];
 
     /**
@@ -284,7 +283,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('itemAmount', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -595,10 +594,10 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -621,7 +620,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

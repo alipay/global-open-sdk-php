@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Store implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'string',
         'storeOperatorId' => 'string',
         'storeAddress' => '\Model\Address',
-        'storePhoneNo' => 'string'
+        'storePhoneNo' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => null,
         'storeOperatorId' => null,
         'storeAddress' => null,
-        'storePhoneNo' => null
+        'storePhoneNo' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => false,
         'storeOperatorId' => false,
         'storeAddress' => false,
-        'storePhoneNo' => false
+        'storePhoneNo' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'storeTerminalId',
         'storeOperatorId' => 'storeOperatorId',
         'storeAddress' => 'storeAddress',
-        'storePhoneNo' => 'storePhoneNo'
+        'storePhoneNo' => 'storePhoneNo',
     ];
 
     /**
@@ -199,7 +198,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'setStoreTerminalId',
         'storeOperatorId' => 'setStoreOperatorId',
         'storeAddress' => 'setStoreAddress',
-        'storePhoneNo' => 'setStorePhoneNo'
+        'storePhoneNo' => 'setStorePhoneNo',
     ];
 
     /**
@@ -215,7 +214,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'getStoreTerminalId',
         'storeOperatorId' => 'getStoreOperatorId',
         'storeAddress' => 'getStoreAddress',
-        'storePhoneNo' => 'getStorePhoneNo'
+        'storePhoneNo' => 'getStorePhoneNo',
     ];
 
     /**
@@ -284,7 +283,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('storeAddress', $data ?? [], null);
         $this->setIfExists('storePhoneNo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -619,10 +618,10 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -645,7 +644,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

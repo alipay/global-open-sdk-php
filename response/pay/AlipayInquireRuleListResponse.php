@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireRuleListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'result' => '\Model\Result',
         'hasMore' => 'bool',
-        'rules' => '\Model\ReserveRule[]'
+        'rules' => '\Model\ReserveRule[]',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'result' => null,
         'hasMore' => null,
-        'rules' => null
+        'rules' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     protected static $openAPINullables = [
         'result' => false,
         'hasMore' => false,
-        'rules' => false
+        'rules' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     protected static $attributeMap = [
         'result' => 'result',
         'hasMore' => 'hasMore',
-        'rules' => 'rules'
+        'rules' => 'rules',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     protected static $setters = [
         'result' => 'setResult',
         'hasMore' => 'setHasMore',
-        'rules' => 'setRules'
+        'rules' => 'setRules',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'result' => 'getResult',
         'hasMore' => 'getHasMore',
-        'rules' => 'getRules'
+        'rules' => 'getRules',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('rules', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -449,10 +448,10 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -475,7 +474,7 @@ class AlipayInquireRuleListResponse  implements ModelInterface, ArrayAccess, \Js
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

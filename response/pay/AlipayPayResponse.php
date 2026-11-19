@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayPayResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -77,7 +76,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'invoiceId' => 'string',
         'status' => 'string',
         'currentPeriodStart' => 'string',
-        'currentPeriodEnd' => 'string'
+        'currentPeriodEnd' => 'string',
     ];
 
     /**
@@ -119,7 +118,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'invoiceId' => null,
         'status' => null,
         'currentPeriodStart' => null,
-        'currentPeriodEnd' => null
+        'currentPeriodEnd' => null,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'invoiceId' => false,
         'status' => false,
         'currentPeriodStart' => false,
-        'currentPeriodEnd' => false
+        'currentPeriodEnd' => false,
     ];
 
     /**
@@ -279,7 +278,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'invoiceId' => 'invoiceId',
         'status' => 'status',
         'currentPeriodStart' => 'currentPeriodStart',
-        'currentPeriodEnd' => 'currentPeriodEnd'
+        'currentPeriodEnd' => 'currentPeriodEnd',
     ];
 
     /**
@@ -319,7 +318,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'invoiceId' => 'setInvoiceId',
         'status' => 'setStatus',
         'currentPeriodStart' => 'setCurrentPeriodStart',
-        'currentPeriodEnd' => 'setCurrentPeriodEnd'
+        'currentPeriodEnd' => 'setCurrentPeriodEnd',
     ];
 
     /**
@@ -359,7 +358,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         'invoiceId' => 'getInvoiceId',
         'status' => 'getStatus',
         'currentPeriodStart' => 'getCurrentPeriodStart',
-        'currentPeriodEnd' => 'getCurrentPeriodEnd'
+        'currentPeriodEnd' => 'getCurrentPeriodEnd',
     ];
 
     /**
@@ -452,7 +451,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('currentPeriodStart', $data ?? [], null);
         $this->setIfExists('currentPeriodEnd', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -1342,10 +1341,10 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1368,7 +1367,7 @@ class AlipayPayResponse  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

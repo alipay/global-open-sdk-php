@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInvoiceConfirmPaymentRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'reference' => 'string',
         'autoSend' => 'bool',
         'invoiceNote' => 'string',
-        'ccEmails' => 'string[]'
+        'ccEmails' => 'string[]',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'reference' => null,
         'autoSend' => null,
         'invoiceNote' => null,
-        'ccEmails' => null
+        'ccEmails' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'reference' => false,
         'autoSend' => false,
         'invoiceNote' => false,
-        'ccEmails' => false
+        'ccEmails' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'reference' => 'reference',
         'autoSend' => 'autoSend',
         'invoiceNote' => 'invoiceNote',
-        'ccEmails' => 'ccEmails'
+        'ccEmails' => 'ccEmails',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'reference' => 'setReference',
         'autoSend' => 'setAutoSend',
         'invoiceNote' => 'setInvoiceNote',
-        'ccEmails' => 'setCcEmails'
+        'ccEmails' => 'setCcEmails',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         'reference' => 'getReference',
         'autoSend' => 'getAutoSend',
         'invoiceNote' => 'getInvoiceNote',
-        'ccEmails' => 'getCcEmails'
+        'ccEmails' => 'getCcEmails',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('invoiceNote', $data ?? [], null);
         $this->setIfExists('ccEmails', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/invoice/confirmPayment"); 
+        $this->setPath("/ams/api/v1/billing/invoice/confirmPayment");
     }
 
     /**
@@ -571,10 +570,10 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -597,7 +596,7 @@ class AlipayInvoiceConfirmPaymentRequest   extends AlipayRequest  implements Mod
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
