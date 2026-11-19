@@ -264,9 +264,6 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['orderAmount'] === null) {
-            $invalidProperties[] = "'orderAmount' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -285,7 +282,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orderAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getOrderAmount()
     {
@@ -295,7 +292,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderAmount
      *
-     * @param \model\Amount $orderAmount orderAmount
+     * @param \model\Amount|null $orderAmount orderAmount
      *
      * @return self
      */
