@@ -30,7 +30,7 @@ final class FileUploadExecutor
                 'productId' => $productId,
                 'fileSha256' => hash('sha256', $fileContent),
             ],
-            JSON_UNESCAPED_SLASHES
+            JSON_UNESCAPED_SLASHES,
         );
         if ($requestBody === false) {
             throw new \RuntimeException('Unable to encode the file request body');
@@ -46,7 +46,7 @@ final class FileUploadExecutor
         $path = self::resolvePath(self::PRODUCT_IMAGE_PATH, strpos($clientId, 'SANDBOX_') === 0);
         $gateway = UploadGatewayResolver::resolve(
             $clientConfig['gatewayUrl'],
-            $clientConfig['uploadGatewayUrl']
+            $clientConfig['uploadGatewayUrl'],
         );
         $requestTime = date(DATE_ISO8601);
         $signature = SignatureTool::sign(
@@ -55,7 +55,7 @@ final class FileUploadExecutor
             $clientId,
             $requestTime,
             $requestBody,
-            $clientConfig['merchantPrivateKey']
+            $clientConfig['merchantPrivateKey'],
         );
         $keyVersion = $request->getKeyVersion();
         if ($keyVersion === null || $keyVersion === '') {
@@ -67,7 +67,7 @@ final class FileUploadExecutor
             $keyVersion,
             $signature,
             $clientConfig['agentToken'],
-            $clientConfig['customHeaders']
+            $clientConfig['customHeaders'],
         );
 
         $response = MultipartHttpRPC::send(
@@ -77,7 +77,7 @@ final class FileUploadExecutor
             ['file', 'imageFile'],
             $fileName,
             $contentType,
-            $fileContent
+            $fileContent,
         );
         $responseBody = $response->getRspBody();
         $decoded = json_decode($responseBody, true);
@@ -102,7 +102,7 @@ final class FileUploadExecutor
             $responseTime,
             $responseBody,
             $responseSignature,
-            $clientConfig['alipayPublicKey']
+            $clientConfig['alipayPublicKey'],
         )) {
             throw new \RuntimeException('File response signature verification failed');
         }
@@ -177,7 +177,7 @@ final class FileUploadExecutor
         }
         if (strlen($content) > self::PRODUCT_IMAGE_MAX_SIZE) {
             throw new \InvalidArgumentException(
-                'file size cannot exceed ' . self::PRODUCT_IMAGE_MAX_SIZE . ' bytes'
+                'file size cannot exceed ' . self::PRODUCT_IMAGE_MAX_SIZE . ' bytes',
             );
         }
         return $content;
@@ -194,7 +194,7 @@ final class FileUploadExecutor
         $keyVersion,
         $signature,
         $agentToken,
-        $customHeaders
+        $customHeaders,
     ) {
         $headers = [
             'User-Agent:' . SdkVersion::userAgent(),

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateDirectPaymentRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentNotifyUrl' => 'string',
         'payToMethod' => '\Model\PaymentMethod',
         'payToAmount' => '\Model\Amount',
-        'payFromAmount' => '\Model\Amount'
+        'payFromAmount' => '\Model\Amount',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentNotifyUrl' => null,
         'payToMethod' => null,
         'payToAmount' => null,
-        'payFromAmount' => null
+        'payFromAmount' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentNotifyUrl' => false,
         'payToMethod' => false,
         'payToAmount' => false,
-        'payFromAmount' => false
+        'payFromAmount' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentNotifyUrl' => 'paymentNotifyUrl',
         'payToMethod' => 'payToMethod',
         'payToAmount' => 'payToAmount',
-        'payFromAmount' => 'payFromAmount'
+        'payFromAmount' => 'payFromAmount',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentNotifyUrl' => 'setPaymentNotifyUrl',
         'payToMethod' => 'setPayToMethod',
         'payToAmount' => 'setPayToAmount',
-        'payFromAmount' => 'setPayFromAmount'
+        'payFromAmount' => 'setPayFromAmount',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         'paymentNotifyUrl' => 'getPaymentNotifyUrl',
         'payToMethod' => 'getPayToMethod',
         'payToAmount' => 'getPayToAmount',
-        'payFromAmount' => 'getPayFromAmount'
+        'payFromAmount' => 'getPayFromAmount',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
         $this->setIfExists('payToAmount', $data ?? [], null);
         $this->setIfExists('payFromAmount', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/funds/createDirectPayment"); 
+        $this->setPath("/ams/api/v1/aba/funds/createDirectPayment");
     }
 
     /**
@@ -611,10 +610,10 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -637,7 +636,7 @@ class AlipayCreateDirectPaymentRequest   extends AlipayRequest  implements Model
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

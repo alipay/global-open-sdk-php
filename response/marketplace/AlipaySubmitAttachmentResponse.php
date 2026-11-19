@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\marketplace;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySubmitAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         'result' => '\Model\Result',
         'submitAttachmentRequestId' => 'string',
         'attachmentType' => '\Model\AttachmentType',
-        'attachmentKey' => 'string'
+        'attachmentKey' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         'result' => null,
         'submitAttachmentRequestId' => null,
         'attachmentType' => null,
-        'attachmentKey' => null
+        'attachmentKey' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         'result' => false,
         'submitAttachmentRequestId' => false,
         'attachmentType' => false,
-        'attachmentKey' => false
+        'attachmentKey' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         'result' => 'result',
         'submitAttachmentRequestId' => 'submitAttachmentRequestId',
         'attachmentType' => 'attachmentType',
-        'attachmentKey' => 'attachmentKey'
+        'attachmentKey' => 'attachmentKey',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         'result' => 'setResult',
         'submitAttachmentRequestId' => 'setSubmitAttachmentRequestId',
         'attachmentType' => 'setAttachmentType',
-        'attachmentKey' => 'setAttachmentKey'
+        'attachmentKey' => 'setAttachmentKey',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         'result' => 'getResult',
         'submitAttachmentRequestId' => 'getSubmitAttachmentRequestId',
         'attachmentType' => 'getAttachmentType',
-        'attachmentKey' => 'getAttachmentKey'
+        'attachmentKey' => 'getAttachmentKey',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('attachmentType', $data ?? [], null);
         $this->setIfExists('attachmentKey', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AlipaySubmitAttachmentResponse  implements ModelInterface, ArrayAccess, \J
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\marketplace;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayRegisterRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         'registrationRequestId' => 'string',
         'settlementInfos' => '\Model\SettlementInfo[]',
         'merchantInfo' => '\Model\MerchantInfo',
-        'paymentMethods' => '\Model\PaymentMethod[]'
+        'paymentMethods' => '\Model\PaymentMethod[]',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         'registrationRequestId' => null,
         'settlementInfos' => null,
         'merchantInfo' => null,
-        'paymentMethods' => null
+        'paymentMethods' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         'registrationRequestId' => false,
         'settlementInfos' => false,
         'merchantInfo' => false,
-        'paymentMethods' => false
+        'paymentMethods' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         'registrationRequestId' => 'registrationRequestId',
         'settlementInfos' => 'settlementInfos',
         'merchantInfo' => 'merchantInfo',
-        'paymentMethods' => 'paymentMethods'
+        'paymentMethods' => 'paymentMethods',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         'registrationRequestId' => 'setRegistrationRequestId',
         'settlementInfos' => 'setSettlementInfos',
         'merchantInfo' => 'setMerchantInfo',
-        'paymentMethods' => 'setPaymentMethods'
+        'paymentMethods' => 'setPaymentMethods',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         'registrationRequestId' => 'getRegistrationRequestId',
         'settlementInfos' => 'getSettlementInfos',
         'merchantInfo' => 'getMerchantInfo',
-        'paymentMethods' => 'getPaymentMethods'
+        'paymentMethods' => 'getPaymentMethods',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
         $this->setIfExists('merchantInfo', $data ?? [], null);
         $this->setIfExists('paymentMethods', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/merchants/register"); 
+        $this->setPath("/ams/api/v1/merchants/register");
     }
 
     /**
@@ -484,10 +483,10 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -510,7 +509,7 @@ class AlipayRegisterRequest   extends AlipayRequest  implements ModelInterface, 
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

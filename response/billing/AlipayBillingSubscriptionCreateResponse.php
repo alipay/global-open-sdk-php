@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionCreateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -63,7 +62,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'daysUntilDue' => 'int',
         'subscriptionItems' => '\Model\SubscriptionItem[]',
         'discounts' => '\Model\BillingDiscount[]',
-        'subscriptionNotifyUrl' => 'string'
+        'subscriptionNotifyUrl' => 'string',
     ];
 
     /**
@@ -91,7 +90,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'daysUntilDue' => null,
         'subscriptionItems' => null,
         'discounts' => null,
-        'subscriptionNotifyUrl' => null
+        'subscriptionNotifyUrl' => null,
     ];
 
     /**
@@ -117,7 +116,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'daysUntilDue' => true,
         'subscriptionItems' => false,
         'discounts' => false,
-        'subscriptionNotifyUrl' => false
+        'subscriptionNotifyUrl' => false,
     ];
 
     /**
@@ -223,7 +222,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'daysUntilDue' => 'daysUntilDue',
         'subscriptionItems' => 'subscriptionItems',
         'discounts' => 'discounts',
-        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'daysUntilDue' => 'setDaysUntilDue',
         'subscriptionItems' => 'setSubscriptionItems',
         'discounts' => 'setDiscounts',
-        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
     ];
 
     /**
@@ -275,7 +274,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         'daysUntilDue' => 'getDaysUntilDue',
         'subscriptionItems' => 'getSubscriptionItems',
         'discounts' => 'getDiscounts',
-        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
     ];
 
     /**
@@ -354,7 +353,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
         $this->setIfExists('discounts', $data ?? [], null);
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -908,10 +907,10 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -934,7 +933,7 @@ class AlipayBillingSubscriptionCreateResponse  implements ModelInterface, ArrayA
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

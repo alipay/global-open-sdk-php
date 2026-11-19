@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TrialPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'trialEndTime' => 'string',
         'freeTrialDays' => 'int',
-        'phases' => '\Model\TrialPhase[]'
+        'phases' => '\Model\TrialPhase[]',
     ];
 
     /**
@@ -61,7 +60,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'trialEndTime' => null,
         'freeTrialDays' => null,
-        'phases' => null
+        'phases' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPINullables = [
         'trialEndTime' => false,
         'freeTrialDays' => true,
-        'phases' => false
+        'phases' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'trialEndTime' => 'trialEndTime',
         'freeTrialDays' => 'freeTrialDays',
-        'phases' => 'phases'
+        'phases' => 'phases',
     ];
 
     /**
@@ -174,7 +173,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'trialEndTime' => 'setTrialEndTime',
         'freeTrialDays' => 'setFreeTrialDays',
-        'phases' => 'setPhases'
+        'phases' => 'setPhases',
     ];
 
     /**
@@ -185,7 +184,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'trialEndTime' => 'getTrialEndTime',
         'freeTrialDays' => 'getFreeTrialDays',
-        'phases' => 'getPhases'
+        'phases' => 'getPhases',
     ];
 
     /**
@@ -249,7 +248,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('freeTrialDays', $data ?? [], null);
         $this->setIfExists('phases', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -440,10 +439,10 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -466,7 +465,7 @@ class TrialPlan  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

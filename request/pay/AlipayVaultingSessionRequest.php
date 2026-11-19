@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayVaultingSessionRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'redirectUrl' => 'string',
         'merchantRegion' => 'string',
         'is3DSAuthentication' => 'bool',
-        'paymentMethodMetaData' => '\Model\PaymentMethodMetaData'
+        'paymentMethodMetaData' => '\Model\PaymentMethodMetaData',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'redirectUrl' => null,
         'merchantRegion' => null,
         'is3DSAuthentication' => null,
-        'paymentMethodMetaData' => null
+        'paymentMethodMetaData' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'redirectUrl' => false,
         'merchantRegion' => false,
         'is3DSAuthentication' => false,
-        'paymentMethodMetaData' => false
+        'paymentMethodMetaData' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'redirectUrl' => 'redirectUrl',
         'merchantRegion' => 'merchantRegion',
         'is3DSAuthentication' => 'is3DSAuthentication',
-        'paymentMethodMetaData' => 'paymentMethodMetaData'
+        'paymentMethodMetaData' => 'paymentMethodMetaData',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'redirectUrl' => 'setRedirectUrl',
         'merchantRegion' => 'setMerchantRegion',
         'is3DSAuthentication' => 'setIs3DSAuthentication',
-        'paymentMethodMetaData' => 'setPaymentMethodMetaData'
+        'paymentMethodMetaData' => 'setPaymentMethodMetaData',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         'redirectUrl' => 'getRedirectUrl',
         'merchantRegion' => 'getMerchantRegion',
         'is3DSAuthentication' => 'getIs3DSAuthentication',
-        'paymentMethodMetaData' => 'getPaymentMethodMetaData'
+        'paymentMethodMetaData' => 'getPaymentMethodMetaData',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
         $this->setIfExists('is3DSAuthentication', $data ?? [], null);
         $this->setIfExists('paymentMethodMetaData', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/vaults/createVaultingSession"); 
+        $this->setPath("/ams/api/v1/vaults/createVaultingSession");
     }
 
     /**
@@ -574,10 +573,10 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -600,7 +599,7 @@ class AlipayVaultingSessionRequest   extends AlipayRequest  implements ModelInte
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

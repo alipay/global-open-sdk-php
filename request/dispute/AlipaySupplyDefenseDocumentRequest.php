@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\dispute;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySupplyDefenseDocumentRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
       */
     protected static $openAPITypes = [
         'disputeId' => 'string',
-        'disputeEvidence' => 'string'
+        'disputeEvidence' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
       */
     protected static $openAPIFormats = [
         'disputeId' => null,
-        'disputeEvidence' => null
+        'disputeEvidence' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
       */
     protected static $openAPINullables = [
         'disputeId' => false,
-        'disputeEvidence' => false
+        'disputeEvidence' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
      */
     protected static $attributeMap = [
         'disputeId' => 'disputeId',
-        'disputeEvidence' => 'disputeEvidence'
+        'disputeEvidence' => 'disputeEvidence',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
      */
     protected static $setters = [
         'disputeId' => 'setDisputeId',
-        'disputeEvidence' => 'setDisputeEvidence'
+        'disputeEvidence' => 'setDisputeEvidence',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
      */
     protected static $getters = [
         'disputeId' => 'getDisputeId',
-        'disputeEvidence' => 'getDisputeEvidence'
+        'disputeEvidence' => 'getDisputeEvidence',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('disputeId', $data ?? [], null);
         $this->setIfExists('disputeEvidence', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/supplyDefenseDocument"); 
+        $this->setPath("/ams/api/v1/payments/supplyDefenseDocument");
     }
 
     /**
@@ -416,10 +415,10 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -442,7 +441,7 @@ class AlipaySupplyDefenseDocumentRequest   extends AlipayRequest  implements Mod
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

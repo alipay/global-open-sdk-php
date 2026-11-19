@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\marketplace;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySettleRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $openAPITypes = [
         'settlementRequestId' => 'string',
         'paymentId' => 'string',
-        'settlementDetails' => '\Model\SettlementDetail[]'
+        'settlementDetails' => '\Model\SettlementDetail[]',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $openAPIFormats = [
         'settlementRequestId' => null,
         'paymentId' => null,
-        'settlementDetails' => null
+        'settlementDetails' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $openAPINullables = [
         'settlementRequestId' => false,
         'paymentId' => false,
-        'settlementDetails' => false
+        'settlementDetails' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $attributeMap = [
         'settlementRequestId' => 'settlementRequestId',
         'paymentId' => 'paymentId',
-        'settlementDetails' => 'settlementDetails'
+        'settlementDetails' => 'settlementDetails',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $setters = [
         'settlementRequestId' => 'setSettlementRequestId',
         'paymentId' => 'setPaymentId',
-        'settlementDetails' => 'setSettlementDetails'
+        'settlementDetails' => 'setSettlementDetails',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     protected static $getters = [
         'settlementRequestId' => 'getSettlementRequestId',
         'paymentId' => 'getPaymentId',
-        'settlementDetails' => 'getSettlementDetails'
+        'settlementDetails' => 'getSettlementDetails',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
         $this->setIfExists('paymentId', $data ?? [], null);
         $this->setIfExists('settlementDetails', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/settle"); 
+        $this->setPath("/ams/api/v1/payments/settle");
     }
 
     /**
@@ -450,10 +449,10 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -476,7 +475,7 @@ class AlipaySettleRequest   extends AlipayRequest  implements ModelInterface, Ar
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

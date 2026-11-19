@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayProductInquireDetailsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -59,7 +58,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'string',
         'updatedAt' => 'string',
         'prices' => '\Model\Price[]',
-        'productRequestId' => 'string'
+        'productRequestId' => 'string',
     ];
 
     /**
@@ -83,7 +82,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => null,
         'updatedAt' => null,
         'prices' => null,
-        'productRequestId' => null
+        'productRequestId' => null,
     ];
 
     /**
@@ -105,7 +104,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => false,
         'updatedAt' => false,
         'prices' => false,
-        'productRequestId' => false
+        'productRequestId' => false,
     ];
 
     /**
@@ -207,7 +206,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'deactivatedAt',
         'updatedAt' => 'updatedAt',
         'prices' => 'prices',
-        'productRequestId' => 'productRequestId'
+        'productRequestId' => 'productRequestId',
     ];
 
     /**
@@ -229,7 +228,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'setDeactivatedAt',
         'updatedAt' => 'setUpdatedAt',
         'prices' => 'setPrices',
-        'productRequestId' => 'setProductRequestId'
+        'productRequestId' => 'setProductRequestId',
     ];
 
     /**
@@ -251,7 +250,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         'deactivatedAt' => 'getDeactivatedAt',
         'updatedAt' => 'getUpdatedAt',
         'prices' => 'getPrices',
-        'productRequestId' => 'getProductRequestId'
+        'productRequestId' => 'getProductRequestId',
     ];
 
     /**
@@ -326,7 +325,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('prices', $data ?? [], null);
         $this->setIfExists('productRequestId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -784,10 +783,10 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -810,7 +809,7 @@ class AlipayProductInquireDetailsResponse  implements ModelInterface, ArrayAcces
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

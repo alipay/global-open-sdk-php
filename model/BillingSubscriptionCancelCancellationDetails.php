@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingSubscriptionCancelCancellationDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
       */
     protected static $openAPITypes = [
         'feedback' => 'string',
-        'comment' => 'string'
+        'comment' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
       */
     protected static $openAPIFormats = [
         'feedback' => null,
-        'comment' => null
+        'comment' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
       */
     protected static $openAPINullables = [
         'feedback' => false,
-        'comment' => false
+        'comment' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
      */
     protected static $attributeMap = [
         'feedback' => 'feedback',
-        'comment' => 'comment'
+        'comment' => 'comment',
     ];
 
     /**
@@ -169,7 +168,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
      */
     protected static $setters = [
         'feedback' => 'setFeedback',
-        'comment' => 'setComment'
+        'comment' => 'setComment',
     ];
 
     /**
@@ -179,7 +178,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
      */
     protected static $getters = [
         'feedback' => 'getFeedback',
-        'comment' => 'getComment'
+        'comment' => 'getComment',
     ];
 
     /**
@@ -242,7 +241,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
         $this->setIfExists('feedback', $data ?? [], null);
         $this->setIfExists('comment', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -409,10 +408,10 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -435,7 +434,7 @@ class BillingSubscriptionCancelCancellationDetails  implements ModelInterface, A
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

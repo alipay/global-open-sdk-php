@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireAvailableQuotaRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currency' => 'string'
+        'currency' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'currency' => null
+        'currency' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'currency' => false
+        'currency' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $attributeMap = [
-        'currency' => 'currency'
+        'currency' => 'currency',
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $setters = [
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
     ];
 
     /**
@@ -173,7 +172,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
      * @var string[]
      */
     protected static $getters = [
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
     ];
 
     /**
@@ -235,7 +234,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
     {
         $this->setIfExists('currency', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/account/inquireAvailableQuota"); 
+        $this->setPath("/ams/api/v1/aba/account/inquireAvailableQuota");
     }
 
     /**
@@ -382,10 +381,10 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -408,7 +407,7 @@ class AlipayInquireAvailableQuotaRequest   extends AlipayRequest  implements Mod
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

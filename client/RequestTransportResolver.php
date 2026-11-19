@@ -8,9 +8,7 @@ final class RequestTransportResolver
         ['method' => 'POST', 'path' => '/ams/api/v1/meter/uploadEvent'],
     ];
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 
     public static function requiresSessionHttp2($request)
     {

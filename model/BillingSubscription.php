@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingSubscription implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => '\Model\BillingDiscount[]',
         'defaultPaymentMethod' => 'string',
         'allowPromotionCode' => 'bool',
-        'subscriptionNotifyUrl' => 'string'
+        'subscriptionNotifyUrl' => 'string',
     ];
 
     /**
@@ -79,7 +78,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => null,
         'defaultPaymentMethod' => null,
         'allowPromotionCode' => null,
-        'subscriptionNotifyUrl' => null
+        'subscriptionNotifyUrl' => null,
     ];
 
     /**
@@ -99,7 +98,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => false,
         'defaultPaymentMethod' => false,
         'allowPromotionCode' => false,
-        'subscriptionNotifyUrl' => false
+        'subscriptionNotifyUrl' => false,
     ];
 
     /**
@@ -199,7 +198,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => 'discounts',
         'defaultPaymentMethod' => 'defaultPaymentMethod',
         'allowPromotionCode' => 'allowPromotionCode',
-        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
     ];
 
     /**
@@ -219,7 +218,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => 'setDiscounts',
         'defaultPaymentMethod' => 'setDefaultPaymentMethod',
         'allowPromotionCode' => 'setAllowPromotionCode',
-        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
     ];
 
     /**
@@ -239,7 +238,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => 'getDiscounts',
         'defaultPaymentMethod' => 'getDefaultPaymentMethod',
         'allowPromotionCode' => 'getAllowPromotionCode',
-        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
     ];
 
     /**
@@ -312,7 +311,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('allowPromotionCode', $data ?? [], null);
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -719,10 +718,10 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -745,7 +744,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Installment implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'supportCardBrands' => '\Model\SupportCardBrand[]',
-        'plans' => '\Model\Plan[]'
+        'plans' => '\Model\Plan[]',
     ];
 
     /**
@@ -59,7 +58,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'supportCardBrands' => null,
-        'plans' => null
+        'plans' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'supportCardBrands' => false,
-        'plans' => false
+        'plans' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'supportCardBrands' => 'supportCardBrands',
-        'plans' => 'plans'
+        'plans' => 'plans',
     ];
 
     /**
@@ -169,7 +168,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'supportCardBrands' => 'setSupportCardBrands',
-        'plans' => 'setPlans'
+        'plans' => 'setPlans',
     ];
 
     /**
@@ -179,7 +178,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'supportCardBrands' => 'getSupportCardBrands',
-        'plans' => 'getPlans'
+        'plans' => 'getPlans',
     ];
 
     /**
@@ -242,7 +241,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('supportCardBrands', $data ?? [], null);
         $this->setIfExists('plans', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -415,10 +414,10 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -441,7 +440,7 @@ class Installment  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\subscription;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySubscriptionChangeRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         'subscriptionExpiryTime' => 'string',
         'orderInfo' => '\Model\OrderInfo',
         'paymentAmount' => '\Model\Amount',
-        'paymentAmountDifference' => '\Model\Amount'
+        'paymentAmountDifference' => '\Model\Amount',
     ];
 
     /**
@@ -79,7 +78,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         'subscriptionExpiryTime' => null,
         'orderInfo' => null,
         'paymentAmount' => null,
-        'paymentAmountDifference' => null
+        'paymentAmountDifference' => null,
     ];
 
     /**
@@ -99,7 +98,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         'subscriptionExpiryTime' => false,
         'orderInfo' => false,
         'paymentAmount' => false,
-        'paymentAmountDifference' => false
+        'paymentAmountDifference' => false,
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         'subscriptionExpiryTime' => 'subscriptionExpiryTime',
         'orderInfo' => 'orderInfo',
         'paymentAmount' => 'paymentAmount',
-        'paymentAmountDifference' => 'paymentAmountDifference'
+        'paymentAmountDifference' => 'paymentAmountDifference',
     ];
 
     /**
@@ -219,7 +218,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         'subscriptionExpiryTime' => 'setSubscriptionExpiryTime',
         'orderInfo' => 'setOrderInfo',
         'paymentAmount' => 'setPaymentAmount',
-        'paymentAmountDifference' => 'setPaymentAmountDifference'
+        'paymentAmountDifference' => 'setPaymentAmountDifference',
     ];
 
     /**
@@ -239,7 +238,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         'subscriptionExpiryTime' => 'getSubscriptionExpiryTime',
         'orderInfo' => 'getOrderInfo',
         'paymentAmount' => 'getPaymentAmount',
-        'paymentAmountDifference' => 'getPaymentAmountDifference'
+        'paymentAmountDifference' => 'getPaymentAmountDifference',
     ];
 
     /**
@@ -312,7 +311,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('paymentAmount', $data ?? [], null);
         $this->setIfExists('paymentAmountDifference', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/subscriptions/change"); 
+        $this->setPath("/ams/api/v1/subscriptions/change");
     }
 
     /**
@@ -726,10 +725,10 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -752,7 +751,7 @@ class AlipaySubscriptionChangeRequest   extends AlipayRequest  implements ModelI
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

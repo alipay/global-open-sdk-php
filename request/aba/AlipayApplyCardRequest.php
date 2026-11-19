@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayApplyCardRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => 'string',
         'purpose' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl'
+        'authorizationControl' => '\Model\ApplyCardAuthorizationControl',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => null,
         'purpose' => null,
         'metadata' => null,
-        'authorizationControl' => null
+        'authorizationControl' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => false,
         'purpose' => false,
         'metadata' => false,
-        'authorizationControl' => false
+        'authorizationControl' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => 'cardBinRule',
         'purpose' => 'purpose',
         'metadata' => 'metadata',
-        'authorizationControl' => 'authorizationControl'
+        'authorizationControl' => 'authorizationControl',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => 'setCardBinRule',
         'purpose' => 'setPurpose',
         'metadata' => 'setMetadata',
-        'authorizationControl' => 'setAuthorizationControl'
+        'authorizationControl' => 'setAuthorizationControl',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => 'getCardBinRule',
         'purpose' => 'getPurpose',
         'metadata' => 'getMetadata',
-        'authorizationControl' => 'getAuthorizationControl'
+        'authorizationControl' => 'getAuthorizationControl',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('authorizationControl', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/cards/applyCard"); 
+        $this->setPath("/ams/api/v1/aba/cards/applyCard");
     }
 
     /**
@@ -469,7 +468,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl|null
+     * @return \model\ApplyCardAuthorizationControl|null
      */
     public function getAuthorizationControl()
     {
@@ -479,7 +478,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl|null $authorizationControl authorizationControl
+     * @param \model\ApplyCardAuthorizationControl|null $authorizationControl authorizationControl
      *
      * @return self
      */
@@ -565,10 +564,10 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -591,7 +590,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

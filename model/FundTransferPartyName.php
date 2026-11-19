@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerializable
+class FundTransferPartyName implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'firstName' => 'string',
-        'lastName' => 'string'
+        'lastName' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'firstName' => null,
-        'lastName' => null
+        'lastName' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPINullables = [
         'firstName' => false,
-        'lastName' => false
+        'lastName' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'firstName' => 'firstName',
-        'lastName' => 'lastName'
+        'lastName' => 'lastName',
     ];
 
     /**
@@ -169,7 +168,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'firstName' => 'setFirstName',
-        'lastName' => 'setLastName'
+        'lastName' => 'setLastName',
     ];
 
     /**
@@ -179,7 +178,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'firstName' => 'getFirstName',
-        'lastName' => 'getLastName'
+        'lastName' => 'getLastName',
     ];
 
     /**
@@ -242,7 +241,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('firstName', $data ?? [], null);
         $this->setIfExists('lastName', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -409,10 +408,10 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -435,7 +434,7 @@ class FundTransferPartyName  implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
