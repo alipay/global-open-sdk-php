@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Buyer implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,6 +45,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'buyerAccessGroupFlag' => 'string',
         'preferredLocales' => 'string[]',
         'businessName' => 'string',
         'buyerType' => 'string',
@@ -72,6 +72,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'buyerAccessGroupFlag' => null,
         'preferredLocales' => null,
         'businessName' => null,
         'buyerType' => null,
@@ -96,6 +97,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
+        'buyerAccessGroupFlag' => false,
         'preferredLocales' => false,
         'businessName' => false,
         'buyerType' => false,
@@ -200,6 +202,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'buyerAccessGroupFlag' => 'buyerAccessGroupFlag',
         'preferredLocales' => 'preferredLocales',
         'businessName' => 'businessName',
         'buyerType' => 'buyerType',
@@ -224,6 +227,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'buyerAccessGroupFlag' => 'setBuyerAccessGroupFlag',
         'preferredLocales' => 'setPreferredLocales',
         'businessName' => 'setBusinessName',
         'buyerType' => 'setBuyerType',
@@ -248,6 +252,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'buyerAccessGroupFlag' => 'getBuyerAccessGroupFlag',
         'preferredLocales' => 'getPreferredLocales',
         'businessName' => 'getBusinessName',
         'buyerType' => 'getBuyerType',
@@ -323,6 +328,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('buyerAccessGroupFlag', $data ?? [], null);
         $this->setIfExists('preferredLocales', $data ?? [], null);
         $this->setIfExists('businessName', $data ?? [], null);
         $this->setIfExists('buyerType', $data ?? [], null);
@@ -340,7 +346,7 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('taxIds', $data ?? [], null);
         $this->setIfExists('businessAddress', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -383,6 +389,30 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets buyerAccessGroupFlag
+     *
+     * @return string|null
+     */
+    public function getBuyerAccessGroupFlag()
+    {
+        return $this->container['buyerAccessGroupFlag'];
+    }
+
+    /**
+     * Sets buyerAccessGroupFlag
+     *
+     * @param string|null $buyerAccessGroupFlag For Kwai-Bettr consult only, Kwai supplies this flag with referenceBuyerId when buyer is present: string \"true\" means within the access group and \"false\" means outside; omit it in all other uses. Antom passes it through without strict validation, and Bettr treats missing or invalid values as outside the group.
+     *
+     * @return self
+     */
+    public function setBuyerAccessGroupFlag($buyerAccessGroupFlag)
+    {
+        $this->container['buyerAccessGroupFlag'] = $buyerAccessGroupFlag;
+
+        return $this;
+    }
 
     /**
      * Gets preferredLocales
@@ -843,10 +873,10 @@ class Buyer  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
