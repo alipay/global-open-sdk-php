@@ -35,16 +35,16 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
 
     public $metadata;
 
-    public  $subscriptionOrderId;
-    public  $retryInfo;
-    public  $updateRequestId;
-    public  $authExpiryTime;
+    public $subscriptionOrderId;
+    public $retryInfo;
+    public $updateRequestId;
+    public $authExpiryTime;
     /**
      * The tax calculation ID associated with the payment. Retain it for reconciliation and
      * subsequent refunds; query tax details through inquireTransactionList. It does not indicate
      * that tax has been posted or recorded. If absent, the payment is not subject to tax.
      */
-    public  $taxCalculationId;
+    public $taxCalculationId;
 
     /**
      * The status of the post-authorization manual review. Valid values are PROCESSING, ACCEPT, and
@@ -52,16 +52,16 @@ class AlipayPayResultNotify extends \Request\notify\AlipayNotify
      * popRiskDecisionResultInfo.postRiskDecision is REVIEW; when returned, authReviewSource is
      * returned at the same time.
      */
-    public  $authReviewStatus;
+    public $authReviewStatus;
 
     /**
      * The source of the post-authorization risk review. Valid values are ANTOM_SHIELD and PSP.
      * Returned only when authReviewStatus is returned.
      */
-    public  $authReviewSource;
+    public $authReviewSource;
 
     /** @var \Model\PopRiskDecisionResultInfo|null */
-    public  $popRiskDecisionResultInfo;
+    public $popRiskDecisionResultInfo;
 
     /**
      * @return mixed
