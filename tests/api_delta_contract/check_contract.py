@@ -153,7 +153,8 @@ def main():
     for key in req['expected']['operations']:
         method, tail = key.split(':', 1)[1].split(' ', 1)
         path = tail.split('/requestBody/', 1)[0].split('/responses/', 1)[0]
-        row = next(x for x in raw['bindings'] if x['path'] == path)
+        canonical = 'Alipay' + Path(key.split(':', 1)[0]).stem.split('-v', 1)[0]
+        row = next(x for x in raw['bindings'] if x['path'] == path and x['request'] == canonical)
         assert row['method'].upper() == method, ('HTTP binding', row, method)
         name = row['request'] if '/requestBody/' in key else row['response']
         operations[key] = {'$ref': '#/components/schemas/' + name}

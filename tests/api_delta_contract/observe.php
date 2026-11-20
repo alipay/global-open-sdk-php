@@ -128,9 +128,83 @@ foreach ($request['models'] as $target) {
     ensure($keys === $expectedKeys, 'all wire keys '.$name);
     $models[$target] = ['type' => 'object','properties' => $props];
 }
+function buyerRequest($class, $buyer, $nested)
+{
+    $o = (new ReflectionClass($class))->newInstanceWithoutConstructor();
+    foreach ($class::setters() as $key => $setter) {
+        if ($key === 'buyer') {
+            $value = $buyer;
+        } elseif ($key === 'order' && $nested) {
+            $value = new \Model\Order(['buyer' => $buyer]);
+        } else {
+            $value = null;
+        }
+        $o->$setter($value);
+    }
+    return $o;
+}
 $evidence = [];
 try {
-    $class = sdkclass('ConsultBuyer');
+    require_once __DIR__ . '/BaselineBuyer.php.fixture';
+    $oldBuyer = new \Model\BaselineBuyer();
+    $sharedBuyer = new \Model\Buyer();
+    ensure(body($oldBuyer) == body($sharedBuyer), 'baseline empty Buyer JSON');
+    $legacyData = [];
+    foreach (\Model\BaselineBuyer::openAPITypes() as $key => $type) {
+        $legacyData[$key] = sample($type);
+    }
+    $oldBuyer = new \Model\BaselineBuyer($legacyData);
+    $sharedBuyer = new \Model\Buyer($legacyData);
+    ensure(body($oldBuyer) == body($sharedBuyer), 'baseline populated constructor and JSON');
+    foreach (\Model\BaselineBuyer::setters() as $key => $setter) {
+        $oldBuyer->$setter($legacyData[$key]);
+        $sharedBuyer->$setter($legacyData[$key]);
+    }
+    ensure(body($oldBuyer) == body($sharedBuyer), 'old setters and null omission');
+    $sharedRequests = 0;
+    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('request')) as $file) {
+        if (!$file->isFile() || $file->getExtension() !== 'php') {
+            continue;
+        }
+        $source = file_get_contents($file->getPathname());
+        if (!preg_match('/namespace\s+([^;]+);/', $source, $match)) {
+            continue;
+        }
+        $q = trim($match[1]).'\\'.$file->getBasename('.php');
+        if (!class_exists($q) || !method_exists($q, 'openAPITypes')) {
+            continue;
+        }
+        if (($q::openAPITypes()['buyer'] ?? null) !== '\\Model\\Buyer') {
+            continue;
+        }
+        $o = buyerRequest($q, $sharedBuyer, false);
+        $b = body($o)['buyer'];
+        ensure($b == body($oldBuyer) && !isset($b['buyerAccessGroupFlag']), 'unset field in other request '.$q);
+        $sharedRequests++;
+    }
+    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('request')) as $file) {
+        if (!$file->isFile() || $file->getExtension() !== 'php') {
+            continue;
+        }
+        $source = file_get_contents($file->getPathname());
+        if (!preg_match('/namespace\s+([^;]+);/', $source, $match)) {
+            continue;
+        }
+        $q = trim($match[1]).'\\'.$file->getBasename('.php');
+        if (!class_exists($q) || !method_exists($q, 'openAPITypes')) {
+            continue;
+        }
+        if (($q::openAPITypes()['order'] ?? null) !== '\\Model\\Order') {
+            continue;
+        }
+        $o = buyerRequest($q, $sharedBuyer, true);
+        ensure(body($o)['order']['buyer'] == body($oldBuyer), 'nested Order Buyer unchanged '.$q);
+        $sharedRequests++;
+    }
+    ensure($sharedRequests > 1, 'direct and nested Buyer request bindings covered');
+
+    $evidence[] = 'Pinned baseline constructor/old accessors/JSON retained; unset field omitted in '.$sharedRequests.' shared Buyer requests';
+    $class = sdkclass('Buyer');
     $buyer = new $class();
     ensure($buyer instanceof \Model\Buyer, 'new consult buyer retains legacy Buyer identity');
     $legacy = new \Model\Buyer();
@@ -190,6 +264,9 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('request')
     $class = sdkclass($name);
     $reflection = new ReflectionClass($class);
     if ($reflection->isAbstract() || !$reflection->hasMethod('getPath')) {
+        continue;
+    }
+    if ($reflection->getConstructor() && $reflection->getConstructor()->getNumberOfRequiredParameters() > 0) {
         continue;
     }
     $obj = new $class();
