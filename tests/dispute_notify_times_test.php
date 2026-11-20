@@ -1,13 +1,9 @@
 <?php
-
 require_once __DIR__ . '/../request/notify/AlipayNotify.php';
 require_once __DIR__ . '/../request/notify/AlipayDisputeNotify.php';
 
-function checkTime($condition, $message)
-{
-    if (!$condition) {
-        throw new RuntimeException($message);
-    }
+function checkTime($condition, $message) {
+    if (!$condition) { throw new RuntimeException($message); }
 }
 
 foreach ([
@@ -16,9 +12,7 @@ foreach ([
 ] as $case) {
     $body = json_encode(['disputeId' => 'd1', 'disputeNotificationType' => $case[0], $case[1] => $case[2]]);
     $notify = new \Request\notify\AlipayDisputeNotify();
-    foreach (json_decode($body, true) as $key => $value) {
-        $notify->$key = $value;
-    }
+    foreach (json_decode($body, true) as $key => $value) { $notify->$key = $value; }
     $getter = 'get' . ucfirst($case[1]);
     $setter = 'set' . ucfirst($case[1]);
     checkTime($notify->$getter() === $case[2], 'Time/offset changed');

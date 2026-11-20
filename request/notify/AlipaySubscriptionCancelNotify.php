@@ -2,7 +2,7 @@
 
 namespace Request\notify;
 
-class AlipaySubscriptionCancelNotify extends \Request\notify\AlipayNotify
+class AlipaySubscriptionCancelNotify  extends \Request\notify\AlipayNotify
 {
     public $paymentAmount;
     public $paymentCreateTime;
