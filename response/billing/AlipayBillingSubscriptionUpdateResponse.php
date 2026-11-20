@@ -54,7 +54,7 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
         'prorationInvoiceCurrency' => 'string',
         'creditNoteId' => 'string',
         'creditNoteIds' => 'string[]',
-        'creditNoteAmount' => 'string',
+        'creditNoteAmount' => 'int',
         'creditNoteCurrency' => 'string',
         'pendingUpdate' => 'bool'
     ];
@@ -76,7 +76,7 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
         'prorationInvoiceCurrency' => null,
         'creditNoteId' => null,
         'creditNoteIds' => null,
-        'creditNoteAmount' => null,
+        'creditNoteAmount' => 'int64',
         'creditNoteCurrency' => null,
         'pendingUpdate' => null
     ];
@@ -96,7 +96,7 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
         'prorationInvoiceCurrency' => false,
         'creditNoteId' => false,
         'creditNoteIds' => true,
-        'creditNoteAmount' => true,
+        'creditNoteAmount' => false,
         'creditNoteCurrency' => false,
         'pendingUpdate' => false
     ];
@@ -328,7 +328,15 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
             $this->openAPINullablesSetToNull[] = $variableName;
         }
 
-        $this->container[$variableName] = $fields[$variableName] ?? $defaultValue;
+        $value = $fields[$variableName] ?? $defaultValue;
+        if ($value !== null && isset(self::jsonStringFields()[$variableName])) {
+            $parsed = filter_var($value, FILTER_VALIDATE_INT);
+            if ($parsed === false) {
+                throw new \InvalidArgumentException($variableName . ' must be a 64-bit integer');
+            }
+            $value = $parsed;
+        }
+        $this->container[$variableName] = $value;
     }
 
     /**
@@ -563,7 +571,7 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
     /**
      * Sets creditNoteIds
      *
-     * @param string[]|null $creditNoteIds All opaque Credit Note IDs issued by this update, without truncation or an independent item cap, ordered by ascending source invoiceId. For one note, the sole ID equals creditNoteId; when no note is issued, this field may be absent or null. Each non-null ID has at most 64 characters and identifies an issued Billing document without indicating refund completion.
+     * @param string[]|null $creditNoteIds All issued Credit Note IDs are non-null opaque strings of at most 64 characters, returned in ascending source invoiceId order after allocation without truncation or an independent item-count cap. Returned when a successful update issues notes, matching creditNoteId for a single note, and may be absent or null when none is issued.
      *
      * @return self
      */
@@ -587,7 +595,7 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
     /**
      * Gets creditNoteAmount
      *
-     * @return string|null
+     * @return int|null
      */
     public function getCreditNoteAmount()
     {
@@ -597,22 +605,12 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
     /**
      * Sets creditNoteAmount
      *
-     * @param string|null $creditNoteAmount The sum of this update's issued Credit Note amounts in the smallest currency unit, serialized as a non-negative integer string with the existing range and precision. Returned with creditNoteCurrency when notes are issued; zero is a measured credit amount, while absence or null does not mean zero.
+     * @param int|null $creditNoteAmount The total amount of Credit Notes issued by this successful update in the smallest currency unit, retaining the per-note amount for a single note and the existing range, precision, and calculation. Represented as a signed 64-bit integer in the SDK and serialized as a JSON string, with zero meaning a measured zero credit amount and absence or null not meaning zero.
      *
      * @return self
      */
     public function setCreditNoteAmount($creditNoteAmount)
     {
-        if (is_null($creditNoteAmount)) {
-            array_push($this->openAPINullablesSetToNull, 'creditNoteAmount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('creditNoteAmount', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
         $this->container['creditNoteAmount'] = $creditNoteAmount;
 
         return $this;
@@ -631,7 +629,7 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
     /**
      * Sets creditNoteCurrency
      *
-     * @param string|null $creditNoteCurrency The currency of creditNoteAmount as a three-letter ISO 4217 code. Every note in this update shares the subscription currency, with no conversion or independent default; it must be returned and non-null when creditNoteAmount is returned.
+     * @param string|null $creditNoteCurrency The currency of creditNoteAmount as a three-letter ISO 4217 code. Returned with creditNoteAmount when a successful update issues notes, using the non-null subscription currency shared by every note without conversion or an independent default.
      *
      * @return self
      */
@@ -726,6 +724,13 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    public static function jsonStringFields(): array
+    {
+        return [
+            'creditNoteAmount' => true,
+        ];
+    }
+
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
@@ -737,6 +742,10 @@ class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAc
         $array = [];
         foreach (self::$openAPITypes as $propertyName => $propertyType) {
             $propertyValue = $this[$propertyName];
+            if ($propertyValue !== null && isset(self::jsonStringFields()[$propertyName])) {
+                $array[$propertyName] = (string)$propertyValue;
+                continue;
+            }
             if ($propertyValue !== null) {
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
