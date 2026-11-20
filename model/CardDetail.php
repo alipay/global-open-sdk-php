@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -30,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CardDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl',
+        'authorizationControl' => '\Model\CardInquiryAuthorizationControl',
         'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
@@ -341,7 +340,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('authorizationControl', $data ?? [], null);
         $this->setIfExists('cardholderinfo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -408,9 +407,6 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['purpose'] === null) {
             $invalidProperties[] = "'purpose' can't be null";
-        }
-        if ($this->container['authorizationControl'] === null) {
-            $invalidProperties[] = "'authorizationControl' can't be null";
         }
         if ($this->container['cardholderinfo'] === null) {
             $invalidProperties[] = "'cardholderinfo' can't be null";
@@ -693,7 +689,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl
+     * @return \model\CardInquiryAuthorizationControl|null
      */
     public function getAuthorizationControl()
     {
@@ -703,7 +699,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl $authorizationControl authorizationControl
+     * @param \model\CardInquiryAuthorizationControl|null $authorizationControl authorizationControl
      *
      * @return self
      */
@@ -813,10 +809,10 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
