@@ -273,15 +273,7 @@ class {{classname}} {{#lambdas.phpParent}}{{classname}} 1 {{/lambdas.phpParent}}
             $this->openAPINullablesSetToNull[] = $variableName;
         }
 
-        $value = $fields[$variableName] ?? $defaultValue;
-        if ($value !== null && isset(self::jsonStringFields()[$variableName])) {
-            $parsed = filter_var($value, FILTER_VALIDATE_INT);
-            if ($parsed === false) {
-                throw new \InvalidArgumentException($variableName . ' must be a 64-bit integer');
-            }
-            $value = $parsed;
-        }
-        $this->container[$variableName] = $value;
+        $this->container[$variableName] = $fields[$variableName] ?? $defaultValue;
     }
 
     /**
@@ -465,17 +457,6 @@ class {{classname}} {{#lambdas.phpParent}}{{classname}} 1 {{/lambdas.phpParent}}
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
-    public static function jsonStringFields(): array
-    {
-        return [
-        {{#vars}}
-        {{#vendorExtensions.x-sdk-json-string}}
-            '{{name}}' => true,
-        {{/vendorExtensions.x-sdk-json-string}}
-        {{/vars}}
-        ];
-    }
-
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
@@ -487,10 +468,6 @@ class {{classname}} {{#lambdas.phpParent}}{{classname}} 1 {{/lambdas.phpParent}}
         $array = [];
         foreach (self::$openAPITypes as $propertyName => $propertyType) {
             $propertyValue = $this[$propertyName];
-            if ($propertyValue !== null && isset(self::jsonStringFields()[$propertyName])) {
-                $array[$propertyName] = (string)$propertyValue;
-                continue;
-            }
             if ($propertyValue !== null) {
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {

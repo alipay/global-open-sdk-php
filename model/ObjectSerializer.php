@@ -12,7 +12,9 @@
  * Do not edit the class manually.
  */
 
+
 namespace Model;
+
 
 class ObjectSerializer
 {
@@ -74,14 +76,11 @@ class ObjectSerializer
                         }
                     }
                     if (($data::isNullable($property) && $data->isNullableSetToNull($property)) || $value !== null) {
-                        $asString = method_exists($data, 'jsonStringFields') && isset($data::jsonStringFields()[$property]);
-                        $values[$data::attributeMap()[$property]] = $asString && $value !== null
-                            ? (string)$value
-                            : self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
+                        $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
                     }
                 }
             } else {
-                foreach ($data as $property => $value) {
+                foreach($data as $property => $value) {
                     $values[$property] = self::sanitizeForSerialization($value);
                 }
             }
@@ -117,9 +116,7 @@ class ObjectSerializer
      */
     public static function sanitizeTimestamp($timestamp)
     {
-        if (!is_string($timestamp)) {
-            return $timestamp;
-        }
+        if (!is_string($timestamp)) return $timestamp;
 
         return preg_replace('/(:\d{2}.\d{6})\d*/', '$1', $timestamp);
     }

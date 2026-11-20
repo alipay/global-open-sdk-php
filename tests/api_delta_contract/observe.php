@@ -144,7 +144,7 @@ foreach ($request['models'] as $target) {
     if (!method_exists($class, 'getCreditNoteIds')) {
         continue;
     }
-    foreach ([[],['creditNoteIds' => null],['creditNoteIds' => []],['creditNoteId' => 'cn_a','creditNoteIds' => ['cn_a'],'creditNoteAmount' => '3000','creditNoteCurrency' => 'USD'],['creditNoteIds' => ['cn_a','cn_z'],'creditNoteAmount' => '8000','creditNoteCurrency' => 'USD']] as $fixture) {
+    foreach ([[],['creditNoteIds' => null],['creditNoteIds' => []],['creditNoteId' => 'cn_a','creditNoteIds' => ['cn_a'],'creditNoteAmount' => 3000,'creditNoteCurrency' => 'USD'],['creditNoteIds' => ['cn_a','cn_z'],'creditNoteAmount' => 8000,'creditNoteCurrency' => 'USD']] as $fixture) {
         $o = \Model\ObjectSerializer::deserialize(json_encode((object)$fixture), $class);
         $actual = body($o);
         foreach ($fixture as $k => $v) {
@@ -153,27 +153,28 @@ foreach ($request['models'] as $target) {
             }
         }
     }
-    $evidence[] = 'Actual PHP parsing preserves ordered credit-note IDs, scalar, amount string, and empty/null/absent input';
+    $evidence[] = 'Actual PHP parsing preserves ordered credit-note IDs, scalar, amount integer, and empty/null/absent input';
 }
 
 $amountClass = sdkclass('AlipayBillingSubscriptionUpdateResponse');
 ensure(PHP_INT_SIZE === 8, '64-bit PHP runtime');
-ensure($amountClass::openAPITypes()['creditNoteAmount'] === 'int', 'public amount metadata is int');
-ensure($amountClass::openAPIFormats()['creditNoteAmount'] === 'int64', 'public amount format is int64');
+ensure($amountClass::openAPITypes()['creditNoteAmount'] === 'int', 'public int type');
+ensure($amountClass::openAPIFormats()['creditNoteAmount'] === 'int64', 'int64 metadata');
+ensure(!method_exists($amountClass, 'jsonStringFields'), 'no field string compatibility helper');
 foreach (['0','3000','8000','9007199254740993','9223372036854775807'] as $amount) {
-    $parsed = \Model\ObjectSerializer::deserialize('{"creditNoteAmount":"'.$amount.'"}', $amountClass);
-    ensure(is_int($parsed->getCreditNoteAmount()) && (string)$parsed->getCreditNoteAmount() === $amount, 'exact int64 public value');
-    ensure(body($parsed)['creditNoteAmount'] === $amount, 'exact string wire');
-    ensure($parsed->toArray()['creditNoteAmount'] === $amount, 'toArray string wire');
+    $parsed = \Model\ObjectSerializer::deserialize('{"creditNoteAmount":'.$amount.'}', $amountClass);
+    ensure(is_int($parsed->getCreditNoteAmount()) && $parsed->getCreditNoteAmount() === (int)$amount, 'exact int64 numeric parse');
+    ensure(is_int(body($parsed)['creditNoteAmount']) && body($parsed)['creditNoteAmount'] === (int)$amount, 'integer JSON wire');
+    ensure($parsed->toArray()['creditNoteAmount'] === (int)$amount, 'numeric toArray');
     $bySetter = new $amountClass();
     $bySetter->setCreditNoteAmount((int)$amount);
-    ensure(is_int($bySetter->getCreditNoteAmount()) && body($bySetter)['creditNoteAmount'] === $amount, 'numeric public setter');
+    ensure(body($bySetter)['creditNoteAmount'] === (int)$amount, 'numeric public setter');
 }
 foreach (['{}','{"creditNoteAmount":null}'] as $missing) {
     $parsed = \Model\ObjectSerializer::deserialize($missing, $amountClass);
-    ensure($parsed->getCreditNoteAmount() === null, 'missing/null amount is not zero');
+    ensure($parsed->getCreditNoteAmount() === null, 'missing/null is not zero');
 }
-$evidence[] = '64-bit integer public values; exact string wire and null/zero/large integer regressions';
+$evidence[] = 'Int64 public values; integer JSON at zero/samples/>2^53/int64 max; absent/null; no string helper';
 $paths = [];
 foreach ($request['operation_keys'] as $key) {
     $tail = explode(' ', $key, 2)[1];

@@ -65,10 +65,7 @@ class ObjectSerializer
                         }
                     }
                     if (($data::isNullable($property) && $data->isNullableSetToNull($property)) || $value !== null) {
-                        $asString = method_exists($data, 'jsonStringFields') && isset($data::jsonStringFields()[$property]);
-                        $values[$data::attributeMap()[$property]] = $asString && $value !== null
-                            ? (string)$value
-                            : self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
+                        $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
                     }
                 }
             } else {
