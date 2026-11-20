@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,6 +53,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'int',
         'prorationInvoiceCurrency' => 'string',
         'creditNoteId' => 'string',
+        'creditNoteIds' => 'string[]',
         'creditNoteAmount' => 'int',
         'creditNoteCurrency' => 'string',
         'pendingUpdate' => 'bool'
@@ -75,6 +75,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'int64',
         'prorationInvoiceCurrency' => null,
         'creditNoteId' => null,
+        'creditNoteIds' => null,
         'creditNoteAmount' => 'int64',
         'creditNoteCurrency' => null,
         'pendingUpdate' => null
@@ -94,7 +95,8 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => false,
         'prorationInvoiceCurrency' => false,
         'creditNoteId' => false,
-        'creditNoteAmount' => false,
+        'creditNoteIds' => false,
+        'creditNoteAmount' => true,
         'creditNoteCurrency' => false,
         'pendingUpdate' => false
     ];
@@ -193,6 +195,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'prorationInvoiceAmount',
         'prorationInvoiceCurrency' => 'prorationInvoiceCurrency',
         'creditNoteId' => 'creditNoteId',
+        'creditNoteIds' => 'creditNoteIds',
         'creditNoteAmount' => 'creditNoteAmount',
         'creditNoteCurrency' => 'creditNoteCurrency',
         'pendingUpdate' => 'pendingUpdate'
@@ -212,6 +215,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'setProrationInvoiceAmount',
         'prorationInvoiceCurrency' => 'setProrationInvoiceCurrency',
         'creditNoteId' => 'setCreditNoteId',
+        'creditNoteIds' => 'setCreditNoteIds',
         'creditNoteAmount' => 'setCreditNoteAmount',
         'creditNoteCurrency' => 'setCreditNoteCurrency',
         'pendingUpdate' => 'setPendingUpdate'
@@ -231,6 +235,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'getProrationInvoiceAmount',
         'prorationInvoiceCurrency' => 'getProrationInvoiceCurrency',
         'creditNoteId' => 'getCreditNoteId',
+        'creditNoteIds' => 'getCreditNoteIds',
         'creditNoteAmount' => 'getCreditNoteAmount',
         'creditNoteCurrency' => 'getCreditNoteCurrency',
         'pendingUpdate' => 'getPendingUpdate'
@@ -301,11 +306,12 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         $this->setIfExists('prorationInvoiceAmount', $data ?? [], null);
         $this->setIfExists('prorationInvoiceCurrency', $data ?? [], null);
         $this->setIfExists('creditNoteId', $data ?? [], null);
+        $this->setIfExists('creditNoteIds', $data ?? [], null);
         $this->setIfExists('creditNoteAmount', $data ?? [], null);
         $this->setIfExists('creditNoteCurrency', $data ?? [], null);
         $this->setIfExists('pendingUpdate', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -545,6 +551,30 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     }
 
     /**
+     * Gets creditNoteIds
+     *
+     * @return string[]|null
+     */
+    public function getCreditNoteIds()
+    {
+        return $this->container['creditNoteIds'];
+    }
+
+    /**
+     * Sets creditNoteIds
+     *
+     * @param string[]|null $creditNoteIds All Credit Note IDs issued by this update, ordered by ascending source invoiceId without truncation or an independent item cap. For one note, the sole element equals creditNoteId; when no note is issued, the field may be absent or null.
+     *
+     * @return self
+     */
+    public function setCreditNoteIds($creditNoteIds)
+    {
+        $this->container['creditNoteIds'] = $creditNoteIds;
+
+        return $this;
+    }
+
+    /**
      * Gets creditNoteAmount
      *
      * @return int|null
@@ -557,12 +587,22 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets creditNoteAmount
      *
-     * @param int|null $creditNoteAmount The credit note amount in the smallest currency unit. Returned together with creditNoteId.
+     * @param int|null $creditNoteAmount Total amount of Credit Notes issued by this update as a non-negative signed 64-bit JSON integer in minor currency units, retaining the existing per-note value for a single note. Zero is a measured zero credit amount; absence or null does not mean zero.
      *
      * @return self
      */
     public function setCreditNoteAmount($creditNoteAmount)
     {
+        if (is_null($creditNoteAmount)) {
+            array_push($this->openAPINullablesSetToNull, 'creditNoteAmount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('creditNoteAmount', $nullablesSetToNull);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
         $this->container['creditNoteAmount'] = $creditNoteAmount;
 
         return $this;
@@ -581,7 +621,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets creditNoteCurrency
      *
-     * @param string|null $creditNoteCurrency The currency of creditNoteAmount as a three-letter ISO 4217 code.
+     * @param string|null $creditNoteCurrency The three-letter ISO 4217 subscription currency shared by all Credit Notes issued by this update, without currency conversion. Returned as a non-null value with creditNoteAmount and has no independent default.
      *
      * @return self
      */
@@ -691,10 +731,10 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
