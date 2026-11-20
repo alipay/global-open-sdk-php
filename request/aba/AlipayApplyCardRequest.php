@@ -52,7 +52,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
         'cardBinRule' => 'string',
         'purpose' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl'
+        'authorizationControl' => '\Model\ApplyCardAuthorizationControl'
     ];
 
     /**
@@ -469,7 +469,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl|null
+     * @return \model\ApplyCardAuthorizationControl|null
      */
     public function getAuthorizationControl()
     {
@@ -479,7 +479,7 @@ class AlipayApplyCardRequest   extends AlipayRequest  implements ModelInterface,
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl|null $authorizationControl authorizationControl
+     * @param \model\ApplyCardAuthorizationControl|null $authorizationControl authorizationControl
      *
      * @return self
      */

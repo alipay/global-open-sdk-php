@@ -278,9 +278,6 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['codeValueType'] === null) {
-            $invalidProperties[] = "'codeValueType' can't be null";
-        }
         if ($this->container['codeValue'] === null) {
             $invalidProperties[] = "'codeValue' can't be null";
         }
@@ -305,7 +302,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets codeValueType
      *
-     * @return string
+     * @return string|null
      */
     public function getCodeValueType()
     {
@@ -315,7 +312,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets codeValueType
      *
-     * @param string $codeValueType codeValueType
+     * @param string|null $codeValueType codeValueType
      *
      * @return self
      */

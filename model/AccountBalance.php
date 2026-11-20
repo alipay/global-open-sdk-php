@@ -49,7 +49,8 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'string',
         'availableBalance' => '\Model\Amount',
         'frozenBalance' => '\Model\Amount',
-        'totalBalance' => '\Model\Amount'
+        'totalBalance' => '\Model\Amount',
+        'accountNo' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => null,
         'availableBalance' => null,
         'frozenBalance' => null,
-        'totalBalance' => null
+        'totalBalance' => null,
+        'accountNo' => null
     ];
 
     /**
@@ -75,7 +77,8 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => false,
         'availableBalance' => false,
         'frozenBalance' => false,
-        'totalBalance' => false
+        'totalBalance' => false,
+        'accountNo' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'currency',
         'availableBalance' => 'availableBalance',
         'frozenBalance' => 'frozenBalance',
-        'totalBalance' => 'totalBalance'
+        'totalBalance' => 'totalBalance',
+        'accountNo' => 'accountNo'
     ];
 
     /**
@@ -179,7 +183,8 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'setCurrency',
         'availableBalance' => 'setAvailableBalance',
         'frozenBalance' => 'setFrozenBalance',
-        'totalBalance' => 'setTotalBalance'
+        'totalBalance' => 'setTotalBalance',
+        'accountNo' => 'setAccountNo'
     ];
 
     /**
@@ -191,7 +196,8 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency' => 'getCurrency',
         'availableBalance' => 'getAvailableBalance',
         'frozenBalance' => 'getFrozenBalance',
-        'totalBalance' => 'getTotalBalance'
+        'totalBalance' => 'getTotalBalance',
+        'accountNo' => 'getAccountNo'
     ];
 
     /**
@@ -255,6 +261,7 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('availableBalance', $data ?? [], null);
         $this->setIfExists('frozenBalance', $data ?? [], null);
         $this->setIfExists('totalBalance', $data ?? [], null);
+        $this->setIfExists('accountNo', $data ?? [], null);
 
             }
 
@@ -404,6 +411,30 @@ class AccountBalance  implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotalBalance($totalBalance)
     {
         $this->container['totalBalance'] = $totalBalance;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountNo
+     *
+     * @return string|null
+     */
+    public function getAccountNo()
+    {
+        return $this->container['accountNo'];
+    }
+
+    /**
+     * Sets accountNo
+     *
+     * @param string|null $accountNo The balance account number.    More information:  Maximum length: 32 characters
+     *
+     * @return self
+     */
+    public function setAccountNo($accountNo)
+    {
+        $this->container['accountNo'] = $accountNo;
 
         return $this;
     }
