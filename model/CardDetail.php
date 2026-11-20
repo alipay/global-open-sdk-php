@@ -57,7 +57,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl',
+        'authorizationControl' => '\Model\CardInquiryAuthorizationControl',
         'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
@@ -409,9 +409,6 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['purpose'] === null) {
             $invalidProperties[] = "'purpose' can't be null";
         }
-        if ($this->container['authorizationControl'] === null) {
-            $invalidProperties[] = "'authorizationControl' can't be null";
-        }
         if ($this->container['cardholderinfo'] === null) {
             $invalidProperties[] = "'cardholderinfo' can't be null";
         }
@@ -693,7 +690,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl
+     * @return \model\CardInquiryAuthorizationControl|null
      */
     public function getAuthorizationControl()
     {
@@ -703,7 +700,7 @@ class CardDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl $authorizationControl authorizationControl
+     * @param \model\CardInquiryAuthorizationControl|null $authorizationControl authorizationControl
      *
      * @return self
      */
