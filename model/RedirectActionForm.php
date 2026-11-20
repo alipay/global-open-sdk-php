@@ -285,15 +285,6 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['method'] === null) {
-            $invalidProperties[] = "'method' can't be null";
-        }
-        if ($this->container['redirectUrl'] === null) {
-            $invalidProperties[] = "'redirectUrl' can't be null";
-        }
-        if ($this->container['actionFormType'] === null) {
-            $invalidProperties[] = "'actionFormType' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -312,7 +303,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets method
      *
-     * @return string
+     * @return string|null
      */
     public function getMethod()
     {
@@ -322,7 +313,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets method
      *
-     * @param string $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
+     * @param string|null $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
      *
      * @return self
      */
@@ -360,7 +351,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets redirectUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getRedirectUrl()
     {
@@ -370,7 +361,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets redirectUrl
      *
-     * @param string $redirectUrl The URL where the user is redirected to.   More information:  Maximum length: 2048 characters
+     * @param string|null $redirectUrl The URL where the user is redirected to.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -384,7 +375,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets actionFormType
      *
-     * @return string
+     * @return string|null
      */
     public function getActionFormType()
     {
@@ -394,7 +385,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets actionFormType
      *
-     * @param string $actionFormType The value is fixed as RedirectActionForm.  More information:  Maximum length: 32 characters
+     * @param string|null $actionFormType The value is fixed as RedirectActionForm.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
