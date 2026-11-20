@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireCardDetailResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         'purpose' => 'string',
         'note' => 'string',
         'metadata' => 'array<string,string>',
-        'authorizationControl' => '\Model\AuthorizationControl',
+        'authorizationControl' => '\Model\CardInquiryAuthorizationControl',
         'cardholderinfo' => '\Model\CardholderInfo'
     ];
 
@@ -347,7 +346,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         $this->setIfExists('authorizationControl', $data ?? [], null);
         $this->setIfExists('cardholderinfo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -379,12 +378,6 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
         if ($this->container['result'] === null) {
             $invalidProperties[] = "'result' can't be null";
         }
-        if ($this->container['assetId'] === null) {
-            $invalidProperties[] = "'assetId' can't be null";
-        }
-        if ($this->container['cardStatus'] === null) {
-            $invalidProperties[] = "'cardStatus' can't be null";
-        }
         $allowedValues = $this->getCardStatusAllowableValues();
         if (!is_null($this->container['cardStatus']) && !in_array($this->container['cardStatus'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -394,12 +387,6 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
             );
         }
 
-        if ($this->container['maskedCardNo'] === null) {
-            $invalidProperties[] = "'maskedCardNo' can't be null";
-        }
-        if ($this->container['cardBrand'] === null) {
-            $invalidProperties[] = "'cardBrand' can't be null";
-        }
         $allowedValues = $this->getCardBrandAllowableValues();
         if (!is_null($this->container['cardBrand']) && !in_array($this->container['cardBrand'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -409,21 +396,6 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
             );
         }
 
-        if ($this->container['createdTime'] === null) {
-            $invalidProperties[] = "'createdTime' can't be null";
-        }
-        if ($this->container['updatedTime'] === null) {
-            $invalidProperties[] = "'updatedTime' can't be null";
-        }
-        if ($this->container['purpose'] === null) {
-            $invalidProperties[] = "'purpose' can't be null";
-        }
-        if ($this->container['authorizationControl'] === null) {
-            $invalidProperties[] = "'authorizationControl' can't be null";
-        }
-        if ($this->container['cardholderinfo'] === null) {
-            $invalidProperties[] = "'cardholderinfo' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -466,7 +438,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets assetId
      *
-     * @return string
+     * @return string|null
      */
     public function getAssetId()
     {
@@ -476,7 +448,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets assetId
      *
-     * @param string $assetId Card asset Id.
+     * @param string|null $assetId Card asset Id.
      *
      * @return self
      */
@@ -514,7 +486,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets cardStatus
      *
-     * @return string
+     * @return string|null
      */
     public function getCardStatus()
     {
@@ -524,7 +496,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets cardStatus
      *
-     * @param string $cardStatus Card Status: Represents the current state of the card. Possible values include: ACTIVE: The card is active and can be used normally. FROZEN: The card has been frozen and cannot be used temporarily. CANCEL: The card has been canceled and is no longer valid.
+     * @param string|null $cardStatus Card Status: Represents the current state of the card. Possible values include: ACTIVE: The card is active and can be used normally. FROZEN: The card has been frozen and cannot be used temporarily. CANCEL: The card has been canceled and is no longer valid.
      *
      * @return self
      */
@@ -548,7 +520,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets maskedCardNo
      *
-     * @return string
+     * @return string|null
      */
     public function getMaskedCardNo()
     {
@@ -558,7 +530,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets maskedCardNo
      *
-     * @param string $maskedCardNo Masked card number.
+     * @param string|null $maskedCardNo Masked card number.
      *
      * @return self
      */
@@ -572,7 +544,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets cardBrand
      *
-     * @return string
+     * @return string|null
      */
     public function getCardBrand()
     {
@@ -582,7 +554,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets cardBrand
      *
-     * @param string $cardBrand Card Brand: Indicates the brand or network of the card. Possible value: MASTERCARD: The card is part of the Mastercard network.
+     * @param string|null $cardBrand Card Brand: Indicates the brand or network of the card. Possible value: MASTERCARD: The card is part of the Mastercard network.
      *
      * @return self
      */
@@ -606,7 +578,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets createdTime
      *
-     * @return string
+     * @return string|null
      */
     public function getCreatedTime()
     {
@@ -616,7 +588,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets createdTime
      *
-     * @param string $createdTime Datetime UTC time: 2018-10-31T00:00:00+0800. ISO 8601
+     * @param string|null $createdTime Datetime UTC time: 2018-10-31T00:00:00+0800. ISO 8601
      *
      * @return self
      */
@@ -630,7 +602,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets updatedTime
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatedTime()
     {
@@ -640,7 +612,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets updatedTime
      *
-     * @param string $updatedTime Datetime UTC time: 2018-10-31T00:00:00+0800. ISO 8601
+     * @param string|null $updatedTime Datetime UTC time: 2018-10-31T00:00:00+0800. ISO 8601
      *
      * @return self
      */
@@ -654,7 +626,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets purpose
      *
-     * @return string
+     * @return string|null
      */
     public function getPurpose()
     {
@@ -664,7 +636,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets purpose
      *
-     * @param string $purpose Purpose of the card
+     * @param string|null $purpose Purpose of the card
      *
      * @return self
      */
@@ -726,7 +698,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets authorizationControl
      *
-     * @return \model\AuthorizationControl
+     * @return \model\CardInquiryAuthorizationControl|null
      */
     public function getAuthorizationControl()
     {
@@ -736,7 +708,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets authorizationControl
      *
-     * @param \model\AuthorizationControl $authorizationControl authorizationControl
+     * @param \model\CardInquiryAuthorizationControl|null $authorizationControl authorizationControl
      *
      * @return self
      */
@@ -750,7 +722,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Gets cardholderinfo
      *
-     * @return \model\CardholderInfo
+     * @return \model\CardholderInfo|null
      */
     public function getCardholderinfo()
     {
@@ -760,7 +732,7 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
     /**
      * Sets cardholderinfo
      *
-     * @param \model\CardholderInfo $cardholderinfo cardholderinfo
+     * @param \model\CardholderInfo|null $cardholderinfo cardholderinfo
      *
      * @return self
      */
@@ -846,10 +818,10 @@ class AlipayInquireCardDetailResponse  implements ModelInterface, ArrayAccess, \
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
