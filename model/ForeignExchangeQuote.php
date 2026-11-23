@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ForeignExchangeQuote implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         'sourceCurrency' => 'string',
         'targetCurrency' => 'string',
         'quoteTime' => 'string',
-        'quotePrice' => 'string'
+        'quotePrice' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         'sourceCurrency' => null,
         'targetCurrency' => null,
         'quoteTime' => null,
-        'quotePrice' => null
+        'quotePrice' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         'sourceCurrency' => false,
         'targetCurrency' => false,
         'quoteTime' => false,
-        'quotePrice' => false
+        'quotePrice' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         'sourceCurrency' => 'sourceCurrency',
         'targetCurrency' => 'targetCurrency',
         'quoteTime' => 'quoteTime',
-        'quotePrice' => 'quotePrice'
+        'quotePrice' => 'quotePrice',
     ];
 
     /**
@@ -184,7 +183,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         'sourceCurrency' => 'setSourceCurrency',
         'targetCurrency' => 'setTargetCurrency',
         'quoteTime' => 'setQuoteTime',
-        'quotePrice' => 'setQuotePrice'
+        'quotePrice' => 'setQuotePrice',
     ];
 
     /**
@@ -197,7 +196,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         'sourceCurrency' => 'getSourceCurrency',
         'targetCurrency' => 'getTargetCurrency',
         'quoteTime' => 'getQuoteTime',
-        'quotePrice' => 'getQuotePrice'
+        'quotePrice' => 'getQuotePrice',
     ];
 
     /**
@@ -263,7 +262,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('quoteTime', $data ?? [], null);
         $this->setIfExists('quotePrice', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -502,10 +501,10 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -528,7 +527,7 @@ class ForeignExchangeQuote  implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

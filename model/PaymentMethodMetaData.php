@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymentMethodMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recurringType' => 'string'
+        'recurringType' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recurringType' => null
+        'recurringType' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'recurringType' => false
+        'recurringType' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'recurringType' => 'recurringType'
+        'recurringType' => 'recurringType',
     ];
 
     /**
@@ -164,7 +163,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'recurringType' => 'setRecurringType'
+        'recurringType' => 'setRecurringType',
     ];
 
     /**
@@ -173,7 +172,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'recurringType' => 'getRecurringType'
+        'recurringType' => 'getRecurringType',
     ];
 
     /**
@@ -249,7 +248,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->setIfExists('recurringType', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -283,7 +282,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'recurringType', must be one of '%s'",
                 $this->container['recurringType'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -327,8 +326,8 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
                 sprintf(
                     "Invalid value '%s' for 'recurringType', must be one of '%s'",
                     $recurringType,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['recurringType'] = $recurringType;
@@ -411,10 +410,10 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -437,7 +436,7 @@ class PaymentMethodMetaData  implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

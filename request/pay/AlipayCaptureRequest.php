@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCaptureRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureType' => 'string',
         'transit' => '\Model\Transit',
         'goods' => '\Model\Goods[]',
-        'shippings' => '\Model\Shipping[]'
+        'shippings' => '\Model\Shipping[]',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureType' => null,
         'transit' => null,
         'goods' => null,
-        'shippings' => null
+        'shippings' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureType' => false,
         'transit' => false,
         'goods' => false,
-        'shippings' => false
+        'shippings' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureType' => 'captureType',
         'transit' => 'transit',
         'goods' => 'goods',
-        'shippings' => 'shippings'
+        'shippings' => 'shippings',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureType' => 'setCaptureType',
         'transit' => 'setTransit',
         'goods' => 'setGoods',
-        'shippings' => 'setShippings'
+        'shippings' => 'setShippings',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         'captureType' => 'getCaptureType',
         'transit' => 'getTransit',
         'goods' => 'getGoods',
-        'shippings' => 'getShippings'
+        'shippings' => 'getShippings',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
         $this->setIfExists('goods', $data ?? [], null);
         $this->setIfExists('shippings', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/capture"); 
+        $this->setPath("/ams/api/v1/payments/capture");
     }
 
     /**
@@ -605,10 +604,10 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -631,7 +630,7 @@ class AlipayCaptureRequest   extends AlipayRequest  implements ModelInterface, A
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

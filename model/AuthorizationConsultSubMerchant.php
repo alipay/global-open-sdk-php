@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -30,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthorizationConsultSubMerchant implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'subMerchantServiceName' => 'string',
-        'subMerchantServiceDescription' => 'string'
+        'subMerchantServiceDescription' => 'string',
     ];
 
     /**
@@ -60,7 +59,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'subMerchantServiceName' => null,
-        'subMerchantServiceDescription' => null
+        'subMerchantServiceDescription' => null,
     ];
 
     /**
@@ -70,7 +69,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPINullables = [
         'subMerchantServiceName' => false,
-        'subMerchantServiceDescription' => false
+        'subMerchantServiceDescription' => false,
     ];
 
     /**
@@ -160,7 +159,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
      */
     protected static $attributeMap = [
         'subMerchantServiceName' => 'subMerchantServiceName',
-        'subMerchantServiceDescription' => 'subMerchantServiceDescription'
+        'subMerchantServiceDescription' => 'subMerchantServiceDescription',
     ];
 
     /**
@@ -170,7 +169,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'subMerchantServiceName' => 'setSubMerchantServiceName',
-        'subMerchantServiceDescription' => 'setSubMerchantServiceDescription'
+        'subMerchantServiceDescription' => 'setSubMerchantServiceDescription',
     ];
 
     /**
@@ -180,7 +179,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'subMerchantServiceName' => 'getSubMerchantServiceName',
-        'subMerchantServiceDescription' => 'getSubMerchantServiceDescription'
+        'subMerchantServiceDescription' => 'getSubMerchantServiceDescription',
     ];
 
     /**
@@ -243,7 +242,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
         $this->setIfExists('subMerchantServiceName', $data ?? [], null);
         $this->setIfExists('subMerchantServiceDescription', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -410,10 +409,10 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -436,7 +435,7 @@ class AuthorizationConsultSubMerchant  implements ModelInterface, ArrayAccess, \
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

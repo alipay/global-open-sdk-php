@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubscriptionItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'quantity' => 'int',
         'currentPeriodStart' => 'string',
         'currentPeriodEnd' => 'string',
-        'recurringIntervalCount' => 'int'
+        'recurringIntervalCount' => 'int',
     ];
 
     /**
@@ -67,7 +66,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'quantity' => null,
         'currentPeriodStart' => null,
         'currentPeriodEnd' => null,
-        'recurringIntervalCount' => null
+        'recurringIntervalCount' => null,
     ];
 
     /**
@@ -81,7 +80,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'quantity' => true,
         'currentPeriodStart' => false,
         'currentPeriodEnd' => false,
-        'recurringIntervalCount' => true
+        'recurringIntervalCount' => true,
     ];
 
     /**
@@ -175,7 +174,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'quantity' => 'quantity',
         'currentPeriodStart' => 'currentPeriodStart',
         'currentPeriodEnd' => 'currentPeriodEnd',
-        'recurringIntervalCount' => 'recurringIntervalCount'
+        'recurringIntervalCount' => 'recurringIntervalCount',
     ];
 
     /**
@@ -189,7 +188,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'quantity' => 'setQuantity',
         'currentPeriodStart' => 'setCurrentPeriodStart',
         'currentPeriodEnd' => 'setCurrentPeriodEnd',
-        'recurringIntervalCount' => 'setRecurringIntervalCount'
+        'recurringIntervalCount' => 'setRecurringIntervalCount',
     ];
 
     /**
@@ -203,7 +202,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'quantity' => 'getQuantity',
         'currentPeriodStart' => 'getCurrentPeriodStart',
         'currentPeriodEnd' => 'getCurrentPeriodEnd',
-        'recurringIntervalCount' => 'getRecurringIntervalCount'
+        'recurringIntervalCount' => 'getRecurringIntervalCount',
     ];
 
     /**
@@ -270,7 +269,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('currentPeriodEnd', $data ?? [], null);
         $this->setIfExists('recurringIntervalCount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -542,10 +541,10 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -568,7 +567,7 @@ class SubscriptionItem  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

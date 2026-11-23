@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionCancelResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'cancelAtPeriodEnd' => 'bool',
         'creditNoteId' => 'string',
         'creditNoteAmount' => 'int',
-        'creditNoteCurrency' => 'string'
+        'creditNoteCurrency' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'cancelAtPeriodEnd' => null,
         'creditNoteId' => null,
         'creditNoteAmount' => 'int64',
-        'creditNoteCurrency' => null
+        'creditNoteCurrency' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'cancelAtPeriodEnd' => false,
         'creditNoteId' => false,
         'creditNoteAmount' => false,
-        'creditNoteCurrency' => false
+        'creditNoteCurrency' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
         'creditNoteId' => 'creditNoteId',
         'creditNoteAmount' => 'creditNoteAmount',
-        'creditNoteCurrency' => 'creditNoteCurrency'
+        'creditNoteCurrency' => 'creditNoteCurrency',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
         'creditNoteId' => 'setCreditNoteId',
         'creditNoteAmount' => 'setCreditNoteAmount',
-        'creditNoteCurrency' => 'setCreditNoteCurrency'
+        'creditNoteCurrency' => 'setCreditNoteCurrency',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
         'creditNoteId' => 'getCreditNoteId',
         'creditNoteAmount' => 'getCreditNoteAmount',
-        'creditNoteCurrency' => 'getCreditNoteCurrency'
+        'creditNoteCurrency' => 'getCreditNoteCurrency',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
         $this->setIfExists('creditNoteAmount', $data ?? [], null);
         $this->setIfExists('creditNoteCurrency', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -610,10 +609,10 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -636,7 +635,7 @@ class AlipayBillingSubscriptionCancelResponse  implements ModelInterface, ArrayA
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInvoiceCreateViewLinkRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     protected static $openAPITypes = [
         'invoiceId' => 'string',
         'invoiceRequestId' => 'string',
-        'linkExpiryDays' => 'int'
+        'linkExpiryDays' => 'int',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     protected static $openAPIFormats = [
         'invoiceId' => null,
         'invoiceRequestId' => null,
-        'linkExpiryDays' => null
+        'linkExpiryDays' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     protected static $openAPINullables = [
         'invoiceId' => false,
         'invoiceRequestId' => false,
-        'linkExpiryDays' => true
+        'linkExpiryDays' => true,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     protected static $attributeMap = [
         'invoiceId' => 'invoiceId',
         'invoiceRequestId' => 'invoiceRequestId',
-        'linkExpiryDays' => 'linkExpiryDays'
+        'linkExpiryDays' => 'linkExpiryDays',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     protected static $setters = [
         'invoiceId' => 'setInvoiceId',
         'invoiceRequestId' => 'setInvoiceRequestId',
-        'linkExpiryDays' => 'setLinkExpiryDays'
+        'linkExpiryDays' => 'setLinkExpiryDays',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     protected static $getters = [
         'invoiceId' => 'getInvoiceId',
         'invoiceRequestId' => 'getInvoiceRequestId',
-        'linkExpiryDays' => 'getLinkExpiryDays'
+        'linkExpiryDays' => 'getLinkExpiryDays',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('invoiceRequestId', $data ?? [], null);
         $this->setIfExists('linkExpiryDays', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/invoice/createViewLink"); 
+        $this->setPath("/ams/api/v1/billing/invoice/createViewLink");
     }
 
     /**
@@ -441,10 +440,10 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -467,7 +466,7 @@ class AlipayInvoiceCreateViewLinkRequest   extends AlipayRequest  implements Mod
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

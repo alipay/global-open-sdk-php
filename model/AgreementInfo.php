@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AgreementInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'authState' => 'string',
         'userLoginId' => 'string',
         'userLoginType' => 'string',
-        'displayUserLoginId' => 'string'
+        'displayUserLoginId' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'authState' => null,
         'userLoginId' => null,
         'userLoginType' => null,
-        'displayUserLoginId' => null
+        'displayUserLoginId' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'authState' => false,
         'userLoginId' => false,
         'userLoginType' => false,
-        'displayUserLoginId' => false
+        'displayUserLoginId' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'authState' => 'authState',
         'userLoginId' => 'userLoginId',
         'userLoginType' => 'userLoginType',
-        'displayUserLoginId' => 'displayUserLoginId'
+        'displayUserLoginId' => 'displayUserLoginId',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'authState' => 'setAuthState',
         'userLoginId' => 'setUserLoginId',
         'userLoginType' => 'setUserLoginType',
-        'displayUserLoginId' => 'setDisplayUserLoginId'
+        'displayUserLoginId' => 'setDisplayUserLoginId',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'authState' => 'getAuthState',
         'userLoginId' => 'getUserLoginId',
         'userLoginType' => 'getUserLoginType',
-        'displayUserLoginId' => 'getDisplayUserLoginId'
+        'displayUserLoginId' => 'getDisplayUserLoginId',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('userLoginType', $data ?? [], null);
         $this->setIfExists('displayUserLoginId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -471,10 +470,10 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -497,7 +496,7 @@ class AgreementInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

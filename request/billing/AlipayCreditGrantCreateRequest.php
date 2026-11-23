@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreditGrantCreateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         'priority' => 'int',
         'category' => 'string',
         'effectiveDateTime' => 'string',
-        'expiryDateTime' => 'string'
+        'expiryDateTime' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         'priority' => null,
         'category' => null,
         'effectiveDateTime' => null,
-        'expiryDateTime' => null
+        'expiryDateTime' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         'priority' => true,
         'category' => false,
         'effectiveDateTime' => false,
-        'expiryDateTime' => false
+        'expiryDateTime' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         'priority' => 'priority',
         'category' => 'category',
         'effectiveDateTime' => 'effectiveDateTime',
-        'expiryDateTime' => 'expiryDateTime'
+        'expiryDateTime' => 'expiryDateTime',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         'priority' => 'setPriority',
         'category' => 'setCategory',
         'effectiveDateTime' => 'setEffectiveDateTime',
-        'expiryDateTime' => 'setExpiryDateTime'
+        'expiryDateTime' => 'setExpiryDateTime',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         'priority' => 'getPriority',
         'category' => 'getCategory',
         'effectiveDateTime' => 'getEffectiveDateTime',
-        'expiryDateTime' => 'getExpiryDateTime'
+        'expiryDateTime' => 'getExpiryDateTime',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
         $this->setIfExists('effectiveDateTime', $data ?? [], null);
         $this->setIfExists('expiryDateTime', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/meter/creditGrant/create"); 
+        $this->setPath("/ams/api/v1/meter/creditGrant/create");
     }
 
     /**
@@ -611,10 +610,10 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -637,7 +636,7 @@ class AlipayCreditGrantCreateRequest   extends AlipayRequest  implements ModelIn
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

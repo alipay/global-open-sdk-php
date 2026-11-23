@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializable
+class FundTransferSender implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'senderName' => '\Model\FundTransferPartyName',
-        'address' => '\Model\FundTransferPartyAddress'
+        'address' => '\Model\FundTransferPartyAddress',
     ];
 
     /**
@@ -59,7 +58,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'senderName' => null,
-        'address' => null
+        'address' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPINullables = [
         'senderName' => false,
-        'address' => false
+        'address' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'senderName' => 'senderName',
-        'address' => 'address'
+        'address' => 'address',
     ];
 
     /**
@@ -169,7 +168,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'senderName' => 'setSenderName',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
     ];
 
     /**
@@ -179,7 +178,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'senderName' => 'getSenderName',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
     ];
 
     /**
@@ -242,7 +241,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('senderName', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -409,10 +408,10 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -435,7 +434,7 @@ class FundTransferSender  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

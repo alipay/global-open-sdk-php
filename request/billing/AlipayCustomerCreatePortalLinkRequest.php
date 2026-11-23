@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCustomerCreatePortalLinkRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         'email' => 'string',
         'features' => 'string[]',
         'autoSend' => 'bool',
-        'settingId' => 'string'
+        'settingId' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         'email' => null,
         'features' => null,
         'autoSend' => null,
-        'settingId' => null
+        'settingId' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         'email' => false,
         'features' => false,
         'autoSend' => false,
-        'settingId' => false
+        'settingId' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         'email' => 'email',
         'features' => 'features',
         'autoSend' => 'autoSend',
-        'settingId' => 'settingId'
+        'settingId' => 'settingId',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         'email' => 'setEmail',
         'features' => 'setFeatures',
         'autoSend' => 'setAutoSend',
-        'settingId' => 'setSettingId'
+        'settingId' => 'setSettingId',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         'email' => 'getEmail',
         'features' => 'getFeatures',
         'autoSend' => 'getAutoSend',
-        'settingId' => 'getSettingId'
+        'settingId' => 'getSettingId',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
         $this->setIfExists('autoSend', $data ?? [], null);
         $this->setIfExists('settingId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/customer/createPortalLink"); 
+        $this->setPath("/ams/api/v1/billing/customer/createPortalLink");
     }
 
     /**
@@ -503,10 +502,10 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -529,7 +528,7 @@ class AlipayCustomerCreatePortalLinkRequest   extends AlipayRequest  implements 
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

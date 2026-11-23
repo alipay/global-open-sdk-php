@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionInquireListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +53,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         'sortOrder' => 'string',
         'startingAfter' => 'string',
         'endingBefore' => 'string',
-        'limit' => 'int'
+        'limit' => 'int',
     ];
 
     /**
@@ -73,7 +72,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         'sortOrder' => null,
         'startingAfter' => null,
         'endingBefore' => null,
-        'limit' => null
+        'limit' => null,
     ];
 
     /**
@@ -90,7 +89,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         'sortOrder' => false,
         'startingAfter' => false,
         'endingBefore' => false,
-        'limit' => true
+        'limit' => true,
     ];
 
     /**
@@ -187,7 +186,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         'sortOrder' => 'sortOrder',
         'startingAfter' => 'startingAfter',
         'endingBefore' => 'endingBefore',
-        'limit' => 'limit'
+        'limit' => 'limit',
     ];
 
     /**
@@ -204,7 +203,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         'sortOrder' => 'setSortOrder',
         'startingAfter' => 'setStartingAfter',
         'endingBefore' => 'setEndingBefore',
-        'limit' => 'setLimit'
+        'limit' => 'setLimit',
     ];
 
     /**
@@ -221,7 +220,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         'sortOrder' => 'getSortOrder',
         'startingAfter' => 'getStartingAfter',
         'endingBefore' => 'getEndingBefore',
-        'limit' => 'getLimit'
+        'limit' => 'getLimit',
     ];
 
     /**
@@ -291,7 +290,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
         $this->setIfExists('endingBefore', $data ?? [], null);
         $this->setIfExists('limit', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/subscription/inquireList"); 
+        $this->setPath("/ams/api/v1/billing/subscription/inquireList");
     }
 
     /**
@@ -627,10 +626,10 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -653,7 +652,7 @@ class AlipayBillingSubscriptionInquireListRequest   extends AlipayRequest  imple
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

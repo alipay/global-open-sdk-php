@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\notification;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireNotificationListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         'result' => '\Model\Result',
         'notifications' => '\Model\NotificationEvent[]',
         'hasMore' => 'bool',
-        'nextStartingAfter' => 'string'
+        'nextStartingAfter' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         'result' => null,
         'notifications' => null,
         'hasMore' => null,
-        'nextStartingAfter' => null
+        'nextStartingAfter' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         'result' => false,
         'notifications' => false,
         'hasMore' => false,
-        'nextStartingAfter' => false
+        'nextStartingAfter' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         'result' => 'result',
         'notifications' => 'notifications',
         'hasMore' => 'hasMore',
-        'nextStartingAfter' => 'nextStartingAfter'
+        'nextStartingAfter' => 'nextStartingAfter',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         'result' => 'setResult',
         'notifications' => 'setNotifications',
         'hasMore' => 'setHasMore',
-        'nextStartingAfter' => 'setNextStartingAfter'
+        'nextStartingAfter' => 'setNextStartingAfter',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         'result' => 'getResult',
         'notifications' => 'getNotifications',
         'hasMore' => 'getHasMore',
-        'nextStartingAfter' => 'getNextStartingAfter'
+        'nextStartingAfter' => 'getNextStartingAfter',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
         $this->setIfExists('hasMore', $data ?? [], null);
         $this->setIfExists('nextStartingAfter', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AlipayInquireNotificationListResponse  implements ModelInterface, ArrayAcc
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

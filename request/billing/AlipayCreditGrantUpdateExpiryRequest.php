@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreditGrantUpdateExpiryRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     protected static $openAPITypes = [
         'creditGrantId' => 'string',
         'expiryMode' => 'string',
-        'expiryDateTime' => 'string'
+        'expiryDateTime' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     protected static $openAPIFormats = [
         'creditGrantId' => null,
         'expiryMode' => null,
-        'expiryDateTime' => null
+        'expiryDateTime' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     protected static $openAPINullables = [
         'creditGrantId' => false,
         'expiryMode' => false,
-        'expiryDateTime' => false
+        'expiryDateTime' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     protected static $attributeMap = [
         'creditGrantId' => 'creditGrantId',
         'expiryMode' => 'expiryMode',
-        'expiryDateTime' => 'expiryDateTime'
+        'expiryDateTime' => 'expiryDateTime',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     protected static $setters = [
         'creditGrantId' => 'setCreditGrantId',
         'expiryMode' => 'setExpiryMode',
-        'expiryDateTime' => 'setExpiryDateTime'
+        'expiryDateTime' => 'setExpiryDateTime',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     protected static $getters = [
         'creditGrantId' => 'getCreditGrantId',
         'expiryMode' => 'getExpiryMode',
-        'expiryDateTime' => 'getExpiryDateTime'
+        'expiryDateTime' => 'getExpiryDateTime',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
         $this->setIfExists('expiryMode', $data ?? [], null);
         $this->setIfExists('expiryDateTime', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/meter/creditGrant/updateExpiry"); 
+        $this->setPath("/ams/api/v1/meter/creditGrant/updateExpiry");
     }
 
     /**
@@ -447,10 +446,10 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -473,7 +472,7 @@ class AlipayCreditGrantUpdateExpiryRequest   extends AlipayRequest  implements M
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

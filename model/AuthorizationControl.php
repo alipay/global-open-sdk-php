@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthorizationControl implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,14 +50,13 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'string[]',
         'allowedAuthTimes' => 'int',
         'allowedCurrencies' => 'string[]',
-        'paymentPreferenceCurrencies' => 'string[]',
-        'sameCurrencyPreference' => 'bool',
+        'paymentPreference' => '\Model\PaymentPreference',
         'threeDSMode' => 'string',
         'phoneNo' => 'string',
         'email' => 'string',
         'cardLimitDetail' => '\Model\CardLimitDetail',
         'cardLimitInfo' => '\Model\CardLimitInfo',
-        'refundPreference' => '\Model\RefundPreference'
+        'refundPreference' => '\Model\RefundPreference',
     ];
 
     /**
@@ -74,14 +72,13 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => null,
         'allowedAuthTimes' => null,
         'allowedCurrencies' => null,
-        'paymentPreferenceCurrencies' => null,
-        'sameCurrencyPreference' => null,
+        'paymentPreference' => null,
         'threeDSMode' => null,
         'phoneNo' => null,
         'email' => null,
         'cardLimitDetail' => null,
         'cardLimitInfo' => null,
-        'refundPreference' => null
+        'refundPreference' => null,
     ];
 
     /**
@@ -95,14 +92,13 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => false,
         'allowedAuthTimes' => true,
         'allowedCurrencies' => false,
-        'paymentPreferenceCurrencies' => false,
-        'sameCurrencyPreference' => false,
+        'paymentPreference' => false,
         'threeDSMode' => false,
         'phoneNo' => false,
         'email' => false,
         'cardLimitDetail' => false,
         'cardLimitInfo' => false,
-        'refundPreference' => false
+        'refundPreference' => false,
     ];
 
     /**
@@ -196,14 +192,13 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'allowedMerchantCategoryList',
         'allowedAuthTimes' => 'allowedAuthTimes',
         'allowedCurrencies' => 'allowedCurrencies',
-        'paymentPreferenceCurrencies' => 'paymentPreferenceCurrencies',
-        'sameCurrencyPreference' => 'sameCurrencyPreference',
+        'paymentPreference' => 'paymentPreference',
         'threeDSMode' => 'threeDSMode',
         'phoneNo' => 'phoneNo',
         'email' => 'email',
         'cardLimitDetail' => 'cardLimitDetail',
         'cardLimitInfo' => 'cardLimitInfo',
-        'refundPreference' => 'refundPreference'
+        'refundPreference' => 'refundPreference',
     ];
 
     /**
@@ -217,14 +212,13 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'setAllowedMerchantCategoryList',
         'allowedAuthTimes' => 'setAllowedAuthTimes',
         'allowedCurrencies' => 'setAllowedCurrencies',
-        'paymentPreferenceCurrencies' => 'setPaymentPreferenceCurrencies',
-        'sameCurrencyPreference' => 'setSameCurrencyPreference',
+        'paymentPreference' => 'setPaymentPreference',
         'threeDSMode' => 'setThreeDSMode',
         'phoneNo' => 'setPhoneNo',
         'email' => 'setEmail',
         'cardLimitDetail' => 'setCardLimitDetail',
         'cardLimitInfo' => 'setCardLimitInfo',
-        'refundPreference' => 'setRefundPreference'
+        'refundPreference' => 'setRefundPreference',
     ];
 
     /**
@@ -238,14 +232,13 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         'allowedMerchantCategoryList' => 'getAllowedMerchantCategoryList',
         'allowedAuthTimes' => 'getAllowedAuthTimes',
         'allowedCurrencies' => 'getAllowedCurrencies',
-        'paymentPreferenceCurrencies' => 'getPaymentPreferenceCurrencies',
-        'sameCurrencyPreference' => 'getSameCurrencyPreference',
+        'paymentPreference' => 'getPaymentPreference',
         'threeDSMode' => 'getThreeDSMode',
         'phoneNo' => 'getPhoneNo',
         'email' => 'getEmail',
         'cardLimitDetail' => 'getCardLimitDetail',
         'cardLimitInfo' => 'getCardLimitInfo',
-        'refundPreference' => 'getRefundPreference'
+        'refundPreference' => 'getRefundPreference',
     ];
 
     /**
@@ -310,8 +303,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('allowedMerchantCategoryList', $data ?? [], null);
         $this->setIfExists('allowedAuthTimes', $data ?? [], null);
         $this->setIfExists('allowedCurrencies', $data ?? [], null);
-        $this->setIfExists('paymentPreferenceCurrencies', $data ?? [], null);
-        $this->setIfExists('sameCurrencyPreference', $data ?? [], null);
+        $this->setIfExists('paymentPreference', $data ?? [], null);
         $this->setIfExists('threeDSMode', $data ?? [], null);
         $this->setIfExists('phoneNo', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
@@ -319,7 +311,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('cardLimitInfo', $data ?? [], null);
         $this->setIfExists('refundPreference', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -487,49 +479,25 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets paymentPreferenceCurrencies
+     * Gets paymentPreference
      *
-     * @return string[]|null
+     * @return \model\PaymentPreference|null
      */
-    public function getPaymentPreferenceCurrencies()
+    public function getPaymentPreference()
     {
-        return $this->container['paymentPreferenceCurrencies'];
+        return $this->container['paymentPreference'];
     }
 
     /**
-     * Sets paymentPreferenceCurrencies
+     * Sets paymentPreference
      *
-     * @param string[]|null $paymentPreferenceCurrencies An ordered list of ISO 4217 currency codes that defines the card-level balance-consumption priority. Only applyCard accepts this field in a request; do not send it to updateCard. For applyCard, the list must not contain duplicates and every currency must be supported by Antom. Omission, null, or an empty list configures no card-level preference. The field participates in requestId idempotency, and invalid values, more than 9 entries, duplicates, or capability-disabled use return PARAM_ILLEGAL. For inquireCardDetail, a configured list is returned in stored order; an enabled merchant without a card-level preference receives null, and a disabled merchant does not receive the field. For inquireCardSensitiveInfo, the current contract exposes authorizationControl at the response top level for whitelisted merchants. The legacy cardDetail property remains in the SDK for compatibility, without automatic copying between the two locations. The order field is subject to its existing capability and visibility rules; an absent order field must not be interpreted as proof that no stored order exists. The initially supported currencies are USD, EUR, GBP, HKD, AUD, CAD, CNH, JPY, and NZD; the supported set is configuration-driven and can change without an API contract change.
+     * @param \model\PaymentPreference|null $paymentPreference paymentPreference
      *
      * @return self
      */
-    public function setPaymentPreferenceCurrencies($paymentPreferenceCurrencies)
+    public function setPaymentPreference($paymentPreference)
     {
-        $this->container['paymentPreferenceCurrencies'] = $paymentPreferenceCurrencies;
-
-        return $this;
-    }
-
-    /**
-     * Gets sameCurrencyPreference
-     *
-     * @return bool|null
-     */
-    public function getSameCurrencyPreference()
-    {
-        return $this->container['sameCurrencyPreference'];
-    }
-
-    /**
-     * Sets sameCurrencyPreference
-     *
-     * @param bool|null $sameCurrencyPreference Whether to prioritize the transaction currency balance. Accepted only by applyCard and immutable after creation; do not send to updateCard. True enables same-currency-first deduction; false skips it and follows paymentPreferenceCurrencies when configured, otherwise the account-level setting. Omission preserves the server default behavior (same-currency-first); SDKs must not supply a default and must preserve explicit false. An omitted, null, or empty currency order is accepted. Returned by inquireCardDetail and the top-level authorizationControl of inquireCardSensitiveInfo when a standing is stored; otherwise omitted. Sensitive-info enrichment requires the existing merchant whitelist. Availability is controlled by WorldFirst; an ignored preference is not stored. Applicable to eligible Z18 merchants in CN/HK. Each payment is funded in full from one currency; balances are never split across currencies. A configured card-level currency order is exclusive: the account-level order is not consulted, and the payment fails if no eligible currency can fund it in full. On inquiry, an absent paymentPreferenceCurrencies field can mean the order is hidden or unavailable; it must not be interpreted as proof that no order is configured. Retain endpoint and capability context when interpreting returned fields.
-     *
-     * @return self
-     */
-    public function setSameCurrencyPreference($sameCurrencyPreference)
-    {
-        $this->container['sameCurrencyPreference'] = $sameCurrencyPreference;
+        $this->container['paymentPreference'] = $paymentPreference;
 
         return $this;
     }
@@ -753,10 +721,10 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -779,7 +747,7 @@ class AuthorizationControl  implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

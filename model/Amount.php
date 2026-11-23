@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Amount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'currency' => 'string',
-        'value' => 'string'
+        'value' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'currency' => null,
-        'value' => null
+        'value' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPINullables = [
         'currency' => false,
-        'value' => false
+        'value' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'currency' => 'currency',
-        'value' => 'value'
+        'value' => 'value',
     ];
 
     /**
@@ -169,7 +168,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'currency' => 'setCurrency',
-        'value' => 'setValue'
+        'value' => 'setValue',
     ];
 
     /**
@@ -179,7 +178,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'currency' => 'getCurrency',
-        'value' => 'getValue'
+        'value' => 'getValue',
     ];
 
     /**
@@ -242,7 +241,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -415,10 +414,10 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -441,7 +440,7 @@ class Amount  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

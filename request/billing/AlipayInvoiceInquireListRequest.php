@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInvoiceInquireListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -59,7 +58,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'endDate' => 'string',
         'minAmount' => '\Model\Amount',
         'maxAmount' => '\Model\Amount',
-        'excludeDraft' => 'bool'
+        'excludeDraft' => 'bool',
     ];
 
     /**
@@ -83,7 +82,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'endDate' => null,
         'minAmount' => null,
         'maxAmount' => null,
-        'excludeDraft' => null
+        'excludeDraft' => null,
     ];
 
     /**
@@ -105,7 +104,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'endDate' => false,
         'minAmount' => false,
         'maxAmount' => false,
-        'excludeDraft' => false
+        'excludeDraft' => false,
     ];
 
     /**
@@ -207,7 +206,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'endDate' => 'endDate',
         'minAmount' => 'minAmount',
         'maxAmount' => 'maxAmount',
-        'excludeDraft' => 'excludeDraft'
+        'excludeDraft' => 'excludeDraft',
     ];
 
     /**
@@ -229,7 +228,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'endDate' => 'setEndDate',
         'minAmount' => 'setMinAmount',
         'maxAmount' => 'setMaxAmount',
-        'excludeDraft' => 'setExcludeDraft'
+        'excludeDraft' => 'setExcludeDraft',
     ];
 
     /**
@@ -251,7 +250,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         'endDate' => 'getEndDate',
         'minAmount' => 'getMinAmount',
         'maxAmount' => 'getMaxAmount',
-        'excludeDraft' => 'getExcludeDraft'
+        'excludeDraft' => 'getExcludeDraft',
     ];
 
     /**
@@ -326,7 +325,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('maxAmount', $data ?? [], null);
         $this->setIfExists('excludeDraft', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/invoice/inquireList"); 
+        $this->setPath("/ams/api/v1/billing/invoice/inquireList");
     }
 
     /**
@@ -782,10 +781,10 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -808,7 +807,7 @@ class AlipayInvoiceInquireListRequest   extends AlipayRequest  implements ModelI
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

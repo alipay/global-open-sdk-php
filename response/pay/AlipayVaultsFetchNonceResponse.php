@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayVaultsFetchNonceResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'cardToken' => 'string',
-        'result' => '\Model\Result'
+        'result' => '\Model\Result',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'cardToken' => null,
-        'result' => null
+        'result' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPINullables = [
         'cardToken' => false,
-        'result' => false
+        'result' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'cardToken' => 'cardToken',
-        'result' => 'result'
+        'result' => 'result',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'cardToken' => 'setCardToken',
-        'result' => 'setResult'
+        'result' => 'setResult',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'cardToken' => 'getCardToken',
-        'result' => 'getResult'
+        'result' => 'getResult',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('cardToken', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -415,10 +414,10 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -441,7 +440,7 @@ class AlipayVaultsFetchNonceResponse  implements ModelInterface, ArrayAccess, \J
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

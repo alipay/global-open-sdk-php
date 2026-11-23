@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ThreeDSResult implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'exemptionType' => 'string',
         'threeDSOffered' => 'bool',
         'paResStatus' => 'string',
-        'liabilityShift' => 'int'
+        'liabilityShift' => 'int',
     ];
 
     /**
@@ -79,7 +78,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'exemptionType' => null,
         'threeDSOffered' => null,
         'paResStatus' => null,
-        'liabilityShift' => null
+        'liabilityShift' => null,
     ];
 
     /**
@@ -99,7 +98,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'exemptionType' => false,
         'threeDSOffered' => false,
         'paResStatus' => false,
-        'liabilityShift' => true
+        'liabilityShift' => true,
     ];
 
     /**
@@ -199,7 +198,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'exemptionType' => 'exemptionType',
         'threeDSOffered' => 'threeDSOffered',
         'paResStatus' => 'paResStatus',
-        'liabilityShift' => 'liabilityShift'
+        'liabilityShift' => 'liabilityShift',
     ];
 
     /**
@@ -219,7 +218,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'exemptionType' => 'setExemptionType',
         'threeDSOffered' => 'setThreeDSOffered',
         'paResStatus' => 'setPaResStatus',
-        'liabilityShift' => 'setLiabilityShift'
+        'liabilityShift' => 'setLiabilityShift',
     ];
 
     /**
@@ -239,7 +238,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         'exemptionType' => 'getExemptionType',
         'threeDSOffered' => 'getThreeDSOffered',
         'paResStatus' => 'getPaResStatus',
-        'liabilityShift' => 'getLiabilityShift'
+        'liabilityShift' => 'getLiabilityShift',
     ];
 
     /**
@@ -312,7 +311,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('paResStatus', $data ?? [], null);
         $this->setIfExists('liabilityShift', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -341,15 +340,6 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['threeDSVersion'] === null) {
-            $invalidProperties[] = "'threeDSVersion' can't be null";
-        }
-        if ($this->container['eci'] === null) {
-            $invalidProperties[] = "'eci' can't be null";
-        }
-        if ($this->container['challenged'] === null) {
-            $invalidProperties[] = "'challenged' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -368,7 +358,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets threeDSVersion
      *
-     * @return string
+     * @return string|null
      */
     public function getThreeDSVersion()
     {
@@ -378,7 +368,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets threeDSVersion
      *
-     * @param string $threeDSVersion The version of 3D Secure protocol. Valid values are:  1.0.2 2.1.0 2.2.0
+     * @param string|null $threeDSVersion The version of 3D Secure protocol. Valid values are:  1.0.2 2.1.0 2.2.0
      *
      * @return self
      */
@@ -392,7 +382,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets eci
      *
-     * @return string
+     * @return string|null
      */
     public function getEci()
     {
@@ -402,7 +392,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets eci
      *
-     * @param string $eci Electronic Commerce Indicator (ECI) that is returned by the card scheme. This parameter is used to indicate the type of cardholder identity authentication. Valid values are:  02 or 05: Indicates fully authenticated transaction. 01 or 06: Indicates attempted authentication transaction. 00 or 07: Indicates non-3D Secure transaction. 04: Indicates 3D Secure data-only transaction. No authentication required (for Mastercard only). Note: This parameter is returned when the value of paymentMethodType is CARD and the issuing bank returns this data.
+     * @param string|null $eci Electronic Commerce Indicator (ECI) that is returned by the card scheme. This parameter is used to indicate the type of cardholder identity authentication. Valid values are:  02 or 05: Indicates fully authenticated transaction. 01 or 06: Indicates attempted authentication transaction. 00 or 07: Indicates non-3D Secure transaction. 04: Indicates 3D Secure data-only transaction. No authentication required (for Mastercard only). Note: This parameter is returned when the value of paymentMethodType is CARD and the issuing bank returns this data.
      *
      * @return self
      */
@@ -536,7 +526,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets challenged
      *
-     * @return bool
+     * @return bool|null
      */
     public function getChallenged()
     {
@@ -546,7 +536,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets challenged
      *
-     * @param bool $challenged Indicates whether a 3DS challenge was triggered. Valid values are:  true: The transaction has been challenged, and the user is required to complete the 3D Secure authentication process. false: The transaction is a frictionless process, where the user does not experience the 3D Secure authentication process.
+     * @param bool|null $challenged Indicates whether a 3DS challenge was triggered. Valid values are:  true: The transaction has been challenged, and the user is required to complete the 3D Secure authentication process. false: The transaction is a frictionless process, where the user does not experience the 3D Secure authentication process.
      *
      * @return self
      */
@@ -728,10 +718,10 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -754,7 +744,7 @@ class ThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

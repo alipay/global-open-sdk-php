@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
+class RiskBuyer implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'noteToMerchant' => 'string',
         'noteToShipping' => 'string',
         'orderCountIn1H' => 'int',
-        'orderCountIn24H' => 'int'
+        'orderCountIn24H' => 'int',
     ];
 
     /**
@@ -63,7 +62,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'noteToMerchant' => null,
         'noteToShipping' => null,
         'orderCountIn1H' => null,
-        'orderCountIn24H' => null
+        'orderCountIn24H' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'noteToMerchant' => false,
         'noteToShipping' => false,
         'orderCountIn1H' => true,
-        'orderCountIn24H' => true
+        'orderCountIn24H' => true,
     ];
 
     /**
@@ -167,7 +166,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'noteToMerchant' => 'noteToMerchant',
         'noteToShipping' => 'noteToShipping',
         'orderCountIn1H' => 'orderCountIn1H',
-        'orderCountIn24H' => 'orderCountIn24H'
+        'orderCountIn24H' => 'orderCountIn24H',
     ];
 
     /**
@@ -179,7 +178,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'noteToMerchant' => 'setNoteToMerchant',
         'noteToShipping' => 'setNoteToShipping',
         'orderCountIn1H' => 'setOrderCountIn1H',
-        'orderCountIn24H' => 'setOrderCountIn24H'
+        'orderCountIn24H' => 'setOrderCountIn24H',
     ];
 
     /**
@@ -191,7 +190,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         'noteToMerchant' => 'getNoteToMerchant',
         'noteToShipping' => 'getNoteToShipping',
         'orderCountIn1H' => 'getOrderCountIn1H',
-        'orderCountIn24H' => 'getOrderCountIn24H'
+        'orderCountIn24H' => 'getOrderCountIn24H',
     ];
 
     /**
@@ -256,7 +255,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('orderCountIn1H', $data ?? [], null);
         $this->setIfExists('orderCountIn24H', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -483,10 +482,10 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -509,7 +508,7 @@ class RiskBuyer  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

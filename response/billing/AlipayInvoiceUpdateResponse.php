@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInvoiceUpdateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'result' => '\Model\Result',
         'invoiceId' => 'string',
         'status' => 'string',
-        'previousInvoiceId' => 'string'
+        'previousInvoiceId' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'result' => null,
         'invoiceId' => null,
         'status' => null,
-        'previousInvoiceId' => null
+        'previousInvoiceId' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'result' => false,
         'invoiceId' => false,
         'status' => false,
-        'previousInvoiceId' => false
+        'previousInvoiceId' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'result' => 'result',
         'invoiceId' => 'invoiceId',
         'status' => 'status',
-        'previousInvoiceId' => 'previousInvoiceId'
+        'previousInvoiceId' => 'previousInvoiceId',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'result' => 'setResult',
         'invoiceId' => 'setInvoiceId',
         'status' => 'setStatus',
-        'previousInvoiceId' => 'setPreviousInvoiceId'
+        'previousInvoiceId' => 'setPreviousInvoiceId',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         'result' => 'getResult',
         'invoiceId' => 'getInvoiceId',
         'status' => 'getStatus',
-        'previousInvoiceId' => 'getPreviousInvoiceId'
+        'previousInvoiceId' => 'getPreviousInvoiceId',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('previousInvoiceId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AlipayInvoiceUpdateResponse  implements ModelInterface, ArrayAccess, \Json
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

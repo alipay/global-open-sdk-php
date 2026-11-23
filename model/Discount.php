@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         'discountTag' => 'string',
         'discountName' => 'string',
         'savingsAmount' => '\Model\Amount',
-        'estimateSavingsAmount' => '\Model\Amount'
+        'estimateSavingsAmount' => '\Model\Amount',
     ];
 
     /**
@@ -63,7 +62,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         'discountTag' => null,
         'discountName' => null,
         'savingsAmount' => null,
-        'estimateSavingsAmount' => null
+        'estimateSavingsAmount' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         'discountTag' => false,
         'discountName' => false,
         'savingsAmount' => false,
-        'estimateSavingsAmount' => false
+        'estimateSavingsAmount' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         'discountTag' => 'discountTag',
         'discountName' => 'discountName',
         'savingsAmount' => 'savingsAmount',
-        'estimateSavingsAmount' => 'estimateSavingsAmount'
+        'estimateSavingsAmount' => 'estimateSavingsAmount',
     ];
 
     /**
@@ -179,7 +178,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         'discountTag' => 'setDiscountTag',
         'discountName' => 'setDiscountName',
         'savingsAmount' => 'setSavingsAmount',
-        'estimateSavingsAmount' => 'setEstimateSavingsAmount'
+        'estimateSavingsAmount' => 'setEstimateSavingsAmount',
     ];
 
     /**
@@ -191,7 +190,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         'discountTag' => 'getDiscountTag',
         'discountName' => 'getDiscountName',
         'savingsAmount' => 'getSavingsAmount',
-        'estimateSavingsAmount' => 'getEstimateSavingsAmount'
+        'estimateSavingsAmount' => 'getEstimateSavingsAmount',
     ];
 
     /**
@@ -256,7 +255,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('savingsAmount', $data ?? [], null);
         $this->setIfExists('estimateSavingsAmount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -471,10 +470,10 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -497,7 +496,7 @@ class Discount  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

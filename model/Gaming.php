@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Gaming implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gameName' => 'string',
         'toppedUpUser' => 'string',
         'toppedUpEmail' => 'string',
-        'toppedUpPhoneNo' => 'string'
+        'toppedUpPhoneNo' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gameName' => null,
         'toppedUpUser' => null,
         'toppedUpEmail' => null,
-        'toppedUpPhoneNo' => null
+        'toppedUpPhoneNo' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gameName' => false,
         'toppedUpUser' => false,
         'toppedUpEmail' => false,
-        'toppedUpPhoneNo' => false
+        'toppedUpPhoneNo' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gameName' => 'gameName',
         'toppedUpUser' => 'toppedUpUser',
         'toppedUpEmail' => 'toppedUpEmail',
-        'toppedUpPhoneNo' => 'toppedUpPhoneNo'
+        'toppedUpPhoneNo' => 'toppedUpPhoneNo',
     ];
 
     /**
@@ -179,7 +178,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gameName' => 'setGameName',
         'toppedUpUser' => 'setToppedUpUser',
         'toppedUpEmail' => 'setToppedUpEmail',
-        'toppedUpPhoneNo' => 'setToppedUpPhoneNo'
+        'toppedUpPhoneNo' => 'setToppedUpPhoneNo',
     ];
 
     /**
@@ -191,7 +190,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gameName' => 'getGameName',
         'toppedUpUser' => 'getToppedUpUser',
         'toppedUpEmail' => 'getToppedUpEmail',
-        'toppedUpPhoneNo' => 'getToppedUpPhoneNo'
+        'toppedUpPhoneNo' => 'getToppedUpPhoneNo',
     ];
 
     /**
@@ -256,7 +255,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('toppedUpEmail', $data ?? [], null);
         $this->setIfExists('toppedUpPhoneNo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -471,10 +470,10 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -497,7 +496,7 @@ class Gaming  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

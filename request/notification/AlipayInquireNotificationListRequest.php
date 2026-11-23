@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\notification;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireNotificationListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireNotificationListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         'eventCreateTimeFrom' => 'string',
         'eventCreateTimeTo' => 'string',
         'limit' => 'int',
-        'startingAfter' => 'string'
+        'startingAfter' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         'eventCreateTimeFrom' => null,
         'eventCreateTimeTo' => null,
         'limit' => null,
-        'startingAfter' => null
+        'startingAfter' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         'eventCreateTimeFrom' => false,
         'eventCreateTimeTo' => false,
         'limit' => true,
-        'startingAfter' => false
+        'startingAfter' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         'eventCreateTimeFrom' => 'eventCreateTimeFrom',
         'eventCreateTimeTo' => 'eventCreateTimeTo',
         'limit' => 'limit',
-        'startingAfter' => 'startingAfter'
+        'startingAfter' => 'startingAfter',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         'eventCreateTimeFrom' => 'setEventCreateTimeFrom',
         'eventCreateTimeTo' => 'setEventCreateTimeTo',
         'limit' => 'setLimit',
-        'startingAfter' => 'setStartingAfter'
+        'startingAfter' => 'setStartingAfter',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         'eventCreateTimeFrom' => 'getEventCreateTimeFrom',
         'eventCreateTimeTo' => 'getEventCreateTimeTo',
         'limit' => 'getLimit',
-        'startingAfter' => 'getStartingAfter'
+        'startingAfter' => 'getStartingAfter',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
         $this->setIfExists('limit', $data ?? [], null);
         $this->setIfExists('startingAfter', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/notification/inquireNotificationList"); 
+        $this->setPath("/ams/api/v1/notification/inquireNotificationList");
     }
 
     /**
@@ -503,10 +502,10 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -529,7 +528,7 @@ class AlipayInquireNotificationListRequest   extends AlipayRequest  implements M
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

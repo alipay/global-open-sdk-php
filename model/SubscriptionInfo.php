@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubscriptionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -70,7 +69,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => '\Model\Amount',
         'fixedAmount' => '\Model\Amount',
         'retryMode' => 'string',
-        'subscriptionOrderId' => 'string'
+        'subscriptionOrderId' => 'string',
     ];
 
     /**
@@ -105,7 +104,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => null,
         'fixedAmount' => null,
         'retryMode' => null,
-        'subscriptionOrderId' => null
+        'subscriptionOrderId' => null,
     ];
 
     /**
@@ -138,7 +137,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => false,
         'fixedAmount' => false,
         'retryMode' => false,
-        'subscriptionOrderId' => false
+        'subscriptionOrderId' => false,
     ];
 
     /**
@@ -251,7 +250,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => 'maxAmountFloor',
         'fixedAmount' => 'fixedAmount',
         'retryMode' => 'retryMode',
-        'subscriptionOrderId' => 'subscriptionOrderId'
+        'subscriptionOrderId' => 'subscriptionOrderId',
     ];
 
     /**
@@ -284,7 +283,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => 'setMaxAmountFloor',
         'fixedAmount' => 'setFixedAmount',
         'retryMode' => 'setRetryMode',
-        'subscriptionOrderId' => 'setSubscriptionOrderId'
+        'subscriptionOrderId' => 'setSubscriptionOrderId',
     ];
 
     /**
@@ -317,7 +316,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => 'getMaxAmountFloor',
         'fixedAmount' => 'getFixedAmount',
         'retryMode' => 'getRetryMode',
-        'subscriptionOrderId' => 'getSubscriptionOrderId'
+        'subscriptionOrderId' => 'getSubscriptionOrderId',
     ];
 
     /**
@@ -403,7 +402,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('retryMode', $data ?? [], null);
         $this->setIfExists('subscriptionOrderId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -432,17 +431,8 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['subscriptionDescription'] === null) {
-            $invalidProperties[] = "'subscriptionDescription' can't be null";
-        }
         if ($this->container['subscriptionStartTime'] === null) {
             $invalidProperties[] = "'subscriptionStartTime' can't be null";
-        }
-        if ($this->container['periodRule'] === null) {
-            $invalidProperties[] = "'periodRule' can't be null";
-        }
-        if ($this->container['subscriptionNotifyUrl'] === null) {
-            $invalidProperties[] = "'subscriptionNotifyUrl' can't be null";
         }
         return $invalidProperties;
     }
@@ -510,7 +500,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets subscriptionDescription
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionDescription()
     {
@@ -520,7 +510,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subscriptionDescription
      *
-     * @param string $subscriptionDescription Description of the subscription plan
+     * @param string|null $subscriptionDescription Description of the subscription plan
      *
      * @return self
      */
@@ -654,7 +644,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets periodRule
      *
-     * @return \model\PeriodRule
+     * @return \model\PeriodRule|null
      */
     public function getPeriodRule()
     {
@@ -664,7 +654,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets periodRule
      *
-     * @param \model\PeriodRule $periodRule periodRule
+     * @param \model\PeriodRule|null $periodRule periodRule
      *
      * @return self
      */
@@ -894,7 +884,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets subscriptionNotifyUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionNotifyUrl()
     {
@@ -904,7 +894,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets subscriptionNotifyUrl
      *
-     * @param string $subscriptionNotifyUrl URL for subscription notifications
+     * @param string|null $subscriptionNotifyUrl URL for subscription notifications
      *
      * @return self
      */
@@ -1134,10 +1124,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1160,7 +1150,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

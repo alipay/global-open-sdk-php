@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionCancelRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'cancellationType' => 'string',
         'cancellationReason' => 'string',
         'cancellationDetails' => '\Model\BillingSubscriptionCancelCancellationDetails',
-        'prorationBehavior' => 'string'
+        'prorationBehavior' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'cancellationType' => null,
         'cancellationReason' => null,
         'cancellationDetails' => null,
-        'prorationBehavior' => null
+        'prorationBehavior' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'cancellationType' => false,
         'cancellationReason' => false,
         'cancellationDetails' => false,
-        'prorationBehavior' => false
+        'prorationBehavior' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'cancellationType' => 'cancellationType',
         'cancellationReason' => 'cancellationReason',
         'cancellationDetails' => 'cancellationDetails',
-        'prorationBehavior' => 'prorationBehavior'
+        'prorationBehavior' => 'prorationBehavior',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'cancellationType' => 'setCancellationType',
         'cancellationReason' => 'setCancellationReason',
         'cancellationDetails' => 'setCancellationDetails',
-        'prorationBehavior' => 'setProrationBehavior'
+        'prorationBehavior' => 'setProrationBehavior',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         'cancellationType' => 'getCancellationType',
         'cancellationReason' => 'getCancellationReason',
         'cancellationDetails' => 'getCancellationDetails',
-        'prorationBehavior' => 'getProrationBehavior'
+        'prorationBehavior' => 'getProrationBehavior',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
         $this->setIfExists('cancellationDetails', $data ?? [], null);
         $this->setIfExists('prorationBehavior', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/subscription/cancel"); 
+        $this->setPath("/ams/api/v1/billing/subscription/cancel");
     }
 
     /**
@@ -506,10 +505,10 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -532,7 +531,7 @@ class AlipayBillingSubscriptionCancelRequest   extends AlipayRequest  implements
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

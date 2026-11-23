@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AgenticMandateIntent implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'preferredMerchant' => '\Model\Merchant',
         'allowedMerchant' => '\Model\Merchant[]',
         'consumerPrompt' => 'string',
-        'intentDesc' => 'string'
+        'intentDesc' => 'string',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'preferredMerchant' => null,
         'allowedMerchant' => null,
         'consumerPrompt' => null,
-        'intentDesc' => null
+        'intentDesc' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'preferredMerchant' => false,
         'allowedMerchant' => false,
         'consumerPrompt' => false,
-        'intentDesc' => false
+        'intentDesc' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'preferredMerchant' => 'preferredMerchant',
         'allowedMerchant' => 'allowedMerchant',
         'consumerPrompt' => 'consumerPrompt',
-        'intentDesc' => 'intentDesc'
+        'intentDesc' => 'intentDesc',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'preferredMerchant' => 'setPreferredMerchant',
         'allowedMerchant' => 'setAllowedMerchant',
         'consumerPrompt' => 'setConsumerPrompt',
-        'intentDesc' => 'setIntentDesc'
+        'intentDesc' => 'setIntentDesc',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         'preferredMerchant' => 'getPreferredMerchant',
         'allowedMerchant' => 'getAllowedMerchant',
         'consumerPrompt' => 'getConsumerPrompt',
-        'intentDesc' => 'getIntentDesc'
+        'intentDesc' => 'getIntentDesc',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('consumerPrompt', $data ?? [], null);
         $this->setIfExists('intentDesc', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -564,10 +563,10 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -590,7 +589,7 @@ class AgenticMandateIntent  implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

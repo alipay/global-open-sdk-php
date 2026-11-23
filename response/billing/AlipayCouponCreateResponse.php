@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCouponCreateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'couponName' => 'string',
         'discountType' => 'string',
         'status' => 'string',
-        'promotionCodes' => '\Model\CouponPromotionCode[]'
+        'promotionCodes' => '\Model\CouponPromotionCode[]',
     ];
 
     /**
@@ -67,7 +66,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'couponName' => null,
         'discountType' => null,
         'status' => null,
-        'promotionCodes' => null
+        'promotionCodes' => null,
     ];
 
     /**
@@ -81,7 +80,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'couponName' => false,
         'discountType' => false,
         'status' => false,
-        'promotionCodes' => false
+        'promotionCodes' => false,
     ];
 
     /**
@@ -175,7 +174,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'couponName' => 'couponName',
         'discountType' => 'discountType',
         'status' => 'status',
-        'promotionCodes' => 'promotionCodes'
+        'promotionCodes' => 'promotionCodes',
     ];
 
     /**
@@ -189,7 +188,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'couponName' => 'setCouponName',
         'discountType' => 'setDiscountType',
         'status' => 'setStatus',
-        'promotionCodes' => 'setPromotionCodes'
+        'promotionCodes' => 'setPromotionCodes',
     ];
 
     /**
@@ -203,7 +202,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         'couponName' => 'getCouponName',
         'discountType' => 'getDiscountType',
         'status' => 'getStatus',
-        'promotionCodes' => 'getPromotionCodes'
+        'promotionCodes' => 'getPromotionCodes',
     ];
 
     /**
@@ -270,7 +269,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('promotionCodes', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -536,10 +535,10 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -562,7 +561,7 @@ class AlipayCouponCreateResponse  implements ModelInterface, ArrayAccess, \JsonS
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

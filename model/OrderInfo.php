@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrderInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orderAmount' => '\Model\Amount'
+        'orderAmount' => '\Model\Amount',
     ];
 
     /**
@@ -57,7 +56,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'orderAmount' => null
+        'orderAmount' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'orderAmount' => false
+        'orderAmount' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'orderAmount' => 'orderAmount'
+        'orderAmount' => 'orderAmount',
     ];
 
     /**
@@ -164,7 +163,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'orderAmount' => 'setOrderAmount'
+        'orderAmount' => 'setOrderAmount',
     ];
 
     /**
@@ -173,7 +172,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'orderAmount' => 'getOrderAmount'
+        'orderAmount' => 'getOrderAmount',
     ];
 
     /**
@@ -235,7 +234,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('orderAmount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -264,9 +263,6 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['orderAmount'] === null) {
-            $invalidProperties[] = "'orderAmount' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -285,7 +281,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orderAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getOrderAmount()
     {
@@ -295,7 +291,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderAmount
      *
-     * @param \model\Amount $orderAmount orderAmount
+     * @param \model\Amount|null $orderAmount orderAmount
      *
      * @return self
      */
@@ -381,10 +377,10 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -407,7 +403,7 @@ class OrderInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

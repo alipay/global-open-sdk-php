@@ -19,7 +19,7 @@ abstract class BaseAlipayClient
         $a = func_get_args();
         $i = func_num_args();
         if (method_exists($this, $f = '__construct' . $i)) {
-            call_user_func_array(array($this, $f), $a);
+            call_user_func_array([$this, $f], $a);
         }
     }
 
@@ -283,7 +283,7 @@ abstract class BaseAlipayClient
 
     private function buildBaseHeader($requestTime, $clientId, $keyVersion, $signValue)
     {
-        $baseHeader = array();
+        $baseHeader = [];
         $baseHeader[] = "Content-Type:application/json; charset=UTF-8";
         $baseHeader[] = "User-Agent:" . SdkVersion::userAgent();
         $baseHeader[] = "Request-Time:" . $requestTime;
@@ -303,7 +303,7 @@ abstract class BaseAlipayClient
 
     private function applySdkUserAgent($headers)
     {
-        $result = array();
+        $result = [];
         foreach ($headers as $header) {
             $colonPos = strpos($header, ':');
             if ($colonPos !== false && strtolower(substr($header, 0, $colonPos)) === 'user-agent') {

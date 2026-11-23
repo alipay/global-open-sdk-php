@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingSubscriptionPriceItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -64,7 +63,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'recurringIntervalCount' => 'int',
         'unitAmount' => '\Model\Amount',
         'usageType' => 'string',
-        'meterId' => 'string'
+        'meterId' => 'string',
     ];
 
     /**
@@ -93,7 +92,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'recurringIntervalCount' => null,
         'unitAmount' => null,
         'usageType' => null,
-        'meterId' => null
+        'meterId' => null,
     ];
 
     /**
@@ -120,7 +119,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'recurringIntervalCount' => true,
         'unitAmount' => false,
         'usageType' => false,
-        'meterId' => false
+        'meterId' => false,
     ];
 
     /**
@@ -227,7 +226,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'recurringIntervalCount' => 'recurringIntervalCount',
         'unitAmount' => 'unitAmount',
         'usageType' => 'usageType',
-        'meterId' => 'meterId'
+        'meterId' => 'meterId',
     ];
 
     /**
@@ -254,7 +253,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'recurringIntervalCount' => 'setRecurringIntervalCount',
         'unitAmount' => 'setUnitAmount',
         'usageType' => 'setUsageType',
-        'meterId' => 'setMeterId'
+        'meterId' => 'setMeterId',
     ];
 
     /**
@@ -281,7 +280,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         'recurringIntervalCount' => 'getRecurringIntervalCount',
         'unitAmount' => 'getUnitAmount',
         'usageType' => 'getUsageType',
-        'meterId' => 'getMeterId'
+        'meterId' => 'getMeterId',
     ];
 
     /**
@@ -361,7 +360,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('usageType', $data ?? [], null);
         $this->setIfExists('meterId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -936,10 +935,10 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -962,7 +961,7 @@ class BillingSubscriptionPriceItem  implements ModelInterface, ArrayAccess, \Jso
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

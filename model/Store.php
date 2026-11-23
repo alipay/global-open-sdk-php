@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Store implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'string',
         'storeOperatorId' => 'string',
         'storeAddress' => '\Model\Address',
-        'storePhoneNo' => 'string'
+        'storePhoneNo' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => null,
         'storeOperatorId' => null,
         'storeAddress' => null,
-        'storePhoneNo' => null
+        'storePhoneNo' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => false,
         'storeOperatorId' => false,
         'storeAddress' => false,
-        'storePhoneNo' => false
+        'storePhoneNo' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'storeTerminalId',
         'storeOperatorId' => 'storeOperatorId',
         'storeAddress' => 'storeAddress',
-        'storePhoneNo' => 'storePhoneNo'
+        'storePhoneNo' => 'storePhoneNo',
     ];
 
     /**
@@ -199,7 +198,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'setStoreTerminalId',
         'storeOperatorId' => 'setStoreOperatorId',
         'storeAddress' => 'setStoreAddress',
-        'storePhoneNo' => 'setStorePhoneNo'
+        'storePhoneNo' => 'setStorePhoneNo',
     ];
 
     /**
@@ -215,7 +214,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeTerminalId' => 'getStoreTerminalId',
         'storeOperatorId' => 'getStoreOperatorId',
         'storeAddress' => 'getStoreAddress',
-        'storePhoneNo' => 'getStorePhoneNo'
+        'storePhoneNo' => 'getStorePhoneNo',
     ];
 
     /**
@@ -284,7 +283,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('storeAddress', $data ?? [], null);
         $this->setIfExists('storePhoneNo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -313,30 +312,6 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['referenceStoreId'] === null) {
-            $invalidProperties[] = "'referenceStoreId' can't be null";
-        }
-        if ($this->container['storeName'] === null) {
-            $invalidProperties[] = "'storeName' can't be null";
-        }
-        if ($this->container['storeMCC'] === null) {
-            $invalidProperties[] = "'storeMCC' can't be null";
-        }
-        if ($this->container['storeDisplayName'] === null) {
-            $invalidProperties[] = "'storeDisplayName' can't be null";
-        }
-        if ($this->container['storeTerminalId'] === null) {
-            $invalidProperties[] = "'storeTerminalId' can't be null";
-        }
-        if ($this->container['storeOperatorId'] === null) {
-            $invalidProperties[] = "'storeOperatorId' can't be null";
-        }
-        if ($this->container['storeAddress'] === null) {
-            $invalidProperties[] = "'storeAddress' can't be null";
-        }
-        if ($this->container['storePhoneNo'] === null) {
-            $invalidProperties[] = "'storePhoneNo' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -355,7 +330,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets referenceStoreId
      *
-     * @return string
+     * @return string|null
      */
     public function getReferenceStoreId()
     {
@@ -365,7 +340,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets referenceStoreId
      *
-     * @param string $referenceStoreId referenceStoreId
+     * @param string|null $referenceStoreId referenceStoreId
      *
      * @return self
      */
@@ -379,7 +354,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeName
      *
-     * @return string
+     * @return string|null
      */
     public function getStoreName()
     {
@@ -389,7 +364,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeName
      *
-     * @param string $storeName storeName
+     * @param string|null $storeName storeName
      *
      * @return self
      */
@@ -403,7 +378,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeMCC
      *
-     * @return string
+     * @return string|null
      */
     public function getStoreMCC()
     {
@@ -413,7 +388,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeMCC
      *
-     * @param string $storeMCC storeMCC
+     * @param string|null $storeMCC storeMCC
      *
      * @return self
      */
@@ -427,7 +402,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeDisplayName
      *
-     * @return string
+     * @return string|null
      */
     public function getStoreDisplayName()
     {
@@ -437,7 +412,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeDisplayName
      *
-     * @param string $storeDisplayName storeDisplayName
+     * @param string|null $storeDisplayName storeDisplayName
      *
      * @return self
      */
@@ -451,7 +426,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeTerminalId
      *
-     * @return string
+     * @return string|null
      */
     public function getStoreTerminalId()
     {
@@ -461,7 +436,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeTerminalId
      *
-     * @param string $storeTerminalId storeTerminalId
+     * @param string|null $storeTerminalId storeTerminalId
      *
      * @return self
      */
@@ -475,7 +450,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeOperatorId
      *
-     * @return string
+     * @return string|null
      */
     public function getStoreOperatorId()
     {
@@ -485,7 +460,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeOperatorId
      *
-     * @param string $storeOperatorId storeOperatorId
+     * @param string|null $storeOperatorId storeOperatorId
      *
      * @return self
      */
@@ -499,7 +474,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storeAddress
      *
-     * @return \model\Address
+     * @return \model\Address|null
      */
     public function getStoreAddress()
     {
@@ -509,7 +484,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storeAddress
      *
-     * @param \model\Address $storeAddress storeAddress
+     * @param \model\Address|null $storeAddress storeAddress
      *
      * @return self
      */
@@ -523,7 +498,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storePhoneNo
      *
-     * @return string
+     * @return string|null
      */
     public function getStorePhoneNo()
     {
@@ -533,7 +508,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storePhoneNo
      *
-     * @param string $storePhoneNo storePhoneNo
+     * @param string|null $storePhoneNo storePhoneNo
      *
      * @return self
      */
@@ -619,10 +594,10 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -645,7 +620,7 @@ class Store  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
