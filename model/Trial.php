@@ -285,12 +285,6 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['trialAmount'] === null) {
-            $invalidProperties[] = "'trialAmount' can't be null";
-        }
-        if ($this->container['trialStartPeriod'] === null) {
-            $invalidProperties[] = "'trialStartPeriod' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -333,7 +327,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets trialAmount
      *
-     * @return \model\Amount
+     * @return \model\Amount|null
      */
     public function getTrialAmount()
     {
@@ -343,7 +337,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trialAmount
      *
-     * @param \model\Amount $trialAmount trialAmount
+     * @param \model\Amount|null $trialAmount trialAmount
      *
      * @return self
      */
@@ -357,7 +351,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets trialStartPeriod
      *
-     * @return int
+     * @return int|null
      */
     public function getTrialStartPeriod()
     {
@@ -367,7 +361,7 @@ class Trial  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trialStartPeriod
      *
-     * @param int $trialStartPeriod The start subscription period of the trial. For example, if the trial starts from the first subscription period, specify this parameter as 1.    More information:  Value range: 1 - unlimited
+     * @param int|null $trialStartPeriod The start subscription period of the trial. For example, if the trial starts from the first subscription period, specify this parameter as 1.    More information:  Value range: 1 - unlimited
      *
      * @return self
      */

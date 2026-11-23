@@ -54,6 +54,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'int',
         'prorationInvoiceCurrency' => 'string',
         'creditNoteId' => 'string',
+        'creditNoteIds' => 'string[]',
         'creditNoteAmount' => 'int',
         'creditNoteCurrency' => 'string',
         'pendingUpdate' => 'bool'
@@ -75,6 +76,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'int64',
         'prorationInvoiceCurrency' => null,
         'creditNoteId' => null,
+        'creditNoteIds' => null,
         'creditNoteAmount' => 'int64',
         'creditNoteCurrency' => null,
         'pendingUpdate' => null
@@ -94,6 +96,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => false,
         'prorationInvoiceCurrency' => false,
         'creditNoteId' => false,
+        'creditNoteIds' => false,
         'creditNoteAmount' => false,
         'creditNoteCurrency' => false,
         'pendingUpdate' => false
@@ -193,6 +196,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'prorationInvoiceAmount',
         'prorationInvoiceCurrency' => 'prorationInvoiceCurrency',
         'creditNoteId' => 'creditNoteId',
+        'creditNoteIds' => 'creditNoteIds',
         'creditNoteAmount' => 'creditNoteAmount',
         'creditNoteCurrency' => 'creditNoteCurrency',
         'pendingUpdate' => 'pendingUpdate'
@@ -212,6 +216,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'setProrationInvoiceAmount',
         'prorationInvoiceCurrency' => 'setProrationInvoiceCurrency',
         'creditNoteId' => 'setCreditNoteId',
+        'creditNoteIds' => 'setCreditNoteIds',
         'creditNoteAmount' => 'setCreditNoteAmount',
         'creditNoteCurrency' => 'setCreditNoteCurrency',
         'pendingUpdate' => 'setPendingUpdate'
@@ -231,6 +236,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'prorationInvoiceAmount' => 'getProrationInvoiceAmount',
         'prorationInvoiceCurrency' => 'getProrationInvoiceCurrency',
         'creditNoteId' => 'getCreditNoteId',
+        'creditNoteIds' => 'getCreditNoteIds',
         'creditNoteAmount' => 'getCreditNoteAmount',
         'creditNoteCurrency' => 'getCreditNoteCurrency',
         'pendingUpdate' => 'getPendingUpdate'
@@ -301,6 +307,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         $this->setIfExists('prorationInvoiceAmount', $data ?? [], null);
         $this->setIfExists('prorationInvoiceCurrency', $data ?? [], null);
         $this->setIfExists('creditNoteId', $data ?? [], null);
+        $this->setIfExists('creditNoteIds', $data ?? [], null);
         $this->setIfExists('creditNoteAmount', $data ?? [], null);
         $this->setIfExists('creditNoteCurrency', $data ?? [], null);
         $this->setIfExists('pendingUpdate', $data ?? [], null);
@@ -533,13 +540,37 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets creditNoteId
      *
-     * @param string|null $creditNoteId The credit note ID. Maximum length: 64 characters. Note: See documentation for details.
+     * @param string|null $creditNoteId The credit note ID when a successful update issues exactly one credit note. It matches the sole entry in creditNoteIds and is omitted when multiple credit notes are issued. Maximum length: 64 characters.
      *
      * @return self
      */
     public function setCreditNoteId($creditNoteId)
     {
         $this->container['creditNoteId'] = $creditNoteId;
+
+        return $this;
+    }
+
+    /**
+     * Gets creditNoteIds
+     *
+     * @return string[]|null
+     */
+    public function getCreditNoteIds()
+    {
+        return $this->container['creditNoteIds'];
+    }
+
+    /**
+     * Sets creditNoteIds
+     *
+     * @param string[]|null $creditNoteIds The complete list of credit note IDs issued by a successful update, in ascending order of source invoice ID. A single credit note is returned as a one-element list. When no credit notes are issued, this field can be omitted or null.
+     *
+     * @return self
+     */
+    public function setCreditNoteIds($creditNoteIds)
+    {
+        $this->container['creditNoteIds'] = $creditNoteIds;
 
         return $this;
     }
@@ -557,7 +588,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     /**
      * Sets creditNoteAmount
      *
-     * @param int|null $creditNoteAmount The credit note amount in the smallest currency unit. Returned together with creditNoteId.
+     * @param int|null $creditNoteAmount The total amount of all credit notes issued by a successful update, in the smallest currency unit. Returned with creditNoteCurrency when at least one credit note is issued. A value of zero is a zero credit amount.
      *
      * @return self
      */
