@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -30,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthorizationAccessParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channel' => 'string'
+        'channel' => 'string',
     ];
 
     /**
@@ -58,7 +57,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channel' => null
+        'channel' => null,
     ];
 
     /**
@@ -67,7 +66,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'channel' => false
+        'channel' => false,
     ];
 
     /**
@@ -156,7 +155,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel' => 'channel'
+        'channel' => 'channel',
     ];
 
     /**
@@ -165,7 +164,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'channel' => 'setChannel'
+        'channel' => 'setChannel',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'channel' => 'getChannel'
+        'channel' => 'getChannel',
     ];
 
     /**
@@ -236,7 +235,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
     {
         $this->setIfExists('channel', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -379,10 +378,10 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -405,7 +404,7 @@ class AuthorizationAccessParams  implements ModelInterface, ArrayAccess, \JsonSe
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

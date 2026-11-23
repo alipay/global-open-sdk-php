@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +53,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address2' => 'string',
         'zipCode' => 'string',
         'label' => 'string',
-        'address3' => 'string'
+        'address3' => 'string',
     ];
 
     /**
@@ -73,7 +72,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address2' => null,
         'zipCode' => null,
         'label' => null,
-        'address3' => null
+        'address3' => null,
     ];
 
     /**
@@ -90,7 +89,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address2' => false,
         'zipCode' => false,
         'label' => false,
-        'address3' => false
+        'address3' => false,
     ];
 
     /**
@@ -187,7 +186,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address2' => 'address2',
         'zipCode' => 'zipCode',
         'label' => 'label',
-        'address3' => 'address3'
+        'address3' => 'address3',
     ];
 
     /**
@@ -204,7 +203,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address2' => 'setAddress2',
         'zipCode' => 'setZipCode',
         'label' => 'setLabel',
-        'address3' => 'setAddress3'
+        'address3' => 'setAddress3',
     ];
 
     /**
@@ -221,7 +220,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         'address2' => 'getAddress2',
         'zipCode' => 'getZipCode',
         'label' => 'getLabel',
-        'address3' => 'getAddress3'
+        'address3' => 'getAddress3',
     ];
 
     /**
@@ -291,7 +290,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('label', $data ?? [], null);
         $this->setIfExists('address3', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -629,10 +628,10 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -655,7 +654,7 @@ class Address  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

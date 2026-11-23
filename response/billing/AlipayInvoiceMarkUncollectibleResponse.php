@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInvoiceMarkUncollectibleResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         'invoiceId' => 'string',
         'status' => 'string',
         'markedUncollectibleAt' => 'string',
-        'invoiceNote' => 'string'
+        'invoiceNote' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         'invoiceId' => null,
         'status' => null,
         'markedUncollectibleAt' => null,
-        'invoiceNote' => null
+        'invoiceNote' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         'invoiceId' => false,
         'status' => false,
         'markedUncollectibleAt' => false,
-        'invoiceNote' => false
+        'invoiceNote' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         'invoiceId' => 'invoiceId',
         'status' => 'status',
         'markedUncollectibleAt' => 'markedUncollectibleAt',
-        'invoiceNote' => 'invoiceNote'
+        'invoiceNote' => 'invoiceNote',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         'invoiceId' => 'setInvoiceId',
         'status' => 'setStatus',
         'markedUncollectibleAt' => 'setMarkedUncollectibleAt',
-        'invoiceNote' => 'setInvoiceNote'
+        'invoiceNote' => 'setInvoiceNote',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         'invoiceId' => 'getInvoiceId',
         'status' => 'getStatus',
         'markedUncollectibleAt' => 'getMarkedUncollectibleAt',
-        'invoiceNote' => 'getInvoiceNote'
+        'invoiceNote' => 'getInvoiceNote',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
         $this->setIfExists('markedUncollectibleAt', $data ?? [], null);
         $this->setIfExists('invoiceNote', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -505,10 +504,10 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -531,7 +530,7 @@ class AlipayInvoiceMarkUncollectibleResponse  implements ModelInterface, ArrayAc
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

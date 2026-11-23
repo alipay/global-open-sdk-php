@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayUpdateCardStatusResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     protected static $openAPITypes = [
         'status' => 'string',
         'requestId' => 'string',
-        'result' => '\Model\Result'
+        'result' => '\Model\Result',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     protected static $openAPIFormats = [
         'status' => null,
         'requestId' => null,
-        'result' => null
+        'result' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     protected static $openAPINullables = [
         'status' => false,
         'requestId' => false,
-        'result' => false
+        'result' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     protected static $attributeMap = [
         'status' => 'status',
         'requestId' => 'requestId',
-        'result' => 'result'
+        'result' => 'result',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     protected static $setters = [
         'status' => 'setStatus',
         'requestId' => 'setRequestId',
-        'result' => 'setResult'
+        'result' => 'setResult',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     protected static $getters = [
         'status' => 'getStatus',
         'requestId' => 'getRequestId',
-        'result' => 'getResult'
+        'result' => 'getResult',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('requestId', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -449,10 +448,10 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -475,7 +474,7 @@ class AlipayUpdateCardStatusResponse  implements ModelInterface, ArrayAccess, \J
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireHoldListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         'holdId' => 'string',
         'limit' => 'int',
         'startingAfter' => 'string',
-        'endingBefore' => 'string'
+        'endingBefore' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         'holdId' => null,
         'limit' => null,
         'startingAfter' => null,
-        'endingBefore' => null
+        'endingBefore' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         'holdId' => false,
         'limit' => true,
         'startingAfter' => false,
-        'endingBefore' => false
+        'endingBefore' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         'holdId' => 'holdId',
         'limit' => 'limit',
         'startingAfter' => 'startingAfter',
-        'endingBefore' => 'endingBefore'
+        'endingBefore' => 'endingBefore',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         'holdId' => 'setHoldId',
         'limit' => 'setLimit',
         'startingAfter' => 'setStartingAfter',
-        'endingBefore' => 'setEndingBefore'
+        'endingBefore' => 'setEndingBefore',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         'holdId' => 'getHoldId',
         'limit' => 'getLimit',
         'startingAfter' => 'getStartingAfter',
-        'endingBefore' => 'getEndingBefore'
+        'endingBefore' => 'getEndingBefore',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
         $this->setIfExists('startingAfter', $data ?? [], null);
         $this->setIfExists('endingBefore', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/reserve/inquireHoldList"); 
+        $this->setPath("/ams/api/v1/payments/reserve/inquireHoldList");
     }
 
     /**
@@ -503,10 +502,10 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -529,7 +528,7 @@ class AlipayInquireHoldListRequest   extends AlipayRequest  implements ModelInte
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

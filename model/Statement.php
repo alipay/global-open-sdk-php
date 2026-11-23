@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Statement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -59,7 +58,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'string',
         'extTransactionId' => 'string',
         'transactionStatus' => 'string',
-        'beneficiaryAssetId' => 'string'
+        'beneficiaryAssetId' => 'string',
     ];
 
     /**
@@ -83,7 +82,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => null,
         'extTransactionId' => null,
         'transactionStatus' => null,
-        'beneficiaryAssetId' => null
+        'beneficiaryAssetId' => null,
     ];
 
     /**
@@ -105,7 +104,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => false,
         'extTransactionId' => false,
         'transactionStatus' => false,
-        'beneficiaryAssetId' => false
+        'beneficiaryAssetId' => false,
     ];
 
     /**
@@ -207,7 +206,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'transactionId',
         'extTransactionId' => 'extTransactionId',
         'transactionStatus' => 'transactionStatus',
-        'beneficiaryAssetId' => 'beneficiaryAssetId'
+        'beneficiaryAssetId' => 'beneficiaryAssetId',
     ];
 
     /**
@@ -229,7 +228,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'setTransactionId',
         'extTransactionId' => 'setExtTransactionId',
         'transactionStatus' => 'setTransactionStatus',
-        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
+        'beneficiaryAssetId' => 'setBeneficiaryAssetId',
     ];
 
     /**
@@ -251,7 +250,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'getTransactionId',
         'extTransactionId' => 'getExtTransactionId',
         'transactionStatus' => 'getTransactionStatus',
-        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
+        'beneficiaryAssetId' => 'getBeneficiaryAssetId',
     ];
 
     /**
@@ -295,7 +294,63 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const TRANSACTION_TYPE_PAYMENT = 'PAYMENT';
+    public const TRANSACTION_TYPE_PAYMENT_REFUND = 'PAYMENT_REFUND';
+    public const TRANSACTION_TYPE_CHARGE = 'CHARGE';
+    public const TRANSACTION_TYPE_CHARGE_REFUND = 'CHARGE_REFUND';
+    public const TRANSACTION_TYPE_TOPUP = 'TOPUP';
+    public const TRANSACTION_TYPE_SETTLEMENT = 'SETTLEMENT';
+    public const TRANSACTION_TYPE_WITHDRAW = 'WITHDRAW';
+    public const TRANSACTION_TYPE_WITHDRAW_RETURN = 'WITHDRAW_RETURN';
+    public const TRANSACTION_TYPE_TRANSFER = 'TRANSFER';
+    public const TRANSACTION_TYPE_TRANSFER_RETURN = 'TRANSFER_RETURN';
+    public const TRANSACTION_TYPE_TRANSFER_TO_CHINA = 'TRANSFER_TO_CHINA';
+    public const TRANSACTION_TYPE_TRANSFER_RECIPIENT = 'TRANSFER_RECIPIENT';
+    public const TRANSACTION_TYPE_EXCHANGE = 'EXCHANGE';
+    public const TRANSACTION_TYPE_CREDIT_LOAN = 'CREDIT_LOAN';
+    public const TRANSACTION_TYPE_CREDIT_REPAY = 'CREDIT_REPAY';
+    public const TRANSACTION_TYPE_CREDIT_REPAYMENT = 'CREDIT_REPAYMENT';
+    public const TRANSACTION_TYPE_DIRECT_PAYMENT = 'DIRECT_PAYMENT';
+    public const TRANSACTION_TYPE_DIRECT_REFUND = 'DIRECT_REFUND';
+    public const TRANSACTION_TYPE_CARD_PAYMENT = 'CARD_PAYMENT';
+    public const TRANSACTION_TYPE_CARD_REFUND = 'CARD_REFUND';
+    public const TRANSACTION_TYPE_OVERFLOW_DEBIT = 'OVERFLOW_DEBIT';
+    public const TRANSACTION_TYPE_OVERFLOW_CREDIT = 'OVERFLOW_CREDIT';
+    public const TRANSACTION_TYPE_CASH_BACK = 'CASH_BACK';
 
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTransactionTypeAllowableValues()
+    {
+        return [
+            self::TRANSACTION_TYPE_PAYMENT,
+            self::TRANSACTION_TYPE_PAYMENT_REFUND,
+            self::TRANSACTION_TYPE_CHARGE,
+            self::TRANSACTION_TYPE_CHARGE_REFUND,
+            self::TRANSACTION_TYPE_TOPUP,
+            self::TRANSACTION_TYPE_SETTLEMENT,
+            self::TRANSACTION_TYPE_WITHDRAW,
+            self::TRANSACTION_TYPE_WITHDRAW_RETURN,
+            self::TRANSACTION_TYPE_TRANSFER,
+            self::TRANSACTION_TYPE_TRANSFER_RETURN,
+            self::TRANSACTION_TYPE_TRANSFER_TO_CHINA,
+            self::TRANSACTION_TYPE_TRANSFER_RECIPIENT,
+            self::TRANSACTION_TYPE_EXCHANGE,
+            self::TRANSACTION_TYPE_CREDIT_LOAN,
+            self::TRANSACTION_TYPE_CREDIT_REPAY,
+            self::TRANSACTION_TYPE_CREDIT_REPAYMENT,
+            self::TRANSACTION_TYPE_DIRECT_PAYMENT,
+            self::TRANSACTION_TYPE_DIRECT_REFUND,
+            self::TRANSACTION_TYPE_CARD_PAYMENT,
+            self::TRANSACTION_TYPE_CARD_REFUND,
+            self::TRANSACTION_TYPE_OVERFLOW_DEBIT,
+            self::TRANSACTION_TYPE_OVERFLOW_CREDIT,
+            self::TRANSACTION_TYPE_CASH_BACK,
+        ];
+    }
     /**
      * Associative array for storing property values
      *
@@ -326,7 +381,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('transactionStatus', $data ?? [], null);
         $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -361,6 +416,15 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['statementId'] === null) {
             $invalidProperties[] = "'statementId' can't be null";
         }
+        $allowedValues = $this->getTransactionTypeAllowableValues();
+        if (!is_null($this->container['transactionType']) && !in_array($this->container['transactionType'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'transactionType', must be one of '%s'",
+                $this->container['transactionType'],
+                implode("', '", $allowedValues),
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -491,6 +555,16 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTransactionType($transactionType)
     {
+        $allowedValues = $this->getTransactionTypeAllowableValues();
+        if (!in_array($transactionType, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'transactionType', must be one of '%s'",
+                    $transactionType,
+                    implode("', '", $allowedValues),
+                ),
+            );
+        }
         $this->container['transactionType'] = $transactionType;
 
         return $this;
@@ -787,10 +861,10 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -813,7 +887,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

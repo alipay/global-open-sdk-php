@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializable
+class RedirectActionForm implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         'method' => 'string',
         'parameters' => 'string',
         'redirectUrl' => 'string',
-        'actionFormType' => 'string'
+        'actionFormType' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         'method' => null,
         'parameters' => null,
         'redirectUrl' => null,
-        'actionFormType' => null
+        'actionFormType' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         'method' => false,
         'parameters' => false,
         'redirectUrl' => false,
-        'actionFormType' => false
+        'actionFormType' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         'method' => 'method',
         'parameters' => 'parameters',
         'redirectUrl' => 'redirectUrl',
-        'actionFormType' => 'actionFormType'
+        'actionFormType' => 'actionFormType',
     ];
 
     /**
@@ -179,7 +178,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         'method' => 'setMethod',
         'parameters' => 'setParameters',
         'redirectUrl' => 'setRedirectUrl',
-        'actionFormType' => 'setActionFormType'
+        'actionFormType' => 'setActionFormType',
     ];
 
     /**
@@ -191,7 +190,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         'method' => 'getMethod',
         'parameters' => 'getParameters',
         'redirectUrl' => 'getRedirectUrl',
-        'actionFormType' => 'getActionFormType'
+        'actionFormType' => 'getActionFormType',
     ];
 
     /**
@@ -256,7 +255,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('redirectUrl', $data ?? [], null);
         $this->setIfExists('actionFormType', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -285,15 +284,6 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['method'] === null) {
-            $invalidProperties[] = "'method' can't be null";
-        }
-        if ($this->container['redirectUrl'] === null) {
-            $invalidProperties[] = "'redirectUrl' can't be null";
-        }
-        if ($this->container['actionFormType'] === null) {
-            $invalidProperties[] = "'actionFormType' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -312,7 +302,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets method
      *
-     * @return string
+     * @return string|null
      */
     public function getMethod()
     {
@@ -322,7 +312,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets method
      *
-     * @param string $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
+     * @param string|null $method The HTTP method to be used when the merchant initiates a redirection to the redirection URL. Valid values are:  POST: Indicates that the request that is sent to the redirection address needs to be a POST request. GET: Indicates that the request that is sent to the redirection address needs to be a GET request.
      *
      * @return self
      */
@@ -360,7 +350,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets redirectUrl
      *
-     * @return string
+     * @return string|null
      */
     public function getRedirectUrl()
     {
@@ -370,7 +360,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets redirectUrl
      *
-     * @param string $redirectUrl The URL where the user is redirected to.   More information:  Maximum length: 2048 characters
+     * @param string|null $redirectUrl The URL where the user is redirected to.   More information:  Maximum length: 2048 characters
      *
      * @return self
      */
@@ -384,7 +374,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets actionFormType
      *
-     * @return string
+     * @return string|null
      */
     public function getActionFormType()
     {
@@ -394,7 +384,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets actionFormType
      *
-     * @param string $actionFormType The value is fixed as RedirectActionForm.  More information:  Maximum length: 32 characters
+     * @param string|null $actionFormType The value is fixed as RedirectActionForm.  More information:  Maximum length: 32 characters
      *
      * @return self
      */
@@ -480,10 +470,10 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -506,7 +496,7 @@ class RedirectActionForm  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AmsInquiryPaymentResult implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentResultCode' => 'string',
         'paymentResultMessage' => 'string',
         'paymentResultInfo' => '\Model\PaymentResultInfo',
-        'transactions' => '\Model\BatchPaymentTransaction[]'
+        'transactions' => '\Model\BatchPaymentTransaction[]',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentResultCode' => null,
         'paymentResultMessage' => null,
         'paymentResultInfo' => null,
-        'transactions' => null
+        'transactions' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentResultCode' => false,
         'paymentResultMessage' => false,
         'paymentResultInfo' => false,
-        'transactions' => false
+        'transactions' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentResultCode' => 'paymentResultCode',
         'paymentResultMessage' => 'paymentResultMessage',
         'paymentResultInfo' => 'paymentResultInfo',
-        'transactions' => 'transactions'
+        'transactions' => 'transactions',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentResultCode' => 'setPaymentResultCode',
         'paymentResultMessage' => 'setPaymentResultMessage',
         'paymentResultInfo' => 'setPaymentResultInfo',
-        'transactions' => 'setTransactions'
+        'transactions' => 'setTransactions',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         'paymentResultCode' => 'getPaymentResultCode',
         'paymentResultMessage' => 'getPaymentResultMessage',
         'paymentResultInfo' => 'getPaymentResultInfo',
-        'transactions' => 'getTransactions'
+        'transactions' => 'getTransactions',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('paymentResultInfo', $data ?? [], null);
         $this->setIfExists('transactions', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -610,10 +609,10 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -636,7 +635,7 @@ class AmsInquiryPaymentResult  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

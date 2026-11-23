@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxUpdateRegistrationPeriodResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +53,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         'taxId' => 'string',
         'status' => 'string',
         'activeFrom' => 'string',
-        'expireAt' => 'string'
+        'expireAt' => 'string',
     ];
 
     /**
@@ -73,7 +72,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         'taxId' => null,
         'status' => null,
         'activeFrom' => null,
-        'expireAt' => null
+        'expireAt' => null,
     ];
 
     /**
@@ -90,7 +89,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         'taxId' => false,
         'status' => false,
         'activeFrom' => false,
-        'expireAt' => false
+        'expireAt' => false,
     ];
 
     /**
@@ -187,7 +186,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         'taxId' => 'taxId',
         'status' => 'status',
         'activeFrom' => 'activeFrom',
-        'expireAt' => 'expireAt'
+        'expireAt' => 'expireAt',
     ];
 
     /**
@@ -204,7 +203,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         'taxId' => 'setTaxId',
         'status' => 'setStatus',
         'activeFrom' => 'setActiveFrom',
-        'expireAt' => 'setExpireAt'
+        'expireAt' => 'setExpireAt',
     ];
 
     /**
@@ -221,7 +220,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         'taxId' => 'getTaxId',
         'status' => 'getStatus',
         'activeFrom' => 'getActiveFrom',
-        'expireAt' => 'getExpireAt'
+        'expireAt' => 'getExpireAt',
     ];
 
     /**
@@ -291,7 +290,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
         $this->setIfExists('activeFrom', $data ?? [], null);
         $this->setIfExists('expireAt', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -629,10 +628,10 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -655,7 +654,7 @@ class AlipayTaxUpdateRegistrationPeriodResponse  implements ModelInterface, Arra
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

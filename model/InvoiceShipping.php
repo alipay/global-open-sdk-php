@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
+class InvoiceShipping implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -58,7 +57,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'string',
         'deliveryEstimate' => '\Model\DeliveryEstimate',
         'trackingUrl' => 'string',
-        'shippingMethodIndicator' => 'string'
+        'shippingMethodIndicator' => 'string',
     ];
 
     /**
@@ -81,7 +80,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => null,
         'deliveryEstimate' => null,
         'trackingUrl' => null,
-        'shippingMethodIndicator' => null
+        'shippingMethodIndicator' => null,
     ];
 
     /**
@@ -102,7 +101,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => false,
         'deliveryEstimate' => false,
         'trackingUrl' => false,
-        'shippingMethodIndicator' => false
+        'shippingMethodIndicator' => false,
     ];
 
     /**
@@ -203,7 +202,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'shippingDescription',
         'deliveryEstimate' => 'deliveryEstimate',
         'trackingUrl' => 'trackingUrl',
-        'shippingMethodIndicator' => 'shippingMethodIndicator'
+        'shippingMethodIndicator' => 'shippingMethodIndicator',
     ];
 
     /**
@@ -224,7 +223,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'setShippingDescription',
         'deliveryEstimate' => 'setDeliveryEstimate',
         'trackingUrl' => 'setTrackingUrl',
-        'shippingMethodIndicator' => 'setShippingMethodIndicator'
+        'shippingMethodIndicator' => 'setShippingMethodIndicator',
     ];
 
     /**
@@ -245,7 +244,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         'shippingDescription' => 'getShippingDescription',
         'deliveryEstimate' => 'getDeliveryEstimate',
         'trackingUrl' => 'getTrackingUrl',
-        'shippingMethodIndicator' => 'getShippingMethodIndicator'
+        'shippingMethodIndicator' => 'getShippingMethodIndicator',
     ];
 
     /**
@@ -319,7 +318,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('trackingUrl', $data ?? [], null);
         $this->setIfExists('shippingMethodIndicator', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -750,10 +749,10 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -776,7 +775,7 @@ class InvoiceShipping  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

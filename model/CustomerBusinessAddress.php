@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomerBusinessAddress implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         'state' => 'string',
         'city' => 'string',
         'address' => 'string',
-        'zipcode' => 'string'
+        'zipcode' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         'state' => null,
         'city' => null,
         'address' => null,
-        'zipcode' => null
+        'zipcode' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         'state' => false,
         'city' => false,
         'address' => false,
-        'zipcode' => false
+        'zipcode' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         'state' => 'state',
         'city' => 'city',
         'address' => 'address',
-        'zipcode' => 'zipcode'
+        'zipcode' => 'zipcode',
     ];
 
     /**
@@ -184,7 +183,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         'state' => 'setState',
         'city' => 'setCity',
         'address' => 'setAddress',
-        'zipcode' => 'setZipcode'
+        'zipcode' => 'setZipcode',
     ];
 
     /**
@@ -197,7 +196,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         'state' => 'getState',
         'city' => 'getCity',
         'address' => 'getAddress',
-        'zipcode' => 'getZipcode'
+        'zipcode' => 'getZipcode',
     ];
 
     /**
@@ -263,7 +262,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('zipcode', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -508,10 +507,10 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -534,7 +533,7 @@ class CustomerBusinessAddress  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

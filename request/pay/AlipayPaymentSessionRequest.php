@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayPaymentSessionRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -66,6 +65,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'string',
         'paymentNotifyUrl' => 'string',
         'paymentFactor' => '\Model\PaymentFactor',
+        'excludedPaymentMethod' => '\Model\ExcludedPaymentMethod',
         'settlementStrategy' => '\Model\SettlementStrategy',
         'enableInstallmentCollection' => 'bool',
         'creditPayPlan' => '\Model\CreditPayPlan',
@@ -79,7 +79,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => '\Model\AvailablePaymentMethod',
         'paymentExpiryTime' => 'string',
         'subscription' => '\Model\BillingSubscription',
-        'automaticTax' => '\Model\AutomaticTax'
+        'automaticTax' => '\Model\AutomaticTax',
     ];
 
     /**
@@ -110,6 +110,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => null,
         'paymentNotifyUrl' => null,
         'paymentFactor' => null,
+        'excludedPaymentMethod' => null,
         'settlementStrategy' => null,
         'enableInstallmentCollection' => null,
         'creditPayPlan' => null,
@@ -123,7 +124,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => null,
         'paymentExpiryTime' => null,
         'subscription' => null,
-        'automaticTax' => null
+        'automaticTax' => null,
     ];
 
     /**
@@ -152,6 +153,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => false,
         'paymentNotifyUrl' => false,
         'paymentFactor' => false,
+        'excludedPaymentMethod' => false,
         'settlementStrategy' => false,
         'enableInstallmentCollection' => false,
         'creditPayPlan' => false,
@@ -165,7 +167,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => false,
         'paymentExpiryTime' => false,
         'subscription' => false,
-        'automaticTax' => false
+        'automaticTax' => false,
     ];
 
     /**
@@ -274,6 +276,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'paymentRedirectUrl',
         'paymentNotifyUrl' => 'paymentNotifyUrl',
         'paymentFactor' => 'paymentFactor',
+        'excludedPaymentMethod' => 'excludedPaymentMethod',
         'settlementStrategy' => 'settlementStrategy',
         'enableInstallmentCollection' => 'enableInstallmentCollection',
         'creditPayPlan' => 'creditPayPlan',
@@ -287,7 +290,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'availablePaymentMethod',
         'paymentExpiryTime' => 'paymentExpiryTime',
         'subscription' => 'subscription',
-        'automaticTax' => 'automaticTax'
+        'automaticTax' => 'automaticTax',
     ];
 
     /**
@@ -316,6 +319,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'setPaymentRedirectUrl',
         'paymentNotifyUrl' => 'setPaymentNotifyUrl',
         'paymentFactor' => 'setPaymentFactor',
+        'excludedPaymentMethod' => 'setExcludedPaymentMethod',
         'settlementStrategy' => 'setSettlementStrategy',
         'enableInstallmentCollection' => 'setEnableInstallmentCollection',
         'creditPayPlan' => 'setCreditPayPlan',
@@ -329,7 +333,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'setAvailablePaymentMethod',
         'paymentExpiryTime' => 'setPaymentExpiryTime',
         'subscription' => 'setSubscription',
-        'automaticTax' => 'setAutomaticTax'
+        'automaticTax' => 'setAutomaticTax',
     ];
 
     /**
@@ -358,6 +362,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'paymentRedirectUrl' => 'getPaymentRedirectUrl',
         'paymentNotifyUrl' => 'getPaymentNotifyUrl',
         'paymentFactor' => 'getPaymentFactor',
+        'excludedPaymentMethod' => 'getExcludedPaymentMethod',
         'settlementStrategy' => 'getSettlementStrategy',
         'enableInstallmentCollection' => 'getEnableInstallmentCollection',
         'creditPayPlan' => 'getCreditPayPlan',
@@ -371,7 +376,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'getAvailablePaymentMethod',
         'paymentExpiryTime' => 'getPaymentExpiryTime',
         'subscription' => 'getSubscription',
-        'automaticTax' => 'getAutomaticTax'
+        'automaticTax' => 'getAutomaticTax',
     ];
 
     /**
@@ -451,6 +456,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('paymentRedirectUrl', $data ?? [], null);
         $this->setIfExists('paymentNotifyUrl', $data ?? [], null);
         $this->setIfExists('paymentFactor', $data ?? [], null);
+        $this->setIfExists('excludedPaymentMethod', $data ?? [], null);
         $this->setIfExists('settlementStrategy', $data ?? [], null);
         $this->setIfExists('enableInstallmentCollection', $data ?? [], null);
         $this->setIfExists('creditPayPlan', $data ?? [], null);
@@ -466,7 +472,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('subscription', $data ?? [], null);
         $this->setIfExists('automaticTax', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/createPaymentSession"); 
+        $this->setPath("/ams/api/v1/payments/createPaymentSession");
     }
 
     /**
@@ -1010,6 +1016,30 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     }
 
     /**
+     * Gets excludedPaymentMethod
+     *
+     * @return \model\ExcludedPaymentMethod|null
+     */
+    public function getExcludedPaymentMethod()
+    {
+        return $this->container['excludedPaymentMethod'];
+    }
+
+    /**
+     * Sets excludedPaymentMethod
+     *
+     * @param \model\ExcludedPaymentMethod|null $excludedPaymentMethod excludedPaymentMethod
+     *
+     * @return self
+     */
+    public function setExcludedPaymentMethod($excludedPaymentMethod)
+    {
+        $this->container['excludedPaymentMethod'] = $excludedPaymentMethod;
+
+        return $this;
+    }
+
+    /**
      * Gets settlementStrategy
      *
      * @return \model\SettlementStrategy
@@ -1420,10 +1450,10 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1446,7 +1476,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
+class PeriodRule implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         'periodType' => 'string',
         'period' => 'int',
         'price' => '\Model\Amount',
-        'periodCount' => 'int'
+        'periodCount' => 'int',
     ];
 
     /**
@@ -63,7 +62,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         'periodType' => null,
         'period' => null,
         'price' => null,
-        'periodCount' => null
+        'periodCount' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         'periodType' => false,
         'period' => true,
         'price' => false,
-        'periodCount' => true
+        'periodCount' => true,
     ];
 
     /**
@@ -167,7 +166,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         'periodType' => 'periodType',
         'period' => 'period',
         'price' => 'price',
-        'periodCount' => 'periodCount'
+        'periodCount' => 'periodCount',
     ];
 
     /**
@@ -179,7 +178,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         'periodType' => 'setPeriodType',
         'period' => 'setPeriod',
         'price' => 'setPrice',
-        'periodCount' => 'setPeriodCount'
+        'periodCount' => 'setPeriodCount',
     ];
 
     /**
@@ -191,7 +190,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         'periodType' => 'getPeriodType',
         'period' => 'getPeriod',
         'price' => 'getPrice',
-        'periodCount' => 'getPeriodCount'
+        'periodCount' => 'getPeriodCount',
     ];
 
     /**
@@ -256,7 +255,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('periodCount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -477,10 +476,10 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -503,7 +502,7 @@ class PeriodRule  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

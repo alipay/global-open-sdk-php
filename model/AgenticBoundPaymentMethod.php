@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AgenticBoundPaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPITypes = [
         'paymentMethodType' => 'string',
         'paymentMethodId' => 'string',
-        'paymentMethodDetail' => '\Model\AgenticBoundPaymentMethodDetail'
+        'paymentMethodDetail' => '\Model\AgenticBoundPaymentMethodDetail',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPIFormats = [
         'paymentMethodType' => null,
         'paymentMethodId' => null,
-        'paymentMethodDetail' => null
+        'paymentMethodDetail' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPINullables = [
         'paymentMethodType' => false,
         'paymentMethodId' => false,
-        'paymentMethodDetail' => false
+        'paymentMethodDetail' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     protected static $attributeMap = [
         'paymentMethodType' => 'paymentMethodType',
         'paymentMethodId' => 'paymentMethodId',
-        'paymentMethodDetail' => 'paymentMethodDetail'
+        'paymentMethodDetail' => 'paymentMethodDetail',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     protected static $setters = [
         'paymentMethodType' => 'setPaymentMethodType',
         'paymentMethodId' => 'setPaymentMethodId',
-        'paymentMethodDetail' => 'setPaymentMethodDetail'
+        'paymentMethodDetail' => 'setPaymentMethodDetail',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     protected static $getters = [
         'paymentMethodType' => 'getPaymentMethodType',
         'paymentMethodId' => 'getPaymentMethodId',
-        'paymentMethodDetail' => 'getPaymentMethodDetail'
+        'paymentMethodDetail' => 'getPaymentMethodDetail',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('paymentMethodId', $data ?? [], null);
         $this->setIfExists('paymentMethodDetail', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -449,10 +448,10 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -475,7 +474,7 @@ class AgenticBoundPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSe
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

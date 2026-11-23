@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionUpdateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -56,7 +55,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'creditNoteId' => 'string',
         'creditNoteAmount' => 'int',
         'creditNoteCurrency' => 'string',
-        'pendingUpdate' => 'bool'
+        'pendingUpdate' => 'bool',
     ];
 
     /**
@@ -77,7 +76,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'creditNoteId' => null,
         'creditNoteAmount' => 'int64',
         'creditNoteCurrency' => null,
-        'pendingUpdate' => null
+        'pendingUpdate' => null,
     ];
 
     /**
@@ -96,7 +95,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'creditNoteId' => false,
         'creditNoteAmount' => false,
         'creditNoteCurrency' => false,
-        'pendingUpdate' => false
+        'pendingUpdate' => false,
     ];
 
     /**
@@ -195,7 +194,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'creditNoteId' => 'creditNoteId',
         'creditNoteAmount' => 'creditNoteAmount',
         'creditNoteCurrency' => 'creditNoteCurrency',
-        'pendingUpdate' => 'pendingUpdate'
+        'pendingUpdate' => 'pendingUpdate',
     ];
 
     /**
@@ -214,7 +213,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'creditNoteId' => 'setCreditNoteId',
         'creditNoteAmount' => 'setCreditNoteAmount',
         'creditNoteCurrency' => 'setCreditNoteCurrency',
-        'pendingUpdate' => 'setPendingUpdate'
+        'pendingUpdate' => 'setPendingUpdate',
     ];
 
     /**
@@ -233,7 +232,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         'creditNoteId' => 'getCreditNoteId',
         'creditNoteAmount' => 'getCreditNoteAmount',
         'creditNoteCurrency' => 'getCreditNoteCurrency',
-        'pendingUpdate' => 'getPendingUpdate'
+        'pendingUpdate' => 'getPendingUpdate',
     ];
 
     /**
@@ -305,7 +304,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
         $this->setIfExists('creditNoteCurrency', $data ?? [], null);
         $this->setIfExists('pendingUpdate', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -691,10 +690,10 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -717,7 +716,7 @@ class AlipayBillingSubscriptionUpdateResponse  implements ModelInterface, ArrayA
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

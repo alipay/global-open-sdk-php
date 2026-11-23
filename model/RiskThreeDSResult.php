@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializable
+class RiskThreeDSResult implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         'threeDSVersion' => 'string',
         'threeDSInteractionMode' => 'string',
         'eci' => 'string',
-        'cavv' => 'string'
+        'cavv' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         'threeDSVersion' => null,
         'threeDSInteractionMode' => null,
         'eci' => null,
-        'cavv' => null
+        'cavv' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         'threeDSVersion' => false,
         'threeDSInteractionMode' => false,
         'eci' => false,
-        'cavv' => false
+        'cavv' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         'threeDSVersion' => 'threeDSVersion',
         'threeDSInteractionMode' => 'threeDSInteractionMode',
         'eci' => 'eci',
-        'cavv' => 'cavv'
+        'cavv' => 'cavv',
     ];
 
     /**
@@ -179,7 +178,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         'threeDSVersion' => 'setThreeDSVersion',
         'threeDSInteractionMode' => 'setThreeDSInteractionMode',
         'eci' => 'setEci',
-        'cavv' => 'setCavv'
+        'cavv' => 'setCavv',
     ];
 
     /**
@@ -191,7 +190,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         'threeDSVersion' => 'getThreeDSVersion',
         'threeDSInteractionMode' => 'getThreeDSInteractionMode',
         'eci' => 'getEci',
-        'cavv' => 'getCavv'
+        'cavv' => 'getCavv',
     ];
 
     /**
@@ -256,7 +255,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('eci', $data ?? [], null);
         $this->setIfExists('cavv', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -483,10 +482,10 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -509,7 +508,7 @@ class RiskThreeDSResult  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

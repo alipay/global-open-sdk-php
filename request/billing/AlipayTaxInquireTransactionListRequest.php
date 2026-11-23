@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInquireTransactionListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         'paymentId' => 'string',
         'refundId' => 'string',
         'currentPage' => 'int',
-        'pageSize' => 'int'
+        'pageSize' => 'int',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         'paymentId' => null,
         'refundId' => null,
         'currentPage' => null,
-        'pageSize' => null
+        'pageSize' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         'paymentId' => false,
         'refundId' => false,
         'currentPage' => true,
-        'pageSize' => true
+        'pageSize' => true,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         'paymentId' => 'paymentId',
         'refundId' => 'refundId',
         'currentPage' => 'currentPage',
-        'pageSize' => 'pageSize'
+        'pageSize' => 'pageSize',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         'paymentId' => 'setPaymentId',
         'refundId' => 'setRefundId',
         'currentPage' => 'setCurrentPage',
-        'pageSize' => 'setPageSize'
+        'pageSize' => 'setPageSize',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         'paymentId' => 'getPaymentId',
         'refundId' => 'getRefundId',
         'currentPage' => 'getCurrentPage',
-        'pageSize' => 'getPageSize'
+        'pageSize' => 'getPageSize',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
         $this->setIfExists('currentPage', $data ?? [], null);
         $this->setIfExists('pageSize', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/tax/inquireTransactionList"); 
+        $this->setPath("/ams/api/v1/tax/inquireTransactionList");
     }
 
     /**
@@ -503,10 +502,10 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -529,7 +528,7 @@ class AlipayTaxInquireTransactionListRequest   extends AlipayRequest  implements
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

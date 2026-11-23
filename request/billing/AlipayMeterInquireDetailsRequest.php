@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayMeterInquireDetailsRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
       * @var string[]
       */
     protected static $openAPITypes = [
-        'meterId' => 'string'
+        'meterId' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'meterId' => null
+        'meterId' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'meterId' => false
+        'meterId' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
      * @var string[]
      */
     protected static $attributeMap = [
-        'meterId' => 'meterId'
+        'meterId' => 'meterId',
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
      * @var string[]
      */
     protected static $setters = [
-        'meterId' => 'setMeterId'
+        'meterId' => 'setMeterId',
     ];
 
     /**
@@ -173,7 +172,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
      * @var string[]
      */
     protected static $getters = [
-        'meterId' => 'getMeterId'
+        'meterId' => 'getMeterId',
     ];
 
     /**
@@ -235,7 +234,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
     {
         $this->setIfExists('meterId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/meter/inquireDetails"); 
+        $this->setPath("/ams/api/v1/meter/inquireDetails");
     }
 
     /**
@@ -382,10 +381,10 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -408,7 +407,7 @@ class AlipayMeterInquireDetailsRequest   extends AlipayRequest  implements Model
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

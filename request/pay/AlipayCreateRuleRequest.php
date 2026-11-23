@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateRuleRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         'ratio' => 'int',
         'releaseType' => '\Model\ReleaseType',
         'releaseTime' => 'string',
-        'retentionTime' => 'int'
+        'retentionTime' => 'int',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         'ratio' => null,
         'releaseType' => null,
         'releaseTime' => null,
-        'retentionTime' => null
+        'retentionTime' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         'ratio' => true,
         'releaseType' => false,
         'releaseTime' => false,
-        'retentionTime' => true
+        'retentionTime' => true,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         'ratio' => 'ratio',
         'releaseType' => 'releaseType',
         'releaseTime' => 'releaseTime',
-        'retentionTime' => 'retentionTime'
+        'retentionTime' => 'retentionTime',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         'ratio' => 'setRatio',
         'releaseType' => 'setReleaseType',
         'releaseTime' => 'setReleaseTime',
-        'retentionTime' => 'setRetentionTime'
+        'retentionTime' => 'setRetentionTime',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         'ratio' => 'getRatio',
         'releaseType' => 'getReleaseType',
         'releaseTime' => 'getReleaseTime',
-        'retentionTime' => 'getRetentionTime'
+        'retentionTime' => 'getRetentionTime',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
         $this->setIfExists('releaseTime', $data ?? [], null);
         $this->setIfExists('retentionTime', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/reserve/createRule"); 
+        $this->setPath("/ams/api/v1/payments/reserve/createRule");
     }
 
     /**
@@ -574,10 +573,10 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -600,7 +599,7 @@ class AlipayCreateRuleRequest   extends AlipayRequest  implements ModelInterface
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

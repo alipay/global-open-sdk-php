@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxCalculateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         'customerDetails' => '\Model\TaxCustomerDetails',
         'shipFromDetails' => '\Model\TaxShipFromDetails',
         'shippingCost' => '\Model\TaxShippingCost',
-        'taxDate' => 'string'
+        'taxDate' => 'string',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         'customerDetails' => null,
         'shipFromDetails' => null,
         'shippingCost' => null,
-        'taxDate' => null
+        'taxDate' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         'customerDetails' => false,
         'shipFromDetails' => false,
         'shippingCost' => false,
-        'taxDate' => false
+        'taxDate' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         'customerDetails' => 'customerDetails',
         'shipFromDetails' => 'shipFromDetails',
         'shippingCost' => 'shippingCost',
-        'taxDate' => 'taxDate'
+        'taxDate' => 'taxDate',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         'customerDetails' => 'setCustomerDetails',
         'shipFromDetails' => 'setShipFromDetails',
         'shippingCost' => 'setShippingCost',
-        'taxDate' => 'setTaxDate'
+        'taxDate' => 'setTaxDate',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         'customerDetails' => 'getCustomerDetails',
         'shipFromDetails' => 'getShipFromDetails',
         'shippingCost' => 'getShippingCost',
-        'taxDate' => 'getTaxDate'
+        'taxDate' => 'getTaxDate',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
         $this->setIfExists('shippingCost', $data ?? [], null);
         $this->setIfExists('taxDate', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/tax/calculate"); 
+        $this->setPath("/ams/api/v1/tax/calculate");
     }
 
     /**
@@ -571,10 +570,10 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -597,7 +596,7 @@ class AlipayTaxCalculateRequest   extends AlipayRequest  implements ModelInterfa
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

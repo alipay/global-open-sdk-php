@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\agentic;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquirePaymentTokenRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         'paymentMethod' => '\Model\AgenticPaymentMethod',
         'mandateId' => 'string',
         'metadata' => 'string',
-        'order' => '\Model\Order'
+        'order' => '\Model\Order',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         'paymentMethod' => null,
         'mandateId' => null,
         'metadata' => null,
-        'order' => null
+        'order' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         'paymentMethod' => false,
         'mandateId' => false,
         'metadata' => false,
-        'order' => false
+        'order' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         'paymentMethod' => 'paymentMethod',
         'mandateId' => 'mandateId',
         'metadata' => 'metadata',
-        'order' => 'order'
+        'order' => 'order',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         'paymentMethod' => 'setPaymentMethod',
         'mandateId' => 'setMandateId',
         'metadata' => 'setMetadata',
-        'order' => 'setOrder'
+        'order' => 'setOrder',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         'paymentMethod' => 'getPaymentMethod',
         'mandateId' => 'getMandateId',
         'metadata' => 'getMetadata',
-        'order' => 'getOrder'
+        'order' => 'getOrder',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('order', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/agenticPayment/inquirePaymentToken"); 
+        $this->setPath("/ams/api/v1/agenticPayment/inquirePaymentToken");
     }
 
     /**
@@ -580,10 +579,10 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -606,7 +605,7 @@ class AlipayInquirePaymentTokenRequest   extends AlipayRequest  implements Model
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

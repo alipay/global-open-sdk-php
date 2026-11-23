@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Merchant implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'numberOfTrades' => 'int',
         'accountLastModified' => '\Model\AccountLastModified',
         'merchantUrl' => 'string',
-        'merchantCountryCode' => 'string'
+        'merchantCountryCode' => 'string',
     ];
 
     /**
@@ -79,7 +78,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'numberOfTrades' => null,
         'accountLastModified' => null,
         'merchantUrl' => null,
-        'merchantCountryCode' => null
+        'merchantCountryCode' => null,
     ];
 
     /**
@@ -99,7 +98,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'numberOfTrades' => true,
         'accountLastModified' => false,
         'merchantUrl' => false,
-        'merchantCountryCode' => false
+        'merchantCountryCode' => false,
     ];
 
     /**
@@ -199,7 +198,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'numberOfTrades' => 'numberOfTrades',
         'accountLastModified' => 'accountLastModified',
         'merchantUrl' => 'merchantUrl',
-        'merchantCountryCode' => 'merchantCountryCode'
+        'merchantCountryCode' => 'merchantCountryCode',
     ];
 
     /**
@@ -219,7 +218,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'numberOfTrades' => 'setNumberOfTrades',
         'accountLastModified' => 'setAccountLastModified',
         'merchantUrl' => 'setMerchantUrl',
-        'merchantCountryCode' => 'setMerchantCountryCode'
+        'merchantCountryCode' => 'setMerchantCountryCode',
     ];
 
     /**
@@ -239,7 +238,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         'numberOfTrades' => 'getNumberOfTrades',
         'accountLastModified' => 'getAccountLastModified',
         'merchantUrl' => 'getMerchantUrl',
-        'merchantCountryCode' => 'getMerchantCountryCode'
+        'merchantCountryCode' => 'getMerchantCountryCode',
     ];
 
     /**
@@ -312,7 +311,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('merchantUrl', $data ?? [], null);
         $this->setIfExists('merchantCountryCode', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -343,27 +342,6 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['referenceMerchantId'] === null) {
             $invalidProperties[] = "'referenceMerchantId' can't be null";
-        }
-        if ($this->container['merchantMCC'] === null) {
-            $invalidProperties[] = "'merchantMCC' can't be null";
-        }
-        if ($this->container['merchantName'] === null) {
-            $invalidProperties[] = "'merchantName' can't be null";
-        }
-        if ($this->container['merchantDisplayName'] === null) {
-            $invalidProperties[] = "'merchantDisplayName' can't be null";
-        }
-        if ($this->container['merchantAddress'] === null) {
-            $invalidProperties[] = "'merchantAddress' can't be null";
-        }
-        if ($this->container['merchantRegisterDate'] === null) {
-            $invalidProperties[] = "'merchantRegisterDate' can't be null";
-        }
-        if ($this->container['store'] === null) {
-            $invalidProperties[] = "'store' can't be null";
-        }
-        if ($this->container['merchantType'] === null) {
-            $invalidProperties[] = "'merchantType' can't be null";
         }
         return $invalidProperties;
     }
@@ -407,7 +385,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantMCC
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantMCC()
     {
@@ -417,7 +395,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantMCC
      *
-     * @param string $merchantMCC merchantMCC
+     * @param string|null $merchantMCC merchantMCC
      *
      * @return self
      */
@@ -431,7 +409,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantName
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantName()
     {
@@ -441,7 +419,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantName
      *
-     * @param string $merchantName merchantName
+     * @param string|null $merchantName merchantName
      *
      * @return self
      */
@@ -455,7 +433,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantDisplayName
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantDisplayName()
     {
@@ -465,7 +443,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantDisplayName
      *
-     * @param string $merchantDisplayName merchantDisplayName
+     * @param string|null $merchantDisplayName merchantDisplayName
      *
      * @return self
      */
@@ -479,7 +457,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantAddress
      *
-     * @return \model\Address
+     * @return \model\Address|null
      */
     public function getMerchantAddress()
     {
@@ -489,7 +467,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantAddress
      *
-     * @param \model\Address $merchantAddress merchantAddress
+     * @param \model\Address|null $merchantAddress merchantAddress
      *
      * @return self
      */
@@ -503,7 +481,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantRegisterDate
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantRegisterDate()
     {
@@ -513,7 +491,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantRegisterDate
      *
-     * @param string $merchantRegisterDate merchantRegisterDate
+     * @param string|null $merchantRegisterDate merchantRegisterDate
      *
      * @return self
      */
@@ -527,7 +505,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets store
      *
-     * @return \model\Store
+     * @return \model\Store|null
      */
     public function getStore()
     {
@@ -537,7 +515,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets store
      *
-     * @param \model\Store $store store
+     * @param \model\Store|null $store store
      *
      * @return self
      */
@@ -551,7 +529,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets merchantType
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantType()
     {
@@ -561,7 +539,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets merchantType
      *
-     * @param string $merchantType merchantType
+     * @param string|null $merchantType merchantType
      *
      * @return self
      */
@@ -743,10 +721,10 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -769,7 +747,7 @@ class Merchant  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

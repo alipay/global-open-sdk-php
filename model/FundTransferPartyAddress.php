@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
+class FundTransferPartyAddress implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         'address1' => 'string',
         'city' => 'string',
         'state' => 'string',
-        'region' => 'string'
+        'region' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         'address1' => null,
         'city' => null,
         'state' => null,
-        'region' => null
+        'region' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         'address1' => false,
         'city' => false,
         'state' => false,
-        'region' => false
+        'region' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         'address1' => 'address1',
         'city' => 'city',
         'state' => 'state',
-        'region' => 'region'
+        'region' => 'region',
     ];
 
     /**
@@ -179,7 +178,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         'address1' => 'setAddress1',
         'city' => 'setCity',
         'state' => 'setState',
-        'region' => 'setRegion'
+        'region' => 'setRegion',
     ];
 
     /**
@@ -191,7 +190,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         'address1' => 'getAddress1',
         'city' => 'getCity',
         'state' => 'getState',
-        'region' => 'getRegion'
+        'region' => 'getRegion',
     ];
 
     /**
@@ -256,7 +255,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -471,10 +470,10 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -497,7 +496,7 @@ class FundTransferPartyAddress  implements ModelInterface, ArrayAccess, \JsonSer
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

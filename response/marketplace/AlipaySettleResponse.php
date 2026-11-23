@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\marketplace;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySettleResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'result' => '\Model\Result',
         'settlementRequestId' => 'string',
-        'settlementId' => 'string'
+        'settlementId' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPIFormats = [
         'result' => null,
         'settlementRequestId' => null,
-        'settlementId' => null
+        'settlementId' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPINullables = [
         'result' => false,
         'settlementRequestId' => false,
-        'settlementId' => false
+        'settlementId' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $attributeMap = [
         'result' => 'result',
         'settlementRequestId' => 'settlementRequestId',
-        'settlementId' => 'settlementId'
+        'settlementId' => 'settlementId',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $setters = [
         'result' => 'setResult',
         'settlementRequestId' => 'setSettlementRequestId',
-        'settlementId' => 'setSettlementId'
+        'settlementId' => 'setSettlementId',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $getters = [
         'result' => 'getResult',
         'settlementRequestId' => 'getSettlementRequestId',
-        'settlementId' => 'getSettlementId'
+        'settlementId' => 'getSettlementId',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('settlementRequestId', $data ?? [], null);
         $this->setIfExists('settlementId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -446,10 +445,10 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -472,7 +471,7 @@ class AlipaySettleResponse  implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

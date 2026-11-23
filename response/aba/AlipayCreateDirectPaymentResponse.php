@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateDirectPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         'payFromAmount' => '\Model\Amount',
         'payToAmount' => '\Model\Amount',
         'paymentTime' => 'string',
-        'result' => '\Model\Result'
+        'result' => '\Model\Result',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         'payFromAmount' => null,
         'payToAmount' => null,
         'paymentTime' => null,
-        'result' => null
+        'result' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         'payFromAmount' => false,
         'payToAmount' => false,
         'paymentTime' => false,
-        'result' => false
+        'result' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         'payFromAmount' => 'payFromAmount',
         'payToAmount' => 'payToAmount',
         'paymentTime' => 'paymentTime',
-        'result' => 'result'
+        'result' => 'result',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         'payFromAmount' => 'setPayFromAmount',
         'payToAmount' => 'setPayToAmount',
         'paymentTime' => 'setPaymentTime',
-        'result' => 'setResult'
+        'result' => 'setResult',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         'payFromAmount' => 'getPayFromAmount',
         'payToAmount' => 'getPayToAmount',
         'paymentTime' => 'getPaymentTime',
-        'result' => 'getResult'
+        'result' => 'getResult',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
         $this->setIfExists('paymentTime', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -585,10 +584,10 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -611,7 +610,7 @@ class AlipayCreateDirectPaymentResponse  implements ModelInterface, ArrayAccess,
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

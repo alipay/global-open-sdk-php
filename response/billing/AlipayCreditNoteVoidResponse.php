@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreditNoteVoidResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         'result' => '\Model\Result',
         'creditNoteId' => 'string',
         'status' => 'string',
-        'voidedAt' => 'string'
+        'voidedAt' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         'result' => null,
         'creditNoteId' => null,
         'status' => null,
-        'voidedAt' => null
+        'voidedAt' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         'result' => false,
         'creditNoteId' => false,
         'status' => false,
-        'voidedAt' => false
+        'voidedAt' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         'result' => 'result',
         'creditNoteId' => 'creditNoteId',
         'status' => 'status',
-        'voidedAt' => 'voidedAt'
+        'voidedAt' => 'voidedAt',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         'result' => 'setResult',
         'creditNoteId' => 'setCreditNoteId',
         'status' => 'setStatus',
-        'voidedAt' => 'setVoidedAt'
+        'voidedAt' => 'setVoidedAt',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         'result' => 'getResult',
         'creditNoteId' => 'getCreditNoteId',
         'status' => 'getStatus',
-        'voidedAt' => 'getVoidedAt'
+        'voidedAt' => 'getVoidedAt',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('voidedAt', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AlipayCreditNoteVoidResponse  implements ModelInterface, ArrayAccess, \Jso
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireExchangeResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -56,7 +55,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         'buyAmount' => '\Model\Amount',
         'exchangeId' => 'string',
         'exchangeStartTime' => 'string',
-        'exchangeEndTime' => 'string'
+        'exchangeEndTime' => 'string',
     ];
 
     /**
@@ -77,7 +76,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         'buyAmount' => null,
         'exchangeId' => null,
         'exchangeStartTime' => null,
-        'exchangeEndTime' => null
+        'exchangeEndTime' => null,
     ];
 
     /**
@@ -96,7 +95,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         'buyAmount' => false,
         'exchangeId' => false,
         'exchangeStartTime' => false,
-        'exchangeEndTime' => false
+        'exchangeEndTime' => false,
     ];
 
     /**
@@ -195,7 +194,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         'buyAmount' => 'buyAmount',
         'exchangeId' => 'exchangeId',
         'exchangeStartTime' => 'exchangeStartTime',
-        'exchangeEndTime' => 'exchangeEndTime'
+        'exchangeEndTime' => 'exchangeEndTime',
     ];
 
     /**
@@ -214,7 +213,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         'buyAmount' => 'setBuyAmount',
         'exchangeId' => 'setExchangeId',
         'exchangeStartTime' => 'setExchangeStartTime',
-        'exchangeEndTime' => 'setExchangeEndTime'
+        'exchangeEndTime' => 'setExchangeEndTime',
     ];
 
     /**
@@ -233,7 +232,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         'buyAmount' => 'getBuyAmount',
         'exchangeId' => 'getExchangeId',
         'exchangeStartTime' => 'getExchangeStartTime',
-        'exchangeEndTime' => 'getExchangeEndTime'
+        'exchangeEndTime' => 'getExchangeEndTime',
     ];
 
     /**
@@ -305,7 +304,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('exchangeStartTime', $data ?? [], null);
         $this->setIfExists('exchangeEndTime', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -688,10 +687,10 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -714,7 +713,7 @@ class AlipayInquireExchangeResponse  implements ModelInterface, ArrayAccess, \Js
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

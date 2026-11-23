@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireExchangeRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exchangeRequestId' => 'string'
+        'exchangeRequestId' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'exchangeRequestId' => null
+        'exchangeRequestId' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'exchangeRequestId' => false
+        'exchangeRequestId' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'exchangeRequestId' => 'exchangeRequestId'
+        'exchangeRequestId' => 'exchangeRequestId',
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'exchangeRequestId' => 'setExchangeRequestId'
+        'exchangeRequestId' => 'setExchangeRequestId',
     ];
 
     /**
@@ -173,7 +172,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'exchangeRequestId' => 'getExchangeRequestId'
+        'exchangeRequestId' => 'getExchangeRequestId',
     ];
 
     /**
@@ -235,7 +234,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
     {
         $this->setIfExists('exchangeRequestId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/funds/inquireExchange"); 
+        $this->setPath("/ams/api/v1/aba/funds/inquireExchange");
     }
 
     /**
@@ -382,10 +381,10 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -408,7 +407,7 @@ class AlipayInquireExchangeRequest   extends AlipayRequest  implements ModelInte
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

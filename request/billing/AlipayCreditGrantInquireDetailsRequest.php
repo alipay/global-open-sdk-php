@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreditGrantInquireDetailsRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
       * @var string[]
       */
     protected static $openAPITypes = [
-        'creditGrantId' => 'string'
+        'creditGrantId' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'creditGrantId' => null
+        'creditGrantId' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'creditGrantId' => false
+        'creditGrantId' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
      * @var string[]
      */
     protected static $attributeMap = [
-        'creditGrantId' => 'creditGrantId'
+        'creditGrantId' => 'creditGrantId',
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
      * @var string[]
      */
     protected static $setters = [
-        'creditGrantId' => 'setCreditGrantId'
+        'creditGrantId' => 'setCreditGrantId',
     ];
 
     /**
@@ -173,7 +172,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
      * @var string[]
      */
     protected static $getters = [
-        'creditGrantId' => 'getCreditGrantId'
+        'creditGrantId' => 'getCreditGrantId',
     ];
 
     /**
@@ -235,7 +234,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
     {
         $this->setIfExists('creditGrantId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/meter/creditGrant/inquireDetails"); 
+        $this->setPath("/ams/api/v1/meter/creditGrant/inquireDetails");
     }
 
     /**
@@ -382,10 +381,10 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -408,7 +407,7 @@ class AlipayCreditGrantInquireDetailsRequest   extends AlipayRequest  implements
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

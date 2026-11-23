@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomizedInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customizedField2' => 'string',
         'customizedField3' => 'string',
         'customizedField4' => 'string',
-        'customizedField5' => 'string'
+        'customizedField5' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customizedField2' => null,
         'customizedField3' => null,
         'customizedField4' => null,
-        'customizedField5' => null
+        'customizedField5' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customizedField2' => false,
         'customizedField3' => false,
         'customizedField4' => false,
-        'customizedField5' => false
+        'customizedField5' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customizedField2' => 'customizedField2',
         'customizedField3' => 'customizedField3',
         'customizedField4' => 'customizedField4',
-        'customizedField5' => 'customizedField5'
+        'customizedField5' => 'customizedField5',
     ];
 
     /**
@@ -184,7 +183,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customizedField2' => 'setCustomizedField2',
         'customizedField3' => 'setCustomizedField3',
         'customizedField4' => 'setCustomizedField4',
-        'customizedField5' => 'setCustomizedField5'
+        'customizedField5' => 'setCustomizedField5',
     ];
 
     /**
@@ -197,7 +196,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         'customizedField2' => 'getCustomizedField2',
         'customizedField3' => 'getCustomizedField3',
         'customizedField4' => 'getCustomizedField4',
-        'customizedField5' => 'getCustomizedField5'
+        'customizedField5' => 'getCustomizedField5',
     ];
 
     /**
@@ -263,7 +262,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('customizedField4', $data ?? [], null);
         $this->setIfExists('customizedField5', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -502,10 +501,10 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -528,7 +527,7 @@ class CustomizedInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
