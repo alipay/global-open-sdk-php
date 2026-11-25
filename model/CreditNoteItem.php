@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreditNoteItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'quantity' => 'int',
         'unitAmount' => '\Model\Amount',
-        'itemAmount' => '\Model\Amount'
+        'itemAmount' => '\Model\Amount',
     ];
 
     /**
@@ -69,7 +68,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => null,
         'quantity' => null,
         'unitAmount' => null,
-        'itemAmount' => null
+        'itemAmount' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => false,
         'quantity' => true,
         'unitAmount' => false,
-        'itemAmount' => false
+        'itemAmount' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'description',
         'quantity' => 'quantity',
         'unitAmount' => 'unitAmount',
-        'itemAmount' => 'itemAmount'
+        'itemAmount' => 'itemAmount',
     ];
 
     /**
@@ -194,7 +193,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'setDescription',
         'quantity' => 'setQuantity',
         'unitAmount' => 'setUnitAmount',
-        'itemAmount' => 'setItemAmount'
+        'itemAmount' => 'setItemAmount',
     ];
 
     /**
@@ -209,7 +208,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'getDescription',
         'quantity' => 'getQuantity',
         'unitAmount' => 'getUnitAmount',
-        'itemAmount' => 'getItemAmount'
+        'itemAmount' => 'getItemAmount',
     ];
 
     /**
@@ -277,7 +276,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('unitAmount', $data ?? [], null);
         $this->setIfExists('itemAmount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -564,10 +563,10 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -590,7 +589,7 @@ class CreditNoteItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

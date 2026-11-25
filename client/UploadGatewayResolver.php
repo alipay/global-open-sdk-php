@@ -22,8 +22,8 @@ final class UploadGatewayResolver
         $host = strtolower($parts['host']);
         if (!isset(self::DEFAULT_GATEWAYS[$host])) {
             throw new \InvalidArgumentException(
-                'No default file gateway mapping exists for ' . $host .
-                '. Configure uploadGatewayUrl explicitly.'
+                'No default file gateway mapping exists for ' . $host
+                . '. Configure uploadGatewayUrl explicitly.',
             );
         }
         return self::DEFAULT_GATEWAYS[$host];
@@ -58,12 +58,12 @@ final class UploadGatewayResolver
             || (isset($parts['path']) && $parts['path'] !== '' && $parts['path'] !== '/')
             || isset($parts['query']) || isset($parts['fragment'])) {
             throw new \InvalidArgumentException(
-                'gateway URL must not include user info, path, query, or fragment'
+                'gateway URL must not include user info, path, query, or fragment',
             );
         }
         if ($isNormalGateway && isset($parts['port']) && $parts['port'] !== 443) {
             throw new \InvalidArgumentException(
-                'gatewayUrl cannot be mapped to a file gateway; configure uploadGatewayUrl explicitly'
+                'gatewayUrl cannot be mapped to a file gateway; configure uploadGatewayUrl explicitly',
             );
         }
         return $parts;

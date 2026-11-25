@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\auth;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayAuthConsultResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'schemeUrl' => 'string',
         'applinkUrl' => 'string',
         'appIdentifier' => 'string',
-        'authCodeForm' => '\Model\AuthCodeForm'
+        'authCodeForm' => '\Model\AuthCodeForm',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'schemeUrl' => null,
         'applinkUrl' => null,
         'appIdentifier' => null,
-        'authCodeForm' => null
+        'authCodeForm' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'schemeUrl' => false,
         'applinkUrl' => false,
         'appIdentifier' => false,
-        'authCodeForm' => false
+        'authCodeForm' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'schemeUrl' => 'schemeUrl',
         'applinkUrl' => 'applinkUrl',
         'appIdentifier' => 'appIdentifier',
-        'authCodeForm' => 'authCodeForm'
+        'authCodeForm' => 'authCodeForm',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'schemeUrl' => 'setSchemeUrl',
         'applinkUrl' => 'setApplinkUrl',
         'appIdentifier' => 'setAppIdentifier',
-        'authCodeForm' => 'setAuthCodeForm'
+        'authCodeForm' => 'setAuthCodeForm',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'schemeUrl' => 'getSchemeUrl',
         'applinkUrl' => 'getApplinkUrl',
         'appIdentifier' => 'getAppIdentifier',
-        'authCodeForm' => 'getAuthCodeForm'
+        'authCodeForm' => 'getAuthCodeForm',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('appIdentifier', $data ?? [], null);
         $this->setIfExists('authCodeForm', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -598,10 +597,10 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -624,7 +623,7 @@ class AlipayAuthConsultResponse  implements ModelInterface, ArrayAccess, \JsonSe
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireReleaseRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPITypes = [
         'releaseId' => 'string',
-        'releaseRequestId' => 'string'
+        'releaseRequestId' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPIFormats = [
         'releaseId' => null,
-        'releaseRequestId' => null
+        'releaseRequestId' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPINullables = [
         'releaseId' => false,
-        'releaseRequestId' => false
+        'releaseRequestId' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
      */
     protected static $attributeMap = [
         'releaseId' => 'releaseId',
-        'releaseRequestId' => 'releaseRequestId'
+        'releaseRequestId' => 'releaseRequestId',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
      */
     protected static $setters = [
         'releaseId' => 'setReleaseId',
-        'releaseRequestId' => 'setReleaseRequestId'
+        'releaseRequestId' => 'setReleaseRequestId',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
      */
     protected static $getters = [
         'releaseId' => 'getReleaseId',
-        'releaseRequestId' => 'getReleaseRequestId'
+        'releaseRequestId' => 'getReleaseRequestId',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('releaseId', $data ?? [], null);
         $this->setIfExists('releaseRequestId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/reserve/inquireRelease"); 
+        $this->setPath("/ams/api/v1/payments/reserve/inquireRelease");
     }
 
     /**
@@ -410,10 +409,10 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -436,7 +435,7 @@ class AlipayInquireReleaseRequest   extends AlipayRequest  implements ModelInter
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

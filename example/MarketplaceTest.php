@@ -31,7 +31,7 @@ function register()
 
 
     $merchantInfo = new \Model\MerchantInfo();
-    $merchantInfo->setLoginId(round(microtime(true) * 1000)."wangzunj3ao.wzj@digital-engine.com");
+    $merchantInfo->setLoginId(round(microtime(true) * 1000) . "wangzunj3ao.wzj@digital-engine.com");
     $merchantInfo->setLegalEntityType(\Model\LegalEntityType::COMPANY);
 
 

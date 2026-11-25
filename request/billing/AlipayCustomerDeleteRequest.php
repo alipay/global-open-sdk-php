@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCustomerDeleteRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'customerId' => 'string'
+        'customerId' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'customerId' => null
+        'customerId' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'customerId' => false
+        'customerId' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
-        'customerId' => 'customerId'
+        'customerId' => 'customerId',
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-        'customerId' => 'setCustomerId'
+        'customerId' => 'setCustomerId',
     ];
 
     /**
@@ -173,7 +172,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
      * @var string[]
      */
     protected static $getters = [
-        'customerId' => 'getCustomerId'
+        'customerId' => 'getCustomerId',
     ];
 
     /**
@@ -235,7 +234,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
     {
         $this->setIfExists('customerId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/customer/delete"); 
+        $this->setPath("/ams/api/v1/billing/customer/delete");
     }
 
     /**
@@ -382,10 +381,10 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -408,7 +407,7 @@ class AlipayCustomerDeleteRequest   extends AlipayRequest  implements ModelInter
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

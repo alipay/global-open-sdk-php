@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayUpdateAmountRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $openAPITypes = [
         'updateRequestId' => 'string',
         'paymentId' => 'string',
-        'amount' => '\Model\Amount'
+        'amount' => '\Model\Amount',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $openAPIFormats = [
         'updateRequestId' => null,
         'paymentId' => null,
-        'amount' => null
+        'amount' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $openAPINullables = [
         'updateRequestId' => false,
         'paymentId' => false,
-        'amount' => false
+        'amount' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $attributeMap = [
         'updateRequestId' => 'updateRequestId',
         'paymentId' => 'paymentId',
-        'amount' => 'amount'
+        'amount' => 'amount',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $setters = [
         'updateRequestId' => 'setUpdateRequestId',
         'paymentId' => 'setPaymentId',
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     protected static $getters = [
         'updateRequestId' => 'getUpdateRequestId',
         'paymentId' => 'getPaymentId',
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
         $this->setIfExists('paymentId', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/updateAmount"); 
+        $this->setPath("/ams/api/v1/payments/updateAmount");
     }
 
     /**
@@ -450,10 +449,10 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -476,7 +475,7 @@ class AlipayUpdateAmountRequest   extends AlipayRequest  implements ModelInterfa
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

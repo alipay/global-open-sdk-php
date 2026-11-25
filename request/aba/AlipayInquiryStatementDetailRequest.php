@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquiryStatementDetailRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
       * @var string[]
       */
     protected static $openAPITypes = [
-        'statementId' => 'string'
+        'statementId' => 'string',
     ];
 
     /**
@@ -57,7 +56,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'statementId' => null
+        'statementId' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'statementId' => false
+        'statementId' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
      * @var string[]
      */
     protected static $attributeMap = [
-        'statementId' => 'statementId'
+        'statementId' => 'statementId',
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
      * @var string[]
      */
     protected static $setters = [
-        'statementId' => 'setStatementId'
+        'statementId' => 'setStatementId',
     ];
 
     /**
@@ -173,7 +172,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
      * @var string[]
      */
     protected static $getters = [
-        'statementId' => 'getStatementId'
+        'statementId' => 'getStatementId',
     ];
 
     /**
@@ -235,7 +234,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
     {
         $this->setIfExists('statementId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/accounts/inquiryStatementDetail"); 
+        $this->setPath("/ams/api/v1/aba/accounts/inquiryStatementDetail");
     }
 
     /**
@@ -382,10 +381,10 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -408,7 +407,7 @@ class AlipayInquiryStatementDetailRequest   extends AlipayRequest  implements Mo
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

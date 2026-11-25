@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
+class ExcludedPaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -46,7 +45,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paymentMethodTypeList' => '\Model\PaymentMethodTypeItem[]'
+        'paymentMethodTypeList' => '\Model\PaymentMethodTypeItem[]',
     ];
 
     /**
@@ -57,7 +56,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paymentMethodTypeList' => null
+        'paymentMethodTypeList' => null,
     ];
 
     /**
@@ -66,7 +65,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'paymentMethodTypeList' => false
+        'paymentMethodTypeList' => false,
     ];
 
     /**
@@ -155,7 +154,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentMethodTypeList' => 'paymentMethodTypeList'
+        'paymentMethodTypeList' => 'paymentMethodTypeList',
     ];
 
     /**
@@ -164,7 +163,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'paymentMethodTypeList' => 'setPaymentMethodTypeList'
+        'paymentMethodTypeList' => 'setPaymentMethodTypeList',
     ];
 
     /**
@@ -173,7 +172,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'paymentMethodTypeList' => 'getPaymentMethodTypeList'
+        'paymentMethodTypeList' => 'getPaymentMethodTypeList',
     ];
 
     /**
@@ -235,7 +234,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->setIfExists('paymentMethodTypeList', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -378,10 +377,10 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -404,7 +403,7 @@ class ExcludedPaymentMethod  implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

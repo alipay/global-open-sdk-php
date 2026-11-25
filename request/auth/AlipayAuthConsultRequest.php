@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\auth;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayAuthConsultRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -62,7 +61,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         'merchantRegion' => 'string',
         'recurringPayment' => 'bool',
         'authMetaData' => '\Model\AuthMetaData',
-        'env' => '\Model\Env'
+        'env' => '\Model\Env',
     ];
 
     /**
@@ -89,7 +88,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         'merchantRegion' => null,
         'recurringPayment' => null,
         'authMetaData' => null,
-        'env' => null
+        'env' => null,
     ];
 
     /**
@@ -114,7 +113,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         'merchantRegion' => false,
         'recurringPayment' => false,
         'authMetaData' => false,
-        'env' => false
+        'env' => false,
     ];
 
     /**
@@ -219,7 +218,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         'merchantRegion' => 'merchantRegion',
         'recurringPayment' => 'recurringPayment',
         'authMetaData' => 'authMetaData',
-        'env' => 'env'
+        'env' => 'env',
     ];
 
     /**
@@ -244,7 +243,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         'merchantRegion' => 'setMerchantRegion',
         'recurringPayment' => 'setRecurringPayment',
         'authMetaData' => 'setAuthMetaData',
-        'env' => 'setEnv'
+        'env' => 'setEnv',
     ];
 
     /**
@@ -269,7 +268,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         'merchantRegion' => 'getMerchantRegion',
         'recurringPayment' => 'getRecurringPayment',
         'authMetaData' => 'getAuthMetaData',
-        'env' => 'getEnv'
+        'env' => 'getEnv',
     ];
 
     /**
@@ -347,7 +346,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
         $this->setIfExists('authMetaData', $data ?? [], null);
         $this->setIfExists('env', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/authorizations/consult"); 
+        $this->setPath("/ams/api/v1/authorizations/consult");
     }
 
     /**
@@ -890,10 +889,10 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -916,7 +915,7 @@ class AlipayAuthConsultRequest   extends AlipayRequest  implements ModelInterfac
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

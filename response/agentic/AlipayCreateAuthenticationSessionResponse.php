@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\agentic;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateAuthenticationSessionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         'result' => '\Model\Result',
         'normalUrl' => 'string',
         'sdHash' => 'string',
-        'authenticationSessionExpiryTime' => 'string'
+        'authenticationSessionExpiryTime' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         'result' => null,
         'normalUrl' => null,
         'sdHash' => null,
-        'authenticationSessionExpiryTime' => null
+        'authenticationSessionExpiryTime' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         'result' => false,
         'normalUrl' => false,
         'sdHash' => false,
-        'authenticationSessionExpiryTime' => false
+        'authenticationSessionExpiryTime' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         'result' => 'result',
         'normalUrl' => 'normalUrl',
         'sdHash' => 'sdHash',
-        'authenticationSessionExpiryTime' => 'authenticationSessionExpiryTime'
+        'authenticationSessionExpiryTime' => 'authenticationSessionExpiryTime',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         'result' => 'setResult',
         'normalUrl' => 'setNormalUrl',
         'sdHash' => 'setSdHash',
-        'authenticationSessionExpiryTime' => 'setAuthenticationSessionExpiryTime'
+        'authenticationSessionExpiryTime' => 'setAuthenticationSessionExpiryTime',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         'result' => 'getResult',
         'normalUrl' => 'getNormalUrl',
         'sdHash' => 'getSdHash',
-        'authenticationSessionExpiryTime' => 'getAuthenticationSessionExpiryTime'
+        'authenticationSessionExpiryTime' => 'getAuthenticationSessionExpiryTime',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
         $this->setIfExists('sdHash', $data ?? [], null);
         $this->setIfExists('authenticationSessionExpiryTime', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -474,10 +473,10 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -500,7 +499,7 @@ class AlipayCreateAuthenticationSessionResponse  implements ModelInterface, Arra
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
