@@ -25,9 +25,9 @@ class SignatureTool
 
     private static function signWithSHA256RSA($signContent, $merchantPrivateKey)
     {
-        $priKey = "-----BEGIN RSA PRIVATE KEY-----\n" .
-            wordwrap($merchantPrivateKey, 64, "\n", true) .
-            "\n-----END RSA PRIVATE KEY-----";
+        $priKey = "-----BEGIN RSA PRIVATE KEY-----\n"
+            . wordwrap($merchantPrivateKey, 64, "\n", true)
+            . "\n-----END RSA PRIVATE KEY-----";
 
         openssl_sign($signContent, $signValue, $priKey, OPENSSL_ALGO_SHA256);
         return base64_encode($signValue);
@@ -35,9 +35,9 @@ class SignatureTool
 
     private static function verifySignatureWithSHA256RSA($rspContent, $rspSignValue, $alipayPublicKey)
     {
-        $pubKey = "-----BEGIN PUBLIC KEY-----\n" .
-            wordwrap($alipayPublicKey, 64, "\n", true) .
-            "\n-----END PUBLIC KEY-----";
+        $pubKey = "-----BEGIN PUBLIC KEY-----\n"
+            . wordwrap($alipayPublicKey, 64, "\n", true)
+            . "\n-----END PUBLIC KEY-----";
         if (strstr($rspSignValue, "=")
             || strstr($rspSignValue, "+")
             || strstr($rspSignValue, "/")

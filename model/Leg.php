@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Leg implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -60,7 +59,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'flightNumber' => 'string',
         'passengerNameRecord' => 'string',
         'ticketDeliveryMethod' => 'string',
-        'ticketDeliveryRecipient' => 'string'
+        'ticketDeliveryRecipient' => 'string',
     ];
 
     /**
@@ -85,7 +84,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'flightNumber' => null,
         'passengerNameRecord' => null,
         'ticketDeliveryMethod' => null,
-        'ticketDeliveryRecipient' => null
+        'ticketDeliveryRecipient' => null,
     ];
 
     /**
@@ -108,7 +107,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'flightNumber' => false,
         'passengerNameRecord' => false,
         'ticketDeliveryMethod' => false,
-        'ticketDeliveryRecipient' => false
+        'ticketDeliveryRecipient' => false,
     ];
 
     /**
@@ -211,7 +210,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'flightNumber' => 'flightNumber',
         'passengerNameRecord' => 'passengerNameRecord',
         'ticketDeliveryMethod' => 'ticketDeliveryMethod',
-        'ticketDeliveryRecipient' => 'ticketDeliveryRecipient'
+        'ticketDeliveryRecipient' => 'ticketDeliveryRecipient',
     ];
 
     /**
@@ -234,7 +233,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'flightNumber' => 'setFlightNumber',
         'passengerNameRecord' => 'setPassengerNameRecord',
         'ticketDeliveryMethod' => 'setTicketDeliveryMethod',
-        'ticketDeliveryRecipient' => 'setTicketDeliveryRecipient'
+        'ticketDeliveryRecipient' => 'setTicketDeliveryRecipient',
     ];
 
     /**
@@ -257,7 +256,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         'flightNumber' => 'getFlightNumber',
         'passengerNameRecord' => 'getPassengerNameRecord',
         'ticketDeliveryMethod' => 'getTicketDeliveryMethod',
-        'ticketDeliveryRecipient' => 'getTicketDeliveryRecipient'
+        'ticketDeliveryRecipient' => 'getTicketDeliveryRecipient',
     ];
 
     /**
@@ -333,7 +332,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ticketDeliveryMethod', $data ?? [], null);
         $this->setIfExists('ticketDeliveryRecipient', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -812,10 +811,10 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -838,7 +837,7 @@ class Leg  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

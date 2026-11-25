@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\subscription;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireSubscriptionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'result' => '\Model\Result',
-        'subscription' => '\Model\SubscriptionInfo'
+        'subscription' => '\Model\SubscriptionInfo',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'result' => null,
-        'subscription' => null
+        'subscription' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
       */
     protected static $openAPINullables = [
         'result' => false,
-        'subscription' => false
+        'subscription' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
      */
     protected static $attributeMap = [
         'result' => 'result',
-        'subscription' => 'subscription'
+        'subscription' => 'subscription',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
      */
     protected static $setters = [
         'result' => 'setResult',
-        'subscription' => 'setSubscription'
+        'subscription' => 'setSubscription',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
      */
     protected static $getters = [
         'result' => 'getResult',
-        'subscription' => 'getSubscription'
+        'subscription' => 'getSubscription',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -412,10 +411,10 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -438,7 +437,7 @@ class AlipayInquireSubscriptionResponse  implements ModelInterface, ArrayAccess,
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

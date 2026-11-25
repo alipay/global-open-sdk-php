@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubscriptionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -70,7 +69,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => '\Model\Amount',
         'fixedAmount' => '\Model\Amount',
         'retryMode' => 'string',
-        'subscriptionOrderId' => 'string'
+        'subscriptionOrderId' => 'string',
     ];
 
     /**
@@ -105,7 +104,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => null,
         'fixedAmount' => null,
         'retryMode' => null,
-        'subscriptionOrderId' => null
+        'subscriptionOrderId' => null,
     ];
 
     /**
@@ -138,7 +137,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => false,
         'fixedAmount' => false,
         'retryMode' => false,
-        'subscriptionOrderId' => false
+        'subscriptionOrderId' => false,
     ];
 
     /**
@@ -251,7 +250,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => 'maxAmountFloor',
         'fixedAmount' => 'fixedAmount',
         'retryMode' => 'retryMode',
-        'subscriptionOrderId' => 'subscriptionOrderId'
+        'subscriptionOrderId' => 'subscriptionOrderId',
     ];
 
     /**
@@ -284,7 +283,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => 'setMaxAmountFloor',
         'fixedAmount' => 'setFixedAmount',
         'retryMode' => 'setRetryMode',
-        'subscriptionOrderId' => 'setSubscriptionOrderId'
+        'subscriptionOrderId' => 'setSubscriptionOrderId',
     ];
 
     /**
@@ -317,7 +316,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         'maxAmountFloor' => 'getMaxAmountFloor',
         'fixedAmount' => 'getFixedAmount',
         'retryMode' => 'getRetryMode',
-        'subscriptionOrderId' => 'getSubscriptionOrderId'
+        'subscriptionOrderId' => 'getSubscriptionOrderId',
     ];
 
     /**
@@ -403,7 +402,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('retryMode', $data ?? [], null);
         $this->setIfExists('subscriptionOrderId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -1125,10 +1124,10 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1151,7 +1150,7 @@ class SubscriptionInfo  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -1,9 +1,19 @@
 <?php
+
 // Run in a separate process. All cURL functions are mocked; no network access.
+
 namespace Client {
-    function curl_init() { return (object) ['options' => []]; }
-    function curl_setopt($curl, $option, $value) { $curl->options[$option] = $value; return true; }
-    function curl_exec($curl) {
+    function curl_init()
+    {
+        return (object) ['options' => []];
+    }
+    function curl_setopt($curl, $option, $value)
+    {
+        $curl->options[$option] = $value;
+        return true;
+    }
+    function curl_exec($curl)
+    {
         $fixture = $GLOBALS['entryCodeFixture'];
         $options = $curl->options;
         \entryCodeCheck($options[CURLOPT_SSL_VERIFYPEER] === true && $options[CURLOPT_SSL_VERIFYHOST] === 2, 'TLS options');
@@ -14,8 +24,15 @@ namespace Client {
             $headers[strtolower($name)] = $value;
         }
         $signature = substr($headers['signature'], strpos($headers['signature'], 'signature=') + 10);
-        \entryCodeCheck(SignatureTool::verify('POST', '/ams/api/v1/payments/pay', 'local-example',
-            $headers['request-time'], $options[CURLOPT_POSTFIELDS], $signature, $fixture['merchantPublic']) === 1, 'Request signature');
+        \entryCodeCheck(SignatureTool::verify(
+            'POST',
+            '/ams/api/v1/payments/pay',
+            'local-example',
+            $headers['request-time'],
+            $options[CURLOPT_POSTFIELDS],
+            $signature,
+            $fixture['merchantPublic'],
+        ) === 1, 'Request signature');
         $body = json_decode($options[CURLOPT_POSTFIELDS], true);
         \entryCodeCheck($body['paymentFactor']['inStorePaymentScenario'] === 'EntryCode', 'EntryCode wire value');
         \entryCodeCheck($body['order']['env']['terminalType'] === 'WAP', 'Terminal type');
@@ -26,23 +43,37 @@ namespace Client {
         $GLOBALS['entryCodeSent']++;
         return $curl->responseHeaders . $response;
     }
-    function curl_getinfo($curl, $option) {
-        if ($option === CURLINFO_HTTP_CODE) { return 200; }
-        if ($option === CURLINFO_HEADER_SIZE) { return strlen($curl->responseHeaders); }
+    function curl_getinfo($curl, $option)
+    {
+        if ($option === CURLINFO_HTTP_CODE) {
+            return 200;
+        }
+        if ($option === CURLINFO_HEADER_SIZE) {
+            return strlen($curl->responseHeaders);
+        }
         throw new \RuntimeException('Unexpected cURL info');
     }
     function curl_close($curl) {}
 }
+
 namespace {
-    function entryCodeCheck($ok, $message) { if (!$ok) { throw new \RuntimeException($message); } }
-    function entryCodeKeyPair() {
+    function entryCodeCheck($ok, $message)
+    {
+        if (!$ok) {
+            throw new \RuntimeException($message);
+        }
+    }
+    function entryCodeKeyPair()
+    {
         $key = openssl_pkey_new(['private_key_bits' => 2048, 'private_key_type' => OPENSSL_KEYTYPE_RSA]);
         entryCodeCheck($key !== false && openssl_pkey_export($key, $pem), 'Generate test key');
         return [preg_replace('/-----[^\r\n]+-----|\s+/', '', $pem),
             preg_replace('/-----[^\r\n]+-----|\s+/', '', openssl_pkey_get_details($key)['key'])];
     }
     set_error_handler(function ($severity, $message, $file, $line) {
-        if (error_reporting() & $severity) { throw new \ErrorException($message, 0, $severity, $file, $line); }
+        if (error_reporting() & $severity) {
+            throw new \ErrorException($message, 0, $severity, $file, $line);
+        }
         return false;
     });
     list($merchantPrivate, $merchantPublic) = entryCodeKeyPair();
@@ -54,15 +85,20 @@ namespace {
     putenv('ANTOM_MERCHANT_PRIVATE_KEY=' . $merchantPrivate);
     putenv('ANTOM_PUBLIC_KEY=' . $platformPublic);
     ob_start();
-    try { require __DIR__ . '/../example/EntryCodePaymentTest.php'; }
-    finally { $output = ob_get_clean(); }
+    try {
+        require __DIR__ . '/../example/EntryCodePaymentTest.php';
+    } finally {
+        $output = ob_get_clean();
+    }
     entryCodeCheck($GLOBALS['entryCodeSent'] === 1, 'Example must send exactly one mocked request');
     entryCodeCheck(json_decode($output, true)['result']['resultStatus'] === 'S', 'Verified response');
     entryCodeCheck(strpos($output, $merchantPrivate) === false && strpos($output, $platformPrivate) === false, 'No key output');
 
     // Preserve the existing required-field rules and error messages.
-    $order = $request->getOrder(); $merchant = $order->getMerchant();
-    $store = $merchant->getStore(); $env = $order->getEnv();
+    $order = $request->getOrder();
+    $merchant = $order->getMerchant();
+    $store = $merchant->getStore();
+    $env = $order->getEnv();
     foreach ([
         [$request, 'Order', 'order required.'],
         [$order, 'Merchant', 'order.merchant required.'],
@@ -79,10 +115,18 @@ namespace {
         [$env, 'UserAgent', 'order.env.userAgent required.'],
     ] as $case) {
         list($object, $field, $message) = $case;
-        $getter = 'get' . $field; $setter = 'set' . $field;
-        $value = $object->$getter(); $object->$setter(null); $caught = null;
-        try { $request->validate(); } catch (\Exception $e) { $caught = $e->getMessage(); }
-        finally { $object->$setter($value); }
+        $getter = 'get' . $field;
+        $setter = 'set' . $field;
+        $value = $object->$getter();
+        $object->$setter(null);
+        $caught = null;
+        try {
+            $request->validate();
+        } catch (\Exception $e) {
+            $caught = $e->getMessage();
+        } finally {
+            $object->$setter($value);
+        }
         entryCodeCheck($caught === $message, 'Required-field regression: ' . $field);
     }
     $request->validate();

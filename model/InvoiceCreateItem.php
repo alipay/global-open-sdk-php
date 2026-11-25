@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializable
+class InvoiceCreateItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -57,7 +56,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         'quantity' => 'int',
         'itemId' => 'string',
         'supplyStart' => 'string',
-        'supplyEnd' => 'string'
+        'supplyEnd' => 'string',
     ];
 
     /**
@@ -79,7 +78,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         'quantity' => null,
         'itemId' => null,
         'supplyStart' => null,
-        'supplyEnd' => null
+        'supplyEnd' => null,
     ];
 
     /**
@@ -99,7 +98,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         'quantity' => true,
         'itemId' => false,
         'supplyStart' => false,
-        'supplyEnd' => false
+        'supplyEnd' => false,
     ];
 
     /**
@@ -199,7 +198,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         'quantity' => 'quantity',
         'itemId' => 'itemId',
         'supplyStart' => 'supplyStart',
-        'supplyEnd' => 'supplyEnd'
+        'supplyEnd' => 'supplyEnd',
     ];
 
     /**
@@ -219,7 +218,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         'quantity' => 'setQuantity',
         'itemId' => 'setItemId',
         'supplyStart' => 'setSupplyStart',
-        'supplyEnd' => 'setSupplyEnd'
+        'supplyEnd' => 'setSupplyEnd',
     ];
 
     /**
@@ -239,7 +238,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         'quantity' => 'getQuantity',
         'itemId' => 'getItemId',
         'supplyStart' => 'getSupplyStart',
-        'supplyEnd' => 'getSupplyEnd'
+        'supplyEnd' => 'getSupplyEnd',
     ];
 
     /**
@@ -312,7 +311,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('supplyStart', $data ?? [], null);
         $this->setIfExists('supplyEnd', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -719,10 +718,10 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -745,7 +744,7 @@ class InvoiceCreateItem  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

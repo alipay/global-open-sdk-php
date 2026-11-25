@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryStatementListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquiryStatementListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +53,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         'transactionTypeList' => 'string[]',
         'currencyList' => 'string[]',
         'pageSize' => 'string',
-        'pageNumber' => 'string'
+        'pageNumber' => 'string',
     ];
 
     /**
@@ -73,7 +72,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         'transactionTypeList' => null,
         'currencyList' => null,
         'pageSize' => null,
-        'pageNumber' => null
+        'pageNumber' => null,
     ];
 
     /**
@@ -90,7 +89,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         'transactionTypeList' => false,
         'currencyList' => false,
         'pageSize' => false,
-        'pageNumber' => false
+        'pageNumber' => false,
     ];
 
     /**
@@ -187,7 +186,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         'transactionTypeList' => 'transactionTypeList',
         'currencyList' => 'currencyList',
         'pageSize' => 'pageSize',
-        'pageNumber' => 'pageNumber'
+        'pageNumber' => 'pageNumber',
     ];
 
     /**
@@ -204,7 +203,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         'transactionTypeList' => 'setTransactionTypeList',
         'currencyList' => 'setCurrencyList',
         'pageSize' => 'setPageSize',
-        'pageNumber' => 'setPageNumber'
+        'pageNumber' => 'setPageNumber',
     ];
 
     /**
@@ -221,7 +220,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         'transactionTypeList' => 'getTransactionTypeList',
         'currencyList' => 'getCurrencyList',
         'pageSize' => 'getPageSize',
-        'pageNumber' => 'getPageNumber'
+        'pageNumber' => 'getPageNumber',
     ];
 
     /**
@@ -291,7 +290,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
         $this->setIfExists('pageSize', $data ?? [], null);
         $this->setIfExists('pageNumber', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/accounts/inquiryStatementList"); 
+        $this->setPath("/ams/api/v1/aba/accounts/inquiryStatementList");
     }
 
     /**
@@ -651,10 +650,10 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -677,7 +676,7 @@ class AlipayInquiryStatementListRequest   extends AlipayRequest  implements Mode
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

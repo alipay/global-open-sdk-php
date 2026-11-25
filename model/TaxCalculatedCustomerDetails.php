@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TaxCalculatedCustomerDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         'shippingAddress' => '\Model\TaxCalculatedAddress',
         'billingAddress' => '\Model\TaxCalculatedAddress',
         'taxIds' => '\Model\TaxCalculatedTaxId[]',
-        'taxExemptions' => '\Model\TaxCalculatedExemption[]'
+        'taxExemptions' => '\Model\TaxCalculatedExemption[]',
     ];
 
     /**
@@ -67,7 +66,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         'shippingAddress' => null,
         'billingAddress' => null,
         'taxIds' => null,
-        'taxExemptions' => null
+        'taxExemptions' => null,
     ];
 
     /**
@@ -81,7 +80,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         'shippingAddress' => false,
         'billingAddress' => false,
         'taxIds' => false,
-        'taxExemptions' => false
+        'taxExemptions' => false,
     ];
 
     /**
@@ -175,7 +174,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         'shippingAddress' => 'shippingAddress',
         'billingAddress' => 'billingAddress',
         'taxIds' => 'taxIds',
-        'taxExemptions' => 'taxExemptions'
+        'taxExemptions' => 'taxExemptions',
     ];
 
     /**
@@ -189,7 +188,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         'shippingAddress' => 'setShippingAddress',
         'billingAddress' => 'setBillingAddress',
         'taxIds' => 'setTaxIds',
-        'taxExemptions' => 'setTaxExemptions'
+        'taxExemptions' => 'setTaxExemptions',
     ];
 
     /**
@@ -203,7 +202,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         'shippingAddress' => 'getShippingAddress',
         'billingAddress' => 'getBillingAddress',
         'taxIds' => 'getTaxIds',
-        'taxExemptions' => 'getTaxExemptions'
+        'taxExemptions' => 'getTaxExemptions',
     ];
 
     /**
@@ -270,7 +269,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('taxIds', $data ?? [], null);
         $this->setIfExists('taxExemptions', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -533,10 +532,10 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -559,7 +558,7 @@ class TaxCalculatedCustomerDetails  implements ModelInterface, ArrayAccess, \Jso
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

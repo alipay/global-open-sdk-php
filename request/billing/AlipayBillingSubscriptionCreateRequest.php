@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionCreateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -59,7 +58,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'cancelAtPeriodEnd' => 'bool',
         'description' => 'string',
         'subscriptionNotifyUrl' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'string',
     ];
 
     /**
@@ -83,7 +82,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'cancelAtPeriodEnd' => null,
         'description' => null,
         'subscriptionNotifyUrl' => null,
-        'metadata' => null
+        'metadata' => null,
     ];
 
     /**
@@ -105,7 +104,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'cancelAtPeriodEnd' => false,
         'description' => false,
         'subscriptionNotifyUrl' => false,
-        'metadata' => false
+        'metadata' => false,
     ];
 
     /**
@@ -207,7 +206,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'cancelAtPeriodEnd' => 'cancelAtPeriodEnd',
         'description' => 'description',
         'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
     ];
 
     /**
@@ -229,7 +228,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'cancelAtPeriodEnd' => 'setCancelAtPeriodEnd',
         'description' => 'setDescription',
         'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
     ];
 
     /**
@@ -251,7 +250,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         'cancelAtPeriodEnd' => 'getCancelAtPeriodEnd',
         'description' => 'getDescription',
         'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
     ];
 
     /**
@@ -326,7 +325,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/subscription/create"); 
+        $this->setPath("/ams/api/v1/billing/subscription/create");
     }
 
     /**
@@ -788,10 +787,10 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -814,7 +813,7 @@ class AlipayBillingSubscriptionCreateRequest   extends AlipayRequest  implements
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

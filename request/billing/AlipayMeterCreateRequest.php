@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayMeterCreateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         'eventName' => 'string',
         'aggregationMethod' => 'string',
         'eventTimeWindow' => 'string',
-        'valueKeyOverride' => 'string'
+        'valueKeyOverride' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         'eventName' => null,
         'aggregationMethod' => null,
         'eventTimeWindow' => null,
-        'valueKeyOverride' => null
+        'valueKeyOverride' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         'eventName' => false,
         'aggregationMethod' => false,
         'eventTimeWindow' => false,
-        'valueKeyOverride' => false
+        'valueKeyOverride' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         'eventName' => 'eventName',
         'aggregationMethod' => 'aggregationMethod',
         'eventTimeWindow' => 'eventTimeWindow',
-        'valueKeyOverride' => 'valueKeyOverride'
+        'valueKeyOverride' => 'valueKeyOverride',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         'eventName' => 'setEventName',
         'aggregationMethod' => 'setAggregationMethod',
         'eventTimeWindow' => 'setEventTimeWindow',
-        'valueKeyOverride' => 'setValueKeyOverride'
+        'valueKeyOverride' => 'setValueKeyOverride',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         'eventName' => 'getEventName',
         'aggregationMethod' => 'getAggregationMethod',
         'eventTimeWindow' => 'getEventTimeWindow',
-        'valueKeyOverride' => 'getValueKeyOverride'
+        'valueKeyOverride' => 'getValueKeyOverride',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
         $this->setIfExists('eventTimeWindow', $data ?? [], null);
         $this->setIfExists('valueKeyOverride', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/meter/create"); 
+        $this->setPath("/ams/api/v1/meter/create");
     }
 
     /**
@@ -512,10 +511,10 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -538,7 +537,7 @@ class AlipayMeterCreateRequest   extends AlipayRequest  implements ModelInterfac
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

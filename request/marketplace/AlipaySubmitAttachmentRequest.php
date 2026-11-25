@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\marketplace;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySubmitAttachmentRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     protected static $openAPITypes = [
         'submitAttachmentRequestId' => 'string',
         'attachmentType' => '\Model\AttachmentType',
-        'fileSha256' => 'string'
+        'fileSha256' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     protected static $openAPIFormats = [
         'submitAttachmentRequestId' => null,
         'attachmentType' => null,
-        'fileSha256' => null
+        'fileSha256' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     protected static $openAPINullables = [
         'submitAttachmentRequestId' => false,
         'attachmentType' => false,
-        'fileSha256' => false
+        'fileSha256' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     protected static $attributeMap = [
         'submitAttachmentRequestId' => 'submitAttachmentRequestId',
         'attachmentType' => 'attachmentType',
-        'fileSha256' => 'fileSha256'
+        'fileSha256' => 'fileSha256',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     protected static $setters = [
         'submitAttachmentRequestId' => 'setSubmitAttachmentRequestId',
         'attachmentType' => 'setAttachmentType',
-        'fileSha256' => 'setFileSha256'
+        'fileSha256' => 'setFileSha256',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     protected static $getters = [
         'submitAttachmentRequestId' => 'getSubmitAttachmentRequestId',
         'attachmentType' => 'getAttachmentType',
-        'fileSha256' => 'getFileSha256'
+        'fileSha256' => 'getFileSha256',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('attachmentType', $data ?? [], null);
         $this->setIfExists('fileSha256', $data ?? [], null);
 
-         $this->setPath("/ams/api/open/openapiv2_file/v1/business/attachment/submitAttachment"); 
+        $this->setPath("/ams/api/open/openapiv2_file/v1/business/attachment/submitAttachment");
     }
 
     /**
@@ -450,10 +449,10 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -476,7 +475,7 @@ class AlipaySubmitAttachmentRequest   extends AlipayRequest  implements ModelInt
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

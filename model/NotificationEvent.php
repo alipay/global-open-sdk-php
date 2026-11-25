@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializable
+class NotificationEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         'eventCreateTime' => 'string',
         'deliveryStatus' => 'string',
         'referenceMerchantId' => 'string',
-        'notificationData' => 'array<string,mixed>'
+        'notificationData' => 'array<string,mixed>',
     ];
 
     /**
@@ -67,7 +66,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         'eventCreateTime' => null,
         'deliveryStatus' => null,
         'referenceMerchantId' => null,
-        'notificationData' => null
+        'notificationData' => null,
     ];
 
     /**
@@ -81,7 +80,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         'eventCreateTime' => false,
         'deliveryStatus' => false,
         'referenceMerchantId' => false,
-        'notificationData' => false
+        'notificationData' => false,
     ];
 
     /**
@@ -175,7 +174,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         'eventCreateTime' => 'eventCreateTime',
         'deliveryStatus' => 'deliveryStatus',
         'referenceMerchantId' => 'referenceMerchantId',
-        'notificationData' => 'notificationData'
+        'notificationData' => 'notificationData',
     ];
 
     /**
@@ -189,7 +188,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         'eventCreateTime' => 'setEventCreateTime',
         'deliveryStatus' => 'setDeliveryStatus',
         'referenceMerchantId' => 'setReferenceMerchantId',
-        'notificationData' => 'setNotificationData'
+        'notificationData' => 'setNotificationData',
     ];
 
     /**
@@ -203,7 +202,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         'eventCreateTime' => 'getEventCreateTime',
         'deliveryStatus' => 'getDeliveryStatus',
         'referenceMerchantId' => 'getReferenceMerchantId',
-        'notificationData' => 'getNotificationData'
+        'notificationData' => 'getNotificationData',
     ];
 
     /**
@@ -270,7 +269,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('referenceMerchantId', $data ?? [], null);
         $this->setIfExists('notificationData', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -542,10 +541,10 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -568,7 +567,7 @@ class NotificationEvent  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

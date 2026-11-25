@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\subscription;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireSubscriptionRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
       */
     protected static $openAPITypes = [
         'merchantAccountId' => 'string',
-        'subscriptionId' => 'string'
+        'subscriptionId' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
       */
     protected static $openAPIFormats = [
         'merchantAccountId' => null,
-        'subscriptionId' => null
+        'subscriptionId' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
       */
     protected static $openAPINullables = [
         'merchantAccountId' => false,
-        'subscriptionId' => false
+        'subscriptionId' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
      */
     protected static $attributeMap = [
         'merchantAccountId' => 'merchantAccountId',
-        'subscriptionId' => 'subscriptionId'
+        'subscriptionId' => 'subscriptionId',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
      */
     protected static $setters = [
         'merchantAccountId' => 'setMerchantAccountId',
-        'subscriptionId' => 'setSubscriptionId'
+        'subscriptionId' => 'setSubscriptionId',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
      */
     protected static $getters = [
         'merchantAccountId' => 'getMerchantAccountId',
-        'subscriptionId' => 'getSubscriptionId'
+        'subscriptionId' => 'getSubscriptionId',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
         $this->setIfExists('merchantAccountId', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/subscriptions/inquireSubscription"); 
+        $this->setPath("/ams/api/v1/subscriptions/inquireSubscription");
     }
 
     /**
@@ -413,10 +412,10 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -439,7 +438,7 @@ class AlipayInquireSubscriptionRequest   extends AlipayRequest  implements Model
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

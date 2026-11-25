@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\subscription;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySubscriptionUpdateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +53,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionEndTime' => 'string',
         'orderInfo' => '\Model\OrderInfo',
         'prorationSettings' => '\Model\ProrationSettings',
-        'nextSubscriptionDate' => 'string'
+        'nextSubscriptionDate' => 'string',
     ];
 
     /**
@@ -73,7 +72,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionEndTime' => null,
         'orderInfo' => null,
         'prorationSettings' => null,
-        'nextSubscriptionDate' => null
+        'nextSubscriptionDate' => null,
     ];
 
     /**
@@ -90,7 +89,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionEndTime' => false,
         'orderInfo' => false,
         'prorationSettings' => false,
-        'nextSubscriptionDate' => false
+        'nextSubscriptionDate' => false,
     ];
 
     /**
@@ -187,7 +186,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionEndTime' => 'subscriptionEndTime',
         'orderInfo' => 'orderInfo',
         'prorationSettings' => 'prorationSettings',
-        'nextSubscriptionDate' => 'nextSubscriptionDate'
+        'nextSubscriptionDate' => 'nextSubscriptionDate',
     ];
 
     /**
@@ -204,7 +203,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionEndTime' => 'setSubscriptionEndTime',
         'orderInfo' => 'setOrderInfo',
         'prorationSettings' => 'setProrationSettings',
-        'nextSubscriptionDate' => 'setNextSubscriptionDate'
+        'nextSubscriptionDate' => 'setNextSubscriptionDate',
     ];
 
     /**
@@ -221,7 +220,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         'subscriptionEndTime' => 'getSubscriptionEndTime',
         'orderInfo' => 'getOrderInfo',
         'prorationSettings' => 'getProrationSettings',
-        'nextSubscriptionDate' => 'getNextSubscriptionDate'
+        'nextSubscriptionDate' => 'getNextSubscriptionDate',
     ];
 
     /**
@@ -291,7 +290,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('prorationSettings', $data ?? [], null);
         $this->setIfExists('nextSubscriptionDate', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/subscriptions/update"); 
+        $this->setPath("/ams/api/v1/subscriptions/update");
     }
 
     /**
@@ -636,10 +635,10 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -662,7 +661,7 @@ class AlipaySubscriptionUpdateRequest   extends AlipayRequest  implements ModelI
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

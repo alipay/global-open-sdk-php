@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreditNoteVoidRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPITypes = [
         'creditNoteId' => 'string',
-        'reason' => 'string'
+        'reason' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPIFormats = [
         'creditNoteId' => null,
-        'reason' => null
+        'reason' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
       */
     protected static $openAPINullables = [
         'creditNoteId' => false,
-        'reason' => false
+        'reason' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
      */
     protected static $attributeMap = [
         'creditNoteId' => 'creditNoteId',
-        'reason' => 'reason'
+        'reason' => 'reason',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
      */
     protected static $setters = [
         'creditNoteId' => 'setCreditNoteId',
-        'reason' => 'setReason'
+        'reason' => 'setReason',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
      */
     protected static $getters = [
         'creditNoteId' => 'getCreditNoteId',
-        'reason' => 'getReason'
+        'reason' => 'getReason',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('creditNoteId', $data ?? [], null);
         $this->setIfExists('reason', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/creditNote/void"); 
+        $this->setPath("/ams/api/v1/billing/creditNote/void");
     }
 
     /**
@@ -413,10 +412,10 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -439,7 +438,7 @@ class AlipayCreditNoteVoidRequest   extends AlipayRequest  implements ModelInter
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

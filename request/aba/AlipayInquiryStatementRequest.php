@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquiryStatementRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -55,7 +54,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'pageSize' => 'int',
         'pageNumber' => 'int',
         'assetId' => 'string',
-        'fuzzyName' => 'string'
+        'fuzzyName' => 'string',
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'pageSize' => null,
         'pageNumber' => null,
         'assetId' => null,
-        'fuzzyName' => null
+        'fuzzyName' => null,
     ];
 
     /**
@@ -93,7 +92,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'pageSize' => true,
         'pageNumber' => true,
         'assetId' => false,
-        'fuzzyName' => false
+        'fuzzyName' => false,
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'pageSize' => 'pageSize',
         'pageNumber' => 'pageNumber',
         'assetId' => 'assetId',
-        'fuzzyName' => 'fuzzyName'
+        'fuzzyName' => 'fuzzyName',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'pageSize' => 'setPageSize',
         'pageNumber' => 'setPageNumber',
         'assetId' => 'setAssetId',
-        'fuzzyName' => 'setFuzzyName'
+        'fuzzyName' => 'setFuzzyName',
     ];
 
     /**
@@ -227,7 +226,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         'pageSize' => 'getPageSize',
         'pageNumber' => 'getPageNumber',
         'assetId' => 'getAssetId',
-        'fuzzyName' => 'getFuzzyName'
+        'fuzzyName' => 'getFuzzyName',
     ];
 
     /**
@@ -354,7 +353,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('assetId', $data ?? [], null);
         $this->setIfExists('fuzzyName', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/accounts/inquiryStatement"); 
+        $this->setPath("/ams/api/v1/aba/accounts/inquiryStatement");
     }
 
     /**
@@ -537,8 +536,8 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'transactionTypeList', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['transactionTypeList'] = $transactionTypeList;
@@ -741,10 +740,10 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -767,7 +766,7 @@ class AlipayInquiryStatementRequest   extends AlipayRequest  implements ModelInt
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

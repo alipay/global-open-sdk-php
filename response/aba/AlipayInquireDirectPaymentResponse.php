@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireDirectPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -55,7 +54,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         'paymentAmount' => '\Model\Amount',
         'payToAmount' => '\Model\Amount',
         'paymentTime' => 'string',
-        'result' => '\Model\Result'
+        'result' => '\Model\Result',
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         'paymentAmount' => null,
         'payToAmount' => null,
         'paymentTime' => null,
-        'result' => null
+        'result' => null,
     ];
 
     /**
@@ -93,7 +92,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         'paymentAmount' => false,
         'payToAmount' => false,
         'paymentTime' => false,
-        'result' => false
+        'result' => false,
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         'paymentAmount' => 'paymentAmount',
         'payToAmount' => 'payToAmount',
         'paymentTime' => 'paymentTime',
-        'result' => 'result'
+        'result' => 'result',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         'paymentAmount' => 'setPaymentAmount',
         'payToAmount' => 'setPayToAmount',
         'paymentTime' => 'setPaymentTime',
-        'result' => 'setResult'
+        'result' => 'setResult',
     ];
 
     /**
@@ -227,7 +226,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         'paymentAmount' => 'getPaymentAmount',
         'payToAmount' => 'getPayToAmount',
         'paymentTime' => 'getPaymentTime',
-        'result' => 'getResult'
+        'result' => 'getResult',
     ];
 
     /**
@@ -298,7 +297,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
         $this->setIfExists('paymentTime', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -672,10 +671,10 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -698,7 +697,7 @@ class AlipayInquireDirectPaymentResponse  implements ModelInterface, ArrayAccess
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

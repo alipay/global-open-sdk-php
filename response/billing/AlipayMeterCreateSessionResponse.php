@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayMeterCreateSessionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'result' => '\Model\Result',
         'sessionId' => 'string',
-        'sessionExpiryTime' => 'string'
+        'sessionExpiryTime' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'result' => null,
         'sessionId' => null,
-        'sessionExpiryTime' => null
+        'sessionExpiryTime' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     protected static $openAPINullables = [
         'result' => false,
         'sessionId' => false,
-        'sessionExpiryTime' => false
+        'sessionExpiryTime' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'result' => 'result',
         'sessionId' => 'sessionId',
-        'sessionExpiryTime' => 'sessionExpiryTime'
+        'sessionExpiryTime' => 'sessionExpiryTime',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'result' => 'setResult',
         'sessionId' => 'setSessionId',
-        'sessionExpiryTime' => 'setSessionExpiryTime'
+        'sessionExpiryTime' => 'setSessionExpiryTime',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'result' => 'getResult',
         'sessionId' => 'getSessionId',
-        'sessionExpiryTime' => 'getSessionExpiryTime'
+        'sessionExpiryTime' => 'getSessionExpiryTime',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
         $this->setIfExists('sessionId', $data ?? [], null);
         $this->setIfExists('sessionExpiryTime', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -443,10 +442,10 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -469,7 +468,7 @@ class AlipayMeterCreateSessionResponse  implements ModelInterface, ArrayAccess, 
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

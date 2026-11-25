@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionResumeRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
       */
     protected static $openAPITypes = [
         'subscriptionId' => 'string',
-        'reasonCode' => 'string'
+        'reasonCode' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
       */
     protected static $openAPIFormats = [
         'subscriptionId' => null,
-        'reasonCode' => null
+        'reasonCode' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
       */
     protected static $openAPINullables = [
         'subscriptionId' => false,
-        'reasonCode' => false
+        'reasonCode' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
      */
     protected static $attributeMap = [
         'subscriptionId' => 'subscriptionId',
-        'reasonCode' => 'reasonCode'
+        'reasonCode' => 'reasonCode',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
      */
     protected static $setters = [
         'subscriptionId' => 'setSubscriptionId',
-        'reasonCode' => 'setReasonCode'
+        'reasonCode' => 'setReasonCode',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
      */
     protected static $getters = [
         'subscriptionId' => 'getSubscriptionId',
-        'reasonCode' => 'getReasonCode'
+        'reasonCode' => 'getReasonCode',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('reasonCode', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/subscription/resume"); 
+        $this->setPath("/ams/api/v1/billing/subscription/resume");
     }
 
     /**
@@ -416,10 +415,10 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -442,7 +441,7 @@ class AlipayBillingSubscriptionResumeRequest   extends AlipayRequest  implements
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CardLimitDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dailyLimitMax' => 'string',
         'monthlyLimitMax' => 'string',
         'perTransactionLimitMax' => 'string',
-        'perCardLimitMax' => 'string'
+        'perCardLimitMax' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dailyLimitMax' => null,
         'monthlyLimitMax' => null,
         'perTransactionLimitMax' => null,
-        'perCardLimitMax' => null
+        'perCardLimitMax' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dailyLimitMax' => false,
         'monthlyLimitMax' => false,
         'perTransactionLimitMax' => false,
-        'perCardLimitMax' => false
+        'perCardLimitMax' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dailyLimitMax' => 'dailyLimitMax',
         'monthlyLimitMax' => 'monthlyLimitMax',
         'perTransactionLimitMax' => 'perTransactionLimitMax',
-        'perCardLimitMax' => 'perCardLimitMax'
+        'perCardLimitMax' => 'perCardLimitMax',
     ];
 
     /**
@@ -199,7 +198,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dailyLimitMax' => 'setDailyLimitMax',
         'monthlyLimitMax' => 'setMonthlyLimitMax',
         'perTransactionLimitMax' => 'setPerTransactionLimitMax',
-        'perCardLimitMax' => 'setPerCardLimitMax'
+        'perCardLimitMax' => 'setPerCardLimitMax',
     ];
 
     /**
@@ -215,7 +214,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         'dailyLimitMax' => 'getDailyLimitMax',
         'monthlyLimitMax' => 'getMonthlyLimitMax',
         'perTransactionLimitMax' => 'getPerTransactionLimitMax',
-        'perCardLimitMax' => 'getPerCardLimitMax'
+        'perCardLimitMax' => 'getPerCardLimitMax',
     ];
 
     /**
@@ -284,7 +283,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('perTransactionLimitMax', $data ?? [], null);
         $this->setIfExists('perCardLimitMax', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -604,10 +603,10 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -630,7 +629,7 @@ class CardLimitDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

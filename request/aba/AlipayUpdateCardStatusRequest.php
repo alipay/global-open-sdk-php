@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayUpdateCardStatusRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         'assetId' => 'string',
         'requestId' => 'string',
         'operateType' => 'string',
-        'notifyUrl' => 'string'
+        'notifyUrl' => 'string',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         'assetId' => null,
         'requestId' => null,
         'operateType' => null,
-        'notifyUrl' => null
+        'notifyUrl' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         'assetId' => false,
         'requestId' => false,
         'operateType' => false,
-        'notifyUrl' => false
+        'notifyUrl' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         'assetId' => 'assetId',
         'requestId' => 'requestId',
         'operateType' => 'operateType',
-        'notifyUrl' => 'notifyUrl'
+        'notifyUrl' => 'notifyUrl',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         'assetId' => 'setAssetId',
         'requestId' => 'setRequestId',
         'operateType' => 'setOperateType',
-        'notifyUrl' => 'setNotifyUrl'
+        'notifyUrl' => 'setNotifyUrl',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         'assetId' => 'getAssetId',
         'requestId' => 'getRequestId',
         'operateType' => 'getOperateType',
-        'notifyUrl' => 'getNotifyUrl'
+        'notifyUrl' => 'getNotifyUrl',
     ];
 
     /**
@@ -272,7 +271,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('operateType', $data ?? [], null);
         $this->setIfExists('notifyUrl', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/cards/updateCardStatus"); 
+        $this->setPath("/ams/api/v1/aba/cards/updateCardStatus");
     }
 
     /**
@@ -316,7 +315,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'operateType', must be one of '%s'",
                 $this->container['operateType'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -408,8 +407,8 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
                 sprintf(
                     "Invalid value '%s' for 'operateType', must be one of '%s'",
                     $operateType,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['operateType'] = $operateType;
@@ -516,10 +515,10 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -542,7 +541,7 @@ class AlipayUpdateCardStatusRequest   extends AlipayRequest  implements ModelInt
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

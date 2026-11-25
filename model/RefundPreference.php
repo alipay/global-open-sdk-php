@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -30,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializable
+class RefundPreference implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'preferenceType' => 'string'
+        'preferenceType' => 'string',
     ];
 
     /**
@@ -58,7 +57,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'preferenceType' => null
+        'preferenceType' => null,
     ];
 
     /**
@@ -67,7 +66,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static $openAPINullables = [
-        'preferenceType' => false
+        'preferenceType' => false,
     ];
 
     /**
@@ -156,7 +155,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'preferenceType' => 'preferenceType'
+        'preferenceType' => 'preferenceType',
     ];
 
     /**
@@ -165,7 +164,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'preferenceType' => 'setPreferenceType'
+        'preferenceType' => 'setPreferenceType',
     ];
 
     /**
@@ -174,7 +173,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'preferenceType' => 'getPreferenceType'
+        'preferenceType' => 'getPreferenceType',
     ];
 
     /**
@@ -250,7 +249,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->setIfExists('preferenceType', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -287,7 +286,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'preferenceType', must be one of '%s'",
                 $this->container['preferenceType'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -331,8 +330,8 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 sprintf(
                     "Invalid value '%s' for 'preferenceType', must be one of '%s'",
                     $preferenceType,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['preferenceType'] = $preferenceType;
@@ -415,10 +414,10 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -441,7 +440,7 @@ class RefundPreference  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

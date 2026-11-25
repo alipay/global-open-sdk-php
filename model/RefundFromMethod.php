@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializable
+class RefundFromMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'grantToken' => 'string',
         'refundFromMethodType' => 'string',
-        'customerId' => 'string'
+        'customerId' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPIFormats = [
         'grantToken' => null,
         'refundFromMethodType' => null,
-        'customerId' => null
+        'customerId' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPINullables = [
         'grantToken' => false,
         'refundFromMethodType' => false,
-        'customerId' => false
+        'customerId' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $attributeMap = [
         'grantToken' => 'grantToken',
         'refundFromMethodType' => 'refundFromMethodType',
-        'customerId' => 'customerId'
+        'customerId' => 'customerId',
     ];
 
     /**
@@ -174,7 +173,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'grantToken' => 'setGrantToken',
         'refundFromMethodType' => 'setRefundFromMethodType',
-        'customerId' => 'setCustomerId'
+        'customerId' => 'setCustomerId',
     ];
 
     /**
@@ -185,7 +184,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'grantToken' => 'getGrantToken',
         'refundFromMethodType' => 'getRefundFromMethodType',
-        'customerId' => 'getCustomerId'
+        'customerId' => 'getCustomerId',
     ];
 
     /**
@@ -249,7 +248,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('refundFromMethodType', $data ?? [], null);
         $this->setIfExists('customerId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -449,10 +448,10 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -475,7 +474,7 @@ class RefundFromMethod  implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayApplyCardResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         'cvv' => 'string',
         'cardNo' => 'string',
         'expiredMonth' => 'string',
-        'expiredYear' => 'string'
+        'expiredYear' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         'cvv' => null,
         'cardNo' => null,
         'expiredMonth' => null,
-        'expiredYear' => null
+        'expiredYear' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         'cvv' => false,
         'cardNo' => false,
         'expiredMonth' => false,
-        'expiredYear' => false
+        'expiredYear' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         'cvv' => 'cvv',
         'cardNo' => 'cardNo',
         'expiredMonth' => 'expiredMonth',
-        'expiredYear' => 'expiredYear'
+        'expiredYear' => 'expiredYear',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         'cvv' => 'setCvv',
         'cardNo' => 'setCardNo',
         'expiredMonth' => 'setExpiredMonth',
-        'expiredYear' => 'setExpiredYear'
+        'expiredYear' => 'setExpiredYear',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         'cvv' => 'getCvv',
         'cardNo' => 'getCardNo',
         'expiredMonth' => 'getExpiredMonth',
-        'expiredYear' => 'getExpiredYear'
+        'expiredYear' => 'getExpiredYear',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('expiredMonth', $data ?? [], null);
         $this->setIfExists('expiredYear', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -598,10 +597,10 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -624,7 +623,7 @@ class AlipayApplyCardResponse  implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

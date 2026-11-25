@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\subscription;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySubscriptionCreateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -67,7 +66,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'settlementStrategy' => '\Model\SettlementStrategy',
         'env' => '\Model\Env',
         'trials' => '\Model\Trial[]',
-        'subscriptionInfo' => '\Model\CreateSubscriptionInfo'
+        'subscriptionInfo' => '\Model\CreateSubscriptionInfo',
     ];
 
     /**
@@ -99,7 +98,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'settlementStrategy' => null,
         'env' => null,
         'trials' => null,
-        'subscriptionInfo' => null
+        'subscriptionInfo' => null,
     ];
 
     /**
@@ -129,7 +128,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'settlementStrategy' => false,
         'env' => false,
         'trials' => false,
-        'subscriptionInfo' => false
+        'subscriptionInfo' => false,
     ];
 
     /**
@@ -239,7 +238,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'settlementStrategy' => 'settlementStrategy',
         'env' => 'env',
         'trials' => 'trials',
-        'subscriptionInfo' => 'subscriptionInfo'
+        'subscriptionInfo' => 'subscriptionInfo',
     ];
 
     /**
@@ -269,7 +268,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'settlementStrategy' => 'setSettlementStrategy',
         'env' => 'setEnv',
         'trials' => 'setTrials',
-        'subscriptionInfo' => 'setSubscriptionInfo'
+        'subscriptionInfo' => 'setSubscriptionInfo',
     ];
 
     /**
@@ -299,7 +298,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         'settlementStrategy' => 'getSettlementStrategy',
         'env' => 'getEnv',
         'trials' => 'getTrials',
-        'subscriptionInfo' => 'getSubscriptionInfo'
+        'subscriptionInfo' => 'getSubscriptionInfo',
     ];
 
     /**
@@ -382,7 +381,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('trials', $data ?? [], null);
         $this->setIfExists('subscriptionInfo', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/subscriptions/create"); 
+        $this->setPath("/ams/api/v1/subscriptions/create");
     }
 
     /**
@@ -1066,10 +1065,10 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1092,7 +1091,7 @@ class AlipaySubscriptionCreateRequest   extends AlipayRequest  implements ModelI
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

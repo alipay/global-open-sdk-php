@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateHoldRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     protected static $openAPITypes = [
         'holdRequestId' => 'string',
         'holdAmount' => '\Model\Amount',
-        'releaseTime' => 'string'
+        'releaseTime' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     protected static $openAPIFormats = [
         'holdRequestId' => null,
         'holdAmount' => null,
-        'releaseTime' => null
+        'releaseTime' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     protected static $openAPINullables = [
         'holdRequestId' => false,
         'holdAmount' => false,
-        'releaseTime' => false
+        'releaseTime' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     protected static $attributeMap = [
         'holdRequestId' => 'holdRequestId',
         'holdAmount' => 'holdAmount',
-        'releaseTime' => 'releaseTime'
+        'releaseTime' => 'releaseTime',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     protected static $setters = [
         'holdRequestId' => 'setHoldRequestId',
         'holdAmount' => 'setHoldAmount',
-        'releaseTime' => 'setReleaseTime'
+        'releaseTime' => 'setReleaseTime',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     protected static $getters = [
         'holdRequestId' => 'getHoldRequestId',
         'holdAmount' => 'getHoldAmount',
-        'releaseTime' => 'getReleaseTime'
+        'releaseTime' => 'getReleaseTime',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
         $this->setIfExists('holdAmount', $data ?? [], null);
         $this->setIfExists('releaseTime', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/reserve/createHold"); 
+        $this->setPath("/ams/api/v1/payments/reserve/createHold");
     }
 
     /**
@@ -450,10 +449,10 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -476,7 +475,7 @@ class AlipayCreateHoldRequest   extends AlipayRequest  implements ModelInterface
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

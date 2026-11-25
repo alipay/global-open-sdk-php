@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCustomerCreatePortalLinkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'string',
         'portalUrl' => 'string',
         'expiresAt' => 'string',
-        'sendStatus' => 'string'
+        'sendStatus' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => null,
         'portalUrl' => null,
         'expiresAt' => null,
-        'sendStatus' => null
+        'sendStatus' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => false,
         'portalUrl' => false,
         'expiresAt' => false,
-        'sendStatus' => false
+        'sendStatus' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'token',
         'portalUrl' => 'portalUrl',
         'expiresAt' => 'expiresAt',
-        'sendStatus' => 'sendStatus'
+        'sendStatus' => 'sendStatus',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'setToken',
         'portalUrl' => 'setPortalUrl',
         'expiresAt' => 'setExpiresAt',
-        'sendStatus' => 'setSendStatus'
+        'sendStatus' => 'setSendStatus',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         'token' => 'getToken',
         'portalUrl' => 'getPortalUrl',
         'expiresAt' => 'getExpiresAt',
-        'sendStatus' => 'getSendStatus'
+        'sendStatus' => 'getSendStatus',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
         $this->setIfExists('expiresAt', $data ?? [], null);
         $this->setIfExists('sendStatus', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -505,10 +504,10 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -531,7 +530,7 @@ class AlipayCustomerCreatePortalLinkResponse  implements ModelInterface, ArrayAc
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

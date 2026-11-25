@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireCardTransactionEventRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -55,7 +54,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventTypeList' => '\Model\CardTransactionEventFilterType[]',
         'statusList' => '\Model\CardTransactionStatusFilterType[]',
         'pageSize' => 'int',
-        'pageNumber' => 'int'
+        'pageNumber' => 'int',
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventTypeList' => null,
         'statusList' => null,
         'pageSize' => null,
-        'pageNumber' => null
+        'pageNumber' => null,
     ];
 
     /**
@@ -93,7 +92,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventTypeList' => false,
         'statusList' => false,
         'pageSize' => true,
-        'pageNumber' => true
+        'pageNumber' => true,
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventTypeList' => 'eventTypeList',
         'statusList' => 'statusList',
         'pageSize' => 'pageSize',
-        'pageNumber' => 'pageNumber'
+        'pageNumber' => 'pageNumber',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventTypeList' => 'setEventTypeList',
         'statusList' => 'setStatusList',
         'pageSize' => 'setPageSize',
-        'pageNumber' => 'setPageNumber'
+        'pageNumber' => 'setPageNumber',
     ];
 
     /**
@@ -227,7 +226,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         'eventTypeList' => 'getEventTypeList',
         'statusList' => 'getStatusList',
         'pageSize' => 'getPageSize',
-        'pageNumber' => 'getPageNumber'
+        'pageNumber' => 'getPageNumber',
     ];
 
     /**
@@ -298,7 +297,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
         $this->setIfExists('pageSize', $data ?? [], null);
         $this->setIfExists('pageNumber', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/cards/inquireCardTransactionEvent"); 
+        $this->setPath("/ams/api/v1/aba/cards/inquireCardTransactionEvent");
     }
 
     /**
@@ -664,10 +663,10 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -690,7 +689,7 @@ class AlipayInquireCardTransactionEventRequest   extends AlipayRequest  implemen
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

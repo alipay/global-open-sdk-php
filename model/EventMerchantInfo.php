@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializable
+class EventMerchantInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'name' => 'string',
         'region' => 'string',
-        'mcc' => 'string'
+        'mcc' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'name' => null,
         'region' => null,
-        'mcc' => null
+        'mcc' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPINullables = [
         'name' => false,
         'region' => false,
-        'mcc' => false
+        'mcc' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'name' => 'name',
         'region' => 'region',
-        'mcc' => 'mcc'
+        'mcc' => 'mcc',
     ];
 
     /**
@@ -174,7 +173,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'name' => 'setName',
         'region' => 'setRegion',
-        'mcc' => 'setMcc'
+        'mcc' => 'setMcc',
     ];
 
     /**
@@ -185,7 +184,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'name' => 'getName',
         'region' => 'getRegion',
-        'mcc' => 'getMcc'
+        'mcc' => 'getMcc',
     ];
 
     /**
@@ -249,7 +248,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('region', $data ?? [], null);
         $this->setIfExists('mcc', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -440,10 +439,10 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -466,7 +465,7 @@ class EventMerchantInfo  implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

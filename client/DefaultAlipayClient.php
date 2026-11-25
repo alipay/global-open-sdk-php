@@ -16,7 +16,7 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
         $a = func_get_args();
         $i = func_num_args() + 3;
         if (method_exists($this, $f = '__construct' . $i)) {
-            call_user_func_array(array($this, $f), $a);
+            call_user_func_array([$this, $f], $a);
         }
     }
 
@@ -70,7 +70,7 @@ class DefaultAlipayClient extends \Client\BaseAlipayClient
                 'alipayPublicKey' => $this->fileAlipayPublicKey,
                 'agentToken' => $this->fileAgentToken,
                 'customHeaders' => $this->buildCustomHeader(),
-            ]
+            ],
         );
     }
 

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreditNoteCreateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -65,7 +64,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'string',
         'issuedAt' => 'string',
         'refundedAt' => 'string',
-        'createdAt' => 'string'
+        'createdAt' => 'string',
     ];
 
     /**
@@ -95,7 +94,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => null,
         'issuedAt' => null,
         'refundedAt' => null,
-        'createdAt' => null
+        'createdAt' => null,
     ];
 
     /**
@@ -123,7 +122,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => false,
         'issuedAt' => false,
         'refundedAt' => false,
-        'createdAt' => false
+        'createdAt' => false,
     ];
 
     /**
@@ -231,7 +230,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'effectiveDate',
         'issuedAt' => 'issuedAt',
         'refundedAt' => 'refundedAt',
-        'createdAt' => 'createdAt'
+        'createdAt' => 'createdAt',
     ];
 
     /**
@@ -259,7 +258,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'setEffectiveDate',
         'issuedAt' => 'setIssuedAt',
         'refundedAt' => 'setRefundedAt',
-        'createdAt' => 'setCreatedAt'
+        'createdAt' => 'setCreatedAt',
     ];
 
     /**
@@ -287,7 +286,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         'effectiveDate' => 'getEffectiveDate',
         'issuedAt' => 'getIssuedAt',
         'refundedAt' => 'getRefundedAt',
-        'createdAt' => 'getCreatedAt'
+        'createdAt' => 'getCreatedAt',
     ];
 
     /**
@@ -368,7 +367,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('refundedAt', $data ?? [], null);
         $this->setIfExists('createdAt', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -970,10 +969,10 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -996,7 +995,7 @@ class AlipayCreditNoteCreateResponse  implements ModelInterface, ArrayAccess, \J
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

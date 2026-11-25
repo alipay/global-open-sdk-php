@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayProductInquireListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'type' => 'string',
         'keyword' => 'string',
         'includeTotal' => 'bool',
-        'usageType' => 'string'
+        'usageType' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'type' => null,
         'keyword' => null,
         'includeTotal' => null,
-        'usageType' => null
+        'usageType' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'type' => false,
         'keyword' => false,
         'includeTotal' => false,
-        'usageType' => false
+        'usageType' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'type' => 'type',
         'keyword' => 'keyword',
         'includeTotal' => 'includeTotal',
-        'usageType' => 'usageType'
+        'usageType' => 'usageType',
     ];
 
     /**
@@ -199,7 +198,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'type' => 'setType',
         'keyword' => 'setKeyword',
         'includeTotal' => 'setIncludeTotal',
-        'usageType' => 'setUsageType'
+        'usageType' => 'setUsageType',
     ];
 
     /**
@@ -215,7 +214,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         'type' => 'getType',
         'keyword' => 'getKeyword',
         'includeTotal' => 'getIncludeTotal',
-        'usageType' => 'getUsageType'
+        'usageType' => 'getUsageType',
     ];
 
     /**
@@ -284,7 +283,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
         $this->setIfExists('includeTotal', $data ?? [], null);
         $this->setIfExists('usageType', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/product/inquireList"); 
+        $this->setPath("/ams/api/v1/billing/product/inquireList");
     }
 
     /**
@@ -596,10 +595,10 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -622,7 +621,7 @@ class AlipayProductInquireListRequest   extends AlipayRequest  implements ModelI
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

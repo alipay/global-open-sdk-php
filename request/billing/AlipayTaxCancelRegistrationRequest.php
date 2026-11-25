@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxCancelRegistrationRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
       */
     protected static $openAPITypes = [
         'registrationCancelRequestId' => 'string',
-        'taxRegistrationId' => 'string'
+        'taxRegistrationId' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
       */
     protected static $openAPIFormats = [
         'registrationCancelRequestId' => null,
-        'taxRegistrationId' => null
+        'taxRegistrationId' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
       */
     protected static $openAPINullables = [
         'registrationCancelRequestId' => false,
-        'taxRegistrationId' => false
+        'taxRegistrationId' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
      */
     protected static $attributeMap = [
         'registrationCancelRequestId' => 'registrationCancelRequestId',
-        'taxRegistrationId' => 'taxRegistrationId'
+        'taxRegistrationId' => 'taxRegistrationId',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
      */
     protected static $setters = [
         'registrationCancelRequestId' => 'setRegistrationCancelRequestId',
-        'taxRegistrationId' => 'setTaxRegistrationId'
+        'taxRegistrationId' => 'setTaxRegistrationId',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
      */
     protected static $getters = [
         'registrationCancelRequestId' => 'getRegistrationCancelRequestId',
-        'taxRegistrationId' => 'getTaxRegistrationId'
+        'taxRegistrationId' => 'getTaxRegistrationId',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('registrationCancelRequestId', $data ?? [], null);
         $this->setIfExists('taxRegistrationId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/tax/cancelRegistration"); 
+        $this->setPath("/ams/api/v1/tax/cancelRegistration");
     }
 
     /**
@@ -416,10 +415,10 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -442,7 +441,7 @@ class AlipayTaxCancelRegistrationRequest   extends AlipayRequest  implements Mod
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

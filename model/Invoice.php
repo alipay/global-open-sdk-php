@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -64,7 +63,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gmtCreate' => 'string',
         'gmtUpdate' => 'string',
         'description' => 'string',
-        'pdfFileUrl' => 'string'
+        'pdfFileUrl' => 'string',
     ];
 
     /**
@@ -93,7 +92,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gmtCreate' => null,
         'gmtUpdate' => null,
         'description' => null,
-        'pdfFileUrl' => null
+        'pdfFileUrl' => null,
     ];
 
     /**
@@ -120,7 +119,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gmtCreate' => false,
         'gmtUpdate' => false,
         'description' => false,
-        'pdfFileUrl' => false
+        'pdfFileUrl' => false,
     ];
 
     /**
@@ -227,7 +226,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gmtCreate' => 'gmtCreate',
         'gmtUpdate' => 'gmtUpdate',
         'description' => 'description',
-        'pdfFileUrl' => 'pdfFileUrl'
+        'pdfFileUrl' => 'pdfFileUrl',
     ];
 
     /**
@@ -254,7 +253,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gmtCreate' => 'setGmtCreate',
         'gmtUpdate' => 'setGmtUpdate',
         'description' => 'setDescription',
-        'pdfFileUrl' => 'setPdfFileUrl'
+        'pdfFileUrl' => 'setPdfFileUrl',
     ];
 
     /**
@@ -281,7 +280,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         'gmtCreate' => 'getGmtCreate',
         'gmtUpdate' => 'getGmtUpdate',
         'description' => 'getDescription',
-        'pdfFileUrl' => 'getPdfFileUrl'
+        'pdfFileUrl' => 'getPdfFileUrl',
     ];
 
     /**
@@ -361,7 +360,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('pdfFileUrl', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -978,10 +977,10 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1004,7 +1003,7 @@ class Invoice  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
