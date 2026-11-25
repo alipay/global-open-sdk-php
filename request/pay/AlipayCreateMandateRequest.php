@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -30,7 +29,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateMandateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPITypes = [
         'mandateRequestId' => 'string',
         'accessToken' => 'string',
-        'paymentAmount' => '\Model\Amount'
+        'paymentAmount' => '\Model\Amount',
     ];
 
     /**
@@ -62,7 +61,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPIFormats = [
         'mandateRequestId' => null,
         'accessToken' => null,
-        'paymentAmount' => null
+        'paymentAmount' => null,
     ];
 
     /**
@@ -73,7 +72,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $openAPINullables = [
         'mandateRequestId' => false,
         'accessToken' => false,
-        'paymentAmount' => false
+        'paymentAmount' => false,
     ];
 
     /**
@@ -164,7 +163,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $attributeMap = [
         'mandateRequestId' => 'mandateRequestId',
         'accessToken' => 'accessToken',
-        'paymentAmount' => 'paymentAmount'
+        'paymentAmount' => 'paymentAmount',
     ];
 
     /**
@@ -175,7 +174,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $setters = [
         'mandateRequestId' => 'setMandateRequestId',
         'accessToken' => 'setAccessToken',
-        'paymentAmount' => 'setPaymentAmount'
+        'paymentAmount' => 'setPaymentAmount',
     ];
 
     /**
@@ -186,7 +185,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     protected static $getters = [
         'mandateRequestId' => 'getMandateRequestId',
         'accessToken' => 'getAccessToken',
-        'paymentAmount' => 'getPaymentAmount'
+        'paymentAmount' => 'getPaymentAmount',
     ];
 
     /**
@@ -250,7 +249,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
         $this->setIfExists('accessToken', $data ?? [], null);
         $this->setIfExists('paymentAmount', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/payments/createMandate"); 
+        $this->setPath("/ams/api/v1/payments/createMandate");
     }
 
     /**
@@ -451,10 +450,10 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -477,7 +476,7 @@ class AlipayCreateMandateRequest   extends AlipayRequest  implements ModelInterf
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

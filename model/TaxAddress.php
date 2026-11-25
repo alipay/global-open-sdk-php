@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TaxAddress implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         'district' => 'string',
         'line1' => 'string',
         'line2' => 'string',
-        'postalCode' => 'string'
+        'postalCode' => 'string',
     ];
 
     /**
@@ -71,7 +70,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         'district' => null,
         'line1' => null,
         'line2' => null,
-        'postalCode' => null
+        'postalCode' => null,
     ];
 
     /**
@@ -87,7 +86,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         'district' => false,
         'line1' => false,
         'line2' => false,
-        'postalCode' => false
+        'postalCode' => false,
     ];
 
     /**
@@ -183,7 +182,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         'district' => 'district',
         'line1' => 'line1',
         'line2' => 'line2',
-        'postalCode' => 'postalCode'
+        'postalCode' => 'postalCode',
     ];
 
     /**
@@ -199,7 +198,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         'district' => 'setDistrict',
         'line1' => 'setLine1',
         'line2' => 'setLine2',
-        'postalCode' => 'setPostalCode'
+        'postalCode' => 'setPostalCode',
     ];
 
     /**
@@ -215,7 +214,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         'district' => 'getDistrict',
         'line1' => 'getLine1',
         'line2' => 'getLine2',
-        'postalCode' => 'getPostalCode'
+        'postalCode' => 'getPostalCode',
     ];
 
     /**
@@ -284,7 +283,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('line2', $data ?? [], null);
         $this->setIfExists('postalCode', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -598,10 +597,10 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -624,7 +623,7 @@ class TaxAddress  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

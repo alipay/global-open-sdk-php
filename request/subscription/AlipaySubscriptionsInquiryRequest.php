@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\subscription;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipaySubscriptionsInquiryRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -47,7 +46,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
       */
     protected static $openAPITypes = [
         'subscriptionId' => 'string',
-        'subscriptionRequestId' => 'string'
+        'subscriptionRequestId' => 'string',
     ];
 
     /**
@@ -59,7 +58,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
       */
     protected static $openAPIFormats = [
         'subscriptionId' => null,
-        'subscriptionRequestId' => null
+        'subscriptionRequestId' => null,
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
       */
     protected static $openAPINullables = [
         'subscriptionId' => false,
-        'subscriptionRequestId' => false
+        'subscriptionRequestId' => false,
     ];
 
     /**
@@ -159,7 +158,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
      */
     protected static $attributeMap = [
         'subscriptionId' => 'subscriptionId',
-        'subscriptionRequestId' => 'subscriptionRequestId'
+        'subscriptionRequestId' => 'subscriptionRequestId',
     ];
 
     /**
@@ -169,7 +168,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
      */
     protected static $setters = [
         'subscriptionId' => 'setSubscriptionId',
-        'subscriptionRequestId' => 'setSubscriptionRequestId'
+        'subscriptionRequestId' => 'setSubscriptionRequestId',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
      */
     protected static $getters = [
         'subscriptionId' => 'getSubscriptionId',
-        'subscriptionRequestId' => 'getSubscriptionRequestId'
+        'subscriptionRequestId' => 'getSubscriptionRequestId',
     ];
 
     /**
@@ -242,7 +241,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('subscriptionRequestId', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/subscriptions/inquiry"); 
+        $this->setPath("/ams/api/v1/subscriptions/inquiry");
     }
 
     /**
@@ -410,10 +409,10 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -436,7 +435,7 @@ class AlipaySubscriptionsInquiryRequest   extends AlipayRequest  implements Mode
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

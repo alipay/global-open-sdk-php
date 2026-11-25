@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\agentic;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayCreateAuthenticationSessionRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -55,7 +54,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         'mandate' => '\Model\AgenticMandate',
         'countryCode' => 'string',
         'redirectUrl' => 'string',
-        'env' => '\Model\Env'
+        'env' => '\Model\Env',
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         'mandate' => null,
         'countryCode' => null,
         'redirectUrl' => null,
-        'env' => null
+        'env' => null,
     ];
 
     /**
@@ -93,7 +92,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         'mandate' => false,
         'countryCode' => false,
         'redirectUrl' => false,
-        'env' => false
+        'env' => false,
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         'mandate' => 'mandate',
         'countryCode' => 'countryCode',
         'redirectUrl' => 'redirectUrl',
-        'env' => 'env'
+        'env' => 'env',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         'mandate' => 'setMandate',
         'countryCode' => 'setCountryCode',
         'redirectUrl' => 'setRedirectUrl',
-        'env' => 'setEnv'
+        'env' => 'setEnv',
     ];
 
     /**
@@ -227,7 +226,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         'mandate' => 'getMandate',
         'countryCode' => 'getCountryCode',
         'redirectUrl' => 'getRedirectUrl',
-        'env' => 'getEnv'
+        'env' => 'getEnv',
     ];
 
     /**
@@ -298,7 +297,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
         $this->setIfExists('redirectUrl', $data ?? [], null);
         $this->setIfExists('env', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/agenticPayment/createAuthenticationSession"); 
+        $this->setPath("/ams/api/v1/agenticPayment/createAuthenticationSession");
     }
 
     /**
@@ -679,10 +678,10 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -705,7 +704,7 @@ class AlipayCreateAuthenticationSessionRequest   extends AlipayRequest  implemen
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

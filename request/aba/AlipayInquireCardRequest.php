@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireCardRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         'pageSize' => 'int',
         'lastFourDigits' => 'string',
         'cardStatus' => 'string',
-        'cardNickName' => 'string'
+        'cardNickName' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         'pageSize' => null,
         'lastFourDigits' => null,
         'cardStatus' => null,
-        'cardNickName' => null
+        'cardNickName' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         'pageSize' => true,
         'lastFourDigits' => false,
         'cardStatus' => false,
-        'cardNickName' => false
+        'cardNickName' => false,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         'pageSize' => 'pageSize',
         'lastFourDigits' => 'lastFourDigits',
         'cardStatus' => 'cardStatus',
-        'cardNickName' => 'cardNickName'
+        'cardNickName' => 'cardNickName',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         'pageSize' => 'setPageSize',
         'lastFourDigits' => 'setLastFourDigits',
         'cardStatus' => 'setCardStatus',
-        'cardNickName' => 'setCardNickName'
+        'cardNickName' => 'setCardNickName',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         'pageSize' => 'getPageSize',
         'lastFourDigits' => 'getLastFourDigits',
         'cardStatus' => 'getCardStatus',
-        'cardNickName' => 'getCardNickName'
+        'cardNickName' => 'getCardNickName',
     ];
 
     /**
@@ -279,7 +278,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
         $this->setIfExists('cardStatus', $data ?? [], null);
         $this->setIfExists('cardNickName', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/aba/cards/inquireCard"); 
+        $this->setPath("/ams/api/v1/aba/cards/inquireCard");
     }
 
     /**
@@ -320,7 +319,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'cardStatus', must be one of '%s'",
                 $this->container['cardStatus'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -436,8 +435,8 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
                 sprintf(
                     "Invalid value '%s' for 'cardStatus', must be one of '%s'",
                     $cardStatus,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['cardStatus'] = $cardStatus;
@@ -544,10 +543,10 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -570,7 +569,7 @@ class AlipayInquireCardRequest   extends AlipayRequest  implements ModelInterfac
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

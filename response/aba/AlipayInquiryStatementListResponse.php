@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquiryStatementListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'statementList' => '\Model\Statement[]',
         'result' => '\Model\Result',
-        'totalCount' => '\Model\TotalCount'
+        'totalCount' => '\Model\TotalCount',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'statementList' => null,
         'result' => null,
-        'totalCount' => null
+        'totalCount' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     protected static $openAPINullables = [
         'statementList' => false,
         'result' => false,
-        'totalCount' => false
+        'totalCount' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'statementList' => 'statementList',
         'result' => 'result',
-        'totalCount' => 'totalCount'
+        'totalCount' => 'totalCount',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     protected static $setters = [
         'statementList' => 'setStatementList',
         'result' => 'setResult',
-        'totalCount' => 'setTotalCount'
+        'totalCount' => 'setTotalCount',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     protected static $getters = [
         'statementList' => 'getStatementList',
         'result' => 'getResult',
-        'totalCount' => 'getTotalCount'
+        'totalCount' => 'getTotalCount',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
         $this->setIfExists('result', $data ?? [], null);
         $this->setIfExists('totalCount', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -446,10 +445,10 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -472,7 +471,7 @@ class AlipayInquiryStatementListResponse  implements ModelInterface, ArrayAccess
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

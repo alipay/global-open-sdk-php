@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInquireTransactionListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     protected static $openAPITypes = [
         'result' => '\Model\Result',
         'transactions' => '\Model\TaxTransaction[]',
-        'paginator' => '\Model\Paginator'
+        'paginator' => '\Model\Paginator',
     ];
 
     /**
@@ -61,7 +60,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     protected static $openAPIFormats = [
         'result' => null,
         'transactions' => null,
-        'paginator' => null
+        'paginator' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     protected static $openAPINullables = [
         'result' => false,
         'transactions' => false,
-        'paginator' => false
+        'paginator' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     protected static $attributeMap = [
         'result' => 'result',
         'transactions' => 'transactions',
-        'paginator' => 'paginator'
+        'paginator' => 'paginator',
     ];
 
     /**
@@ -174,7 +173,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     protected static $setters = [
         'result' => 'setResult',
         'transactions' => 'setTransactions',
-        'paginator' => 'setPaginator'
+        'paginator' => 'setPaginator',
     ];
 
     /**
@@ -185,7 +184,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     protected static $getters = [
         'result' => 'getResult',
         'transactions' => 'getTransactions',
-        'paginator' => 'getPaginator'
+        'paginator' => 'getPaginator',
     ];
 
     /**
@@ -249,7 +248,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
         $this->setIfExists('transactions', $data ?? [], null);
         $this->setIfExists('paginator', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -443,10 +442,10 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -469,7 +468,7 @@ class AlipayTaxInquireTransactionListResponse  implements ModelInterface, ArrayA
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

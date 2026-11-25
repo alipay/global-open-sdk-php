@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayPromotionCodeCreateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -54,7 +53,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'oneTimeOnly' => 'bool',
         'customerId' => 'string',
         'metadata' => 'string',
-        'maxRedemptions' => 'int'
+        'maxRedemptions' => 'int',
     ];
 
     /**
@@ -73,7 +72,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'oneTimeOnly' => null,
         'customerId' => null,
         'metadata' => null,
-        'maxRedemptions' => null
+        'maxRedemptions' => null,
     ];
 
     /**
@@ -90,7 +89,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'oneTimeOnly' => false,
         'customerId' => false,
         'metadata' => false,
-        'maxRedemptions' => true
+        'maxRedemptions' => true,
     ];
 
     /**
@@ -187,7 +186,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'oneTimeOnly' => 'oneTimeOnly',
         'customerId' => 'customerId',
         'metadata' => 'metadata',
-        'maxRedemptions' => 'maxRedemptions'
+        'maxRedemptions' => 'maxRedemptions',
     ];
 
     /**
@@ -204,7 +203,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'oneTimeOnly' => 'setOneTimeOnly',
         'customerId' => 'setCustomerId',
         'metadata' => 'setMetadata',
-        'maxRedemptions' => 'setMaxRedemptions'
+        'maxRedemptions' => 'setMaxRedemptions',
     ];
 
     /**
@@ -221,7 +220,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         'oneTimeOnly' => 'getOneTimeOnly',
         'customerId' => 'getCustomerId',
         'metadata' => 'getMetadata',
-        'maxRedemptions' => 'getMaxRedemptions'
+        'maxRedemptions' => 'getMaxRedemptions',
     ];
 
     /**
@@ -291,7 +290,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('maxRedemptions', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/promotionCode/create"); 
+        $this->setPath("/ams/api/v1/billing/promotionCode/create");
     }
 
     /**
@@ -633,10 +632,10 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -659,7 +658,7 @@ class AlipayPromotionCodeCreateRequest   extends AlipayRequest  implements Model
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

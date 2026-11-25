@@ -49,30 +49,84 @@ class AlipayCardStatusChangeNotify extends AlipayNotify
 
     // --- Getters and Setters ---
 
-    public function getRequestId() { return $this->requestId; }
-    public function setRequestId($requestId) { $this->requestId = $requestId; }
+    public function getRequestId()
+    {
+        return $this->requestId;
+    }
+    public function setRequestId($requestId)
+    {
+        $this->requestId = $requestId;
+    }
 
-    public function getAssetId() { return $this->assetId; }
-    public function setAssetId($assetId) { $this->assetId = $assetId; }
+    public function getAssetId()
+    {
+        return $this->assetId;
+    }
+    public function setAssetId($assetId)
+    {
+        $this->assetId = $assetId;
+    }
 
-    public function getOperateType() { return $this->operateType; }
-    public function setOperateType($operateType) { $this->operateType = $operateType; }
+    public function getOperateType()
+    {
+        return $this->operateType;
+    }
+    public function setOperateType($operateType)
+    {
+        $this->operateType = $operateType;
+    }
 
-    public function getStatus() { return $this->status; }
-    public function setStatus($status) { $this->status = $status; }
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
 
-    public function getCardStatus() { return $this->cardStatus; }
-    public function setCardStatus($cardStatus) { $this->cardStatus = $cardStatus; }
+    public function getCardStatus()
+    {
+        return $this->cardStatus;
+    }
+    public function setCardStatus($cardStatus)
+    {
+        $this->cardStatus = $cardStatus;
+    }
 
-    public function getCreatedTime() { return $this->createdTime; }
-    public function setCreatedTime($createdTime) { $this->createdTime = $createdTime; }
+    public function getCreatedTime()
+    {
+        return $this->createdTime;
+    }
+    public function setCreatedTime($createdTime)
+    {
+        $this->createdTime = $createdTime;
+    }
 
-    public function getUpdatedTime() { return $this->updatedTime; }
-    public function setUpdatedTime($updatedTime) { $this->updatedTime = $updatedTime; }
+    public function getUpdatedTime()
+    {
+        return $this->updatedTime;
+    }
+    public function setUpdatedTime($updatedTime)
+    {
+        $this->updatedTime = $updatedTime;
+    }
 
-    public function getCardBrand() { return $this->cardBrand; }
-    public function setCardBrand($cardBrand) { $this->cardBrand = $cardBrand; }
+    public function getCardBrand()
+    {
+        return $this->cardBrand;
+    }
+    public function setCardBrand($cardBrand)
+    {
+        $this->cardBrand = $cardBrand;
+    }
 
-    public function getCardType() { return $this->cardType; }
-    public function setCardType($cardType) { $this->cardType = $cardType; }
+    public function getCardType()
+    {
+        return $this->cardType;
+    }
+    public function setCardType($cardType)
+    {
+        $this->cardType = $cardType;
+    }
 }

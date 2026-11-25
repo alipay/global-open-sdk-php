@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializable
+class TaxCalculatedTaxId implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'value' => 'string',
         'country' => 'string',
-        'region' => 'string'
+        'region' => 'string',
     ];
 
     /**
@@ -61,7 +60,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'value' => null,
         'country' => null,
-        'region' => null
+        'region' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPINullables = [
         'value' => false,
         'country' => false,
-        'region' => false
+        'region' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'value' => 'value',
         'country' => 'country',
-        'region' => 'region'
+        'region' => 'region',
     ];
 
     /**
@@ -174,7 +173,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'value' => 'setValue',
         'country' => 'setCountry',
-        'region' => 'setRegion'
+        'region' => 'setRegion',
     ];
 
     /**
@@ -185,7 +184,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'value' => 'getValue',
         'country' => 'getCountry',
-        'region' => 'getRegion'
+        'region' => 'getRegion',
     ];
 
     /**
@@ -249,7 +248,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -446,10 +445,10 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -472,7 +471,7 @@ class TaxCalculatedTaxId  implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

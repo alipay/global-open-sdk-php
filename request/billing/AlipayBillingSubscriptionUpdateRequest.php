@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayBillingSubscriptionUpdateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -58,7 +57,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'collectionMethod' => 'string',
         'daysUntilDue' => 'int',
         'description' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'string',
     ];
 
     /**
@@ -81,7 +80,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'collectionMethod' => null,
         'daysUntilDue' => null,
         'description' => null,
-        'metadata' => null
+        'metadata' => null,
     ];
 
     /**
@@ -102,7 +101,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'collectionMethod' => false,
         'daysUntilDue' => true,
         'description' => false,
-        'metadata' => false
+        'metadata' => false,
     ];
 
     /**
@@ -203,7 +202,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'collectionMethod' => 'collectionMethod',
         'daysUntilDue' => 'daysUntilDue',
         'description' => 'description',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
     ];
 
     /**
@@ -224,7 +223,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'collectionMethod' => 'setCollectionMethod',
         'daysUntilDue' => 'setDaysUntilDue',
         'description' => 'setDescription',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
     ];
 
     /**
@@ -245,7 +244,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         'collectionMethod' => 'getCollectionMethod',
         'daysUntilDue' => 'getDaysUntilDue',
         'description' => 'getDescription',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
     ];
 
     /**
@@ -319,7 +318,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/subscription/update"); 
+        $this->setPath("/ams/api/v1/billing/subscription/update");
     }
 
     /**
@@ -754,10 +753,10 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -780,7 +779,7 @@ class AlipayBillingSubscriptionUpdateRequest   extends AlipayRequest  implements
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

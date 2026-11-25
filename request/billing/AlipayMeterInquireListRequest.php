@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayMeterInquireListRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         'eventName' => 'string',
         'status' => 'string',
         'startDateTime' => 'string',
-        'endDateTime' => 'string'
+        'endDateTime' => 'string',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         'eventName' => null,
         'status' => null,
         'startDateTime' => null,
-        'endDateTime' => null
+        'endDateTime' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         'eventName' => false,
         'status' => false,
         'startDateTime' => false,
-        'endDateTime' => false
+        'endDateTime' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         'eventName' => 'eventName',
         'status' => 'status',
         'startDateTime' => 'startDateTime',
-        'endDateTime' => 'endDateTime'
+        'endDateTime' => 'endDateTime',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         'eventName' => 'setEventName',
         'status' => 'setStatus',
         'startDateTime' => 'setStartDateTime',
-        'endDateTime' => 'setEndDateTime'
+        'endDateTime' => 'setEndDateTime',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         'eventName' => 'getEventName',
         'status' => 'getStatus',
         'startDateTime' => 'getStartDateTime',
-        'endDateTime' => 'getEndDateTime'
+        'endDateTime' => 'getEndDateTime',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
         $this->setIfExists('startDateTime', $data ?? [], null);
         $this->setIfExists('endDateTime', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/meter/inquireList"); 
+        $this->setPath("/ams/api/v1/meter/inquireList");
     }
 
     /**
@@ -565,10 +564,10 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -591,7 +590,7 @@ class AlipayMeterInquireListRequest   extends AlipayRequest  implements ModelInt
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

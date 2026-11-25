@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayPriceCreateResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -64,7 +63,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'string',
         'createdAt' => 'string',
         'updatedAt' => 'string',
-        'defaultPrice' => 'bool'
+        'defaultPrice' => 'bool',
     ];
 
     /**
@@ -93,7 +92,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => null,
         'createdAt' => null,
         'updatedAt' => null,
-        'defaultPrice' => null
+        'defaultPrice' => null,
     ];
 
     /**
@@ -120,7 +119,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => false,
         'createdAt' => false,
         'updatedAt' => false,
-        'defaultPrice' => false
+        'defaultPrice' => false,
     ];
 
     /**
@@ -227,7 +226,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'metadata',
         'createdAt' => 'createdAt',
         'updatedAt' => 'updatedAt',
-        'defaultPrice' => 'defaultPrice'
+        'defaultPrice' => 'defaultPrice',
     ];
 
     /**
@@ -254,7 +253,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'setMetadata',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
-        'defaultPrice' => 'setDefaultPrice'
+        'defaultPrice' => 'setDefaultPrice',
     ];
 
     /**
@@ -281,7 +280,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         'metadata' => 'getMetadata',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
-        'defaultPrice' => 'getDefaultPrice'
+        'defaultPrice' => 'getDefaultPrice',
     ];
 
     /**
@@ -361,7 +360,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('updatedAt', $data ?? [], null);
         $this->setIfExists('defaultPrice', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -939,10 +938,10 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -965,7 +964,7 @@ class AlipayPriceCreateResponse  implements ModelInterface, ArrayAccess, \JsonSe
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
+class CodeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'codeValueType' => '\Model\CodeValueType',
         'codeValue' => 'string',
-        'displayType' => '\Model\DisplayType'
+        'displayType' => '\Model\DisplayType',
     ];
 
     /**
@@ -61,7 +60,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'codeValueType' => null,
         'codeValue' => null,
-        'displayType' => null
+        'displayType' => null,
     ];
 
     /**
@@ -72,7 +71,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPINullables = [
         'codeValueType' => false,
         'codeValue' => false,
-        'displayType' => false
+        'displayType' => false,
     ];
 
     /**
@@ -163,7 +162,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'codeValueType' => 'codeValueType',
         'codeValue' => 'codeValue',
-        'displayType' => 'displayType'
+        'displayType' => 'displayType',
     ];
 
     /**
@@ -174,7 +173,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'codeValueType' => 'setCodeValueType',
         'codeValue' => 'setCodeValue',
-        'displayType' => 'setDisplayType'
+        'displayType' => 'setDisplayType',
     ];
 
     /**
@@ -185,7 +184,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'codeValueType' => 'getCodeValueType',
         'codeValue' => 'getCodeValue',
-        'displayType' => 'getDisplayType'
+        'displayType' => 'getDisplayType',
     ];
 
     /**
@@ -249,7 +248,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('codeValue', $data ?? [], null);
         $this->setIfExists('displayType', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -446,10 +445,10 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -472,7 +471,7 @@ class CodeDetail  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

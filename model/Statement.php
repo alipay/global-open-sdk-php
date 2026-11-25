@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Statement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -59,7 +58,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'string',
         'extTransactionId' => 'string',
         'transactionStatus' => 'string',
-        'beneficiaryAssetId' => 'string'
+        'beneficiaryAssetId' => 'string',
     ];
 
     /**
@@ -83,7 +82,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => null,
         'extTransactionId' => null,
         'transactionStatus' => null,
-        'beneficiaryAssetId' => null
+        'beneficiaryAssetId' => null,
     ];
 
     /**
@@ -105,7 +104,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => false,
         'extTransactionId' => false,
         'transactionStatus' => false,
-        'beneficiaryAssetId' => false
+        'beneficiaryAssetId' => false,
     ];
 
     /**
@@ -207,7 +206,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'transactionId',
         'extTransactionId' => 'extTransactionId',
         'transactionStatus' => 'transactionStatus',
-        'beneficiaryAssetId' => 'beneficiaryAssetId'
+        'beneficiaryAssetId' => 'beneficiaryAssetId',
     ];
 
     /**
@@ -229,7 +228,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'setTransactionId',
         'extTransactionId' => 'setExtTransactionId',
         'transactionStatus' => 'setTransactionStatus',
-        'beneficiaryAssetId' => 'setBeneficiaryAssetId'
+        'beneficiaryAssetId' => 'setBeneficiaryAssetId',
     ];
 
     /**
@@ -251,7 +250,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         'transactionId' => 'getTransactionId',
         'extTransactionId' => 'getExtTransactionId',
         'transactionStatus' => 'getTransactionStatus',
-        'beneficiaryAssetId' => 'getBeneficiaryAssetId'
+        'beneficiaryAssetId' => 'getBeneficiaryAssetId',
     ];
 
     /**
@@ -382,7 +381,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('transactionStatus', $data ?? [], null);
         $this->setIfExists('beneficiaryAssetId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -422,7 +421,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'transactionType', must be one of '%s'",
                 $this->container['transactionType'],
-                implode("', '", $allowedValues)
+                implode("', '", $allowedValues),
             );
         }
 
@@ -562,8 +561,8 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
                 sprintf(
                     "Invalid value '%s' for 'transactionType', must be one of '%s'",
                     $transactionType,
-                    implode("', '", $allowedValues)
-                )
+                    implode("', '", $allowedValues),
+                ),
             );
         }
         $this->container['transactionType'] = $transactionType;
@@ -862,10 +861,10 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -888,7 +887,7 @@ class Statement  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

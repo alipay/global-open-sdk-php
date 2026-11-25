@@ -6,9 +6,7 @@ final class SessionHttp2Executor
 {
     private const SESSION_HEADER = 'X-Session-Id';
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 
     public static function execute($gatewayUrl, $request, $extraHeaders)
     {
@@ -22,7 +20,7 @@ final class SessionHttp2Executor
             $gatewayUrl,
             $request->getPath(),
             $sessionId,
-            $requestBody
+            $requestBody,
         );
         $response = json_decode($responseBody);
         if ($response === null && json_last_error() !== JSON_ERROR_NONE) {
@@ -44,8 +42,8 @@ final class SessionHttp2Executor
             foreach ($extraHeaders as $name => $value) {
                 if (!is_string($name) || strcasecmp($name, self::SESSION_HEADER) !== 0) {
                     throw new \InvalidArgumentException(
-                        'Only X-Session-Id is supported for this API. Unsupported header: ' .
-                        (is_scalar($name) ? (string)$name : '<invalid>')
+                        'Only X-Session-Id is supported for this API. Unsupported header: '
+                        . (is_scalar($name) ? (string) $name : '<invalid>'),
                     );
                 }
                 if ($sessionId !== null) {

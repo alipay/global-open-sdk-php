@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayTaxInitializeSettingsRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => 'string',
         'defaultTaxCode' => 'string',
         'defaultTaxBehavior' => 'string',
-        'headOffice' => '\Model\TaxHeadOffice'
+        'headOffice' => '\Model\TaxHeadOffice',
     ];
 
     /**
@@ -63,7 +62,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => null,
         'defaultTaxCode' => null,
         'defaultTaxBehavior' => null,
-        'headOffice' => null
+        'headOffice' => null,
     ];
 
     /**
@@ -75,7 +74,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => false,
         'defaultTaxCode' => false,
         'defaultTaxBehavior' => false,
-        'headOffice' => false
+        'headOffice' => false,
     ];
 
     /**
@@ -167,7 +166,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => 'settingsRequestId',
         'defaultTaxCode' => 'defaultTaxCode',
         'defaultTaxBehavior' => 'defaultTaxBehavior',
-        'headOffice' => 'headOffice'
+        'headOffice' => 'headOffice',
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => 'setSettingsRequestId',
         'defaultTaxCode' => 'setDefaultTaxCode',
         'defaultTaxBehavior' => 'setDefaultTaxBehavior',
-        'headOffice' => 'setHeadOffice'
+        'headOffice' => 'setHeadOffice',
     ];
 
     /**
@@ -191,7 +190,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         'settingsRequestId' => 'getSettingsRequestId',
         'defaultTaxCode' => 'getDefaultTaxCode',
         'defaultTaxBehavior' => 'getDefaultTaxBehavior',
-        'headOffice' => 'getHeadOffice'
+        'headOffice' => 'getHeadOffice',
     ];
 
     /**
@@ -256,7 +255,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
         $this->setIfExists('defaultTaxBehavior', $data ?? [], null);
         $this->setIfExists('headOffice', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/tax/initializeSettings"); 
+        $this->setPath("/ams/api/v1/tax/initializeSettings");
     }
 
     /**
@@ -484,10 +483,10 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -510,7 +509,7 @@ class AlipayTaxInitializeSettingsRequest   extends AlipayRequest  implements Mod
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

@@ -12,7 +12,7 @@ final class MultipartHttpRPC
         array $filePartNames,
         $fileName,
         $contentType,
-        $fileContent
+        $fileContent,
     ) {
         $temporaryPath = tempnam(sys_get_temp_dir(), 'antom-upload-');
         if ($temporaryPath === false) {
@@ -28,7 +28,7 @@ final class MultipartHttpRPC
                 $postFields[$filePartName] = new \CURLFile(
                     $temporaryPath,
                     $contentType,
-                    self::sanitizeFileName($fileName)
+                    self::sanitizeFileName($fileName),
                 );
             }
 
@@ -63,7 +63,7 @@ final class MultipartHttpRPC
             self::closeCurl($curl);
             if ($statusCode !== 200) {
                 throw new \RuntimeException(
-                    'Invalid HTTP status ' . $statusCode . ', response body: ' . $responseBody
+                    'Invalid HTTP status ' . $statusCode . ', response body: ' . $responseBody,
                 );
             }
 
@@ -76,7 +76,7 @@ final class MultipartHttpRPC
                 $signature = $responseHeaders['signature'];
                 $position = strrpos($signature, 'signature=');
                 $result->setRspSign(
-                    $position === false ? $signature : substr($signature, $position + strlen('signature='))
+                    $position === false ? $signature : substr($signature, $position + strlen('signature=')),
                 );
             }
             return $result;

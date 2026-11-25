@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Request\billing;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayProductUpdateRequest extends AlipayRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         'images' => 'string[]',
         'unitLabel' => 'string',
         'metadata' => 'string',
-        'active' => 'bool'
+        'active' => 'bool',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         'images' => null,
         'unitLabel' => null,
         'metadata' => null,
-        'active' => null
+        'active' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         'images' => false,
         'unitLabel' => false,
         'metadata' => false,
-        'active' => false
+        'active' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         'images' => 'images',
         'unitLabel' => 'unitLabel',
         'metadata' => 'metadata',
-        'active' => 'active'
+        'active' => 'active',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         'images' => 'setImages',
         'unitLabel' => 'setUnitLabel',
         'metadata' => 'setMetadata',
-        'active' => 'setActive'
+        'active' => 'setActive',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         'images' => 'getImages',
         'unitLabel' => 'getUnitLabel',
         'metadata' => 'getMetadata',
-        'active' => 'getActive'
+        'active' => 'getActive',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
 
-         $this->setPath("/ams/api/v1/billing/product/update"); 
+        $this->setPath("/ams/api/v1/billing/product/update");
     }
 
     /**
@@ -568,10 +567,10 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -594,7 +593,7 @@ class AlipayProductUpdateRequest   extends AlipayRequest  implements ModelInterf
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

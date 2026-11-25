@@ -6,9 +6,7 @@ final class Http2JsonTransport
 {
     private const MIN_STRICT_HTTP2_CURL_VERSION = 0x080A00;
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 
     public static function post($gatewayUrl, $path, $sessionId, $requestBody)
     {
@@ -51,7 +49,7 @@ final class Http2JsonTransport
             $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             if ($statusCode !== 200) {
                 throw new \RuntimeException(
-                    'Response data error, HTTP status=' . $statusCode . ', rspBody:' . $responseBody
+                    'Response data error, HTTP status=' . $statusCode . ', rspBody:' . $responseBody,
                 );
             }
             return $responseBody;
@@ -72,7 +70,7 @@ final class Http2JsonTransport
         }
         if ($version['version_number'] < self::MIN_STRICT_HTTP2_CURL_VERSION) {
             throw new \RuntimeException(
-                'This API requires libcurl 8.10.0 or later to prevent HTTP/1.1 fallback over HTTPS.'
+                'This API requires libcurl 8.10.0 or later to prevent HTTP/1.1 fallback over HTTPS.',
             );
         }
     }
@@ -89,7 +87,7 @@ final class Http2JsonTransport
             || isset($parts['fragment'])
             || (isset($parts['path']) && $parts['path'] !== '' && $parts['path'] !== '/')) {
             throw new \InvalidArgumentException(
-                'gatewayUrl must be an HTTPS origin without path, query, fragment, or user info.'
+                'gatewayUrl must be an HTTPS origin without path, query, fragment, or user info.',
             );
         }
         if (!is_string($path) || strpos($path, '/') !== 0) {

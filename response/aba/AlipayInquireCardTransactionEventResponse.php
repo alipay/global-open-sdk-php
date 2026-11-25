@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\aba;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayInquireCardTransactionEventResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayInquireCardTransactionEventResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         'events' => '\Model\CardTransactionEvent[]',
         'totalCount' => 'int',
         'totalPageNumber' => 'int',
-        'currentPageNumber' => 'int'
+        'currentPageNumber' => 'int',
     ];
 
     /**
@@ -65,7 +64,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         'events' => null,
         'totalCount' => null,
         'totalPageNumber' => null,
-        'currentPageNumber' => null
+        'currentPageNumber' => null,
     ];
 
     /**
@@ -78,7 +77,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         'events' => false,
         'totalCount' => true,
         'totalPageNumber' => true,
-        'currentPageNumber' => true
+        'currentPageNumber' => true,
     ];
 
     /**
@@ -171,7 +170,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         'events' => 'events',
         'totalCount' => 'totalCount',
         'totalPageNumber' => 'totalPageNumber',
-        'currentPageNumber' => 'currentPageNumber'
+        'currentPageNumber' => 'currentPageNumber',
     ];
 
     /**
@@ -184,7 +183,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         'events' => 'setEvents',
         'totalCount' => 'setTotalCount',
         'totalPageNumber' => 'setTotalPageNumber',
-        'currentPageNumber' => 'setCurrentPageNumber'
+        'currentPageNumber' => 'setCurrentPageNumber',
     ];
 
     /**
@@ -197,7 +196,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         'events' => 'getEvents',
         'totalCount' => 'getTotalCount',
         'totalPageNumber' => 'getTotalPageNumber',
-        'currentPageNumber' => 'getCurrentPageNumber'
+        'currentPageNumber' => 'getCurrentPageNumber',
     ];
 
     /**
@@ -263,7 +262,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
         $this->setIfExists('totalPageNumber', $data ?? [], null);
         $this->setIfExists('currentPageNumber', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -505,10 +504,10 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -531,7 +530,7 @@ class AlipayInquireCardTransactionEventResponse  implements ModelInterface, Arra
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

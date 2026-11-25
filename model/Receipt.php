@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Model;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
+class Receipt implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -81,7 +80,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'payToRequestId' => 'string',
         'payToId' => 'string',
         'footer' => 'string',
-        'fileUrl' => 'string'
+        'fileUrl' => 'string',
     ];
 
     /**
@@ -127,7 +126,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'payToRequestId' => null,
         'payToId' => null,
         'footer' => null,
-        'fileUrl' => null
+        'fileUrl' => null,
     ];
 
     /**
@@ -171,7 +170,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'payToRequestId' => false,
         'payToId' => false,
         'footer' => false,
-        'fileUrl' => false
+        'fileUrl' => false,
     ];
 
     /**
@@ -295,7 +294,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'payToRequestId' => 'payToRequestId',
         'payToId' => 'payToId',
         'footer' => 'footer',
-        'fileUrl' => 'fileUrl'
+        'fileUrl' => 'fileUrl',
     ];
 
     /**
@@ -339,7 +338,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'payToRequestId' => 'setPayToRequestId',
         'payToId' => 'setPayToId',
         'footer' => 'setFooter',
-        'fileUrl' => 'setFileUrl'
+        'fileUrl' => 'setFileUrl',
     ];
 
     /**
@@ -383,7 +382,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         'payToRequestId' => 'getPayToRequestId',
         'payToId' => 'getPayToId',
         'footer' => 'getFooter',
-        'fileUrl' => 'getFileUrl'
+        'fileUrl' => 'getFileUrl',
     ];
 
     /**
@@ -480,7 +479,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('footer', $data ?? [], null);
         $this->setIfExists('fileUrl', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -1493,10 +1492,10 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -1519,7 +1518,7 @@ class Receipt  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }

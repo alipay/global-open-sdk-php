@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayVaultingPaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +51,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'normalUrl' => 'string',
         'schemeUrl' => 'string',
         'applinkUrl' => 'string',
-        'acquirerInfo' => '\Model\AcquirerInfo'
+        'acquirerInfo' => '\Model\AcquirerInfo',
     ];
 
     /**
@@ -69,7 +68,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'normalUrl' => null,
         'schemeUrl' => null,
         'applinkUrl' => null,
-        'acquirerInfo' => null
+        'acquirerInfo' => null,
     ];
 
     /**
@@ -84,7 +83,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'normalUrl' => false,
         'schemeUrl' => false,
         'applinkUrl' => false,
-        'acquirerInfo' => false
+        'acquirerInfo' => false,
     ];
 
     /**
@@ -179,7 +178,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'normalUrl' => 'normalUrl',
         'schemeUrl' => 'schemeUrl',
         'applinkUrl' => 'applinkUrl',
-        'acquirerInfo' => 'acquirerInfo'
+        'acquirerInfo' => 'acquirerInfo',
     ];
 
     /**
@@ -194,7 +193,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'normalUrl' => 'setNormalUrl',
         'schemeUrl' => 'setSchemeUrl',
         'applinkUrl' => 'setApplinkUrl',
-        'acquirerInfo' => 'setAcquirerInfo'
+        'acquirerInfo' => 'setAcquirerInfo',
     ];
 
     /**
@@ -209,7 +208,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         'normalUrl' => 'getNormalUrl',
         'schemeUrl' => 'getSchemeUrl',
         'applinkUrl' => 'getApplinkUrl',
-        'acquirerInfo' => 'getAcquirerInfo'
+        'acquirerInfo' => 'getAcquirerInfo',
     ];
 
     /**
@@ -277,7 +276,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
         $this->setIfExists('applinkUrl', $data ?? [], null);
         $this->setIfExists('acquirerInfo', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -570,10 +569,10 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
@@ -596,7 +595,7 @@ class AlipayVaultingPaymentMethodResponse  implements ModelInterface, ArrayAcces
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
+            JSON_PRETTY_PRINT,
         );
     }
 }
