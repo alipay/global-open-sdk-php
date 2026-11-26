@@ -1,8 +1,8 @@
 <?php
+
 namespace Request\notify;
 
 use Request\notify\AlipayNotify;
-
 
 class AlipayBillNotify extends AlipayNotify
 {
@@ -109,51 +109,147 @@ class AlipayBillNotify extends AlipayNotify
 
     // --- Getters and Setters ---
 
-    public function getAssetId() { return $this->assetId; }
-    public function setAssetId($assetId) { $this->assetId = $assetId; }
+    public function getAssetId()
+    {
+        return $this->assetId;
+    }
+    public function setAssetId($assetId)
+    {
+        $this->assetId = $assetId;
+    }
 
-    public function getMaskedCardNo() { return $this->maskedCardNo; }
-    public function setMaskedCardNo($maskedCardNo) { $this->maskedCardNo = $maskedCardNo; }
+    public function getMaskedCardNo()
+    {
+        return $this->maskedCardNo;
+    }
+    public function setMaskedCardNo($maskedCardNo)
+    {
+        $this->maskedCardNo = $maskedCardNo;
+    }
 
-    public function getOrderNo() { return $this->orderNo; }
-    public function setOrderNo($orderNo) { $this->orderNo = $orderNo; }
+    public function getOrderNo()
+    {
+        return $this->orderNo;
+    }
+    public function setOrderNo($orderNo)
+    {
+        $this->orderNo = $orderNo;
+    }
 
-    public function getCardNickName() { return $this->cardNickName; }
-    public function setCardNickName($cardNickName) { $this->cardNickName = $cardNickName; }
+    public function getCardNickName()
+    {
+        return $this->cardNickName;
+    }
+    public function setCardNickName($cardNickName)
+    {
+        $this->cardNickName = $cardNickName;
+    }
 
-    public function getTransactionTime() { return $this->transactionTime; }
-    public function setTransactionTime($transactionTime) { $this->transactionTime = $transactionTime; }
+    public function getTransactionTime()
+    {
+        return $this->transactionTime;
+    }
+    public function setTransactionTime($transactionTime)
+    {
+        $this->transactionTime = $transactionTime;
+    }
 
-    public function getMerchantName() { return $this->merchantName; }
-    public function setMerchantName($merchantName) { $this->merchantName = $merchantName; }
+    public function getMerchantName()
+    {
+        return $this->merchantName;
+    }
+    public function setMerchantName($merchantName)
+    {
+        $this->merchantName = $merchantName;
+    }
 
-    public function getTradeAmount() { return $this->tradeAmount; }
-    public function setTradeAmount($tradeAmount) { $this->tradeAmount = $tradeAmount; }
+    public function getTradeAmount()
+    {
+        return $this->tradeAmount;
+    }
+    public function setTradeAmount($tradeAmount)
+    {
+        $this->tradeAmount = $tradeAmount;
+    }
 
-    public function getInAmount() { return $this->inAmount; }
-    public function setInAmount($inAmount) { $this->inAmount = $inAmount; }
+    public function getInAmount()
+    {
+        return $this->inAmount;
+    }
+    public function setInAmount($inAmount)
+    {
+        $this->inAmount = $inAmount;
+    }
 
-    public function getOutAmount() { return $this->outAmount; }
-    public function setOutAmount($outAmount) { $this->outAmount = $outAmount; }
+    public function getOutAmount()
+    {
+        return $this->outAmount;
+    }
+    public function setOutAmount($outAmount)
+    {
+        $this->outAmount = $outAmount;
+    }
 
-    public function getExchangeRate() { return $this->exchangeRate; }
-    public function setExchangeRate($exchangeRate) { $this->exchangeRate = $exchangeRate; }
+    public function getExchangeRate()
+    {
+        return $this->exchangeRate;
+    }
+    public function setExchangeRate($exchangeRate)
+    {
+        $this->exchangeRate = $exchangeRate;
+    }
 
-    public function getBillType() { return $this->billType; }
-    public function setBillType($billType) { $this->billType = $billType; }
+    public function getBillType()
+    {
+        return $this->billType;
+    }
+    public function setBillType($billType)
+    {
+        $this->billType = $billType;
+    }
 
-    public function getTradeCountry() { return $this->tradeCountry; }
-    public function setTradeCountry($tradeCountry) { $this->tradeCountry = $tradeCountry; }
+    public function getTradeCountry()
+    {
+        return $this->tradeCountry;
+    }
+    public function setTradeCountry($tradeCountry)
+    {
+        $this->tradeCountry = $tradeCountry;
+    }
 
-    public function getBillStatus() { return $this->billStatus; }
-    public function setBillStatus($billStatus) { $this->billStatus = $billStatus; }
+    public function getBillStatus()
+    {
+        return $this->billStatus;
+    }
+    public function setBillStatus($billStatus)
+    {
+        $this->billStatus = $billStatus;
+    }
 
-    public function getBillFailReason() { return $this->billFailReason; }
-    public function setBillFailReason($billFailReason) { $this->billFailReason = $billFailReason; }
+    public function getBillFailReason()
+    {
+        return $this->billFailReason;
+    }
+    public function setBillFailReason($billFailReason)
+    {
+        $this->billFailReason = $billFailReason;
+    }
 
-    public function getLastUpdate() { return $this->lastUpdate; }
-    public function setLastUpdate($lastUpdate) { $this->lastUpdate = $lastUpdate; }
+    public function getLastUpdate()
+    {
+        return $this->lastUpdate;
+    }
+    public function setLastUpdate($lastUpdate)
+    {
+        $this->lastUpdate = $lastUpdate;
+    }
 
-    public function getMetadata() { return $this->metadata; }
-    public function setMetadata($metadata) { $this->metadata = $metadata; }
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+    public function setMetadata($metadata)
+    {
+        $this->metadata = $metadata;
+    }
 }
