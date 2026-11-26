@@ -1,8 +1,11 @@
 <?php
+
 // Run in its own process. Only synthetic values are used; no network requests.
 $variables = ['ANTOM_GATEWAY_URL', 'ANTOM_CLIENT_ID', 'ANTOM_MERCHANT_PRIVATE_KEY', 'ANTOM_PUBLIC_KEY'];
 $values = ['https://localhost', 'local-test-client', "YWJj\nZGVm", "Z2hp\r\namts"];
-foreach ($variables as $variable) { putenv($variable); }
+foreach ($variables as $variable) {
+    putenv($variable);
+}
 foreach ($variables as $index => $variable) {
     try {
         require __DIR__ . '/../example/environment.php';
