@@ -12,10 +12,9 @@
  * Do not edit the class manually.
  */
 
-
 namespace Response\pay;
 
-use \ArrayAccess;
+use ArrayAccess;
 use Request\AlipayRequest;
 use Model\ModelInterface;
 use Model\ObjectSerializer;
@@ -29,7 +28,7 @@ use Model\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \JsonSerializable
+class AlipayPaymentSessionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'string',
         'url' => 'string',
         'subscriptionId' => 'string',
-        'invoiceId' => 'string'
+        'invoiceId' => 'string',
+        'customerId' => 'string'
     ];
 
     /**
@@ -71,7 +71,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => null,
         'url' => null,
         'subscriptionId' => null,
-        'invoiceId' => null
+        'invoiceId' => null,
+        'customerId' => null
     ];
 
     /**
@@ -87,7 +88,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => false,
         'url' => false,
         'subscriptionId' => false,
-        'invoiceId' => false
+        'invoiceId' => false,
+        'customerId' => false
     ];
 
     /**
@@ -183,7 +185,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'normalUrl',
         'url' => 'url',
         'subscriptionId' => 'subscriptionId',
-        'invoiceId' => 'invoiceId'
+        'invoiceId' => 'invoiceId',
+        'customerId' => 'customerId'
     ];
 
     /**
@@ -199,7 +202,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'setNormalUrl',
         'url' => 'setUrl',
         'subscriptionId' => 'setSubscriptionId',
-        'invoiceId' => 'setInvoiceId'
+        'invoiceId' => 'setInvoiceId',
+        'customerId' => 'setCustomerId'
     ];
 
     /**
@@ -215,7 +219,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'getNormalUrl',
         'url' => 'getUrl',
         'subscriptionId' => 'getSubscriptionId',
-        'invoiceId' => 'getInvoiceId'
+        'invoiceId' => 'getInvoiceId',
+        'customerId' => 'getCustomerId'
     ];
 
     /**
@@ -283,8 +288,9 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('url', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('invoiceId', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
 
-            }
+    }
 
     /**
     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -531,6 +537,30 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
+    /**
+     * Gets customerId
+     *
+     * @return string|null
+     */
+    public function getCustomerId()
+    {
+        return $this->container['customerId'];
+    }
+
+    /**
+     * Sets customerId
+     *
+     * @param string|null $customerId The Billing customer ID linked to the subscription. Returned on every successful Billing CKP session, including customer reuse and trials, independently of invoiceId or automatic tax outcome.
+     *
+     * @return self
+     */
+    public function setCustomerId($customerId)
+    {
+        $this->container['customerId'] = $customerId;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -607,10 +637,10 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
                 // Check if the property value is an object and has a toArray() method
                 if (is_object($propertyValue) && method_exists($propertyValue, 'toArray')) {
                     $array[$propertyName] = $propertyValue->toArray();
-                // Check if it's type datetime
+                    // Check if it's type datetime
                 } elseif ($propertyValue instanceof \DateTime) {
                     $array[$propertyName] = $propertyValue->format(DATE_ATOM);
-                // If it's an array type we should check whether it contains objects and if so call toArray method
+                    // If it's an array type we should check whether it contains objects and if so call toArray method
                 } elseif (is_array($propertyValue)) {
                     $array[$propertyName] = array_map(function ($item) {
                         return $item instanceof ModelInterface ? $item->toArray() : $item;
