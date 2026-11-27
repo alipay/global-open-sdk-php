@@ -80,7 +80,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => '\Model\AvailablePaymentMethod',
         'paymentExpiryTime' => 'string',
         'subscription' => '\Model\BillingSubscription',
-        'automaticTax' => '\Model\AutomaticTax'
+        'automaticTax' => '\Model\AutomaticTax',
+        'invoiceCreation' => '\Model\PaymentSessionInvoiceCreation'
     ];
 
     /**
@@ -125,7 +126,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => null,
         'paymentExpiryTime' => null,
         'subscription' => null,
-        'automaticTax' => null
+        'automaticTax' => null,
+        'invoiceCreation' => null
     ];
 
     /**
@@ -168,7 +170,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => false,
         'paymentExpiryTime' => false,
         'subscription' => false,
-        'automaticTax' => false
+        'automaticTax' => false,
+        'invoiceCreation' => false
     ];
 
     /**
@@ -291,7 +294,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'availablePaymentMethod',
         'paymentExpiryTime' => 'paymentExpiryTime',
         'subscription' => 'subscription',
-        'automaticTax' => 'automaticTax'
+        'automaticTax' => 'automaticTax',
+        'invoiceCreation' => 'invoiceCreation'
     ];
 
     /**
@@ -334,7 +338,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'setAvailablePaymentMethod',
         'paymentExpiryTime' => 'setPaymentExpiryTime',
         'subscription' => 'setSubscription',
-        'automaticTax' => 'setAutomaticTax'
+        'automaticTax' => 'setAutomaticTax',
+        'invoiceCreation' => 'setInvoiceCreation'
     ];
 
     /**
@@ -377,7 +382,8 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         'availablePaymentMethod' => 'getAvailablePaymentMethod',
         'paymentExpiryTime' => 'getPaymentExpiryTime',
         'subscription' => 'getSubscription',
-        'automaticTax' => 'getAutomaticTax'
+        'automaticTax' => 'getAutomaticTax',
+        'invoiceCreation' => 'getInvoiceCreation'
     ];
 
     /**
@@ -472,6 +478,7 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
         $this->setIfExists('paymentExpiryTime', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
         $this->setIfExists('automaticTax', $data ?? [], null);
+        $this->setIfExists('invoiceCreation', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/createPaymentSession"); 
     }
@@ -1372,6 +1379,30 @@ class AlipayPaymentSessionRequest   extends AlipayRequest  implements ModelInter
     public function setAutomaticTax($automaticTax)
     {
         $this->container['automaticTax'] = $automaticTax;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceCreation
+     *
+     * @return \model\PaymentSessionInvoiceCreation|null
+     */
+    public function getInvoiceCreation()
+    {
+        return $this->container['invoiceCreation'];
+    }
+
+    /**
+     * Sets invoiceCreation
+     *
+     * @param \model\PaymentSessionInvoiceCreation|null $invoiceCreation invoiceCreation
+     *
+     * @return self
+     */
+    public function setInvoiceCreation($invoiceCreation)
+    {
+        $this->container['invoiceCreation'] = $invoiceCreation;
 
         return $this;
     }
