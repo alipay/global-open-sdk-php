@@ -76,7 +76,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'string',
         'dualOfflinePayment' => 'bool',
         'subscriptionId' => 'string',
-        'locale' => 'string'
+        'locale' => 'string',
+        'invoiceCreation' => '\Model\PayInvoiceCreation'
     ];
 
     /**
@@ -117,7 +118,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => null,
         'dualOfflinePayment' => null,
         'subscriptionId' => null,
-        'locale' => null
+        'locale' => null,
+        'invoiceCreation' => null
     ];
 
     /**
@@ -156,7 +158,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => false,
         'dualOfflinePayment' => false,
         'subscriptionId' => false,
-        'locale' => false
+        'locale' => false,
+        'invoiceCreation' => false
     ];
 
     /**
@@ -275,7 +278,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'merchantAccountId',
         'dualOfflinePayment' => 'dualOfflinePayment',
         'subscriptionId' => 'subscriptionId',
-        'locale' => 'locale'
+        'locale' => 'locale',
+        'invoiceCreation' => 'invoiceCreation'
     ];
 
     /**
@@ -314,7 +318,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'setMerchantAccountId',
         'dualOfflinePayment' => 'setDualOfflinePayment',
         'subscriptionId' => 'setSubscriptionId',
-        'locale' => 'setLocale'
+        'locale' => 'setLocale',
+        'invoiceCreation' => 'setInvoiceCreation'
     ];
 
     /**
@@ -353,7 +358,8 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         'merchantAccountId' => 'getMerchantAccountId',
         'dualOfflinePayment' => 'getDualOfflinePayment',
         'subscriptionId' => 'getSubscriptionId',
-        'locale' => 'getLocale'
+        'locale' => 'getLocale',
+        'invoiceCreation' => 'getInvoiceCreation'
     ];
 
     /**
@@ -444,6 +450,7 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
         $this->setIfExists('dualOfflinePayment', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('locale', $data ?? [], null);
+        $this->setIfExists('invoiceCreation', $data ?? [], null);
 
          $this->setPath("/ams/api/v1/payments/pay"); 
     }
@@ -1254,6 +1261,30 @@ class AlipayPayRequest   extends AlipayRequest  implements ModelInterface, Array
     public function setLocale($locale)
     {
         $this->container['locale'] = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceCreation
+     *
+     * @return \model\PayInvoiceCreation|null
+     */
+    public function getInvoiceCreation()
+    {
+        return $this->container['invoiceCreation'];
+    }
+
+    /**
+     * Sets invoiceCreation
+     *
+     * @param \model\PayInvoiceCreation|null $invoiceCreation invoiceCreation
+     *
+     * @return self
+     */
+    public function setInvoiceCreation($invoiceCreation)
+    {
+        $this->container['invoiceCreation'] = $invoiceCreation;
 
         return $this;
     }
