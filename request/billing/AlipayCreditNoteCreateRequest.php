@@ -739,7 +739,7 @@ class AlipayCreditNoteCreateRequest   extends AlipayRequest  implements ModelInt
     /**
      * Sets creditNoteNotifyUrl
      *
-     * @param string|null $creditNoteNotifyUrl The URL that receives credit note notifications. Maximum length: 2048 characters.
+     * @param string|null $creditNoteNotifyUrl The HTTPS URL for credit note notifications, up to 2048 characters. Omission or null sends no notifications. You are responsible for URL format and reachability.
      *
      * @return self
      */

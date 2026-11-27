@@ -2,24 +2,22 @@
 
 namespace Request\notify;
 
+/**
+ * CREDIT_NOTE_RESULT payload. Uses caller-owned hydration through public properties or setters.
+ * Inherited result is the shared Antom Result payload; ACK is a separate Result envelope with
+ * resultCode=SUCCESS, resultStatus=S and resultMessage=success.
+ */
 class AlipayCreditNoteNotify extends \Request\notify\AlipayNotify
 {
-    public $notifyId;
+    /** Required creation request ID shared by all events; correlation, not delivery deduplication.
+     * Delivery deduplication uses outer notify_id, which is not a payload member. */
     public $creditNoteRequestId;
     public $creditNoteNotificationType;
     public $customerId;
+    /** @var \Model\CreditNoteInfo|null Notification projection without detail-only metadata. */
     public $creditNote;
+    /** @var \Model\NotifyInvoiceInfo|null */
     public $invoice;
-
-    public function getNotifyId()
-    {
-        return $this->notifyId;
-    }
-
-    public function setNotifyId($notifyId): void
-    {
-        $this->notifyId = $notifyId;
-    }
 
     public function getCreditNoteRequestId()
     {

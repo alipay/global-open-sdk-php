@@ -51,6 +51,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => 'string',
         'description' => 'string',
         'quantity' => 'string',
+        'direction' => 'string',
         'unitAmount' => '\request\model\Amount',
         'itemAmount' => '\request\model\Amount',
         'metadata' => 'array<string,string>'
@@ -69,6 +70,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => null,
         'description' => null,
         'quantity' => null,
+        'direction' => null,
         'unitAmount' => null,
         'itemAmount' => null,
         'metadata' => null
@@ -85,6 +87,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => false,
         'description' => false,
         'quantity' => false,
+        'direction' => false,
         'unitAmount' => false,
         'itemAmount' => false,
         'metadata' => false
@@ -181,6 +184,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => 'invoiceItemId',
         'description' => 'description',
         'quantity' => 'quantity',
+        'direction' => 'direction',
         'unitAmount' => 'unitAmount',
         'itemAmount' => 'itemAmount',
         'metadata' => 'metadata'
@@ -197,6 +201,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => 'setInvoiceItemId',
         'description' => 'setDescription',
         'quantity' => 'setQuantity',
+        'direction' => 'setDirection',
         'unitAmount' => 'setUnitAmount',
         'itemAmount' => 'setItemAmount',
         'metadata' => 'setMetadata'
@@ -213,6 +218,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoiceItemId' => 'getInvoiceItemId',
         'description' => 'getDescription',
         'quantity' => 'getQuantity',
+        'direction' => 'getDirection',
         'unitAmount' => 'getUnitAmount',
         'itemAmount' => 'getItemAmount',
         'metadata' => 'getMetadata'
@@ -280,6 +286,7 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('invoiceItemId', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('direction', $data ?? [], null);
         $this->setIfExists('unitAmount', $data ?? [], null);
         $this->setIfExists('itemAmount', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
@@ -445,6 +452,19 @@ class LineItem  implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['quantity'] = $quantity;
 
+        return $this;
+    }
+
+    /** @return string|null Open direction value; C credits and D debits. */
+    public function getDirection()
+    {
+        return $this->container['direction'];
+    }
+
+    /** @param string|null $direction Required in notifications; D subtracts itemAmount from total. */
+    public function setDirection($direction)
+    {
+        $this->container['direction'] = $direction;
         return $this;
     }
 
