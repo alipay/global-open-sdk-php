@@ -2,15 +2,23 @@
 
 namespace Model;
 
+/** Credit note notification projection; caller-owned hydration, with string timestamps. */
 class CreditNoteInfo
 {
     public $creditNoteId;
     public $type;
     public $status;
     public $totalAmount;
+    /** @var \Model\Amount|null Planned original-method refund for refund-bearing POST_PAYMENT.
+     * Absent/null for note-only POST_PAYMENT and PRE_PAYMENT; not proof of completion. */
     public $refundAmount;
+    /** @var string|null Optional REFUND_INITIATED, REFUND_SUCCEEDED or REFUND_FAILED progress.
+     * Absent/null before progress or for note-only notes; PRE_PAYMENT may use NOT_APPLICABLE. */
     public $refundStatus;
+    /** @var string|null Payment-system reference when obtained; alone does not prove success.
+     * Absent/null beforehand, for note-only POST_PAYMENT and PRE_PAYMENT. */
     public $refundId;
+    /** @var string|null Optional REFUND routing supplied at creation; null when omitted. */
     public $refundDestination;
     public $reason;
     public $reasonDescription;
@@ -20,6 +28,12 @@ class CreditNoteInfo
     public $refundedAt;
     public $voidedAt;
     public $createdAt;
+    /**
+     * Notification line-item arrays only, excluding detail-only metadata. Optional, at most 100;
+     * the service returns [] when absent. Quantity is an integer in quantity mode only (1-999).
+     * Direction is an open string, required C or D; D itemAmount is subtracted from the total.
+     * @var array<int,array{creditNoteItemId?:string,type?:string,invoiceItemId?:string,description?:string,quantity?:int,direction:string,unitAmount?:\Model\Amount,itemAmount?:\Model\Amount}>|null
+     */
     public $items;
 
     /**
@@ -291,7 +305,22 @@ class CreditNoteInfo
      */
     public function setItems($items)
     {
-        $this->items = $items;
+        if ($items === null) {
+            $this->items = null;
+            return;
+        }
+        $fields = array_fill_keys([
+            'creditNoteItemId', 'type', 'invoiceItemId', 'description',
+            'quantity', 'direction', 'unitAmount', 'itemAmount'
+        ], true);
+        $this->items = array_map(function ($item) use ($fields) {
+            if ($item instanceof LineItem) {
+                $item = $item->toArray();
+            } elseif (is_object($item)) {
+                $item = get_object_vars($item);
+            }
+            return array_intersect_key($item, $fields);
+        }, $items);
     }
 
 
