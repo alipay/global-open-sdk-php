@@ -8,6 +8,20 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
 
     public $refundRequestId;
 
+    /**
+     * The unique ID assigned by Alipay to identify the original payment. Optional.
+     *
+     * @var string|null
+     */
+    public $paymentId;
+
+    /**
+     * The unique ID assigned by the merchant to identify the original payment request. Optional.
+     *
+     * @var string|null
+     */
+    public $paymentRequestId;
+
     public $refundId;
 
     public $refundAmount;
@@ -148,6 +162,38 @@ class AlipayRefundNotify extends \Request\notify\AlipayNotify
     public function setRefundRequestId($refundRequestId)
     {
         $this->refundRequestId = $refundRequestId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPaymentId()
+    {
+        return $this->paymentId;
+    }
+
+    /**
+     * @param string|null $paymentId
+     */
+    public function setPaymentId($paymentId)
+    {
+        $this->paymentId = $paymentId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPaymentRequestId()
+    {
+        return $this->paymentRequestId;
+    }
+
+    /**
+     * @param string|null $paymentRequestId
+     */
+    public function setPaymentRequestId($paymentRequestId)
+    {
+        $this->paymentRequestId = $paymentRequestId;
     }
 
     /**
