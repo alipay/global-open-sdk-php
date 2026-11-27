@@ -57,7 +57,9 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => '\Model\BillingDiscount[]',
         'defaultPaymentMethod' => 'string',
         'allowPromotionCode' => 'bool',
-        'subscriptionNotifyUrl' => 'string'
+        'subscriptionNotifyUrl' => 'string',
+        'customerEmail' => 'string',
+        'customerDetails' => '\Model\BillingCustomerDetails'
     ];
 
     /**
@@ -79,7 +81,9 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => null,
         'defaultPaymentMethod' => null,
         'allowPromotionCode' => null,
-        'subscriptionNotifyUrl' => null
+        'subscriptionNotifyUrl' => null,
+        'customerEmail' => null,
+        'customerDetails' => null
     ];
 
     /**
@@ -99,7 +103,9 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => false,
         'defaultPaymentMethod' => false,
         'allowPromotionCode' => false,
-        'subscriptionNotifyUrl' => false
+        'subscriptionNotifyUrl' => false,
+        'customerEmail' => false,
+        'customerDetails' => false
     ];
 
     /**
@@ -199,7 +205,9 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => 'discounts',
         'defaultPaymentMethod' => 'defaultPaymentMethod',
         'allowPromotionCode' => 'allowPromotionCode',
-        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'subscriptionNotifyUrl',
+        'customerEmail' => 'customerEmail',
+        'customerDetails' => 'customerDetails'
     ];
 
     /**
@@ -219,7 +227,9 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => 'setDiscounts',
         'defaultPaymentMethod' => 'setDefaultPaymentMethod',
         'allowPromotionCode' => 'setAllowPromotionCode',
-        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'setSubscriptionNotifyUrl',
+        'customerEmail' => 'setCustomerEmail',
+        'customerDetails' => 'setCustomerDetails'
     ];
 
     /**
@@ -239,7 +249,9 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         'discounts' => 'getDiscounts',
         'defaultPaymentMethod' => 'getDefaultPaymentMethod',
         'allowPromotionCode' => 'getAllowPromotionCode',
-        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl'
+        'subscriptionNotifyUrl' => 'getSubscriptionNotifyUrl',
+        'customerEmail' => 'getCustomerEmail',
+        'customerDetails' => 'getCustomerDetails'
     ];
 
     /**
@@ -311,6 +323,8 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('defaultPaymentMethod', $data ?? [], null);
         $this->setIfExists('allowPromotionCode', $data ?? [], null);
         $this->setIfExists('subscriptionNotifyUrl', $data ?? [], null);
+        $this->setIfExists('customerEmail', $data ?? [], null);
+        $this->setIfExists('customerDetails', $data ?? [], null);
 
             }
 
@@ -369,7 +383,7 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets customerId
      *
-     * @param string|null $customerId The customer ID.
+     * @param string|null $customerId Active customer ID under your merchant account. Omitted, null or blank selects by email. With an ID, a supplied email must match after trimming, case-insensitively, or PARAM_ILLEGAL is returned.
      *
      * @return self
      */
@@ -640,6 +654,54 @@ class BillingSubscription  implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setSubscriptionNotifyUrl($subscriptionNotifyUrl)
     {
         $this->container['subscriptionNotifyUrl'] = $subscriptionNotifyUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerEmail
+     *
+     * @return string|null
+     */
+    public function getCustomerEmail()
+    {
+        return $this->container['customerEmail'];
+    }
+
+    /**
+     * Sets customerEmail
+     *
+     * @param string|null $customerEmail Email for customer lookup or creation; omitted, null or blank falls back to order.buyer.buyerEmail. With a customer ID, it must match the saved email.
+     *
+     * @return self
+     */
+    public function setCustomerEmail($customerEmail)
+    {
+        $this->container['customerEmail'] = $customerEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerDetails
+     *
+     * @return \model\BillingCustomerDetails|null
+     */
+    public function getCustomerDetails()
+    {
+        return $this->container['customerDetails'];
+    }
+
+    /**
+     * Sets customerDetails
+     *
+     * @param \model\BillingCustomerDetails|null $customerDetails customerDetails
+     *
+     * @return self
+     */
+    public function setCustomerDetails($customerDetails)
+    {
+        $this->container['customerDetails'] = $customerDetails;
 
         return $this;
     }

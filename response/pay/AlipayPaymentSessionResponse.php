@@ -53,7 +53,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'string',
         'url' => 'string',
         'subscriptionId' => 'string',
-        'invoiceId' => 'string'
+        'invoiceId' => 'string',
+        'customerId' => 'string'
     ];
 
     /**
@@ -71,7 +72,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => null,
         'url' => null,
         'subscriptionId' => null,
-        'invoiceId' => null
+        'invoiceId' => null,
+        'customerId' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => false,
         'url' => false,
         'subscriptionId' => false,
-        'invoiceId' => false
+        'invoiceId' => false,
+        'customerId' => false
     ];
 
     /**
@@ -183,7 +186,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'normalUrl',
         'url' => 'url',
         'subscriptionId' => 'subscriptionId',
-        'invoiceId' => 'invoiceId'
+        'invoiceId' => 'invoiceId',
+        'customerId' => 'customerId'
     ];
 
     /**
@@ -199,7 +203,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'setNormalUrl',
         'url' => 'setUrl',
         'subscriptionId' => 'setSubscriptionId',
-        'invoiceId' => 'setInvoiceId'
+        'invoiceId' => 'setInvoiceId',
+        'customerId' => 'setCustomerId'
     ];
 
     /**
@@ -215,7 +220,8 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         'normalUrl' => 'getNormalUrl',
         'url' => 'getUrl',
         'subscriptionId' => 'getSubscriptionId',
-        'invoiceId' => 'getInvoiceId'
+        'invoiceId' => 'getInvoiceId',
+        'customerId' => 'getCustomerId'
     ];
 
     /**
@@ -283,6 +289,7 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('url', $data ?? [], null);
         $this->setIfExists('subscriptionId', $data ?? [], null);
         $this->setIfExists('invoiceId', $data ?? [], null);
+        $this->setIfExists('customerId', $data ?? [], null);
 
             }
 
@@ -528,6 +535,30 @@ class AlipayPaymentSessionResponse  implements ModelInterface, ArrayAccess, \Jso
     public function setInvoiceId($invoiceId)
     {
         $this->container['invoiceId'] = $invoiceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerId
+     *
+     * @return string|null
+     */
+    public function getCustomerId()
+    {
+        return $this->container['customerId'];
+    }
+
+    /**
+     * Sets customerId
+     *
+     * @param string|null $customerId ID of the Billing customer linked to the subscription. Returned on successful creation or reuse, including trial sessions. Use it in later Billing requests.
+     *
+     * @return self
+     */
+    public function setCustomerId($customerId)
+    {
+        $this->container['customerId'] = $customerId;
 
         return $this;
     }
